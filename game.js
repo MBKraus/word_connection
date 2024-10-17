@@ -1,7 +1,7 @@
+// # https://phaser.discourse.group/t/responsive-game-size-in-mobile-browser/12088/16
+
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 700,
     scene: {
         preload: preload,
         create: create
@@ -9,7 +9,10 @@ const config = {
     dom: {
         createContainer: true
     },
-    parent: 'game-container'
+    parent: 'game-container',
+    scale: {
+        mode: Phaser.Scale.FIT,  
+    }
 };
 
 const game = new Phaser.Game(config);
@@ -42,13 +45,15 @@ function preload() {
 }
 
 function create() {
-    this.add.text(400, 30, 'Ouwe\'s slimste noffel game', { fontSize: '32px' }).setOrigin(0.5);
+    const x = game.scale.width * 0.5; // Center horizontally (50% of the width)
+
+    this.add.text(x, game.scale.height * 0.05, 'TEST456', { fontSize: '32px' }).setOrigin(0.5);
 
     // Add round text display
-    roundText = this.add.text(400, 70, `Round: ${currentRound + 1}`, { fontSize: '28px', color: '#ffffff' }).setOrigin(0.5);
+    roundText = this.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { fontSize: '28px', color: '#ffffff' }).setOrigin(0.5);
 
     // Add input form
-    let inputForm = this.add.dom(400, 550).createFromCache('inputForm');
+    let inputForm = this.add.dom(x, 750).createFromCache('inputForm');
     inputForm.addListener('click');
     
     inputForm.on('click', function (event) {
@@ -61,13 +66,13 @@ function create() {
     });
 
     // Add text for displaying guessed topics
-    guessedTopicsText = this.add.text(400, 650, 'Guessed Topics: ', { fontSize: '24px' }).setOrigin(0.5);
+    guessedTopicsText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.8, 'Guessed Topics: ', { fontSize: '24px' }).setOrigin(0.5);
 
     // Add text for feedback
-    feedbackText = this.add.text(400, 600, '', { fontSize: '20px' }).setOrigin(0.5);
+    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.75, '', { fontSize: '20px' }).setOrigin(0.5);
 
     // Add text for score
-    scoreText = this.add.text(50, 650, 'Score: 0', { fontSize: '24px' });
+    scoreText = this.add.text(game.scale.width * 0.1, game.scale.height * 0.65, 'Score: 0', { fontSize: '24px' });
 
     startRound(this);
 }
@@ -87,14 +92,42 @@ function startRound(scene) {
     let allWords = topics.flatMap(topic => topic.words);
     Phaser.Utils.Array.Shuffle(allWords);
 
-    // Create tiles for the round
-    for (let i = 0; i < 4; i++) {
-        for (let j = 0; j < 3; j++) {
-            let tile = scene.add.image(200 + i * 150, 150 + j * 150, 'tile');
-            tile.setScale(1.1);
-            tile.setTint(0x0000ff);  // Set initial tile color to blue
-            let word = allWords[i * 3 + j];
-            let text = scene.add.text(tile.x, tile.y, word, { fontSize: '20px', color: '#ffffff' }).setOrigin(0.5);
+    const cols = 3;
+    const rows = 4;
+    
+    // Calculate tile size and spacing relative to screen height
+    const tileSize = Math.floor(game.scale.height * 0.10); // Tile size (15% of the screen height)
+    const tileSpacing = Math.floor(game.scale.width * 0.10); // Tile spacing (5% of the screen width)
+
+    // Calculate starting Y position (25% of the screen height)
+    const startY = game.scale.height * 0.25;
+
+    // Calculate the total width of the tile grid
+    const totalWidth = (cols - 1) * tileSpacing + tileSize; // Total width of all tiles and spacing
+
+    // Calculate starting X position to center the grid
+    const startX = (game.scale.width - totalWidth) / 2;
+
+    // Adjust the loop to create tiles
+    for (let i = 0; i < cols; i++) { // 3 columns
+        for (let j = 0; j < rows; j++) { // 4 rows
+            // Calculate the x and y positions for each tile
+            const x = startX + i * tileSpacing + tileSize / 2; // Centering the tiles horizontally
+            const y = startY + j * tileSpacing;
+
+            // Create the tile image
+            let tile = scene.add.image(x, y, 'tile'); // Use calculated x and y positions
+            tile.setScale(tileSize / tile.width); // Scale tile based on the calculated size
+
+            // Set initial tile color to blue
+            tile.setTint(0x0000ff);
+
+            // Get the word from allWords array
+            let word = allWords[i + j * cols]; // Adjust indexing for the new grid
+            let text = scene.add.text(x, y, word, { fontSize: `${Math.max(16, Math.floor(tileSize * 0.3))}px`, color: '#ffffff' })
+                .setOrigin(0.5); // Center the text
+
+            // Push tile and text to the tiles array
             tiles.push({ tile, text, word });
         }
     }
