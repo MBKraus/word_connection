@@ -9,9 +9,13 @@ const config = {
     dom: {
         createContainer: true
     },
+    backgroundColor: '#FFFFFF',
     parent: 'game-container',
     scale: {
         mode: Phaser.Scale.FIT,  
+        width: 1080,
+        height: 1920,
+        autoCenter: Phaser.Scale.CENTER_BOTH
     }
 };
 
@@ -40,20 +44,36 @@ let currentRound = 0;
 let roundText;  // Variable to hold round number text
 
 function preload() {
-    this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128-v2.png');
+    this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
     this.load.html('inputForm', 'inputForm.html');
 }
 
 function create() {
-    const x = game.scale.width * 0.5; // Center horizontally (50% of the width)
 
-    this.add.text(x, game.scale.height * 0.05, 'TEST456', { fontSize: '32px' }).setOrigin(0.5);
+    const x = game.scale.width * 0.5; // Center horizontally (50% of the width)
+  
+    this.add.text(x, game.scale.height * 0.05, 'Connect', { 
+        fontSize: game.scale.width * 0.10 + 'px',
+        color: '#000000'
+     }).setOrigin(0.5);
 
     // Add round text display
-    roundText = this.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { fontSize: '28px', color: '#ffffff' }).setOrigin(0.5);
+    roundText = this.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { 
+        fontSize: game.scale.width * 0.05 + 'px', 
+        color: '#000000' }).setOrigin(0.5);
 
     // Add input form
-    let inputForm = this.add.dom(x, 750).createFromCache('inputForm');
+    let inputForm = this.add.dom(game.scale.width * 0.25, game.scale.height * 0.9).createFromCache('inputForm');
+    // Set the width of the form programmatically
+    inputForm.getChildByName('guessInput').style.width = game.scale.width * 0.50 + 'px'; // Set the input field width
+    inputForm.getChildByName('guessButton').style.width = game.scale.width * 0.20 + 'px'; // Set the button width (optional)
+    
+    inputForm.getChildByName('guessInput').style.fontSize = game.scale.width * 0.05 + 'px'; 
+    inputForm.getChildByName('guessButton').style.fontSize = game.scale.width * 0.05 + 'px';
+
+    // Set the form width itself if needed
+    // inputForm.node.style.width = '300px'; // Set the width of the entire form container
+    
     inputForm.addListener('click');
     
     inputForm.on('click', function (event) {
@@ -66,13 +86,22 @@ function create() {
     });
 
     // Add text for displaying guessed topics
-    guessedTopicsText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.8, 'Guessed Topics: ', { fontSize: '24px' }).setOrigin(0.5);
+    guessedTopicsText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.8, 'Guessed Topics: ', { 
+        fontSize: game.scale.width * 0.05 + 'px',
+        color: '#000000',
+    }).setOrigin(0.5);
 
     // Add text for feedback
-    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.75, '', { fontSize: '20px' }).setOrigin(0.5);
+    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.75, '', { 
+        fontSize: game.scale.width * 0.04 + 'px',
+        color: '#000000',
+    }).setOrigin(0.5);
 
     // Add text for score
-    scoreText = this.add.text(game.scale.width * 0.1, game.scale.height * 0.65, 'Score: 0', { fontSize: '24px' });
+    scoreText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.85, 'Score: 0', { 
+        fontSize: game.scale.width * 0.05 + 'px',
+        color: '#000000', 
+    }).setOrigin(0.5);
 
     startRound(this);
 }
@@ -96,11 +125,11 @@ function startRound(scene) {
     const rows = 4;
     
     // Calculate tile size and spacing relative to screen height
-    const tileSize = Math.floor(game.scale.height * 0.10); // Tile size (15% of the screen height)
-    const tileSpacing = Math.floor(game.scale.width * 0.10); // Tile spacing (5% of the screen width)
+    const tileSize = Math.floor(game.scale.height * 0.12); // Tile size (15% of the screen height)
+    const tileSpacing = Math.floor(game.scale.width * 0.25); // Tile spacing (5% of the screen width)
 
     // Calculate starting Y position (25% of the screen height)
-    const startY = game.scale.height * 0.25;
+    const startY = game.scale.height * 0.20;
 
     // Calculate the total width of the tile grid
     const totalWidth = (cols - 1) * tileSpacing + tileSize; // Total width of all tiles and spacing
@@ -124,7 +153,7 @@ function startRound(scene) {
 
             // Get the word from allWords array
             let word = allWords[i + j * cols]; // Adjust indexing for the new grid
-            let text = scene.add.text(x, y, word, { fontSize: `${Math.max(16, Math.floor(tileSize * 0.3))}px`, color: '#ffffff' })
+            let text = scene.add.text(x, y, word, { fontSize: `${Math.max(16, Math.floor(tileSize * 0.2))}px`, color: '#ffffff' })
                 .setOrigin(0.5); // Center the text
 
             // Push tile and text to the tiles array
