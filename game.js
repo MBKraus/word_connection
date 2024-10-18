@@ -42,6 +42,9 @@ let scoreText;
 let score = 0;
 let currentRound = 0;
 let roundText;  // Variable to hold round number text
+let timerText; // Variable to hold the timer text
+let timerEvent; // Variable to manage the timer
+const TIMER_DURATION = 30; // Duration for each round in seconds
 
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
@@ -92,15 +95,22 @@ function create() {
     }).setOrigin(0.5);
 
     // Add text for feedback
-    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.75, '', { 
+    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.70, '', { 
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
     }).setOrigin(0.5);
 
     // Add text for score
-    scoreText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.85, 'Score: 0', { 
+    scoreText = this.add.text(game.scale.width * 0.85, game.scale.height * 0.75, 'Score: 0', { 
         fontSize: game.scale.width * 0.05 + 'px',
         color: '#000000', 
+    }).setOrigin(0.5);
+
+    // Add text for timer
+
+    timerText = this.add.text(game.scale.width * 0.15, game.scale.height * 0.75, `Time: ${TIMER_DURATION}`, { 
+        fontSize: game.scale.width * 0.05 + 'px', 
+        color: '#000000' 
     }).setOrigin(0.5);
 
     startRound(this);
@@ -116,6 +126,10 @@ function startRound(scene) {
 
     // Update round text display
     roundText.setText(`Round: ${currentRound + 1}`);
+
+    // Reset timer
+    timerText.setText(`Time: ${TIMER_DURATION}`);
+    startTimer(scene);
 
     // Create shuffled array of all words
     let allWords = topics.flatMap(topic => topic.words);
@@ -212,4 +226,24 @@ function updateFeedbackText(message) {
 
 function updateScoreDisplay() {
     scoreText.setText(`Score: ${score}`);
+}
+
+
+function startTimer(scene) {
+    let remainingTime = TIMER_DURATION; // Set the initial remaining time
+    timerEvent = scene.time.addEvent({
+        delay: 1000, // Call every second
+        callback: function() {
+            remainingTime--;
+            timerText.setText(`Time: ${remainingTime}`);
+
+            if (remainingTime <= 0) {
+                // Time is up; handle the end of the round
+                this.remove(); // Stop the timer
+                updateFeedbackText("Game Over!"); // Update the feedback text immediately
+            }
+        },
+        callbackScope: scene,
+        repeat: TIMER_DURATION - 1 // Repeat for the duration of the timer
+    });
 }
