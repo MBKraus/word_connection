@@ -21,7 +21,7 @@ const game = new Phaser.Game(config);
 
 const allRounds = [
     [
-        {name: 'Fruits', words: ['Apple', 'Banana', 'Cherry', 'Date']},
+        {name: 'Fruits', words: ['Apple', 'Banana', 'Cherry', 'Berry']},
         {name: 'Animals', words: ['Dog', 'Elephant', 'Frog', 'Giraffe']},
         {name: 'Countries', words: ['Brazil', 'Canada', 'Denmark', 'Egypt']}
     ],
@@ -41,6 +41,9 @@ let currentRound = 0;
 let roundText;
 let timerText;
 let timerEvent;
+let interRoundScreen;
+let okButton;
+let interRoundScoreText;
 const TIMER_DURATION = 30;
 
 function preload() {
@@ -98,12 +101,121 @@ function create() {
     // Create an array to hold the correct guess texts
     this.correctGuessTexts = [];
 
+    // Create the inter-round screen (initially hidden)
+    createInterRoundScreen(this);
+
     startRound(this);
+}
+
+function createInterRoundScreen(scene) {
+    interRoundScreen = scene.add.container(0, 0);
+    interRoundScreen.setDepth(1000); // Ensure it's on top of everything
+
+    // Add a fully opaque background
+    let bg = scene.add.rectangle(0, 0, game.scale.width, game.scale.height, 0x000000);
+    bg.setOrigin(0);
+    interRoundScreen.add(bg);
+
+    // Add score text
+    interRoundScoreText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.4, '', {
+        fontSize: game.scale.width * 0.08 + 'px',
+        color: '#ffffff'
+    }).setOrigin(0.5);
+    interRoundScreen.add(interRoundScoreText);
+
+    // Add OK button
+    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'OK', {
+        fontSize: game.scale.width * 0.06 + 'px',
+        color: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: {
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 10
+        }
+    }).setOrigin(0.5).setInteractive();
+
+    okButton.on('pointerdown', () => {
+        hideInterRoundScreen();
+        startNextRound(scene);
+    });
+
+    interRoundScreen.add(okButton);
+
+    // Hide the screen initially
+    interRoundScreen.setVisible(false);
+}
+
+function showInterRoundScreen(scene) {
+    interRoundScreen.setVisible(true);
+    
+    // Disable and hide other game elements
+    inputForms.forEach(form => form.setVisible(false));
+    tiles.forEach(tileObj => {
+        tileObj.tile.setVisible(false);
+        tileObj.text.setVisible(false);
+    });
+    feedbackText.setVisible(false);
+    scoreText.setVisible(false);
+    timerText.setVisible(false);
+    roundText.setVisible(false);
+}
+
+function hideInterRoundScreen() {
+    interRoundScreen.setVisible(false);
+    
+    // Re-enable and show other game elements
+    feedbackText.setVisible(true);
+    scoreText.setVisible(true);
+    timerText.setVisible(true);
+    roundText.setVisible(true);
+}
+
+function handleRoundEnd(scene) {
+    if (timerEvent && timerEvent.getRemaining() > 0) {
+        timerEvent.remove();
+    }
+    
+    // Show "Round Completed!" message and update the score text
+    interRoundScoreText.setText(`Round Completed!\nScore: ${score}`); // Update score text
+    showInterRoundScreen(scene);
+}
+
+function startNextRound(scene) {
+    if (currentRound < allRounds.length - 1) {
+        currentRound++;
+        startRound(scene);
+    } else {
+        endGame(scene); // End the game if there are no more rounds
+    }
+}
+
+function endGame(scene) {
+    // Reset round and score
+    currentRound = 0;
+    score = 0;
+
+    // Update the inter-round screen text for game over
+    interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
+    okButton.setText('Restart');
+    
+    // Change the event listener to restart the game
+    okButton.removeAllListeners('pointerdown'); // Remove existing listeners
+    okButton.on('pointerdown', () => {
+        hideInterRoundScreen(); // Hide the inter-round screen
+        startRound(scene); // Start the first round again
+    });
+
+    showInterRoundScreen(scene); // Show the inter-round screen
 }
 
 function startRound(scene) {
     // Clear previous tiles
-    tiles.forEach(tileObj => tileObj.tile.destroy());
+    tiles.forEach(tileObj => {
+        tileObj.tile.destroy();
+        tileObj.text.destroy();
+    });
     tiles = [];
 
     // Clear previous correct guess texts
@@ -114,14 +226,10 @@ function startRound(scene) {
 
     roundText.setText(`Round: ${currentRound + 1}`);
 
-    // Stop the previous timer if it exists
-    if (timerEvent) {
-        timerEvent.remove();
-    }
-
     // Reset and start the timer
     startTimer(scene);
 
+    // Create shuffled array of all words
     let allWords = topics.flatMap(topic => topic.words);
     Phaser.Utils.Array.Shuffle(allWords);
 
@@ -180,16 +288,8 @@ function checkGuess(scene, guess, formIndex) {
         updateScoreDisplay();
         
         if (inputForms.every(form => !form.visible)) {
-            if (currentRound < allRounds.length - 1) {
-                currentRound++;
-                updateFeedbackText('Round completed! Starting next round...');
-                scene.time.delayedCall(2000, () => startRound(scene), [], scene);
-            } else {
-                updateFeedbackText('Congratulations! You guessed all topics in all rounds!');
-                if (timerEvent) {
-                    timerEvent.remove();
-                }
-            }
+            updateFeedbackText('Round completed!');
+            handleRoundEnd(scene);
         } else {
             updateFeedbackText('Correct! Keep guessing the remaining topics.');
         }
@@ -215,34 +315,33 @@ function updateScoreDisplay() {
 }
 
 function startTimer(scene) {
-    let remainingTime = TIMER_DURATION;
-    timerText.setText(`Time: ${remainingTime}`);
+    let remainingTime = TIMER_DURATION; // Set the initial remaining time
+    timerText.setText(`Time: ${remainingTime}`); // Initialize the display
 
+    // Store the timer event in a variable
     timerEvent = scene.time.addEvent({
-        delay: 1000,
+        delay: 1000, // Call every second
         callback: function() {
-            remainingTime--;
-            timerText.setText(`Time: ${remainingTime}`);
+            remainingTime--; // Decrease remaining time
+            timerText.setText(`Time: ${remainingTime}`); // Update timer display
 
             if (remainingTime <= 0) {
-                this.remove();
-                handleTimeUp(scene);
+                // Stop the timer
+                timerEvent.remove(); // Correctly remove the timer event
+                handleTimeUp(scene); // Call the time up handler
             }
         },
-        callbackScope: scene,
-        repeat: TIMER_DURATION
+        callbackScope: scene, // Set the callback scope to the scene
+        repeat: TIMER_DURATION - 1 // This ensures the timer stops at 0
     });
 }
 
 function handleTimeUp(scene) {
-    updateFeedbackText("Time's up! Round Over!");
+    updateFeedbackText("Time's up!");
+
+    // Disable input forms
     inputForms.forEach(form => form.setVisible(false));
     
-    if (currentRound < allRounds.length - 1) {
-        currentRound++;
-        scene.time.delayedCall(2000, () => startRound(scene), [], scene);
-    } else {
-        updateFeedbackText("Game Over! All rounds completed.");
-        // You might want to add logic here to show final score or restart the game
-    }
+    // Wait a short moment before showing the inter-round screen
+    scene.time.delayedCall(1500, () => endGame(scene), [], scene);
 }
