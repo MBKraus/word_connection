@@ -67,19 +67,18 @@ function create() {
     for (let i = 0; i < 3; i++) {
         let inputForm = this.add.dom(game.scale.width * 0.3, game.scale.height * (0.8 + i * 0.05)).createFromCache('inputForm');
         inputForm.getChildByName('guessInput').style.width = game.scale.width * 0.40 + 'px';
-        inputForm.getChildByName('guessButton').style.width = game.scale.width * 0.15 + 'px';
         inputForm.getChildByName('guessInput').style.fontSize = game.scale.width * 0.04 + 'px'; 
-        inputForm.getChildByName('guessButton').style.fontSize = game.scale.width * 0.04 + 'px';
 
-        inputForm.addListener('click');
-        inputForm.on('click', function (event) {
-            if (event.target.name === 'guessButton') {
-                let inputElement = this.getChildByName('guessInput');
-                let guess = inputElement.value.trim().toLowerCase();
-                checkGuess(this.scene, guess, i);
-                inputElement.value = '';
+        // Add event listener for 'keypress' to listen for Enter key
+        const inputElement = inputForm.getChildByName('guessInput');
+        inputElement.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                let guess = this.value.trim().toLowerCase();
+                checkGuess(inputForm.scene, guess, i);
+                this.value = ''; // Clear the input field after guessing
             }
         });
+
         inputForms.push(inputForm);
     }
 
