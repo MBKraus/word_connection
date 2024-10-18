@@ -49,19 +49,27 @@ const TIMER_DURATION = 30;
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
     this.load.html('inputForm', 'inputForm.html');
+    this.load.image('bulb', '/assets/bulb.png');
+    this.load.image('person', '/assets/person.png');
 }
 
 function create() {
     const x = game.scale.width * 0.5;
+
+    const bulbIcon = this.add.image(game.scale.width * 0.75, game.scale.height * 0.035, 'bulb').setScale(0.15);
+    const personIcon = this.add.image(game.scale.width * 0.83, game.scale.height * 0.038, 'person').setScale(0.12);
   
-    this.add.text(x, game.scale.height * 0.05, 'Connect', { 
-        fontSize: game.scale.width * 0.10 + 'px',
-        color: '#000000'
+    this.add.text(x, game.scale.height * 0.04, 'Connect', { 
+        fontSize: game.scale.width * 0.07 + 'px',
+        color: '#000000',
+        fontFamily: 'Arial',
      }).setOrigin(0.5);
 
     roundText = this.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { 
-        fontSize: game.scale.width * 0.05 + 'px', 
-        color: '#000000' }).setOrigin(0.5);
+        fontSize: game.scale.width * 0.04 + 'px', 
+        color: '#000000',
+        fontFamily: 'Arial', 
+    }).setOrigin(0.5);
 
     // Create three input forms
     for (let i = 0; i < 3; i++) {
@@ -85,16 +93,19 @@ function create() {
     feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.70, '', { 
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
+        fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
     scoreText = this.add.text(game.scale.width * 0.85, game.scale.height * 0.75, 'Score: 0', { 
         fontSize: game.scale.width * 0.05 + 'px',
         color: '#000000', 
+        fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
     timerText = this.add.text(game.scale.width * 0.15, game.scale.height * 0.75, `Time: ${TIMER_DURATION}`, { 
         fontSize: game.scale.width * 0.05 + 'px', 
-        color: '#000000' 
+        color: '#000000' ,
+        fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
     // Create an array to hold the correct guess texts
@@ -251,8 +262,11 @@ function startRound(scene) {
             tile.setTint(0x0000ff);
 
             let word = allWords[i + j * cols];
-            let text = scene.add.text(x, y, word, { fontSize: `${Math.max(16, Math.floor(tileSize * 0.2))}px`, color: '#ffffff' })
-                .setOrigin(0.5);
+            let text = scene.add.text(x, y, word, { 
+                fontSize: `${Math.max(16, Math.floor(tileSize * 0.2))}px`, 
+                color: '#ffffff',
+                fontFamily: 'Arial',
+            }).setOrigin(0.5);
 
             tiles.push({ tile, text, word });
         }
