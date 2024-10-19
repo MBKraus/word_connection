@@ -57,6 +57,11 @@ function preload() {
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
 }
 
+// Prevent automatic scrolling
+window.addEventListener('scroll', function(e) {
+    window.scrollTo(0, 0);
+    });
+
 function create() {
     createStartScreen(this);
     createGameElements(this);
