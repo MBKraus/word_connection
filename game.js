@@ -49,8 +49,8 @@ const TIMER_DURATION = 30;
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
     this.load.html('inputForm', 'inputForm.html');
-    this.load.image('bulb', '/assets/bulb.png');
-    this.load.image('person', '/assets/person.png');
+    this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
+    this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
 }
 
 function create() {
