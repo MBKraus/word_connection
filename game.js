@@ -56,9 +56,10 @@ function preload() {
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
 }
 
-window.addEventListener('scroll', function(e) {
-    window.scrollTo(0, 0);
-});
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
 function create() {
     createStartScreen(this);
@@ -67,6 +68,8 @@ function create() {
     
     showStartScreen();
 }
+
+
 
 function createStartScreen(scene) {
     startScreen = scene.add.container(0, 0);
@@ -135,11 +138,13 @@ function createGameElements(scene) {
         fontSize: game.scale.width * 0.04 + 'px', 
         color: '#000000', 
         fontFamily: 'Arial',
-        wordWrap: { width: inputBgWidth - 20 } // Keep text within the bounds of the rectangle
+        wordWrap: { width: inputBgWidth - 20 }
     }).setOrigin(0.5);
 
-    // Create keyboard buttons
-    createKeyboard(scene, inputDisplay);
+    // Create keyboard buttons only for mobile devices
+    if (isMobile()) {
+        createKeyboard(scene, inputDisplay);
+    }
 
     feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.47, '', { 
         fontSize: game.scale.width * 0.035 + 'px',
@@ -161,6 +166,9 @@ function createGameElements(scene) {
 }
 
 function createKeyboard(scene, inputDisplay) {
+
+    if (!isMobile()) return; // Don't create the on-screen keyboard for desktop
+
     const keys = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
