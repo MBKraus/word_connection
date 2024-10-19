@@ -33,7 +33,7 @@ const allRounds = [
 ];
 
 let tiles = [];
-let inputForms = [];
+let inputForm;
 let feedbackText;
 let scoreText;
 let score = 0;
@@ -44,6 +44,9 @@ let timerEvent;
 let interRoundScreen;
 let okButton;
 let interRoundScoreText;
+let startScreen;
+let startButton;
+let correctGuessTexts = [];
 const TIMER_DURATION = 30;
 
 function preload() {
@@ -51,90 +54,122 @@ function preload() {
     this.load.html('inputForm', 'inputForm.html');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
+    this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
 }
 
 function create() {
+    createStartScreen(this);
+    createGameElements(this);
+    createInterRoundScreen(this);
+    
+    // Initially show only the start screen
+    showStartScreen();
+}
+
+function createStartScreen(scene) {
+    startScreen = scene.add.container(0, 0);
+    startScreen.setDepth(1000);
+
+    let bg = scene.add.rectangle(0, 0, game.scale.width, game.scale.height, 0x000000);
+    bg.setOrigin(0);
+    startScreen.add(bg);
+
+    let titleText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.4, 'Connect', {
+        fontSize: game.scale.width * 0.08 + 'px',
+        color: '#ffffff'
+    }).setOrigin(0.5);
+    startScreen.add(titleText);
+
+    startButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'Start Game', {
+        fontSize: game.scale.width * 0.06 + 'px',
+        color: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: {
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 10
+        }
+    }).setOrigin(0.5).setInteractive();
+
+    startButton.on('pointerdown', () => {
+        hideStartScreen();
+        startGame(scene);
+    });
+
+    startScreen.add(startButton);
+}
+
+function createGameElements(scene) {
     const x = game.scale.width * 0.5;
 
-    const bulbIcon = this.add.image(game.scale.width * 0.75, game.scale.height * 0.035, 'bulb').setScale(0.15);
-    const personIcon = this.add.image(game.scale.width * 0.83, game.scale.height * 0.038, 'person').setScale(0.12);
+    const bulbIcon = scene.add.image(game.scale.width * 0.75, game.scale.height * 0.035, 'bulb').setScale(0.15);
+    const personIcon = scene.add.image(game.scale.width * 0.83, game.scale.height * 0.038, 'person').setScale(0.12);
+    const questionIcon = scene.add.image(game.scale.width * 0.18, game.scale.height * 0.038, 'question').setScale(0.12);
   
-    this.add.text(x, game.scale.height * 0.04, 'Connect', { 
+
+    scene.add.text(x, game.scale.height * 0.04, 'Connect', { 
         fontSize: game.scale.width * 0.07 + 'px',
         color: '#000000',
         fontFamily: 'Arial',
-     }).setOrigin(0.5);
+    }).setOrigin(0.5);
 
-    roundText = this.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { 
+    roundText = scene.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { 
         fontSize: game.scale.width * 0.04 + 'px', 
         color: '#000000',
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
-    // Create three input forms
-    for (let i = 0; i < 3; i++) {
-        let inputForm = this.add.dom(game.scale.width * 0.3, game.scale.height * (0.8 + i * 0.05)).createFromCache('inputForm');
-        inputForm.getChildByName('guessInput').style.width = game.scale.width * 0.40 + 'px';
-        inputForm.getChildByName('guessInput').style.fontSize = game.scale.width * 0.04 + 'px'; 
+    // Create a single input form
+    inputForm = scene.add.dom(game.scale.width * 0.27, game.scale.height * 0.8).createFromCache('inputForm');
+    inputForm.getChildByName('guessInput').style.width = game.scale.width * 0.60 + 'px';
+    inputForm.getChildByName('guessInput').style.fontSize = game.scale.width * 0.04 + 'px'; 
 
-        // Add event listener for 'keypress' to listen for Enter key
-        const inputElement = inputForm.getChildByName('guessInput');
-        inputElement.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter') {
-                let guess = this.value.trim().toLowerCase();
-                checkGuess(inputForm.scene, guess, i);
-                this.value = ''; // Clear the input field after guessing
-            }
-        });
+    const inputElement = inputForm.getChildByName('guessInput');
+    
+    inputElement.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default action (like form submission)
+            let guess = this.value.trim().toLowerCase();
+            checkGuess(scene, guess);
+            this.value = ''; // Clear the input field after guessing
+        }
+    });
 
-        inputForms.push(inputForm);
-    }
-
-    feedbackText = this.add.text(game.scale.width * 0.5, game.scale.height * 0.70, '', { 
+    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.715, '', { 
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
-    scoreText = this.add.text(game.scale.width * 0.85, game.scale.height * 0.75, 'Score: 0', { 
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.755, 'Score: 0', { 
         fontSize: game.scale.width * 0.05 + 'px',
         color: '#000000', 
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
-    timerText = this.add.text(game.scale.width * 0.15, game.scale.height * 0.75, `Time: ${TIMER_DURATION}`, { 
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.755, `Time: ${TIMER_DURATION}`, { 
         fontSize: game.scale.width * 0.05 + 'px', 
-        color: '#000000' ,
+        color: '#000000',
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
-
-    // Create an array to hold the correct guess texts
-    this.correctGuessTexts = [];
-
-    // Create the inter-round screen (initially hidden)
-    createInterRoundScreen(this);
-
-    startRound(this);
 }
 
 function createInterRoundScreen(scene) {
     interRoundScreen = scene.add.container(0, 0);
-    interRoundScreen.setDepth(1000); // Ensure it's on top of everything
+    interRoundScreen.setDepth(1000);
 
-    // Add a fully opaque background
     let bg = scene.add.rectangle(0, 0, game.scale.width, game.scale.height, 0x000000);
     bg.setOrigin(0);
     interRoundScreen.add(bg);
 
-    // Add score text
     interRoundScoreText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.4, '', {
         fontSize: game.scale.width * 0.08 + 'px',
         color: '#ffffff'
     }).setOrigin(0.5);
     interRoundScreen.add(interRoundScoreText);
 
-    // Add OK button
-    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'OK', {
+    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'Next Round', {
         fontSize: game.scale.width * 0.06 + 'px',
         color: '#ffffff',
         backgroundColor: '#4a4a4a',
@@ -147,21 +182,26 @@ function createInterRoundScreen(scene) {
     }).setOrigin(0.5).setInteractive();
 
     okButton.on('pointerdown', () => {
+        // Move to next round when the button is clicked
         hideInterRoundScreen();
         startNextRound(scene);
     });
 
     interRoundScreen.add(okButton);
-
-    // Hide the screen initially
     interRoundScreen.setVisible(false);
 }
 
-function showInterRoundScreen(scene) {
-    interRoundScreen.setVisible(true);
-    
-    // Disable and hide other game elements
-    inputForms.forEach(form => form.setVisible(false));
+function showStartScreen() {
+    startScreen.setVisible(true);
+    hideGameElements();
+}
+
+function hideStartScreen() {
+    startScreen.setVisible(false);
+}
+
+function hideGameElements() {
+    inputForm.setVisible(false);
     tiles.forEach(tileObj => {
         tileObj.tile.setVisible(false);
         tileObj.text.setVisible(false);
@@ -170,16 +210,102 @@ function showInterRoundScreen(scene) {
     scoreText.setVisible(false);
     timerText.setVisible(false);
     roundText.setVisible(false);
+    correctGuessTexts.forEach(text => text.setVisible(false));
 }
 
-function hideInterRoundScreen() {
-    interRoundScreen.setVisible(false);
-    
-    // Re-enable and show other game elements
+function showGameElements() {
+    inputForm.setVisible(true);
+    tiles.forEach(tileObj => {
+        tileObj.tile.setVisible(true);
+        tileObj.text.setVisible(true);
+    });
     feedbackText.setVisible(true);
     scoreText.setVisible(true);
     timerText.setVisible(true);
     roundText.setVisible(true);
+    correctGuessTexts.forEach(text => text.setVisible(true));
+}
+
+function startGame(scene) {
+    currentRound = 0;
+    score = 0;
+    updateScoreDisplay();
+    startRound(scene);
+}
+
+function checkGuess(scene, guess) {
+    let topics = allRounds[currentRound];
+    let matchedTopic = topics.find(topic => topic.name.toLowerCase() === guess.toLowerCase());
+    
+    if (matchedTopic) {
+        highlightTiles(scene, matchedTopic.words);
+        
+        // Show correct answer above the input form
+        let correctText = scene.add.text(game.scale.width * 0.5, game.scale.height * (0.85 + correctGuessTexts.length * 0.05), matchedTopic.name, { 
+            fontSize: game.scale.width * 0.04 + 'px',
+            color: '#013220',
+            fontFamily: 'Arial',
+        }).setOrigin(0.5);
+        correctGuessTexts.push(correctText);
+
+        // Increase score and update score display
+        score += 30;
+        updateScoreDisplay();
+        
+        // Check if all topics have been guessed
+        if (correctGuessTexts.length === 3) {
+            updateFeedbackText('Round completed!'); // Inform the player
+            handleRoundEnd(scene); // Move to round end processing
+        } else {
+            updateFeedbackText('Correct! Keep guessing the remaining topics.');
+        }
+    } else {
+        updateFeedbackText('Incorrect guess. Your guess is wrong. Try again!');
+    }
+}
+
+function highlightTiles(scene, words) {
+    tiles.forEach(tile => {
+        if (words.includes(tile.word)) {
+            tile.tile.setTint(0x00ff00);
+        }
+    });
+}
+
+function updateFeedbackText(message) {
+    feedbackText.setText(message);
+}
+
+function updateScoreDisplay() {
+    scoreText.setText(`Score: ${score}`);
+}
+
+function startTimer(scene) {
+    let remainingTime = TIMER_DURATION;
+    timerText.setText(`Time: ${remainingTime}`);
+
+    timerEvent = scene.time.addEvent({
+        delay: 1000,
+        callback: function() {
+            remainingTime--;
+            timerText.setText(`Time: ${remainingTime}`);
+
+            if (remainingTime <= 0) {
+                timerEvent.remove();
+                handleTimeUp(scene);
+            }
+        },
+        callbackScope: scene,
+        repeat: TIMER_DURATION - 1
+    });
+}
+
+function handleTimeUp(scene) {
+    updateFeedbackText("Time's up!");
+    inputForm.setVisible(false);
+    scene.time.delayedCall(1500, () => {
+        endGame(scene); // Show game over screen directly
+    }, [], scene);
 }
 
 function handleRoundEnd(scene) {
@@ -187,9 +313,26 @@ function handleRoundEnd(scene) {
         timerEvent.remove();
     }
     
-    // Show "Round Completed!" message and update the score text
-    interRoundScoreText.setText(`Round Completed!\nScore: ${score}`); // Update score text
+    interRoundScoreText.setText(`Round Completed!\nScore: ${score}`);
     showInterRoundScreen(scene);
+    
+    // Remove automatic next round call and show next round button
+    okButton.setText('Next Round'); // Change button text
+    okButton.removeAllListeners('pointerdown'); // Clear existing listeners
+    okButton.on('pointerdown', () => {
+        hideInterRoundScreen();
+        startNextRound(scene); // Start the next round when button is clicked
+    });
+}
+
+function showInterRoundScreen(scene) {
+    interRoundScreen.setVisible(true);
+    hideGameElements();
+}
+
+function hideInterRoundScreen() {
+    interRoundScreen.setVisible(false);
+    showGameElements();
 }
 
 function startNextRound(scene) {
@@ -197,49 +340,41 @@ function startNextRound(scene) {
         currentRound++;
         startRound(scene);
     } else {
-        endGame(scene); // End the game if there are no more rounds
+        endGame(scene);
     }
 }
 
 function endGame(scene) {
-    // Reset round and score
-    currentRound = 0;
-    score = 0;
-
-    // Update the inter-round screen text for game over
-    interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
+    // Do not reset the score here
+    interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`); // Show the actual score
+    
     okButton.setText('Restart');
     
-    // Change the event listener to restart the game
-    okButton.removeAllListeners('pointerdown'); // Remove existing listeners
+    okButton.removeAllListeners('pointerdown');
     okButton.on('pointerdown', () => {
-        hideInterRoundScreen(); // Hide the inter-round screen
-        startRound(scene); // Start the first round again
+        hideInterRoundScreen();
+        startGame(scene); // Restart the game
     });
 
-    showInterRoundScreen(scene); // Show the inter-round screen
+    showInterRoundScreen(scene);
 }
 
 function startRound(scene) {
-    // Clear previous tiles
     tiles.forEach(tileObj => {
         tileObj.tile.destroy();
         tileObj.text.destroy();
     });
     tiles = [];
 
-    // Clear previous correct guess texts
-    scene.correctGuessTexts.forEach(text => text.destroy());
-    scene.correctGuessTexts = [];
+    correctGuessTexts.forEach(text => text.destroy());
+    correctGuessTexts = [];
 
     let topics = allRounds[currentRound];
 
     roundText.setText(`Round: ${currentRound + 1}`);
 
-    // Reset and start the timer
     startTimer(scene);
 
-    // Create shuffled array of all words
     let allWords = topics.flatMap(topic => topic.words);
     Phaser.Utils.Array.Shuffle(allWords);
 
@@ -272,89 +407,9 @@ function startRound(scene) {
         }
     }
     
-    // Reset input forms
-    inputForms.forEach(form => {
-        form.setVisible(true);
-        form.getChildByName('guessInput').value = '';
-    });
+    inputForm.setVisible(true);
+    inputForm.getChildByName('guessInput').value = '';
 
     updateFeedbackText('');
-}
-
-function checkGuess(scene, guess, formIndex) {
-    let topics = allRounds[currentRound];
-    let matchedTopic = topics.find(topic => topic.name.toLowerCase() === guess.toLowerCase());
-    
-    if (matchedTopic) {
-        highlightTiles(scene, matchedTopic.words);
-        
-        // Hide input form and show correct answer
-        inputForms[formIndex].setVisible(false);
-        let correctText = scene.add.text(game.scale.width * 0.5, game.scale.height * (0.8 + formIndex * 0.05), matchedTopic.name, { 
-            fontSize: game.scale.width * 0.04 + 'px',
-            color: '#00ff00'
-        }).setOrigin(0.5);
-        scene.correctGuessTexts.push(correctText);
-
-        // Increase score and update score display
-        score += 30;
-        updateScoreDisplay();
-        
-        if (inputForms.every(form => !form.visible)) {
-            updateFeedbackText('Round completed!');
-            handleRoundEnd(scene);
-        } else {
-            updateFeedbackText('Correct! Keep guessing the remaining topics.');
-        }
-    } else {
-        updateFeedbackText('Incorrect guess. Try again!');
-    }
-}
-
-function highlightTiles(scene, words) {
-    tiles.forEach(tile => {
-        if (words.includes(tile.word)) {
-            tile.tile.setTint(0x00ff00);
-        }
-    });
-}
-
-function updateFeedbackText(message) {
-    feedbackText.setText(message);
-}
-
-function updateScoreDisplay() {
-    scoreText.setText(`Score: ${score}`);
-}
-
-function startTimer(scene) {
-    let remainingTime = TIMER_DURATION; // Set the initial remaining time
-    timerText.setText(`Time: ${remainingTime}`); // Initialize the display
-
-    // Store the timer event in a variable
-    timerEvent = scene.time.addEvent({
-        delay: 1000, // Call every second
-        callback: function() {
-            remainingTime--; // Decrease remaining time
-            timerText.setText(`Time: ${remainingTime}`); // Update timer display
-
-            if (remainingTime <= 0) {
-                // Stop the timer
-                timerEvent.remove(); // Correctly remove the timer event
-                handleTimeUp(scene); // Call the time up handler
-            }
-        },
-        callbackScope: scene, // Set the callback scope to the scene
-        repeat: TIMER_DURATION - 1 // This ensures the timer stops at 0
-    });
-}
-
-function handleTimeUp(scene) {
-    updateFeedbackText("Time's up!");
-
-    // Disable input forms
-    inputForms.forEach(form => form.setVisible(false));
-    
-    // Wait a short moment before showing the inter-round screen
-    scene.time.delayedCall(1500, () => endGame(scene), [], scene);
+    showGameElements();
 }
