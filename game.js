@@ -121,7 +121,7 @@ function createGameElements(scene) {
     }).setOrigin(0.5);
 
     // Create a single input form
-    inputForm = scene.add.dom(game.scale.width * 0.27, game.scale.height * 0.8).createFromCache('inputForm');
+    inputForm = scene.add.dom(game.scale.width * 0.27, game.scale.height * 0.65).createFromCache('inputForm');
     inputForm.getChildByName('guessInput').style.width = game.scale.width * 0.60 + 'px';
     inputForm.getChildByName('guessInput').style.fontSize = game.scale.width * 0.04 + 'px'; 
 
@@ -136,19 +136,19 @@ function createGameElements(scene) {
         }
     });
 
-    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.715, '', { 
+    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.57, '', { 
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
-    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.755, 'Score: 0', { 
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.615, 'Score: 0', { 
         fontSize: game.scale.width * 0.05 + 'px',
         color: '#000000', 
         fontFamily: 'Arial', 
     }).setOrigin(0.5);
 
-    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.755, `Time: ${TIMER_DURATION}`, { 
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.615, `Time: ${TIMER_DURATION}`, { 
         fontSize: game.scale.width * 0.05 + 'px', 
         color: '#000000',
         fontFamily: 'Arial', 
@@ -241,7 +241,7 @@ function checkGuess(scene, guess) {
         highlightTiles(scene, matchedTopic.words);
         
         // Show correct answer above the input form
-        let correctText = scene.add.text(game.scale.width * 0.5, game.scale.height * (0.85 + correctGuessTexts.length * 0.05), matchedTopic.name, { 
+        let correctText = scene.add.text(game.scale.width * 0.5, game.scale.height * (0.70 + correctGuessTexts.length * 0.05), matchedTopic.name, { 
             fontSize: game.scale.width * 0.04 + 'px',
             color: '#013220',
             fontFamily: 'Arial',
@@ -380,25 +380,24 @@ function startRound(scene) {
 
     const cols = 3;
     const rows = 4;
-    
-    const tileSize = Math.floor(game.scale.height * 0.14);
-    const tileSpacing = Math.floor(game.scale.width * 0.25);
-    const startY = game.scale.height * 0.20;
-    const totalWidth = (cols - 1) * tileSpacing + tileSize;
-    const startX = (game.scale.width - totalWidth) / 2;
+
+    const tileWidth = Math.floor(game.scale.width * 0.35); // Set tile width
+    const tileHeight = tileWidth * 0.5; // Set tile height to be half of the width
+    const startY = game.scale.height * 0.20; // Start Y position for tiles
+    const startX = (game.scale.width - (cols * tileWidth)) / 2; // Centering the tiles horizontally
 
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
-            const x = startX + i * tileSpacing + tileSize / 2;
-            const y = startY + j * tileSpacing;
+            const x = startX + i * tileWidth + tileWidth / 2; // Adjusted for half the width
+            const y = startY + j * tileHeight; // No vertical spacing
 
             let tile = scene.add.image(x, y, 'tile');
-            tile.setScale(tileSize / tile.width);
+            tile.setScale(tileWidth / tile.width, tileHeight / tile.height); // Scale the tile based on width and height
             tile.setTint(0x0000ff);
 
             let word = allWords[i + j * cols];
             let text = scene.add.text(x, y, word, { 
-                fontSize: `${Math.max(16, Math.floor(tileSize * 0.2))}px`, 
+                fontSize: `${Math.max(16, Math.floor(tileHeight * 0.25))}px`, 
                 color: '#ffffff',
                 fontFamily: 'Arial',
             }).setOrigin(0.5);
@@ -413,3 +412,4 @@ function startRound(scene) {
     updateFeedbackText('');
     showGameElements();
 }
+
