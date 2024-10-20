@@ -191,8 +191,8 @@ function createKeyboard(scene) {
   
     const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
     
-    const keySize = game.scale.width * 0.09;
-    const keySpacing = game.scale.width * 0.01;
+    const keySize = game.scale.width * 0.084;
+    const keySpacing = game.scale.width * 0.0175;
     const rowSpacing = game.scale.height * 0.02;
 
     keys.forEach((key, index) => {
