@@ -219,6 +219,7 @@ function createKeyboard(scene) {
             const keyText = scene.add.text(0, 0, key, {
                 fontSize: `${keySize * 0.4}px`,
                 color: '#FFFFFF',
+                fontFamily: 'Arial',
             }).setOrigin(0.5);
 
             const keyButton = scene.add.container(x, y, [button, keyText]);
@@ -385,6 +386,11 @@ function startTimer(scene) {
         callbackScope: scene,
         repeat: TIMER_DURATION - 1
     });
+
+    // Add a method to get remaining time in seconds
+    timerEvent.getRemainingSeconds = function () {
+        return remainingTime;
+    };
 }
 
 function handleTimeUp(scene) {
@@ -399,7 +405,37 @@ function handleRoundEnd(scene) {
         timerEvent.remove();
     }
     
-    interRoundScoreText.setText(`Round Completed!\nScore: ${score}`);
+    let timeRemaining = timerEvent.getRemainingSeconds(); // Get remaining time in seconds
+    let timeBonus = 0;
+    let roundBonus = 50; // 50 points bonus for guessing all correctly
+    let wordPoints = 3 * 30; // 30 points per correct guess, total of 90 points for 3 correct topics
+
+    // Calculate time bonus based on remaining time
+    if (timeRemaining > 20) {
+        timeBonus = 30; // Bonus for completing within 10 seconds
+    } else if (timeRemaining > 10) {
+        timeBonus = 10; // Bonus for completing within 20 seconds
+    }
+
+    // Add the bonus points to the score
+    score += roundBonus + timeBonus;
+
+    // Prepare the inter-round score text to include word points and bonuses
+    let interRoundMessage = `Awesome!\n\n+ ${wordPoints} Word Points`;
+
+    // Add round bonus to the message
+    interRoundMessage += `\n+ ${roundBonus} Round Bonus`;
+
+    // Add time bonus to the message (if applicable)
+    if (timeBonus > 0) {
+        interRoundMessage += `\n+ ${timeBonus} Time Bonus`;
+    }
+
+    interRoundMessage += `\n\nTotal Score: ${score}`;
+
+    // Update the interRoundScoreText with the detailed message
+    interRoundScoreText.setText(interRoundMessage);
+
     showInterRoundScreen(scene);
     
     okButton.setText('Next Round');
