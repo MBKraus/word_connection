@@ -48,6 +48,7 @@ let startButton;
 let correctGuessTexts = [];
 const TIMER_DURATION = 30;
 let currentInputText = '';
+let timeBar; // Declare the timeBar variable
 
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
@@ -149,6 +150,13 @@ function createGameElements(scene) {
     const graphics = scene.add.graphics();
     graphics.fillStyle(0xffa500, 1); // Orange color with full opacity
     graphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.60 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+
+    // Create the time bar (thin rectangle with rounded edges)
+    timeBar = scene.add.graphics();
+    const timeBarHeight = 14; // Height of the time bar
+    const initialBarWidth = game.scale.width; // Initial width of the time bar
+    timeBar.fillStyle(0xff0000, 1); // Red color
+    timeBar.fillRoundedRect(0, game.scale.height * 0.12, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
 
     // Display current input text
     inputDisplay = scene.add.text(x, game.scale.height * 0.60, currentInputText, { 
@@ -412,6 +420,12 @@ function startTimer(scene) {
             remainingTime--;
             timerText.setText(`Time: ${remainingTime}`);
 
+            // Update the width of the time bar
+            const newWidth = (remainingTime / TIMER_DURATION) * game.scale.width;
+            timeBar.clear(); // Clear the previous bar
+            timeBar.fillStyle(0xff0000, 1); // Red color
+            timeBar.fillRoundedRect(0, game.scale.height * 0.12, newWidth, 14, 5); // Draw the updated time bar
+
             if (remainingTime <= 0) {
                 timerEvent.remove();
                 handleTimeUp(scene);
@@ -426,6 +440,7 @@ function startTimer(scene) {
         return remainingTime;
     };
 }
+
 
 function handleTimeUp(scene) {
     updateFeedbackText("Time's up!");
