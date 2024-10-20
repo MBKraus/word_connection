@@ -186,7 +186,7 @@ function createKeyboard(scene) {
     const keys = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-        'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+        'Z', 'X', 'C', 'V', 'B', 'N', 'M', '✓', '←'
     ];
   
     const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
@@ -196,13 +196,35 @@ function createKeyboard(scene) {
     const rowSpacing = game.scale.height * 0.02;
 
     keys.forEach((key, index) => {
-        const row = Math.floor(index / 10);
-        const col = index % 10;
-        const x = (col * (keySize + keySpacing)) + (game.scale.width * 0.05) + (row === 2 ? keySize / 2 : 0);
+        let row = 0;
+        let col = 0;
+
+        // Determine row and column based on index
+        if (index < 10) {
+            // First row: Q to P
+            row = 0;
+            col = index;
+        } else if (index < 19) {
+            // Second row: A to L
+            row = 1;
+            col = index - 10;
+        } else {
+            // Third row: Z to M, ✓, ←
+            row = 2;
+            col = index - 19;
+        }
+
+        const x = col * (keySize + keySpacing);
         const y = (row * (keySize + rowSpacing)) + (game.scale.height * 0.05);
 
         const button = scene.add.graphics();
-        button.fillStyle(0x4a4a4a, 1);
+        if (key === '✓') {
+            button.fillStyle(0x00FF00, 1);  // Green for checkmark (Enter)
+        } else if (key === '←') {
+            button.fillStyle(0xFF0000, 1);  // Red for backward arrow (Backspace)
+        } else {
+            button.fillStyle(0x4a4a4a, 1);  // Original gray for other keys
+        }
         button.fillRoundedRect(0, 0, keySize, keySize, 10);
 
         const keyText = scene.add.text(keySize / 2, keySize / 2, key, {
@@ -215,47 +237,23 @@ function createKeyboard(scene) {
         keyButton.setInteractive();
 
         keyButton.on('pointerdown', () => {
-            currentInputText += key;
-            inputDisplay.setText(currentInputText);
+            if (key === '✓') {
+                if (currentInputText) {
+                    checkGuess(scene, currentInputText.trim().toLowerCase());
+                    currentInputText = '';
+                    inputDisplay.setText(currentInputText);
+                }
+            } else if (key === '←') {
+                currentInputText = currentInputText.slice(0, -1);
+                inputDisplay.setText(currentInputText);
+            } else {
+                currentInputText += key;
+                inputDisplay.setText(currentInputText);
+            }
         });
 
         keyboardContainer.add(keyButton);
     });
-
-    // Adjust the Enter button
-    const enterButton = createButton(scene, 'Enter', game.scale.width * 0.78, game.scale.height * 0.28, () => {
-        if (currentInputText) {
-            checkGuess(scene, currentInputText.trim().toLowerCase());
-            currentInputText = '';
-            inputDisplay.setText(currentInputText);
-        }
-    });
-    keyboardContainer.add(enterButton);
-
-    // Adjust the Backspace button
-    const backspaceButton = createButton(scene, 'Back', game.scale.width * 0.92, game.scale.height * 0.28, () => {
-        currentInputText = currentInputText.slice(0, -1);
-        inputDisplay.setText(currentInputText);
-    });
-    keyboardContainer.add(backspaceButton);
-}
-
-function createButton(scene, text, x, y, callback) {
-    const button = scene.add.graphics();
-    button.fillStyle(0x4a4a4a, 1);
-    button.fillRoundedRect(0, 0, game.scale.width * 0.13, game.scale.height * 0.07, 10);
-
-    const buttonText = scene.add.text(game.scale.width * 0.065, game.scale.height * 0.035, text, {
-        fontSize: `${Math.max(20, game.scale.width * 0.03)}px`,
-        color: '#FFFFFF',
-    }).setOrigin(0.5);
-
-    const container = scene.add.container(x, y, [button, buttonText]);
-    container.setSize(game.scale.width * 0.13, game.scale.height * 0.07);
-    container.setInteractive();
-    container.on('pointerdown', callback);
-
-    return container;
 }
 
 function createInterRoundScreen(scene) {
