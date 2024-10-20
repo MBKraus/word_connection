@@ -67,6 +67,23 @@ function create() {
     createInterRoundScreen(this);
     
     showStartScreen();
+
+    // Add keyboard input for desktop
+    if (!isMobile()) {
+        this.input.keyboard.on('keydown', function (event) {
+            if (event.keyCode === 8) { // Backspace
+                currentInputText = currentInputText.slice(0, -1);
+            } else if (event.keyCode === 13) { // Enter
+                if (currentInputText) {
+                    checkGuess(this.scene, currentInputText.trim().toLowerCase());
+                    currentInputText = '';
+                }
+            } else if (event.key.length === 1) { // Single character
+                currentInputText += event.key.toUpperCase();
+            }
+            inputDisplay.setText(currentInputText);
+        });
+    }
 }
 
 
@@ -134,7 +151,7 @@ function createGameElements(scene) {
     graphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.60 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
     // Display current input text
-    const inputDisplay = scene.add.text(x, game.scale.height * 0.60, currentInputText, { 
+    inputDisplay = scene.add.text(x, game.scale.height * 0.60, currentInputText, { 
         fontSize: game.scale.width * 0.04 + 'px', 
         color: '#000000', 
         fontFamily: 'Arial',
@@ -143,7 +160,7 @@ function createGameElements(scene) {
 
     // Create keyboard buttons only for mobile devices
     if (isMobile()) {
-        createKeyboard(scene, inputDisplay);
+        createKeyboard(scene);
     }
 
     feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.47, '', { 
@@ -165,88 +182,81 @@ function createGameElements(scene) {
     }).setOrigin(0.5);
 }
 
-function createKeyboard(scene, inputDisplay) {
-
-    if (!isMobile()) return; // Don't create the on-screen keyboard for desktop
-
+function createKeyboard(scene) {
     const keys = [
         'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
         'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
         'Z', 'X', 'C', 'V', 'B', 'N', 'M'
     ];
   
-    const keyboardContainer = scene.add.container(0, game.scale.height * 0.65); // Position container at 70% of height
+    const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
     
+    const keySize = game.scale.width * 0.09;
+    const keySpacing = game.scale.width * 0.01;
+    const rowSpacing = game.scale.height * 0.02;
+
     keys.forEach((key, index) => {
-        const x = (index % 10) * (game.scale.width * 0.09) + (game.scale.width * 0.05); // 8% of width for each button
-        const y = Math.floor(index / 10) * (game.scale.height * 0.08) + (game.scale.height * 0.05); // 7% of height for each button
+        const row = Math.floor(index / 10);
+        const col = index % 10;
+        const x = (col * (keySize + keySpacing)) + (game.scale.width * 0.05) + (row === 2 ? keySize / 2 : 0);
+        const y = (row * (keySize + rowSpacing)) + (game.scale.height * 0.05);
 
-        const button = scene.add.text(x, y, key, {
-            fontSize: `${Math.max(30, game.scale.width * 0.04)}px`, // Font size relative to width
+        const button = scene.add.graphics();
+        button.fillStyle(0x4a4a4a, 1);
+        button.fillRoundedRect(0, 0, keySize, keySize, 10);
+
+        const keyText = scene.add.text(keySize / 2, keySize / 2, key, {
+            fontSize: `${Math.max(24, game.scale.width * 0.035)}px`,
             color: '#FFFFFF',
-            backgroundColor: '#4a4a4a',
-            padding: {
-                left: 22,
-                right: 22,
-                top: 14,
-                bottom: 14
-            }
-        }).setOrigin(0.5).setInteractive();
+        }).setOrigin(0.5);
 
-        button.on('pointerdown', () => {
+        const keyButton = scene.add.container(x, y, [button, keyText]);
+        keyButton.setSize(keySize, keySize);
+        keyButton.setInteractive();
+
+        keyButton.on('pointerdown', () => {
             currentInputText += key;
             inputDisplay.setText(currentInputText);
         });
 
-        keyboardContainer.add(button);
+        keyboardContainer.add(keyButton);
     });
 
-    // Adjust the Enter button position
-    const enterButton = scene.add.text(game.scale.width * 0.64, game.scale.height * 0.21, 'Enter', {
-        fontSize: `${Math.max(30, game.scale.width * 0.04)}px`, // Font size relative to width
-        color: '#FFFFFF',
-        backgroundColor: '#4a4a4a',
-        padding: {
-            left: 22,
-            right: 22,
-            top: 14,
-            bottom: 14
-        }
-    }).setOrigin(0.5).setInteractive();
-
-    enterButton.on('pointerdown', () => {
+    // Adjust the Enter button
+    const enterButton = createButton(scene, 'Enter', game.scale.width * 0.78, game.scale.height * 0.28, () => {
         if (currentInputText) {
             checkGuess(scene, currentInputText.trim().toLowerCase());
             currentInputText = '';
             inputDisplay.setText(currentInputText);
         }
     });
-
     keyboardContainer.add(enterButton);
 
-    // Adjust the Backspace button position
-    const backspaceButton = scene.add.text(game.scale.width * 0.87, game.scale.height * 0.21, 'Backspace', {
-        fontSize: `${Math.max(30, game.scale.width * 0.04)}px`, // Font size relative to width
-        color: '#FFFFFF',
-        backgroundColor: '#4a4a4a',
-        padding: {
-            left: 22,
-            right: 22,
-            top: 14,
-            bottom: 14
-        }
-    }).setOrigin(0.5).setInteractive();
-
-    backspaceButton.on('pointerdown', () => {
-        currentInputText = currentInputText.slice(0, -1); // Remove the last character
+    // Adjust the Backspace button
+    const backspaceButton = createButton(scene, 'Back', game.scale.width * 0.92, game.scale.height * 0.28, () => {
+        currentInputText = currentInputText.slice(0, -1);
         inputDisplay.setText(currentInputText);
     });
-
     keyboardContainer.add(backspaceButton);
 }
 
+function createButton(scene, text, x, y, callback) {
+    const button = scene.add.graphics();
+    button.fillStyle(0x4a4a4a, 1);
+    button.fillRoundedRect(0, 0, game.scale.width * 0.13, game.scale.height * 0.07, 10);
 
+    const buttonText = scene.add.text(game.scale.width * 0.065, game.scale.height * 0.035, text, {
+        fontSize: `${Math.max(20, game.scale.width * 0.03)}px`,
+        color: '#FFFFFF',
+    }).setOrigin(0.5);
 
+    const container = scene.add.container(x, y, [button, buttonText]);
+    container.setSize(game.scale.width * 0.13, game.scale.height * 0.07);
+    container.setInteractive();
+    container.on('pointerdown', callback);
+
+    return container;
+}
 
 function createInterRoundScreen(scene) {
     interRoundScreen = scene.add.container(0, 0);
