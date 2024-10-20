@@ -184,75 +184,65 @@ function createGameElements(scene) {
 
 function createKeyboard(scene) {
     const keys = [
-        'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P',
-        'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L',
-        'Z', 'X', 'C', 'V', 'B', 'N', 'M', '✓', '←'
+        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+        ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ''],
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', '✓', '']
     ];
   
     const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
     
-    const keySize = game.scale.width * 0.095; // Increased from 0.09
-    const keySpacing = game.scale.width * 0.005; // Decreased from 0.01 to accommodate larger buttons
-    const rowSpacing = game.scale.height * 0.02;
+    const keyboardWidth = game.scale.width * 0.98;
+    const keyboardHeight = game.scale.height * 0.22; // Reduced from 0.35 to 0.30
+    const rowHeight = keyboardHeight / 3;
 
-    keys.forEach((key, index) => {
-        let row = 0;
-        let col = 0;
+    const columns = keys[0].length;
+    const keyWidth = keyboardWidth / columns;
+    const keySize = Math.min(keyWidth, rowHeight) * 0.9; // 90% of available space
 
-        // Determine row and column based on index
-        if (index < 10) {
-            // First row: Q to P
-            row = 0;
-            col = index;
-        } else if (index < 19) {
-            // Second row: A to L
-            row = 1;
-            col = index - 10;
-        } else {
-            // Third row: Z to M, ✓, ←
-            row = 2;
-            col = index - 19;
-        }
+    keys.forEach((row, rowIndex) => {
+        row.forEach((key, colIndex) => {
+            if (key === '') return; // Skip empty slots
 
-        const x = col * (keySize + keySpacing);
-        const y = (row * (keySize + rowSpacing)) + (game.scale.height * 0.05);
+            const x = (colIndex + 0.5) * keyWidth;
+            const y = (rowIndex + 0.5) * rowHeight;
 
-        const button = scene.add.graphics();
-        if (key === '✓') {
-            button.fillStyle(0x00FF00, 1);  // Green for checkmark (Enter)
-        } else if (key === '←') {
-            button.fillStyle(0xFF0000, 1);  // Red for backward arrow (Backspace)
-        } else {
-            button.fillStyle(0x4a4a4a, 1);  // Original gray for other keys
-        }
-        button.fillCircle(keySize / 2, keySize / 2, keySize / 2 * 0.95); // Slightly smaller than keySize to leave a small gap
-        
-        const keyText = scene.add.text(keySize / 2, keySize / 2, key, {
-            fontSize: `${Math.max(24, game.scale.width * 0.03)}px`,
-            color: '#FFFFFF',
-        }).setOrigin(0.5);
-
-        const keyButton = scene.add.container(x, y, [button, keyText]);
-        keyButton.setSize(keySize, keySize);
-        keyButton.setInteractive();
-
-        keyButton.on('pointerdown', () => {
+            const button = scene.add.graphics();
             if (key === '✓') {
-                if (currentInputText) {
-                    checkGuess(scene, currentInputText.trim().toLowerCase());
-                    currentInputText = '';
+                button.fillStyle(0x00FF00, 1);
+            } else if (key === '←') {
+                button.fillStyle(0xFF0000, 1);
+            } else {
+                button.fillStyle(0x4a4a4a, 1);
+            }
+            button.fillCircle(0, 0, keySize / 2 * 0.95); // Slightly smaller circle
+
+            const keyText = scene.add.text(0, 0, key, {
+                fontSize: `${keySize * 0.4}px`,
+                color: '#FFFFFF',
+            }).setOrigin(0.5);
+
+            const keyButton = scene.add.container(x, y, [button, keyText]);
+            keyButton.setSize(keyWidth, rowHeight);
+            keyButton.setInteractive();
+
+            keyButton.on('pointerdown', () => {
+                if (key === '✓') {
+                    if (currentInputText) {
+                        checkGuess(scene, currentInputText.trim().toLowerCase());
+                        currentInputText = '';
+                        inputDisplay.setText(currentInputText);
+                    }
+                } else if (key === '←') {
+                    currentInputText = currentInputText.slice(0, -1);
+                    inputDisplay.setText(currentInputText);
+                } else {
+                    currentInputText += key;
                     inputDisplay.setText(currentInputText);
                 }
-            } else if (key === '←') {
-                currentInputText = currentInputText.slice(0, -1);
-                inputDisplay.setText(currentInputText);
-            } else {
-                currentInputText += key;
-                inputDisplay.setText(currentInputText);
-            }
-        });
+            });
 
-        keyboardContainer.add(keyButton);
+            keyboardContainer.add(keyButton);
+        });
     });
 }
 
