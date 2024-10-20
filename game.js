@@ -197,16 +197,19 @@ function createKeyboard(scene) {
         ['✓', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', '']
     ];
 
-    const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
+    const keyboardContainer = scene.add.container(0, 0); // Initialize the container
 
-    const keyboardWidth = game.scale.width; // Slightly smaller to fit on the screen
-    const keyboardHeight = game.scale.height * 0.24; // Reduced height for the entire keyboard
+    const keyboardWidth = game.scale.width; // Full width of the game screen
+    const keyboardHeight = game.scale.height * 0.24; // Adjusted height for the keyboard
 
     const rowHeight = keyboardHeight / 3;
     const keyWidthRatio = 0.6; // Keys will be taller than wide (60% of height)
 
     const keySpacing = 10; // Add space between keys
     const rowSpacing = 10; // Vertical spacing between rows
+
+    // Set the Y position of the keyboard container a little above the bottom of the screen
+    const keyboardY = game.scale.height - keyboardHeight - 50; // Adjust the value as needed for spacing
 
     keys.forEach((row, rowIndex) => {
         let rowWidth = 0;
@@ -222,7 +225,7 @@ function createKeyboard(scene) {
         });
         rowWidth -= keySpacing; // Remove the extra spacing after the last key
 
-        let startX = (keyboardWidth - rowWidth) / 2; // Calculate starting X to perfectly center the row
+        let startX = (keyboardWidth - rowWidth) / 2; // Centering the row
 
         row.forEach((key, colIndex) => {
             if (key === '') return; // Skip empty slots
@@ -234,7 +237,7 @@ function createKeyboard(scene) {
             }
 
             const x = startX + (keyWidth / 2); // Set X position of the key
-            const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2); // Set Y position with spacing
+            const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2); // Y position
 
             const button = scene.add.graphics();
 
@@ -285,6 +288,9 @@ function createKeyboard(scene) {
             startX += keyWidth + keySpacing;
         });
     });
+
+    // Position the keyboardContainer slightly above the bottom of the screen
+    keyboardContainer.setY(keyboardY);
 }
 
 
