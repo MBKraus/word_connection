@@ -49,6 +49,9 @@ let correctGuessTexts = [];
 const TIMER_DURATION = 30;
 let currentInputText = '';
 let timeBar; // Declare the timeBar variable
+let countdownText;
+let countdownCircle;
+let countdownTime = 3; // Start at 3 seconds
 
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
@@ -63,11 +66,11 @@ function isMobile() {
 }
 
 function create() {
-    createStartScreen(this);
+    // Removed the start screen function call
     createGameElements(this);
     createInterRoundScreen(this);
     
-    showStartScreen();
+    showCountdown(this); // Start the countdown
 
     // Add keyboard input for desktop
     if (!isMobile()) {
@@ -88,39 +91,32 @@ function create() {
 }
 
 
+// Countdown function to display the countdown timer
+function showCountdown(scene) {
+    countdownCircle = scene.add.graphics();
+    countdownCircle.fillStyle(0x000000, 1); // Black color for the circle
+    const radius = 100; // Radius of the circle
+    countdownCircle.fillCircle(game.scale.width / 2, game.scale.height * 0.3, radius); // Draw circle
 
-function createStartScreen(scene) {
-    startScreen = scene.add.container(0, 0);
-    startScreen.setDepth(1000);
-
-    let bg = scene.add.rectangle(0, 0, game.scale.width, game.scale.height, 0x000000);
-    bg.setOrigin(0);
-    startScreen.add(bg);
-
-    let titleText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.4, 'Connect', {
-        fontSize: game.scale.width * 0.08 + 'px',
-        color: '#ffffff'
+    countdownText = scene.add.text(game.scale.width / 2, game.scale.height * 0.3, countdownTime, {
+        fontSize: '64px',
+        color: '#FFFFFF',
+        fontFamily: 'Arial',
     }).setOrigin(0.5);
-    startScreen.add(titleText);
 
-    startButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'Start Game', {
-        fontSize: game.scale.width * 0.06 + 'px',
-        color: '#ffffff',
-        backgroundColor: '#4a4a4a',
-        padding: {
-            left: 20,
-            right: 20,
-            top: 10,
-            bottom: 10
+    // Start the countdown
+    const countdownInterval = setInterval(() => {
+        countdownTime -= 1;
+        countdownText.setText(countdownTime);
+
+        if (countdownTime <= 0) {
+            clearInterval(countdownInterval);
+            countdownCircle.setVisible(false); // Hide the countdown circle
+            countdownText.setVisible(false);   // Hide the countdown text
+            startGame(scene); // Start the game
+            startTimer(scene); // Start the timer
         }
-    }).setOrigin(0.5).setInteractive();
-
-    startButton.on('pointerdown', () => {
-        hideStartScreen();
-        startGame(scene);
-    });
-
-    startScreen.add(startButton);
+    }, 1000); // Update every second
 }
 
 function createGameElements(scene) {
@@ -328,15 +324,6 @@ function createInterRoundScreen(scene) {
 
     interRoundScreen.add(okButton);
     interRoundScreen.setVisible(false);
-}
-
-function showStartScreen() {
-    startScreen.setVisible(true);
-    hideGameElements();
-}
-
-function hideStartScreen() {
-    startScreen.setVisible(false);
 }
 
 function hideGameElements() {
