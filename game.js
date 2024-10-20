@@ -186,42 +186,70 @@ function createKeyboard(scene) {
     const keys = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ''],
-        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', '✓', '']
+        ['✓', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', '']
     ];
-  
-    const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
-    
-    const keyboardWidth = game.scale.width * 0.98;
-    const keyboardHeight = game.scale.height * 0.22; // Reduced from 0.35 to 0.30
-    const rowHeight = keyboardHeight / 3;
 
-    const columns = keys[0].length;
-    const keyWidth = keyboardWidth / columns;
-    const keySize = Math.min(keyWidth, rowHeight) * 0.9; // 90% of available space
+    const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
+
+    const keyboardWidth = game.scale.width; // Slightly smaller to fit on the screen
+    const keyboardHeight = game.scale.height * 0.24; // Reduced height for the entire keyboard
+
+    const rowHeight = keyboardHeight / 3;
+    const keyWidthRatio = 0.6; // Keys will be taller than wide (60% of height)
+
+    const keySpacing = 10; // Add space between keys
+    const rowSpacing = 10; // Vertical spacing between rows
 
     keys.forEach((row, rowIndex) => {
+        let rowWidth = 0;
+
+        // Calculate the row width based on key sizes, including special keys
+        row.forEach((key) => {
+            if (key === '') return; // Skip empty slots
+            let keyWidth = rowHeight * keyWidthRatio;
+            if (key === '✓' || key === '←') {
+                keyWidth = rowHeight * keyWidthRatio * 1.5; // 1.5x width for Enter and Backspace
+            }
+            rowWidth += keyWidth + keySpacing; // Add width + spacing
+        });
+        rowWidth -= keySpacing; // Remove the extra spacing after the last key
+
+        let startX = (keyboardWidth - rowWidth) / 2; // Calculate starting X to perfectly center the row
+
         row.forEach((key, colIndex) => {
             if (key === '') return; // Skip empty slots
 
-            const x = (colIndex + 0.5) * keyWidth;
-            const y = (rowIndex + 0.5) * rowHeight;
+            // Adjust the key width based on whether it's a special key or a regular one
+            let keyWidth = rowHeight * keyWidthRatio;
+            if (key === '✓' || key === '←') {
+                keyWidth = rowHeight * keyWidthRatio * 1.5; // 1.5x width for Enter and Backspace
+            }
+
+            const x = startX + (keyWidth / 2); // Set X position of the key
+            const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2); // Set Y position with spacing
 
             const button = scene.add.graphics();
-            if (key === '✓') {
-                button.fillStyle(0x00FF00, 1);
-            } else if (key === '←') {
-                button.fillStyle(0xFF0000, 1);
-            } else {
-                button.fillStyle(0x4a4a4a, 1);
-            }
-            button.fillCircle(0, 0, keySize / 2 * 0.95); // Slightly smaller circle
 
+            // Set the color for the key
+            button.fillStyle(0x7E8484, 1); // Fill with color #7E8484
+
+            // Draw a rounded rectangle for the key
+            button.fillRoundedRect(
+                -keyWidth / 2,   // Top-left X
+                -rowHeight / 2,  // Top-left Y
+                keyWidth,        // Width
+                rowHeight,       // Height
+                10               // Corner radius for rounded edges
+            );
+
+            // Add key label text
             const keyText = scene.add.text(0, 0, key, {
-                fontSize: `${keySize * 0.4}px`,
+                fontSize: `${rowHeight * 0.4}px`,
                 color: '#FFFFFF',
                 fontFamily: 'Arial',
             }).setOrigin(0.5);
 
+            // Create a container for the key button and text
             const keyButton = scene.add.container(x, y, [button, keyText]);
             keyButton.setSize(keyWidth, rowHeight);
             keyButton.setInteractive();
@@ -242,10 +270,16 @@ function createKeyboard(scene) {
                 }
             });
 
+            // Add the key button to the keyboard container
             keyboardContainer.add(keyButton);
+
+            // Move startX to the next key's position (including the spacing)
+            startX += keyWidth + keySpacing;
         });
     });
 }
+
+
 
 function createInterRoundScreen(scene) {
     interRoundScreen = scene.add.container(0, 0);
