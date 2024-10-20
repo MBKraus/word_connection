@@ -191,8 +191,8 @@ function createKeyboard(scene) {
   
     const keyboardContainer = scene.add.container(0, game.scale.height * 0.65);
     
-    const keySize = game.scale.width * 0.084;
-    const keySpacing = game.scale.width * 0.0175;
+    const keySize = game.scale.width * 0.095; // Increased from 0.09
+    const keySpacing = game.scale.width * 0.005; // Decreased from 0.01 to accommodate larger buttons
     const rowSpacing = game.scale.height * 0.02;
 
     keys.forEach((key, index) => {
@@ -225,10 +225,10 @@ function createKeyboard(scene) {
         } else {
             button.fillStyle(0x4a4a4a, 1);  // Original gray for other keys
         }
-        button.fillRoundedRect(0, 0, keySize, keySize, 10);
-
+        button.fillCircle(keySize / 2, keySize / 2, keySize / 2 * 0.95); // Slightly smaller than keySize to leave a small gap
+        
         const keyText = scene.add.text(keySize / 2, keySize / 2, key, {
-            fontSize: `${Math.max(24, game.scale.width * 0.035)}px`,
+            fontSize: `${Math.max(24, game.scale.width * 0.03)}px`,
             color: '#FFFFFF',
         }).setOrigin(0.5);
 
