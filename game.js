@@ -98,9 +98,12 @@ function create() {
 }
 
 function showCountdown(scene) {
-
     // Reset countdown time
     countdownTime = 3; // Start at 3 seconds
+
+    // Update the round text to show the upcoming round number
+    roundText.setText(`Round: ${currentRound + 1}`);
+    roundText.setVisible(true); // Ensure round text is visible during countdown
 
     // Ensure the countdown circle and text are initialized
     countdownCircle.clear(); // Clear any previous drawings
@@ -395,6 +398,7 @@ function showGameElements() {
     correctGuessTexts.forEach(text => text.setVisible(true));
 }
 
+// Update the startGame function to reset the round number
 function startGame(scene) {
     // Reset game state
     currentRound = 0;
@@ -408,6 +412,9 @@ function startGame(scene) {
 
     // Reset the timer and time bar for the game
     resetTimerAndBar(scene);
+
+    // Update the round text to show the first round
+    roundText.setText(`Round: 1`);
 
     // Call the countdown function to display the countdown
     showCountdown(scene);
@@ -558,17 +565,21 @@ function hideInterRoundScreen() {
     showGameElements();
 }
 
+// Update the startNextRound function to set the correct round number before the countdown
 function startNextRound(scene) {
     if (currentRound < allRounds.length - 1) {
         currentRound++;
         hideInterRoundScreen(); // Hide the inter-round screen first
         hideTiles();            // Hide only the tiles
-        clearTimerEvent();     // Clear any previous timer events
+        clearTimerEvent();      // Clear any previous timer events
 
         // Clear feedback text and correct guess texts before showing countdown
         updateFeedbackText(''); // Clear the feedback text
         correctGuessTexts.forEach(text => text.destroy()); // Clear correct guess texts
         correctGuessTexts = []; // Reset the array
+
+        // Update the round text before starting the countdown
+        roundText.setText(`Round: ${currentRound + 1}`);
 
         showCountdown(scene);   // Show countdown before the next round starts
     } else {
