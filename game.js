@@ -60,7 +60,6 @@ let isGameOver = false;
 
 
 function preload() {
-    this.load.css('styles', 'styles.css');
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
