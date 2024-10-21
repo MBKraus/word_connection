@@ -242,10 +242,10 @@ function createKeyboard(scene) {
     const keyboardContainer = scene.add.container(0, 0); // Initialize the container
 
     const keyboardWidth = game.scale.width; // Full width of the game screen
-    const keyboardHeight = game.scale.height * 0.26; // Adjusted height for the keyboard
+    const keyboardHeight = game.scale.height * 0.24; // Adjusted height for the keyboard
 
     const rowHeight = keyboardHeight / 3;
-    const keyWidthRatio = 0.9; // Keys will be taller than wide (60% of height)
+    const keyWidthRatio = 0.645; // Keys will be taller than wide (60% of height)
 
     const keySpacing = 10; // Add space between keys
     const rowSpacing = 10; // Vertical spacing between rows
@@ -285,7 +285,7 @@ function createKeyboard(scene) {
 
             // Set the color for the key
             if (key === '✓') {
-                button.fillStyle(0x00FF00, 1); // Green color for the Enter key
+                button.fillStyle(0x008000, 1); // Green color for the Enter key
             } else {
                 button.fillStyle(0x7E8484, 1); // Default color for other keys
             }
