@@ -165,17 +165,23 @@ function createGameElements(scene) {
     scene.add.image(game.scale.width * 0.75, game.scale.height * 0.035, 'bulb').setScale(0.15);
     scene.add.image(game.scale.width * 0.83, game.scale.height * 0.038, 'person').setScale(0.12);
     scene.add.image(game.scale.width * 0.18, game.scale.height * 0.038, 'question').setScale(0.12);
-  
-    scene.add.text(x, game.scale.height * 0.04, 'Connect', { 
+
+    scene.add.text(x, game.scale.height * 0.04, 'Connect', {
         fontSize: game.scale.width * 0.07 + 'px',
         color: '#000000',
         fontFamily: 'Arial',
     }).setOrigin(0.5);
 
-    roundText = scene.add.text(x, game.scale.height * 0.1, `Round: ${currentRound + 1}`, { 
-        fontSize: game.scale.width * 0.04 + 'px', 
+    // Add a horizontal rectangle below the header and images
+    const rectangleHeight = game.scale.height * 0.08;
+    const graphics = scene.add.graphics();
+    graphics.fillStyle(0xD3D3D3, 1);
+    graphics.fillRect(0, game.scale.height * 0.075, game.scale.width, rectangleHeight);
+
+    roundText = scene.add.text(x, game.scale.height * 0.18, `Round: ${currentRound + 1}`, {
+        fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
-        fontFamily: 'Arial', 
+        fontFamily: 'Arial',
     }).setOrigin(0.5);
 
     // Fixed width for input background and rounded corners using Phaser Graphics
@@ -183,21 +189,21 @@ function createGameElements(scene) {
     const inputBgHeight = game.scale.height * 0.04;
 
     // Create a graphics object to draw a rounded rectangle with orange fill
-    const graphics = scene.add.graphics();
-    graphics.fillStyle(0xffa500, 1); // Orange color with full opacity
-    graphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.60 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+    const inputBgGraphics = scene.add.graphics();
+    inputBgGraphics.fillStyle(0xD3D3D3, 1); // Orange color with full opacity
+    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.65 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
     // Create the time bar (thin rectangle with rounded edges)
     timeBar = scene.add.graphics();
     const timeBarHeight = 14; // Height of the time bar
     const initialBarWidth = game.scale.width; // Initial width of the time bar
     timeBar.fillStyle(0xff0000, 1); // Red color
-    timeBar.fillRoundedRect(0, game.scale.height * 0.12, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
+    timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
 
     // Display current input text
-    inputDisplay = scene.add.text(x, game.scale.height * 0.60, currentInputText, { 
-        fontSize: game.scale.width * 0.04 + 'px', 
-        color: '#000000', 
+    inputDisplay = scene.add.text(x, game.scale.height * 0.65, currentInputText, {
+        fontSize: game.scale.width * 0.04 + 'px',
+        color: '#000000',
         fontFamily: 'Arial',
         wordWrap: { width: inputBgWidth - 20 }
     }).setOrigin(0.5);
@@ -207,22 +213,22 @@ function createGameElements(scene) {
         createKeyboard(scene);
     }
 
-    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.47, '', { 
+    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.59, '', {
         fontSize: game.scale.width * 0.035 + 'px',
         color: '#000000',
-        fontFamily: 'Arial', 
+        fontFamily: 'Arial',
     }).setOrigin(0.5);
 
-    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.51, 'Score: 0', { 
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.18, 'Score: 0', {
         fontSize: game.scale.width * 0.04 + 'px',
-        color: '#000000', 
-        fontFamily: 'Arial', 
+        color: '#000000',
+        fontFamily: 'Arial',
     }).setOrigin(0.5);
 
-    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.51, `Time: ${TIMER_DURATION}`, { 
-        fontSize: game.scale.width * 0.04 + 'px', 
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.18, `Time: ${TIMER_DURATION}`, {
+        fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
-        fontFamily: 'Arial', 
+        fontFamily: 'Arial',
     }).setOrigin(0.5);
 }
 
@@ -236,10 +242,10 @@ function createKeyboard(scene) {
     const keyboardContainer = scene.add.container(0, 0); // Initialize the container
 
     const keyboardWidth = game.scale.width; // Full width of the game screen
-    const keyboardHeight = game.scale.height * 0.24; // Adjusted height for the keyboard
+    const keyboardHeight = game.scale.height * 0.26; // Adjusted height for the keyboard
 
     const rowHeight = keyboardHeight / 3;
-    const keyWidthRatio = 0.6; // Keys will be taller than wide (60% of height)
+    const keyWidthRatio = 0.9; // Keys will be taller than wide (60% of height)
 
     const keySpacing = 10; // Add space between keys
     const rowSpacing = 10; // Vertical spacing between rows
@@ -278,7 +284,11 @@ function createKeyboard(scene) {
             const button = scene.add.graphics();
 
             // Set the color for the key
-            button.fillStyle(0x7E8484, 1); // Fill with color #7E8484
+            if (key === '✓') {
+                button.fillStyle(0x00FF00, 1); // Green color for the Enter key
+            } else {
+                button.fillStyle(0x7E8484, 1); // Default color for other keys
+            }
 
             // Draw a rounded rectangle for the key
             button.fillRoundedRect(
@@ -501,7 +511,7 @@ function updateTimerDisplay(scene) {
     const newWidth = (remainingTime / TIMER_DURATION) * game.scale.width;
     timeBar.clear();
     timeBar.fillStyle(0xff0000, 1);
-    timeBar.fillRoundedRect(0, game.scale.height * 0.12, newWidth, 14, 5);
+    timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
 }
 
 
@@ -647,7 +657,7 @@ function startRound(scene) {
 
     const tileWidth = Math.floor(game.scale.width * 0.35);
     const tileHeight = tileWidth * 0.4;
-    const startY = game.scale.height * 0.17;
+    const startY = game.scale.height * 0.25;
     const startX = (game.scale.width - (cols * tileWidth)) / 2;
 
     for (let i = 0; i < cols; i++) {
