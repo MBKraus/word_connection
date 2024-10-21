@@ -1,0 +1,11 @@
+
+.text-container {
+    width: 500px; /* Set the width of the text container */
+    margin: 20px auto 0; /* Center horizontally and add space above */
+    background-color: lightblue; /* Set the background color */
+    padding: 10px; /* Optional: Add padding for better spacing */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+    z-index: 2; /* Ensure it stays on top of the game container */
+    position: relative; /* Position relative to keep stacking context */
+    color: red; /* Set the text color to red */
+}
