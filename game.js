@@ -52,6 +52,12 @@ let timeBar; // Declare the timeBar variable
 let countdownText;
 let countdownCircle;
 let countdownTime = 3; // Start at 3 seconds
+let gameStartTime;
+let lastUpdateTime;
+const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
+let isTimerRunning = false;
+let isGameOver = false;
+
 
 function preload() {
     this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
@@ -98,62 +104,51 @@ function create() {
 }
 
 function showCountdown(scene) {
+    countdownTime = 3;
+    roundText.setText(`Round: ${currentRound + 1}`);
+    roundText.setVisible(true);
 
-    // Reset countdown time
-    countdownTime = 3; // Start at 3 seconds
+    countdownCircle.clear();
+    countdownCircle.fillStyle(0x000000, 1);
+    const radius = 100;
+    countdownCircle.fillCircle(game.scale.width / 2, game.scale.height * 0.3, radius);
 
-    // Ensure the countdown circle and text are initialized
-    countdownCircle.clear(); // Clear any previous drawings
-    countdownCircle.fillStyle(0x000000, 1); // Black color for the circle
-    const radius = 100; // Radius of the circle
-    countdownCircle.fillCircle(game.scale.width / 2, game.scale.height * 0.3, radius); // Draw circle
+    countdownText.setText(countdownTime);
+    countdownText.setVisible(true);
+    countdownCircle.setVisible(true);
 
-    countdownText.setText(countdownTime); // Reset countdown text
-    countdownText.setVisible(true); // Ensure text is visible
-    countdownCircle.setVisible(true); // Ensure countdown circle is visible
-
-    // Hide the timer and time bar during the countdown
     timerText.setVisible(false);
     timeBar.setVisible(false);
 
-    // Hide tiles during the countdown
-    hideTiles(); // Ensure tiles are hidden during countdown
+    hideTiles();
 
-    // Start the countdown
+    let countdownStartTime = Date.now();
+    
     const countdownInterval = setInterval(() => {
-        countdownTime -= 1;
+        const elapsedTime = (Date.now() - countdownStartTime) / 1000;
+        countdownTime = Math.max(0, 3 - Math.floor(elapsedTime));
         countdownText.setText(countdownTime);
 
         if (countdownTime <= 0) {
             clearInterval(countdownInterval);
-            countdownCircle.setVisible(false); // Hide the countdown circle
-            countdownText.setVisible(false);   // Hide the countdown text
+            countdownCircle.setVisible(false);
+            countdownText.setVisible(false);
 
-            // Reset timer and time bar for the new round
-            resetTimerAndBar(scene); // Reset the timer and time bar for the game
-            showTiles(scene); // Show tiles after the countdown
+            resetTimerAndBar(scene);
+            showTiles(scene);
         }
-    }, 1000); // Update every second
+    }, 100); // Update more frequently for smoother countdown
 }
 
 
 
 function resetTimerAndBar(scene) {
-    // Set remaining time to the full duration
-    remainingTime = TIMER_DURATION; // TIMER_DURATION should be 30 seconds
-    timerText.setText(`Time: ${remainingTime}`); // Update timer display
+    remainingTime = TIMER_DURATION;
+    updateTimerDisplay(scene);
 
-    // Reset the time bar to be full
-    const newWidth = game.scale.width; // Full width of the game
-    timeBar.clear(); // Clear the previous bar
-    timeBar.fillStyle(0xff0000, 1); // Red color
-    timeBar.fillRoundedRect(0, game.scale.height * 0.12, newWidth, 14, 5); // Draw the updated time bar
-
-    // Make time bar and timer visible again
     timerText.setVisible(true);
     timeBar.setVisible(true);
 }
-
 
 
 
@@ -395,6 +390,7 @@ function showGameElements() {
     correctGuessTexts.forEach(text => text.setVisible(true));
 }
 
+// Update the startGame function to reset the round number
 function startGame(scene) {
     // Reset game state
     currentRound = 0;
@@ -408,6 +404,9 @@ function startGame(scene) {
 
     // Reset the timer and time bar for the game
     resetTimerAndBar(scene);
+
+    // Update the round text to show the first round
+    roundText.setText(`Round: 1`);
 
     // Call the countdown function to display the countdown
     showCountdown(scene);
@@ -463,36 +462,47 @@ function updateScoreDisplay() {
 }
 
 function startTimer(scene) {
-    // Ensure any previous timer event is cleared
-    clearTimerEvent(); 
+    clearTimerEvent(); // Clear any previous timer event
 
-    remainingTime = TIMER_DURATION; // Reset remaining time
-    timerText.setText(`Time: ${remainingTime}`); // Display the reset time
+    remainingTime = TIMER_DURATION;
+    gameStartTime = Date.now();
+    lastUpdateTime = gameStartTime;
 
-    // Create the timer event
+    updateTimerDisplay(scene);
+
     timerEvent = scene.time.addEvent({
-        delay: 1000, // 1 second delay
-        callback: function() {
-            remainingTime--;
-            timerText.setText(`Time: ${remainingTime}`);
-
-            // Update the width of the time bar
-            const newWidth = (remainingTime / TIMER_DURATION) * game.scale.width;
-            timeBar.clear(); // Clear the previous bar
-            timeBar.fillStyle(0xff0000, 1); // Red color
-            timeBar.fillRoundedRect(0, game.scale.height * 0.12, newWidth, 14, 5); // Draw the updated time bar
-
-            if (remainingTime <= 0) {
-                timerEvent.remove();
-                handleTimeUp(scene);
-            }
-        },
+        delay: UPDATE_INTERVAL,
+        callback: updateTimer,
         callbackScope: scene,
-        repeat: TIMER_DURATION - 1 // Set to repeat TIMER_DURATION times
+        loop: true
     });
 }
 
+function updateTimer() {
+    const currentTime = Date.now();
+    const elapsedTime = (currentTime - gameStartTime) / 1000; // Convert to seconds
+    remainingTime = Math.max(0, TIMER_DURATION - elapsedTime);
 
+    if (currentTime - lastUpdateTime >= 1000) { // Update display every second
+        updateTimerDisplay(this);
+        lastUpdateTime = currentTime;
+    }
+
+    if (remainingTime <= 0) {
+        clearTimerEvent();
+        handleTimeUp(this);
+    }
+}
+
+function updateTimerDisplay(scene) {
+    timerText.setText(`Time: ${Math.ceil(remainingTime)}`);
+    
+    // Update the width of the time bar
+    const newWidth = (remainingTime / TIMER_DURATION) * game.scale.width;
+    timeBar.clear();
+    timeBar.fillStyle(0xff0000, 1);
+    timeBar.fillRoundedRect(0, game.scale.height * 0.12, newWidth, 14, 5);
+}
 
 
 function handleTimeUp(scene) {
@@ -502,40 +512,30 @@ function handleTimeUp(scene) {
     }, [], scene);
 }
 
+// Update handleRoundEnd to use the new timing mechanism
 function handleRoundEnd(scene) {
-    if (timerEvent && timerEvent.getRemaining() > 0) {
-        timerEvent.remove();
-    }
+    clearTimerEvent();
     
-    let timeRemaining = timerEvent.getRemainingSeconds(); // Get remaining time in seconds
+    let timeRemaining = remainingTime; // Use the remainingTime directly
     let timeBonus = 0;
-    let roundBonus = 50; // 50 points bonus for guessing all correctly
-    let wordPoints = 3 * 30; // 30 points per correct guess, total of 90 points for 3 correct topics
+    let roundBonus = 50;
+    let wordPoints = 3 * 30;
 
-    // Calculate time bonus based on remaining time
     if (timeRemaining > 20) {
-        timeBonus = 30; // Bonus for completing within 10 seconds
+        timeBonus = 30;
     } else if (timeRemaining > 10) {
-        timeBonus = 10; // Bonus for completing within 20 seconds
+        timeBonus = 10;
     }
 
-    // Add the bonus points to the score
     score += roundBonus + timeBonus;
 
-    // Prepare the inter-round score text to include word points and bonuses
     let interRoundMessage = `Awesome!\n\n+ ${wordPoints} Word Points`;
-
-    // Add round bonus to the message
     interRoundMessage += `\n+ ${roundBonus} Round Bonus`;
-
-    // Add time bonus to the message (if applicable)
     if (timeBonus > 0) {
         interRoundMessage += `\n+ ${timeBonus} Time Bonus`;
     }
-
     interRoundMessage += `\n\nTotal Score: ${score}`;
 
-    // Update the interRoundScoreText with the detailed message
     interRoundScoreText.setText(interRoundMessage);
 
     showInterRoundScreen(scene);
@@ -558,17 +558,21 @@ function hideInterRoundScreen() {
     showGameElements();
 }
 
+// Update the startNextRound function to set the correct round number before the countdown
 function startNextRound(scene) {
     if (currentRound < allRounds.length - 1) {
         currentRound++;
         hideInterRoundScreen(); // Hide the inter-round screen first
         hideTiles();            // Hide only the tiles
-        clearTimerEvent();     // Clear any previous timer events
+        clearTimerEvent();      // Clear any previous timer events
 
         // Clear feedback text and correct guess texts before showing countdown
         updateFeedbackText(''); // Clear the feedback text
         correctGuessTexts.forEach(text => text.destroy()); // Clear correct guess texts
         correctGuessTexts = []; // Reset the array
+
+        // Update the round text before starting the countdown
+        roundText.setText(`Round: ${currentRound + 1}`);
 
         showCountdown(scene);   // Show countdown before the next round starts
     } else {
@@ -580,8 +584,8 @@ function startNextRound(scene) {
 
 function clearTimerEvent() {
     if (timerEvent) {
-        timerEvent.remove(false); // Remove without invoking the callback
-        timerEvent = null; // Reset timerEvent to null
+        timerEvent.remove(false);
+        timerEvent = null;
     }
 }
 
