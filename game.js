@@ -49,7 +49,7 @@ let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#0
 let confettiAnimationId = null;
 
 function preload() {
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/assets/data.txt');
+    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
