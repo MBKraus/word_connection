@@ -529,11 +529,11 @@ function handleTimeUp(scene) {
     }, [], scene);
 }
 
-// Update handleRoundEnd to use the new timing mechanism
+// Update the handleRoundEnd function to include the enhanced confetti
 function handleRoundEnd(scene) {
     clearTimerEvent();
-    
-    let timeRemaining = remainingTime; // Use the remainingTime directly
+
+    let timeRemaining = remainingTime;
     let timeBonus = 0;
     let roundBonus = 50;
     let wordPoints = 3 * 30;
@@ -563,6 +563,14 @@ function handleRoundEnd(scene) {
         hideInterRoundScreen();
         startNextRound(scene);
     });
+
+    // Trigger confetti if all three topics were guessed correctly
+    if (correctGuessTexts.length === 3) {
+        // Small delay to ensure the inter-round screen is visible
+        scene.time.delayedCall(100, () => {
+            createConfettiEffect();
+        });
+    }
 }
 
 function showInterRoundScreen(scene) {
@@ -597,6 +605,69 @@ function startNextRound(scene) {
     }
 }
 
+const duration = 15 * 1000; // 15 seconds duration
+const animationEnd = Date.now() + duration;
+const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+let confettiAnimationId = null;
+
+function createConfettiEffect() {
+    // Cancel any existing confetti animation
+    if (confettiAnimationId) {
+        clearInterval(confettiAnimationId);
+    }
+
+    const duration = 3000; // 3 seconds
+    const animationEnd = Date.now() + duration;
+    const defaults = { 
+        startVelocity: 30,
+        spread: 360,
+        ticks: 60,
+        zIndex: 2000, // Ensure confetti appears above all game elements
+        shapes: ['square', 'circle'],
+        colors: confettiColors,
+        disableForReducedMotion: true // Accessibility consideration
+    };
+
+    function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // Create the confetti animation interval
+    confettiAnimationId = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(confettiAnimationId);
+        }
+
+        const particleCount = 50 * (timeLeft / duration);
+
+        // Fire confetti from multiple origins for better coverage
+        // Left side
+        confetti(Object.assign({}, defaults, {
+            particleCount: particleCount / 3,
+            origin: { x: randomInRange(0.2, 0.3), y: 0.5 }
+        }));
+
+        // Center
+        confetti(Object.assign({}, defaults, {
+            particleCount: particleCount / 3,
+            origin: { x: randomInRange(0.4, 0.6), y: 0.5 }
+        }));
+
+        // Right side
+        confetti(Object.assign({}, defaults, {
+            particleCount: particleCount / 3,
+            origin: { x: randomInRange(0.7, 0.8), y: 0.5 }
+        }));
+    }, 250);
+}
 
 
 function clearTimerEvent() {
@@ -614,6 +685,7 @@ function hideTiles() {
 }
 
 
+// Also update the endGame function to show confetti on game completion if all topics were guessed
 function endGame(scene) {
     interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
 
@@ -621,17 +693,21 @@ function endGame(scene) {
 
     okButton.removeAllListeners('pointerdown');
     okButton.on('pointerdown', () => {
-        hideInterRoundScreen(); // Hide the inter-round screen first
-
-        // Clear feedback text and correct guess texts before restarting
-        updateFeedbackText(''); // Clear the feedback text
-        correctGuessTexts.forEach(text => text.destroy()); // Clear correct guess texts
-        correctGuessTexts = []; // Reset the array
-
-        startGame(scene); // Start a new game
+        hideInterRoundScreen();
+        updateFeedbackText('');
+        correctGuessTexts.forEach(text => text.destroy());
+        correctGuessTexts = [];
+        startGame(scene);
     });
 
     showInterRoundScreen(scene);
+
+    // Show confetti for game completion if all topics were guessed
+    if (correctGuessTexts.length === 3) {
+        scene.time.delayedCall(100, () => {
+            createConfettiEffect();
+        });
+    }
 }
 
 
