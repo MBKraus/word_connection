@@ -34,8 +34,6 @@ let interRoundScoreText;
 let startScreen;
 let startButton;
 let correctGuessTexts = [];
-const TIMER_DURATION = 30;
-const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 let currentInputText = '';
 let timeBar; // Declare the timeBar variable
 let countdownText;
@@ -47,9 +45,13 @@ let isTimerRunning = false;
 let isGameOver = false;
 let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
 let confettiAnimationId = null;
+const TIMER_DURATION = 30;
+const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
+const NUMBER_OF_ROUNDS = 2;
+const TOPICS_PER_ROUND = 3;
 
 function preload() {
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
+    this.load.text('data', 'https://mbkraus.github.io/word_connection/assets/data.txt');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
@@ -60,14 +62,17 @@ function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
+// Updated create function (allRounds generated here)
 function create() {
-
     const data = this.cache.text.get('data');
     const jsonString = atob(data);
-    allRounds = JSON.parse(jsonString);
+    const allTopics = JSON.parse(jsonString);
+    
+    // Generate rounds
+    allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
 
-    // Initialize countdown variables
-    countdownCircle = this.add.graphics(); // Initialize countdown graphics
+    // Rest of your create function remains the same
+    countdownCircle = this.add.graphics();
     countdownText = this.add.text(game.scale.width / 2, game.scale.height * 0.3, '', {
         fontSize: '64px',
         color: '#FFFFFF',
@@ -76,25 +81,61 @@ function create() {
 
     createGameElements(this);
     createInterRoundScreen(this);
+    showCountdown(this);
 
-    showCountdown(this); // Start the countdown
-
-    // Add keyboard input for desktop
+    // Keyboard input setup
     if (!isMobile()) {
         this.input.keyboard.on('keydown', function (event) {
-            if (event.keyCode === 8) { // Backspace
+            if (event.keyCode === 8) {
                 currentInputText = currentInputText.slice(0, -1);
-            } else if (event.keyCode === 13) { // Enter
+            } else if (event.keyCode === 13) {
                 if (currentInputText) {
                     checkGuess(this.scene, currentInputText.trim().toLowerCase());
                     currentInputText = '';
                 }
-            } else if (event.key.length === 1) { // Single character
+            } else if (event.key.length === 1) {
                 currentInputText += event.key.toUpperCase();
             }
             inputDisplay.setText(currentInputText);
         });
     }
+}
+
+// Function to generate rounds without repeating topics in the same round
+function generateRounds(allTopics, numberOfRounds, topicsPerRound) {
+    let availableTopics = [...allTopics];
+
+    return Array(numberOfRounds).fill(null).map(() => {
+        // Ensure there are enough topics available
+        if (availableTopics.length < topicsPerRound) {
+            // Replenish the available topics (resetting the pool) if there are not enough remaining
+            availableTopics = [...allTopics];
+        }
+
+        const roundTopics = sampleTopics(availableTopics, topicsPerRound);
+
+        // Remove the topics that were used in this round
+        availableTopics = availableTopics.filter(topic => !roundTopics.includes(topic));
+
+        return roundTopics;
+    });
+}
+
+function sampleTopics(allTopics, count) {
+    if (!Array.isArray(allTopics) || allTopics.length < count) {
+        console.error('Invalid topics array or not enough topics');
+        return [];
+    }
+    
+    // Shuffle topics
+    let topics = [...allTopics];
+    for (let i = topics.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [topics[i], topics[j]] = [topics[j], topics[i]];
+    }
+
+    // Return the first `count` topics
+    return topics.slice(0, count);
 }
 
 function showCountdown(scene) {
@@ -395,42 +436,48 @@ function showGameElements() {
     correctGuessTexts.forEach(text => text.setVisible(true));
 }
 
-// Update the startGame function to reset the round number
+// Updated startGame function (rely on pre-generated allRounds)
 function startGame(scene) {
-    // Reset game state
     currentRound = 0;
     score = 0;
+
+    // Update score and reset for the first round
     updateScoreDisplay();
-    correctGuessTexts.forEach(text => text.destroy()); // Clear any previous correct guess texts
+    correctGuessTexts.forEach(text => text.destroy());
     correctGuessTexts = [];
-    
-    // Hide tiles and game elements before starting the countdown
-    hideTiles(); // Ensure tiles are hidden before setting up a new game
 
-    // Reset the timer and time bar for the game
+    // Hide tiles and reset timers before starting
+    hideTiles();
     resetTimerAndBar(scene);
-
-    // Update the round text to show the first round
+    
+    // Set round text and start countdown
     roundText.setText(`Round: 1`);
-
-    // Call the countdown function to display the countdown
     showCountdown(scene);
 }
 
+// Modified checkGuess function
 function checkGuess(scene, guess) {
-    let topics = allRounds[currentRound];
-    let matchedTopic = topics.find(topic => topic.name.toLowerCase() === guess.toLowerCase());
+    const currentTopics = allRounds[currentRound];
+
+    let matchedTopic = currentTopics.find(topic => 
+        topic.name.toLowerCase() === guess.toLowerCase()
+    );
     
     if (matchedTopic) {
         highlightTiles(scene, matchedTopic.words);
         
-        let correctText = scene.add.text(game.scale.width * (0.29 + correctGuessTexts.length * 0.20), game.scale.height * 0.55, matchedTopic.name, { 
-            fontSize: game.scale.width * 0.04 + 'px',
-            color: '#013220',
-            fontFamily: 'Arial',
-        }).setOrigin(0.5);
+        let correctText = scene.add.text(
+            game.scale.width * (0.29 + correctGuessTexts.length * 0.20), 
+            game.scale.height * 0.55, 
+            matchedTopic.name, 
+            { 
+                fontSize: game.scale.width * 0.04 + 'px',
+                color: '#013220',
+                fontFamily: 'Arial',
+            }
+        ).setOrigin(0.5);
+        
         correctGuessTexts.push(correctText);
-
         score += 30;
         updateScoreDisplay();
         
@@ -683,37 +730,45 @@ function endGame(scene) {
     }
 }
 
+// Updated startRound function (use pre-generated allRounds)
 function startRound(scene) {
-    hideTiles(); // Ensure tiles are hidden before setting up a new round
-    clearTimerEvent(); // Clear any existing timer events
+    console.log('Starting round:', currentRound); // Debug log
+
+    hideTiles();
+    clearTimerEvent();
+
+    // Clear previous tiles
     tiles.forEach(tileObj => {
         tileObj.tile.destroy();
         tileObj.text.destroy();
     });
     tiles = [];
 
+    // Clear previous correct guesses
     correctGuessTexts.forEach(text => text.destroy());
     correctGuessTexts = [];
 
-    let topics = allRounds[currentRound];
+    // Get topics for the current round
+    const currentTopics = allRounds[currentRound];
+
+    // Collect all words for this round
+    let allWords = currentTopics.flatMap(topic => topic.words);
+    
+    Phaser.Utils.Array.Shuffle(allWords);
 
     roundText.setText(`Round: ${currentRound + 1}`);
-
-    remainingTime = TIMER_DURATION; // Reset remaining time for the timer
-    timerText.setText(`Time: ${remainingTime}`); // Reset displayed timer
-    startTimer(scene); // Start the game timer
-
-    let allWords = topics.flatMap(topic => topic.words);
-    Phaser.Utils.Array.Shuffle(allWords);
+    remainingTime = TIMER_DURATION;
+    timerText.setText(`Time: ${remainingTime}`);
+    startTimer(scene);
 
     const cols = 3;
     const rows = 4;
-
     const tileWidth = Math.floor(game.scale.width * 0.35);
     const tileHeight = tileWidth * 0.4;
     const startY = game.scale.height * 0.25;
     const startX = (game.scale.width - (cols * tileWidth)) / 2;
 
+    // Create tiles with words
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
             const x = startX + i * tileWidth + tileWidth / 2;
@@ -736,6 +791,5 @@ function startRound(scene) {
     
     currentInputText = '';
     updateFeedbackText('');
-    showGameElements(); // Ensure game elements are shown (including tiles)
+    showGameElements();
 }
-
