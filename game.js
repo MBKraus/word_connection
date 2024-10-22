@@ -60,10 +60,10 @@ let isGameOver = false;
 
 
 function preload() {
-    this.load.image('tile', 'https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/128x128.png');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
+    this.load.image('tile', 'https://mbkraus.github.io/word_connection/assets/square.png');
 }
 
 
@@ -465,7 +465,7 @@ function checkGuess(scene, guess) {
 function highlightTiles(scene, words) {
     tiles.forEach(tile => {
         if (words.includes(tile.word)) {
-            tile.tile.setTint(0x00ff00);
+            tile.tile.setTint(0x66FF66);
         }
     });
 }
@@ -750,7 +750,7 @@ function startRound(scene) {
 
             let tile = scene.add.image(x, y, 'tile');
             tile.setScale(tileWidth / tile.width, tileHeight / tile.height);
-            tile.setTint(0x0000ff);
+            tile.setTint(0x5A9BD6);
 
             let word = allWords[i + j * cols];
             let text = scene.add.text(x, y, word, { 
