@@ -172,11 +172,18 @@ function createGameElements(scene) {
         fontFamily: 'Arial',
     }).setOrigin(0.5);
 
-    // Add a horizontal rectangle below the header and images
-    const rectangleHeight = game.scale.height * 0.08;
+    // Add a horizontal rectangle for ads
+    const rectangleWidth = 728;
+    const rectangleHeight = 90;
+
     const graphics = scene.add.graphics();
     graphics.fillStyle(0xD3D3D3, 1);
-    graphics.fillRect(0, game.scale.height * 0.075, game.scale.width, rectangleHeight);
+
+    // Calculate the x position to center the rectangle horizontally
+    const ad_x = (game.scale.width - rectangleWidth) / 2;
+    const ad_y = game.scale.height * 0.075; // Keeping the same y position
+
+    graphics.fillRect(ad_x, ad_y, rectangleWidth, rectangleHeight);
 
     roundText = scene.add.text(x, game.scale.height * 0.18, `Round: ${currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
@@ -188,9 +195,9 @@ function createGameElements(scene) {
     const inputBgWidth = game.scale.width * 0.6;
     const inputBgHeight = game.scale.height * 0.04;
 
-    // Create a graphics object to draw a rounded rectangle with orange fill
+    // Input Display
     const inputBgGraphics = scene.add.graphics();
-    inputBgGraphics.fillStyle(0xD3D3D3, 1); // Orange color with full opacity
+    inputBgGraphics.fillStyle(0xD3D3D3, 1); 
     inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.65 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
     // Create the time bar (thin rectangle with rounded edges)
