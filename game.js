@@ -51,7 +51,7 @@ const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
 
 function preload() {
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/assets/data.txt');
+    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
