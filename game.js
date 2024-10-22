@@ -19,19 +19,7 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-const allRounds = [
-    [
-        { name: 'Fruits', words: ['Apple', 'Banana', 'Cherry', 'Berry'] },
-        { name: 'Animals', words: ['Dog', 'Elephant', 'Frog', 'Giraffe'] },
-        { name: 'Countries', words: ['Brazil', 'Canada', 'Denmark', 'Egypt'] }
-    ],
-    [
-        { name: 'Colors', words: ['Red', 'Green', 'Blue', 'Yellow'] },
-        { name: 'Vehicles', words: ['Car', 'Bike', 'Train', 'Bus'] },
-        { name: 'Sports', words: ['Football', 'Basketball', 'Tennis', 'Cricket'] }
-    ]
-];
-
+let allRounds;
 let tiles = [];
 let feedbackText;
 let scoreText;
@@ -47,6 +35,7 @@ let startScreen;
 let startButton;
 let correctGuessTexts = [];
 const TIMER_DURATION = 30;
+const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 let currentInputText = '';
 let timeBar; // Declare the timeBar variable
 let countdownText;
@@ -54,24 +43,29 @@ let countdownCircle;
 let countdownTime = 3; // Start at 3 seconds
 let gameStartTime;
 let lastUpdateTime;
-const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 let isTimerRunning = false;
 let isGameOver = false;
-
+let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+let confettiAnimationId = null;
 
 function preload() {
+    this.load.text('data', '/data.txt');
     this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('tile', 'https://mbkraus.github.io/word_connection/assets/square.png');
 }
 
-
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 function create() {
+
+    const data = this.cache.text.get('data');
+    const jsonString = atob(data);
+    allRounds = JSON.parse(jsonString);
+
     // Initialize countdown variables
     countdownCircle = this.add.graphics(); // Initialize countdown graphics
     countdownText = this.add.text(game.scale.width / 2, game.scale.height * 0.3, '', {
@@ -150,14 +144,10 @@ function resetTimerAndBar(scene) {
     timeBar.setVisible(true);
 }
 
-
-
-
 function showTiles(scene) {
     // Call startRound to generate and show tiles
     startRound(scene);
 }
-
 
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
@@ -346,8 +336,6 @@ function createKeyboard(scene) {
     keyboardContainer.setY(keyboardY);
 }
 
-
-
 function createInterRoundScreen(scene) {
     interRoundScreen = scene.add.container(0, 0);
     interRoundScreen.setDepth(1000);
@@ -428,9 +416,6 @@ function startGame(scene) {
     // Call the countdown function to display the countdown
     showCountdown(scene);
 }
-
-
-
 
 function checkGuess(scene, guess) {
     let topics = allRounds[currentRound];
@@ -521,7 +506,6 @@ function updateTimerDisplay(scene) {
     timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
 }
 
-
 function handleTimeUp(scene) {
     updateFeedbackText("Time's up!");
     scene.time.delayedCall(1500, () => {
@@ -529,7 +513,6 @@ function handleTimeUp(scene) {
     }, [], scene);
 }
 
-// Update the handleRoundEnd function to include the enhanced confetti
 function handleRoundEnd(scene) {
     clearTimerEvent();
 
@@ -605,16 +588,9 @@ function startNextRound(scene) {
     }
 }
 
-const duration = 15 * 1000; // 15 seconds duration
-const animationEnd = Date.now() + duration;
-const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-
 function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
 }
-
-let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-let confettiAnimationId = null;
 
 function createConfettiEffect() {
     // Cancel any existing confetti animation
@@ -669,7 +645,6 @@ function createConfettiEffect() {
     }, 250);
 }
 
-
 function clearTimerEvent() {
     if (timerEvent) {
         timerEvent.remove(false);
@@ -684,8 +659,6 @@ function hideTiles() {
     });
 }
 
-
-// Also update the endGame function to show confetti on game completion if all topics were guessed
 function endGame(scene) {
     interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
 
@@ -709,8 +682,6 @@ function endGame(scene) {
         });
     }
 }
-
-
 
 function startRound(scene) {
     hideTiles(); // Ensure tiles are hidden before setting up a new round
