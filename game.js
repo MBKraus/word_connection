@@ -49,6 +49,7 @@ const TIMER_DURATION = 30;
 const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
+let countdownAudioInRoundPlayed = false;
 
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
@@ -56,6 +57,9 @@ function preload() {
     this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('tile', 'https://mbkraus.github.io/word_connection/assets/square.png');
+    this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
+    this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
+    this.load.audio('countdownSound', 'https://mbkraus.github.io/word_connection/assets/audio/countdown.wav');
 }
 
 function isMobile() {
@@ -480,6 +484,9 @@ function checkGuess(scene, guess) {
         correctGuessTexts.push(correctText);
         score += 30;
         updateScoreDisplay();
+
+        // Play the correct sound
+        scene.sound.play('correctSound');
         
         if (correctGuessTexts.length === 3) {
             updateFeedbackText('Round completed!');
@@ -491,6 +498,7 @@ function checkGuess(scene, guess) {
         }
     } else {
         updateFeedbackText('Incorrect guess. Try again!');
+        scene.sound.play('incorrectSound');
     }
 }
 
@@ -537,6 +545,12 @@ function updateTimer() {
         lastUpdateTime = currentTime;
     }
 
+    // Play sound when there are 4 seconds left
+    if (remainingTime <= 2.05 && remainingTime > 1.95 && !countdownAudioInRoundPlayed) {
+        this.sound.play('countdownSound');
+        countdownAudioInRoundPlayed = true;
+    }
+
     if (remainingTime <= 0) {
         clearTimerEvent();
         handleTimeUp(this);
@@ -562,6 +576,8 @@ function handleTimeUp(scene) {
 
 function handleRoundEnd(scene) {
     clearTimerEvent();
+
+    countdownAudioInRoundPlayed = false;
 
     let timeRemaining = remainingTime;
     let timeBonus = 0;
@@ -707,6 +723,9 @@ function hideTiles() {
 }
 
 function endGame(scene) {
+
+    countdownAudioInRoundPlayed = false;
+    
     interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
 
     okButton.setText('Restart');
