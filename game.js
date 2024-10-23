@@ -594,7 +594,7 @@ function updateTimer() {
     }
 
     // Play sound when there are 2 seconds left
-    if (remainingTime <= 2.05 && remainingTime > 1.95 && !countdownAudioInRoundPlayed) {
+    if (remainingTime <= 3.05 && remainingTime > 2.95 && !countdownAudioInRoundPlayed) {
         this.sound.play('countdownSound');
         countdownAudioInRoundPlayed = true;
     }
