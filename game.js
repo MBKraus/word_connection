@@ -21,7 +21,6 @@ const game = new Phaser.Game(config);
 
 let allRounds;
 let tiles = [];
-let feedbackText;
 let scoreText;
 let score = 0;
 let currentRound = 0;
@@ -226,6 +225,7 @@ function createGameElements(scene) {
         fontFamily: 'Arial',
     }).setOrigin(0.5);
 
+  
     // Fixed width for input background and rounded corners using Phaser Graphics
     const inputBgWidth = game.scale.width * 0.6;
     const inputBgHeight = game.scale.height * 0.04;
@@ -233,7 +233,7 @@ function createGameElements(scene) {
     // Input Display
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xD3D3D3, 1); 
-    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.65 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
     // Create the time bar (thin rectangle with rounded edges)
     timeBar = scene.add.graphics();
@@ -243,7 +243,7 @@ function createGameElements(scene) {
     timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
 
     // Display current input text
-    inputDisplay = scene.add.text(x, game.scale.height * 0.65, currentInputText, {
+    inputDisplay = scene.add.text(x, game.scale.height * 0.70, currentInputText, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Arial',
@@ -254,13 +254,6 @@ function createGameElements(scene) {
     if (isMobile()) {
         createKeyboard(scene);
     }
-
-    feedbackText = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.59, '', {
-        fontSize: game.scale.width * 0.035 + 'px',
-        color: '#000000',
-        fontFamily: 'Arial',
-    }).setOrigin(0.5);
-
     scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.18, 'Score: 0', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
@@ -272,6 +265,27 @@ function createGameElements(scene) {
         color: '#000000',
         fontFamily: 'Arial',
     }).setOrigin(0.5);
+
+
+    // Create a container for correct guesses (add this after inputDisplay creation)
+    correctGuessContainer = scene.add.container(x, game.scale.height * 0.54);
+
+    // Add checkmark icon (hidden by default)
+    checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
+        fontSize: game.scale.width * 0.04 + 'px',
+        color: '0x66FF66',
+        fontFamily: 'Arial'
+    }).setOrigin(0, 0.5);
+    checkmark.setVisible(false);
+
+    // Add the checkmark to the same parent as inputDisplay
+    scene.add.existing(checkmark);
+    
+    // Position checkmark relative to input display
+    checkmark.setPosition(
+        inputDisplay.x + inputBgWidth * 0.4,
+        inputDisplay.y
+    );
 }
 
 function createKeyboard(scene) {
@@ -416,50 +430,55 @@ function createInterRoundScreen(scene) {
     interRoundScreen.setVisible(false);
 }
 
+// Update hideGameElements function to handle the new structure
 function hideGameElements() {
     tiles.forEach(tileObj => {
         tileObj.tile.setVisible(false);
         tileObj.text.setVisible(false);
     });
-    feedbackText.setVisible(false);
     scoreText.setVisible(false);
     timerText.setVisible(false);
     roundText.setVisible(false);
-    correctGuessTexts.forEach(text => text.setVisible(false));
+    
+    // Update this part to handle the new structure
+    if (correctGuessContainer) {
+        correctGuessContainer.setVisible(false);
+    }
 }
 
+// Update showGameElements function
 function showGameElements() {
     tiles.forEach(tileObj => {
         tileObj.tile.setVisible(true);
         tileObj.text.setVisible(true);
     });
-    feedbackText.setVisible(true);
     scoreText.setVisible(true);
     timerText.setVisible(true);
     roundText.setVisible(true);
-    correctGuessTexts.forEach(text => text.setVisible(true));
+    
+    if (correctGuessContainer) {
+        correctGuessContainer.setVisible(true);
+    }
 }
 
-// Updated startGame function (rely on pre-generated allRounds)
+// Update startGame function
 function startGame(scene) {
     currentRound = 0;
     score = 0;
-
-    // Update score and reset for the first round
     updateScoreDisplay();
-    correctGuessTexts.forEach(text => text.destroy());
+    
+    if (correctGuessContainer) {
+        correctGuessContainer.removeAll(true);
+    }
     correctGuessTexts = [];
 
-    // Hide tiles and reset timers before starting
     hideTiles();
     resetTimerAndBar(scene);
     
-    // Set round text and start countdown
     roundText.setText(`Round: 1`);
     showCountdown(scene);
 }
 
-// Modified checkGuess function
 function checkGuess(scene, guess) {
     const currentTopics = allRounds[currentRound];
 
@@ -470,34 +489,47 @@ function checkGuess(scene, guess) {
     if (matchedTopic) {
         highlightTiles(scene, matchedTopic.words);
         
-        let correctText = scene.add.text(
-            game.scale.width * (0.29 + correctGuessTexts.length * 0.20), 
-            game.scale.height * 0.55, 
-            matchedTopic.name, 
-            { 
+        const rectHeight = game.scale.height * 0.04;
+        const rectWidth = game.scale.width * 0.4;
+        const yOffset = correctGuessTexts.length * (rectHeight + 10);
+        
+        const rect = scene.add.rectangle(
+            0,
+            yOffset,
+            rectWidth,
+            rectHeight,
+            0xFFA500
+        ).setOrigin(0.5, 0);
+        
+        const text = scene.add.text(
+            0,
+            yOffset + rectHeight / 2,
+            matchedTopic.name,
+            {
                 fontSize: game.scale.width * 0.04 + 'px',
-                color: '#013220',
+                color: '#FFFFFF',
                 fontFamily: 'Arial',
             }
         ).setOrigin(0.5);
         
-        correctGuessTexts.push(correctText);
+        correctGuessContainer.add([rect, text]);
+        correctGuessTexts.push({ rect, text });
+        
+        checkmark.setVisible(true);
+        scene.time.delayedCall(1000, () => {
+            checkmark.setVisible(false);
+        });
+        
         score += 30;
         updateScoreDisplay();
-
-        // Play the correct sound
         scene.sound.play('correctSound');
         
         if (correctGuessTexts.length === 3) {
-            updateFeedbackText('Round completed!');
+            // Add a slight delay before showing the inter-round screen
             scene.time.delayedCall(1500, () => {
                 handleRoundEnd(scene);
             });
-        } else {
-            updateFeedbackText('Correct! Keep guessing the remaining topics.');
-        }
-    } else {
-        updateFeedbackText('Incorrect guess. Try again!');
+        } } else {
         scene.sound.play('incorrectSound');
     }
 }
@@ -508,10 +540,6 @@ function highlightTiles(scene, words) {
             tile.tile.setTint(0x66FF66);
         }
     });
-}
-
-function updateFeedbackText(message) {
-    feedbackText.setText(message);
 }
 
 function updateScoreDisplay() {
@@ -568,7 +596,6 @@ function updateTimerDisplay(scene) {
 }
 
 function handleTimeUp(scene) {
-    updateFeedbackText("Time's up!");
     scene.time.delayedCall(1500, () => {
         endGame(scene);
     }, [], scene);
@@ -629,23 +656,25 @@ function hideInterRoundScreen() {
     showGameElements();
 }
 
-// Update the startNextRound function to set the correct round number before the countdown
+// Update startNextRound function
 function startNextRound(scene) {
     if (currentRound < allRounds.length - 1) {
         currentRound++;
-        hideInterRoundScreen(); // Hide the inter-round screen first
-        hideTiles();            // Hide only the tiles
-        clearTimerEvent();      // Clear any previous timer events
+        hideInterRoundScreen();
+        hideTiles();
+        clearTimerEvent();
 
-        // Clear feedback text and correct guess texts before showing countdown
-        updateFeedbackText(''); // Clear the feedback text
-        correctGuessTexts.forEach(text => text.destroy()); // Clear correct guess texts
-        correctGuessTexts = []; // Reset the array
+        if (correctGuessContainer) {
+            correctGuessContainer.removeAll(true);
+        }
+        correctGuessTexts = [];
 
-        // Update the round text before starting the countdown
+        if (checkmark) {
+            checkmark.setVisible(false);
+        }
+
         roundText.setText(`Round: ${currentRound + 1}`);
-
-        showCountdown(scene);   // Show countdown before the next round starts
+        showCountdown(scene);
     } else {
         endGame(scene);
     }
@@ -722,19 +751,19 @@ function hideTiles() {
     });
 }
 
+// Update endGame function
 function endGame(scene) {
-
     countdownAudioInRoundPlayed = false;
     
     interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
-
     okButton.setText('Restart');
 
     okButton.removeAllListeners('pointerdown');
     okButton.on('pointerdown', () => {
         hideInterRoundScreen();
-        updateFeedbackText('');
-        correctGuessTexts.forEach(text => text.destroy());
+        if (correctGuessContainer) {
+            correctGuessContainer.removeAll(true);
+        }
         correctGuessTexts = [];
         startGame(scene);
     });
@@ -764,8 +793,15 @@ function startRound(scene) {
     tiles = [];
 
     // Clear previous correct guesses
-    correctGuessTexts.forEach(text => text.destroy());
+    if (correctGuessContainer) {
+        correctGuessContainer.removeAll(true);
+    }
     correctGuessTexts = [];
+    
+    // Hide checkmark if visible
+    if (checkmark) {
+        checkmark.setVisible(false);
+    }
 
     // Get topics for the current round
     const currentTopics = allRounds[currentRound];
@@ -809,6 +845,5 @@ function startRound(scene) {
     }
     
     currentInputText = '';
-    updateFeedbackText('');
     showGameElements();
 }
