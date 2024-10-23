@@ -233,7 +233,7 @@ function createGameElements(scene) {
     // Input Display
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xD3D3D3, 1); 
-    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.65 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
     // Create the time bar (thin rectangle with rounded edges)
     timeBar = scene.add.graphics();
@@ -243,7 +243,7 @@ function createGameElements(scene) {
     timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
 
     // Display current input text
-    inputDisplay = scene.add.text(x, game.scale.height * 0.65, currentInputText, {
+    inputDisplay = scene.add.text(x, game.scale.height * 0.70, currentInputText, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Arial',
@@ -268,7 +268,7 @@ function createGameElements(scene) {
 
 
     // Create a container for correct guesses (add this after inputDisplay creation)
-    correctGuessContainer = scene.add.container(x, game.scale.height * 0.7);
+    correctGuessContainer = scene.add.container(x, game.scale.height * 0.54);
 
     // Add checkmark icon (hidden by default)
     checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
@@ -489,7 +489,7 @@ function checkGuess(scene, guess) {
     if (matchedTopic) {
         highlightTiles(scene, matchedTopic.words);
         
-        const rectHeight = game.scale.height * 0.06;
+        const rectHeight = game.scale.height * 0.04;
         const rectWidth = game.scale.width * 0.4;
         const yOffset = correctGuessTexts.length * (rectHeight + 10);
         
