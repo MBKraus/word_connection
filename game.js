@@ -225,16 +225,6 @@ function createGameElements(scene) {
         fontFamily: 'Arial',
     }).setOrigin(0.5);
 
-  
-    // Fixed width for input background and rounded corners using Phaser Graphics
-    const inputBgWidth = game.scale.width * 0.6;
-    const inputBgHeight = game.scale.height * 0.04;
-
-    // Input Display
-    const inputBgGraphics = scene.add.graphics();
-    inputBgGraphics.fillStyle(0xD3D3D3, 1); 
-    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
-
     // Create the time bar (thin rectangle with rounded edges)
     timeBar = scene.add.graphics();
     const timeBarHeight = 14; // Height of the time bar
@@ -242,9 +232,18 @@ function createGameElements(scene) {
     timeBar.fillStyle(0xff0000, 1); // Red color
     timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
 
+    // Fixed width for input background and rounded corners using Phaser Graphics
+    const inputBgWidth = game.scale.width * 0.7;
+    const inputBgHeight = game.scale.height * 0.045;
+
+    // Input Display
+    const inputBgGraphics = scene.add.graphics();
+    inputBgGraphics.fillStyle(0xD3D3D3, 1); 
+    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+
     // Display current input text
     inputDisplay = scene.add.text(x, game.scale.height * 0.70, currentInputText, {
-        fontSize: game.scale.width * 0.04 + 'px',
+        fontSize: game.scale.width * 0.045 + 'px',
         color: '#000000',
         fontFamily: 'Arial',
         wordWrap: { width: inputBgWidth - 20 }
@@ -283,6 +282,23 @@ function createGameElements(scene) {
     
     // Position checkmark relative to input display
     checkmark.setPosition(
+        inputDisplay.x + inputBgWidth * 0.4,
+        inputDisplay.y
+    );
+
+    // Add X icon (hidden by default)
+    cross = scene.add.text(inputBgWidth / 2 + 10, 0, 'x', {
+        fontSize: game.scale.width * 0.04 + 'px',
+        color: '0xFF0000',
+        fontFamily: 'Arial'
+    }).setOrigin(0, 0.5);
+    cross.setVisible(false);
+
+    // Add the checkmark to the same parent as inputDisplay
+    scene.add.existing(cross);
+
+    // Position checkmark relative to input display
+    cross.setPosition(
         inputDisplay.x + inputBgWidth * 0.4,
         inputDisplay.y
     );
@@ -531,6 +547,10 @@ function checkGuess(scene, guess) {
             });
         } } else {
         scene.sound.play('incorrectSound');
+        cross.setVisible(true);
+        scene.time.delayedCall(1000, () => {
+            cross.setVisible(false);
+        });
     }
 }
 
@@ -573,27 +593,38 @@ function updateTimer() {
         lastUpdateTime = currentTime;
     }
 
-    // Play sound when there are 4 seconds left
+    // Play sound when there are 2 seconds left
     if (remainingTime <= 2.05 && remainingTime > 1.95 && !countdownAudioInRoundPlayed) {
         this.sound.play('countdownSound');
         countdownAudioInRoundPlayed = true;
     }
 
+    // If remaining time is less than or equal to 0, ensure everything shows zero
     if (remainingTime <= 0) {
+        remainingTime = 0;  // Force to exactly 0
+        updateTimerDisplay(this);  // Update one final time
         clearTimerEvent();
         handleTimeUp(this);
     }
 }
 
 function updateTimerDisplay(scene) {
-    timerText.setText(`Time: ${Math.ceil(remainingTime)}`);
-    
-    // Update the width of the time bar
-    const newWidth = (remainingTime / TIMER_DURATION) * game.scale.width;
+    // Update the timer text
+    timerText.setText(`Time: ${Math.floor(remainingTime)}`);
+
+    // Calculate the width of the time bar
     timeBar.clear();
     timeBar.fillStyle(0xff0000, 1);
-    timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
+    
+    // Only draw the bar if there's actually time remaining
+    if (Math.floor(remainingTime) > 0) {
+        const barProgress = remainingTime / TIMER_DURATION;
+        const newWidth = barProgress * game.scale.width;
+        timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
+    }
 }
+
+
 
 function handleTimeUp(scene) {
     scene.time.delayedCall(1500, () => {
