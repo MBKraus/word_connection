@@ -9,3 +9,10 @@
     position: relative; /* Position relative to keep stacking context */
     color: red; /* Set the text color to red */
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('https://mbkraus.github.io/word_connection/assets/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
