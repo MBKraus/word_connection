@@ -882,18 +882,18 @@ function startRound(scene) {
     timerText.setText(`Time: ${remainingTime}`);
     startTimer(scene);
 
-    const cols = 4;  // Changed from 3 to 4
-    const rows = 3;  // Changed from 4 to 3
+    const cols = 3;  // Changed from 3 to 4
+    const rows = 4;  // Changed from 4 to 3
     const horizontalGap = 20;
     const verticalGap = 15;
     const cornerRadius = 15;
     
     const totalHorizontalGaps = (cols - 1) * horizontalGap;
-    const availableWidth = game.scale.width * 0.25 * cols;
+    const availableWidth = game.scale.width * 0.3325 * cols;
     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
-    const tileHeight = tileWidth * 0.45;
+    const tileHeight = tileWidth * 0.40;
     
-    const startY = game.scale.height * 0.25;
+    const startY = game.scale.height * 0.21;
     const startX = (game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
     for (let i = 0; i < cols; i++) {
