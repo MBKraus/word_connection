@@ -197,9 +197,9 @@ function showTiles(scene) {
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
 
-    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.04, 'question').setScale(0.12);
+    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0175, 'question').setScale(0.12);
 
-    scene.add.text(x, game.scale.height * 0.04, 'Word game', {
+    scene.add.text(x, game.scale.height * 0.02, 'Word game', {
         fontSize: game.scale.width * 0.07 + 'px',
         color: '#000000',
         fontFamily: 'Courier',
@@ -212,11 +212,11 @@ function createGameElements(scene) {
     graphics.fillStyle(0x000000, 1);
 
     const ad_x = (game.scale.width - rectangleWidth) / 2;
-    const ad_y = game.scale.height * 0.075;
+    const ad_y = game.scale.height * 0.055;
 
     graphics.fillRect(ad_x, ad_y, rectangleWidth, rectangleHeight);
 
-    roundText = scene.add.text(x, game.scale.height * 0.18, `Round: ${currentRound + 1}`, {
+    roundText = scene.add.text(x, game.scale.height * 0.14, `Round: ${currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
@@ -226,7 +226,7 @@ function createGameElements(scene) {
     const timeBarHeight = 14;
     const initialBarWidth = game.scale.width;
     timeBar.fillStyle(0xff0000, 1);
-    timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5);
+    timeBar.fillRoundedRect(0, game.scale.height * 0.22, initialBarWidth, timeBarHeight, 5);
 
     const inputBgWidth = game.scale.width * 0.98;
     const inputBgHeight = game.scale.height * 0.055;
@@ -246,13 +246,13 @@ function createGameElements(scene) {
         createKeyboard(scene);
     }
     
-    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.18, 'Score: 0', {
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.14, 'Score: 0', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.18, `Time: ${TIMER_DURATION}`, {
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.14, `Time: ${TIMER_DURATION}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
@@ -345,8 +345,19 @@ function createKeyboard(scene) {
             // Set the color for the key
             if (key === '✓') {
                 button.fillStyle(0x167D60, 1); // Green color for the Enter key
+                keyText = scene.add.text(0, 0, key, {
+                    fontSize: `${rowHeight * 0.4}px`,
+                    color: '#FFFFFF',
+                    fontFamily: 'Poppins',
+                }).setOrigin(0.5);
             } else {
                 button.fillStyle(0xE2E8F1, 1); // Default color for other keys
+                            // Add key label text
+                keyText = scene.add.text(0, 0, key, {
+                    fontSize: `${rowHeight * 0.4}px`,
+                    color: '#000000',
+                    fontFamily: 'Poppins',
+                }).setOrigin(0.5);
             }
 
             // Draw a rounded rectangle for the key
@@ -358,12 +369,7 @@ function createKeyboard(scene) {
                 10               // Corner radius for rounded edges
             );
 
-            // Add key label text
-            const keyText = scene.add.text(0, 0, key, {
-                fontSize: `${rowHeight * 0.4}px`,
-                color: '#000000',
-                fontFamily: 'Poppins',
-            }).setOrigin(0.5);
+
 
             // Create a container for the key button and text
             const keyButton = scene.add.container(x, y, [button, keyText]);
@@ -413,7 +419,7 @@ function createInterRoundScreen(scene) {
     }).setOrigin(0.5);
     interRoundScreen.add(interRoundScoreText);
 
-    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'Next Round', {
+    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.7, 'Next Round', {
         fontSize: game.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins',
         color: '#ffffff',
@@ -588,7 +594,7 @@ function updateTimerDisplay(scene) {
     if (Math.floor(remainingTime) > 0) {
         const barProgress = remainingTime / TIMER_DURATION;
         const newWidth = barProgress * game.scale.width;
-        timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
+        timeBar.fillRoundedRect(0, game.scale.height * 0.16, newWidth, 14, 5);
     }
 }
 
@@ -818,9 +824,9 @@ function startRound(scene) {
     const totalHorizontalGaps = (cols - 1) * horizontalGap;
     const availableWidth = game.scale.width * 0.3325 * cols;
     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
-    const tileHeight = tileWidth * 0.37;
+    const tileHeight = tileWidth * 0.39;
     
-    const startY = game.scale.height * 0.21;
+    const startY = game.scale.height * 0.18;
     const startX = (game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
     // Generate the tiles with words for the round
@@ -838,6 +844,7 @@ function startRound(scene) {
                 fontSize: `${Math.max(32, Math.floor(tileHeight * 0.27))}px`, 
                 color: '#000000',
                 fontFamily: 'Poppins',
+                fontWeight: 'bold',
             }).setOrigin(0.5);
 
             tiles.push({ 
@@ -901,9 +908,10 @@ function checkGuess(scene, guess) {
                 0,
                 matchedTopic.name,
                 {
-                    fontSize: game.scale.width * 0.035 + 'px',
+                    fontSize: game.scale.width * 0.04 + 'px',
                     color: '#000000',
                     fontFamily: 'Poppins',
+                    fontWeight: 'bold'
                 }
             ).setOrigin(0, 0.5);
 
