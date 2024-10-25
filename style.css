@@ -1,4 +1,18 @@
+/* Reset default body and html padding and margin */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
 
+/* Ensure the game container has no margin */
+#game-container {
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+}
+
+/* Style for the text container */
 .text-container {
     width: 500px; /* Set the width of the text container */
     margin: 20px auto 0; /* Center horizontally and add space above */

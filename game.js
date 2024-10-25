@@ -56,8 +56,6 @@ let countdownAudioInRoundPlayed = false;
 
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
-    this.load.image('bulb', 'https://mbkraus.github.io/word_connection/assets/bulb.png');
-    this.load.image('person', 'https://mbkraus.github.io/word_connection/assets/person.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
     this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
@@ -199,52 +197,44 @@ function showTiles(scene) {
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
 
-    scene.add.image(game.scale.width * 0.75, game.scale.height * 0.035, 'bulb').setScale(0.15);
-    scene.add.image(game.scale.width * 0.83, game.scale.height * 0.038, 'person').setScale(0.12);
-    scene.add.image(game.scale.width * 0.18, game.scale.height * 0.038, 'question').setScale(0.12);
+    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0175, 'question').setScale(0.12);
 
-    scene.add.text(x, game.scale.height * 0.04, 'Word game', {
+    scene.add.text(x, game.scale.height * 0.02, 'Word game', {
         fontSize: game.scale.width * 0.07 + 'px',
         color: '#000000',
         fontFamily: 'Courier',
     }).setOrigin(0.5);
 
-    // Add a horizontal rectangle for ads
     const rectangleWidth = 728;
     const rectangleHeight = 90;
 
     const graphics = scene.add.graphics();
-    graphics.fillStyle(0xD3D3D3, 1);
+    graphics.fillStyle(0x000000, 1);
 
-    // Calculate the x position to center the rectangle horizontally
     const ad_x = (game.scale.width - rectangleWidth) / 2;
-    const ad_y = game.scale.height * 0.075; // Keeping the same y position
+    const ad_y = game.scale.height * 0.055;
 
     graphics.fillRect(ad_x, ad_y, rectangleWidth, rectangleHeight);
 
-    roundText = scene.add.text(x, game.scale.height * 0.18, `Round: ${currentRound + 1}`, {
+    roundText = scene.add.text(x, game.scale.height * 0.14, `Round: ${currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    // Create the time bar (thin rectangle with rounded edges)
     timeBar = scene.add.graphics();
-    const timeBarHeight = 14; // Height of the time bar
-    const initialBarWidth = game.scale.width; // Initial width of the time bar
-    timeBar.fillStyle(0xff0000, 1); // Red color
-    timeBar.fillRoundedRect(0, game.scale.height * 0.25, initialBarWidth, timeBarHeight, 5); // Draw the initial time bar
+    const timeBarHeight = 14;
+    const initialBarWidth = game.scale.width;
+    timeBar.fillStyle(0xff0000, 1);
+    timeBar.fillRoundedRect(0, game.scale.height * 0.22, initialBarWidth, timeBarHeight, 5);
 
-    // Fixed width for input background and rounded corners using Phaser Graphics
-    const inputBgWidth = game.scale.width * 0.7;
-    const inputBgHeight = game.scale.height * 0.045;
+    const inputBgWidth = game.scale.width * 0.98;
+    const inputBgHeight = game.scale.height * 0.055;
 
-    // Input Display
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xD3D3D3, 1); 
     inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
 
-    // Display current input text
     inputDisplay = scene.add.text(x, game.scale.height * 0.70, currentInputText, {
         fontSize: game.scale.width * 0.045 + 'px',
         color: '#000000',
@@ -252,27 +242,26 @@ function createGameElements(scene) {
         wordWrap: { width: inputBgWidth - 20 }
     }).setOrigin(0.5);
 
-    // Create keyboard buttons only for mobile devices
     if (isMobile()) {
         createKeyboard(scene);
     }
-    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.18, 'Score: 0', {
+    
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.14, 'Score: 0', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.18, `Time: ${TIMER_DURATION}`, {
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.14, `Time: ${TIMER_DURATION}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
+    // Create container for correct guesses with adjusted position
+    correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.53);
 
-    // Create a container for correct guesses (add this after inputDisplay creation)
-    correctGuessContainer = scene.add.container(x, game.scale.height * 0.54);
-
-    // Add checkmark icon (hidden by default)
+    // Add checkmark icon
     checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '0x66FF66',
@@ -280,16 +269,13 @@ function createGameElements(scene) {
     }).setOrigin(0, 0.5);
     checkmark.setVisible(false);
 
-    // Add the checkmark to the same parent as inputDisplay
     scene.add.existing(checkmark);
     
-    // Position checkmark relative to input display
     checkmark.setPosition(
         inputDisplay.x + inputBgWidth * 0.4,
         inputDisplay.y
     );
 
-    // Add X icon (hidden by default)
     cross = scene.add.text(inputBgWidth / 2 + 10, 0, 'x', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '0xFF0000',
@@ -297,10 +283,8 @@ function createGameElements(scene) {
     }).setOrigin(0, 0.5);
     cross.setVisible(false);
 
-    // Add the checkmark to the same parent as inputDisplay
     scene.add.existing(cross);
 
-    // Position checkmark relative to input display
     cross.setPosition(
         inputDisplay.x + inputBgWidth * 0.4,
         inputDisplay.y
@@ -360,9 +344,20 @@ function createKeyboard(scene) {
 
             // Set the color for the key
             if (key === '✓') {
-                button.fillStyle(0x008000, 1); // Green color for the Enter key
+                button.fillStyle(0x167D60, 1); // Green color for the Enter key
+                keyText = scene.add.text(0, 0, key, {
+                    fontSize: `${rowHeight * 0.4}px`,
+                    color: '#FFFFFF',
+                    fontFamily: 'Poppins',
+                }).setOrigin(0.5);
             } else {
-                button.fillStyle(0x7E8484, 1); // Default color for other keys
+                button.fillStyle(0xE2E8F1, 1); // Default color for other keys
+                            // Add key label text
+                keyText = scene.add.text(0, 0, key, {
+                    fontSize: `${rowHeight * 0.4}px`,
+                    color: '#000000',
+                    fontFamily: 'Poppins',
+                }).setOrigin(0.5);
             }
 
             // Draw a rounded rectangle for the key
@@ -374,12 +369,7 @@ function createKeyboard(scene) {
                 10               // Corner radius for rounded edges
             );
 
-            // Add key label text
-            const keyText = scene.add.text(0, 0, key, {
-                fontSize: `${rowHeight * 0.4}px`,
-                color: '#FFFFFF',
-                fontFamily: 'Poppins',
-            }).setOrigin(0.5);
+
 
             // Create a container for the key button and text
             const keyButton = scene.add.container(x, y, [button, keyText]);
@@ -429,7 +419,7 @@ function createInterRoundScreen(scene) {
     }).setOrigin(0.5);
     interRoundScreen.add(interRoundScoreText);
 
-    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.6, 'Next Round', {
+    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.7, 'Next Round', {
         fontSize: game.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins',
         color: '#ffffff',
@@ -500,64 +490,7 @@ function startGame(scene) {
     showCountdown(scene);
 }
 
-function checkGuess(scene, guess) {
-    const currentTopics = allRounds[currentRound];
 
-    let matchedTopic = currentTopics.find(topic => 
-        topic.name.toLowerCase() === guess.toLowerCase()
-    );
-    
-    if (matchedTopic) {
-        highlightTiles(scene, matchedTopic.words);
-        
-        const rectHeight = game.scale.height * 0.04;
-        const rectWidth = game.scale.width * 0.4;
-        const yOffset = correctGuessTexts.length * (rectHeight + 10);
-        
-        const rect = scene.add.rectangle(
-            0,
-            yOffset,
-            rectWidth,
-            rectHeight,
-            0xFFA500
-        ).setOrigin(0.5, 0);
-        
-        const text = scene.add.text(
-            0,
-            yOffset + rectHeight / 2,
-            matchedTopic.name,
-            {
-                fontSize: game.scale.width * 0.04 + 'px',
-                color: '#FFFFFF',
-                fontFamily: 'Poppins',
-            }
-        ).setOrigin(0.5);
-        
-        correctGuessContainer.add([rect, text]);
-        correctGuessTexts.push({ rect, text });
-        
-        checkmark.setVisible(true);
-        scene.time.delayedCall(1000, () => {
-            checkmark.setVisible(false);
-        });
-        
-        score += 30;
-        updateScoreDisplay();
-        scene.sound.play('correctSound');
-        
-        if (correctGuessTexts.length === 3) {
-            // Add a slight delay before showing the inter-round screen
-            scene.time.delayedCall(1500, () => {
-                handleRoundEnd(scene);
-            });
-        } } else {
-        scene.sound.play('incorrectSound');
-        cross.setVisible(true);
-        scene.time.delayedCall(1000, () => {
-            cross.setVisible(false);
-        });
-    }
-}
 
 function highlightTiles(scene, words) {
     tiles.forEach(tile => {
@@ -566,7 +499,7 @@ function highlightTiles(scene, words) {
             tile.tile.clear();
             
             // Draw with new color
-            tile.tile.fillStyle(0x66FF66, 1);
+            tile.tile.fillStyle(0x167D60, 1);
             drawRoundedRect(
                 tile.tile, 
                 tile.x,
@@ -661,7 +594,7 @@ function updateTimerDisplay(scene) {
     if (Math.floor(remainingTime) > 0) {
         const barProgress = remainingTime / TIMER_DURATION;
         const newWidth = barProgress * game.scale.width;
-        timeBar.fillRoundedRect(0, game.scale.height * 0.20, newWidth, 14, 5);
+        timeBar.fillRoundedRect(0, game.scale.height * 0.16, newWidth, 14, 5);
     }
 }
 
@@ -882,8 +815,8 @@ function startRound(scene) {
     timerText.setText(`Time: ${remainingTime}`);
     startTimer(scene);
 
-    const cols = 3;  // Changed from 3 to 4
-    const rows = 4;  // Changed from 4 to 3
+    const cols = 3;
+    const rows = 4;
     const horizontalGap = 20;
     const verticalGap = 15;
     const cornerRadius = 15;
@@ -891,11 +824,12 @@ function startRound(scene) {
     const totalHorizontalGaps = (cols - 1) * horizontalGap;
     const availableWidth = game.scale.width * 0.3325 * cols;
     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
-    const tileHeight = tileWidth * 0.40;
+    const tileHeight = tileWidth * 0.39;
     
-    const startY = game.scale.height * 0.21;
+    const startY = game.scale.height * 0.18;
     const startX = (game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
+    // Generate the tiles with words for the round
     for (let i = 0; i < cols; i++) {
         for (let j = 0; j < rows; j++) {
             const x = startX + i * (tileWidth + horizontalGap);
@@ -910,9 +844,9 @@ function startRound(scene) {
                 fontSize: `${Math.max(32, Math.floor(tileHeight * 0.27))}px`, 
                 color: '#000000',
                 fontFamily: 'Poppins',
+                fontWeight: 'bold',
             }).setOrigin(0.5);
 
-            // Store position and dimensions along with the graphics object
             tiles.push({ 
                 tile: graphics, 
                 text, 
@@ -925,7 +859,103 @@ function startRound(scene) {
         }
     }
     
+    // Initialize correct guess placeholders with only circles, no text
+    currentTopics.forEach((topic, index) => {
+        const yOffset = index * (game.scale.height * 0.045);
+        const circleRadius = game.scale.width * 0.023;
+
+        const guessContainer = scene.add.container(0, yOffset);
+        const circle = scene.add.graphics();
+        circle.lineStyle(10, 0x167D60); // Green border
+        circle.fillStyle(0xFFFFFF); // White fill
+        circle.strokeCircle(0, 0, circleRadius);
+        circle.fillCircle(0, 0, circleRadius);
+
+        // Only add the circle to the container initially
+        guessContainer.add(circle);
+        correctGuessContainer.add(guessContainer);
+
+        correctGuessTexts.push({ guessContainer, circle, topicName: topic.name, text: null });
+    });
+
     currentInputText = '';
     showGameElements();
 }
+
+function checkGuess(scene, guess) {
+    const currentTopics = allRounds[currentRound];
+
+    // Find the matched topic
+    let matchedTopic = currentTopics.find(topic => 
+        topic.name.toLowerCase() === guess.toLowerCase()
+    );
+    
+    if (matchedTopic) {
+        highlightTiles(scene, matchedTopic.words);
+        
+        // Find the corresponding entry in correctGuessTexts for this topic
+        let matchedEntry = correctGuessTexts.find(entry => 
+            entry.topicName.toLowerCase() === matchedTopic.name.toLowerCase()
+        );
+        
+        if (matchedEntry) {
+            const { circle, guessContainer } = matchedEntry;
+
+            // Add the topic text to appear next to the circle
+            const circleRadius = game.scale.width * 0.023;
+            matchedEntry.text = scene.add.text(
+                circleRadius * 3, // Space after circle
+                0,
+                matchedTopic.name,
+                {
+                    fontSize: game.scale.width * 0.04 + 'px',
+                    color: '#000000',
+                    fontFamily: 'Poppins',
+                    fontWeight: 'bold'
+                }
+            ).setOrigin(0, 0.5);
+
+            guessContainer.add(matchedEntry.text);
+
+            // Animate the existing circle fill to green
+            scene.tweens.add({
+                targets: circle,
+                alpha: 0, // This will be our trigger to change the fill
+                duration: 25,
+                onComplete: () => {
+                    circle.clear();
+                    circle.lineStyle(10, 0x167D60);
+                    circle.fillStyle(0x167D60); // Change fill to green
+                    circle.strokeCircle(0, 0, circleRadius);
+                    circle.fillCircle(0, 0, circleRadius);
+                    circle.alpha = 1;
+                }
+            });
+        }
+        
+        checkmark.setVisible(true);
+        scene.time.delayedCall(1000, () => {
+            checkmark.setVisible(false);
+        });
+        
+        score += 30;
+        updateScoreDisplay();
+        scene.sound.play('correctSound');
+        
+        // End round if all topics have been guessed
+        if (correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
+            scene.time.delayedCall(1500, () => {
+                handleRoundEnd(scene);
+            });
+        }
+    } else {
+        scene.sound.play('incorrectSound');
+        cross.setVisible(true);
+        scene.time.delayedCall(1000, () => {
+            cross.setVisible(false);
+        });
+    }
+}
+
+
 })
