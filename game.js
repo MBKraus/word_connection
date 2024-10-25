@@ -153,7 +153,7 @@ function showCountdown(scene) {
     roundText.setVisible(true);
 
     countdownCircle.clear();
-    countdownCircle.fillStyle(0x000000, 1);
+    countdownCircle.fillStyle(0x167D60, 1);
     const radius = 100;
     countdownCircle.fillCircle(game.scale.width / 2, game.scale.height * 0.3, radius);
 
