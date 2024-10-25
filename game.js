@@ -585,8 +585,8 @@ function updateTimer() {
         remainingTime = 0;  // Force to exactly 0
         updateTimerDisplay(this);  // Update one final time
         clearTimerEvent();
+        isGameActive = false; // Set game state to inactive before handling time up
         handleTimeUp(this);
-        isGameActive = false; // Set game state to inactive
     }
 }
 
@@ -899,6 +899,11 @@ function startRound(scene) {
 }
 
 function checkGuess(scene, guess) {
+    // Return early if timer is at 0 or game is not active
+    if (remainingTime <= 0 || !isGameActive) {
+        return;
+    }
+
     const currentTopics = allRounds[currentRound];
 
     // Find the matched topic
@@ -960,6 +965,7 @@ function checkGuess(scene, guess) {
         
         // End round if all topics have been guessed
         if (correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
+            isGameActive = false; // Disable further guesses
             scene.time.delayedCall(1500, () => {
                 handleRoundEnd(scene);
             });
