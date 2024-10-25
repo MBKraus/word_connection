@@ -7,7 +7,7 @@ const config = {
     type: Phaser.AUTO,
     scene: {
         preload: preload,
-        create: create
+        create: create,
     },
     dom: {
         createContainer: true
@@ -55,6 +55,7 @@ const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
 let countdownAudioInRoundPlayed = false;
 let failureEndScreen;
+let isGameActive = true; // Initialize this variable to track the game state
 
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
@@ -424,7 +425,7 @@ function createInterRoundScreen(scene) {
     }).setOrigin(0.5);
     interRoundScreen.add(interRoundScoreText);
 
-    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.7, 'Next Round', {
+    okButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.74, 'Next Round', {
         fontSize: game.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins',
         color: '#ffffff',
@@ -479,6 +480,7 @@ function showGameElements() {
 
 // Update startGame function
 function startGame(scene) {
+    isGameActive = true;
     currentRound = 0;
     score = 0;
     updateScoreDisplay();
@@ -572,8 +574,8 @@ function updateTimer() {
         lastUpdateTime = currentTime;
     }
 
-    // Play sound when there are 2 seconds left
-    if (remainingTime <= 3.05 && remainingTime > 2.95 && !countdownAudioInRoundPlayed) {
+    // Play sound when there are 2 seconds left, only if the game is still active
+    if (isGameActive && remainingTime <= 3.05 && remainingTime > 2.95 && !countdownAudioInRoundPlayed) {
         this.sound.play('countdownSound');
         countdownAudioInRoundPlayed = true;
     }
@@ -584,6 +586,7 @@ function updateTimer() {
         updateTimerDisplay(this);  // Update one final time
         clearTimerEvent();
         handleTimeUp(this);
+        isGameActive = false; // Set game state to inactive
     }
 }
 
@@ -606,9 +609,12 @@ function updateTimerDisplay(scene) {
 
 
 function handleTimeUp(scene) {
-    scene.time.delayedCall(1500, () => {
-        endGame(scene);
-    }, [], scene);
+    // Only show failure screen if not all topics were guessed
+    if (correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
+        scene.time.delayedCall(1500, () => {
+            endGame(scene);
+        }, [], scene);
+    }
 }
 
 function handleRoundEnd(scene) {
@@ -669,6 +675,7 @@ function hideInterRoundScreen() {
 // Update startNextRound function
 function startNextRound(scene) {
     if (currentRound < allRounds.length - 1) {
+        isGameActive = true;
         currentRound++;
         hideInterRoundScreen();
         hideTiles();
@@ -764,13 +771,13 @@ function hideTiles() {
 function endGame(scene) {
     countdownAudioInRoundPlayed = false;
 
-    console.log('Current Round:', currentRound);
-    console.log('Total Rounds:', allRounds.length);
+    // Check if all topics were guessed in the current round
+    const allTopicsGuessed = correctGuessTexts.filter(entry => entry.text !== null).length === 3;
 
     // Check if the player completed all rounds
-    if (currentRound >= allRounds.length - 1) {
-        // This means they completed all rounds
-        interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
+    if (currentRound >= allRounds.length - 1 || allTopicsGuessed) {
+        // Show victory screen if they completed all rounds or guessed all topics
+        interRoundScoreText.setText(`Game Over!\n\nFinal Score: ${score}`);
         okButton.setText('Restart');
         okButton.removeAllListeners('pointerdown');
         okButton.on('pointerdown', () => {
