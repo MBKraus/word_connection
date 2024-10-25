@@ -1,7 +1,7 @@
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
-    document.fonts.load('16px "Play"'),
+    // document.fonts.load('16px "Play"'),
 ]).then(function() {
 const config = {
     type: Phaser.AUTO,
@@ -54,6 +54,7 @@ const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
 let countdownAudioInRoundPlayed = false;
+let failureEndScreen;
 
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
@@ -104,6 +105,8 @@ function create() {
             inputDisplay.setText(currentInputText);
         });
     }
+
+    failureEndScreen = createFailureEndScreen(this); // Initialize failure end screen
 }
 
 // Function to generate rounds without repeating topics in the same round
@@ -758,32 +761,36 @@ function hideTiles() {
     });
 }
 
-// Update endGame function
 function endGame(scene) {
     countdownAudioInRoundPlayed = false;
-    
-    interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
-    okButton.setText('Restart');
 
-    okButton.removeAllListeners('pointerdown');
-    okButton.on('pointerdown', () => {
-        hideInterRoundScreen();
-        if (correctGuessContainer) {
-            correctGuessContainer.removeAll(true);
-        }
-        correctGuessTexts = [];
-        startGame(scene);
-    });
+    console.log('Current Round:', currentRound);
+    console.log('Total Rounds:', allRounds.length);
 
-    showInterRoundScreen(scene);
-
-    // Show confetti for game completion if all topics were guessed
-    if (correctGuessTexts.length === 3) {
-        scene.time.delayedCall(100, () => {
-            createConfettiEffect();
+    // Check if the player completed all rounds
+    if (currentRound >= allRounds.length - 1) {
+        // This means they completed all rounds
+        interRoundScoreText.setText(`Game Over!\nFinal Score: ${score}`);
+        okButton.setText('Restart');
+        okButton.removeAllListeners('pointerdown');
+        okButton.on('pointerdown', () => {
+            hideInterRoundScreen();
+            startGame(scene);
         });
+
+        showInterRoundScreen(scene);
+    } else {
+        // Show failure end screen if not all topics guessed
+        interRoundScoreText.setText(`Try Again! Your Score: ${score}`);
+        showFailureEndScreen(scene);
     }
 }
+
+function showFailureEndScreen(scene) {
+    failureEndScreen.setVisible(true);
+    hideGameElements();
+}
+
 
 function startRound(scene) {
     console.log('Starting round:', currentRound);
@@ -958,6 +965,61 @@ function checkGuess(scene, guess) {
         });
     }
 }
+
+function createFailureEndScreen(scene) {
+    // Create a container for the end screen
+    const failureEndScreen = scene.add.container(0, 0);
+    failureEndScreen.setDepth(1000);
+
+    // Background
+    let bg = scene.add.rectangle(0, 0, game.scale.width, game.scale.height, 0x000000);
+    bg.setOrigin(0);
+    failureEndScreen.add(bg);
+
+    // Failure message
+    let failureMessage = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.4, 'Try Again!', {
+        fontSize: game.scale.width * 0.08 + 'px',
+        color: '#ffffff',
+        fontFamily: 'Poppins',
+    }).setOrigin(0.5);
+    failureEndScreen.add(failureMessage);
+
+    // Score display
+    interRoundScoreText.setText(`Your Score: ${score}`);
+    interRoundScoreText.setPosition(game.scale.width * 0.5, game.scale.height * 0.5);
+    interRoundScoreText.setVisible(true);
+
+    // Restart button
+    const restartButton = scene.add.text(game.scale.width * 0.5, game.scale.height * 0.7, 'Restart', {
+        fontSize: game.scale.width * 0.06 + 'px',
+        fontFamily: 'Poppins',
+        color: '#ffffff',
+        backgroundColor: '#4a4a4a',
+        padding: {
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 10
+        }
+    }).setOrigin(0.5).setInteractive();
+
+    // Button interaction
+    restartButton.on('pointerdown', () => {
+        hideFailureEndScreen();
+        startGame(scene);  // Restart the game
+    });
+
+    failureEndScreen.add(restartButton);
+    failureEndScreen.setVisible(false); // Initially hide the screen
+    return failureEndScreen;
+}
+
+function hideFailureEndScreen() {
+    // Hides the failure end screen
+    failureEndScreen.setVisible(false);
+    showGameElements();
+}
+
 
 
 })
