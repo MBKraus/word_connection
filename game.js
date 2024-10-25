@@ -265,9 +265,10 @@ function createGameElements(scene) {
 
     // Add checkmark icon
     checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
-        fontSize: game.scale.width * 0.04 + 'px',
+        fontSize: game.scale.width * 0.06 + 'px',
         color: '0x66FF66',
-        fontFamily: 'Poppins'
+        fontFamily: 'Poppins',
+        fontWeight: 'bold',
     }).setOrigin(0, 0.5);
     checkmark.setVisible(false);
 
@@ -279,9 +280,10 @@ function createGameElements(scene) {
     );
 
     cross = scene.add.text(inputBgWidth / 2 + 10, 0, 'x', {
-        fontSize: game.scale.width * 0.04 + 'px',
+        fontSize: game.scale.width * 0.06 + 'px',
         color: '0xFF0000',
-        fontFamily: 'Poppins'
+        fontFamily: 'Poppins',
+        fontWeight: 'bold',
     }).setOrigin(0, 0.5);
     cross.setVisible(false);
 
