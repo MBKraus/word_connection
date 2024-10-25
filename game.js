@@ -35,8 +35,6 @@ let timerEvent;
 let interRoundScreen;
 let okButton;
 let interRoundScoreText;
-let startScreen;
-let startButton;
 let correctGuessTexts = [];
 let currentInputText = '';
 let timeBar; // Declare the timeBar variable
@@ -45,8 +43,6 @@ let countdownCircle;
 let countdownTime = 3; // Start at 3 seconds
 let gameStartTime;
 let lastUpdateTime;
-let isTimerRunning = false;
-let isGameOver = false;
 let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
 let confettiAnimationId = null;
 const TIMER_DURATION = 30;
@@ -228,25 +224,34 @@ function createGameElements(scene) {
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    timeBar = scene.add.graphics();
-    const timeBarHeight = 14;
-    const initialBarWidth = game.scale.width;
-    timeBar.fillStyle(0xff0000, 1);
-    timeBar.fillRoundedRect(0, game.scale.height * 0.22, initialBarWidth, timeBarHeight, 5);
-
+    // Create input display container
     const inputBgWidth = game.scale.width * 0.98;
     const inputBgHeight = game.scale.height * 0.055;
 
+    // Create background for input
     const inputBgGraphics = scene.add.graphics();
-    inputBgGraphics.fillStyle(0xD3D3D3, 1); 
-    inputBgGraphics.fillRoundedRect(x - inputBgWidth / 2, game.scale.height * 0.70 - inputBgHeight / 2, inputBgWidth, inputBgHeight, 20);
+    inputBgGraphics.fillStyle(0xD3D3D3, 1);
+    inputBgGraphics.fillRoundedRect(
+        x - inputBgWidth / 2,
+        game.scale.height * 0.70 - inputBgHeight / 2,
+        inputBgWidth,
+        inputBgHeight,
+        20
+    );
 
+    // Create timer bar inside input display
+    timeBar = scene.add.graphics();
+    timeBar.fillStyle(0xB8B8B8, 1); // Slightly darker than the input background
+    timeBar.setDepth(1); // Set depth to appear above background but below text
+
+    // Create input text with higher depth to appear above timer bar
     inputDisplay = scene.add.text(x, game.scale.height * 0.70, currentInputText, {
         fontSize: game.scale.width * 0.045 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
         wordWrap: { width: inputBgWidth - 20 }
     }).setOrigin(0.5);
+    inputDisplay.setDepth(2); // Set depth to appear above timer bar
 
     if (isMobile()) {
         createKeyboard(scene);
@@ -264,10 +269,8 @@ function createGameElements(scene) {
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    // Create container for correct guesses with adjusted position
     correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.53);
 
-    // Add checkmark icon
     checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
         fontSize: game.scale.width * 0.06 + 'px',
         color: '0x66FF66',
@@ -275,6 +278,7 @@ function createGameElements(scene) {
         fontWeight: 'bold',
     }).setOrigin(0, 0.5);
     checkmark.setVisible(false);
+    checkmark.setDepth(2);
 
     scene.add.existing(checkmark);
     
@@ -290,6 +294,7 @@ function createGameElements(scene) {
         fontWeight: 'bold',
     }).setOrigin(0, 0.5);
     cross.setVisible(false);
+    cross.setDepth(2);
 
     scene.add.existing(cross);
 
@@ -596,13 +601,24 @@ function updateTimerDisplay(scene) {
 
     // Calculate the width of the time bar
     timeBar.clear();
-    timeBar.fillStyle(0xff0000, 1);
+    timeBar.fillStyle(0xB8B8B8, 1);
     
     // Only draw the bar if there's actually time remaining
     if (Math.floor(remainingTime) > 0) {
         const barProgress = remainingTime / TIMER_DURATION;
-        const newWidth = barProgress * game.scale.width;
-        timeBar.fillRoundedRect(0, game.scale.height * 0.16, newWidth, 14, 5);
+        const inputBgWidth = game.scale.width * 0.98;
+        const inputBgHeight = game.scale.height * 0.055;
+        const x = game.scale.width * 0.5 - inputBgWidth / 2;
+        const y = game.scale.height * 0.70 - inputBgHeight / 2;
+        
+        // Draw the timer bar with the same rounded corners as the input background
+        timeBar.fillRoundedRect(
+            x,
+            y,
+            inputBgWidth * barProgress,
+            inputBgHeight,
+            20
+        );
     }
 }
 
@@ -697,9 +713,7 @@ function startNextRound(scene) {
     }
 }
 
-function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-}
+
 
 function createConfettiEffect() {
     // Cancel any existing confetti animation
@@ -777,7 +791,7 @@ function endGame(scene) {
     // Check if the player completed all rounds
     if (currentRound >= allRounds.length - 1 || allTopicsGuessed) {
         // Show victory screen if they completed all rounds or guessed all topics
-        interRoundScoreText.setText(`Game Over!\n\nFinal Score: ${score}`);
+        interRoundScoreText.setText(`End of Game!\n\nFinal Score: ${score}`);
         okButton.setText('Restart');
         okButton.removeAllListeners('pointerdown');
         okButton.on('pointerdown', () => {
