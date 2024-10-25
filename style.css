@@ -33,7 +33,7 @@ html, body {
 
 @font-face {
     font-family: 'Play';
-    src: url('assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
+    src: url('https://mbkraus.github.io/word_connection/assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
