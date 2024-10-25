@@ -1,7 +1,7 @@
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
-    // document.fonts.load('16px "Play"'),
+    document.fonts.load('16px "Play"'),
 ]).then(function() {
 const config = {
     type: Phaser.AUTO,
