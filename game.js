@@ -1,6 +1,7 @@
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
+    document.fonts.load('16px "Play"'),
 ]).then(function() {
 const config = {
     type: Phaser.AUTO,
@@ -197,12 +198,13 @@ function showTiles(scene) {
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
 
-    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0175, 'question').setScale(0.12);
+    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0225, 'question').setScale(0.12);
 
-    scene.add.text(x, game.scale.height * 0.02, 'Word game', {
-        fontSize: game.scale.width * 0.07 + 'px',
+    scene.add.text(x, game.scale.height * 0.025, 'Word game', {
+        fontSize: game.scale.width * 0.05 + 'px',
         color: '#000000',
-        fontFamily: 'Courier',
+        fontFamily: 'Play',
+        fontWeight: 'bold',
     }).setOrigin(0.5);
 
     const rectangleWidth = 728;
@@ -368,8 +370,6 @@ function createKeyboard(scene) {
                 rowHeight,       // Height
                 10               // Corner radius for rounded edges
             );
-
-
 
             // Create a container for the key button and text
             const keyButton = scene.add.container(x, y, [button, keyText]);
