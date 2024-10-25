@@ -35,8 +35,6 @@ let timerEvent;
 let interRoundScreen;
 let okButton;
 let interRoundScoreText;
-let startScreen;
-let startButton;
 let correctGuessTexts = [];
 let currentInputText = '';
 let timeBar; // Declare the timeBar variable
@@ -45,8 +43,6 @@ let countdownCircle;
 let countdownTime = 3; // Start at 3 seconds
 let gameStartTime;
 let lastUpdateTime;
-let isTimerRunning = false;
-let isGameOver = false;
 let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
 let confettiAnimationId = null;
 const TIMER_DURATION = 30;
@@ -717,9 +713,7 @@ function startNextRound(scene) {
     }
 }
 
-function randomInRange(min, max) {
-    return Math.random() * (max - min) + min;
-}
+
 
 function createConfettiEffect() {
     // Cancel any existing confetti animation
