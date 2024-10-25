@@ -30,3 +30,10 @@ html, body {
     font-weight: normal;
     font-style: normal;
   }
+
+@font-face {
+    font-family: 'Play';
+    src: url('https://mbkraus.github.io/word_connection/assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
