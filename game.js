@@ -344,7 +344,7 @@ function createPopupSystem(scene, triggerImage) {
 
     // Add text with relative positioning and font size
     const text = scene.add.text(0, -halfHeight * 0.7, 'Hello World', {
-        font: `${scene.scale.width * 0.03}px Arial`,  // Relative font size
+        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
         fill: '#ffffff'
     }).setOrigin(0.5);
     popup.add(text);
@@ -355,7 +355,7 @@ function createPopupSystem(scene, triggerImage) {
     const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, 0x4a4a4a);
     
     const buttonText = scene.add.text(0, halfHeight * 0.5, 'OK', {
-        font: `${scene.scale.width * 0.02}px Arial`,  // Relative font size
+        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
         fill: '#ffffff'
     }).setOrigin(0.5);
 
