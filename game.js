@@ -236,7 +236,11 @@ function showTiles(scene) {
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
 
-    scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0225, 'question').setScale(0.12);
+    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
+        .setScale(0.12)
+        .setInteractive();
+        
+    createPopupSystem(scene, questionIcon);
 
     roundText = scene.add.text(x, game.scale.height * 0.22, `Round: ${currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
@@ -318,6 +322,64 @@ function createGameElements(scene) {
     inputDisplay.x + inputBgWidth * 0.4,
     inputDisplay.y
     );
+}
+
+function createPopupSystem(scene, triggerImage) {
+    // Create the popup container
+    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.4);
+    popup.setVisible(false);
+    popup.setDepth(1000);
+
+    // Calculate relative dimensions
+    const popupWidth = scene.scale.width * 0.6;    // 60% of game width
+    const popupHeight = scene.scale.height * 0.5;  // 50% of game height
+    const halfWidth = popupWidth / 2;
+    const halfHeight = popupHeight / 2;
+
+    // Create background with relative size
+    const background = scene.add.graphics();
+    background.fillStyle(0x000000, 0.9);
+    background.fillRoundedRect(-halfWidth, -halfHeight, popupWidth, popupHeight, 20);
+    popup.add(background);
+
+    // Add text with relative positioning and font size
+    const text = scene.add.text(0, -halfHeight * 0.7, 'Hello World', {
+        font: `${scene.scale.width * 0.03}px Arial`,  // Relative font size
+        fill: '#ffffff'
+    }).setOrigin(0.5);
+    popup.add(text);
+
+    // Create OK button with relative size and positioning
+    const buttonWidth = scene.scale.width * 0.1;   // 10% of game width
+    const buttonHeight = scene.scale.height * 0.06; // 6% of game height
+    const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, 0x4a4a4a);
+    
+    const buttonText = scene.add.text(0, halfHeight * 0.5, 'OK', {
+        font: `${scene.scale.width * 0.02}px Arial`,  // Relative font size
+        fill: '#ffffff'
+    }).setOrigin(0.5);
+
+    button.setInteractive();
+    popup.add(button);
+    popup.add(buttonText);
+
+    // Add click handlers
+    triggerImage.on('pointerdown', () => {
+        popup.setVisible(true);
+    });
+
+    button.on('pointerdown', () => {
+        popup.setVisible(false);
+    });
+
+    // Optional: add hover effect for the button
+    button.on('pointerover', () => {
+        button.setFillStyle(0x666666);
+    });
+
+    button.on('pointerout', () => {
+        button.setFillStyle(0x4a4a4a);
+    });
 }
 
 function createKeyboard(scene) {
