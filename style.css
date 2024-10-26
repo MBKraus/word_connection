@@ -3,13 +3,30 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+    /* overflow: hidden; */
 }
 
-/* Ensure the game container has no margin */
 #game-container {
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Remove any padding */
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+}
+#ad-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(2.5vh + 30px);
+    border: 0;
+    background: black;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    /* Default desktop size */
+    width: 728px !important;
+    height: 90px !important;
 }
 
 /* Style for the text container */
@@ -22,6 +39,15 @@ html, body {
     z-index: 2; /* Ensure it stays on top of the game container */
     position: relative; /* Position relative to keep stacking context */
     color: red; /* Set the text color to red */
+}
+
+/* Override for mobile */
+@media screen and (max-width: 728px) {
+    #ad-container {
+        width: 300px !important;
+        height: 50px !important;
+        max-width: 95vw; /* Prevent overflow */
+    }
 }
 
 @font-face {

@@ -1,4 +1,3 @@
-
 Promise.all([
     document.fonts.load('16px "Poppins"'),
     document.fonts.load('16px "Play"'),
@@ -18,6 +17,7 @@ const config = {
         mode: Phaser.Scale.FIT,  
         width: 1080,
         height: 1920,
+        // parent: 'game-container',
         autoCenter: Phaser.Scale.CENTER_BOTH
     }
 };
@@ -67,12 +67,49 @@ function isMobile() {
 
 // Updated create function (allRounds generated here)
 function create() {
+    console.log(game.scale.width, game.scale.height);
+
     const data = this.cache.text.get('data');
     const jsonString = atob(data);
     const allTopics = JSON.parse(jsonString);
     
     // Generate rounds
     allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
+
+    const headerText = this.add.text(
+        this.cameras.main.centerX, 
+        game.scale.height * 0.025, 
+        'Word game', 
+        {
+            fontSize: game.scale.width * 0.05 + 'px',
+            color: '#000000',
+            fontFamily: 'Play',
+            fontWeight: 'bold',
+        }
+    ).setOrigin(0.5);
+
+    // Position ad container
+    const adContainer = document.getElementById('ad-container');
+    const adElement = adContainer.querySelector('.adsbygoogle');
+    
+    if (isMobile()) {
+        // Mobile sizing
+        adElement.style.width = '300px';
+        adElement.style.height = '50px';
+        adElement.dataset.adFormat = 'mobile';
+    } else {
+        // Desktop sizing
+        adElement.style.width = '728px';
+        adElement.style.height = '90px';
+        adElement.dataset.adFormat = 'horizontal';
+    }
+
+    // Adjust vertical position
+    const headerBottom = (headerText.height / 2)-2;
+    adContainer.style.top = `${headerBottom}px`;
+
+    // Initialize AdSense
+    (adsbygoogle = window.adsbygoogle || []).push({});
 
     // Rest of your create function remains the same
     countdownCircle = this.add.graphics();
@@ -200,25 +237,7 @@ function createGameElements(scene) {
 
     scene.add.image(game.scale.width * 0.95, game.scale.height * 0.0225, 'question').setScale(0.12);
 
-    scene.add.text(x, game.scale.height * 0.025, 'Word game', {
-        fontSize: game.scale.width * 0.05 + 'px',
-        color: '#000000',
-        fontFamily: 'Play',
-        fontWeight: 'bold',
-    }).setOrigin(0.5);
-
-    const rectangleWidth = 728;
-    const rectangleHeight = 90;
-
-    const graphics = scene.add.graphics();
-    graphics.fillStyle(0x000000, 1);
-
-    const ad_x = (game.scale.width - rectangleWidth) / 2;
-    const ad_y = game.scale.height * 0.055;
-
-    graphics.fillRect(ad_x, ad_y, rectangleWidth, rectangleHeight);
-
-    roundText = scene.add.text(x, game.scale.height * 0.14, `Round: ${currentRound + 1}`, {
+    roundText = scene.add.text(x, game.scale.height * 0.22, `Round: ${currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
@@ -257,19 +276,19 @@ function createGameElements(scene) {
         createKeyboard(scene);
     }
     
-    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.14, 'Score: 0', {
+    scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.22, 'Score: 0', {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.14, `Time: ${TIMER_DURATION}`, {
+    timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.22, `Time: ${TIMER_DURATION}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.53);
+    correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.55);
 
     checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
         fontSize: game.scale.width * 0.06 + 'px',
@@ -854,9 +873,9 @@ function startRound(scene) {
     const totalHorizontalGaps = (cols - 1) * horizontalGap;
     const availableWidth = game.scale.width * 0.3325 * cols;
     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
-    const tileHeight = tileWidth * 0.39;
+    const tileHeight = tileWidth * 0.36;
     
-    const startY = game.scale.height * 0.18;
+    const startY = game.scale.height * 0.24;
     const startX = (game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
     // Generate the tiles with words for the round
