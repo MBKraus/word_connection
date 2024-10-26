@@ -56,6 +56,7 @@ let isGameActive = true; // Initialize this variable to track the game state
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
+    this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
     this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
     this.load.audio('countdownSound', 'https://mbkraus.github.io/word_connection/assets/audio/countdown.wav');
@@ -306,20 +307,16 @@ function createGameElements(scene) {
         inputDisplay.y
     );
 
-    cross = scene.add.text(inputBgWidth / 2 + 10, 0, 'x', {
-        fontSize: game.scale.width * 0.06 + 'px',
-        color: '0xFF0000',
-        fontFamily: 'Poppins',
-        fontWeight: 'bold',
-    }).setOrigin(0, 0.5);
-    cross.setVisible(false);
-    cross.setDepth(2);
+    scene.cross = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'cross')
+    .setOrigin(0, 0.5)
+    .setVisible(false)
+    .setDepth(2);
 
-    scene.add.existing(cross);
+    scene.cross.setScale(game.scale.width * 0.000025);
 
-    cross.setPosition(
-        inputDisplay.x + inputBgWidth * 0.4,
-        inputDisplay.y
+    scene.cross.setPosition(
+    inputDisplay.x + inputBgWidth * 0.4,
+    inputDisplay.y
     );
 }
 
@@ -1005,9 +1002,9 @@ function checkGuess(scene, guess) {
         }
     } else {
         scene.sound.play('incorrectSound');
-        cross.setVisible(true);
+        scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
-            cross.setVisible(false);
+            scene.cross.setVisible(false);
         });
     }
 }
