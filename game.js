@@ -56,6 +56,8 @@ let isGameActive = true; // Initialize this variable to track the game state
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
+    this.load.image('checkmark', 'https://mbkraus.github.io/word_connection/assets/checkmark.png');
+    this.load.image('cross', 'https:/mbkraus.github.io/word_connection/assets/wrong.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
     this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
     this.load.audio('countdownSound', 'https://mbkraus.github.io/word_connection/assets/audio/countdown.wav');
@@ -290,34 +292,26 @@ function createGameElements(scene) {
 
     correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.55);
 
-    checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
-        fontSize: game.scale.width * 0.06 + 'px',
-        color: '0x66FF66',
-        fontFamily: 'Poppins',
-        fontWeight: 'bold',
-    }).setOrigin(0, 0.5);
-    checkmark.setVisible(false);
-    checkmark.setDepth(2);
-
-    scene.add.existing(checkmark);
+    scene.checkmark = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'checkmark')
+        .setOrigin(0, 0.5)
+        .setVisible(false)
+        .setDepth(2);
+        
+    scene.checkmark.setScale(game.scale.width * 0.002);
     
-    checkmark.setPosition(
+    scene.checkmark.setPosition(
         inputDisplay.x + inputBgWidth * 0.4,
         inputDisplay.y
     );
 
-    cross = scene.add.text(inputBgWidth / 2 + 10, 0, 'x', {
-        fontSize: game.scale.width * 0.06 + 'px',
-        color: '0xFF0000',
-        fontFamily: 'Poppins',
-        fontWeight: 'bold',
-    }).setOrigin(0, 0.5);
-    cross.setVisible(false);
-    cross.setDepth(2);
+    scene.cross = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'cross')
+    .setOrigin(0, 0.5)
+    .setVisible(false)
+    .setDepth(2);
+    
+    scene.cross.setScale(0.038);
 
-    scene.add.existing(cross);
-
-    cross.setPosition(
+    scene.cross.setPosition(
         inputDisplay.x + inputBgWidth * 0.4,
         inputDisplay.y
     );
@@ -721,8 +715,8 @@ function startNextRound(scene) {
         }
         correctGuessTexts = [];
 
-        if (checkmark) {
-            checkmark.setVisible(false);
+        if (scene.checkmark) {
+            scene.checkmark.setVisible(false); 
         }
 
         roundText.setText(`Round: ${currentRound + 1}`);
@@ -851,8 +845,8 @@ function startRound(scene) {
     }
     correctGuessTexts = [];
     
-    if (checkmark) {
-        checkmark.setVisible(false);
+    if (scene.checkmark) {
+        scene.checkmark.setVisible(false);
     }
 
     const currentTopics = allRounds[currentRound];
@@ -987,9 +981,9 @@ function checkGuess(scene, guess) {
             });
         }
         
-        checkmark.setVisible(true);
+        scene.checkmark.setVisible(true);
         scene.time.delayedCall(1000, () => {
-            checkmark.setVisible(false);
+            scene.checkmark.setVisible(false);
         });
         
         score += 30;
@@ -1005,9 +999,9 @@ function checkGuess(scene, guess) {
         }
     } else {
         scene.sound.play('incorrectSound');
-        cross.setVisible(true);
+        scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
-            cross.setVisible(false);
+            scene.cross.setVisible(false);
         });
     }
 }
