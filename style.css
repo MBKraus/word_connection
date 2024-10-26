@@ -29,16 +29,21 @@ html, body {
     height: 90px !important;
 }
 
-/* Style for the text container */
 .text-container {
-    width: 500px; /* Set the width of the text container */
+    width: 900px; /* Set the width of the text container */
     margin: 20px auto 0; /* Center horizontally and add space above */
-    background-color: lightblue; /* Set the background color */
+    background-color: #d3d3d3; /* Set a lighter gray background */
     padding: 10px; /* Optional: Add padding for better spacing */
     overflow-wrap: break-word; /* Ensure long words break to the next line */
     z-index: 2; /* Ensure it stays on top of the game container */
     position: relative; /* Position relative to keep stacking context */
-    color: red; /* Set the text color to red */
+    color: black; /* Set the heading text color to red */
+    font-family: Arial, sans-serif; /* Set the font to Arial */
+    text-align: center; /* Center the text */
+}
+
+.text-container p {
+    color: #333333; /* Set the regular paragraph text color to dark gray */
 }
 
 /* Override for mobile */
