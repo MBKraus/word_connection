@@ -56,6 +56,7 @@ let isGameActive = true; // Initialize this variable to track the game state
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
+    this.load.image('check', 'https://mbkraus.github.io/word_connection/assets/check.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
     this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
@@ -295,20 +296,16 @@ function createGameElements(scene) {
 
     correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.55);
 
-    checkmark = scene.add.text(inputBgWidth / 2 + 10, 0, '✓', {
-        fontSize: game.scale.width * 0.06 + 'px',
-        color: '0x66FF66',
-        fontFamily: 'Poppins',
-        fontWeight: 'bold',
-    }).setOrigin(0, 0.5);
-    checkmark.setVisible(false);
-    checkmark.setDepth(2);
+    scene.checkmark = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'check')
+    .setOrigin(0, 0.5)
+    .setVisible(false)
+    .setDepth(2);
 
-    scene.add.existing(checkmark);
-    
-    checkmark.setPosition(
-        inputDisplay.x + inputBgWidth * 0.4,
-        inputDisplay.y
+    scene.checkmark.setScale(game.scale.width * 0.00008);
+
+    scene.checkmark.setPosition(
+    inputDisplay.x + inputBgWidth * 0.4,
+    inputDisplay.y
     );
 
     scene.cross = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'cross')
@@ -316,7 +313,7 @@ function createGameElements(scene) {
     .setVisible(false)
     .setDepth(2);
 
-    scene.cross.setScale(game.scale.width * 0.000025);
+    scene.cross.setScale(game.scale.width * 0.000028);
 
     scene.cross.setPosition(
     inputDisplay.x + inputBgWidth * 0.4,
@@ -780,8 +777,8 @@ function startNextRound(scene) {
         }
         correctGuessTexts = [];
 
-        if (checkmark) {
-            checkmark.setVisible(false);
+        if (scene.checkmark) {
+            scene.checkmark.setVisible(false);
         }
 
         roundText.setText(`Round: ${currentRound + 1}`);
@@ -910,8 +907,8 @@ function startRound(scene) {
     }
     correctGuessTexts = [];
     
-    if (checkmark) {
-        checkmark.setVisible(false);
+    if (scene.checkmark) {
+        scene.checkmark.setVisible(false);
     }
 
     const currentTopics = allRounds[currentRound];
@@ -1046,9 +1043,9 @@ function checkGuess(scene, guess) {
             });
         }
         
-        checkmark.setVisible(true);
+        scene.checkmark.setVisible(true);
         scene.time.delayedCall(1000, () => {
-            checkmark.setVisible(false);
+            scene.checkmark.setVisible(false);
         });
         
         score += 30;
