@@ -1,8 +1,10 @@
 import { loadTopics, generateRounds } from './topics.js';
-import { createHeader, createAdContainer } from './uiComponents.js';
+import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons,} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createCountdown, showCountdown, createInterRoundScreen, hideInterRoundScreen, createFailureEndScreen } from './screens.js';
+import { createInterRoundScreen, hideInterRoundScreen, createFailureEndScreen} from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
+import { createCountdown, showCountdown} from './countdown.js';
+import { resetTimerAndBar} from './timer.js';
 
 
 Promise.all([
@@ -51,7 +53,6 @@ let lastUpdateTime;
 let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
 let confettiAnimationId = null;
 
-const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
 let countdownAudioInRoundPlayed = false;
@@ -75,179 +76,52 @@ function create() {
     this.score = 0
     this.timerDuration = 30
     this.timerText = null;
+    this.timerEvent = null;
+    this.currentInputText = ''; 
+    this.updateInterval = 100; // Update every 100ms for smoother countdown
+    this.gameStartTime = null;
+    this.isGameActive = true;
+    this.countdownAudioInRoundPlayed = false;
 
     const allTopics = loadTopics(this);
-    allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
-
-    this.currentInputText = ''; 
-
-    const headerText = createHeader(this);
-    
-    createAdContainer();
-    const headerBottom = (headerText.height / 2) - 2;
-    document.getElementById('ad-container').style.top = `${headerBottom}px`;
+    this.allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
 
     createCountdown(this);
 
     createGameElements(this);
 
-    createInterRoundScreen(this, game);
+    createInterRoundScreen(this);
     
-    showCountdown(this, game);
+    showCountdown(this);
 
     setupKeyboardInput(this);
 
-    createFailureEndScreen(this, game);
+    createFailureEndScreen(this);
 }
 
 
-
-
-
 function createGameElements(scene) {
-    const x = game.scale.width * 0.5;
 
-    // Create input display container
-    const inputBgWidth = game.scale.width * 0.98;
-    const inputBgHeight = game.scale.height * 0.055;
+    createHeader(scene);
+    
+    createAdContainer();
+    const headerBottom = (scene.headerText.height / 2) - 2;
+    document.getElementById('ad-container').style.top = `${headerBottom}px`;
 
-    // Create background for input
-    const inputBgGraphics = scene.add.graphics();
-    inputBgGraphics.fillStyle(0xD3D3D3, 1);
-    inputBgGraphics.fillRoundedRect(
-        x - inputBgWidth / 2,
-        game.scale.height * 0.70 - inputBgHeight / 2,
-        inputBgWidth,
-        inputBgHeight,
-        20
-    );
-
-    scene.inputDisplay = scene.add.text(x, game.scale.height * 0.70, scene.currentInputText, {
-        fontSize: game.scale.width * 0.045 + 'px',
-        color: '#000000',
-        fontFamily: 'Poppins',
-        wordWrap: { width: inputBgWidth - 20 }
-    }).setOrigin(0.5);
-    scene.inputDisplay.setDepth(2);
-
-    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
-        .setScale(0.12)
-        .setInteractive();
-        
-    createPopupSystem(scene, questionIcon);
-
-    scene.roundText = scene.add.text(x, game.scale.height * 0.22, `Round: ${scene.currentRound + 1}`, {
-        fontSize: game.scale.width * 0.04 + 'px',
-        color: '#000000',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
-
-
-    // Create timer bar inside input display
-    scene.timeBar = scene.add.graphics();
-    scene.timeBar.fillStyle(0xB8B8B8, 1); // Slightly darker than the input background
-    scene.timeBar.setDepth(1); // Set depth to appear above background but below text
+    createInputDisplay(scene);
+    createRoundDisplay(scene);
+    createScoreDisplay(scene);
+    createTimerDisplay(scene);
+    createHeaderIcons(scene);
 
     if (isMobile()) {
         createKeyboard(scene, game);
     }
-    
-    scene.scoreText = scene.add.text(game.scale.width * 0.85, game.scale.height * 0.22, 'Score: 0', {
-        fontSize: game.scale.width * 0.04 + 'px',
-        color: '#000000',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
 
-    scene.timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.22, `Time: ${scene.timer_duration}`, {
-        fontSize: game.scale.width * 0.04 + 'px',
-        color: '#000000',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
-
-    scene.correctGuessContainer = scene.add.container(game.scale.width * 0.03, game.scale.height * 0.55);
-
-    scene.checkmark = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'check')
-    .setOrigin(0, 0.5)
-    .setVisible(false)
-    .setDepth(2);
-
-    scene.checkmark.setScale(game.scale.width * 0.00008);
-
-    scene.checkmark.setPosition(
-    scene.inputDisplay.x + inputBgWidth * 0.4,
-    scene.inputDisplay.y
-    );
-
-    scene.cross = scene.add.sprite(inputBgWidth / 2 + 10, 0, 'cross')
-    .setOrigin(0, 0.5)
-    .setVisible(false)
-    .setDepth(2);
-
-    scene.cross.setScale(game.scale.width * 0.000028);
-
-    scene.cross.setPosition(
-    scene.inputDisplay.x + inputBgWidth * 0.4,
-    scene.inputDisplay.y
-    );
+    createFeedbackIcons(scene);
 }
 
-function createPopupSystem(scene, triggerImage) {
-    // Create the popup container
-    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.4);
-    popup.setVisible(false);
-    popup.setDepth(1000);
 
-    // Calculate relative dimensions
-    const popupWidth = scene.scale.width * 0.6;    // 60% of game width
-    const popupHeight = scene.scale.height * 0.5;  // 50% of game height
-    const halfWidth = popupWidth / 2;
-    const halfHeight = popupHeight / 2;
-
-    // Create background with relative size
-    const background = scene.add.graphics();
-    background.fillStyle(0x000000, 0.9);
-    background.fillRoundedRect(-halfWidth, -halfHeight, popupWidth, popupHeight, 20);
-    popup.add(background);
-
-    // Add text with relative positioning and font size
-    const text = scene.add.text(0, -halfHeight * 0.7, 'Hello World', {
-        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
-        fill: '#ffffff'
-    }).setOrigin(0.5);
-    popup.add(text);
-
-    // Create OK button with relative size and positioning
-    const buttonWidth = scene.scale.width * 0.1;   // 10% of game width
-    const buttonHeight = scene.scale.height * 0.06; // 6% of game height
-    const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, 0x4a4a4a);
-    
-    const buttonText = scene.add.text(0, halfHeight * 0.5, 'OK', {
-        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
-        fill: '#ffffff'
-    }).setOrigin(0.5);
-
-    button.setInteractive();
-    popup.add(button);
-    popup.add(buttonText);
-
-    // Add click handlers
-    triggerImage.on('pointerdown', () => {
-        popup.setVisible(true);
-    });
-
-    button.on('pointerdown', () => {
-        popup.setVisible(false);
-    });
-
-    // Optional: add hover effect for the button
-    button.on('pointerover', () => {
-        button.setFillStyle(0x666666);
-    });
-
-    button.on('pointerout', () => {
-        button.setFillStyle(0x4a4a4a);
-    });
-}
 
 // // Update hideGameElements function to handle the new structure
 // function hideGameElements() {
@@ -264,7 +138,7 @@ function createPopupSystem(scene, triggerImage) {
 //         correctGuessContainer.setVisible(false);
 //     }
 // }
-
+ 
 // // Update showGameElements function
 // function showGameElements() {
 //     tiles.forEach(tileObj => {
@@ -349,48 +223,6 @@ function createPopupSystem(scene, triggerImage) {
 //     scoreText.setText(`Score: ${score}`);
 // }
 
-// function startTimer(scene) {
-//     clearTimerEvent(); // Clear any previous timer event
-
-//     remainingTime = TIMER_DURATION;
-//     gameStartTime = Date.now();
-//     lastUpdateTime = gameStartTime;
-
-//     updateTimerDisplay(scene);
-
-//     timerEvent = scene.time.addEvent({
-//         delay: UPDATE_INTERVAL,
-//         callback: updateTimer,
-//         callbackScope: scene,
-//         loop: true
-//     });
-// }
-
-// function updateTimer() {
-//     const currentTime = Date.now();
-//     const elapsedTime = (currentTime - gameStartTime) / 1000; // Convert to seconds
-//     remainingTime = Math.max(0, TIMER_DURATION - elapsedTime);
-
-//     if (currentTime - lastUpdateTime >= 1000) { // Update display every second
-//         updateTimerDisplay(this);
-//         lastUpdateTime = currentTime;
-//     }
-
-//     // Play sound when there are 2 seconds left, only if the game is still active
-//     if (isGameActive && remainingTime <= 3.05 && remainingTime > 2.95 && !countdownAudioInRoundPlayed) {
-//         this.sound.play('countdownSound');
-//         countdownAudioInRoundPlayed = true;
-//     }
-
-//     // If remaining time is less than or equal to 0, ensure everything shows zero
-//     if (remainingTime <= 0) {
-//         remainingTime = 0;  // Force to exactly 0
-//         updateTimerDisplay(this);  // Update one final time
-//         clearTimerEvent();
-//         isGameActive = false; // Set game state to inactive before handling time up
-//         handleTimeUp(this);
-//     }
-// }
 
 // function handleTimeUp(scene) {
 //     // Only show failure screen if not all topics were guessed
@@ -531,12 +363,7 @@ function createPopupSystem(scene, triggerImage) {
 //     }, 250);
 // }
 
-// function clearTimerEvent() {
-//     if (timerEvent) {
-//         timerEvent.remove(false);
-//         timerEvent = null;
-//     }
-// }
+
 
 // function endGame(scene) {
 //     countdownAudioInRoundPlayed = false;
@@ -563,110 +390,7 @@ function createPopupSystem(scene, triggerImage) {
 //     }
 // }
 
-// function showFailureEndScreen(scene) {
-//     failureEndScreen.setVisible(true);
-//     hideGameElements();
-// }
 
-
-// function startRound(scene) {
-//     console.log('Starting round:', currentRound);
-
-//     hideTiles();
-//     clearTimerEvent();
-
-//     // Clear previous tiles
-//     tiles.forEach(tileObj => {
-//         tileObj.tile.destroy();
-//         tileObj.text.destroy();
-//     });
-//     tiles = [];
-
-//     // Clear previous correct guesses
-//     if (correctGuessContainer) {
-//         correctGuessContainer.removeAll(true);
-//     }
-//     correctGuessTexts = [];
-    
-//     if (scene.checkmark) {
-//         scene.checkmark.setVisible(false);
-//     }
-
-//     const currentTopics = allRounds[currentRound];
-//     let allWords = currentTopics.flatMap(topic => topic.words);
-//     Phaser.Utils.Array.Shuffle(allWords);
-
-//     roundText.setText(`Round: ${currentRound + 1}`);
-//     remainingTime = TIMER_DURATION;
-//     timerText.setText(`Time: ${remainingTime}`);
-//     startTimer(scene);
-
-//     const cols = 3;
-//     const rows = 4;
-//     const horizontalGap = 20;
-//     const verticalGap = 15;
-//     const cornerRadius = 15;
-    
-//     const totalHorizontalGaps = (cols - 1) * horizontalGap;
-//     const availableWidth = game.scale.width * 0.3325 * cols;
-//     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
-//     const tileHeight = tileWidth * 0.36;
-    
-//     const startY = game.scale.height * 0.24;
-//     const startX = (game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
-
-//     // Generate the tiles with words for the round
-//     for (let i = 0; i < cols; i++) {
-//         for (let j = 0; j < rows; j++) {
-//             const x = startX + i * (tileWidth + horizontalGap);
-//             const y = startY + j * (tileHeight + verticalGap);
-
-//             let graphics = scene.add.graphics();
-//             graphics.fillStyle(0xE2E8F1, 1);
-//             drawRoundedRect(graphics, x, y, tileWidth, tileHeight, cornerRadius);
-
-//             let word = allWords[i + j * cols];
-//             let text = scene.add.text(x + tileWidth/2, y + tileHeight/2, word.toUpperCase(), { 
-//                 fontSize: `${Math.max(32, Math.floor(tileHeight * 0.27))}px`, 
-//                 color: '#000000',
-//                 fontFamily: 'Poppins',
-//                 fontWeight: 'bold',
-//             }).setOrigin(0.5);
-
-//             tiles.push({ 
-//                 tile: graphics, 
-//                 text, 
-//                 word,
-//                 x: x,
-//                 y: y,
-//                 width: tileWidth,
-//                 height: tileHeight
-//             });
-//         }
-//     }
-    
-//     // Initialize correct guess placeholders with only circles, no text
-//     currentTopics.forEach((topic, index) => {
-//         const yOffset = index * (game.scale.height * 0.045);
-//         const circleRadius = game.scale.width * 0.023;
-
-//         const guessContainer = scene.add.container(0, yOffset);
-//         const circle = scene.add.graphics();
-//         circle.lineStyle(10, 0x167D60); // Green border
-//         circle.fillStyle(0xFFFFFF); // White fill
-//         circle.strokeCircle(0, 0, circleRadius);
-//         circle.fillCircle(0, 0, circleRadius);
-
-//         // Only add the circle to the container initially
-//         guessContainer.add(circle);
-//         correctGuessContainer.add(guessContainer);
-
-//         correctGuessTexts.push({ guessContainer, circle, topicName: topic.name, text: null });
-//     });
-
-//     currentInputText = '';
-//     showGameElements();
-// }
 
 // function checkGuess(scene, guess) {
 //     // Return early if timer is at 0 or game is not active
