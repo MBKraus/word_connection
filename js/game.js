@@ -1,7 +1,7 @@
 import { loadTopics, generateRounds } from './topics.js';
 import { createHeader, createAdContainer } from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createCountdown, createInterRoundScreen, hideInterRoundScreen, createFailureEndScreen } from './screens.js';
+import { createCountdown, showCountdown, createInterRoundScreen, hideInterRoundScreen, createFailureEndScreen } from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 
 
@@ -32,10 +32,8 @@ const config = {
 const game = new Phaser.Game(config);
 
 let allRounds;
-let tiles = [];
 let scoreText;
 let score = 0;
-let currentRound = 0;
 let roundText;
 let timerText;
 let timerEvent;
@@ -52,7 +50,7 @@ let gameStartTime;
 let lastUpdateTime;
 let confettiColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
 let confettiAnimationId = null;
-const TIMER_DURATION = 30;
+
 const UPDATE_INTERVAL = 100; // Update every 100ms for smoother countdown
 const NUMBER_OF_ROUNDS = 2;
 const TOPICS_PER_ROUND = 3;
@@ -72,6 +70,12 @@ function preload() {
 
 function create() {
 
+    this.currentRound = 0;
+    this.tiles = [];
+    this.score = 0
+    this.timerDuration = 30
+    this.timerText = null;
+
     const allTopics = loadTopics(this);
     allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
 
@@ -89,64 +93,16 @@ function create() {
 
     createInterRoundScreen(this, game);
     
-    showCountdown(this);
+    showCountdown(this, game);
 
     setupKeyboardInput(this);
 
-    createFailureEndScreen(this, game, score);
-}
-
-function showCountdown(scene) {
-    countdownTime = 3;
-    scene.roundText.setText(`Round: ${currentRound + 1}`);
-    scene.roundText.setVisible(true);
-
-    scene.countdownCircle.clear();
-    scene.countdownCircle.fillStyle(0x167D60, 1);
-    const radius = 100;
-    scene.countdownCircle.fillCircle(game.scale.width / 2, game.scale.height * 0.3, radius);
-
-    scene.countdownText.setText(countdownTime);
-    scene.countdownText.setVisible(true);
-    scene.countdownCircle.setVisible(true);
-
-    scene.timerText.setVisible(false);
-    scene.timeBar.setVisible(false);
-
-    hideTiles();
-
-    let countdownStartTime = Date.now();
-    
-    const countdownInterval = setInterval(() => {
-        const elapsedTime = (Date.now() - countdownStartTime) / 1000;
-        countdownTime = Math.max(0, 3 - Math.floor(elapsedTime));
-        scene.countdownText.setText(countdownTime);
-
-        if (countdownTime <= 0) {
-            clearInterval(countdownInterval);
-            scene.countdownCircle.setVisible(false);
-            scene.countdownText.setVisible(false);
-
-            resetTimerAndBar(scene);
-            showTiles(scene);
-        }
-    }, 100); // Update more frequently for smoother countdown
+    createFailureEndScreen(this, game);
 }
 
 
 
-// function resetTimerAndBar(scene) {
-//     remainingTime = TIMER_DURATION;
-//     updateTimerDisplay(scene);
 
-//     timerText.setVisible(true);
-//     timeBar.setVisible(true);
-// }
-
-// function showTiles(scene) {
-//     // Call startRound to generate and show tiles
-//     startRound(scene);
-// }
 
 function createGameElements(scene) {
     const x = game.scale.width * 0.5;
@@ -180,7 +136,7 @@ function createGameElements(scene) {
         
     createPopupSystem(scene, questionIcon);
 
-    scene.roundText = scene.add.text(x, game.scale.height * 0.22, `Round: ${currentRound + 1}`, {
+    scene.roundText = scene.add.text(x, game.scale.height * 0.22, `Round: ${scene.currentRound + 1}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
@@ -202,7 +158,7 @@ function createGameElements(scene) {
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
 
-    scene.timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.22, `Time: ${TIMER_DURATION}`, {
+    scene.timerText = scene.add.text(game.scale.width * 0.15, game.scale.height * 0.22, `Time: ${scene.timer_duration}`, {
         fontSize: game.scale.width * 0.04 + 'px',
         color: '#000000',
         fontFamily: 'Poppins',
@@ -436,35 +392,6 @@ function createPopupSystem(scene, triggerImage) {
 //     }
 // }
 
-// function updateTimerDisplay(scene) {
-//     // Update the timer text
-//     timerText.setText(`Time: ${Math.floor(remainingTime)}`);
-
-//     // Calculate the width of the time bar
-//     timeBar.clear();
-//     timeBar.fillStyle(0xB8B8B8, 1);
-    
-//     // Only draw the bar if there's actually time remaining
-//     if (Math.floor(remainingTime) > 0) {
-//         const barProgress = remainingTime / TIMER_DURATION;
-//         const inputBgWidth = game.scale.width * 0.98;
-//         const inputBgHeight = game.scale.height * 0.055;
-//         const x = game.scale.width * 0.5 - inputBgWidth / 2;
-//         const y = game.scale.height * 0.70 - inputBgHeight / 2;
-        
-//         // Draw the timer bar with the same rounded corners as the input background
-//         timeBar.fillRoundedRect(
-//             x,
-//             y,
-//             inputBgWidth * barProgress,
-//             inputBgHeight,
-//             20
-//         );
-//     }
-// }
-
-
-
 // function handleTimeUp(scene) {
 //     // Only show failure screen if not all topics were guessed
 //     if (correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
@@ -610,13 +537,6 @@ function createPopupSystem(scene, triggerImage) {
 //         timerEvent = null;
 //     }
 // }
-
-function hideTiles() {
-    tiles.forEach(tileObj => {
-        tileObj.tile.setVisible(false);
-        tileObj.text.setVisible(false);
-    });
-}
 
 // function endGame(scene) {
 //     countdownAudioInRoundPlayed = false;
