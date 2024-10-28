@@ -1,5 +1,3 @@
-// screens.js
-
 export function createInterRoundScreen(scene) {
     // Attach interRoundScreen to the scene object
     scene.interRoundScreen = scene.add.container(0, 0);
@@ -40,6 +38,11 @@ export function createInterRoundScreen(scene) {
     // Add the OK button to the inter-round screen container
     scene.interRoundScreen.add(scene.okButton);
     scene.interRoundScreen.setVisible(false);
+}
+
+export function showInterRoundScreen(scene) {
+    scene.interRoundScreen.setVisible(true);
+    window.hideGameElements(scene);
 }
 
 // Ensure the hideInterRoundScreen function takes scene as an argument
@@ -87,12 +90,23 @@ export function createFailureEndScreen(scene) {
 
     // Button interaction
     restartButton.on('pointerdown', () => {
-        hideFailureEndScreen();
+        hideFailureEndScreen(scene);
         startGame(scene);  // Restart the game
     });
 
     scene.failureEndScreen.add(restartButton);
     scene.failureEndScreen.setVisible(false); // Initially hide the screen
+}
+
+export function showFailureEndScreen(scene) {
+    scene.failureEndScreen.setVisible(true);
+    window.hideGameElements(scene);
+}
+
+export function hideFailureEndScreen(scene) {
+    // Hides the failure end screen
+    scene.failureEndScreen.setVisible(false);
+    window.showGameElements(scene);
 }
 
 
@@ -152,9 +166,4 @@ export function createQuestionMarkPopup(scene, triggerImage) {
     button.on('pointerout', () => {
         button.setFillStyle(0x4a4a4a);
     });
-}
-
-function showFailureEndScreen(scene) {
-    scene.failureEndScreen.setVisible(true);
-    hideGameElements();
 }

@@ -13,7 +13,7 @@ function handleKeyboardInput(event, scene) {
         scene.currentInputText = scene.currentInputText.slice(0, -1);
     } else if (event.keyCode === 13) {
         if (scene.currentInputText) {
-            checkGuess(scene, scene.currentInputText.trim().toLowerCase());
+            window.checkGuess(scene, scene.currentInputText.trim().toLowerCase());
             scene.currentInputText = '';
         }
     } else if (event.key.length === 1) {
@@ -105,7 +105,7 @@ export function createKeyboard(scene, game) {
             keyButton.on('pointerdown', () => {
                 if (key === '✓') {
                     if (scene.currentInputText) {
-                        checkGuess(scene, scene.currentInputText.trim().toLowerCase());
+                        window.checkGuess(scene, scene.currentInputText.trim().toLowerCase());
                         scene.currentInputText = '';
                         scene.inputDisplay.setText(scene.currentInputText);
                     }

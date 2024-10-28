@@ -82,3 +82,11 @@ function updateTimer(scene) {
         handleTimeUp(scene);
     }
 }
+
+function handleTimeUp(scene) {
+    if (scene.correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
+        scene.time.delayedCall(1500, () => {
+            endGame(scene);
+        }, [], scene);
+    }
+}

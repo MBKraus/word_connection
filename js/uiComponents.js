@@ -114,3 +114,26 @@ export function createFeedbackIcons(scene) {
 export function createCorrectGuessContainer(scene) {
     scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, scene.game.scale.height * 0.55);
 } 
+
+export function initializeCorrectGuessPlaceholders(scene) {
+    scene.currentTopics.forEach((topic, index) => {
+        const yOffset = index * (scene.game.scale.height * 0.045);
+        const circleRadius = scene.game.scale.width * 0.023;
+
+        scene.guessContainer = scene.add.container(0, yOffset);
+        const circle = scene.add.graphics();
+        circle.lineStyle(10, 0x167D60); // Green border
+        circle.fillStyle(0xFFFFFF); // White fill
+        circle.strokeCircle(0, 0, circleRadius);
+        circle.fillCircle(0, 0, circleRadius);
+
+        scene.guessContainer.add(circle);
+        scene.correctGuessContainer.add(scene.guessContainer);
+
+        scene.correctGuessTexts.push({ guessContainer: scene.guessContainer, circle, topicName: topic.name, text: null });
+    });
+}
+
+export function updateScoreDisplay(scene) {
+    scene.scoreText.setText(`Score: ${scene.score}`);
+}
