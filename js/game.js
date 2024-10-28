@@ -1,5 +1,5 @@
 import { loadTopics, generateRounds } from './topics.js';
-import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons,} from './uiComponents.js';
+import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createInterRoundScreen, hideInterRoundScreen, createFailureEndScreen} from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
@@ -113,6 +113,7 @@ function createGameElements(scene) {
     createScoreDisplay(scene);
     createTimerDisplay(scene);
     createHeaderIcons(scene);
+    createCorrectGuessContainer(scene);
 
     if (isMobile()) {
         createKeyboard(scene, game);
@@ -195,29 +196,6 @@ function createGameElements(scene) {
 //     });
 // }
 
-// function drawRoundedRect(graphics, x, y, width, height, radius) {
-//     graphics.beginPath();
-    
-//     // Top-left
-//     graphics.arc(x + radius, y + radius, radius, Math.PI, Math.PI * 1.5);
-//     // Top line
-//     graphics.lineTo(x + width - radius, y);
-//     // Top-right
-//     graphics.arc(x + width - radius, y + radius, radius, Math.PI * 1.5, 0);
-//     // Right line
-//     graphics.lineTo(x + width, y + height - radius);
-//     // Bottom-right
-//     graphics.arc(x + width - radius, y + height - radius, radius, 0, Math.PI * 0.5);
-//     // Bottom line
-//     graphics.lineTo(x + radius, y + height);
-//     // Bottom-left
-//     graphics.arc(x + radius, y + height - radius, radius, Math.PI * 0.5, Math.PI);
-//     // Left line
-//     graphics.lineTo(x, y + radius);
-    
-//     graphics.closePath();
-//     graphics.fillPath();
-// }
 
 // function updateScoreDisplay() {
 //     scoreText.setText(`Score: ${score}`);

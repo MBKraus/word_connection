@@ -110,3 +110,7 @@ export function createFeedbackIcons(scene) {
         .setScale(scene.game.scale.width * 0.000028)
         .setPosition(scene.inputDisplay.x + inputBgWidth * 0.4, scene.inputDisplay.y);
 }
+
+export function createCorrectGuessContainer(scene) {
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, scene.game.scale.height * 0.55);
+} 
