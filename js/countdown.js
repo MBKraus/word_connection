@@ -1,6 +1,5 @@
-import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
-import { getTileConfig, createTiles, hideTiles, showTiles} from './tiles.js';
-import { initializeCorrectGuessPlaceholders } from './uiComponents.js';
+import { resetTimerAndBar} from './timer.js';
+import { hideTiles} from './tiles.js';
 
 export function createCountdown(scene) {
     // Create countdown circle and text and assign them to the scene
@@ -49,54 +48,7 @@ export function showCountdown(scene) {
             scene.countdownText.setVisible(false);
 
             resetTimerAndBar(scene);
-            showTiles(scene);
+            startRound(scene);
         }
     }, 100); // Update more frequently for smoother countdown
 }
-
-export function startRound(scene) {
-
-    resetRoundState(scene);
-    setupRoundTextAndTimer(scene);
-    
-    const tileConfig = getTileConfig(scene);
-    createTiles(scene, tileConfig);
-    initializeCorrectGuessPlaceholders(scene);
-    window.showGameElements(scene);
-}
-
-// Helper function: Clear previous data and reset elements for the new round
-function resetRoundState(scene) {
-    hideTiles(scene);
-    clearTimerEvent(scene);
-    scene.currentInputText = '';
-    
-    // Destroy existing tiles and texts
-    scene.tiles.forEach(tileObj => {
-        tileObj.tile.destroy();
-        tileObj.text.destroy();
-    });
-    scene.tiles = [];
-
-    // Clear correct guess container
-    if (scene.correctGuessContainer) {
-        scene.correctGuessContainer.removeAll(true);
-    }
-    scene.correctGuessTexts = [];
-
-    // Hide checkmark if it exists
-    if (scene.checkmark) {
-        scene.checkmark.setVisible(false);
-    }
-}
-
-function setupRoundTextAndTimer(scene) {
-    scene.roundText.setText(`Round: ${scene.currentRound + 1}`);
-    scene.remainingTime = scene.timerDuration;
-    scene.timerText.setText(`Time: ${scene.remainingTime}`);
-    startTimer(scene);
-}
-
-
-
-

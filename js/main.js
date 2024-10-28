@@ -48,6 +48,7 @@ window.startGame = startGame;
 window.checkGuess = checkGuess;
 window.hideGameElements = hideGameElements;
 window.showGameElements = showGameElements;
+window.startRound = startRound;
 window.endGame = endGame;
 
 function create() {
@@ -132,6 +133,7 @@ function showGameElements(scene) {
 }
 
 function startGame(scene) {
+    // Start game from the first round
     scene.isGameActive = true;
     scene.currentRound = 0;
     scene.score = 0;
@@ -276,6 +278,7 @@ function handleRoundEnd(scene) {
 }
 
 function startNextRound(scene) {
+    // Transition to the next round if available
     if (scene.currentRound < scene.allRounds.length - 1) {
         scene.isGameActive = true;
         scene.currentRound++;
@@ -296,6 +299,44 @@ function startNextRound(scene) {
         showCountdown(scene);
     } else {
         endGame(scene);
+    }
+}
+
+
+function startRound(scene) {
+    // Start a new round
+    resetRoundState(scene);
+    
+    scene.roundText.setText(`Round: ${scene.currentRound + 1}`);
+    scene.remainingTime = scene.timerDuration;
+    scene.timerText.setText(`Time: ${scene.remainingTime}`);
+    startTimer(scene);
+    
+    const tileConfig = getTileConfig(scene);
+    createTiles(scene, tileConfig);
+    initializeCorrectGuessPlaceholders(scene);
+    window.showGameElements(scene);
+}
+
+function resetRoundState(scene) {
+    // Clear previous data and reset elements for the new round
+    hideTiles(scene);
+    clearTimerEvent(scene);
+    scene.currentInputText = '';
+    
+    scene.tiles.forEach(tileObj => {
+        tileObj.tile.destroy();
+        tileObj.text.destroy();
+    });
+    scene.tiles = [];
+
+    if (scene.correctGuessContainer) {
+        scene.correctGuessContainer.removeAll(true);
+    }
+    scene.correctGuessTexts = [];
+
+    if (scene.checkmark) {
+        scene.checkmark.setVisible(false);
     }
 }
 

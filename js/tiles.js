@@ -1,5 +1,3 @@
-import { startRound } from './countdown.js';
-
 // Helper function: Get configuration values for tiles layout
 export function getTileConfig(scene) {
     const cols = 3;
@@ -103,9 +101,4 @@ export function hideTiles(scene) {
         tileObj.tile.setVisible(false);
         tileObj.text.setVisible(false);
     });
-}
-
-export function showTiles(scene) {
-    // Call startRound to generate and show tiles
-    startRound(scene);
 }
