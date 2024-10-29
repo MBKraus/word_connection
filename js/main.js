@@ -261,7 +261,7 @@ function handleRoundEnd(scene) {
 
     showInterRoundScreen(scene);
     
-    scene.okButtion = scene.add.text('Next Round')
+    scene.okButton = scene.add.text('Next Round')
     // okButton.setText('Next Round');
     scene.okButton.removeAllListeners('pointerdown');
     scene.okButton.on('pointerdown', () => {

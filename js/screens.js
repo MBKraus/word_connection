@@ -61,12 +61,13 @@ export function createFailureEndScreen(scene) {
     bg.setOrigin(0);
     scene.failureEndScreen.add(bg);
 
-    // Score display
-    scene.interRoundScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
-    scene.interRoundScoreText.setPosition(scene.game.scale.width * 0.5, scene.game.scale.height * 0.4);
-    scene.interRoundScoreText.setVisible(true);
-    scene.failureEndScreen.add(scene.interRoundScoreText);
- 
+    // Create a separate text element for the failure screen
+    scene.failureScoreText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.4, '', {
+        fontSize: scene.game.scale.width * 0.08 + 'px',
+        color: '#ffffff',
+        fontFamily: 'Poppins',
+    }).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.failureScoreText);
 
     // Restart button
     const restartButton = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.7, 'Restart', {
@@ -89,10 +90,12 @@ export function createFailureEndScreen(scene) {
     });
 
     scene.failureEndScreen.add(restartButton);
-    scene.failureEndScreen.setVisible(false); // Initially hide the screen
+    scene.failureEndScreen.setVisible(false);
 }
 
 export function showFailureEndScreen(scene) {
+    // Update the failure screen text before showing
+    scene.failureScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
     scene.failureEndScreen.setVisible(true);
     window.hideGameElements(scene);
 }
