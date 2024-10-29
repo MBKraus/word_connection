@@ -1,11 +1,12 @@
 import { loadTopics, generateRounds } from './topics.js';
-import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay} from './uiComponents.js';
+import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
+    createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen} from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
-import { resetTimerAndBar, clearTimerEvent} from './timer.js';
-import { highlightTiles, hideTiles} from './tiles.js';
+import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
+import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import { createConfettiEffect } from './confetti.js';
 
 Promise.all([
@@ -360,7 +361,6 @@ function endGame(scene) {
         showInterRoundScreen(scene);
     } else {
         // Show failure end screen if not all topics guessed
-        scene.interRoundScoreText.setText(`Try Again! Your Score: ${scene.score}`);
         showFailureEndScreen(scene);
     }
 }

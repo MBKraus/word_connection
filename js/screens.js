@@ -61,18 +61,12 @@ export function createFailureEndScreen(scene) {
     bg.setOrigin(0);
     scene.failureEndScreen.add(bg);
 
-    // Failure message
-    let failureMessage = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.4, 'Try Again!', {
-        fontSize: scene.game.scale.width * 0.08 + 'px',
-        color: '#ffffff',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
-    scene.failureEndScreen.add(failureMessage);
-
     // Score display
-    scene.interRoundScoreText.setText(`Your Score: ${scene.score}`);
-    scene.interRoundScoreText.setPosition(scene.game.scale.width * 0.5, scene.game.scale.height * 0.5);
+    scene.interRoundScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
+    scene.interRoundScoreText.setPosition(scene.game.scale.width * 0.5, scene.game.scale.height * 0.4);
     scene.interRoundScoreText.setVisible(true);
+    scene.failureEndScreen.add(scene.interRoundScoreText);
+ 
 
     // Restart button
     const restartButton = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.7, 'Restart', {
