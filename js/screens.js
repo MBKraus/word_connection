@@ -32,7 +32,7 @@ export function createInterRoundScreen(scene) {
 
     scene.okButton.on('pointerdown', () => {
         hideInterRoundScreen(scene);
-        startNextRound(scene);
+        window.startNextRound(scene);
     });
 
     // Add the OK button to the inter-round screen container

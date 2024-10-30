@@ -50,6 +50,7 @@ window.checkGuess = checkGuess;
 window.hideGameElements = hideGameElements;
 window.showGameElements = showGameElements;
 window.startRound = startRound;
+window.startNextRound = startNextRound;
 window.endGame = endGame;
 
 function create() {
@@ -234,7 +235,6 @@ function checkGuess(scene, guess) {
 
 function handleRoundEnd(scene) {
     clearTimerEvent(scene);
-
     scene.countdownAudioInRoundPlayed = false;
 
     let timeRemaining = scene.remainingTime;
@@ -258,16 +258,23 @@ function handleRoundEnd(scene) {
     interRoundMessage += `\n\nTotal Score: ${scene.score}`;
 
     scene.interRoundScoreText.setText(interRoundMessage);
-
     showInterRoundScreen(scene);
-    
-    scene.okButton = scene.add.text('Next Round')
-    // okButton.setText('Next Round');
-    scene.okButton.removeAllListeners('pointerdown');
-    scene.okButton.on('pointerdown', () => {
-        hideInterRoundScreen(scene);
-        startNextRound(scene);
-    });
+
+    // Check if this is the final round
+    if (scene.currentRound >= scene.allRounds.length - 1) {
+        // If it's the final round, delay showing the completion screen
+        scene.time.delayedCall(2000, () => {
+            endGame(scene);
+        });
+    } else {
+        // If it's not the final round, setup for next round
+        scene.okButton.setText('Next Round');
+        scene.okButton.removeAllListeners('pointerdown');
+        scene.okButton.on('pointerdown', () => {
+            hideInterRoundScreen(scene);
+            startNextRound(scene);
+        });
+    }
 
     // Trigger confetti if all three topics were guessed correctly
     if (scene.correctGuessTexts.length === 3) {
@@ -347,9 +354,11 @@ function endGame(scene) {
     // Check if all topics were guessed in the current round
     const allTopicsGuessed = scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3;
 
-    // Check if the player completed all rounds
-    if (scene.currentRound >= scene.allRounds.length - 1 || allTopicsGuessed) {
-        // Show victory screen if they completed all rounds or guessed all topics
+    // Check if the player has completed all rounds
+    const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
+
+    if (isGameComplete && allTopicsGuessed) {
+        // Show final victory screen
         scene.interRoundScoreText.setText(`All rounds completed!\n\nFinal Score: ${scene.score}`);
         scene.okButton.setText('Restart');
         scene.okButton.removeAllListeners('pointerdown');
@@ -357,9 +366,13 @@ function endGame(scene) {
             hideInterRoundScreen(scene);
             startGame(scene);
         });
-
         showInterRoundScreen(scene);
-    } else {
+
+        // Trigger confetti for completing the game
+        scene.time.delayedCall(100, () => {
+            createConfettiEffect();
+        });
+    } else if (!allTopicsGuessed) {
         // Show failure end screen if not all topics guessed
         showFailureEndScreen(scene);
     }
