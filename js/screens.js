@@ -1,166 +1,170 @@
-export function createInterRoundScreen(scene) {
-    // Attach interRoundScreen to the scene object
-    scene.interRoundScreen = scene.add.container(0, 0);
-    scene.interRoundScreen.setDepth(1000);
+// Common styling configurations
+const STYLES = {
+    fonts: {
+        large: (scene) => `${scene.scale.width * 0.08}px Poppins`,
+        medium: (scene) => `${scene.scale.width * 0.06}px Poppins`,
+        small: (scene) => `${scene.scale.width * 0.04}px Poppins`
+    },
+    colors: {
+        text: '#ffffff',
+        buttonBg: '#4a4a4a',
+        buttonHover: '#666666',
+        overlay: 0x000000
+    },
+    padding: {
+        button: {
+            left: 20,
+            right: 20,
+            top: 10,
+            bottom: 10
+        }
+    }
+};
 
-    // Background overlay
-    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0x000000);
+// Helper functions for common UI elements
+function createOverlay(scene, container) {
+    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, STYLES.colors.overlay);
     bg.setOrigin(0);
-    scene.interRoundScreen.add(bg);
+    container.add(bg);
+    return bg;
+}
 
-    // Score text display in the center of the screen
-    scene.interRoundScoreText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.4, '', {
-        fontSize: scene.scale.width * 0.08 + 'px',
-        color: '#ffffff',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
-    scene.interRoundScreen.add(scene.interRoundScoreText);
-
-    // OK button to proceed to the next round
-    scene.okButton = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.74, 'Next Round', {
+function createButton(scene, x, y, text, onClick) {
+    const button = scene.add.text(x, y, text, {
         fontSize: scene.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins',
-        color: '#ffffff',
-        backgroundColor: '#4a4a4a',
-        padding: {
-            left: 20,
-            right: 20,
-            top: 10,
-            bottom: 10
-        }
+        color: STYLES.colors.text,
+        backgroundColor: STYLES.colors.buttonBg,
+        padding: STYLES.padding.button
     }).setOrigin(0.5).setInteractive();
 
-    scene.okButton.on('pointerdown', () => {
-        hideInterRoundScreen(scene);
-        window.startNextRound(scene);
-    });
-
-    // Add the OK button to the inter-round screen container
-    scene.interRoundScreen.add(scene.okButton);
-    scene.interRoundScreen.setVisible(false);
+    button.on('pointerdown', onClick);
+    return button;
 }
 
-export function showInterRoundScreen(scene) {
-    scene.interRoundScreen.setVisible(true);
-    window.hideGameElements(scene);
-}
-
-// Ensure the hideInterRoundScreen function takes scene as an argument
-export function hideInterRoundScreen(scene) {
-    scene.interRoundScreen.setVisible(false);
-}
-
-
-export function createFailureEndScreen(scene) {
-    // Create a container for the end screen
-    scene.failureEndScreen = scene.add.container(0, 0);
-    scene.failureEndScreen.setDepth(1000);
-
-    // Background
-    let bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0x000000);
-    bg.setOrigin(0);
-    scene.failureEndScreen.add(bg);
-
-    // Create a separate text element for the failure screen
-    scene.failureScoreText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.4, '', {
-        fontSize: scene.game.scale.width * 0.08 + 'px',
-        color: '#ffffff',
+function createText(scene, x, y, initialText = '') {
+    return scene.add.text(x, y, initialText, {
+        fontSize: scene.scale.width * 0.08 + 'px',
+        color: STYLES.colors.text,
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.failureScoreText);
-
-    // Restart button
-    const restartButton = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.7, 'Restart', {
-        fontSize: scene.game.scale.width * 0.06 + 'px',
-        fontFamily: 'Poppins',
-        color: '#ffffff',
-        backgroundColor: '#4a4a4a',
-        padding: {
-            left: 20,
-            right: 20,
-            top: 10,
-            bottom: 10
-        }
-    }).setOrigin(0.5).setInteractive();
-
-    // Button interaction
-    restartButton.on('pointerdown', () => {
-        hideFailureEndScreen(scene);
-        startGame(scene);  // Restart the game
-    });
-
-    scene.failureEndScreen.add(restartButton);
-    scene.failureEndScreen.setVisible(false);
 }
 
-export function showFailureEndScreen(scene) {
-    // Update the failure screen text before showing
-    scene.failureScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
-    scene.failureEndScreen.setVisible(true);
+function createScreen(scene, name) {
+    const screen = scene.add.container(0, 0);
+    screen.setDepth(1000);
+    createOverlay(scene, screen);
+    screen.setVisible(false);
+    return screen;
+}
+
+// Screen management functions
+function showScreen(scene, screenName) {
+    scene[screenName].setVisible(true);
     window.hideGameElements(scene);
 }
 
-export function hideFailureEndScreen(scene) {
-    // Hides the failure end screen
-    scene.failureEndScreen.setVisible(false);
+function hideScreen(scene, screenName) {
+    scene[screenName].setVisible(false);
     window.showGameElements(scene);
 }
 
+// Main screen creation functions
+export function createInterRoundScreen(scene) {
+    scene.interRoundScreen = createScreen(scene, 'interRoundScreen');
+
+    scene.interRoundScoreText = createText(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.4
+    );
+    scene.interRoundScreen.add(scene.interRoundScoreText);
+
+    scene.okButton = createButton(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.74,
+        'Next Round',
+        () => {
+            hideScreen(scene, 'interRoundScreen');
+            window.startNextRound(scene);
+        }
+    );
+    scene.interRoundScreen.add(scene.okButton);
+}
+
+export function createFailureEndScreen(scene) {
+    scene.failureEndScreen = createScreen(scene, 'failureEndScreen');
+
+    scene.failureScoreText = createText(
+        scene,
+        scene.game.scale.width * 0.5,
+        scene.game.scale.height * 0.4
+    );
+    scene.failureEndScreen.add(scene.failureScoreText);
+
+    const restartButton = createButton(
+        scene,
+        scene.game.scale.width * 0.5,
+        scene.game.scale.height * 0.7,
+        'Restart',
+        () => {
+            hideScreen(scene, 'failureEndScreen');
+            startGame(scene);
+        }
+    );
+    scene.failureEndScreen.add(restartButton);
+}
 
 export function createQuestionMarkPopup(scene, triggerImage) {
-    // Create the popup container
     const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.4);
     popup.setVisible(false);
     popup.setDepth(1000);
 
-    // Calculate relative dimensions
-    const popupWidth = scene.scale.width * 0.6;    // 60% of game width
-    const popupHeight = scene.scale.height * 0.5;  // 50% of game height
+    const popupWidth = scene.scale.width * 0.6;
+    const popupHeight = scene.scale.height * 0.5;
     const halfWidth = popupWidth / 2;
     const halfHeight = popupHeight / 2;
 
-    // Create background with relative size
+    // Create background
     const background = scene.add.graphics();
-    background.fillStyle(0x000000, 0.9);
+    background.fillStyle(STYLES.colors.overlay, 0.9);
     background.fillRoundedRect(-halfWidth, -halfHeight, popupWidth, popupHeight, 20);
     popup.add(background);
 
-    // Add text with relative positioning and font size
+    // Add text
     const text = scene.add.text(0, -halfHeight * 0.7, 'Hello World', {
-        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
-        fill: '#ffffff'
+        font: STYLES.fonts.small(scene),
+        fill: STYLES.colors.text
     }).setOrigin(0.5);
     popup.add(text);
 
-    // Create OK button with relative size and positioning
-    const buttonWidth = scene.scale.width * 0.1;   // 10% of game width
-    const buttonHeight = scene.scale.height * 0.06; // 6% of game height
-    const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, 0x4a4a4a);
+    // Create button
+    const buttonWidth = scene.scale.width * 0.1;
+    const buttonHeight = scene.scale.height * 0.06;
+    const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, STYLES.colors.buttonBg)
+        .setInteractive();
     
     const buttonText = scene.add.text(0, halfHeight * 0.5, 'OK', {
-        font: `${scene.scale.width * 0.04}px Poppins`,  // Relative font size
-        fill: '#ffffff'
+        font: STYLES.fonts.small(scene),
+        fill: STYLES.colors.text
     }).setOrigin(0.5);
 
-    button.setInteractive();
+    // Add event handlers
+    triggerImage.on('pointerdown', () => popup.setVisible(true));
+    button.on('pointerdown', () => popup.setVisible(false));
+    button.on('pointerover', () => button.setFillStyle(STYLES.colors.buttonHover));
+    button.on('pointerout', () => button.setFillStyle(STYLES.colors.buttonBg));
+
     popup.add(button);
     popup.add(buttonText);
-
-    // Add click handlers
-    triggerImage.on('pointerdown', () => {
-        popup.setVisible(true);
-    });
-
-    button.on('pointerdown', () => {
-        popup.setVisible(false);
-    });
-
-    // Optional: add hover effect for the button
-    button.on('pointerover', () => {
-        button.setFillStyle(0x666666);
-    });
-
-    button.on('pointerout', () => {
-        button.setFillStyle(0x4a4a4a);
-    });
 }
+
+// Export show/hide functions
+export const showInterRoundScreen = (scene) => showScreen(scene, 'interRoundScreen');
+export const hideInterRoundScreen = (scene) => hideScreen(scene, 'interRoundScreen');
+export const showFailureEndScreen = (scene) => {
+    scene.failureScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
+    showScreen(scene, 'failureEndScreen');
+};
+export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');

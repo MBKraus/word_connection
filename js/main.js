@@ -47,8 +47,8 @@ function preload() {
 
 window.startGame = startGame;
 window.checkGuess = checkGuess;
-window.hideGameElements = hideGameElements;
-window.showGameElements = showGameElements;
+window.hideGameElements = (scene) => setElementsVisibility(scene, false);
+window.showGameElements = (scene) => setElementsVisibility(scene, true);
 window.startRound = startRound;
 window.startNextRound = startNextRound;
 window.endGame = endGame;
@@ -105,33 +105,17 @@ function createGameElements(scene) {
     createFeedbackIcons(scene);
 }
 
-function hideGameElements(scene) {
-    scene.tiles.forEach(tileObj => {
-        tileObj.tile.setVisible(false);
-        tileObj.text.setVisible(false);
-    });
-    scene.scoreText.setVisible(false);
-    scene.timerText.setVisible(false);
-    scene.roundText.setVisible(false);
-    
-    // Update this part to handle the new structure
-    if (scene.correctGuessContainer) {
-        scene.correctGuessContainer.setVisible(false);
-    }
-}
+// Visibility management helper
+function setElementsVisibility(scene, isVisible) {
+    const elements = [
+        ...scene.tiles.map(tileObj => [tileObj.tile, tileObj.text]).flat(),
+        scene.scoreText,
+        scene.timerText,
+        scene.roundText,
+        scene.correctGuessContainer
+    ].filter(Boolean);
 
-function showGameElements(scene) {
-    scene.tiles.forEach(tileObj => {
-        tileObj.tile.setVisible(true);
-        tileObj.text.setVisible(true);
-    });
-    scene.scoreText.setVisible(true);
-    scene.timerText.setVisible(true);
-    scene.roundText.setVisible(true);
-    
-    if (scene.correctGuessContainer) {
-        scene.correctGuessContainer.setVisible(true);
-    }
+    elements.forEach(element => element.setVisible(isVisible));
 }
 
 function startGame(scene) {
