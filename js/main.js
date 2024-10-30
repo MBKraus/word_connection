@@ -217,81 +217,78 @@ function checkGuess(scene, guess) {
     }
 }
 
+function calculateRoundPoints(timeRemaining) {
+    const points = {
+        wordPoints: 3 * 30,
+        roundBonus: 50,
+        timeBonus: 0
+    };
+
+    if (timeRemaining > 20) {
+        points.timeBonus = 30;
+    } else if (timeRemaining > 10) {
+        points.timeBonus = 10;
+    }
+
+    return points;
+}
+
 function handleRoundEnd(scene) {
+    // Handle the end of the round when you guessed all three topics
     clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
 
-    let timeRemaining = scene.remainingTime;
-    let timeBonus = 0;
-    let roundBonus = 50;
-    let wordPoints = 3 * 30;
+    const points = calculateRoundPoints(scene.remainingTime);
+    scene.score += points.roundBonus + points.timeBonus;
 
-    if (timeRemaining > 20) {
-        timeBonus = 30;
-    } else if (timeRemaining > 10) {
-        timeBonus = 10;
-    }
-
-    scene.score += roundBonus + timeBonus;
-
-    let interRoundMessage = `Awesome!\n\n+ ${wordPoints} Word Points`;
-    interRoundMessage += `\n+ ${roundBonus} Round Bonus`;
-    if (timeBonus > 0) {
-        interRoundMessage += `\n+ ${timeBonus} Time Bonus`;
+    let interRoundMessage = `Awesome!\n\n+ ${points.wordPoints} Word Points`;
+    interRoundMessage += `\n+ ${points.roundBonus} Round Bonus`;
+    if (points.timeBonus > 0) {
+        interRoundMessage += `\n+ ${points.timeBonus} Time Bonus`;
     }
     interRoundMessage += `\n\nTotal Score: ${scene.score}`;
 
     scene.interRoundScoreText.setText(interRoundMessage);
     showInterRoundScreen(scene);
 
-    // Check if this is the final round
-    if (scene.currentRound >= scene.allRounds.length - 1) {
-        // If it's the final round, delay showing the completion screen
-        scene.time.delayedCall(2000, () => {
-            endGame(scene);
-        });
-    } else {
-        // If it's not the final round, setup for next round
-        scene.okButton.setText('Next Round');
-        scene.okButton.removeAllListeners('pointerdown');
-        scene.okButton.on('pointerdown', () => {
-            hideInterRoundScreen(scene);
-            startNextRound(scene);
-        });
-    }
+    scene.time.delayedCall(100, () => {
+        createConfettiEffect();
+    });
 
-    // Trigger confetti if all three topics were guessed correctly
-    if (scene.correctGuessTexts.length === 3) {
-        // Small delay to ensure the inter-round screen is visible
-        scene.time.delayedCall(100, () => {
-            createConfettiEffect();
-        });
-    }
+    scene.okButton.setText('Next Round');
+    scene.okButton.removeAllListeners('pointerdown');
+    scene.okButton.on('pointerdown', () => {
+        hideInterRoundScreen(scene);
+        if (scene.currentRound >= scene.allRounds.length - 1) {
+            // If this was the final round, end the game after a delay
+            scene.time.delayedCall(1000, () => {
+                endGame(scene);
+            });
+            return;
+            // Else proceed with the next round
+        } else {
+            startNextRound(scene);
+        }
+    });
 }
 
 function startNextRound(scene) {
-    // Transition to the next round if available
-    if (scene.currentRound < scene.allRounds.length - 1) {
-        scene.isGameActive = true;
-        scene.currentRound++;
-        hideInterRoundScreen(scene);
-        hideTiles(scene);
-        clearTimerEvent(scene);
+    // Start the next round
+    scene.isGameActive = true;
+    scene.currentRound++;
+    hideInterRoundScreen(scene);
+    hideTiles(scene);
+    clearTimerEvent(scene);
 
-        if (scene.correctGuessContainer) {
-            scene.correctGuessContainer.removeAll(true);
-        }
-        scene.correctGuessTexts = [];
-
-        if (scene.checkmark) {
-            scene.checkmark.setVisible(false);
-        }
-
-        scene.roundText.setText(`Round: ${scene.currentRound + 1}`);
-        showCountdown(scene);
-    } else {
-        endGame(scene);
+    if (scene.correctGuessContainer) {
+        scene.correctGuessContainer.removeAll(true);
     }
+    scene.correctGuessTexts = [];
+
+    if (scene.checkmark) {
+        scene.checkmark.setVisible(false);
+    }
+    showCountdown(scene);
 }
 
 
@@ -333,6 +330,10 @@ function resetRoundState(scene) {
 }
 
 function endGame(scene) {
+    // Called in two situations:
+    // - when you guessed all topics right in the final round
+    // - when time's up
+
     scene.countdownAudioInRoundPlayed = false;
 
     // Check if all topics were guessed in the current round
