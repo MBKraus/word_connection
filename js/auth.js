@@ -11,14 +11,11 @@ import {
     sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAgKITCsbCq3jv6qk6HJAyaCvlTyUr0EZY",
-    authDomain: "word-connection-440314.firebaseapp.com",
-    projectId: "word-connection-440314",
-    storageBucket: "word-connection-440314.appspot.com",
-    messagingSenderId: "380895271769",
-    appId: "1:380895271769:web:2e734094d6f1392266ca48"
-};
+const response = await fetch('https://mbkraus.github.io/word_connection/auth.txt');
+const encodedData = await response.text();
+
+const jsonString = atob(encodedData);
+const firebaseConfig = JSON.parse(jsonString);
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
