@@ -8,6 +8,7 @@ import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import { createConfettiEffect } from './confetti.js';
+import { createAuthUI } from './auth.js';
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
@@ -71,6 +72,9 @@ function create() {
     const TOPICS_PER_ROUND = 3;
     const allTopics = loadTopics(this);
     this.allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
+
+    // Add auth UI
+    createAuthUI(this);
 
     createGameElements(this);
 
