@@ -2,8 +2,10 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-width: 378px;
+    min-height: 672px;
     /* overflow: hidden; */
+    height: 100%;
 }
 
 input, textarea, select {
@@ -34,7 +36,7 @@ input, textarea, select {
 }
 
 .text-container {
-    width: 900px; /* Set the width of the text container */
+    width: 378px; /* Set the width of the text container */
     margin: 20px auto 0; /* Center horizontally and add space above */
     background-color: #d3d3d3; /* Set a lighter gray background */
     padding: 10px; /* Optional: Add padding for better spacing */

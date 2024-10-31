@@ -26,13 +26,13 @@ export function createAuthUI(scene) {
     const authContainer = document.createElement('div');
     authContainer.id = 'auth-container';
     authContainer.style.cssText = `
-    position: absolute; 
-    top: ${(scene.game.scale.height * 0.003)}px;  /* Adjust this value to change vertical position */
-    left: ${window.innerWidth < 728 ? '10' : (scene.game.scale.width * 0.17)}px;  /* Align left on mobile */
-    z-index: 1000; 
-    background: white;
-    font-family: 'Poppins', sans-serif;
-`; 
+        position: absolute; 
+        top: ${(scene.game.scale.height * 0.003)}px;
+        left: ${window.innerWidth < 728 ? '10px' : `${scene.game.scale.width * 0.14}px`};  /* Fixed calculation */
+        z-index: 1000; 
+        background: white;
+        font-family: 'Poppins', sans-serif;
+    `;
     scene.game.canvas.parentElement.appendChild(authContainer);
 
     const modalContainer = document.createElement('div');
