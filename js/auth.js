@@ -7,7 +7,8 @@ import {
     createUserWithEmailAndPassword,
     signInWithPopup,
     GoogleAuthProvider,
-    signOut
+    signOut,
+    sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js';
 
 const firebaseConfig = {
@@ -123,6 +124,7 @@ export function createAuthUI(scene) {
                 await signInWithEmailAndPassword(auth, email, password);
                 modalContainer.style.display = 'none';
                 overlay.style.display = 'none';
+                recenterScreen();  // Call recenter function on successful sign-in
             } catch (error) {
                 alert("Sign-In Error: " + error.message);
             }
@@ -144,19 +146,14 @@ export function createAuthUI(scene) {
                 await signInWithPopup(auth, googleProvider);
                 modalContainer.style.display = 'none';
                 overlay.style.display = 'none';
+                recenterScreen();  // Call recenter function on successful sign-in
             } catch (error) {
                 alert("Google Sign-In Error: " + error.message);
             }
         };
     
-        document.getElementById('closeModal').onclick = () => {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-        };
-        overlay.onclick = () => {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-        };
+        // Close modal event
+        closeModal();
     }
 
     function showForgotPasswordModal() {
@@ -165,78 +162,83 @@ export function createAuthUI(scene) {
         
         modalContainer.innerHTML = `
         <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Reset Password</h2>
-        <form id="forgotPasswordForm">
+        <form id="resetPasswordForm">
             <input type="email" id="resetEmail" placeholder="Enter your email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; margin-bottom: 10px; cursor: pointer;">
-                Send Reset Email
+            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Reset Password
             </button>
         </form>
-        <button id="closeModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
-    `;
+        <button id="closeResetModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
+        `;
     
-        // Handle password reset
-        document.getElementById('forgotPasswordForm').onsubmit = async (e) => {
+        // Event listener for reset password
+        document.getElementById('resetPasswordForm').onsubmit = async (e) => {
             e.preventDefault();
             const email = document.getElementById('resetEmail').value.trim();
             try {
                 await sendPasswordResetEmail(auth, email);
-                alert("Password reset email sent. Check your inbox!");
+                alert("Password reset email sent!");
                 modalContainer.style.display = 'none';
                 overlay.style.display = 'none';
+                recenterScreen();  // Call recenter function on successful reset
             } catch (error) {
-                alert("Error sending reset email: " + error.message);
+                alert("Error: " + error.message);
             }
         };
     
-        document.getElementById('closeModal').onclick = () => {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-        };
+        // Close reset password modal
+        closeModal();
     }
 
     function showSignUpForm() {
-    modalContainer.innerHTML = `
+        modalContainer.style.display = 'block';
+        overlay.style.display = 'block';
+        
+        modalContainer.innerHTML = `
         <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Sign Up</h2>
         <form id="signUpForm">
-            <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="password" id="password" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; margin-bottom: 10px; cursor: pointer;">
+            <input type="email" id="signUpEmail" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="password" id="signUpPassword" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; cursor: pointer;">
                 Sign Up
             </button>
         </form>
-        <p style="text-align: center; font-family: 'Poppins', sans-serif;">Already have an account? <span id="signInLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Sign In!</span></p>
-        <button id="closeModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
-    `;
-
-        // Event listener for sign-up
+        <button id="closeSignUpModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
+        `;
+    
+        // Event listener for sign up
         document.getElementById('signUpForm').onsubmit = async (e) => {
             e.preventDefault();
-            const email = document.getElementById('email').value.trim();
-            const password = document.getElementById('password').value.trim();
+            const email = document.getElementById('signUpEmail').value.trim();
+            const password = document.getElementById('signUpPassword').value.trim();
             try {
                 await createUserWithEmailAndPassword(auth, email, password);
                 modalContainer.style.display = 'none';
                 overlay.style.display = 'none';
+                recenterScreen();  // Call recenter function on successful sign-up
             } catch (error) {
-                alert("Sign-Up Error: " + error.message);
+                alert("Sign Up Error: " + error.message);
             }
         };
-
-        // Event listener for the "Sign In!" link
-        document.getElementById('signInLink').onclick = () => {
-            showAuthModal();
-        };
-
-        document.getElementById('closeModal').onclick = () => {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-        };
+    
+        // Close sign-up modal
+        closeModal();
     }
 
-    // Clean up function
-    return () => {
-        authContainer.remove();
-        modalContainer.remove();
-        overlay.remove();
-    };
+    function closeModal() {
+        const closeButtons = document.querySelectorAll('#closeModal, #closeResetModal, #closeSignUpModal');
+        closeButtons.forEach(button => {
+            button.onclick = () => {
+                modalContainer.style.display = 'none';
+                overlay.style.display = 'none';
+                recenterScreen();  // Call recenter function when modal is closed
+            };
+        });
+    }
+
+    function recenterScreen() {
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+            window.scrollTo(0, 0); // Scroll to top for mobile
+        }
+    }
 }
