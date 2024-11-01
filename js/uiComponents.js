@@ -29,6 +29,8 @@ export function createAdContainer() {
         adElement.dataset.adFormat = 'horizontal';
     }
 
+    // Ensure display is set to flex by default
+    adContainer.style.display = 'flex';
     adContainer.style.top = '50px';  // Adjust as needed
 
     // Initialize AdSense
