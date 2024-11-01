@@ -62,11 +62,21 @@ function createScreen(scene, name) {
 function showScreen(scene, screenName) {
     scene[screenName].setVisible(true);
     window.hideGameElements(scene);
+    // Hide ad container
+    const adContainer = document.getElementById('ad-container');
+    if (adContainer) {
+        adContainer.style.display = 'none';
+    }
 }
 
 function hideScreen(scene, screenName) {
     scene[screenName].setVisible(false);
     window.showGameElements(scene);
+    // Show ad container
+    const adContainer = document.getElementById('ad-container');
+    if (adContainer) {
+        adContainer.style.display = 'flex';
+    }
 }
 
 // Main screen creation functions
