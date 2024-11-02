@@ -46,6 +46,12 @@ input, textarea, select {
     color: black; /* Set the heading text color to red */
     font-family: Arial, sans-serif; /* Set the font to Arial */
     text-align: center; /* Center the text */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth fade in */
+}
+
+.text-container.loaded {
+    opacity: 1;
 }
 
 .text-container p {
