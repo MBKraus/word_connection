@@ -85,6 +85,9 @@ function create() {
 
     createCountdown(this);
     showCountdown(this);
+
+    // At the end of the create function, show the text container
+    document.querySelector('.text-container').classList.add('loaded');
 }
 
 
