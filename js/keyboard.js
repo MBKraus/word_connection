@@ -1,9 +1,17 @@
 import { isMobile } from './utils.js';
 
+function isAuthModalVisible() {
+    const modalContainer = document.querySelector('div[style*="position: fixed"]');
+    return modalContainer && window.getComputedStyle(modalContainer).display === 'block';
+}
+
 export function setupKeyboardInput(scene) {
     if (!isMobile()) {
         scene.input.keyboard.on('keydown', (event) => {
-            handleKeyboardInput(event, scene); // Pass the scene
+            // Only handle keyboard input if auth modal is not visible
+            if (!isAuthModalVisible()) {
+                handleKeyboardInput(event, scene);
+            }
         });
     }
 }
@@ -19,9 +27,8 @@ function handleKeyboardInput(event, scene) {
     } else if (event.key.length === 1) {
         scene.currentInputText += event.key.toUpperCase();
     }
-    scene.inputDisplay.setText(scene.currentInputText); // Update display text
+    scene.inputDisplay.setText(scene.currentInputText);
 }
-
 
 export function createKeyboard(scene, game) {
     const keys = [
@@ -71,18 +78,17 @@ export function createKeyboard(scene, game) {
 
             const button = scene.add.graphics();
 
-            let keyText;  // Declare keyText within the loop
+            let keyText;
 
-            // Set color and create text for each key
             if (key === '✓') {
-                button.fillStyle(0x167D60, 1); // Enter key color
+                button.fillStyle(0x167D60, 1);
                 keyText = scene.add.text(0, 0, key, {
                     fontSize: `${rowHeight * 0.4}px`,
                     color: '#FFFFFF',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else {
-                button.fillStyle(0xE2E8F1, 1); // Default color
+                button.fillStyle(0xE2E8F1, 1);
                 keyText = scene.add.text(0, 0, key, {
                     fontSize: `${rowHeight * 0.4}px`,
                     color: '#000000',
@@ -103,18 +109,21 @@ export function createKeyboard(scene, game) {
             keyButton.setInteractive();
 
             keyButton.on('pointerdown', () => {
-                if (key === '✓') {
-                    if (scene.currentInputText) {
-                        window.checkGuess(scene, scene.currentInputText.trim().toLowerCase());
-                        scene.currentInputText = '';
+                // Only handle virtual keyboard input if auth modal is not visible
+                if (!isAuthModalVisible()) {
+                    if (key === '✓') {
+                        if (scene.currentInputText) {
+                            window.checkGuess(scene, scene.currentInputText.trim().toLowerCase());
+                            scene.currentInputText = '';
+                            scene.inputDisplay.setText(scene.currentInputText);
+                        }
+                    } else if (key === '←') {
+                        scene.currentInputText = scene.currentInputText.slice(0, -1);
+                        scene.inputDisplay.setText(scene.currentInputText);
+                    } else {
+                        scene.currentInputText += key;
                         scene.inputDisplay.setText(scene.currentInputText);
                     }
-                } else if (key === '←') {
-                    scene.currentInputText = scene.currentInputText.slice(0, -1);
-                    scene.inputDisplay.setText(scene.currentInputText);
-                } else {
-                    scene.currentInputText += key;
-                    scene.inputDisplay.setText(scene.currentInputText);
                 }
             });
 

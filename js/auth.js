@@ -22,6 +22,7 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
 export function createAuthUI(scene) {
+
     // Create a Phaser DOM element for the auth container
     const authContainerElement = document.createElement('div');
     authContainerElement.id = 'auth-container';
@@ -32,7 +33,8 @@ export function createAuthUI(scene) {
         z-index: 1000;
     `;
 
-    const authContainer = scene.add.dom(
+    // Create and store the reference to the DOM element in the scene
+    scene.authDOMElement = scene.add.dom(
         scene.game.scale.width * 0.02,
         scene.game.scale.height * 0.01,
         authContainerElement

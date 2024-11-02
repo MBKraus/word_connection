@@ -62,20 +62,32 @@ function createScreen(scene, name) {
 function showScreen(scene, screenName) {
     scene[screenName].setVisible(true);
     window.hideGameElements(scene);
+    
     // Hide ad container
     const adContainer = document.getElementById('ad-container');
     if (adContainer) {
         adContainer.style.display = 'none';
+    }
+
+    // Hide auth elements (both Phaser DOM element and HTML container)
+    if (scene.authDOMElement) {  // Store this reference when creating auth UI
+        scene.authDOMElement.setVisible(false);
     }
 }
 
 function hideScreen(scene, screenName) {
     scene[screenName].setVisible(false);
     window.showGameElements(scene);
+    
     // Show ad container
     const adContainer = document.getElementById('ad-container');
     if (adContainer) {
         adContainer.style.display = 'flex';
+    }
+
+    // Show auth elements
+    if (scene.authDOMElement) {
+        scene.authDOMElement.setVisible(true);
     }
 }
 
