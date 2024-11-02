@@ -68,7 +68,7 @@ function create() {
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
 
-    const NUMBER_OF_ROUNDS = 2;
+    const NUMBER_OF_ROUNDS = 3;
     const TOPICS_PER_ROUND = 3;
     const allTopics = loadTopics(this);
     this.allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
