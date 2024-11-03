@@ -2,7 +2,7 @@ import { loadTopics, generateRounds } from './topics.js';
 import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen, createDailyLimitScreen} from './screens.js';
+import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen, createDailyLimitScreen, createWelcomeScreen, showWelcomeScreen} from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
@@ -82,13 +82,16 @@ function create() {
         this.dailyLimitControls = createDailyLimitScreen(this);
         this.dailyLimitControls.show();
     } else {
-        // Create game elements and start the game only if user hasn't played today
+        // Create game elements but don't start the game yet
         createGameElements(this);
         setupKeyboardInput(this);
         createInterRoundScreen(this);
         createFailureEndScreen(this);
         createCountdown(this);
-        showCountdown(this);
+        
+        // Create and show the welcome screen
+        createWelcomeScreen(this);
+        showWelcomeScreen(this, 'welcomeScreen');
     }
 
     // At the end of the create function, show the text container

@@ -275,11 +275,71 @@ export function createDailyLimitScreen(scene) {
     };
 }
 
+
+export function createWelcomeScreen(scene) {
+    scene.welcomeScreen = createScreen(scene, 'welcomeScreen');
+
+    const titleText = createText(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.3,
+        'Word Connection'
+    );
+    scene.welcomeScreen.add(titleText);
+
+    const explainerText = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.45,
+        'Uncover the hidden connections – can you crack the 3 secret themes?',
+        {
+            fontSize: scene.scale.width * 0.04 + 'px',
+            fontFamily: 'Poppins',
+            color: STYLES.colors.text,
+            align: 'center',
+            wordWrap: { width: scene.scale.width * 0.8 }
+        }
+    ).setOrigin(0.5);
+    scene.welcomeScreen.add(explainerText);
+
+    const playButton = createButton(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.65,
+        'Play',
+        () => {
+            hideScreen(scene, 'welcomeScreen');
+            startGame(scene);
+        }
+    );
+    scene.welcomeScreen.add(playButton);
+
+    const loginButton = createButton(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.75,
+        'Login',
+        () => {
+            // Login functionality can be added here
+            console.log('Login button clicked');
+        }
+    );
+    scene.welcomeScreen.add(loginButton);
+
+    return {
+        show: () => showScreen(scene, 'welcomeScreen'),
+        hide: () => hideScreen(scene, 'welcomeScreen')
+    };
+}
+
 // Export show/hide functions
 export const showInterRoundScreen = (scene) => showScreen(scene, 'interRoundScreen');
 export const hideInterRoundScreen = (scene) => hideScreen(scene, 'interRoundScreen');
+
 export const showFailureEndScreen = (scene) => {
     scene.failureScoreText.setText(`Try Again tomorrow!\n\nYour Score: ${scene.score}`);
     showScreen(scene, 'failureEndScreen');
 };
 export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');
+
+export const showWelcomeScreen = (scene) => showScreen(scene, 'welcomeScreen');
+
