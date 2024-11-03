@@ -1,4 +1,5 @@
 import { GameStorage } from './gameStorage.js';
+import { showAuthModal } from './auth.js';
 
 // Common styling configurations
 const STYLES = {
@@ -275,8 +276,10 @@ export function createDailyLimitScreen(scene) {
     };
 }
 
-
 export function createWelcomeScreen(scene) {
+    // Store scene reference for auth callbacks
+    window.gameScene = scene;
+    
     scene.welcomeScreen = createScreen(scene, 'welcomeScreen');
 
     const titleText = createText(
@@ -319,8 +322,7 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.75,
         'Login',
         () => {
-            // Login functionality can be added here
-            console.log('Login button clicked');
+            showAuthModal();
         }
     );
     scene.welcomeScreen.add(loginButton);
@@ -342,4 +344,5 @@ export const showFailureEndScreen = (scene) => {
 export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');
 
 export const showWelcomeScreen = (scene) => showScreen(scene, 'welcomeScreen');
+export const hideWelcomeScreen = (scene) => hideScreen(scene, 'welcomeScreen');
 
