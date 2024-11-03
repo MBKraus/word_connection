@@ -1,3 +1,5 @@
+import { GameStorage } from './gameStorage.js';
+
 // Common styling configurations
 const STYLES = {
     fonts: {
@@ -125,17 +127,16 @@ export function createFailureEndScreen(scene) {
     );
     scene.failureEndScreen.add(scene.failureScoreText);
 
-    const restartButton = createButton(
+    const shareButton = createButton(
         scene,
         scene.game.scale.width * 0.5,
         scene.game.scale.height * 0.7,
-        'Restart',
+        'Share your score!',
         () => {
             hideScreen(scene, 'failureEndScreen');
-            startGame(scene);
         }
     );
-    scene.failureEndScreen.add(restartButton);
+    scene.failureEndScreen.add(shareButton);
 }
 
 export function createQuestionMarkPopup(scene, triggerImage) {
@@ -182,11 +183,163 @@ export function createQuestionMarkPopup(scene, triggerImage) {
     popup.add(buttonText);
 }
 
+export function createDailyLimitScreen(scene) {
+    const screen = scene.add.container(0, 0);
+    screen.setDepth(1000);
+    screen.setVisible(false);
+
+    // Create semi-transparent background
+    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0x000000, 0.8);
+    bg.setOrigin(0);
+    screen.add(bg);
+
+    // Create title text
+    const titleText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.35, "Thanks for Playing!", {
+        fontSize: scene.scale.width * 0.08 + 'px',
+        fontFamily: 'Poppins',
+        color: '#ffffff',
+        align: 'center'
+    }).setOrigin(0.5);
+    screen.add(titleText);
+
+    // Create message text
+    const messageText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.45, 
+        "Great job on today's puzzle!\nCome back tomorrow for a new challenge!", {
+        fontSize: scene.scale.width * 0.04 + 'px',
+        fontFamily: 'Poppins',
+        color: '#ffffff',
+        align: 'center',
+        lineSpacing: 10
+    }).setOrigin(0.5);
+    screen.add(messageText);
+
+    // Create countdown text
+    const countdownText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.55, "", {
+        fontSize: scene.scale.width * 0.035 + 'px',
+        fontFamily: 'Poppins',
+        color: '#ffffff',
+        align: 'center'
+    }).setOrigin(0.5);
+    screen.add(countdownText);
+
+    // Update countdown timer
+    let countdownInterval;
+    function updateCountdown() {
+        const now = new Date();
+        const nextPlay = GameStorage.getNextPlayTime();
+        const diff = nextPlay - now;
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        countdownText.setText(
+            `Next puzzle available in:\n${hours}h ${minutes}m ${seconds}s`
+        );
+    }
+
+    scene.dailyLimitScreen = screen;
+
+    return {
+        show: () => {
+            screen.setVisible(true);
+            updateCountdown();
+            countdownInterval = setInterval(updateCountdown, 1000);
+            
+            // Hide ad container if it exists
+            const adContainer = document.getElementById('ad-container');
+            if (adContainer) {
+                adContainer.style.display = 'none';
+            }
+
+            if (scene.authDOMElement) {
+                scene.authDOMElement.setVisible(false);
+            }
+        },
+        hide: () => {
+            screen.setVisible(false);
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+            
+            // Show ad container if it exists
+            const adContainer = document.getElementById('ad-container');
+            if (adContainer) {
+                adContainer.style.display = 'flex';
+            }
+
+            if (scene.authDOMElement) {
+                scene.authDOMElement.setVisible(true);
+            }
+        }
+    };
+}
+
+
+export function createWelcomeScreen(scene) {
+    scene.welcomeScreen = createScreen(scene, 'welcomeScreen');
+
+    const titleText = createText(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.3,
+        'Word Connection'
+    );
+    scene.welcomeScreen.add(titleText);
+
+    const explainerText = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.45,
+        'Uncover the hidden connections – can you crack the 3 secret themes?',
+        {
+            fontSize: scene.scale.width * 0.04 + 'px',
+            fontFamily: 'Poppins',
+            color: STYLES.colors.text,
+            align: 'center',
+            wordWrap: { width: scene.scale.width * 0.8 }
+        }
+    ).setOrigin(0.5);
+    scene.welcomeScreen.add(explainerText);
+
+    const playButton = createButton(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.65,
+        'Play',
+        () => {
+            hideScreen(scene, 'welcomeScreen');
+            startGame(scene);
+        }
+    );
+    scene.welcomeScreen.add(playButton);
+
+    const loginButton = createButton(
+        scene,
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.75,
+        'Login',
+        () => {
+            // Login functionality can be added here
+            console.log('Login button clicked');
+        }
+    );
+    scene.welcomeScreen.add(loginButton);
+
+    return {
+        show: () => showScreen(scene, 'welcomeScreen'),
+        hide: () => hideScreen(scene, 'welcomeScreen')
+    };
+}
+
 // Export show/hide functions
 export const showInterRoundScreen = (scene) => showScreen(scene, 'interRoundScreen');
 export const hideInterRoundScreen = (scene) => hideScreen(scene, 'interRoundScreen');
+
 export const showFailureEndScreen = (scene) => {
-    scene.failureScoreText.setText(`Try Again!\n\nYour Score: ${scene.score}`);
+    scene.failureScoreText.setText(`Try Again tomorrow!\n\nYour Score: ${scene.score}`);
     showScreen(scene, 'failureEndScreen');
 };
 export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');
+
+export const showWelcomeScreen = (scene) => showScreen(scene, 'welcomeScreen');
+
