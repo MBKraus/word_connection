@@ -2,13 +2,14 @@ import { loadTopics, generateRounds } from './topics.js';
 import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen} from './screens.js';
+import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen, createDailyLimitScreen} from './screens.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import { createConfettiEffect } from './confetti.js';
 import { createAuthUI } from './auth.js';
+import { GameStorage } from './gameStorage.js';
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
@@ -55,15 +56,14 @@ window.startNextRound = startNextRound;
 window.endGame = endGame;
 
 function create() {
-
     this.currentRound = 0;
     this.tiles = [];
-    this.score = 0
-    this.timerDuration = 30
+    this.score = 0;
+    this.timerDuration = 30;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
-    this.updateInterval = 100; // Update every 100ms for smoother countdown
+    this.updateInterval = 100;
     this.gameStartTime = null;
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
@@ -76,15 +76,20 @@ function create() {
     // Add auth UI
     createAuthUI(this);
 
-    createGameElements(this);
-
-    setupKeyboardInput(this);
-
-    createInterRoundScreen(this);
-    createFailureEndScreen(this);
-
-    createCountdown(this);
-    showCountdown(this);
+    // Check if user has already played today
+    if (GameStorage.hasPlayedToday()) {
+        // Only create and show the daily limit screen
+        this.dailyLimitControls = createDailyLimitScreen(this);
+        this.dailyLimitControls.show();
+    } else {
+        // Create game elements and start the game only if user hasn't played today
+        createGameElements(this);
+        setupKeyboardInput(this);
+        createInterRoundScreen(this);
+        createFailureEndScreen(this);
+        createCountdown(this);
+        showCountdown(this);
+    }
 
     // At the end of the create function, show the text container
     document.querySelector('.text-container').classList.add('loaded');
@@ -351,12 +356,11 @@ function endGame(scene) {
 
     if (isGameComplete && allTopicsGuessed) {
         // Show final victory screen
-        scene.interRoundScoreText.setText(`All rounds completed!\n\nFinal Score: ${scene.score}`);
-        scene.okButton.setText('Restart');
+        scene.interRoundScoreText.setText(`All rounds completed!\nCome back tomorrow for another puzzle!\n\nFinal Score: ${scene.score}`);
+        scene.okButton.setText('Share your score!');
         scene.okButton.removeAllListeners('pointerdown');
         scene.okButton.on('pointerdown', () => {
             hideInterRoundScreen(scene);
-            startGame(scene);
         });
         showInterRoundScreen(scene);
 
@@ -368,6 +372,9 @@ function endGame(scene) {
         // Show failure end screen if not all topics guessed
         showFailureEndScreen(scene);
     }
+
+    GameStorage.recordGamePlayed();
+
 }
 
 })
