@@ -1,36 +1,35 @@
 // gameStorage.js
 
-import { getFirestore, increment, doc, setDoc, serverTimestamp, collection, getDocs, limit, orderBy, query, getDoc} from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js';
+import { getFirestore, increment, doc, setDoc, serverTimestamp, collection, getDocs, limit, orderBy, query, getDoc, getAggregateFromServer, average } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 import { auth } from './auth.js';
+import { getFirebaseApp } from './firebaseInit.js';
 
-const db = getFirestore();
+let db = null;
 
-const LAST_PLAYED_KEY = 'wordconnect_last_played';
+async function initializeDb() {
+    if (!db) {
+        const app = await getFirebaseApp();
+        db = getFirestore(app);
+    }
+    return db;
+}
 
 export class GameStorage {
     static hasPlayedToday() {
         try {
             const lastPlayedTime = localStorage.getItem(LAST_PLAYED_KEY);
-
-            console.log('Last played time:', lastPlayedTime);
-            
-            // If no timestamp exists, they haven't played
             if (!lastPlayedTime) return false;
-            
-            // Compare the stored date with today's date
             const lastPlayed = new Date(lastPlayedTime);
             const today = new Date();
-            
             return lastPlayed.toDateString() === today.toDateString();
         } catch (error) {
             console.error('Error checking last played time:', error);
-            return false; // If there's an error, let them play
+            return false;
         }
     }
 
     static recordGamePlayed() {
         try {
-            // Store current timestamp
             localStorage.setItem(LAST_PLAYED_KEY, new Date().toISOString());
         } catch (error) {
             console.error('Error recording game played:', error);
@@ -45,29 +44,27 @@ export class GameStorage {
     }
 }
 
+const LAST_PLAYED_KEY = 'wordconnect_last_played';
+
 export async function saveGameStats(score, totalTopicsGuessed) {
-    // Only save stats if user is logged in
     if (!auth.currentUser) {
         console.log('User not logged in - stats not saved');
         return;
     }
 
+    await initializeDb();
     const userId = auth.currentUser.uid;
     const today = new Date();
-    const dateString = today.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    const dateString = today.toISOString().split('T')[0];
 
     try {
-        // Create a document reference with user ID and date
         const statsRef = doc(db, 'gameStats', userId, 'dailyStats', dateString);
-        
-        // Save the game statistics
         await setDoc(statsRef, {
             score: score,
-            totalTopicsGuessed: totalTopicsGuessed, // Changed from topicsGuessed to totalTopicsGuessed
+            totalTopicsGuessed: totalTopicsGuessed,
             timestamp: serverTimestamp(),
             date: dateString
         });
-
         console.log('Game stats saved successfully');
     } catch (error) {
         console.error('Error saving game stats:', error);
@@ -75,6 +72,7 @@ export async function saveGameStats(score, totalTopicsGuessed) {
 }
 
 export async function updateUserProfile(userId) {
+    await initializeDb();
     try {
         const userRef = doc(db, 'users', userId);
         await setDoc(userRef, {
@@ -88,14 +86,15 @@ export async function updateUserProfile(userId) {
 }
 
 export async function getGameStats(userId) {
+    await initializeDb();
     const stats = {
         totalGamesPlayed: 0,
         lastPlayed: null,
-        recentSessions: []
+        recentSessions: [],
+        averageTopicsGuessed: 0
     };
 
     try {
-        // Get user profile information
         const userRef = doc(db, 'users', userId);
         const userSnap = await getDoc(userRef);
         
@@ -104,10 +103,15 @@ export async function getGameStats(userId) {
             stats.lastPlayed = userSnap.data().lastPlayed ? userSnap.data().lastPlayed.toDate() : null;
         }
 
-        // Get last 3 sessions
         const sessionsRef = collection(db, 'gameStats', userId, 'dailyStats');
-        const sessionsQuery = query(sessionsRef, orderBy('timestamp', 'desc'), limit(3));
-        const sessionDocs = await getDocs(sessionsQuery);
+        const avgQuery = query(sessionsRef);
+        const aggregateSnapshot = await getAggregateFromServer(avgQuery, {
+            averageTopics: average('totalTopicsGuessed')
+        });
+        stats.averageTopicsGuessed = Number(aggregateSnapshot.data().averageTopics || 0).toFixed(1);
+
+        const recentSessionsQuery = query(sessionsRef, orderBy('timestamp', 'desc'), limit(3));
+        const sessionDocs = await getDocs(recentSessionsQuery);
 
         sessionDocs.forEach(doc => {
             const data = doc.data();
