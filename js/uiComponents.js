@@ -1,4 +1,4 @@
-import { createQuestionMarkPopup} from './screens.js';
+import { createQuestionMarkPopup, createStatsPopup} from './screens.js';
 import { isMobile } from './utils.js';
 
 export function createHeader(scene) {
@@ -89,6 +89,34 @@ export function createTimerDisplay(scene) {
 }
 
 export function createHeaderIcons(scene) {
+    // Create bar chart icon using graphics
+    const chartGraphics = scene.add.graphics();
+    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.03);
+    
+    // Set fill style
+    chartGraphics.fillStyle(0x000000, 1);
+    
+    // Scale factor for the bars
+    const scale = scene.scale.width * 0.02; // Base scale remains the same
+    
+    // Draw the three bars with increased heights
+    // Middle height bar (left)
+    chartGraphics.fillRect(-scale*1.5, -scale*1.2, scale*0.8, scale*1.8); // Was 1.2, now 1.8
+    
+    // Highest bar (middle)
+    chartGraphics.fillRect(-scale*0.3, -scale*1.6, scale*0.8, scale*2.2); // Was 1.6, now 2.2
+    
+    // Shortest bar (right)
+    chartGraphics.fillRect(scale*0.9, -scale*0.8, scale*0.8, scale*1.4); // Was 0.9, now 1.4
+    
+    // Adjust hit area to match taller bars
+    const hitArea = new Phaser.Geom.Rectangle(-scale*1.5, -scale*1.6, scale*3, scale*2.2);
+    chartGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
+    
+    // Create stats popup for chart icon
+    createStatsPopup(scene, chartGraphics);
+
+    // Question mark icon (existing code)
     const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
         .setScale(0.12)
         .setInteractive();

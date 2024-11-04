@@ -32,12 +32,21 @@ export function createTiles(scene, config) {
             drawRoundedRect(graphics, x, y, config.tileWidth, config.tileHeight, config.cornerRadius);
 
             const word = allWords[i + j * config.cols];
+            // Create text with word wrapping
             const text = scene.add.text(x + config.tileWidth / 2, y + config.tileHeight / 2, word.toUpperCase(), {
-                fontSize: `${Math.max(32, Math.floor(config.tileHeight * 0.27))}px`,
+                fontSize: `${Math.max(24, Math.floor(config.tileHeight * 0.27))}px`,
                 color: '#000000',
                 fontFamily: 'Poppins',
                 fontWeight: 'bold',
+                wordWrap: { width: config.tileWidth - 20 }, // Leave 10px padding on each side
+                align: 'center'
             }).setOrigin(0.5);
+
+            // Adjust text size if it's still too tall
+            while (text.height > config.tileHeight - 20 && text.style.fontSize.replace('px', '') > 12) {
+                const currentSize = parseInt(text.style.fontSize);
+                text.setFontSize(currentSize - 2);
+            }
 
             scene.tiles.push({ 
                 tile: graphics, 

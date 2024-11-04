@@ -9,6 +9,8 @@ import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import { createConfettiEffect } from './confetti.js';
 import { GameStorage } from './gameStorage.js';
+import { saveGameStats, updateUserProfile } from './gameStorage.js';
+import { auth } from './auth.js';
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),
@@ -347,11 +349,25 @@ function endGame(scene) {
 
     scene.countdownAudioInRoundPlayed = false;
 
+    // Calculate total number of topics guessed correctly across all rounds
+    // Each round has 3 topics, so multiply currentRound by 3 and add current round's correct guesses
+    const topicsInPreviousRounds = scene.currentRound * 3;
+    const topicsInCurrentRound = scene.correctGuessTexts.filter(entry => entry.text !== null).length;
+    const totalTopicsGuessed = topicsInPreviousRounds + topicsInCurrentRound;
+
     // Check if all topics were guessed in the current round
     const allTopicsGuessed = scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3;
 
     // Check if the player has completed all rounds
     const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
+
+    if (auth.currentUser) {  // Check if a user is logged in
+        const userId = auth.currentUser.uid;
+        updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
+
+        // Save game stats to Firebase with total topics guessed
+        saveGameStats(scene.score, totalTopicsGuessed);
+    }
 
     if (isGameComplete && allTopicsGuessed) {
         // Show final victory screen

@@ -1,5 +1,5 @@
-import { GameStorage } from './gameStorage.js';
-import { showAuthModal } from './auth.js';
+import { GameStorage, getGameStats} from './gameStorage.js';
+import { showAuthModal, auth } from './auth.js';
 
 // Common styling configurations
 const STYLES = {
@@ -141,7 +141,7 @@ export function createFailureEndScreen(scene) {
 }
 
 export function createQuestionMarkPopup(scene, triggerImage) {
-    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.4);
+    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.45);
     popup.setVisible(false);
     popup.setDepth(1000);
 
@@ -183,6 +183,78 @@ export function createQuestionMarkPopup(scene, triggerImage) {
     popup.add(button);
     popup.add(buttonText);
 }
+
+export async function createStatsPopup(scene, chartGraphics) {
+    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.45);
+    popup.setVisible(false);
+    popup.setDepth(1000);
+
+    const popupWidth = scene.scale.width * 0.6;
+    const popupHeight = scene.scale.height * 0.5;
+    const halfWidth = popupWidth / 2;
+    const halfHeight = popupHeight / 2;
+
+    // Create background
+    const background = scene.add.graphics();
+    background.fillStyle(STYLES.colors.overlay, 0.9);
+    background.fillRoundedRect(-halfWidth, -halfHeight, popupWidth, popupHeight, 20);
+    popup.add(background);
+
+    // Add title text
+    const titleText = scene.add.text(0, -halfHeight * 0.8, 'Your Stats', {
+        font: STYLES.fonts.small(scene),
+        fill: STYLES.colors.text
+    }).setOrigin(0.5);
+    popup.add(titleText);
+
+    // Display placeholder text for stats
+    const statsText = scene.add.text(0, -halfHeight * 0.3, 'Loading...', {
+        font: STYLES.fonts.small(scene),
+        fill: STYLES.colors.text
+    }).setOrigin(0.5).setAlign('center');
+    popup.add(statsText);
+
+    // Button to close the popup
+    const buttonWidth = scene.scale.width * 0.1;
+    const buttonHeight = scene.scale.height * 0.06;
+    const button = scene.add.rectangle(0, halfHeight * 0.5, buttonWidth, buttonHeight, STYLES.colors.buttonBg)
+        .setInteractive();
+    const buttonText = scene.add.text(0, halfHeight * 0.5, 'OK', {
+        font: STYLES.fonts.small(scene),
+        fill: STYLES.colors.text
+    }).setOrigin(0.5);
+
+    popup.add(button);
+    popup.add(buttonText);
+
+    // Event handlers for button and chartGraphics
+    chartGraphics.on('pointerdown', async () => {
+        popup.setVisible(true);
+
+        // Load and display game stats if logged in
+        if (auth.currentUser) {
+            const stats = await getGameStats(auth.currentUser.uid);
+            if (stats) {
+                statsText.setText([
+                    `Total Games Played: ${stats.totalGamesPlayed}`,
+                    `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`,
+                    '',
+                    'Recent Sessions:',
+                    ...stats.recentSessions.map(session => `${session.date}: ${session.totalTopicsGuessed} topics guessed`)
+                ]);
+            } else {
+                statsText.setText('Error loading stats.');
+            }
+        } else {
+            statsText.setText('Please log in to view your stats.');
+        }
+    });
+
+    button.on('pointerdown', () => popup.setVisible(false));
+    button.on('pointerover', () => button.setFillStyle(STYLES.colors.buttonHover));
+    button.on('pointerout', () => button.setFillStyle(STYLES.colors.buttonBg));
+}
+
 
 export function createDailyLimitScreen(scene) {
     const screen = scene.add.container(0, 0);
