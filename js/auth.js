@@ -1,4 +1,4 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js';
+import { getFirebaseApp } from './firebaseInit.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -8,16 +8,10 @@ import {
     GoogleAuthProvider,
     signOut,
     sendPasswordResetEmail
-} from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { hideWelcomeScreen } from './screens.js';
 
-const response = await fetch('https://mbkraus.github.io/word_connection/auth.txt');
-const encodedData = await response.text();
-
-const jsonString = atob(encodedData);
-const firebaseConfig = JSON.parse(jsonString);
-
-const app = initializeApp(firebaseConfig);
+const app = await getFirebaseApp();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 

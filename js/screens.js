@@ -185,12 +185,12 @@ export function createQuestionMarkPopup(scene, triggerImage) {
 }
 
 export async function createStatsPopup(scene, chartGraphics) {
-    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.45);
+    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height * 0.50);
     popup.setVisible(false);
     popup.setDepth(1000);
 
-    const popupWidth = scene.scale.width * 0.6;
-    const popupHeight = scene.scale.height * 0.5;
+    const popupWidth = scene.scale.width * 0.75;
+    const popupHeight = scene.scale.height * 0.6;
     const halfWidth = popupWidth / 2;
     const halfHeight = popupHeight / 2;
 
@@ -201,17 +201,22 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(background);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.8, 'Your Stats', {
+    const titleText = scene.add.text(0, -halfHeight * 0.8, 'Your progress', {
         font: STYLES.fonts.small(scene),
         fill: STYLES.colors.text
     }).setOrigin(0.5);
     popup.add(titleText);
 
-    // Display placeholder text for stats
-    const statsText = scene.add.text(0, -halfHeight * 0.3, 'Loading...', {
+    // Create container for progress circles
+    const circlesContainer = scene.add.container(0, -halfHeight * 0.3);
+    popup.add(circlesContainer);
+
+    const statsText = scene.add.text(0, halfHeight * 0.1, 'Loading...', {
         font: STYLES.fonts.small(scene),
-        fill: STYLES.colors.text
-    }).setOrigin(0.5).setAlign('center');
+        fill: STYLES.colors.text,
+        align: 'center',
+        lineSpacing: 10  // Add some spacing between lines
+    }).setOrigin(0.5);
     popup.add(statsText);
 
     // Button to close the popup
@@ -227,6 +232,61 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(button);
     popup.add(buttonText);
 
+    // Function to get border color based on topics guessed
+    const getBorderColor = (topicsGuessed) => {
+        if (topicsGuessed >= 9) return 0x00FF00;  // Thick green
+        if (topicsGuessed >= 6) return 0x90EE90;  // Light green
+        if (topicsGuessed >= 3) return 0xFFA500;  // Orange
+        if (topicsGuessed >= 1) return 0xFF0000;  // Red
+        return 0x8B0000;  // Dark red
+    };
+
+        // Modified createProgressCircles function with proper cleanup
+        const createProgressCircles = (sessions) => {
+            // First destroy all existing graphics objects
+            circlesContainer.list.forEach(child => {
+                if (child instanceof Phaser.GameObjects.Graphics) {
+                    child.destroy();
+                }
+                child.destroy();
+            });
+            circlesContainer.removeAll();
+        
+            const circleRadius = 75;
+            const spacing = 140;
+            const startX = -(spacing * (sessions.length - 1)) / 2;
+        
+            sessions.forEach((session, index) => {
+                const x = startX + (index * spacing);
+                
+                // Create circle background
+                const circle = scene.add.graphics();
+                circle.lineStyle(10, getBorderColor(session.totalTopicsGuessed));
+                circle.fillStyle(0xFFFFFF);
+                circle.fillCircle(x, 0, circleRadius);
+                circle.strokeCircle(x, 0, circleRadius);
+                
+                const date = new Date(session.date);
+                const day = date.getDate();
+                const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
+        
+                const dayText = scene.add.text(x, -13, day, {
+                    font: STYLES.fonts.small(scene),
+                    fill: '#000000',
+                    fontSize: '18px'
+                }).setOrigin(0.5);
+    
+                const monthText = scene.add.text(x, 28, month, {
+                    font: STYLES.fonts.small(scene),
+                    fill: '#000000',
+                    fontSize: '14px'
+                }).setOrigin(0.5);
+        
+                // Add all elements to the container
+                circlesContainer.add([circle, dayText, monthText]);
+            });
+        };
+    
     // Event handlers for button and chartGraphics
     chartGraphics.on('pointerdown', async () => {
         popup.setVisible(true);
@@ -235,12 +295,14 @@ export async function createStatsPopup(scene, chartGraphics) {
         if (auth.currentUser) {
             const stats = await getGameStats(auth.currentUser.uid);
             if (stats) {
+                // Create progress circles
+                createProgressCircles(stats.recentSessions);
+
+                // Update stats text
                 statsText.setText([
                     `Total Games Played: ${stats.totalGamesPlayed}`,
-                    `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`,
-                    '',
-                    'Recent Sessions:',
-                    ...stats.recentSessions.map(session => `${session.date}: ${session.totalTopicsGuessed} topics guessed`)
+                    `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
+                    `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
                 ]);
             } else {
                 statsText.setText('Error loading stats.');

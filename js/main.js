@@ -82,20 +82,27 @@ function create() {
     } else {
         // Create game elements but don't start the game yet
         createGameElements(this);
+
+        // Create and show the welcome screen
+        createWelcomeScreen(this);
+        showWelcomeScreen(this, 'welcomeScreen');
+
         setupKeyboardInput(this);
         createInterRoundScreen(this);
         createFailureEndScreen(this);
         createCountdown(this);
-        
-        // Create and show the welcome screen
-        createWelcomeScreen(this);
-        showWelcomeScreen(this, 'welcomeScreen');
     }
 
     // At the end of the create function, show the text container
     document.querySelector('.text-container').classList.add('loaded');
 }
 
+function showAdContainer() {
+    const adContainer = document.getElementById('ad-container');
+    if (adContainer) {
+        adContainer.style.display = 'block';
+    }
+}
 
 function createGameElements(scene) {
 
@@ -138,6 +145,9 @@ function startGame(scene) {
     scene.score = 0;
     updateScoreDisplay(scene);
     
+    // Show the ad container only after welcome screen/login is complete
+    showAdContainer();
+
     if (scene.correctGuessContainer) {
         scene.correctGuessContainer.removeAll(true);
     }
