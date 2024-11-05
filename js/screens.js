@@ -241,54 +241,60 @@ export async function createStatsPopup(scene, chartGraphics) {
         return 0x8B0000;  // Dark red
     };
 
-        // Modified createProgressCircles function with proper cleanup
-        const createProgressCircles = (sessions) => {
-            // First destroy all existing graphics objects
-            circlesContainer.list.forEach(child => {
-                if (child instanceof Phaser.GameObjects.Graphics) {
-                    child.destroy();
-                }
-                child.destroy();
-            });
-            circlesContainer.removeAll();
-        
-            const circleRadius = 75;
-            const spacing = 140;
-            const startX = -(spacing * (sessions.length - 1)) / 2;
-        
-            sessions.forEach((session, index) => {
-                const x = startX + (index * spacing);
-                
-                // Create circle background
-                const circle = scene.add.graphics();
-                circle.lineStyle(10, getBorderColor(session.totalTopicsGuessed));
-                circle.fillStyle(0xFFFFFF);
-                circle.fillCircle(x, 0, circleRadius);
-                circle.strokeCircle(x, 0, circleRadius);
-                
-                const date = new Date(session.date);
-                const day = date.getDate();
-                const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
-        
-                const dayText = scene.add.text(x, -13, day, {
-                    font: STYLES.fonts.small(scene),
-                    fill: '#000000',
-                    fontSize: '18px'
-                }).setOrigin(0.5);
+    // Modified createProgressCircles function with proper cleanup
+    const createProgressCircles = (sessions) => {
+        // First destroy all existing objects
+        circlesContainer.list.forEach(child => {
+            child.destroy();
+        });
+        circlesContainer.removeAll();
     
-                const monthText = scene.add.text(x, 28, month, {
-                    font: STYLES.fonts.small(scene),
-                    fill: '#000000',
-                    fontSize: '14px'
-                }).setOrigin(0.5);
-        
-                // Add all elements to the container
-                circlesContainer.add([circle, dayText, monthText]);
-            });
-        };
+        const circleRadius = 75;
+        const spacing = 140;
+        const startX = -(spacing * (sessions.length - 1)) / 2;
     
+        sessions.forEach((session, index) => {
+            const x = startX + (index * spacing);
+            
+            // Create circle background
+            const circle = scene.add.graphics();
+            circle.lineStyle(10, getBorderColor(session.totalTopicsGuessed));
+            circle.fillStyle(0xFFFFFF);
+            circle.fillCircle(x, 0, circleRadius);
+            circle.strokeCircle(x, 0, circleRadius);
+            
+            const date = new Date(session.date);
+            const day = date.getDate();
+            const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
+    
+            const dayText = scene.add.text(x, -13, day, {
+                font: STYLES.fonts.small(scene),
+                fill: '#000000',
+                fontSize: '18px'
+            }).setOrigin(0.5);
+    
+            const monthText = scene.add.text(x, 28, month, {
+                font: STYLES.fonts.small(scene),
+                fill: '#000000',
+                fontSize: '14px'
+            }).setOrigin(0.5);
+    
+            // Add all elements to the container
+            circlesContainer.add([circle, dayText, monthText]);
+        });
+    };
+    
+    const cleanupPopup = () => {
+        circlesContainer.list.forEach(child => {
+            child.destroy();
+        });
+        circlesContainer.removeAll();
+        statsText.setText('Loading...');
+    };
+
     // Event handlers for button and chartGraphics
     chartGraphics.on('pointerdown', async () => {
+        cleanupPopup();
         popup.setVisible(true);
 
         // Load and display game stats if logged in
@@ -312,7 +318,10 @@ export async function createStatsPopup(scene, chartGraphics) {
         }
     });
 
-    button.on('pointerdown', () => popup.setVisible(false));
+    button.on('pointerdown', () => {
+        cleanupPopup();
+        popup.setVisible(false);
+    });
     button.on('pointerover', () => button.setFillStyle(STYLES.colors.buttonHover));
     button.on('pointerout', () => button.setFillStyle(STYLES.colors.buttonBg));
 }

@@ -74,8 +74,8 @@ function create() {
     const allTopics = loadTopics(this);
     this.allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
 
-    // Check if user has already played today
-    if (GameStorage.hasPlayedToday()) {
+    // Check if user has already played today (cookie-based)
+    if (GameStorage.hasPlayedTodayCookie()) {
         // Only create and show the daily limit screen
         this.dailyLimitControls = createDailyLimitScreen(this);
         this.dailyLimitControls.show();

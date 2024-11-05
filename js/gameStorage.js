@@ -15,7 +15,7 @@ async function initializeDb() {
 }
 
 export class GameStorage {
-    static hasPlayedToday() {
+    static hasPlayedTodayCookie() {
         try {
             const lastPlayedTime = localStorage.getItem(LAST_PLAYED_KEY);
             if (!lastPlayedTime) return false;
@@ -125,5 +125,19 @@ export async function getGameStats(userId) {
     } catch (error) {
         console.error('Error retrieving game stats:', error);
         return null;
+    }
+}
+
+export async function hasPlayedTodayDB(userId) {
+    await initializeDb();
+    const today = new Date().toISOString().split('T')[0];
+    
+    try {
+        const statsRef = doc(db, 'gameStats', userId, 'dailyStats', today);
+        const statsDoc = await getDoc(statsRef);
+        return statsDoc.exists();
+    } catch (error) {
+        console.error('Error checking if user played today:', error);
+        return false;
     }
 }
