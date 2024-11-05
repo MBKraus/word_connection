@@ -2,7 +2,10 @@ import { loadTopics, generateRounds } from './topics.js';
 import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen, createFailureEndScreen, showFailureEndScreen, createDailyLimitScreen, createWelcomeScreen, showWelcomeScreen} from './screens.js';
+import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
+import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
+import { createDailyLimitScreen } from './screens/dailyLimit.js';
+import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';

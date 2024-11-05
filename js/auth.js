@@ -1,6 +1,6 @@
 import { getFirebaseApp } from './firebaseInit.js';
 import { hasPlayedTodayDB } from './gameStorage.js';
-import { createDailyLimitScreen } from './screens.js';
+import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -11,7 +11,7 @@ import {
     signOut,
     sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
-import { hideWelcomeScreen } from './screens.js';
+import { hideWelcomeScreen } from './screens/welcome.js';
 
 const app = await getFirebaseApp();
 const auth = getAuth(app);
@@ -45,16 +45,16 @@ function recenterScreen() {
 
 // Ensure player gets Daily Limit screen if user is logged-in, reloads the page, 
 // and has already played today
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        const hasPlayed = await hasPlayedTodayDB(user.uid);
-        if (hasPlayed) {
-            // Show daily limit screen
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        }
-    }
-});
+// onAuthStateChanged(auth, async (user) => {
+//     if (user) {
+//         const hasPlayed = await hasPlayedTodayDB(user.uid);
+//         if (hasPlayed) {
+//             // Show daily limit screen
+//             const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+//             dailyLimitScreen.show();
+//         }
+//     }
+// });
 
 function showAuthModal() {
     modalContainer.style.display = 'block';

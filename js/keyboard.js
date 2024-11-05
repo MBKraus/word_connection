@@ -7,14 +7,18 @@ function isAuthModalVisible() {
 
 export function setupKeyboardInput(scene) {
     if (!isMobile()) {
-        scene.input.keyboard.on('keydown', (event) => {
-            // Only handle keyboard input if auth modal is not visible
-            if (!isAuthModalVisible()) {
-                handleKeyboardInput(event, scene);
-            }
-        });
+      scene.input.keyboard.on('keydown', (event) => {
+        // Only handle keyboard input if auth modal is not visible
+        if (!isAuthModalVisible()) {
+          // Prevent page from jumping on spacebar press
+          if (event.keyCode === 32) {
+            event.preventDefault();
+          }
+          handleKeyboardInput(event, scene);
+        }
+      });
     }
-}
+  }
 
 function handleKeyboardInput(event, scene) {
     if (event.keyCode === 8) { 
