@@ -1,4 +1,6 @@
 import { getFirebaseApp } from './firebaseInit.js';
+import { hasPlayedTodayDB } from './gameStorage.js';
+import { createDailyLimitScreen } from './screens.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -41,6 +43,19 @@ function recenterScreen() {
     }
 }
 
+// Ensure player gets Daily Limit screen if user is logged-in, reloads the page, 
+// and has already played today
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const hasPlayed = await hasPlayedTodayDB(user.uid);
+        if (hasPlayed) {
+            // Show daily limit screen
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
+        }
+    }
+});
+
 function showAuthModal() {
     modalContainer.style.display = 'block';
     overlay.style.display = 'block';
@@ -72,6 +87,22 @@ function showAuthModal() {
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
 
+// Check if user has played today (via the DB). 
+// If so, show daily limit screen. Otherwise, proceed with game start
+async function handleAuthSuccess() {
+    const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+    
+    if (hasPlayed) {
+        // Show daily limit screen
+        const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+        dailyLimitScreen.show();
+    } else {
+        // Proceed with normal game start
+        hideWelcomeScreen(window.gameScene);
+        window.startGame(window.gameScene);
+    }
+}
+
 function handleSignIn(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
@@ -79,11 +110,32 @@ function handleSignIn(e) {
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             hideAuthModal();
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
+            handleAuthSuccess();
         })
         .catch((error) => alert("Sign-In Error: " + error.message));
 }
+
+function handleSignUp(e) {
+    e.preventDefault();
+    const email = document.getElementById('signUpEmail').value.trim();
+    const password = document.getElementById('signUpPassword').value.trim();
+    createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+            hideAuthModal();
+            handleAuthSuccess();
+        })
+        .catch((error) => alert("Sign Up Error: " + error.message));
+}
+
+function handleGoogleSignIn() {
+    signInWithPopup(auth, googleProvider)
+        .then(() => {
+            hideAuthModal();
+            handleAuthSuccess();
+        })
+        .catch((error) => alert("Google Sign-In Error: " + error.message));
+}
+
 
 function showSignUpForm() {
     modalContainer.innerHTML = `
@@ -102,18 +154,7 @@ function showSignUpForm() {
     document.getElementById('closeSignUpModal').onclick = hideAuthModal;
 }
 
-function handleSignUp(e) {
-    e.preventDefault();
-    const email = document.getElementById('signUpEmail').value.trim();
-    const password = document.getElementById('signUpPassword').value.trim();
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            hideAuthModal();
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        })
-        .catch((error) => alert("Sign Up Error: " + error.message));
-}
+
 
 function showForgotPasswordModal() {
     modalContainer.innerHTML = `
@@ -140,16 +181,6 @@ function handlePasswordReset(e) {
             hideAuthModal();
         })
         .catch((error) => alert("Error: " + error.message));
-}
-
-function handleGoogleSignIn() {
-    signInWithPopup(auth, googleProvider)
-        .then(() => {
-            hideAuthModal();
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        })
-        .catch((error) => alert("Google Sign-In Error: " + error.message));
 }
 
 function hideAuthModal() {
