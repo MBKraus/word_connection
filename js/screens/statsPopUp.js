@@ -62,6 +62,7 @@ export async function createStatsPopup(scene, chartGraphics) {
 
     // Modified createProgressCircles function with proper cleanup
     const createProgressCircles = (sessions) => {
+        circlesContainer.removeAll(true);
         // First destroy all existing objects
         circlesContainer.list.forEach(child => {
             child.destroy();
@@ -104,10 +105,13 @@ export async function createStatsPopup(scene, chartGraphics) {
     };
     
     const cleanupPopup = () => {
+        // Ensure each child is destroyed and removed from the container
         circlesContainer.list.forEach(child => {
             child.destroy();
         });
-        circlesContainer.removeAll();
+        circlesContainer.removeAll(true); // The 'true' parameter removes all children permanently.
+        
+        // Reset the stats text
         statsText.setText('Loading...');
     };
 
