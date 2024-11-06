@@ -21,7 +21,7 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.8, auth.currentUser ? 'Your progress' : 'Want to start tracking your stats and streaks?', {
+    const titleText = scene.add.text(0, -halfHeight * 0.8, auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?', {
         font: STYLES.fonts.small(scene),
         fill: STYLES.colors.text
     }).setOrigin(0.5);
@@ -89,11 +89,11 @@ function createCloseButtonContainer(scene, halfWidth, halfHeight) {
 }
 
 function createSignupButton(scene, popupWidth, halfHeight) {
-    const signupButton = scene.add.rectangle(0, halfHeight * 0.5, popupWidth * 0.5, scene.scale.height * 0.06, STYLES.colors.buttonBg)
+    const signupButton = scene.add.rectangle(0, halfHeight * 0.5, popupWidth * 0.8, scene.scale.height * 0.07, 0x167D60)
         .setInteractive();
     const signupButtonText = scene.add.text(0, halfHeight * 0.5, 'Create a free account', {
         font: STYLES.fonts.small(scene),
-        fill: STYLES.colors.text
+        fill: '#FFFFFF'  // White color
     }).setOrigin(0.5);
     return { signupButton, signupButtonText };
 }
@@ -186,8 +186,6 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, circle
             }
         }
     });
-    signupButton.on('pointerover', () => signupButton.setFillStyle(STYLES.colors.buttonHover));
-    signupButton.on('pointerout', () => signupButton.setFillStyle(STYLES.colors.buttonBg));
 }
 
 // Helper function to clean up popup content
