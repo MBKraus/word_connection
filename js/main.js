@@ -83,12 +83,13 @@ function create() {
         this.dailyLimitControls = createDailyLimitScreen(this);
         this.dailyLimitControls.show();
     } else {
-        // Create game elements but don't start the game yet
-        createGameElements(this);
-
+        
         // Create and show the welcome screen
         createWelcomeScreen(this);
         showWelcomeScreen(this, 'welcomeScreen');
+
+        // Create game elements but don't start the game yet
+        createGameElements(this);
 
         setupKeyboardInput(this);
         createInterRoundScreen(this);
