@@ -1,6 +1,6 @@
 import { getFirebaseApp } from './firebaseInit.js';
 import { hasPlayedTodayDB } from './gameStorage.js';
-import { createDailyLimitScreen } from './screens.js';
+import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -11,7 +11,7 @@ import {
     signOut,
     sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
-import { hideWelcomeScreen } from './screens.js';
+import { hideWelcomeScreen } from './screens/welcome.js';
 
 const app = await getFirebaseApp();
 const auth = getAuth(app);
@@ -101,6 +101,10 @@ async function handleAuthSuccess() {
         hideWelcomeScreen(window.gameScene);
         window.startGame(window.gameScene);
     }
+
+    // hideWelcomeScreen(window.gameScene);
+    // window.startGame(window.gameScene);
+
 }
 
 function handleSignIn(e) {

@@ -1,4 +1,5 @@
-import { createQuestionMarkPopup, createStatsPopup} from './screens.js';
+import { createQuestionMarkPopup} from './screens/questionMarkPopUp.js';
+import { createStatsPopup} from './screens/statsPopUp.js';
 import { isMobile } from './utils.js';
 
 export function createHeader(scene) {
