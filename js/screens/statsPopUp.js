@@ -21,7 +21,7 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.8, 'Your progress', {
+    const titleText = scene.add.text(0, -halfHeight * 0.8, auth.currentUser ? 'Your progress' : 'Want to start tracking your stats and streaks?', {
         font: STYLES.fonts.small(scene),
         fill: STYLES.colors.text
     }).setOrigin(0.5);
@@ -39,19 +39,19 @@ export async function createStatsPopup(scene, chartGraphics) {
     }).setOrigin(0.5);
     popup.add(statsText);
 
-    // Create login button
-    const { loginButton, loginButtonText } = createLoginButton(scene, popupWidth, halfHeight);
-    popup.add(loginButton);
-    popup.add(loginButtonText);
+    // Create signup button
+    const { signupButton, signupButtonText } = createSignupButton(scene, popupWidth, halfHeight);
+    popup.add(signupButton);
+    popup.add(signupButtonText);
 
-    // Initially hide login button
-    loginButton.setVisible(false);
-    loginButtonText.setVisible(false);
+    // Initially hide signup button
+    signupButton.setVisible(false);
+    signupButtonText.setVisible(false);
 
     // Set up event handlers
-    setupChartGraphicsHandler(chartGraphics, popup, statsText, loginButton, loginButtonText, circlesContainer, scene);
-    setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, statsText, loginButton, loginButtonText);
-    setupLoginButtonHandlers(loginButton, popup, loginButtonText, circlesContainer, statsText, scene);
+    setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, circlesContainer, scene);
+    setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText);
+    setupSignupButtonHandlers(signupButton, popup, signupButtonText, circlesContainer, statsText, scene);
 }
 
 // Helper function to create the background
@@ -88,15 +88,14 @@ function createCloseButtonContainer(scene, halfWidth, halfHeight) {
     return closeButtonContainer;
 }
 
-// Helper function to create login button and its text
-function createLoginButton(scene, popupWidth, halfHeight) {
-    const loginButton = scene.add.rectangle(0, halfHeight * 0.5, popupWidth * 0.3, scene.scale.height * 0.06, STYLES.colors.buttonBg)
+function createSignupButton(scene, popupWidth, halfHeight) {
+    const signupButton = scene.add.rectangle(0, halfHeight * 0.5, popupWidth * 0.5, scene.scale.height * 0.06, STYLES.colors.buttonBg)
         .setInteractive();
-    const loginButtonText = scene.add.text(0, halfHeight * 0.5, 'Login', {
+    const signupButtonText = scene.add.text(0, halfHeight * 0.5, 'Create a free account', {
         font: STYLES.fonts.small(scene),
         fill: STYLES.colors.text
     }).setOrigin(0.5);
-    return { loginButton, loginButtonText };
+    return { signupButton, signupButtonText };
 }
 
 // Helper function to create progress circles
@@ -152,7 +151,7 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, loginButton,
                 statsText.setText('Error loading stats.');
             }
         } else {
-            statsText.setText('You are after your stats?\n\nLogin to track your progress!');
+            statsText.setText('-');
             loginButton.setVisible(true);
             loginButtonText.setVisible(true);
         }
@@ -170,11 +169,10 @@ function setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, 
     });
 }
 
-// Event handlers for login button
-function setupLoginButtonHandlers(loginButton, popup, loginButtonText, circlesContainer, statsText, scene) {
-    loginButton.on('pointerdown', async () => {
+function setupSignupButtonHandlers(signupButton, popup, signupButtonText, circlesContainer, statsText, scene) {
+    signupButton.on('pointerdown', async () => {
         popup.setVisible(false);
-        await showAuthModal();
+        await showAuthModal('signup');
         if (auth.currentUser) {
             popup.setVisible(true);
             const stats = await getGameStats(auth.currentUser.uid);
@@ -188,8 +186,8 @@ function setupLoginButtonHandlers(loginButton, popup, loginButtonText, circlesCo
             }
         }
     });
-    loginButton.on('pointerover', () => loginButton.setFillStyle(STYLES.colors.buttonHover));
-    loginButton.on('pointerout', () => loginButton.setFillStyle(STYLES.colors.buttonBg));
+    signupButton.on('pointerover', () => signupButton.setFillStyle(STYLES.colors.buttonHover));
+    signupButton.on('pointerout', () => signupButton.setFillStyle(STYLES.colors.buttonBg));
 }
 
 // Helper function to clean up popup content

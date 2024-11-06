@@ -56,36 +56,48 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
-function showAuthModal() {
+function showAuthModal(mode = 'signin') {
     modalContainer.style.display = 'block';
     overlay.style.display = 'block';
     recenterScreen();
 
+    const title = mode === 'signup' ? 'Sign Up' : 'Sign In';
+    const buttonText = mode === 'signup' ? 'Sign Up' : 'Sign In';
+    const altText = mode === 'signup' ? 'Already have an account? Sign In' : 'No account? Sign Up!';
+    const altMode = mode === 'signup' ? 'signin' : 'signup';
+
     modalContainer.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Sign In</h2>
+        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">${title}</h2>
         <form id="authForm">
             <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
             <input type="password" id="password" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
             <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; margin-bottom: 10px; cursor: pointer;">
-                Sign In
+                ${buttonText}
             </button>
+            ${mode === 'signin' ? `
             <p style="text-align: center; font-family: 'Poppins', sans-serif;">
                 <span id="forgotPassword" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Forgot Password?</span>
             </p>
+            ` : ''}
         </form>
-        <p style="text-align: center; font-family: 'Poppins', sans-serif;">No account? <span id="signUpLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Sign Up!</span></p>
+        <p style="text-align: center; font-family: 'Poppins', sans-serif;">
+            <span id="altModeLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">${altText}</span>
+        </p>
         <button id="googleSignIn" style="width: 100%; padding: 8px; display: flex; align-items: center; gap: 8px; background: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; margin-bottom: 10px;">
             <img src="https://www.google.com/favicon.ico" width="16">Continue with Google
         </button>
         <button id="closeModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
     `;
 
-    document.getElementById('authForm').onsubmit = handleSignIn;
-    document.getElementById('forgotPassword').onclick = showForgotPasswordModal;
-    document.getElementById('signUpLink').onclick = showSignUpForm;
+    document.getElementById('authForm').onsubmit = mode === 'signup' ? handleSignUp : handleSignIn;
+    if (mode === 'signin') {
+        document.getElementById('forgotPassword').onclick = showForgotPasswordModal;
+    }
+    document.getElementById('altModeLink').onclick = () => showAuthModal(altMode);
     document.getElementById('googleSignIn').onclick = handleGoogleSignIn;
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
+
 
 // Check if user has played today (via the DB). 
 // If so, show daily limit screen. Otherwise, proceed with game start
