@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Rules for the users collection
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Rules for the gameStats collection
+    match /gameStats/{userId} {
+      
+      // Ensure user can only access their own gameStats document
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Rules for the dailyStats subcollection
+      match /dailyStats/{dateId} {
+        // Allow access only to the authenticated user's dailyStats for each date
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+  }
+}

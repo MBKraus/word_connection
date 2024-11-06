@@ -45,16 +45,16 @@ function recenterScreen() {
 
 // Ensure player gets Daily Limit screen if user is logged-in, reloads the page, 
 // and has already played today
-// onAuthStateChanged(auth, async (user) => {
-//     if (user) {
-//         const hasPlayed = await hasPlayedTodayDB(user.uid);
-//         if (hasPlayed) {
-//             // Show daily limit screen
-//             const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-//             dailyLimitScreen.show();
-//         }
-//     }
-// });
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const hasPlayed = await hasPlayedTodayDB(user.uid);
+        if (hasPlayed) {
+            // Show daily limit screen
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
+        }
+    }
+});
 
 function showAuthModal() {
     modalContainer.style.display = 'block';
@@ -101,6 +101,10 @@ async function handleAuthSuccess() {
         hideWelcomeScreen(window.gameScene);
         window.startGame(window.gameScene);
     }
+
+    // hideWelcomeScreen(window.gameScene);
+    // window.startGame(window.gameScene);
+
 }
 
 function handleSignIn(e) {
