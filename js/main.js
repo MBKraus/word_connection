@@ -114,6 +114,7 @@ function createGameElements(scene) {
     createAdContainer();
     const headerBottom = (scene.headerText.height * 0.5) - 2;
     document.getElementById('ad-container').style.top = `${headerBottom}px`;
+    document.getElementById('ad-container').style.display = `none`;
 
     createInputDisplay(scene);
     createRoundDisplay(scene);
