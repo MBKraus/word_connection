@@ -1,3 +1,4 @@
+// Modified auth.js
 import { getFirebaseApp } from './firebaseInit.js';
 import { hasPlayedTodayDB } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
@@ -34,6 +35,9 @@ overlay.style.cssText = `
 `;
 document.body.appendChild(overlay);
 
+// Track modal state
+let isAuthModalOpen = false;
+
 function recenterScreen() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {
         window.scrollTo({
@@ -43,13 +47,11 @@ function recenterScreen() {
     }
 }
 
-// Ensure player gets Daily Limit screen if user is logged-in, reloads the page, 
-// and has already played today
+// Only start checking for daily limit after successful auth and modal close
 onAuthStateChanged(auth, async (user) => {
-    if (user) {
+    if (user && !isAuthModalOpen) {
         const hasPlayed = await hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
-            // Show daily limit screen
             const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
             dailyLimitScreen.show();
         }
@@ -57,6 +59,7 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 function showAuthModal(mode = 'signin') {
+    isAuthModalOpen = true;
     modalContainer.style.display = 'block';
     overlay.style.display = 'block';
     recenterScreen();
@@ -65,6 +68,7 @@ function showAuthModal(mode = 'signin') {
     const buttonText = mode === 'signup' ? 'Sign Up' : 'Sign In';
     const altText = mode === 'signup' ? 'Already have an account? Sign In' : 'No account? Sign Up!';
     const altMode = mode === 'signup' ? 'signin' : 'signup';
+
 
     modalContainer.innerHTML = `
         <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">${title}</h2>
@@ -102,21 +106,20 @@ function showAuthModal(mode = 'signin') {
 // Check if user has played today (via the DB). 
 // If so, show daily limit screen. Otherwise, proceed with game start
 async function handleAuthSuccess() {
+    if (!auth.currentUser) return;
+    
     const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
     
-    if (hasPlayed) {
-        // Show daily limit screen
-        const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-        dailyLimitScreen.show();
-    } else {
-        // Proceed with normal game start
-        hideWelcomeScreen(window.gameScene);
-        window.startGame(window.gameScene);
+    // Only proceed if the modal is closed
+    if (!isAuthModalOpen) {
+        if (hasPlayed) {
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
+        } else {
+            hideWelcomeScreen(window.gameScene);
+            window.startGame(window.gameScene);
+        }
     }
-
-    // hideWelcomeScreen(window.gameScene);
-    // window.startGame(window.gameScene);
-
 }
 
 function handleSignIn(e) {
@@ -126,7 +129,6 @@ function handleSignIn(e) {
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             hideAuthModal();
-            handleAuthSuccess();
         })
         .catch((error) => alert("Sign-In Error: " + error.message));
 }
@@ -138,7 +140,6 @@ function handleSignUp(e) {
     createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
             hideAuthModal();
-            handleAuthSuccess();
         })
         .catch((error) => alert("Sign Up Error: " + error.message));
 }
@@ -147,7 +148,6 @@ function handleGoogleSignIn() {
     signInWithPopup(auth, googleProvider)
         .then(() => {
             hideAuthModal();
-            handleAuthSuccess();
         })
         .catch((error) => alert("Google Sign-In Error: " + error.message));
 }
@@ -202,6 +202,12 @@ function handlePasswordReset(e) {
 function hideAuthModal() {
     modalContainer.style.display = 'none';
     overlay.style.display = 'none';
+    isAuthModalOpen = false;
+    
+    // Now that the modal is closed, we can check auth state and proceed
+    if (auth.currentUser) {
+        handleAuthSuccess();
+    }
 }
 
 export { showAuthModal, auth, hideAuthModal };

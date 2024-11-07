@@ -130,11 +130,17 @@ function getBorderColor(topicsGuessed) {
     return 0x8B0000;
 }
 
-// Event handler for chart graphics
 function setupChartGraphicsHandler(chartGraphics, popup, statsText, loginButton, loginButtonText, circlesContainer, scene) {
     chartGraphics.on('pointerdown', async () => {
         cleanupPopup(circlesContainer, statsText, loginButton, loginButtonText);
         popup.setVisible(true);
+
+        // Update title text based on auth state
+        const titleText = popup.list.find(item => item instanceof Phaser.GameObjects.Text 
+            && (item.text === 'Your progress' || item.text.includes('Want to start tracking')));
+        if (titleText) {
+            titleText.setText(auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?');
+        }
 
         if (auth.currentUser) {
             loginButton.setVisible(false);
