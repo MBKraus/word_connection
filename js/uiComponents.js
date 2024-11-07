@@ -66,27 +66,83 @@ export function createInputDisplay(scene) {
 }
 
 export function createRoundDisplay(scene) {
+
+    function updateRoundPosition() {
+        const isMobile = window.innerWidth < 728; // Check actual window width
+        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+
+        // Update timerText position and font size
+        if (scene.roundText) {
+            scene.roundText.setPosition(scene.game.scale.width * 0.5, yPos);
+            scene.roundText.setFontSize(scene.game.scale.width * 0.04);
+        }
+    }
+
     scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.22, `Round: ${scene.currentRound + 1}`, {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
+
+    updateRoundPosition();
+
+    window.addEventListener('resize', updateRoundPosition);
 }
 
 export function createScoreDisplay(scene) {
+    function updateScorePosition() {
+        const isMobile = window.innerWidth < 728; // Check actual window width
+        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+
+        // Update timerText position and font size
+        if (scene.scoreText) {
+            scene.scoreText.setPosition(scene.game.scale.width * 0.85, yPos);
+            scene.scoreText.setFontSize(scene.game.scale.width * 0.04);
+        }
+    }
+
     scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.22, 'Score: 0', {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
+
+    updateScorePosition();
+
+    window.addEventListener('resize', updateScorePosition);
 }
 
+
 export function createTimerDisplay(scene) {
-    scene.timerText = scene.add.text(scene.game.scale.width * 0.15, scene.game.scale.height * 0.22, `Time: ${scene.timer_duration}`, {
-        fontSize: `${scene.game.scale.width * 0.04}px`,
-        color: '#000000',
-        fontFamily: 'Poppins',
-    }).setOrigin(0.5);
+    // Define a function to update the timer's position based on actual screen width
+    function updateTimerPosition() {
+        const isMobile = window.innerWidth < 728; // Check actual window width
+        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+
+        // Update timerText position and font size
+        if (scene.timerText) {
+            scene.timerText.setPosition(scene.game.scale.width * 0.15, yPos);
+            scene.timerText.setFontSize(scene.game.scale.width * 0.04);
+        }
+    }
+
+    // Create the timer text initially
+    scene.timerText = scene.add.text(
+        scene.game.scale.width * 0.15,
+        scene.game.scale.height * 0.22,  // Initial position for desktop
+        `Time: ${scene.timer_duration}`,
+        {
+            fontSize: `${scene.game.scale.width * 0.04}px`,
+            color: '#000000',
+            fontFamily: 'Poppins',
+        }
+    ).setOrigin(0.5);
+
+    // Adjust the timer position initially
+    updateTimerPosition();
+
+    // Listen for the resize event on the window to update the timer position dynamically
+    window.addEventListener('resize', updateTimerPosition);
 }
 
 export function createHeaderIcons(scene) {

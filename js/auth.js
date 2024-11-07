@@ -18,6 +18,9 @@ const app = await getFirebaseApp();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
+// Track when authentication is successful
+let isAuthSuccess = false;
+
 // Create and manage modal containers
 const modalContainer = document.createElement('div');
 modalContainer.style.cssText = `
@@ -58,8 +61,10 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
+// Updated showAuthModal function to prevent unintended game start
 function showAuthModal(mode = 'signin') {
     isAuthModalOpen = true;
+    isAuthSuccess = false; // Reset auth success flag on showing the modal
     modalContainer.style.display = 'block';
     overlay.style.display = 'block';
     recenterScreen();
@@ -69,7 +74,6 @@ function showAuthModal(mode = 'signin') {
     const altText = mode === 'signup' ? 'Already have an account? Sign In' : 'No account? Sign Up!';
     const altMode = mode === 'signup' ? 'signin' : 'signup';
 
-
     modalContainer.innerHTML = `
         <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">${title}</h2>
         <form id="authForm">
@@ -78,11 +82,10 @@ function showAuthModal(mode = 'signin') {
             <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; margin-bottom: 10px; cursor: pointer;">
                 ${buttonText}
             </button>
-            ${mode === 'signin' ? `
-            <p style="text-align: center; font-family: 'Poppins', sans-serif;">
+            ${mode === 'signin' ? 
+            `<p style="text-align: center; font-family: 'Poppins', sans-serif;">
                 <span id="forgotPassword" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Forgot Password?</span>
-            </p>
-            ` : ''}
+            </p>` : ''}
         </form>
         <p style="text-align: center; font-family: 'Poppins', sans-serif;">
             <span id="altModeLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">${altText}</span>
@@ -97,37 +100,33 @@ function showAuthModal(mode = 'signin') {
     if (mode === 'signin') {
         document.getElementById('forgotPassword').onclick = showForgotPasswordModal;
     }
-    document.getElementById('altModeLink').onclick = () => showAuthModal(altMode);
+    document.getElementById('altModeLink').onclick = () => showAuthModal(altMode); // Toggle between signup/signin
     document.getElementById('googleSignIn').onclick = handleGoogleSignIn;
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
 
-
 // Check if user has played today (via the DB). 
 // If so, show daily limit screen. Otherwise, proceed with game start
 async function handleAuthSuccess() {
-    if (!auth.currentUser) return;
-    
+    if (!auth.currentUser || !isAuthSuccess || isAuthModalOpen) return; // Ensure auth success, modal closed
+
     const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
     
-    // Only proceed if the modal is closed
-    if (!isAuthModalOpen) {
-        if (hasPlayed) {
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        } else {
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        }
+    if (hasPlayed) {
+        const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+        dailyLimitScreen.show();
+    } else {
+        hideWelcomeScreen(window.gameScene);
+        window.startGame(window.gameScene);
     }
 }
-
 function handleSignIn(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     signInWithEmailAndPassword(auth, email, password)
         .then(() => {
+            isAuthSuccess = true; // Set to true only after successful sign-in
             hideAuthModal();
         })
         .catch((error) => alert("Sign-In Error: " + error.message));
@@ -135,10 +134,11 @@ function handleSignIn(e) {
 
 function handleSignUp(e) {
     e.preventDefault();
-    const email = document.getElementById('signUpEmail').value.trim();
-    const password = document.getElementById('signUpPassword').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
     createUserWithEmailAndPassword(auth, email, password)
         .then(() => {
+            isAuthSuccess = true; // Set to true only after successful sign-up
             hideAuthModal();
         })
         .catch((error) => alert("Sign Up Error: " + error.message));
@@ -147,11 +147,11 @@ function handleSignUp(e) {
 function handleGoogleSignIn() {
     signInWithPopup(auth, googleProvider)
         .then(() => {
+            isAuthSuccess = true; // Set to true only after successful Google sign-in
             hideAuthModal();
         })
         .catch((error) => alert("Google Sign-In Error: " + error.message));
 }
-
 
 function showSignUpForm() {
     modalContainer.innerHTML = `
@@ -199,13 +199,13 @@ function handlePasswordReset(e) {
         .catch((error) => alert("Error: " + error.message));
 }
 
+// Close modal and proceed with auth success
 function hideAuthModal() {
     modalContainer.style.display = 'none';
     overlay.style.display = 'none';
     isAuthModalOpen = false;
     
-    // Now that the modal is closed, we can check auth state and proceed
-    if (auth.currentUser) {
+    if (isAuthSuccess) {
         handleAuthSuccess();
     }
 }
