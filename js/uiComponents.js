@@ -38,27 +38,43 @@ export function createAdContainer() {
     (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
+export function getStartY(scene) {
+    return window.innerWidth < 728 
+        ? scene.game.scale.height * 0.65 
+        : scene.game.scale.height * 0.70;
+}
+
 export function createInputDisplay(scene) {
-    // Background for input
     const inputBgWidth = scene.game.scale.width * 0.98;
     const inputBgHeight = scene.game.scale.height * 0.055;
+    const startY = getStartY(scene);
+
+    // Store the initial Y position for the timebar
+    scene.initialTimeBarY = startY - inputBgHeight / 2;
+
+    // Background for input
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xD3D3D3, 1);
     inputBgGraphics.fillRoundedRect(
         scene.game.scale.width * 0.5 - inputBgWidth / 2,
-        scene.game.scale.height * 0.70 - inputBgHeight / 2,
+        scene.initialTimeBarY,
         inputBgWidth,
         inputBgHeight,
         20
     );
 
     // Input Text Display
-    scene.inputDisplay = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.70, scene.currentInputText, {
-        fontSize: `${scene.game.scale.width * 0.045}px`,
-        color: '#000000',
-        fontFamily: 'Poppins',
-        wordWrap: { width: inputBgWidth - 20 }
-    }).setOrigin(0.5).setDepth(2);
+    scene.inputDisplay = scene.add.text(
+        scene.game.scale.width * 0.5, 
+        startY, 
+        scene.currentInputText, 
+        {
+            fontSize: `${scene.game.scale.width * 0.045}px`,
+            color: '#000000',
+            fontFamily: 'Poppins',
+            wordWrap: { width: inputBgWidth - 20 }
+        }
+    ).setOrigin(0.5).setDepth(2);
 
     // Timer bar inside input display
     scene.timeBar = scene.add.graphics();
@@ -199,7 +215,11 @@ export function createFeedbackIcons(scene) {
 }
 
 export function createCorrectGuessContainer(scene) {
-    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, scene.game.scale.height * 0.55);
+    const startY = window.innerWidth < 728  
+    ? scene.game.scale.height * 0.51 
+    : scene.game.scale.height * 0.55;
+
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, startY);
 } 
 
 export function initializeCorrectGuessPlaceholders(scene) {

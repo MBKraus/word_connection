@@ -1,4 +1,3 @@
-// Helper function: Get configuration values for tiles layout
 export function getTileConfig(scene) {
     const cols = 3;
     const rows = 4;
@@ -10,10 +9,24 @@ export function getTileConfig(scene) {
     const availableWidth = scene.game.scale.width * 0.3325 * cols;
     const tileWidth = (availableWidth - totalHorizontalGaps) / cols;
     const tileHeight = tileWidth * 0.36;
-    const startY = scene.game.scale.height * 0.24;
+    
+    const startY = window.innerWidth < 728 
+        ? scene.game.scale.height * 0.20 
+        : scene.game.scale.height * 0.24;
+    
     const startX = (scene.game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
-    return { cols, rows, startX, startY, tileWidth, tileHeight, horizontalGap, verticalGap, cornerRadius };
+    return { 
+        cols, 
+        rows, 
+        startX, 
+        startY, 
+        tileWidth, 
+        tileHeight, 
+        horizontalGap, 
+        verticalGap, 
+        cornerRadius 
+    };
 }
 
 // Helper function: Create tiles based on the configuration
