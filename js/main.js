@@ -1,4 +1,4 @@
-import { loadTopics, generateRounds } from './topics.js';
+import { loadTopics} from './topics.js';
 import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
@@ -42,7 +42,8 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
+    // this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
+    this.load.text('data', './data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('check', 'https://mbkraus.github.io/word_connection/assets/check.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
@@ -74,8 +75,11 @@ function create() {
 
     const NUMBER_OF_ROUNDS = 3;
     const TOPICS_PER_ROUND = 3;
+    const date = "2024-11-08"; 
     const allTopics = loadTopics(this);
-    this.allRounds = generateRounds(allTopics, NUMBER_OF_ROUNDS, TOPICS_PER_ROUND);
+    this.allRounds = allTopics[date]
+
+    console.log(this.allRounds);
 
     // Check if user has already played today (cookie-based)
     if (GameStorage.hasPlayedTodayCookie()) {
@@ -289,9 +293,7 @@ function handleRoundEnd(scene) {
         hideInterRoundScreen(scene);
         if (scene.currentRound >= scene.allRounds.length - 1) {
             // If this was the final round, end the game after a delay
-            scene.time.delayedCall(1000, () => {
-                endGame(scene);
-            });
+            endGame(scene);
             return;
             // Else proceed with the next round
         } else {
@@ -386,7 +388,8 @@ function endGame(scene) {
 
     if (isGameComplete && allTopicsGuessed) {
         // Show final victory screen
-        scene.interRoundScoreText.setText(`All rounds completed!\nCome back tomorrow for another puzzle!\n\nFinal Score: ${scene.score}`);
+        scene.interRoundScoreText.setText(`All rounds completed!\n\nCome back tomorrow\nfor another puzzle!\n\nFinal Score: ${scene.score}`);
+        // scene.interRoundScoreText.setFontSize(scene.scale.width * 0.05)
         scene.okButton.setText('Share your score!');
         scene.okButton.removeAllListeners('pointerdown');
         scene.okButton.on('pointerdown', () => {

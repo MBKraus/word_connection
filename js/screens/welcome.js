@@ -52,6 +52,41 @@ export function createWelcomeScreen(scene) {
     );
     scene.welcomeScreen.add(loginButton);
 
+    // Get the current date and format it
+    const date = new Date();
+    const options = { day: 'numeric', month: 'long', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString('en-GB', options);
+
+    // Create the date text element
+    const dateText = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.85, // Position below the login button
+        formattedDate,
+        {
+            fontSize: scene.scale.width * 0.0375 + 'px', // Adjust font size to match other text
+            fontFamily: 'Poppins',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center'
+        }
+    ).setOrigin(0.5);
+    scene.welcomeScreen.add(dateText);
+
+    // Game number
+    const gameNumber = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.88, // Position below the login button
+        "# 1",
+        {
+            fontSize: scene.scale.width * 0.0355 + 'px', // Adjust font size to match other text
+            fontFamily: 'Poppins',
+            color: STYLES.colors.text,
+            align: 'center'
+        }
+    ).setOrigin(0.5);
+    scene.welcomeScreen.add(gameNumber);
+
+
     return {
         show: () => showScreen(scene, 'welcomeScreen'),
         hide: () => hideScreen(scene, 'welcomeScreen')

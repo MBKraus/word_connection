@@ -38,21 +38,20 @@ export function createKeyboard(scene, game) {
     const keys = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ''],
-        ['✓', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', '']
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '←', ''],
+        ['SPACE', '✓']
     ];
 
     const keyboardContainer = scene.add.container(0, 0);
 
-    const keyboardWidth = game.scale.width; 
-    const keyboardHeight = game.scale.height * 0.24;
+    const keyboardWidth = game.scale.width;
+    const keyboardHeight = game.scale.height * 0.28; // Adjusted to accommodate new row
 
-    const rowHeight = keyboardHeight / 3;
-    const keyWidthRatio = 0.645; 
-
-    const keySpacing = 10; 
+    const rowHeight = keyboardHeight / 4; // Adjusted to fit 4 rows
+    const keyWidthRatio = 0.70; // Adjusted width ratio to fit all keys
+    const keySpacing = 10;
     const rowSpacing = 10;
-
-    const keyboardY = game.scale.height - keyboardHeight - 50; 
+    const keyboardY = game.scale.height - keyboardHeight - 50;
 
     keys.forEach((row, rowIndex) => {
         let rowWidth = 0;
@@ -60,8 +59,10 @@ export function createKeyboard(scene, game) {
         row.forEach((key) => {
             if (key === '') return;
             let keyWidth = rowHeight * keyWidthRatio;
-            if (key === '✓' || key === '←') {
+            if (key === '✓') {
                 keyWidth = rowHeight * keyWidthRatio * 1.5;
+            } else if (key === 'SPACE') {
+                keyWidth = rowHeight * keyWidthRatio * 7; // Make spacebar very wide
             }
             rowWidth += keyWidth + keySpacing;
         });
@@ -69,19 +70,20 @@ export function createKeyboard(scene, game) {
 
         let startX = (keyboardWidth - rowWidth) / 2;
 
-        row.forEach((key, colIndex) => {
+        row.forEach((key) => {
             if (key === '') return;
-
             let keyWidth = rowHeight * keyWidthRatio;
-            if (key === '✓' || key === '←') {
+            
+            if (key === '✓') {
                 keyWidth = rowHeight * keyWidthRatio * 1.5;
+            } else if (key === 'SPACE') {
+                keyWidth = rowHeight * keyWidthRatio * 7;
             }
 
             const x = startX + (keyWidth / 2);
             const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2);
 
             const button = scene.add.graphics();
-
             let keyText;
 
             if (key === '✓') {
@@ -89,6 +91,13 @@ export function createKeyboard(scene, game) {
                 keyText = scene.add.text(0, 0, key, {
                     fontSize: `${rowHeight * 0.4}px`,
                     color: '#FFFFFF',
+                    fontFamily: 'Poppins',
+                }).setOrigin(0.5);
+            } else if (key === 'SPACE') {
+                button.fillStyle(0xE2E8F1, 1);
+                keyText = scene.add.text(0, 0, '', {
+                    fontSize: `${rowHeight * 0.4}px`,
+                    color: '#000000',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else {
@@ -101,11 +110,11 @@ export function createKeyboard(scene, game) {
             }
 
             button.fillRoundedRect(
-                -keyWidth / 2,  
-                -rowHeight / 2, 
-                keyWidth,       
-                rowHeight,      
-                10             
+                -keyWidth / 2,
+                -rowHeight / 2,
+                keyWidth,
+                rowHeight,
+                10
             );
 
             const keyButton = scene.add.container(x, y, [button, keyText]);
@@ -113,7 +122,6 @@ export function createKeyboard(scene, game) {
             keyButton.setInteractive();
 
             keyButton.on('pointerdown', () => {
-                // Only handle virtual keyboard input if auth modal is not visible
                 if (!isAuthModalVisible()) {
                     if (key === '✓') {
                         if (scene.currentInputText) {
@@ -123,6 +131,9 @@ export function createKeyboard(scene, game) {
                         }
                     } else if (key === '←') {
                         scene.currentInputText = scene.currentInputText.slice(0, -1);
+                        scene.inputDisplay.setText(scene.currentInputText);
+                    } else if (key === 'SPACE') {
+                        scene.currentInputText += ' ';
                         scene.inputDisplay.setText(scene.currentInputText);
                     } else {
                         scene.currentInputText += key;

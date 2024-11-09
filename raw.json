@@ -1,0 +1,3600 @@
+{
+    "entries": {
+        "2024-11-01": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Michael Jackson",
+                                "Jackson"
+                            ],
+                            "words": [
+                                "Thriller",
+                                "Moonwalk",
+                                "Pop",
+                                "Legend"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Eiffel Tower",
+                                "La Tour Eiffel"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Iron",
+                                "Gustave",
+                                "Monument"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Pasta"
+                            ],
+                            "words": [
+                                "Noodles",
+                                "Italy",
+                                "Sauce",
+                                "Cuisine"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "The Mona Lisa",
+                                "Mona Lisa"
+                            ],
+                            "words": [
+                                "Leonardo",
+                                "Louvre",
+                                "Portrait",
+                                "Smile"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Taj Mahal"
+                            ],
+                            "words": [
+                                "Mausoleum",
+                                "Agra",
+                                "Marble",
+                                "India"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Electric Cars"
+                            ],
+                            "words": [
+                                "Battery",
+                                "Tesla",
+                                "Eco-friendly",
+                                "Future"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "William Shakespeare",
+                                "Shakespeare"
+                            ],
+                            "words": [
+                                "Playwright",
+                                "Bard",
+                                "Hamlet",
+                                "England"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Silicon Valley",
+                                "Valley"
+                            ],
+                            "words": [
+                                "Technology",
+                                "Innovation",
+                                "California",
+                                "Startup"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sushi"
+                            ],
+                            "words": [
+                                "Rice",
+                                "Japan",
+                                "Seaweed",
+                                "Fish"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-02": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Albert Einstein",
+                                "Einstein"
+                            ],
+                            "words": [
+                                "Relativity",
+                                "Physicist",
+                                "Genius",
+                                "Theory"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Colosseum",
+                                "Colosseum"
+                            ],
+                            "words": [
+                                "Rome",
+                                "Amphitheater",
+                                "History",
+                                "Gladiators"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Rock Music"
+                            ],
+                            "words": [
+                                "Guitar",
+                                "Bands",
+                                "Concerts",
+                                "Genre"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "The Great Wall of China",
+                                "Great Wall"
+                            ],
+                            "words": [
+                                "Barrier",
+                                "Ancient",
+                                "Stone",
+                                "China"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Pablo Picasso",
+                                "Picasso"
+                            ],
+                            "words": [
+                                "Cubism",
+                                "Artist",
+                                "Painter",
+                                "Guernica"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Chess"
+                            ],
+                            "words": [
+                                "Board",
+                                "Strategy",
+                                "Pieces",
+                                "Checkmate"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Statue of Liberty"
+                            ],
+                            "words": [
+                                "New York",
+                                "Freedom",
+                                "Sculpture",
+                                "Torch"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Crocodiles"
+                            ],
+                            "words": [
+                                "Reptile",
+                                "Aquatic",
+                                "Jaws",
+                                "Predator"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Jazz"
+                            ],
+                            "words": [
+                                "Improvisation",
+                                "Blues",
+                                "Brass",
+                                "New Orleans"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-03": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Voltaire"
+                            ],
+                            "words": [
+                                "Philosopher",
+                                "Candide",
+                                "Enlightenment",
+                                "France"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Louvre",
+                                "Louvre",
+                                "The Louvre Museum"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Art",
+                                "Museum",
+                                "Mona Lisa"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Pizza"
+                            ],
+                            "words": [
+                                "Cheese",
+                                "Italy",
+                                "Toppings",
+                                "Crust"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Vincent van Gogh",
+                                "Van Gogh"
+                            ],
+                            "words": [
+                                "Painter",
+                                "Starry",
+                                "Night",
+                                "Dutch"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Amazon Rainforest",
+                                "Amazon"
+                            ],
+                            "words": [
+                                "Biodiversity",
+                                "Tropical",
+                                "Brazil",
+                                "Lungs"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cricket"
+                            ],
+                            "words": [
+                                "Bat",
+                                "Wicket",
+                                "Innings",
+                                "Match"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Isaac Newton",
+                                "Newton"
+                            ],
+                            "words": [
+                                "Gravity",
+                                "Apple",
+                                "Mathematician",
+                                "Laws"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Berlin Wall",
+                                "Berlin Wall"
+                            ],
+                            "words": [
+                                "Division",
+                                "Germany",
+                                "Cold",
+                                "Historical"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Lasagna"
+                            ],
+                            "words": [
+                                "Pasta",
+                                "Layers",
+                                "Cheese",
+                                "Oven"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-04": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Julius Caesar",
+                                "Caesar"
+                            ],
+                            "words": [
+                                "Roman",
+                                "Empire",
+                                "Dictator",
+                                "Assassination"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Grand Canyon"
+                            ],
+                            "words": [
+                                "Arizona",
+                                "Gorge",
+                                "Erosion",
+                                "Natural"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Olympics"
+                            ],
+                            "words": [
+                                "Games",
+                                "Sports",
+                                "Torch",
+                                "Medals"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Leonardo da Vinci",
+                                "Da Vinci"
+                            ],
+                            "words": [
+                                "Renaissance",
+                                "Inventor",
+                                "Polymath",
+                                "Artist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sydney Opera House"
+                            ],
+                            "words": [
+                                "Architecture",
+                                "Australia",
+                                "Performances",
+                                "Icon"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Chess"
+                            ],
+                            "words": [
+                                "Strategy",
+                                "Board",
+                                "Check",
+                                "Knight"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Walt Disney",
+                                "Disney"
+                            ],
+                            "words": [
+                                "Animation",
+                                "Mouse",
+                                "Magic",
+                                "Films"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Himalayas"
+                            ],
+                            "words": [
+                                "Mountains",
+                                "Everest",
+                                "Asia",
+                                "Range"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Ballet"
+                            ],
+                            "words": [
+                                "Dance",
+                                "Tutu",
+                                "Theater",
+                                "Grace"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-05": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Cleopatra"
+                            ],
+                            "words": [
+                                "Egypt",
+                                "Queen",
+                                "Ptolemaic",
+                                "Nile"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Great Barrier Reef"
+                            ],
+                            "words": [
+                                "Coral",
+                                "Australia",
+                                "Marine",
+                                "Biodiversity"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Rugby"
+                            ],
+                            "words": [
+                                "Scrum",
+                                "Try",
+                                "Tackle",
+                                "Oval"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Rosa Parks",
+                                "Parks"
+                            ],
+                            "words": [
+                                "Civil",
+                                "Rights",
+                                "Bus",
+                                "Montgomery"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Machu Picchu"
+                            ],
+                            "words": [
+                                "Inca",
+                                "Peru",
+                                "Ruins",
+                                "Ancient"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Dim Sum"
+                            ],
+                            "words": [
+                                "Steamed",
+                                "Chinese",
+                                "Dumplings",
+                                "Bites"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Fidel Castro",
+                                "Castro"
+                            ],
+                            "words": [
+                                "Cuba",
+                                "Revolution",
+                                "Leader",
+                                "Communist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Tower of Pisa",
+                                "Leaning Tower"
+                            ],
+                            "words": [
+                                "Tilt",
+                                "Italy",
+                                "Tourist",
+                                "Historic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Guitars"
+                            ],
+                            "words": [
+                                "Strings",
+                                "Music",
+                                "Electric",
+                                "Strumming"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-06": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Stephen Hawking",
+                                "Hawking"
+                            ],
+                            "words": [
+                                "Cosmology",
+                                "Black",
+                                "Holes",
+                                "Physicist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Galapagos Islands"
+                            ],
+                            "words": [
+                                "Tortoises",
+                                "Evolution",
+                                "Darwin",
+                                "Ecuador"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Chocolate"
+                            ],
+                            "words": [
+                                "Cocoa",
+                                "Sweet",
+                                "Dessert",
+                                "Bars"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Sigmund Freud",
+                                "Freud"
+                            ],
+                            "words": [
+                                "Psychoanalysis",
+                                "Dreams",
+                                "Austrian",
+                                "Psychology"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Yellowstone National Park",
+                                "Yellowstone"
+                            ],
+                            "words": [
+                                "Geysers",
+                                "Wildlife",
+                                "Wyoming",
+                                "Nature"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Flamenco"
+                            ],
+                            "words": [
+                                "Dance",
+                                "Spain",
+                                "Rhythm",
+                                "Guitar"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Marie Curie",
+                                "Curie"
+                            ],
+                            "words": [
+                                "Radium",
+                                "Polonium",
+                                "Nobel",
+                                "Scientist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Kilimanjaro"
+                            ],
+                            "words": [
+                                "Mountain",
+                                "Tanzania",
+                                "Summit",
+                                "Volcano"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Soccer"
+                            ],
+                            "words": [
+                                "Goal",
+                                "Field",
+                                "Team",
+                                "Ball"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-07": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Andy Warhol",
+                                "Warhol"
+                            ],
+                            "words": [
+                                "Pop",
+                                "Art",
+                                "Campbell",
+                                "Soup"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Amazon River",
+                                "Amazon"
+                            ],
+                            "words": [
+                                "Longest",
+                                "Flow",
+                                "South",
+                                "America"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Opera"
+                            ],
+                            "words": [
+                                "Singing",
+                                "Performers",
+                                "Dramatic",
+                                "Theater"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "F. Scott Fitzgerald",
+                                "Fitzgerald"
+                            ],
+                            "words": [
+                                "Great",
+                                "Gatsby",
+                                "American",
+                                "Novelist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Mount Everest",
+                                "Everest"
+                            ],
+                            "words": [
+                                "Tallest",
+                                "Himalayas",
+                                "Climbing",
+                                "Peak"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Curry"
+                            ],
+                            "words": [
+                                "Spicy",
+                                "Indian",
+                                "Dish",
+                                "Rice"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Nelson Mandela",
+                                "Mandela"
+                            ],
+                            "words": [
+                                "Apartheid",
+                                "South",
+                                "Africa",
+                                "Prison"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Amazon Rainforest",
+                                "Amazon"
+                            ],
+                            "words": [
+                                "Dense",
+                                "Biodiverse",
+                                "Equator",
+                                "Oxygen"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Judo"
+                            ],
+                            "words": [
+                                "Martial",
+                                "Throws",
+                                "Grappling",
+                                "Japanese"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-08": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Pablo Neruda",
+                                "Neruda"
+                            ],
+                            "words": [
+                                "Poet",
+                                "Chilean",
+                                "Odes",
+                                "Politics"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Sahara Desert",
+                                "Sahara"
+                            ],
+                            "words": [
+                                "Sand",
+                                "Africa",
+                                "Arid",
+                                "Expanse"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Ballet"
+                            ],
+                            "words": [
+                                "Dance",
+                                "Elegance",
+                                "Tutu",
+                                "Classical"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Genghis Khan",
+                                "Khan"
+                            ],
+                            "words": [
+                                "Mongol",
+                                "Conquest",
+                                "Empire",
+                                "Leader"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Parthenon",
+                                "Parthenon"
+                            ],
+                            "words": [
+                                "Athens",
+                                "Acropolis",
+                                "Columns",
+                                "Temple"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Jazz"
+                            ],
+                            "words": [
+                                "Improvisation",
+                                "Saxophone",
+                                "Rhythm",
+                                "America"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Mahatma Gandhi",
+                                "Gandhi"
+                            ],
+                            "words": [
+                                "Nonviolent",
+                                "Independence",
+                                "India",
+                                "Leader"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Angel Falls"
+                            ],
+                            "words": [
+                                "Waterfall",
+                                "Venezuela",
+                                "Tall",
+                                "Spectacular"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Quilting"
+                            ],
+                            "words": [
+                                "Patchwork",
+                                "Sewing",
+                                "Fabric",
+                                "Blanket"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-09": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Edgar Allan Poe",
+                                "Poe"
+                            ],
+                            "words": [
+                                "Raven",
+                                "Gothic",
+                                "Stories",
+                                "Verse"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Niagara Falls"
+                            ],
+                            "words": [
+                                "Waterfall",
+                                "Canada",
+                                "Horseshoe",
+                                "Tourist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Tango"
+                            ],
+                            "words": [
+                                "Dance",
+                                "Argentina",
+                                "Passionate",
+                                "Partner"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Galileo Galilei",
+                                "Galileo"
+                            ],
+                            "words": [
+                                "Telescope",
+                                "Astronomer",
+                                "Physics",
+                                "Italy"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Stonehenge"
+                            ],
+                            "words": [
+                                "Ancient",
+                                "Monument",
+                                "Wiltshire",
+                                "Megalith"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Saxophone"
+                            ],
+                            "words": [
+                                "Reed",
+                                "Brass",
+                                "Jazz",
+                                "Instrument"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Winston Churchill",
+                                "Churchill"
+                            ],
+                            "words": [
+                                "Prime",
+                                "Minister",
+                                "Britain",
+                                "World War"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Great Barrier Reef",
+                                "Barrier Reef"
+                            ],
+                            "words": [
+                                "Marine",
+                                "Coral",
+                                "Australia",
+                                "Protected"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cooking"
+                            ],
+                            "words": [
+                                "Chef",
+                                "Cuisine",
+                                "Ingredients",
+                                "Recipe"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-10": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Frida Kahlo",
+                                "Kahlo"
+                            ],
+                            "words": [
+                                "Self-portraits",
+                                "Mexico",
+                                "Painter",
+                                "Art"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Yellowstone National Park",
+                                "Yellowstone"
+                            ],
+                            "words": [
+                                "Geysers",
+                                "Wildlife",
+                                "Wyoming",
+                                "Nature"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Concerts"
+                            ],
+                            "words": [
+                                "Live",
+                                "Music",
+                                "Performance",
+                                "Audience"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Louis Pasteur",
+                                "Pasteur"
+                            ],
+                            "words": [
+                                "Vaccination",
+                                "Microbiology",
+                                "Pasteurization",
+                                "France"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Buckingham Palace",
+                                "Buckingham"
+                            ],
+                            "words": [
+                                "Queen",
+                                "London",
+                                "Royal",
+                                "Residence"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Ravioli"
+                            ],
+                            "words": [
+                                "Stuffed",
+                                "Pasta",
+                                "Italy",
+                                "Sauce"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Nikola Tesla",
+                                "Tesla"
+                            ],
+                            "words": [
+                                "Electric",
+                                "Inventor",
+                                "AC",
+                                "Engineer"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Pyramids of Giza",
+                                "Pyramids"
+                            ],
+                            "words": [
+                                "Egypt",
+                                "Pharaohs",
+                                "Tombs",
+                                "Ancient"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Graffiti"
+                            ],
+                            "words": [
+                                "Street",
+                                "Art",
+                                "Spray",
+                                "Urban"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-11": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Elon Musk",
+                                "Musk"
+                            ],
+                            "words": [
+                                "SpaceX",
+                                "Tesla",
+                                "Innovation",
+                                "Entrepreneur"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Matterhorn"
+                            ],
+                            "words": [
+                                "Mountain",
+                                "Alps",
+                                "Switzerland",
+                                "Iconic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Blues"
+                            ],
+                            "words": [
+                                "Guitar",
+                                "Melancholy",
+                                "Mississippi",
+                                "Soul"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Mother Teresa",
+                                "Teresa"
+                            ],
+                            "words": [
+                                "Nun",
+                                "Charity",
+                                "Calcutta",
+                                "Saint"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Petra"
+                            ],
+                            "words": [
+                                "Jordan",
+                                "Rock",
+                                "Archaeological",
+                                "Historic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Baseball"
+                            ],
+                            "words": [
+                                "Pitch",
+                                "Batter",
+                                "Glove",
+                                "Diamond"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Charles Dickens",
+                                "Dickens"
+                            ],
+                            "words": [
+                                "Novelist",
+                                "Victorian",
+                                "Oliver",
+                                "Twist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Golden Gate Bridge",
+                                "Golden Gate"
+                            ],
+                            "words": [
+                                "San Francisco",
+                                "Suspension",
+                                "Iconic",
+                                "Structure"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cookies"
+                            ],
+                            "words": [
+                                "Baked",
+                                "Dessert",
+                                "Sweet",
+                                "Chocolate"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-12": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Amelia Earhart",
+                                "Earhart"
+                            ],
+                            "words": [
+                                "Pilot",
+                                "Aviation",
+                                "Lost",
+                                "Pioneer"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Serengeti National Park",
+                                "Serengeti"
+                            ],
+                            "words": [
+                                "Tanzania",
+                                "Wildlife",
+                                "Safari",
+                                "Savannah"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Hip Hop"
+                            ],
+                            "words": [
+                                "Rap",
+                                "DJ",
+                                "Street",
+                                "Culture"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Claude Monet",
+                                "Monet"
+                            ],
+                            "words": [
+                                "Impressionism",
+                                "Water",
+                                "Lilies",
+                                "French"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Venice"
+                            ],
+                            "words": [
+                                "Canals",
+                                "Gondola",
+                                "Italy",
+                                "Lagoon"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Ramen"
+                            ],
+                            "words": [
+                                "Noodles",
+                                "Broth",
+                                "Japan",
+                                "Meal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Ernest Hemingway",
+                                "Hemingway"
+                            ],
+                            "words": [
+                                "Novelist",
+                                "Old",
+                                "Man",
+                                "Sea"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Vatican City",
+                                "Vatican"
+                            ],
+                            "words": [
+                                "Pope",
+                                "Holy",
+                                "Rome",
+                                "State"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Origami"
+                            ],
+                            "words": [
+                                "Folding",
+                                "Paper",
+                                "Artistic",
+                                "Japanese"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-13": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Sigmund Freud",
+                                "Freud"
+                            ],
+                            "words": [
+                                "Psychoanalysis",
+                                "Dreams",
+                                "Austrian",
+                                "Psychology"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Great Barrier Reef"
+                            ],
+                            "words": [
+                                "Coral",
+                                "Australia",
+                                "Marine",
+                                "Biodiversity"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Violin"
+                            ],
+                            "words": [
+                                "Strings",
+                                "Bow",
+                                "Classical",
+                                "Orchestra"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Ludwig van Beethoven",
+                                "Beethoven"
+                            ],
+                            "words": [
+                                "Composer",
+                                "Symphonies",
+                                "German",
+                                "Music"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Mount Rushmore"
+                            ],
+                            "words": [
+                                "Presidents",
+                                "Sculpture",
+                                "Dakota",
+                                "Carved"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Blues"
+                            ],
+                            "words": [
+                                "Soulful",
+                                "Guitar",
+                                "Harmonica",
+                                "Melody"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Virginia Woolf",
+                                "Woolf"
+                            ],
+                            "words": [
+                                "Writer",
+                                "Stream",
+                                "Consciousness",
+                                "English"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Leaning Tower of Pisa",
+                                "Leaning Tower"
+                            ],
+                            "words": [
+                                "Tilt",
+                                "Italy",
+                                "Architectural",
+                                "Famous"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Basketball"
+                            ],
+                            "words": [
+                                "Dribble",
+                                "Hoop",
+                                "Net",
+                                "Team"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-14": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Nikola Tesla",
+                                "Tesla"
+                            ],
+                            "words": [
+                                "Electric",
+                                "Inventor",
+                                "AC",
+                                "Engineer"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Yosemite National Park",
+                                "Yosemite"
+                            ],
+                            "words": [
+                                "California",
+                                "Granite",
+                                "Valleys",
+                                "Nature"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sculpture"
+                            ],
+                            "words": [
+                                "Chisel",
+                                "Stone",
+                                "Artistic",
+                                "Figures"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "William Shakespeare",
+                                "Shakespeare"
+                            ],
+                            "words": [
+                                "Playwright",
+                                "Bard",
+                                "Hamlet",
+                                "England"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Island of Santorini",
+                                "Santorini"
+                            ],
+                            "words": [
+                                "Greece",
+                                "Volcanic",
+                                "Picturesque",
+                                "Aegean"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Golf"
+                            ],
+                            "words": [
+                                "Tee",
+                                "Hole",
+                                "Club",
+                                "Course"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Isaac Newton",
+                                "Newton"
+                            ],
+                            "words": [
+                                "Gravity",
+                                "Calculus",
+                                "Physics",
+                                "Apple"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Louvre Museum",
+                                "Louvre"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Art",
+                                "Collections",
+                                "Historic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Kite Flying"
+                            ],
+                            "words": [
+                                "Winds",
+                                "Strings",
+                                "Sky",
+                                "Recreation"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-15": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Theodore Roosevelt",
+                                "Roosevelt"
+                            ],
+                            "words": [
+                                "President",
+                                "Conservation",
+                                "Rough",
+                                "Rider"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Great Wall of China",
+                                "Great Wall"
+                            ],
+                            "words": [
+                                "Ming",
+                                "Barrier",
+                                "History",
+                                "Ancient"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Heavy Metal"
+                            ],
+                            "words": [
+                                "Guitar",
+                                "Loud",
+                                "Rock",
+                                "Bands"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Frida Kahlo",
+                                "Kahlo"
+                            ],
+                            "words": [
+                                "Painter",
+                                "Mexico",
+                                "Self-portrait",
+                                "Surrealism"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Machu Picchu"
+                            ],
+                            "words": [
+                                "Inca",
+                                "Ruins",
+                                "Peru",
+                                "Ancient"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Soccer"
+                            ],
+                            "words": [
+                                "Ball",
+                                "Goal",
+                                "Team",
+                                "Field"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Marie Curie",
+                                "Curie"
+                            ],
+                            "words": [
+                                "Radium",
+                                "Nobel",
+                                "Radioactivity",
+                                "Scientific"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Bermuda Triangle"
+                            ],
+                            "words": [
+                                "Mystery",
+                                "Ocean",
+                                "Disappearances",
+                                "Legends"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Ice Cream"
+                            ],
+                            "words": [
+                                "Cone",
+                                "Flavor",
+                                "Cold",
+                                "Vanilla"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-16": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Vincent van Gogh",
+                                "Van Gogh"
+                            ],
+                            "words": [
+                                "Painter",
+                                "Sunflower",
+                                "Dutch",
+                                "Starry"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Taj Mahal"
+                            ],
+                            "words": [
+                                "Mughal",
+                                "Love",
+                                "Agra",
+                                "India"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Basketball"
+                            ],
+                            "words": [
+                                "Hoop",
+                                "Dribble",
+                                "Court",
+                                "Net"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Charles Darwin",
+                                "Darwin"
+                            ],
+                            "words": [
+                                "Evolution",
+                                "Species",
+                                "Natural",
+                                "Galapagos"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Notre-Dame Cathedral",
+                                "Notre-Dame"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Gothic",
+                                "Fire",
+                                "Restoration"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Skipping"
+                            ],
+                            "words": [
+                                "Jump",
+                                "Rope",
+                                "Rhythm",
+                                "Childhood"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Henry Ford",
+                                "Ford"
+                            ],
+                            "words": [
+                                "Assembly",
+                                "Cars",
+                                "Model",
+                                "T"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Easter Island",
+                                "Rapa Nui"
+                            ],
+                            "words": [
+                                "Moai",
+                                "Statues",
+                                "Chile",
+                                "Pacific"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Running"
+                            ],
+                            "words": [
+                                "Jogging",
+                                "Track",
+                                "Marathon",
+                                "Exercise"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-17": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Marilyn Monroe",
+                                "Monroe"
+                            ],
+                            "words": [
+                                "Actress",
+                                "Hollywood",
+                                "Icon",
+                                "Blonde"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Chichen Itza"
+                            ],
+                            "words": [
+                                "Maya",
+                                "Mexico",
+                                "Pyramid",
+                                "Temple"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Macaroni"
+                            ],
+                            "words": [
+                                "Pasta",
+                                "Italy",
+                                "Cheese",
+                                "Shapes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Stephen Hawking",
+                                "Hawking"
+                            ],
+                            "words": [
+                                "Cosmos",
+                                "Theoretical",
+                                "Physics",
+                                "Wheelchair"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sphinx"
+                            ],
+                            "words": [
+                                "Egypt",
+                                "Mystical",
+                                "Sand",
+                                "Monument"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Painting"
+                            ],
+                            "words": [
+                                "Brush",
+                                "Canvas",
+                                "Color",
+                                "Art"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Oprah Winfrey",
+                                "Oprah"
+                            ],
+                            "words": [
+                                "Talk",
+                                "Show",
+                                "Host",
+                                "Influential"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Baltic Sea",
+                                "Baltic"
+                            ],
+                            "words": [
+                                "Northern",
+                                "Europe",
+                                "Salty",
+                                "Marine"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cycling"
+                            ],
+                            "words": [
+                                "Pedal",
+                                "Bicycle",
+                                "Wheel",
+                                "Race"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-18": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Walt Disney",
+                                "Disney"
+                            ],
+                            "words": [
+                                "Animation",
+                                "Mouse",
+                                "Magic",
+                                "Films"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Forbidden City",
+                                "Forbidden"
+                            ],
+                            "words": [
+                                "Beijing",
+                                "Palace",
+                                "China",
+                                "Historic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Grunge"
+                            ],
+                            "words": [
+                                "Seattle",
+                                "Nirvana",
+                                "Alternative",
+                                "Music"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Johann Sebastian Bach",
+                                "Bach"
+                            ],
+                            "words": [
+                                "Composer",
+                                "Baroque",
+                                "Organ",
+                                "Cantatas"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Mount Fuji",
+                                "Fuji"
+                            ],
+                            "words": [
+                                "Japan",
+                                "Volcano",
+                                "Symmetrical",
+                                "Peak"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Skiing"
+                            ],
+                            "words": [
+                                "Snow",
+                                "Slope",
+                                "Poles",
+                                "Cold"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Archimedes"
+                            ],
+                            "words": [
+                                "Eureka",
+                                "Mathematics",
+                                "Syracuse",
+                                "Screw"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Eiffel Tower",
+                                "La Tour Eiffel"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Iron",
+                                "Landmark",
+                                "Tourism"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cartooning"
+                            ],
+                            "words": [
+                                "Animation",
+                                "Humor",
+                                "Sketch",
+                                "Comic"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-19": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Barack Obama",
+                                "Obama"
+                            ],
+                            "words": [
+                                "President",
+                                "Change",
+                                "US",
+                                "Senator"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Victoria Falls"
+                            ],
+                            "words": [
+                                "Waterfall",
+                                "Africa",
+                                "Zimbabwe",
+                                "Spectacular"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Graffiti"
+                            ],
+                            "words": [
+                                "Street",
+                                "Art",
+                                "Vandalism",
+                                "Spray"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Beethoven",
+                                "Ludwig van Beethoven"
+                            ],
+                            "words": [
+                                "Symphony",
+                                "Composer",
+                                "German",
+                                "Music"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Angel Falls",
+                                "Falls"
+                            ],
+                            "words": [
+                                "Height",
+                                "Venezuela",
+                                "Cascade",
+                                "Waterfall"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Taekwondo"
+                            ],
+                            "words": [
+                                "Korean",
+                                "Defense",
+                                "Kicks",
+                                "Martial"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Virginia Woolf",
+                                "Woolf"
+                            ],
+                            "words": [
+                                "Writer",
+                                "Stream",
+                                "Consciousness",
+                                "English"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Space Shuttle",
+                                "Shuttle"
+                            ],
+                            "words": [
+                                "NASA",
+                                "Orbiter",
+                                "Launch",
+                                "Astronauts"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Cappuccino"
+                            ],
+                            "words": [
+                                "Coffee",
+                                "Espresso",
+                                "Froth",
+                                "Milk"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-20": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Nelson Mandela",
+                                "Mandela"
+                            ],
+                            "words": [
+                                "Apartheid",
+                                "South",
+                                "Africa",
+                                "Freedom"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Fjords of Norway",
+                                "Norwegian Fjords"
+                            ],
+                            "words": [
+                                "Glacial",
+                                "Waterways",
+                                "Scenic",
+                                "Steep"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Symphonies"
+                            ],
+                            "words": [
+                                "Orchestra",
+                                "Movement",
+                                "Classical",
+                                "Composer"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Mark Twain",
+                                "Twain"
+                            ],
+                            "words": [
+                                "Humor",
+                                "River",
+                                "Tom",
+                                "Sawyer"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Grand Canyon"
+                            ],
+                            "words": [
+                                "Arizona",
+                                "Gorge",
+                                "Colorado",
+                                "River"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Deck Tennis"
+                            ],
+                            "words": [
+                                "Racquet",
+                                "Net",
+                                "Court",
+                                "Sport"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "J.K. Rowling",
+                                "Rowling"
+                            ],
+                            "words": [
+                                "Harry",
+                                "Potter",
+                                "Author",
+                                "British"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Bora Bora"
+                            ],
+                            "words": [
+                                "Island",
+                                "Tropical",
+                                "Lagoon",
+                                "Tahiti"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Calligraphy"
+                            ],
+                            "words": [
+                                "Art",
+                                "Script",
+                                "Ink",
+                                "Penmanship"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-21": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Stephen King",
+                                "King"
+                            ],
+                            "words": [
+                                "Horror",
+                                "Author",
+                                "Novels",
+                                "American"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Black Sea",
+                                "Black Sea"
+                            ],
+                            "words": [
+                                "Eurasia",
+                                "Inland",
+                                "Salty",
+                                "Coastline"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Opera"
+                            ],
+                            "words": [
+                                "Singing",
+                                "Aria",
+                                "Stage",
+                                "Musical"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Nostradamus"
+                            ],
+                            "words": [
+                                "Prophet",
+                                "Predictions",
+                                "France",
+                                "Astrologer"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Angel Falls"
+                            ],
+                            "words": [
+                                "Waterfall",
+                                "Venezuela",
+                                "Tallest",
+                                "Cascading"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Camping"
+                            ],
+                            "words": [
+                                "Tent",
+                                "Wilderness",
+                                "Bonfire",
+                                "Outdoors"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Albert Einstein",
+                                "Einstein"
+                            ],
+                            "words": [
+                                "Relativity",
+                                "Physics",
+                                "Genius",
+                                "Theory"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Ganges River",
+                                "Ganges"
+                            ],
+                            "words": [
+                                "India",
+                                "Sacred",
+                                "Hindus",
+                                "Flow"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Aikido"
+                            ],
+                            "words": [
+                                "Japanese",
+                                "Defense",
+                                "Harmony",
+                                "Martial"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-22": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Margaret Thatcher",
+                                "Thatcher"
+                            ],
+                            "words": [
+                                "Prime",
+                                "Minister",
+                                "Iron",
+                                "Famous"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Acropolis"
+                            ],
+                            "words": [
+                                "Athens",
+                                "Ancient",
+                                "Ruins",
+                                "Greece"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Choosing Board Games"
+                            ],
+                            "words": [
+                                "Dice",
+                                "Strategy",
+                                "Family",
+                                "Fun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "T.S. Eliot",
+                                "Eliot"
+                            ],
+                            "words": [
+                                "Poet",
+                                "Waste",
+                                "Land",
+                                "Modernist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Kruger National Park",
+                                "Kruger"
+                            ],
+                            "words": [
+                                "Safari",
+                                "Wildlife",
+                                "Africa",
+                                "South"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Rock Climbing"
+                            ],
+                            "words": [
+                                "Altitude",
+                                "Harness",
+                                "Grip",
+                                "Adventure"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Dante Alighieri",
+                                "Dante"
+                            ],
+                            "words": [
+                                "Inferno",
+                                "Poet",
+                                "Italian",
+                                "Divine"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Lake Baikal",
+                                "Baikal"
+                            ],
+                            "words": [
+                                "Deepest",
+                                "Siberia",
+                                "Fresh",
+                                "Russian"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Tea Brewing"
+                            ],
+                            "words": [
+                                "Leaves",
+                                "Kettle",
+                                "Pour",
+                                "Flavor"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-23": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Alexander the Great"
+                            ],
+                            "words": [
+                                "Conqueror",
+                                "Macedonia",
+                                "Empire",
+                                "Persia"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Swiss Alps"
+                            ],
+                            "words": [
+                                "Mountains",
+                                "Switzerland",
+                                "Snow",
+                                "Scenic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Barbecue"
+                            ],
+                            "words": [
+                                "Grill",
+                                "Meat",
+                                "Coal",
+                                "Sauce"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Ernest Hemingway",
+                                "Hemingway"
+                            ],
+                            "words": [
+                                "Writer",
+                                "Sun",
+                                "Also",
+                                "Rises"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Dead Sea",
+                                "Dead Sea"
+                            ],
+                            "words": [
+                                "Salty",
+                                "Middle",
+                                "Lowest",
+                                "Point"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Surfing"
+                            ],
+                            "words": [
+                                "Waves",
+                                "Ocean",
+                                "Board",
+                                "Balance"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Jane Austen",
+                                "Austen"
+                            ],
+                            "words": [
+                                "Pride",
+                                "Prejudice",
+                                "Novel",
+                                "English"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Victoria Falls"
+                            ],
+                            "words": [
+                                "Africa",
+                                "Zimbabwe",
+                                "Water",
+                                "Tourist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Fishing"
+                            ],
+                            "words": [
+                                "Rod",
+                                "Bait",
+                                "Catch",
+                                "Lake"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-24": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "John F. Kennedy",
+                                "Kennedy"
+                            ],
+                            "words": [
+                                "President",
+                                "Assassination",
+                                "Camelot",
+                                "Speech"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Amazon Rainforest",
+                                "Amazon"
+                            ],
+                            "words": [
+                                "Dense",
+                                "Biodiverse",
+                                "South",
+                                "America"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Bicycling"
+                            ],
+                            "words": [
+                                "Pedal",
+                                "Ride",
+                                "Wheels",
+                                "Trail"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Coco Chanel",
+                                "Chanel"
+                            ],
+                            "words": [
+                                "Fashion",
+                                "Design",
+                                "Icon",
+                                "Chanel"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Red Square",
+                                "Red Square"
+                            ],
+                            "words": [
+                                "Moscow",
+                                "Russia",
+                                "Historic",
+                                "Kremlin"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Basketball"
+                            ],
+                            "words": [
+                                "Hoop",
+                                "Court",
+                                "Dribble",
+                                "Pass"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Isaac Newton",
+                                "Newton"
+                            ],
+                            "words": [
+                                "Gravity",
+                                "Apple",
+                                "Laws",
+                                "Mathematician"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Black Forest",
+                                "Black Forest"
+                            ],
+                            "words": [
+                                "Germany",
+                                "Dense",
+                                "Trees",
+                                "Woodland"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Opera Singing"
+                            ],
+                            "words": [
+                                "Diva",
+                                "Performance",
+                                "Orchestra",
+                                "Power"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-25": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Galileo Galilei",
+                                "Galileo"
+                            ],
+                            "words": [
+                                "Astronomy",
+                                "Telescope",
+                                "Planets",
+                                "Science"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Himalayas",
+                                "Himalayas"
+                            ],
+                            "words": [
+                                "Mountain",
+                                "Range",
+                                "Snow",
+                                "Nepal"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Swing Dancing"
+                            ],
+                            "words": [
+                                "Jazz",
+                                "Lindy",
+                                "Hop",
+                                "Partner"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Edgar Allan Poe",
+                                "Poe"
+                            ],
+                            "words": [
+                                "Raven",
+                                "Gothic",
+                                "Eerie",
+                                "Poet"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Galapagos Islands",
+                                "Galapagos"
+                            ],
+                            "words": [
+                                "Darwin",
+                                "Evolution",
+                                "Tortoises",
+                                "Islands"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Craft Beer"
+                            ],
+                            "words": [
+                                "Brewery",
+                                "Ale",
+                                "Hops",
+                                "Artisan"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Andy Warhol",
+                                "Warhol"
+                            ],
+                            "words": [
+                                "Pop",
+                                "Art",
+                                "Soup",
+                                "Portraits"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Matterhorn",
+                                "Matterhorn"
+                            ],
+                            "words": [
+                                "Mountain",
+                                "Alps",
+                                "Switzerland",
+                                "Icon"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Quilting"
+                            ],
+                            "words": [
+                                "Patchwork",
+                                "Fabric",
+                                "Sewing",
+                                "Blanket"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-26": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Napoleon Bonaparte",
+                                "Napoleon"
+                            ],
+                            "words": [
+                                "Emperor",
+                                "France",
+                                "Waterloo",
+                                "Corsica"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Himalayas",
+                                "Himalayas"
+                            ],
+                            "words": [
+                                "Mountains",
+                                "Asia",
+                                "Climbing",
+                                "Jungfrau"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Dining Out"
+                            ],
+                            "words": [
+                                "Restaurant",
+                                "Menu",
+                                "Dine",
+                                "Meal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Virginia Woolf",
+                                "Woolf"
+                            ],
+                            "words": [
+                                "Modernist",
+                                "Novelist",
+                                "Stream",
+                                "Consciousness"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Amazon River",
+                                "Amazon"
+                            ],
+                            "words": [
+                                "Longest",
+                                "Flow",
+                                "South",
+                                "America"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Pottery"
+                            ],
+                            "words": [
+                                "Clay",
+                                "Wheel",
+                                "Kiln",
+                                "Ceramic"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Julius Caesar",
+                                "Caesar"
+                            ],
+                            "words": [
+                                "Dictator",
+                                "Roman",
+                                "Empire",
+                                "Assassinated"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Eiffel Tower",
+                                "Eiffel"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Landmark",
+                                "Iron",
+                                "Gustave"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Flying Kites"
+                            ],
+                            "words": [
+                                "Wind",
+                                "Strings",
+                                "Sky",
+                                "Recreation"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-27": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Marie Curie",
+                                "Curie"
+                            ],
+                            "words": [
+                                "Radioactivity",
+                                "Scientist",
+                                "Poland",
+                                "Nobel"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Sahara Desert",
+                                "Sahara"
+                            ],
+                            "words": [
+                                "Arid",
+                                "Sand",
+                                "Vast",
+                                "Africa"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Coffee Brewing"
+                            ],
+                            "words": [
+                                "Espresso",
+                                "Beans",
+                                "Filter",
+                                "Cup"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Ludwig van Beethoven",
+                                "Beethoven"
+                            ],
+                            "words": [
+                                "Composer",
+                                "German",
+                                "Symphony",
+                                "Deaf"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Great Wall of China",
+                                "Great Wall"
+                            ],
+                            "words": [
+                                "Ancient",
+                                "Structure",
+                                "Long",
+                                "China"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Skateboarding"
+                            ],
+                            "words": [
+                                "Tricks",
+                                "Wheels",
+                                "Park",
+                                "Deck"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Mother Teresa",
+                                "Teresa"
+                            ],
+                            "words": [
+                                "Charity",
+                                "Calcutta",
+                                "Missionary",
+                                "Nobel"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Great Barrier Reef",
+                                "Barrier Reef"
+                            ],
+                            "words": [
+                                "Coral",
+                                "Marine",
+                                "Australia",
+                                "Biodiversity"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Drums"
+                            ],
+                            "words": [
+                                "Percussion",
+                                "Beat",
+                                "Rhythm",
+                                "Sticks"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-28": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Frida Kahlo",
+                                "Kahlo"
+                            ],
+                            "words": [
+                                "Mexican",
+                                "Self",
+                                "Portraits",
+                                "Artist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Eiffel Tower",
+                                "Eiffel"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Wrought",
+                                "Iron",
+                                "Exposition"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Classical Music"
+                            ],
+                            "words": [
+                                "Beethoven",
+                                "Orchestra",
+                                "Symphony",
+                                "Bach"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Oscar Wilde",
+                                "Wilde"
+                            ],
+                            "words": [
+                                "Irish",
+                                "Playwright",
+                                "Aesthetic",
+                                "Wit"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Sahara Desert",
+                                "Sahara"
+                            ],
+                            "words": [
+                                "Sand",
+                                "Expanse",
+                                "Dunes",
+                                "Africa"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Soccer"
+                            ],
+                            "words": [
+                                "Goal",
+                                "Field",
+                                "Kick",
+                                "Team"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Gandhi",
+                                "Mahatma Gandhi"
+                            ],
+                            "words": [
+                                "Nonviolence",
+                                "Leader",
+                                "India",
+                                "Independence"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Grand Canyon",
+                                "Grand Canyon"
+                            ],
+                            "words": [
+                                "Erosion",
+                                "Colorado",
+                                "Gorge",
+                                "Vast"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Singing"
+                            ],
+                            "words": [
+                                "Voice",
+                                "Melody",
+                                "Choir",
+                                "Vocal"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-29": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Charles Dickens",
+                                "Dickens"
+                            ],
+                            "words": [
+                                "Oliver",
+                                "Twist",
+                                "Victorian",
+                                "England"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Pyramids of Giza",
+                                "Giza"
+                            ],
+                            "words": [
+                                "Ancient",
+                                "Egypt",
+                                "Tombs",
+                                "Pharaohs"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Piano"
+                            ],
+                            "words": [
+                                "Keys",
+                                "Ivory",
+                                "Music",
+                                "Grand"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Jane Austen",
+                                "Austen"
+                            ],
+                            "words": [
+                                "Pride",
+                                "Prejudice",
+                                "Novelist",
+                                "Regency"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Black Sea",
+                                "Black Sea"
+                            ],
+                            "words": [
+                                "Eurasia",
+                                "Coast",
+                                "Inland",
+                                "Salty"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Football"
+                            ],
+                            "words": [
+                                "Touchdown",
+                                "Quarterback",
+                                "Field",
+                                "Yard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Maya Angelou",
+                                "Angelou"
+                            ],
+                            "words": [
+                                "Poet",
+                                "Caged",
+                                "Bird",
+                                "Author"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Colosseum",
+                                "Colosseum"
+                            ],
+                            "words": [
+                                "Rome",
+                                "Arena",
+                                "Gladiator",
+                                "Historic"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Running"
+                            ],
+                            "words": [
+                                "Track",
+                                "Race",
+                                "Stride",
+                                "Speed"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-30": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Beethoven",
+                                "Ludwig van Beethoven"
+                            ],
+                            "words": [
+                                "Symphonies",
+                                "Composer",
+                                "German",
+                                "Classical"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Red Square",
+                                "Red Square"
+                            ],
+                            "words": [
+                                "Moscow",
+                                "Russia",
+                                "Kremlin",
+                                "Stately"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Opera"
+                            ],
+                            "words": [
+                                "Singing",
+                                "Dramatic",
+                                "Aria",
+                                "Theater"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Alexander Graham Bell",
+                                "Bell"
+                            ],
+                            "words": [
+                                "Telephone",
+                                "Inventor",
+                                "Patent",
+                                "Call"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Niagara Falls",
+                                "Niagara"
+                            ],
+                            "words": [
+                                "Waterfall",
+                                "Canada",
+                                "Tourist",
+                                "Journey"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Pottery"
+                            ],
+                            "words": [
+                                "Wheel",
+                                "Ceramic",
+                                "Sculpt",
+                                "Clay"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Helen Keller",
+                                "Keller"
+                            ],
+                            "words": [
+                                "Author",
+                                "Blind",
+                                "Deaf",
+                                "Education"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Boston Tea Party",
+                                "Boston"
+                            ],
+                            "words": [
+                                "Revolution",
+                                "Protest",
+                                "British",
+                                "Colonies"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Drawing"
+                            ],
+                            "words": [
+                                "Pencil",
+                                "Sketchpad",
+                                "Artistic",
+                                "Illustration"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -23,7 +23,8 @@ function updateTimerDisplay(scene) {
         const inputBgHeight = scene.game.scale.height * 0.055;
         
         const x = scene.game.scale.width * 0.5 - inputBgWidth / 2;
-        
+        // const y = scene.game.scale.height * 0.70 - inputBgHeight / 2;
+
         // Use the stored initial Y position instead of recalculating
         scene.timeBar.fillRoundedRect(
             x,
