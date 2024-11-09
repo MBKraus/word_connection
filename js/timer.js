@@ -1,3 +1,5 @@
+import { getStartY } from './uiComponents.js';
+
 export function resetTimerAndBar(scene) {
     scene.remainingTime = scene.timerDuration;
     updateTimerDisplay(scene);
@@ -19,19 +21,21 @@ function updateTimerDisplay(scene) {
         const barProgress = scene.remainingTime / scene.timerDuration;
         const inputBgWidth = scene.game.scale.width * 0.98;
         const inputBgHeight = scene.game.scale.height * 0.055;
-        const x = scene.game.scale.width * 0.5 - inputBgWidth / 2;
-        const y = scene.game.scale.height * 0.70 - inputBgHeight / 2;
         
-        // Draw the timer bar with the same rounded corners as the input background
+        const x = scene.game.scale.width * 0.5 - inputBgWidth / 2;
+        // const y = scene.game.scale.height * 0.70 - inputBgHeight / 2;
+
+        // Use the stored initial Y position instead of recalculating
         scene.timeBar.fillRoundedRect(
             x,
-            y,
+            scene.initialTimeBarY,
             inputBgWidth * barProgress,
             inputBgHeight,
             20
         );
     }
 }
+
 export function clearTimerEvent(scene) {
     if (scene.timerEvent) {
         scene.timerEvent.remove(false);
@@ -40,7 +44,7 @@ export function clearTimerEvent(scene) {
 }
 
 export function startTimer(scene) {
-    clearTimerEvent(scene); // Clear any previous timer event
+    clearTimerEvent(scene);
 
     scene.remainingTime = scene.timerDuration;
     scene.gameStartTime = Date.now();
@@ -59,26 +63,24 @@ export function startTimer(scene) {
 
 function updateTimer(scene) {
     const currentTime = Date.now();
-    const elapsedTime = (currentTime - scene.gameStartTime) / 1000; // Convert to seconds
+    const elapsedTime = (currentTime - scene.gameStartTime) / 1000;
     scene.remainingTime = Math.max(0, scene.timerDuration - elapsedTime);
 
-    if (currentTime - scene.lastUpdateTime >= 1000) { // Update display every second
+    if (currentTime - scene.lastUpdateTime >= 1000) {
         updateTimerDisplay(scene);
         scene.lastUpdateTime = currentTime;
     }
 
-    // Play sound when there are 2 seconds left, only if the game is still active
     if (scene.isGameActive && scene.remainingTime <= 3.05 && scene.remainingTime > 2.95 && !scene.countdownAudioInRoundPlayed) {
         scene.sound.play('countdownSound');
         scene.countdownAudioInRoundPlayed = true;
     }
 
-    // If remaining time is less than or equal to 0, ensure everything shows zero
     if (scene.remainingTime <= 0) {
-        scene.remainingTime = 0;  // Force to exactly 0
-        updateTimerDisplay(scene);  // Update one final time
+        scene.remainingTime = 0;
+        updateTimerDisplay(scene);
         clearTimerEvent(scene);
-        scene.isGameActive = false; // Set game state to inactive before handling time up
+        scene.isGameActive = false;
         handleTimeUp(scene);
     }
 }
