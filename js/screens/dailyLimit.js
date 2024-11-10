@@ -1,4 +1,7 @@
-import { GameStorage} from '../gameStorage.js';
+import { GameStorage } from '../gameStorage.js';
+import { getGameStats } from '../gameStorage.js';
+import { auth } from '../auth.js';
+import { createProgressCircles } from './statsPopUp.js';
 
 export function createDailyLimitScreen(scene) {
     const screen = scene.add.container(0, 0);
@@ -10,8 +13,8 @@ export function createDailyLimitScreen(scene) {
     bg.setOrigin(0);
     screen.add(bg);
 
-    // Create title text
-    const titleText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.35, "Thanks for Playing!", {
+    // Title and message text
+    const titleText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.2, "Thanks for Playing!", {
         fontSize: scene.scale.width * 0.08 + 'px',
         fontFamily: 'Poppins',
         color: '#ffffff',
@@ -19,8 +22,7 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     screen.add(titleText);
 
-    // Create message text
-    const messageText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.45, 
+    const messageText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.3, 
         "Great job on today's puzzle!\nCome back tomorrow for a new challenge!", {
         fontSize: scene.scale.width * 0.04 + 'px',
         fontFamily: 'Poppins',
@@ -30,8 +32,8 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     screen.add(messageText);
 
-    // Create countdown text
-    const countdownText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.55, "", {
+    // Countdown text
+    const countdownText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.4, "", {
         fontSize: scene.scale.width * 0.035 + 'px',
         fontFamily: 'Poppins',
         color: '#ffffff',
@@ -39,7 +41,21 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     screen.add(countdownText);
 
-    // Update countdown timer
+    // Placeholder for stats text and circles container (hidden until data loads)
+    const statsText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.6, "Loading stats...", {
+        fontSize: scene.scale.width * 0.035 + 'px',
+        fontFamily: 'Poppins',
+        color: '#ffffff',
+        align: 'center',
+        lineSpacing: 10
+    }).setOrigin(0.5);
+    statsText.setVisible(false);
+    screen.add(statsText);
+
+    const circlesContainer = scene.add.container(scene.scale.width * 0.5, scene.scale.height * 0.75);
+    screen.add(circlesContainer);
+
+    // Countdown timer function
     let countdownInterval;
     function updateCountdown() {
         const now = new Date();
@@ -58,11 +74,11 @@ export function createDailyLimitScreen(scene) {
     scene.dailyLimitScreen = screen;
 
     return {
-        show: () => {
+        show: async () => {
             screen.setVisible(true);
             updateCountdown();
             countdownInterval = setInterval(updateCountdown, 1000);
-            
+
             // Hide ad container if it exists
             const adContainer = document.getElementById('ad-container');
             if (adContainer) {
@@ -72,14 +88,33 @@ export function createDailyLimitScreen(scene) {
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(false);
             }
+
+            // If the user is logged in, fetch and display stats
+            if (auth.currentUser) {
+                const stats = await getGameStats(auth.currentUser.uid);
+                if (stats) {
+                    // Update stats text
+                    statsText.setText([
+                        `Total Games Played: ${stats.totalGamesPlayed}`,
+                        `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
+                        `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
+                    ]);
+                    statsText.setVisible(true);
+
+                    // Create progress circles
+                    createProgressCircles(stats.recentSessions, scene, circlesContainer);
+                } else {
+                    statsText.setText("Error loading stats.");
+                    statsText.setVisible(true);
+                }
+            }
         },
         hide: () => {
             screen.setVisible(false);
             if (countdownInterval) {
                 clearInterval(countdownInterval);
             }
-            
-            // Show ad container if it exists
+
             const adContainer = document.getElementById('ad-container');
             if (adContainer) {
                 adContainer.style.display = 'flex';
@@ -88,6 +123,10 @@ export function createDailyLimitScreen(scene) {
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(true);
             }
+
+            // Hide the stats text and clear circles
+            statsText.setVisible(false);
+            circlesContainer.removeAll(true); // Clear circles
         }
     };
 }

@@ -99,7 +99,7 @@ function createSignupButton(scene, popupWidth, halfHeight) {
 }
 
 // Helper function to create progress circles
-function createProgressCircles(sessions, scene, circlesContainer) {
+export function createProgressCircles(sessions, scene, circlesContainer) {
     circlesContainer.removeAll(true);
     const circleRadius = 75;
     const spacing = 140;
@@ -122,7 +122,7 @@ function createProgressCircles(sessions, scene, circlesContainer) {
 }
 
 // Helper function to determine border color
-function getBorderColor(topicsGuessed) {
+export function getBorderColor(topicsGuessed) {
     if (topicsGuessed >= 9) return 0x00FF00;
     if (topicsGuessed >= 6) return 0x90EE90;
     if (topicsGuessed >= 3) return 0xFFA500;
