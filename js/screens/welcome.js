@@ -1,5 +1,6 @@
 import { createScreen, showScreen, hideScreen, createButton, createText, STYLES } from './helpers.js';
-import { showAuthModal} from '../auth.js';
+import { showAuthModal, auth } from '../auth.js';
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 
 export function createWelcomeScreen(scene) {
     // Store scene reference for auth callbacks
@@ -36,11 +37,12 @@ export function createWelcomeScreen(scene) {
         'Play',
         () => {
             hideScreen(scene, 'welcomeScreen');
-            startGame(scene);
+            window.startGame(scene);
         }
     );
     scene.welcomeScreen.add(playButton);
 
+    // Create login button but initially hide it
     const loginButton = createButton(
         scene,
         scene.scale.width * 0.5,
@@ -51,19 +53,28 @@ export function createWelcomeScreen(scene) {
         }
     );
     scene.welcomeScreen.add(loginButton);
+    loginButton.setVisible(false); // Initially hidden
 
-    // Get the current date and format it
+    // Listen for auth state changes
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            loginButton.setVisible(false);
+        } else {
+            loginButton.setVisible(true);
+        }
+    });
+
+    // Date and game number
     const date = new Date();
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-GB', options);
 
-    // Create the date text element
     const dateText = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.85, // Position below the login button
+        scene.scale.height * 0.85,
         formattedDate,
         {
-            fontSize: scene.scale.width * 0.0375 + 'px', // Adjust font size to match other text
+            fontSize: scene.scale.width * 0.0375 + 'px',
             fontFamily: 'Poppins',
             fontWeight: 'bold',
             color: STYLES.colors.text,
@@ -72,20 +83,18 @@ export function createWelcomeScreen(scene) {
     ).setOrigin(0.5);
     scene.welcomeScreen.add(dateText);
 
-    // Game number
     const gameNumber = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.88, // Position below the login button
+        scene.scale.height * 0.88,
         "# 1",
         {
-            fontSize: scene.scale.width * 0.0355 + 'px', // Adjust font size to match other text
+            fontSize: scene.scale.width * 0.0355 + 'px',
             fontFamily: 'Poppins',
             color: STYLES.colors.text,
             align: 'center'
         }
     ).setOrigin(0.5);
     scene.welcomeScreen.add(gameNumber);
-
 
     return {
         show: () => showScreen(scene, 'welcomeScreen'),

@@ -135,6 +135,7 @@ export async function hasPlayedTodayDB(userId) {
     try {
         const statsRef = doc(db, 'gameStats', userId, 'dailyStats', today);
         const statsDoc = await getDoc(statsRef);
+        console.log(userId)
         return statsDoc.exists();
     } catch (error) {
         console.error('Error checking if user played today:', error);
