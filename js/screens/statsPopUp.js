@@ -89,9 +89,9 @@ function createCloseButtonContainer(scene, halfWidth, halfHeight) {
 }
 
 function createSignupButton(scene, popupWidth, halfHeight) {
-    const signupButton = scene.add.rectangle(0, halfHeight * 0.5, popupWidth * 0.8, scene.scale.height * 0.07, 0x167D60)
+    const signupButton = scene.add.rectangle(0, scene.scale.height * -0.1, popupWidth * 0.8, scene.scale.height * 0.07, 0x167D60)
         .setInteractive();
-    const signupButtonText = scene.add.text(0, halfHeight * 0.5, 'Create a free account', {
+    const signupButtonText = scene.add.text(0, scene.scale.height * -0.1, 'Create a free account', {
         font: STYLES.fonts.small(scene),
         fill: '#FFFFFF'  // White color
     }).setOrigin(0.5);
@@ -157,7 +157,7 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, loginButton,
                 statsText.setText('Error loading stats.');
             }
         } else {
-            statsText.setText('-');
+            statsText.setText('');
             loginButton.setVisible(true);
             loginButtonText.setVisible(true);
         }

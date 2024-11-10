@@ -42,8 +42,7 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-    // this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
-    this.load.text('data', './data.txt');
+    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('check', 'https://mbkraus.github.io/word_connection/assets/check.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
@@ -76,11 +75,7 @@ function create() {
     const NUMBER_OF_ROUNDS = 3;
     const TOPICS_PER_ROUND = 3;
     const date = "2024-11-08"; 
-    const allTopics = loadTopics(this);
-    this.allRounds = allTopics[date]
-
-    console.log(this.allRounds);
-
+  
     // Check if user has already played today (cookie-based)
     if (GameStorage.hasPlayedTodayCookie()) {
         // Only create and show the daily limit screen
@@ -91,6 +86,9 @@ function create() {
         // Create and show the welcome screen
         createWelcomeScreen(this);
         showWelcomeScreen(this, 'welcomeScreen');
+
+        const allTopics = loadTopics(this);
+        this.allRounds = allTopics[date]
 
         // Create game elements but don't start the game yet
         createGameElements(this);
