@@ -55,6 +55,7 @@ onAuthStateChanged(auth, async (user) => {
     if (user && !isAuthModalOpen) {
         const hasPlayed = await hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
+            console.log("has played DB")
             const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
             dailyLimitScreen.show();
         }
@@ -120,37 +121,40 @@ async function handleAuthSuccess() {
         window.startGame(window.gameScene);
     }
 }
-function handleSignIn(e) {
+async function handleSignIn(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
-    signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            isAuthSuccess = true; // Set to true only after successful sign-in
-            hideAuthModal();
-        })
-        .catch((error) => alert("Sign-In Error: " + error.message));
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        alert("Sign-In Error: " + error.message);
+    }
 }
 
-function handleSignUp(e) {
+async function handleSignUp(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
-    createUserWithEmailAndPassword(auth, email, password)
-        .then(() => {
-            isAuthSuccess = true; // Set to true only after successful sign-up
-            hideAuthModal();
-        })
-        .catch((error) => alert("Sign Up Error: " + error.message));
+    try {
+        await createUserWithEmailAndPassword(auth, email, password);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        alert("Sign Up Error: " + error.message);
+    }
 }
 
-function handleGoogleSignIn() {
-    signInWithPopup(auth, googleProvider)
-        .then(() => {
-            isAuthSuccess = true; // Set to true only after successful Google sign-in
-            hideAuthModal();
-        })
-        .catch((error) => alert("Google Sign-In Error: " + error.message));
+async function handleGoogleSignIn() {
+    try {
+        await signInWithPopup(auth, googleProvider);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        alert("Google Sign-In Error: " + error.message);
+    }
 }
 
 function showSignUpForm() {
@@ -200,13 +204,22 @@ function handlePasswordReset(e) {
 }
 
 // Close modal and proceed with auth success
-function hideAuthModal() {
+async function hideAuthModal() {
     modalContainer.style.display = 'none';
     overlay.style.display = 'none';
     isAuthModalOpen = false;
     
-    if (isAuthSuccess) {
-        handleAuthSuccess();
+    // Only proceed if authentication was successful
+    if (isAuthSuccess && auth.currentUser) {
+        const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+        
+        if (hasPlayed) {
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
+        } else if (window.gameScene) {
+            hideWelcomeScreen(window.gameScene);
+            window.startGame(window.gameScene);
+        }
     }
 }
 
