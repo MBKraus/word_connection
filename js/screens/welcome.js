@@ -6,7 +6,7 @@ export function createWelcomeScreen(scene) {
     // Store scene reference for auth callbacks
     window.gameScene = scene;
     
-    scene.welcomeScreen = createScreen(scene, 'welcomeScreen');
+    scene.welcomeScreen = createScreen(scene, 'welcomeScreen', true);
 
     const titleText = createText(
         scene,
