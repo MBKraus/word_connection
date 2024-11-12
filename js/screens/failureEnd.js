@@ -6,13 +6,12 @@ export function createFailureEndScreen(scene) {
     scene.failureScoreText = createText(
         scene,
         scene.game.scale.width * 0.5,
-        scene.game.scale.height * 0.4
+        scene.game.scale.height * 0.25  // Moved up to make room for topics
     );
     
-    // Increased base font size to 24px and adjusted scaling
     scene.failureScoreText.setStyle({
         fontFamily: 'Poppins',
-        fontSize: '35px', // Increased from 18px
+        fontSize: '35px',
         color: '#FFFFFF',
         align: 'center',
         fontStyle: 'bold'
@@ -22,7 +21,7 @@ export function createFailureEndScreen(scene) {
     const shareButton = createButton(
         scene,
         scene.game.scale.width * 0.5,
-        scene.game.scale.height * 0.7,
+        scene.game.scale.height * 0.85,  // Moved down
         'Share your score!',
         () => {
             hideScreen(scene, 'failureEndScreen');
@@ -32,34 +31,90 @@ export function createFailureEndScreen(scene) {
 }
 
 export const showFailureEndScreen = (scene) => {
-    // Adjusted font scaling to be more readable but not excessive
-    const fontSize = Math.min(scene.scale.height * 0.08, 45); // Caps at 32px
+    const fontSize = Math.min(scene.scale.height * 0.08, 45);
     scene.failureScoreText.setFontSize(fontSize);
 
-    // Retrieve missed topics
+    // Clear any existing topic texts from previous games
+    scene.failureEndScreen.getAll().forEach(child => {
+        if (child.topicText || child.descText) {
+            child.destroy();
+        }
+    });
+
     const missedTopics = scene.currentTopics.filter(topic => 
         !scene.correctGuessTexts.some(entry => 
             entry.topicName.toLowerCase() === topic.name.toLowerCase() && entry.text !== null
         )
     );
 
-    // Create the message for the missed topics
-    let missedTopicsMessage = '';
     if (missedTopics.length > 0) {
         const topicsLeft = missedTopics.length;
         const noun = topicsLeft === 1 ? 'topic' : 'topics';
         const desc_text = topicsLeft === 1 ? 'which one it was' : 'what they were';
-        missedTopicsMessage = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:\n\n`;
-        
-        missedTopics.forEach((topic, index) => {
-            const description = topic.words.join(', ');
-            missedTopicsMessage += `${topic.name}\n${description}\n\n`;
-        });
-    }
+        const introText = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:`;
+        scene.failureScoreText.setText(introText);
 
-    scene.failureScoreText.setText(
-        `${missedTopicsMessage}\nYour Score: ${scene.score}\n\nCome back tomorrow for another puzzle!`
-    );
+        // Calculate initial Y position after the intro text
+        let currentY = scene.failureScoreText.y + scene.failureScoreText.height + 25;
+        
+        // Create and position text for each topic
+        missedTopics.forEach((topic, index) => {
+            // Topic name in red
+            const topicText = scene.add.text(
+                scene.game.scale.width * 0.5,
+                currentY,
+                topic.name,
+                {
+                    fontFamily: 'Poppins',
+                    fontSize: fontSize,
+                    color: '#167D60',
+                    align: 'center',
+                    fontStyle: 'bold'
+                }
+            ).setOrigin(0.5);
+            topicText.topicText = true;
+            scene.failureEndScreen.add(topicText);
+            
+            // Description below the topic name
+            const descText = scene.add.text(
+                scene.game.scale.width * 0.5,
+                currentY + fontSize + 10,
+                topic.words.join(', '),
+                {
+                    fontFamily: 'Poppins',
+                    fontSize: Math.max(fontSize * 0.8, 24),  // Slightly smaller font for description
+                    color: '#FFFFFF',
+                    align: 'center',
+                    wordWrap: { width: scene.game.scale.width * 0.8 }  // Wrap text if too long
+                }
+            ).setOrigin(0.5);
+            descText.descText = true;
+            scene.failureEndScreen.add(descText);
+
+            // Update currentY for the next topic-description pair
+            // Add more spacing if there are more topics to come
+            currentY = descText.y + descText.height + (index < missedTopics.length - 1 ? 40 : 20);
+        });
+
+        // Add score text at the bottom after all topics
+        const scoreText = scene.add.text(
+            scene.game.scale.width * 0.5,
+            currentY + 175,
+            `Your Score: ${scene.score}\n\nCome back tomorrow for another puzzle!`,
+            {
+                fontFamily: 'Poppins',
+                fontSize: fontSize,
+                color: '#FFFFFF',
+                align: 'center'
+            }
+        ).setOrigin(0.5);
+        scoreText.descText = true;  // Mark for cleanup
+        scene.failureEndScreen.add(scoreText);
+    } else {
+        scene.failureScoreText.setText(
+            `Your Score: ${scene.score}\n\nCome back tomorrow for another puzzle!`
+        );
+    }
 
     showScreen(scene, 'failureEndScreen');
 };
