@@ -50,11 +50,11 @@ export function createText(scene, x, y, initialText = '') {
     }).setOrigin(0.5);
 }
 
-export function createScreen(scene, name) {
+export function createScreen(scene, name, visibility = false) {
     const screen = scene.add.container(0, 0);
     screen.setDepth(1000);
     createOverlay(scene, screen);
-    screen.setVisible(false);
+    screen.setVisible(visibility);
     return screen;
 }
 
