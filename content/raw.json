@@ -1,0 +1,359 @@
+{
+    "entries": {
+        "2024-11-01": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Marilyn Monroe",
+                                "Monroe"
+                            ],
+                            "words": [
+                                "Hollywood Icon",
+                                "Blonde Bombshell",
+                                "Seven Year Itch",
+                                "Some Like It Hot"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Niagara Falls"
+                            ],
+                            "words": [
+                                "Horseshoe",
+                                "Waterfall",
+                                "Border",
+                                "Tourist Attraction"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Eiffel Tower"
+                            ],
+                            "words": [
+                                "Paris",
+                                "Iron Lattice",
+                                "Gustave Eiffel",
+                                "Tall Landmark"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Hans Christian Andersen",
+                                "Andersen"
+                            ],
+                            "words": [
+                                "Fairy Tales",
+                                "Denmark",
+                                "Ugly Duckling",
+                                "Little Mermaid"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sinking of the Titanic",
+                                "Titanic Sinking"
+                            ],
+                            "words": [
+                                "Iceberg",
+                                "April 1912",
+                                "Atlantic Ocean",
+                                "White Star Line"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Quarterback"
+                            ],
+                            "words": [
+                                "NFL",
+                                "Passing",
+                                "Offense Leader",
+                                "Football Star"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Albert Einstein",
+                                "Einstein"
+                            ],
+                            "words": [
+                                "Relativity",
+                                "Theoretical Physicist",
+                                "E=mc\u00b2",
+                                "Swiss Patent Office"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Great Wall of China",
+                                "Great Wall"
+                            ],
+                            "words": [
+                                "Ming Dynasty",
+                                "Defense",
+                                "Long Structure",
+                                "Chinese Landmark"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Water Polo"
+                            ],
+                            "words": [
+                                "Swimming",
+                                "Teams",
+                                "Goal",
+                                "Caps"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-02": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Galileo Galilei",
+                                "Galileo"
+                            ],
+                            "words": [
+                                "Telescope",
+                                "Astronomy",
+                                "Heliocentrism",
+                                "Italian Scientist"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Super Bowl"
+                            ],
+                            "words": [
+                                "American Football",
+                                "Halftime Show",
+                                "NFL Championship",
+                                "February Event"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Acupuncture"
+                            ],
+                            "words": [
+                                "Needles",
+                                "Traditional Chinese Medicine",
+                                "Pain Relief",
+                                "Energy Flow"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Mahatma Gandhi",
+                                "Gandhi"
+                            ],
+                            "words": [
+                                "Non-violent Resistance",
+                                "India",
+                                "Salt March",
+                                "Pacifist Leader"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "SpaceX"
+                            ],
+                            "words": [
+                                "Elon Musk",
+                                "Falcon 9",
+                                "Private Spaceflight",
+                                "Reusable Rockets"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Jazz Music"
+                            ],
+                            "words": [
+                                "Improvisation",
+                                "Swing",
+                                "New Orleans",
+                                "Blue Notes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Frida Kahlo",
+                                "Kahlo"
+                            ],
+                            "words": [
+                                "Surrealism",
+                                "Self-Portrait",
+                                "Mexican Artist",
+                                "Blue House"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Renaissance"
+                            ],
+                            "words": [
+                                "Cultural Rebirth",
+                                "Italy",
+                                "Da Vinci",
+                                "14th Century"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Chocolate Cake"
+                            ],
+                            "words": [
+                                "Dessert",
+                                "Cocoa",
+                                "Birthday Treat",
+                                "Sweet"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "2024-11-03": {
+            "rounds": [
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Vincent van Gogh",
+                                "Van Gogh"
+                            ],
+                            "words": [
+                                "Post-Impressionism",
+                                "Starry Night",
+                                "Ear Incident",
+                                "Dutch Painter"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Wimbledon"
+                            ],
+                            "words": [
+                                "Tennis",
+                                "Grass Court",
+                                "London",
+                                "Grand Slam"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Sydney Opera House"
+                            ],
+                            "words": [
+                                "Sails Design",
+                                "Australia",
+                                "Performing Arts Venue",
+                                "Iconic"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Isaac Newton",
+                                "Newton"
+                            ],
+                            "words": [
+                                "Gravity",
+                                "Apple",
+                                "Laws of Motion",
+                                "Calculus"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Machu Picchu"
+                            ],
+                            "words": [
+                                "Inca Citadel",
+                                "Peru",
+                                "Andes",
+                                "Lost City"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Origami"
+                            ],
+                            "words": [
+                                "Paper Folding",
+                                "Japanese Art",
+                                "Cranes",
+                                "Crease Patterns"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "topics": [
+                        {
+                            "topic": [
+                                "Cleopatra"
+                            ],
+                            "words": [
+                                "Egypt",
+                                "Antony",
+                                "Ptolemaic Dynasty",
+                                "Queen"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "Amazon Rainforest"
+                            ],
+                            "words": [
+                                "Biodiversity",
+                                "South America",
+                                "Jungle",
+                                "River Basin"
+                            ]
+                        },
+                        {
+                            "topic": [
+                                "The Hunger Games"
+                            ],
+                            "words": [
+                                "Katniss Everdeen",
+                                "Dystopian",
+                                "Tributes",
+                                "Panem"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
