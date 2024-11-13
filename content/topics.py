@@ -30,15 +30,15 @@ completion = client.beta.chat.completions.parse(
     # model="gpt-4o-mini",
     model="gpt-4o-2024-08-06",
     messages=[
-        {"role": "system", "content": "You are a topic and describing words generator."},
+        {"role": "system", "content": "You are a topic and describing entries generator."},
         {"role": "user", "content":
            "Generate output for a game where each day (with key YYYY-MM-DD) contains three game rounds,\n" 
-           "and each round has three topics with four descriptive words for each topic.\n"
+           "and each round has three topics with four entries for each topic.\n"
            "A topic can only occur once across the entire set of days\n"
            "Topics for each day:\n"
            "- should be specific and well-defined. Avoid broad or generic topics (e.g., 'Sports', 'Nature', 'History').\n"
            "- should be distinct, and unique in their field.\n"
-           "- should be highly familiar, simple, extremely everyday, and easy to guess from the descriptive words provided"
+           "- should be highly familiar, simple, extremely everyday, and easy to guess from the entries and phrases provided"
            "- can contain multiple spelling variants e.g. 'color', 'colour' and 'The Louvre', 'Louvre', 'The Louvre Museum'.\n"
            "- if the topic is a person also include just their last name (e.g., 'Einstein', 'Tesla') in the topic.\n"
            "- only one topic per round can be a person.\n"
@@ -61,12 +61,16 @@ completion = client.beta.chat.completions.parse(
             "- Musical Instruments (e.g., Piano, Guitar)\n"
             "- Climate or Weather Phenomena (e.g., Hurricane, Tornado)\n"
             "- Common Hobbies or Sports (e.g., Chess, Knitting, Soccer, Rock Climbing)\n"
-            "Please source from these domains and other domains you think might suit well, but ensure the topics are specific and distinct.\n"
-            "For each topic, provide 4 specific words related to that topic. These words should be closely related to the topic and help define it clearly.\n"
-            "In each round, a descriptive word cannot repeat or include any part of the topic itself, \n"
-            "nor be part of another descriptive word in that round. For example, if the topic is 'Grammy Awards' \n"
-            "using 'Awards' as a descriptive word would not be allowed. This is a key rule.\n\n"
-            "Here are some example topics and words for guidance:\n"
+            "Please source from these domains and other domains you think might suit well, but ensure the topics are specific and distinct.\n\n"
+            "For each topic, provide 4 specific words or phrases related to that topic. There are a couple key rules with respect to these descriptive entries:\n"
+            "- These words or phases should be closely related to the topic and help define it clearly.\n"
+            "- In each round, a descriptive entry cannot repeat or include any part of the topic itself, \n"
+            "nor be part of another descriptive entry in that round. For example, if the topic is 'Grammy Awards' \n"
+            "using 'Awards' as a descriptive entry would not be allowed.\n"
+            "- each descriptive entry should be 1–4 words long to allow multi-word terms like 'South America' or 'longest flow' to \n\n" 
+            "remain as single entries without splitting them.\n"
+            "- Avoid splitting entries if doing so would result in overly generic terms that lose specific meaning. \n"
+            "Here are some example topics and entries for guidance:\n"
             "topic=[Michael Jordan], words=[Basketball, Chicago Bulls, Air, 23]\n"
             "topic=['The Titanic', 'Titanic'], words=['Sinking', 'Iceberg', 'Luxury', '1912']\n"
             "topic=[Mars], words=[Space, Red planet, Rover, Fourth from the Sun]\n"
