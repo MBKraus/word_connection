@@ -1,4 +1,4 @@
-import { createScreen, createText, createButton, hideScreen, showScreen } from './helpers.js';
+import { createScreen, createText, createButton, hideScreen, showScreen, STYLES } from './helpers.js';
 
 // Main screen creation functions
 export function createInterRoundScreen(scene) {
@@ -19,7 +19,10 @@ export function createInterRoundScreen(scene) {
         () => {
             hideScreen(scene, 'interRoundScreen');
             window.startNextRound(scene);
-        }
+        },
+        STYLES.colors.loginButtonBg,
+        STYLES.colors.loginButtonText,
+        STYLES.colors.loginButtonBorder
     );
     scene.interRoundScreen.add(scene.okButton);
 }

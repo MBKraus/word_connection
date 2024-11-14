@@ -54,11 +54,11 @@ function recenterScreen() {
 onAuthStateChanged(auth, async (user) => {
     if (user && !isAuthModalOpen) {
         const hasPlayed = await hasPlayedTodayDB(user.uid);
-        if (hasPlayed) {
-            console.log("has played DB")
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        }
+        // if (hasPlayed) {
+        //     console.log("has played DB")
+        //     const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+        //     dailyLimitScreen.show();
+        // }
     }
 });
 
@@ -106,21 +106,6 @@ function showAuthModal(mode = 'signin') {
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
 
-// Check if user has played today (via the DB). 
-// If so, show daily limit screen. Otherwise, proceed with game start
-async function handleAuthSuccess() {
-    if (!auth.currentUser || !isAuthSuccess || isAuthModalOpen) return; // Ensure auth success, modal closed
-
-    const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
-    
-    if (hasPlayed) {
-        const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-        dailyLimitScreen.show();
-    } else {
-        hideWelcomeScreen(window.gameScene);
-        window.startGame(window.gameScene);
-    }
-}
 async function handleSignIn(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
@@ -156,25 +141,6 @@ async function handleGoogleSignIn() {
         alert("Google Sign-In Error: " + error.message);
     }
 }
-
-function showSignUpForm() {
-    modalContainer.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Sign Up</h2>
-        <form id="signUpForm">
-            <input type="email" id="signUpEmail" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="password" id="signUpPassword" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                Sign Up
-            </button>
-        </form>
-        <button id="closeSignUpModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
-    `;
-
-    document.getElementById('signUpForm').onsubmit = handleSignUp;
-    document.getElementById('closeSignUpModal').onclick = hideAuthModal;
-}
-
-
 
 function showForgotPasswordModal() {
     modalContainer.innerHTML = `
@@ -213,13 +179,16 @@ async function hideAuthModal() {
     if (isAuthSuccess && auth.currentUser) {
         const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
         
-        if (hasPlayed) {
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        } else if (window.gameScene) {
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        }
+        // if (hasPlayed) {
+        //     const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+        //     dailyLimitScreen.show();
+        // } else if (window.gameScene) {
+        //     hideWelcomeScreen(window.gameScene);
+        //     window.startGame(window.gameScene);
+        // }
+
+        hideWelcomeScreen(window.gameScene);
+        window.startGame(window.gameScene);
     }
 }
 

@@ -79,8 +79,8 @@ function create() {
     // Check if user has already played today (cookie-based)
     if (GameStorage.hasPlayedTodayCookie()) {
         // Only create and show the daily limit screen
-        this.dailyLimitControls = createDailyLimitScreen(this);
-        this.dailyLimitControls.show();
+        // this.dailyLimitControls = createDailyLimitScreen(this);
+        // this.dailyLimitControls.show();
     } else {
         
         // Create and show the welcome screen
@@ -213,8 +213,8 @@ function checkGuess(scene, guess) {
                 duration: 25,
                 onComplete: () => {
                     circle.clear();
-                    circle.lineStyle(10, 0x167D60);
-                    circle.fillStyle(0x167D60);
+                    circle.lineStyle(10, 0x51c878);
+                    circle.fillStyle(0x51c878);
                     circle.strokeCircle(0, 0, circleRadius);
                     circle.fillCircle(0, 0, circleRadius);
                     circle.alpha = 1;
@@ -285,7 +285,6 @@ function handleRoundEnd(scene) {
         createConfettiEffect();
     });
 
-    scene.okButton.setText('Next Round');
     scene.okButton.removeAllListeners('pointerdown');
     scene.okButton.on('pointerdown', () => {
         hideInterRoundScreen(scene);

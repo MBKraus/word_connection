@@ -38,11 +38,13 @@ export function createWelcomeScreen(scene) {
         () => {
             hideScreen(scene, 'welcomeScreen');
             window.startGame(scene);
-        }
+        },
+        STYLES.colors.playButtonBg,
+        STYLES.colors.playButtonText,
+        STYLES.colors.playButtonBorder
     );
     scene.welcomeScreen.add(playButton);
-
-    // Create login button but initially hide it
+    
     const loginButton = createButton(
         scene,
         scene.scale.width * 0.5,
@@ -50,7 +52,10 @@ export function createWelcomeScreen(scene) {
         'Login',
         () => {
             showAuthModal();
-        }
+        },
+        STYLES.colors.loginButtonBg,
+        STYLES.colors.loginButtonText,
+        STYLES.colors.loginButtonBorder
     );
     scene.welcomeScreen.add(loginButton);
     loginButton.setVisible(false); // Initially hidden

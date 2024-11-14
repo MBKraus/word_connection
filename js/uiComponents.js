@@ -6,7 +6,7 @@ export function createHeader(scene) {
     scene.headerText = scene.add.text(
         scene.cameras.main.centerX, 
         scene.game.scale.height * 0.025, 
-        'Word game', 
+        'Word Connection', 
         {
             fontSize: scene.game.scale.width * 0.05 + 'px',
             color: '#000000',
@@ -54,7 +54,7 @@ export function createInputDisplay(scene) {
 
     // Background for input
     const inputBgGraphics = scene.add.graphics();
-    inputBgGraphics.fillStyle(0xD3D3D3, 1);
+    inputBgGraphics.fillStyle(0xE2E8F1, 1);
     inputBgGraphics.fillRoundedRect(
         scene.game.scale.width * 0.5 - inputBgWidth / 2,
         scene.initialTimeBarY,
@@ -227,9 +227,9 @@ export function initializeCorrectGuessPlaceholders(scene) {
         const yOffset = index * (scene.game.scale.height * 0.045);
         const circleRadius = scene.game.scale.width * 0.023;
 
-        scene.guessContainer = scene.add.container(0, yOffset);
+        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.3, yOffset);
         const circle = scene.add.graphics();
-        circle.lineStyle(10, 0x167D60); // Green border
+        circle.lineStyle(10, 0x51c878); // Green border
         circle.fillStyle(0xFFFFFF); // White fill
         circle.strokeCircle(0, 0, circleRadius);
         circle.fillCircle(0, 0, circleRadius);

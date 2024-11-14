@@ -105,7 +105,7 @@ export function highlightTiles(scene, words) {
             tile.tile.clear();
             
             // Draw with new color
-            tile.tile.fillStyle(0x167D60, 1);
+            tile.tile.fillStyle(0x51c878, 1);
             drawRoundedRect(
                 tile.tile, 
                 tile.x,
