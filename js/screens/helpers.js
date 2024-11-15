@@ -17,8 +17,8 @@ export const STYLES = {
     },
     padding: {
         button: {
-            left: 40,
-            right: 40,
+            left: 125,
+            right: 125,
             top: 25,
             bottom: 25
         }
@@ -39,15 +39,17 @@ export function createOverlay(scene, container) {
     return bg;
 }
 
-export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', textColor = '#000000', borderColor = '#000000') {
+export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', textColor = '#000000', borderColor = '#000000',
+    paddingLeft = 125, paddingRight =  125, paddingTop = 25, paddingBottom = 25
+) {
     const container = scene.add.container(x, y);
 
     const tempText = scene.add.text(0, 0, text, {
         fontSize: scene.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins'
     });
-    const textWidth = tempText.width + STYLES.padding.button.left + STYLES.padding.button.right;
-    const textHeight = tempText.height + STYLES.padding.button.top + STYLES.padding.button.bottom;
+    const textWidth = tempText.width + paddingLeft + paddingRight;
+    const textHeight = tempText.height + paddingTop + paddingBottom;
     tempText.destroy();
 
     const drawButton = (graphics, fillColor, borderCol) => {

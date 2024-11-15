@@ -47,13 +47,13 @@ export function setupKeyboardInput(scene) {
     const keyboardHeight = game.scale.height * 0.28;
 
     const rowHeight = keyboardHeight / 4;
-    const keyWidthRatio = 0.70;
+    const keyWidthRatio = 0.73;
     const keySpacing = 10;
     const rowSpacing = 10;
     const keyboardY = game.scale.height - keyboardHeight - 50;
 
     // Define left shift for the "Z" to "M" row keys
-    const zRowLeftShift = 30;
+    const zRowLeftShift = 40;
 
     keys.forEach((row, rowIndex) => {
         let rowWidth = 0;
@@ -89,16 +89,16 @@ export function setupKeyboardInput(scene) {
 
             // Customize widths for special keys
             if (key === '←') {
-                keyWidth = rowHeight * keyWidthRatio * 1.5;
-            } else if (key === '✓') {
                 keyWidth = rowHeight * keyWidthRatio * 2;
+            } else if (key === '✓') {
+                keyWidth = rowHeight * keyWidthRatio * 2.45;
             } else if (key === 'SPACE') {
-                keyWidth = rowHeight * keyWidthRatio * 7;
+                keyWidth = rowHeight * keyWidthRatio * 6.75;
             }
 
             // Place backspace key to the far right if it's in the "Z" row
             const x = key === '←' && rowIndex === 2
-                ? keyboardWidth - (keyWidth / 2) - 20 // Align to the far right with padding
+                ? keyboardWidth - (keyWidth / 2) // Align to the far right with padding
                 : startX + (keyWidth / 2);
             const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2);
 
@@ -114,7 +114,7 @@ export function setupKeyboardInput(scene) {
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else if (key === '✓') {
-                button.fillStyle(0x167D60, 1); // Green color
+                button.fillStyle(0x51c878, 1); // Green color
                 keyText = scene.add.text(0, 0, key, {
                     fontSize: `${rowHeight * 0.4}px`,
                     color: '#FFFFFF',

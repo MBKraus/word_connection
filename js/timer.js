@@ -28,6 +28,7 @@ export function resetTimerAndBar(scene) {
     updateTimerDisplay(scene, true);
 }
 
+
 function updateTimerDisplay(scene, forceTextUpdate = false) {
     // Update the timer text only when forced or on second boundaries
     if (forceTextUpdate || Math.abs(Math.floor(scene.remainingTime) - scene.remainingTime) < 0.1) {
@@ -40,36 +41,48 @@ function updateTimerDisplay(scene, forceTextUpdate = false) {
     scene.timeBar.clear();
 
     // Calculate dimensions and position
-    const inputBgWidth = scene.game.scale.width * 0.98;
+    const inputBgWidth = scene.game.scale.width * 1;
     const inputBgHeight = scene.game.scale.height * 0.055;
     const x = (scene.game.scale.width - inputBgWidth) / 2;
 
     // Always draw the background bar first
-    scene.timeBar.fillStyle(0xD3D3D3, 1);  // Set background color (light grey)
+    scene.timeBar.fillStyle(0xE2E8F1, 1); // Background color (light grey)
     scene.timeBar.fillRoundedRect(
         x,
         scene.initialTimeBarY,
         inputBgWidth,
         inputBgHeight,
-        20 // rounded corners
+        20 // Rounded corners
     );
 
-    // Calculate the progress bar width based on remaining time
+    // Calculate the progress bar width
     const barProgress = Math.max(0, Math.min(1, scene.remainingTime / scene.timerDuration));
     const barWidth = inputBgWidth * barProgress;
-    
-    // Only draw the progress bar if there's any width to draw
+
+    // Avoid drawing the bar if barWidth is zero or negative
     if (barWidth > 0) {
-        scene.timeBar.fillStyle(0xCAD2DE, 1);  // Set foreground color (light blue)
+        scene.timeBar.fillStyle(0xCAD2DE, 1); // Foreground color (light blue)
         scene.timeBar.fillRoundedRect(
-            x,  // Start from the same x position as background
+            x, // Same x position as background
             scene.initialTimeBarY,
             barWidth,
             inputBgHeight,
-            20 // rounded corners
+            20 // Rounded corners
+        );
+    } else {
+        // Ensure no stray visuals are left on the left side
+        scene.timeBar.fillStyle(0xE2E8F1, 1); // Clear the remaining space
+        scene.timeBar.fillRoundedRect(
+            x,
+            scene.initialTimeBarY,
+            0, // Zero width to explicitly clear
+            inputBgHeight,
+            20
         );
     }
 }
+
+
 
 export function clearTimerEvent(scene) {
     if (scene.timerEvent) {
@@ -104,7 +117,7 @@ export function startTimer(scene) {
 function updateTimer(scene) {
     const currentTime = Date.now();
     const elapsedTime = (currentTime - scene.gameStartTime) / 1000;
-    scene.remainingTime = Math.max(0, scene.timerDuration - elapsedTime);
+    scene.remainingTime = Math.max(0, scene.timerDuration - elapsedTime); // Clamp to zero
 
     // Update display every frame for smooth bar movement
     updateTimerDisplay(scene);
@@ -115,7 +128,7 @@ function updateTimer(scene) {
     }
 
     if (scene.remainingTime <= 0) {
-        scene.remainingTime = 0;
+        scene.remainingTime = 0; // Explicitly set to zero
         updateTimerDisplay(scene, true);
         clearTimerEvent(scene);
         scene.isGameActive = false;

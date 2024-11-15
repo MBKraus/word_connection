@@ -63,14 +63,15 @@ export function createInputDisplay(scene) {
         20
     );
 
-    // Input Text Display
+    // Input Text Display with Placeholder
+    const placeholderText = "Type your answer";
     scene.inputDisplay = scene.add.text(
-        scene.game.scale.width * 0.5, 
-        startY, 
-        scene.currentInputText, 
+        scene.game.scale.width * 0.5,
+        startY,
+        scene.currentInputText || placeholderText, // Show placeholder if no input
         {
             fontSize: `${scene.game.scale.width * 0.045}px`,
-            color: '#000000',
+            color: '#5A5A5A', // Gray color for placeholder
             fontFamily: 'Poppins',
             wordWrap: { width: inputBgWidth - 20 }
         }
@@ -225,9 +226,9 @@ export function createCorrectGuessContainer(scene) {
 export function initializeCorrectGuessPlaceholders(scene) {
     scene.currentTopics.forEach((topic, index) => {
         const yOffset = index * (scene.game.scale.height * 0.045);
-        const circleRadius = scene.game.scale.width * 0.023;
+        const circleRadius = scene.game.scale.width * 0.0125;
 
-        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.3, yOffset);
+        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.05, yOffset);
         const circle = scene.add.graphics();
         circle.lineStyle(10, 0x51c878); // Green border
         circle.fillStyle(0xFFFFFF); // White fill
