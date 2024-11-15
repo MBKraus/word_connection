@@ -61,13 +61,12 @@ function recenterScreen() {
 // Only start checking for daily limit after successful auth and modal close
 onAuthStateChanged(auth, async (user) => {
     if (user && !isAuthModalOpen) {
-        hideWelcomeScreen(window.gameScene);
         const hasPlayed = await hasPlayedTodayDB(user.uid);
-        // if (hasPlayed) {
-        //     console.log("has played DB")
-        //     const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-        //     dailyLimitScreen.show();
-        // } 
+        if (hasPlayed) {
+            console.log("has played per DB check ")
+            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            // dailyLimitScreen.show();
+        } 
     }
 });
 
