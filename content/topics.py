@@ -34,7 +34,7 @@ completion = client.beta.chat.completions.parse(
         {"role": "user", "content":
            "Generate output for a game where each day (with key YYYY-MM-DD) contains three game rounds,\n" 
            "and each round has three topics with four entries for each topic.\n"
-           "A topic can only occur once across the entire set of days\n"
+           "A topic can only occur once in all the topics you generate.\n"
            "Topics for each day:\n"
            "- should be specific and well-defined. Avoid broad or generic topics (e.g., 'Sports', 'Nature', 'History').\n"
            "- should be distinct, and unique in their field.\n"
@@ -79,6 +79,7 @@ completion = client.beta.chat.completions.parse(
             "topic=[Countries], words=[Brazil, Canada, Denmark, Egypt]\n"
             "topic=['Cryptocurrencies', 'Crypto', 'Cryptos'], words=['Bitcoin', 'Altcoin', 'Blockchain', 'Investing']\n\n"
             "Generate output for the date range from 2024-11-01 to 2024-11-30.\n"
+            "This is key: generate for 30 days.\n"
         }
     ],
     response_format=DataModel,

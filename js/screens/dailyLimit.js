@@ -9,7 +9,7 @@ export function createDailyLimitScreen(scene) {
     screen.setVisible(false);
 
     // Create semi-transparent background
-    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0x000000, 1);
+    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0xffffff, 1);
     bg.setOrigin(0);
     screen.add(bg);
 
@@ -17,7 +17,7 @@ export function createDailyLimitScreen(scene) {
     const titleText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.2, "Thanks for Playing!", {
         fontSize: scene.scale.width * 0.08 + 'px',
         fontFamily: 'Poppins',
-        color: '#ffffff',
+        color: '#000000',
         align: 'center'
     }).setOrigin(0.5);
     screen.add(titleText);
@@ -26,7 +26,7 @@ export function createDailyLimitScreen(scene) {
         "Great job on today's puzzle!\nCome back tomorrow for a new challenge!", {
         fontSize: scene.scale.width * 0.04 + 'px',
         fontFamily: 'Poppins',
-        color: '#ffffff',
+        color: '#000000',
         align: 'center',
         lineSpacing: 10
     }).setOrigin(0.5);
@@ -36,7 +36,7 @@ export function createDailyLimitScreen(scene) {
     const countdownText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.4, "", {
         fontSize: scene.scale.width * 0.035 + 'px',
         fontFamily: 'Poppins',
-        color: '#ffffff',
+        color: '#000000',
         align: 'center'
     }).setOrigin(0.5);
     screen.add(countdownText);
@@ -45,7 +45,7 @@ export function createDailyLimitScreen(scene) {
     const statsText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.6, "Loading stats...", {
         fontSize: scene.scale.width * 0.035 + 'px',
         fontFamily: 'Poppins',
-        color: '#ffffff',
+        color: '#000000',
         align: 'center',
         lineSpacing: 10
     }).setOrigin(0.5);

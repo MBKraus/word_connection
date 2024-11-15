@@ -1,40 +1,88 @@
 import { getStartY } from './uiComponents.js';
 
 export function resetTimerAndBar(scene) {
+    // Clear any existing timer events first
+    clearTimerEvent(scene);
+    
+    // Reset all timer-related variables
     scene.remainingTime = scene.timerDuration;
-    updateTimerDisplay(scene);
-
-    scene.timerText.setVisible(true);
+    scene.gameStartTime = null;
+    scene.lastUpdateTime = null;
+    scene.countdownAudioInRoundPlayed = false;
+    scene.isGameActive = true;  // Make sure game state is reset
+    
+    // Recreate timer graphics if they don't exist
+    if (!scene.timeBar) {
+        scene.timeBar = scene.add.graphics();
+    }
+    
+    // Clear and reset the timer bar
+    scene.timeBar.clear();
     scene.timeBar.setVisible(true);
+    
+    // Reset timer text if it exists
+    if (scene.timerText) {
+        scene.timerText.setVisible(true);
+    }
+    
+    updateTimerDisplay(scene, true);
 }
 
-function updateTimerDisplay(scene) {
-    // Update the timer text
-    scene.timerText.setText(`Time: ${Math.floor(scene.remainingTime)}`);
 
-    // Calculate the width of the time bar
+function updateTimerDisplay(scene, forceTextUpdate = false) {
+    // Update the timer text only when forced or on second boundaries
+    if (forceTextUpdate || Math.abs(Math.floor(scene.remainingTime) - scene.remainingTime) < 0.1) {
+        if (scene.timerText) {
+            scene.timerText.setText(`Time: ${Math.floor(scene.remainingTime)}`);
+        }
+    }
+
+    // Clear the previous bar to prevent any lingering visuals
     scene.timeBar.clear();
-    scene.timeBar.fillStyle(0xB8B8B8, 1);
-    
-    // Only draw the bar if there's actually time remaining
-    if (Math.floor(scene.remainingTime) > 0) {
-        const barProgress = scene.remainingTime / scene.timerDuration;
-        const inputBgWidth = scene.game.scale.width * 0.98;
-        const inputBgHeight = scene.game.scale.height * 0.055;
-        
-        const x = scene.game.scale.width * 0.5 - inputBgWidth / 2;
-        // const y = scene.game.scale.height * 0.70 - inputBgHeight / 2;
 
-        // Use the stored initial Y position instead of recalculating
+    // Calculate dimensions and position
+    const inputBgWidth = scene.game.scale.width * 1;
+    const inputBgHeight = scene.game.scale.height * 0.055;
+    const x = (scene.game.scale.width - inputBgWidth) / 2;
+
+    // Always draw the background bar first
+    scene.timeBar.fillStyle(0xE2E8F1, 1); // Background color (light grey)
+    scene.timeBar.fillRoundedRect(
+        x,
+        scene.initialTimeBarY,
+        inputBgWidth,
+        inputBgHeight,
+        20 // Rounded corners
+    );
+
+    // Calculate the progress bar width
+    const barProgress = Math.max(0, Math.min(1, scene.remainingTime / scene.timerDuration));
+    const barWidth = inputBgWidth * barProgress;
+
+    // Avoid drawing the bar if barWidth is zero or negative
+    if (barWidth > 0) {
+        scene.timeBar.fillStyle(0xCAD2DE, 1); // Foreground color (light blue)
+        scene.timeBar.fillRoundedRect(
+            x, // Same x position as background
+            scene.initialTimeBarY,
+            barWidth,
+            inputBgHeight,
+            20 // Rounded corners
+        );
+    } else {
+        // Ensure no stray visuals are left on the left side
+        scene.timeBar.fillStyle(0xE2E8F1, 1); // Clear the remaining space
         scene.timeBar.fillRoundedRect(
             x,
             scene.initialTimeBarY,
-            inputBgWidth * barProgress,
+            0, // Zero width to explicitly clear
             inputBgHeight,
             20
         );
     }
 }
+
+
 
 export function clearTimerEvent(scene) {
     if (scene.timerEvent) {
@@ -46,11 +94,16 @@ export function clearTimerEvent(scene) {
 export function startTimer(scene) {
     clearTimerEvent(scene);
 
+    // Reset game state
+    scene.isGameActive = true;
+    scene.countdownAudioInRoundPlayed = false;
     scene.remainingTime = scene.timerDuration;
     scene.gameStartTime = Date.now();
     scene.lastUpdateTime = scene.gameStartTime;
 
-    updateTimerDisplay(scene);
+    updateTimerDisplay(scene, true);
+
+    scene.updateInterval = 1000 / 60; // approximately 16.67ms
 
     scene.timerEvent = scene.time.addEvent({
         delay: scene.updateInterval,
@@ -64,12 +117,10 @@ export function startTimer(scene) {
 function updateTimer(scene) {
     const currentTime = Date.now();
     const elapsedTime = (currentTime - scene.gameStartTime) / 1000;
-    scene.remainingTime = Math.max(0, scene.timerDuration - elapsedTime);
+    scene.remainingTime = Math.max(0, scene.timerDuration - elapsedTime); // Clamp to zero
 
-    if (currentTime - scene.lastUpdateTime >= 1000) {
-        updateTimerDisplay(scene);
-        scene.lastUpdateTime = currentTime;
-    }
+    // Update display every frame for smooth bar movement
+    updateTimerDisplay(scene);
 
     if (scene.isGameActive && scene.remainingTime <= 3.05 && scene.remainingTime > 2.95 && !scene.countdownAudioInRoundPlayed) {
         scene.sound.play('countdownSound');
@@ -77,8 +128,8 @@ function updateTimer(scene) {
     }
 
     if (scene.remainingTime <= 0) {
-        scene.remainingTime = 0;
-        updateTimerDisplay(scene);
+        scene.remainingTime = 0; // Explicitly set to zero
+        updateTimerDisplay(scene, true);
         clearTimerEvent(scene);
         scene.isGameActive = false;
         handleTimeUp(scene);

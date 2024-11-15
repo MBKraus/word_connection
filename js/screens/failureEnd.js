@@ -1,4 +1,4 @@
-import {showScreen, hideScreen, createText, createScreen, createButton} from './helpers.js';
+import {showScreen, hideScreen, createText, createScreen, createButton, STYLES} from './helpers.js';
 
 export function createFailureEndScreen(scene) {
     scene.failureEndScreen = createScreen(scene, 'failureEndScreen');
@@ -12,7 +12,7 @@ export function createFailureEndScreen(scene) {
     scene.failureScoreText.setStyle({
         fontFamily: 'Poppins',
         fontSize: '35px',
-        color: '#FFFFFF',
+        color: '#000000',
         align: 'center',
         fontStyle: 'bold'
     });
@@ -25,7 +25,10 @@ export function createFailureEndScreen(scene) {
         'Share your score!',
         () => {
             hideScreen(scene, 'failureEndScreen');
-        }
+        },
+        STYLES.colors.loginButtonBg,
+        STYLES.colors.loginButtonText,
+        STYLES.colors.loginButtonBorder
     );
     scene.failureEndScreen.add(shareButton);
 }
@@ -83,7 +86,7 @@ export const showFailureEndScreen = (scene) => {
                 {
                     fontFamily: 'Poppins',
                     fontSize: Math.max(fontSize * 0.8, 24),  // Slightly smaller font for description
-                    color: '#FFFFFF',
+                    color: '#000000',
                     align: 'center',
                     wordWrap: { width: scene.game.scale.width * 0.8 }  // Wrap text if too long
                 }
@@ -104,7 +107,7 @@ export const showFailureEndScreen = (scene) => {
             {
                 fontFamily: 'Poppins',
                 fontSize: fontSize,
-                color: '#FFFFFF',
+                color: '#000000',
                 align: 'center'
             }
         ).setOrigin(0.5);

@@ -5,6 +5,7 @@ import { isMobile } from './utils.js';
 import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
+import { createButton, STYLES } from './screens/helpers.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
@@ -77,27 +78,27 @@ function create() {
     const date = "2024-11-08"; 
   
     // Check if user has already played today (cookie-based)
-    if (GameStorage.hasPlayedTodayCookie()) {
+    // if (GameStorage.hasPlayedTodayCookie()) {
         // Only create and show the daily limit screen
-        this.dailyLimitControls = createDailyLimitScreen(this);
-        this.dailyLimitControls.show();
-    } else {
+    //     this.dailyLimitControls = createDailyLimitScreen(this);
+    //     this.dailyLimitControls.show();
+    // } else {
         
-        // Create and show the welcome screen
-        createWelcomeScreen(this);
-        showWelcomeScreen(this, 'welcomeScreen');
+    // Create and show the welcome screen
+    createWelcomeScreen(this);
+    showWelcomeScreen(this, 'welcomeScreen');
 
-        const allTopics = loadTopics(this);
-        this.allRounds = allTopics[date]
+    const allTopics = loadTopics(this);
+    this.allRounds = allTopics[date]
 
-        // Create game elements but don't start the game yet
-        createGameElements(this);
+    // Create game elements but don't start the game yet
+    createGameElements(this);
 
-        setupKeyboardInput(this);
-        createInterRoundScreen(this);
-        createFailureEndScreen(this);
-        createCountdown(this);
-    }
+    setupKeyboardInput(this);
+    createInterRoundScreen(this);
+    createFailureEndScreen(this);
+    createCountdown(this);
+    // }
 
     // At the end of the create function, show the text container
     document.querySelector('.text-container').classList.add('loaded');
@@ -151,7 +152,7 @@ function startGame(scene) {
     scene.currentRound = 0;
     scene.score = 0;
     updateScoreDisplay(scene);
-    
+
     // Show the ad container only after welcome screen/login is complete
     showAdContainer();
 
@@ -162,7 +163,7 @@ function startGame(scene) {
 
     hideTiles(scene);
     resetTimerAndBar(scene);
-    
+
     scene.roundText.setText(`Round: 1`);
     showCountdown(scene);
 }
@@ -190,7 +191,7 @@ function checkGuess(scene, guess) {
             const { circle, guessContainer } = matchedEntry;
 
             // Add the topic text to appear next to the circle
-            const circleRadius = scene.game.scale.width * 0.023;
+            const circleRadius = scene.game.scale.width * 0.0125;
             matchedEntry.text = scene.add.text(
                 circleRadius * 3, // Space after circle
                 0,
@@ -213,8 +214,8 @@ function checkGuess(scene, guess) {
                 duration: 25,
                 onComplete: () => {
                     circle.clear();
-                    circle.lineStyle(10, 0x167D60);
-                    circle.fillStyle(0x167D60);
+                    circle.lineStyle(10, 0x51c878);
+                    circle.fillStyle(0x51c878);
                     circle.strokeCircle(0, 0, circleRadius);
                     circle.fillCircle(0, 0, circleRadius);
                     circle.alpha = 1;
@@ -285,7 +286,6 @@ function handleRoundEnd(scene) {
         createConfettiEffect();
     });
 
-    scene.okButton.setText('Next Round');
     scene.okButton.removeAllListeners('pointerdown');
     scene.okButton.on('pointerdown', () => {
         hideInterRoundScreen(scene);
@@ -387,12 +387,27 @@ function endGame(scene) {
     if (isGameComplete && allTopicsGuessed) {
         // Show final victory screen
         scene.interRoundScoreText.setText(`All rounds completed!\n\nCome back tomorrow\nfor another puzzle!\n\nFinal Score: ${scene.score}`);
-        // scene.interRoundScoreText.setFontSize(scene.scale.width * 0.05)
-        scene.okButton.setText('Share your score!');
-        scene.okButton.removeAllListeners('pointerdown');
-        scene.okButton.on('pointerdown', () => {
-            hideInterRoundScreen(scene);
-        });
+        
+        // Remove the old button and replace it with a new one
+        if (scene.okButton) {
+        scene.okButton.destroy(); // Remove the existing button
+    }
+        
+        // Create a new button with updated text
+        scene.okButton = createButton(
+            scene,
+            scene.scale.width * 0.5,
+            scene.scale.height * 0.74,
+            'Share your score!', // Updated text
+            () => {
+                hideInterRoundScreen(scene);
+            },
+            STYLES.colors.loginButtonBg,
+            STYLES.colors.loginButtonText,
+            STYLES.colors.loginButtonBorder
+        );
+        scene.interRoundScreen.add(scene.okButton);
+
         showInterRoundScreen(scene);
 
         // Trigger confetti for completing the game

@@ -11,7 +11,7 @@ export function createWelcomeScreen(scene) {
     const titleText = createText(
         scene,
         scene.scale.width * 0.5,
-        scene.scale.height * 0.3,
+        scene.scale.height * 0.25,
         'Word Connection'
     );
     scene.welcomeScreen.add(titleText);
@@ -38,11 +38,17 @@ export function createWelcomeScreen(scene) {
         () => {
             hideScreen(scene, 'welcomeScreen');
             window.startGame(scene);
-        }
+        },
+        STYLES.colors.playButtonBg,
+        STYLES.colors.playButtonText,
+        STYLES.colors.playButtonBorder,
+        150,
+        150,
+        STYLES.padding.button.top,
+        STYLES.padding.button.bottom
     );
     scene.welcomeScreen.add(playButton);
-
-    // Create login button but initially hide it
+    
     const loginButton = createButton(
         scene,
         scene.scale.width * 0.5,
@@ -50,7 +56,14 @@ export function createWelcomeScreen(scene) {
         'Login',
         () => {
             showAuthModal();
-        }
+        },
+        STYLES.colors.loginButtonBg,
+        STYLES.colors.loginButtonText,
+        STYLES.colors.loginButtonBorder,
+        STYLES.padding.button.left,
+        STYLES.padding.button.right,
+        20,
+        20
     );
     scene.welcomeScreen.add(loginButton);
     loginButton.setVisible(false); // Initially hidden

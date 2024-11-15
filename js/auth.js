@@ -1,4 +1,3 @@
-// Modified auth.js
 import { getFirebaseApp } from './firebaseInit.js';
 import { hasPlayedTodayDB } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
@@ -9,7 +8,6 @@ import {
     createUserWithEmailAndPassword,
     signInWithPopup,
     GoogleAuthProvider,
-    signOut,
     sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { hideWelcomeScreen } from './screens/welcome.js';
@@ -18,27 +16,37 @@ const app = await getFirebaseApp();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-// Track when authentication is successful
 let isAuthSuccess = false;
 
-// Create and manage modal containers
+// Modified modal container for fullscreen
 const modalContainer = document.createElement('div');
 modalContainer.style.cssText = `
-    display: none; position: fixed; top: 50%; left: 50%;
-    transform: translate(-50%, -50%); background: white; padding: 20px;
-    border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); z-index: 1001;
-    width: 300px;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1001;
+    overflow-y: auto;
 `;
 document.body.appendChild(modalContainer);
 
+// Modified overlay (can be used for background effects)
 const overlay = document.createElement('div');
 overlay.style.cssText = `
-    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5); z-index: 1000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
 `;
 document.body.appendChild(overlay);
 
-// Track modal state
 let isAuthModalOpen = false;
 
 function recenterScreen() {
@@ -53,19 +61,19 @@ function recenterScreen() {
 // Only start checking for daily limit after successful auth and modal close
 onAuthStateChanged(auth, async (user) => {
     if (user && !isAuthModalOpen) {
+        hideWelcomeScreen(window.gameScene);
         const hasPlayed = await hasPlayedTodayDB(user.uid);
-        if (hasPlayed) {
-            console.log("has played DB")
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        }
+        // if (hasPlayed) {
+        //     console.log("has played DB")
+        //     const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+        //     dailyLimitScreen.show();
+        // } 
     }
 });
 
-// Updated showAuthModal function to prevent unintended game start
 function showAuthModal(mode = 'signin') {
     isAuthModalOpen = true;
-    isAuthSuccess = false; // Reset auth success flag on showing the modal
+    isAuthSuccess = false;
     modalContainer.style.display = 'block';
     overlay.style.display = 'block';
     recenterScreen();
@@ -76,51 +84,148 @@ function showAuthModal(mode = 'signin') {
     const altMode = mode === 'signup' ? 'signin' : 'signup';
 
     modalContainer.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">${title}</h2>
-        <form id="authForm">
-            <input type="email" id="email" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="password" id="password" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; margin-bottom: 10px; cursor: pointer;">
-                ${buttonText}
+        <div style="
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        ">
+            <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif; text-align: center;">${title}</h2>
+            <form id="authForm">
+                <input type="email" id="email" placeholder="Email" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    box-sizing: border-box;
+                ">
+                <input type="password" id="password" placeholder="Password" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    box-sizing: border-box;
+                ">
+                <button type="submit" style="
+                    width: 100%;
+                    padding: 12px;
+                    background: black;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    margin-bottom: 16px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 500;
+                ">
+                    ${buttonText}
+                </button>
+                ${mode === 'signin' ? 
+                `<p style="text-align: center; font-family: 'Poppins', sans-serif;">
+                    <span id="forgotPassword" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Forgot Password?</span>
+                </p>` : ''}
+            </form>
+            <p style="text-align: center; font-family: 'Poppins', sans-serif;">
+                <span id="altModeLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">${altText}</span>
+            </p>
+            <button id="googleSignIn" style="
+                width: 100%;
+                padding: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-bottom: 16px;
+                font-size: 16px;
+            ">
+                <img src="https://www.google.com/favicon.ico" width="16">Continue with Google
             </button>
-            ${mode === 'signin' ? 
-            `<p style="text-align: center; font-family: 'Poppins', sans-serif;">
-                <span id="forgotPassword" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">Forgot Password?</span>
-            </p>` : ''}
-        </form>
-        <p style="text-align: center; font-family: 'Poppins', sans-serif;">
-            <span id="altModeLink" style="color: #4A90E2; cursor: pointer; text-decoration: underline;">${altText}</span>
-        </p>
-        <button id="googleSignIn" style="width: 100%; padding: 8px; display: flex; align-items: center; gap: 8px; background: white; border: 1px solid #ccc; border-radius: 4px; cursor: pointer; margin-bottom: 10px;">
-            <img src="https://www.google.com/favicon.ico" width="16">Continue with Google
-        </button>
-        <button id="closeModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
+            <button id="closeModal" style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: #666;
+            ">×</button>
+        </div>
     `;
 
     document.getElementById('authForm').onsubmit = mode === 'signup' ? handleSignUp : handleSignIn;
     if (mode === 'signin') {
         document.getElementById('forgotPassword').onclick = showForgotPasswordModal;
     }
-    document.getElementById('altModeLink').onclick = () => showAuthModal(altMode); // Toggle between signup/signin
+    document.getElementById('altModeLink').onclick = () => showAuthModal(altMode);
     document.getElementById('googleSignIn').onclick = handleGoogleSignIn;
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
 
-// Check if user has played today (via the DB). 
-// If so, show daily limit screen. Otherwise, proceed with game start
-async function handleAuthSuccess() {
-    if (!auth.currentUser || !isAuthSuccess || isAuthModalOpen) return; // Ensure auth success, modal closed
+// Modified password reset modal to be fullscreen as well
+function showForgotPasswordModal() {
+    modalContainer.innerHTML = `
+        <div style="
+            max-width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        ">
+            <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif; text-align: center;">Reset Password</h2>
+            <form id="resetPasswordForm">
+                <input type="email" id="resetEmail" placeholder="Enter your email" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 16px;
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    font-size: 16px;
+                    box-sizing: border-box;
+                ">
+                <button type="submit" style="
+                    width: 100%;
+                    padding: 12px;
+                    background: black;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 500;
+                ">
+                    Send Reset Link
+                </button>
+            </form>
+            <button id="closeResetModal" style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 24px;
+                cursor: pointer;
+                background: none;
+                border: none;
+                color: #666;
+            ">×</button>
+        </div>
+    `;
 
-    const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
-    
-    if (hasPlayed) {
-        const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-        dailyLimitScreen.show();
-    } else {
-        hideWelcomeScreen(window.gameScene);
-        window.startGame(window.gameScene);
-    }
+    document.getElementById('resetPasswordForm').onsubmit = handlePasswordReset;
+    document.getElementById('closeResetModal').onclick = hideAuthModal;
 }
+
+// Rest of the functions remain the same
 async function handleSignIn(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
@@ -157,41 +262,6 @@ async function handleGoogleSignIn() {
     }
 }
 
-function showSignUpForm() {
-    modalContainer.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Sign Up</h2>
-        <form id="signUpForm">
-            <input type="email" id="signUpEmail" placeholder="Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <input type="password" id="signUpPassword" placeholder="Password" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                Sign Up
-            </button>
-        </form>
-        <button id="closeSignUpModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
-    `;
-
-    document.getElementById('signUpForm').onsubmit = handleSignUp;
-    document.getElementById('closeSignUpModal').onclick = hideAuthModal;
-}
-
-
-
-function showForgotPasswordModal() {
-    modalContainer.innerHTML = `
-        <h2 style="margin: 0 0 20px 0; font-family: 'Poppins', sans-serif;">Reset Password</h2>
-        <form id="resetPasswordForm">
-            <input type="email" id="resetEmail" placeholder="Enter your email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
-            <button type="submit" style="width: 100%; padding: 8px; background: #4A90E2; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                Send Reset Link
-            </button>
-        </form>
-        <button id="closeResetModal" style="position: absolute; top: 10px; right: 10px; font-size: 20px; cursor: pointer;">×</button>
-    `;
-
-    document.getElementById('resetPasswordForm').onsubmit = handlePasswordReset;
-    document.getElementById('closeResetModal').onclick = hideAuthModal;
-}
-
 function handlePasswordReset(e) {
     e.preventDefault();
     const email = document.getElementById('resetEmail').value.trim();
@@ -203,24 +273,44 @@ function handlePasswordReset(e) {
         .catch((error) => alert("Error: " + error.message));
 }
 
-// Close modal and proceed with auth success
 async function hideAuthModal() {
-    modalContainer.style.display = 'none';
-    overlay.style.display = 'none';
-    isAuthModalOpen = false;
-    
-    // Only proceed if authentication was successful
+
+    // if (isAuthSuccess && auth.currentUser) {
+    //     const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+        
+    //     if (hasPlayed) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+    //         dailyLimitScreen.show();
+    //     } else if (window.gameScene) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         hideWelcomeScreen(window.gameScene);
+    //         window.startGame(window.gameScene);
+    //     }} else {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //     }
+
+
     if (isAuthSuccess && auth.currentUser) {
         const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+            
+        modalContainer.style.display = 'none';
+        overlay.style.display = 'none';
+        isAuthModalOpen = false;
         
-        if (hasPlayed) {
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        } else if (window.gameScene) {
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
+        hideWelcomeScreen(window.gameScene);
+        window.startGame(window.gameScene);
+    } else {
+        modalContainer.style.display = 'none';
+        overlay.style.display = 'none';
+        isAuthModalOpen = false;
         }
-    }
 }
 
 export { showAuthModal, auth, hideAuthModal };
