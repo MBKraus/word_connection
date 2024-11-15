@@ -275,30 +275,42 @@ function handlePasswordReset(e) {
 
 async function hideAuthModal() {
 
-    // Only proceed if authentication was successful
+    // if (isAuthSuccess && auth.currentUser) {
+    //     const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+        
+    //     if (hasPlayed) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+    //         dailyLimitScreen.show();
+    //     } else if (window.gameScene) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         hideWelcomeScreen(window.gameScene);
+    //         window.startGame(window.gameScene);
+    //     }} else {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //     }
+
+
     if (isAuthSuccess && auth.currentUser) {
         const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
-        
-        // if (hasPlayed) {
-        //     modalContainer.style.display = 'none';
-        //     overlay.style.display = 'none';
-        //     isAuthModalOpen = false;
-        //     const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-        //     dailyLimitScreen.show();
-        // } else if (window.gameScene) {
-        //     modalContainer.style.display = 'none';
-        //     overlay.style.display = 'none';
-        //     isAuthModalOpen = false;
-        //     hideWelcomeScreen(window.gameScene);
-        //     window.startGame(window.gameScene);
-        // }}
-
+            
         modalContainer.style.display = 'none';
         overlay.style.display = 'none';
         isAuthModalOpen = false;
         
         hideWelcomeScreen(window.gameScene);
-        window.startGame(window.gameScene);}
+        window.startGame(window.gameScene);
+    } else {
+        modalContainer.style.display = 'none';
+        overlay.style.display = 'none';
+        isAuthModalOpen = false;
+        }
 }
 
 export { showAuthModal, auth, hideAuthModal };
