@@ -18,19 +18,19 @@ export function createFailureEndScreen(scene) {
     });
     scene.failureEndScreen.add(scene.failureScoreText);
 
-    const shareButton = createButton(
-        scene,
-        scene.game.scale.width * 0.5,
-        scene.game.scale.height * 0.85,  // Moved down
-        'Share your score!',
-        () => {
-            hideScreen(scene, 'failureEndScreen');
-        },
-        STYLES.colors.loginButtonBg,
-        STYLES.colors.loginButtonText,
-        STYLES.colors.loginButtonBorder
-    );
-    scene.failureEndScreen.add(shareButton);
+    // const shareButton = createButton(
+    //     scene,
+    //     scene.game.scale.width * 0.5,
+    //     scene.game.scale.height * 0.85,  // Moved down
+    //     'Share your score!',
+    //     () => {
+    //         hideScreen(scene, 'failureEndScreen');
+    //     },
+    //     STYLES.colors.loginButtonBg,
+    //     STYLES.colors.loginButtonText,
+    //     STYLES.colors.loginButtonBorder
+    // );
+    // scene.failureEndScreen.add(shareButton);
 }
 
 export const showFailureEndScreen = (scene) => {
@@ -70,7 +70,7 @@ export const showFailureEndScreen = (scene) => {
                 {
                     fontFamily: 'Poppins',
                     fontSize: fontSize,
-                    color: '#167D60',
+                    color: '#51c878',
                     align: 'center',
                     fontStyle: 'bold'
                 }
