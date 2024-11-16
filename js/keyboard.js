@@ -97,7 +97,7 @@ export function createKeyboard(scene, game) {
             }
 
             const x = key === '←' && rowIndex === 2
-                ? keyboardWidth - (keyWidth / 2) - (isTablet() ? 100 : 0) // Added 15px left offset for tablets
+                ? keyboardWidth - (keyWidth / 2) - (isTablet() ? 100 : 0) // Added 100px left offset for tablets
                 : startX + (keyWidth / 2);
             const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2);
 
