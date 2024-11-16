@@ -6,13 +6,13 @@ export const STYLES = {
     },
     colors: {
         text: '#000000',
-        playButtonBg: '#000000',         // Black background for play button
-        playButtonText: '#FFFFFF',       // White text for play button
-        playButtonBorder: '#FFFFFF',     // White border for play button
-        loginButtonBg: '#FFFFFF',        // White background for login button
-        loginButtonText: '#000000',      // Black text for login button
-        loginButtonBorder: '#000000',    // Black border for login button
-        buttonHover: '#666666',          // Common hover color
+        playButtonBg: '#000000',
+        playButtonText: '#FFFFFF',
+        playButtonBorder: '#FFFFFF',
+        loginButtonBg: '#FFFFFF',
+        loginButtonText: '#000000',
+        loginButtonBorder: '#000000',
+        buttonHover: '#666666',
         overlay: 0xFFFFFF
     },
     padding: {
@@ -24,26 +24,16 @@ export const STYLES = {
         }
     },
     borderRadius: {
-        topLeft: 60,
-        topRight: 60,
-        bottomLeft: 60,
-        bottomRight: 60,
         sides: 65
     }
 };
 
-export function createOverlay(scene, container) {
-    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, STYLES.colors.overlay);
-    bg.setOrigin(0);
-    container.add(bg);
-    return bg;
-}
-
 export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', textColor = '#000000', borderColor = '#000000',
-    paddingLeft = 125, paddingRight =  125, paddingTop = 25, paddingBottom = 25
+    paddingLeft = 125, paddingRight = 125, paddingTop = 25, paddingBottom = 25
 ) {
     const container = scene.add.container(x, y);
 
+    // Create temporary text to measure dimensions
     const tempText = scene.add.text(0, 0, text, {
         fontSize: scene.scale.width * 0.06 + 'px',
         fontFamily: 'Poppins'
@@ -52,33 +42,33 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     const textHeight = tempText.height + paddingTop + paddingBottom;
     tempText.destroy();
 
+    // Create the rounded rectangle button using Phaser's native GeometryMask
+    const graphics = scene.add.graphics();
+    
     const drawButton = (graphics, fillColor, borderCol) => {
         graphics.clear();
-        graphics.lineStyle(6, parseInt(borderCol.replace('#', ''), 16));
-        graphics.fillStyle(parseInt(fillColor.replace('#', ''), 16));
-
-        const radius = STYLES.borderRadius.sides;
-        const halfWidth = textWidth / 2;
-        const halfHeight = textHeight / 2;
-
-        graphics.beginPath();
-        graphics.moveTo(-halfWidth + radius, -halfHeight);
-        graphics.lineTo(halfWidth - radius, -halfHeight);
-        graphics.arc(halfWidth - radius, -halfHeight + radius, radius, -Math.PI/2, 0);
-        graphics.lineTo(halfWidth, halfHeight - radius);
-        graphics.arc(halfWidth - radius, halfHeight - radius, radius, 0, Math.PI/2);
-        graphics.lineTo(-halfWidth + radius, halfHeight);
-        graphics.arc(-halfWidth + radius, halfHeight - radius, radius, Math.PI/2, Math.PI);
-        graphics.lineTo(-halfWidth, -halfHeight + radius);
-        graphics.arc(-halfWidth + radius, -halfHeight + radius, radius, Math.PI, -Math.PI/2);
-        graphics.closePath();
-        graphics.fillPath();
-        graphics.strokePath();
+        
+        // Convert hex colors to numbers
+        const fillColorNum = parseInt(fillColor.replace('#', ''), 16);
+        const borderColorNum = parseInt(borderCol.replace('#', ''), 16);
+        
+        // Draw border (slightly larger rectangle)
+        graphics.lineStyle(6, borderColorNum);
+        graphics.fillStyle(fillColorNum);
+        
+        const cornerRadius = STYLES.borderRadius.sides;
+        const width = textWidth;
+        const height = textHeight;
+        
+        // Use Phaser's built-in rounded rectangle
+        graphics.strokeRoundedRect(-width/2, -height/2, width, height, cornerRadius);
+        graphics.fillRoundedRect(-width/2, -height/2, width, height, cornerRadius);
     };
 
-    const graphics = scene.add.graphics();
+    // Initial button draw
     drawButton(graphics, bgColor, borderColor);
 
+    // Add text
     const buttonText = scene.add.text(0, 0, text, {
         fontSize: scene.scale.width * 0.04 + 'px',
         fontFamily: 'Poppins',
@@ -86,10 +76,10 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     }).setOrigin(0.5);
 
     container.add([graphics, buttonText]);
-
     container.setSize(textWidth, textHeight);
     container.setInteractive();
 
+    // Handle interactions
     container.on('pointerover', () => {
         drawButton(graphics, STYLES.colors.buttonHover, borderColor);
     });
@@ -101,6 +91,14 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     container.on('pointerdown', onClick);
 
     return container;
+}
+
+// Keep other helper functions unchanged
+export function createOverlay(scene, container) {
+    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, STYLES.colors.overlay);
+    bg.setOrigin(0);
+    container.add(bg);
+    return bg;
 }
 
 export function createText(scene, x, y, initialText = '') {
