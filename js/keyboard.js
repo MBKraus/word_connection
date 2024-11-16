@@ -1,4 +1,4 @@
-import { isMobile } from './utils.js';
+import { isMobile, isTablet, isPhone, isDesktop } from './utils.js';
 
 function isAuthModalVisible() {
     const modalContainer = document.querySelector('div[style*="position: fixed"]');
@@ -34,52 +34,53 @@ export function setupKeyboardInput(scene) {
     scene.inputDisplay.setText(scene.currentInputText);
 }
 
-  export function createKeyboard(scene, game) {
+export function createKeyboard(scene, game) {
     const keys = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ''],
-        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '←'],  // Place backspace ("←") at the end of the "Z" row
-        ['SPACE', '✓']  // Bottom row with space and enter
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M', '←'],
+        ['SPACE', '✓']
     ];
+
+    // Adjust keyboard height based on device type
+    const keyboardHeightRatio = isTablet() ? 0.24 : 0.28; // Less reduction for tablets
+    const bottomPadding = isTablet() ? 40 : 50; // More padding for tablets than before
 
     const keyboardContainer = scene.add.container(0, 0);
     const keyboardWidth = game.scale.width;
-    const keyboardHeight = game.scale.height * 0.28;
+    const keyboardHeight = game.scale.height * keyboardHeightRatio;
 
     const rowHeight = keyboardHeight / 4;
-    const keyWidthRatio = 0.73;
-    const keySpacing = 10;
-    const rowSpacing = 10;
-    const keyboardY = game.scale.height - keyboardHeight - 50;
+    const keyWidthRatio = isTablet() ? 0.7 : 0.73; // Less reduction in width for tablets
+    const keySpacing = isTablet() ? 9 : 10; // Similar spacing
+    const rowSpacing = isTablet() ? 9 : 10;
+    const keyboardY = game.scale.height - keyboardHeight - bottomPadding;
 
-    // Define left shift for the "Z" to "M" row keys
-    const zRowLeftShift = 40;
+    const zRowLeftShift = isTablet() ? 35 : 40; // Less shift for tablets
 
     keys.forEach((row, rowIndex) => {
         let rowWidth = 0;
 
-        // Calculate row width without special cases for "Z" row's backspace and the bottom row
         row.forEach((key) => {
             if (key === '') return;
             let keyWidth = rowHeight * keyWidthRatio;
             if (key === '✓') {
                 keyWidth = rowHeight * keyWidthRatio * 2;
             } else if (key === 'SPACE') {
-                keyWidth = rowHeight * keyWidthRatio * 7;
+                keyWidth = rowHeight * keyWidthRatio * (isTablet() ? 6.5 : 7); // Slightly shorter spacebar for tablets
             } else if (key === '←' && rowIndex === 2) {
-                return; // Skip backspace width calculation for "Z" row alignment
+                return;
             }
             rowWidth += keyWidth + keySpacing;
         });
         rowWidth -= keySpacing;
 
-        // Calculate startX position for rows with custom alignment
         let startX;
-        if (rowIndex === keys.length - 1) { // Bottom row with right alignment
-            startX = keyboardWidth - rowWidth - 20; // Right align the last row with padding
-        } else if (rowIndex === 2) { // Z row: shift all keys to the left, except backspace
+        if (rowIndex === keys.length - 1) {
+            startX = keyboardWidth - rowWidth - (isTablet() ? 120 : 20);
+        } else if (rowIndex === 2) {
             startX = (keyboardWidth - rowWidth) / 2 - zRowLeftShift;
-        } else { // Center alignment for all other rows
+        } else {
             startX = (keyboardWidth - rowWidth) / 2;
         }
 
@@ -87,50 +88,50 @@ export function setupKeyboardInput(scene) {
             if (key === '') return;
             let keyWidth = rowHeight * keyWidthRatio;
 
-            // Customize widths for special keys
             if (key === '←') {
                 keyWidth = rowHeight * keyWidthRatio * 2;
             } else if (key === '✓') {
-                keyWidth = rowHeight * keyWidthRatio * 2.45;
+                keyWidth = rowHeight * keyWidthRatio * (isTablet() ? 2.3 : 2.45);
             } else if (key === 'SPACE') {
-                keyWidth = rowHeight * keyWidthRatio * 6.75;
+                keyWidth = rowHeight * keyWidthRatio * (isTablet() ? 6.5 : 6.75);
             }
 
-            // Place backspace key to the far right if it's in the "Z" row
             const x = key === '←' && rowIndex === 2
-                ? keyboardWidth - (keyWidth / 2) // Align to the far right with padding
+                ? keyboardWidth - (keyWidth / 2) - (isTablet() ? 100 : 0) // Added 100px left offset for tablets
                 : startX + (keyWidth / 2);
             const y = (rowIndex * rowHeight) + (rowIndex * rowSpacing) + (rowHeight / 2);
 
             const button = scene.add.graphics();
             let keyText;
 
-            // Set custom styling for each key
-            if (key === '←') {  // Backspace key with lighter gray color
-                button.fillStyle(0x666666, 1); // Lighter gray color
+            // Adjust font size for tablets
+            const fontSize = isTablet() ? `${rowHeight * 0.38}px` : `${rowHeight * 0.4}px`;
+
+            if (key === '←') {
+                button.fillStyle(0x666666, 1);
                 keyText = scene.add.text(0, 0, key, {
-                    fontSize: `${rowHeight * 0.4}px`,
-                    color: '#FFFFFF', // White text for contrast
+                    fontSize,
+                    color: '#FFFFFF',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else if (key === '✓') {
-                button.fillStyle(0x51c878, 1); // Green color
+                button.fillStyle(0x51c878, 1);
                 keyText = scene.add.text(0, 0, key, {
-                    fontSize: `${rowHeight * 0.4}px`,
+                    fontSize,
                     color: '#FFFFFF',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else if (key === 'SPACE') {
                 button.fillStyle(0xE2E8F1, 1);
                 keyText = scene.add.text(0, 0, '', {
-                    fontSize: `${rowHeight * 0.4}px`,
+                    fontSize,
                     color: '#000000',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else {
                 button.fillStyle(0xE2E8F1, 1);
                 keyText = scene.add.text(0, 0, key, {
-                    fontSize: `${rowHeight * 0.4}px`,
+                    fontSize,
                     color: '#000000',
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
@@ -141,7 +142,7 @@ export function setupKeyboardInput(scene) {
                 -rowHeight / 2,
                 keyWidth,
                 rowHeight,
-                10
+                isTablet() ? 9 : 10 // Similar border radius
             );
 
             const keyButton = scene.add.container(x, y, [button, keyText]);
@@ -171,7 +172,6 @@ export function setupKeyboardInput(scene) {
 
             keyboardContainer.add(keyButton);
 
-            // Increment startX only for non-backspace keys in the "Z" row
             if (key !== '←' || rowIndex !== 2) {
                 startX += keyWidth + keySpacing;
             }
@@ -180,8 +180,3 @@ export function setupKeyboardInput(scene) {
 
     keyboardContainer.setY(keyboardY);
 }
-
-
-
-
-
