@@ -393,20 +393,20 @@ function endGame(scene) {
         scene.okButton.destroy(); // Remove the existing button
     }
         
-        // Create a new button with updated text
-        scene.okButton = createButton(
-            scene,
-            scene.scale.width * 0.5,
-            scene.scale.height * 0.74,
-            'Share your score!', // Updated text
-            () => {
-                hideInterRoundScreen(scene);
-            },
-            STYLES.colors.loginButtonBg,
-            STYLES.colors.loginButtonText,
-            STYLES.colors.loginButtonBorder
-        );
-        scene.interRoundScreen.add(scene.okButton);
+        // // Create a new button with updated text
+        // scene.okButton = createButton(
+        //     scene,
+        //     scene.scale.width * 0.5,
+        //     scene.scale.height * 0.74,
+        //     'Share your score!', // Updated text
+        //     () => {
+        //         hideInterRoundScreen(scene);
+        //     },
+        //     STYLES.colors.loginButtonBg,
+        //     STYLES.colors.loginButtonText,
+        //     STYLES.colors.loginButtonBorder
+        // );
+        // scene.interRoundScreen.add(scene.okButton);
 
         showInterRoundScreen(scene);
 
