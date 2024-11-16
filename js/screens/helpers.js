@@ -42,9 +42,6 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     const textHeight = tempText.height + paddingTop + paddingBottom;
     tempText.destroy();
 
-    // Create the rounded rectangle button using Phaser's native GeometryMask
-    const graphics = scene.add.graphics();
-    
     const drawButton = (graphics, fillColor, borderCol) => {
         graphics.clear();
         
@@ -52,23 +49,17 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
         const fillColorNum = parseInt(fillColor.replace('#', ''), 16);
         const borderColorNum = parseInt(borderCol.replace('#', ''), 16);
         
-        // Draw border (slightly larger rectangle)
-        graphics.lineStyle(6, borderColorNum);
+        // Draw the background
+        const background = new Phaser.Geom.Rectangle(-textWidth/2, -textHeight/2, textWidth, textHeight);
         graphics.fillStyle(fillColorNum);
-        
-        const cornerRadius = STYLES.borderRadius.sides;
-        const width = textWidth;
-        const height = textHeight;
-        
-        // Use Phaser's built-in rounded rectangle
-        graphics.strokeRoundedRect(-width/2, -height/2, width, height, cornerRadius);
-        graphics.fillRoundedRect(-width/2, -height/2, width, height, cornerRadius);
+        graphics.lineStyle(6, borderColorNum);
+        graphics.fillRoundedRect(background.x, background.y, background.width, background.height, STYLES.borderRadius.sides);
+        graphics.strokeRoundedRect(background.x, background.y, background.width, background.height, STYLES.borderRadius.sides);
     };
 
-    // Initial button draw
+    const graphics = scene.add.graphics();
     drawButton(graphics, bgColor, borderColor);
 
-    // Add text
     const buttonText = scene.add.text(0, 0, text, {
         fontSize: scene.scale.width * 0.04 + 'px',
         fontFamily: 'Poppins',
