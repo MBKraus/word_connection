@@ -215,15 +215,8 @@ export function createHeaderIcons(scene) {
 
 
 
-export function createFeedbackIcons(scene) {
+export function createCrossIcon(scene) {
     const inputBgWidth = scene.game.scale.width * 0.98;
-
-    scene.checkmark = scene.add.sprite(0, 0, 'check')
-        .setOrigin(0, 0.5)
-        .setVisible(false)
-        .setDepth(2)
-        .setScale(scene.game.scale.width * 0.00008)
-        .setPosition(scene.inputDisplay.x + inputBgWidth * 0.4, scene.inputDisplay.y);
 
     scene.cross = scene.add.sprite(0, 0, 'cross')
         .setOrigin(0, 0.5)
@@ -231,6 +224,37 @@ export function createFeedbackIcons(scene) {
         .setDepth(2)
         .setScale(scene.game.scale.width * 0.000028)
         .setPosition(scene.inputDisplay.x + inputBgWidth * 0.4, scene.inputDisplay.y);
+}
+
+export function createCheckmark(scene, x, y) {
+    const checkmarkRadius = scene.game.scale.width * 0.03;
+
+    // Create the circle
+    const checkmarkCircle = scene.add.graphics()
+        .fillStyle(0x51c878) // Green fill color
+        .fillCircle(0, 0, checkmarkRadius)
+        .setVisible(false);
+
+    // Create the checkmark text
+    const checkmarkText = scene.add.text(0, 0, '✔', {
+        fontSize: checkmarkRadius * 1.5 + 'px',
+        fontFamily: 'Poppins',
+        fontWeight: 'bold',
+        color: '#FFFFFF' // White color
+    })
+        .setOrigin(0.5)
+        .setVisible(false);
+
+    // Combine them into a container
+    const checkmarkGroup = scene.add.container(x, y, [
+        checkmarkCircle,
+        checkmarkText
+    ]).setDepth(10);
+
+    // Attach components to the scene for easy access
+    scene.checkmarkCircle = checkmarkCircle;
+    scene.checkmarkText = checkmarkText;
+    scene.checkmarkGroup = checkmarkGroup;
 }
 
 export function createCorrectGuessContainer(scene) {

@@ -1,6 +1,6 @@
 import { loadTopics} from './topics.js';
-import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, 
-    createScoreDisplay, createTimerDisplay, createHeaderIcons, createFeedbackIcons, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
+import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createCheckmark,
+    createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
@@ -46,7 +46,6 @@ const game = new Phaser.Game(config);
 function preload() {
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
-    this.load.image('check', 'https://mbkraus.github.io/word_connection/assets/check.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
     this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
@@ -126,12 +125,12 @@ function createGameElements(scene) {
     createTimerDisplay(scene);
     createHeaderIcons(scene);
     createCorrectGuessContainer(scene);
+    createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.98 * 0.4), scene.inputDisplay.y);
+    createCrossIcon(scene);
 
     if (isMobile()) {
         createKeyboard(scene, game);
     }
-
-    createFeedbackIcons(scene);
 }
 
 // Visibility management helper
@@ -224,9 +223,12 @@ function checkGuess(scene, guess) {
             });
         }
         
-        scene.checkmark.setVisible(true);
+        scene.checkmarkCircle.setVisible(true);
+        scene.checkmarkText.setVisible(true);
+
         scene.time.delayedCall(1000, () => {
-            scene.checkmark.setVisible(false);
+            scene.checkmarkCircle.setVisible(false);
+            scene.checkmarkText.setVisible(false);
         });
         
         scene.score += 30;
