@@ -91,7 +91,8 @@ export async function getGameStats(userId) {
         totalGamesPlayed: 0,
         lastPlayed: null,
         recentSessions: [],
-        averageTopicsGuessed: 0
+        averageTopicsGuessed: 0,
+        averageScore: 0
     };
 
     try {
@@ -103,21 +104,35 @@ export async function getGameStats(userId) {
             stats.lastPlayed = userSnap.data().lastPlayed ? userSnap.data().lastPlayed.toDate() : null;
         }
 
+        // Get all game sessions to calculate averages
         const sessionsRef = collection(db, 'gameStats', userId, 'dailyStats');
-        const avgQuery = query(sessionsRef);
-        const aggregateSnapshot = await getAggregateFromServer(avgQuery, {
-            averageTopics: average('totalTopicsGuessed')
+        const sessionsSnap = await getDocs(sessionsRef);
+        
+        let totalScore = 0;
+        let totalTopics = 0;
+        let sessionCount = 0;
+
+        sessionsSnap.forEach(doc => {
+            const data = doc.data();
+            totalScore += data.score || 0;
+            totalTopics += data.totalTopicsGuessed || 0;
+            sessionCount++;
         });
-        stats.averageTopicsGuessed = Number(aggregateSnapshot.data().averageTopics || 0).toFixed(1);
 
+        // Calculate averages
+        stats.averageScore = sessionCount > 0 ? (totalScore / sessionCount).toFixed(1) : '0.0';
+        stats.averageTopicsGuessed = sessionCount > 0 ? (totalTopics / sessionCount).toFixed(1) : '0.0';
+
+        // Get recent sessions
         const recentSessionsQuery = query(sessionsRef, orderBy('timestamp', 'desc'), limit(3));
-        const sessionDocs = await getDocs(recentSessionsQuery);
+        const recentDocs = await getDocs(recentSessionsQuery);
 
-        sessionDocs.forEach(doc => {
+        recentDocs.forEach(doc => {
             const data = doc.data();
             stats.recentSessions.push({
                 date: data.date,
-                totalTopicsGuessed: data.totalTopicsGuessed
+                totalTopicsGuessed: data.totalTopicsGuessed,
+                score: data.score
             });
         });
 

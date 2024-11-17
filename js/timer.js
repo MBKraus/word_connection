@@ -1,5 +1,22 @@
 import { getStartY } from './uiComponents.js';
 
+export function pauseTimer(scene) {
+    if (scene.timerEvent) {
+        scene.timerEvent.paused = true;
+        // Store the pause time to calculate elapsed time when resumed
+        scene.pauseStartTime = Date.now();
+    }
+}
+
+export function resumeTimer(scene) {
+    if (scene.timerEvent && scene.timerEvent.paused) {
+        // Adjust the game start time by the pause duration
+        const pauseDuration = Date.now() - scene.pauseStartTime;
+        scene.gameStartTime += pauseDuration;
+        scene.timerEvent.paused = false;
+    }
+}
+
 export function resetTimerAndBar(scene) {
     // Clear any existing timer events first
     clearTimerEvent(scene);
@@ -100,10 +117,11 @@ export function startTimer(scene) {
     scene.remainingTime = scene.timerDuration;
     scene.gameStartTime = Date.now();
     scene.lastUpdateTime = scene.gameStartTime;
+    scene.pauseStartTime = null;  // Add this line
 
     updateTimerDisplay(scene, true);
 
-    scene.updateInterval = 1000 / 60; // approximately 16.67ms
+    scene.updateInterval = 1000 / 60;
 
     scene.timerEvent = scene.time.addEvent({
         delay: scene.updateInterval,

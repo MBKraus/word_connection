@@ -17,6 +17,7 @@ input, textarea, select {
     max-width: 1080px;
     margin: 0 auto;
     position: relative;
+    background: white;
 }
 
 #ad-container {

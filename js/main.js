@@ -29,7 +29,8 @@ const config = {
     dom: {
         createContainer: true
     },
-    backgroundColor: '#FFFFFF',
+    // backgroundColor: '#FFFFFF',
+    transparent: true,
     parent: 'game-container',
     scale: {
         mode: Phaser.Scale.FIT,  
@@ -114,7 +115,7 @@ function showAdContainer() {
 function createGameElements(scene) {
 
     createHeader(scene);
-    createAdContainer();
+    createAdContainer(scene);
     const headerBottom = (scene.headerText.height * 0.5) - 2;
     document.getElementById('ad-container').style.top = `${headerBottom}px`;
     document.getElementById('ad-container').style.display = `none`;
