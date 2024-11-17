@@ -1,6 +1,7 @@
 import { getGameStats } from '../gameStorage.js';
 import { showAuthModal, auth } from '../auth.js';
 import { createButton, STYLES } from './helpers.js';
+import { pauseTimer, resumeTimer } from '../timer.js';
 
 export async function createStatsPopup(scene, chartGraphics) {
     // Make the popup container cover the entire screen
@@ -53,7 +54,7 @@ export async function createStatsPopup(scene, chartGraphics) {
 
     // Set up event handlers
     setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, circlesContainer, scene);
-    setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics);
+    setupCloseButtonHandler(scene, closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics);
     setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, circlesContainer, statsText, scene);
 }
 
@@ -191,8 +192,9 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
     chartGraphics.on('pointerdown', async () => {
         cleanupPopup(circlesContainer, statsText, signupButton, signupButtonText, graphics);
         popup.setVisible(true);
+        
+        pauseTimer(scene);
 
-        // Update title text based on auth state
         const titleText = popup.list.find(item => item instanceof Phaser.GameObjects.Text 
             && (item.text === 'Your progress' || item.text.includes('Want to start tracking')));
         if (titleText) {
@@ -208,6 +210,7 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
                 createProgressCircles(stats.recentSessions, scene, circlesContainer);
                 statsText.setText([
                     `Total Games Played: ${stats.totalGamesPlayed}`,
+                    `Average Score: ${stats.averageScore}`,
                     `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
                     `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
                 ]);
@@ -224,12 +227,15 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
 }
 
 // Event handler for close button
-function setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics) {
+function setupCloseButtonHandler(scene, closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics) {
     const closeButtonHitArea = closeButtonContainer.list[1];
 
     closeButtonHitArea.on('pointerdown', () => {
         cleanupPopup(circlesContainer, statsText, signupButton, signupButtonText, graphics);
         popup.setVisible(false);
+        
+        // Resume the timer when closing the popup
+        resumeTimer(scene);
     });
 }
 
@@ -237,9 +243,15 @@ function setupCloseButtonHandler(closeButtonContainer, popup, circlesContainer, 
 function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, circlesContainer, statsText, scene) {
     signupButton.on('pointerdown', async () => {
         popup.setVisible(false);
+        // Resume timer when hiding popup for auth
+        resumeTimer(scene);
+        
         await showAuthModal('signup');
         if (auth.currentUser) {
             popup.setVisible(true);
+            // Pause timer again if showing stats after auth
+            pauseTimer(scene);
+            
             signupButton.setVisible(false);
             signupButtonText.setVisible(false);
             graphics.setVisible(false);

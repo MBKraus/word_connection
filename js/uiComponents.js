@@ -1,6 +1,6 @@
 import { createQuestionMarkPopup} from './screens/questionMarkPopUp.js';
 import { createStatsPopup} from './screens/statsPopUp.js';
-import { isMobile } from './utils.js';
+import { isMobile, isTablet } from './utils.js';
 
 export function createHeader(scene) {
     scene.headerText = scene.add.text(
@@ -16,7 +16,7 @@ export function createHeader(scene) {
     ).setOrigin(0.5);
 }
 
-export function createAdContainer() {
+export function createAdContainer(scene) {
     const adContainer = document.getElementById('ad-container');
     const adElement = adContainer.querySelector('.adsbygoogle');
     
@@ -32,7 +32,23 @@ export function createAdContainer() {
 
     // Ensure display is set to flex by default
     adContainer.style.display = 'flex';
-    adContainer.style.top = '50px';  // Adjust as needed
+
+    // Calculate top position based on device type
+    const getTopPosition = () => {
+        if (isTablet()) {
+            return Math.round(scene.game.scale.height * 0.3); // 25% height for tablets
+        } else {
+            return Math.round(scene.game.scale.height * 0.0175); // 10% height for other devices
+        }
+    };
+
+    // Set initial position
+    adContainer.style.top = `${getTopPosition()}px`;
+
+    // Update position on resize
+    scene.scale.on('resize', () => {
+        adContainer.style.top = `${getTopPosition()}px`;
+    });
 
     // Initialize AdSense
     (adsbygoogle = window.adsbygoogle || []).push({});
