@@ -3,6 +3,7 @@ from pydantic import BaseModel, validator, conlist, Field
 from typing import List, Dict, Optional
 import joblib
 import json
+from pydantic import ValidationError
 
 from dotenv import load_dotenv
 import os
@@ -13,38 +14,26 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-class TopicGroup(BaseModel):
-    topic: List[str]  # List with at least 1 word in `topic`
-    words: List[str]  # Exactly 4 words in `words`
-
-class Round(BaseModel):
-    topics: List[TopicGroup]  # Exactly 3 topics per round
-
-class DayEntry(BaseModel):
-    rounds: List[Round] # Exactly 3 rounds per day entry
-
 class DataModel(BaseModel):
-    entries: Optional[Dict[str, DayEntry]] = Field(..., description="AI response for each day in the date range")
+    topics: Optional[List[List[str]]] = Field(..., description="AI generated list of lists of topics")
 
 completion = client.beta.chat.completions.parse(
     # model="gpt-4o-mini",
     model="gpt-4o-2024-08-06",
     messages=[
-        {"role": "system", "content": "You are a topic and describing entries generator."},
+        {"role": "system", "content": "You are a topic and generator."},
         {"role": "user", "content":
-           "Generate output for a game where each day (with key YYYY-MM-DD) contains three game rounds,\n" 
-           "and each round has three topics with four entries for each topic.\n"
+           "Generate 150 topics. The output should be a list of lists. Each sub-list covers a topic.\n"
+           "A sub-list covering a topic can contain multiple spelling variants e.g. 'color', 'colour' and 'The Louvre', 'Louvre', 'The Louvre Museum'\n"
            "A topic can only occur once in all the topics you generate.\n"
-           "Topics for each day:\n"
+           "A topic should be:\n"
            "- should be specific and well-defined. Avoid broad or generic topics (e.g., 'Sports', 'Nature', 'History').\n"
-           "- should be distinct, and unique in their field.\n"
-           "- should be highly familiar, simple, extremely everyday, and easy to guess from the entries and phrases provided"
-           "- can contain multiple spelling variants e.g. 'color', 'colour' and 'The Louvre', 'Louvre', 'The Louvre Museum'.\n"
+           "- should be distinct, and unique in its field.\n"
+           "- should be highly familiar, simple, extremely everyday, and easy to guess"
+           "- ensure the topic is relative simple to spell and does not cover more than 3 words.\n"
            "- if the topic is a person also include just their last name (e.g., 'Einstein', 'Tesla') in the topic.\n"
-           "- only one topic per round can be a person.\n"
-           "- only one topic per round can be an event.\n"
-           "The goal is to create a detailed and unique list of topics that are concrete and easily identifiable, without overlapping too much with other topics.\n"
-           "Ensure that each day's topics are diverse and from a variety of domains, such as:\n"
+           "The goal is to create a detailed and unique set of topics that are concrete and easily identifiable, without overlapping too much with other topics.\n"
+           "Ensure that topics are diverse and from a variety of domains, such as:\n"
             "- Specific people or famous personalities (e.g., 'Michael Jordan', 'Leonardo da Vinci')\n"
             "- Specific places (e.g., 'Paris', 'Great Wall of China')\n"
             "- Specific items or things (e.g., 'Electric Cars', 'Smartphones', 'Guitars', 'Fruits')\n"
@@ -62,24 +51,6 @@ completion = client.beta.chat.completions.parse(
             "- Climate or Weather Phenomena (e.g., Hurricane, Tornado)\n"
             "- Common Hobbies or Sports (e.g., Chess, Knitting, Soccer, Rock Climbing)\n"
             "Please source from these domains and other domains you think might suit well, but ensure the topics are specific and distinct.\n\n"
-            "For each topic, provide 4 specific words or phrases related to that topic. There are a couple key rules with respect to these descriptive entries:\n"
-            "- These words or phases should be closely related to the topic and help define it clearly.\n"
-            "- In each round, a descriptive entry cannot repeat or include any part of the topic itself, \n"
-            "nor be part of another descriptive entry in that round. For example, if the topic is 'Grammy Awards' \n"
-            "using 'Awards' as a descriptive entry would not be allowed.\n"
-            "- each descriptive entry should be 1–4 words long to allow multi-word terms like 'South America' or 'longest flow' to \n\n" 
-            "remain as single entries without splitting them.\n"
-            "- Avoid splitting entries if doing so would result in overly generic terms that lose specific meaning. \n"
-            "Here are some example topics and entries for guidance:\n"
-            "topic=[Michael Jordan], words=[Basketball, Chicago Bulls, Air, 23]\n"
-            "topic=['The Titanic', 'Titanic'], words=['Sinking', 'Iceberg', 'Luxury', '1912']\n"
-            "topic=[Mars], words=[Space, Red planet, Rover, Fourth from the Sun]\n"
-            "topic=[Fruits], words=[Apple, Banana, Cherry, Berry]\n"
-            "topic=['Charles Darwin', 'Darwin'], words=['Evolution', 'Natural Selection', 'Galapagos', 'Biologist']\n"
-            "topic=[Countries], words=[Brazil, Canada, Denmark, Egypt]\n"
-            "topic=['Cryptocurrencies', 'Crypto', 'Cryptos'], words=['Bitcoin', 'Altcoin', 'Blockchain', 'Investing']\n\n"
-            "Generate output for the date range from 2024-11-01 to 2024-11-30.\n"
-            "This is key: generate for 30 days.\n"
         }
     ],
     response_format=DataModel,
@@ -92,6 +63,18 @@ print(data_parsed)
 json_data = data_parsed.json()
 data_dict = json.loads(json_data)
 
-# Write to file with pretty formatting
-with open("raw.json", "w") as f:
-    json.dump(data_dict, f, indent=4) 
+# # Write to file with pretty formatting
+# with open("raw.json", "w") as f:
+#     json.dump(data_dict, f, indent=4) 
+
+# # Load the data back from the JSON file
+# with open("raw_data.json", "r") as f:
+#     loaded_data = json.load(f)
+
+# # Re-create the DataModel instance from the loaded data
+# try:
+#     reloaded_data_model = DataModel(**loaded_data)
+#     print("Data loaded successfully into DataModel:")
+#     print(reloaded_data_model)
+# except ValidationError as e:
+#     print("Validation Error:", e.json())
