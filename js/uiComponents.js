@@ -191,16 +191,16 @@ export function createHeaderIcons(scene) {
     
     // Draw the three bars with increased heights
     // Middle height bar (left)
-    chartGraphics.fillRect(-scale*1.5, -scale*1.2, scale*0.8, scale*1.8); // Was 1.2, now 1.8
+    chartGraphics.fillRect(-scale * 1.5, -scale * 1.4, scale * 0.8, scale * 2.0); // Increased height to 2.0
     
     // Highest bar (middle)
-    chartGraphics.fillRect(-scale*0.3, -scale*1.6, scale*0.8, scale*2.2); // Was 1.6, now 2.2
+    chartGraphics.fillRect(-scale * 0.3, -scale * 1.8, scale * 0.8, scale * 2.4); // Increased height to 2.4
     
     // Shortest bar (right)
-    chartGraphics.fillRect(scale*0.9, -scale*0.8, scale*0.8, scale*1.4); // Was 0.9, now 1.4
+    chartGraphics.fillRect(scale * 0.9, -scale * 1.0, scale * 0.8, scale * 1.6); // Increased height to 1.6
     
     // Adjust hit area to match taller bars
-    const hitArea = new Phaser.Geom.Rectangle(-scale*1.5, -scale*1.6, scale*3, scale*2.2);
+    const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale * 1.8, scale * 3, scale * 2.4); // Adjusted to fit the tallest bar
     chartGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
     
     // Create stats popup for chart icon
@@ -212,6 +212,8 @@ export function createHeaderIcons(scene) {
         .setInteractive();
     createQuestionMarkPopup(scene, questionIcon);
 }
+
+
 
 export function createFeedbackIcons(scene) {
     const inputBgWidth = scene.game.scale.width * 0.98;
