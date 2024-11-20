@@ -27,27 +27,39 @@ export function createQuestionMarkPopup(scene, triggerImage) {
     popup.add(text);
 
     // Add detailed instructions
-    const instructions = scene.add.text(0, scene.scale.height*0.10, 
-        `Guess the 3 topics hidden within the descriptive tiles and earn points.\n\n` +
-        `- You\’ll see 12 tiles with descriptive words.\n` +
-        `- These words are clues to 3 distinct topics.\n\n` +
-        `Analyze the words and identify which belong to the same topic.\n\n` +
-        `Submit your answers within 60 seconds to complete the round.\n\n` +
-        `Complete 3 rounds of this challenge to win the game.\n\n` +
-        `Scoring:\n` +
-        `* 30 points for each correct word.\n` +
-        `* 50 points for completing a round.\n` +
-        `* Time Bonus:\n` +
-        `   * Finish within 40 seconds: Earn 30 extra points.\n` +
-        `   * Finish within 50 seconds: Earn 10 extra points.`,
+    const instructions = scene.add.rexBBCodeText(0, -halfHeight * 0.33, 
+        `Guess the [bgcolor=#51c878]3 topics[/bgcolor] hidden within the descriptive tiles and earn points.\n\n` +
+        `Analyze the words and identify which belong to the same topic.`,
         {
-            font: STYLES.fonts.small(scene),
+            fontSize: scene.game.scale.width * 0.037 + 'px',
+            fontFamily: 'Poppins',
             fill: '#000000', // Black font color
             align: 'left',
-            wordWrap: { width: popupWidth * 0.8 },
+            wordWrap: { width: popupWidth * 1 },
         }
     ).setOrigin(0.5);
     popup.add(instructions);
+    
+
+    const screenshhot = scene.add.image(0, scene.scale.height*0.10, 'screenshot')
+        .setScale(0.9)
+    popup.add(screenshhot);
+
+    const instructions_end = scene.add.rexBBCodeText(0, halfHeight * 0.73, 
+    `Submit your answers within [bgcolor=#51c878]60 seconds[/bgcolor] to complete the round.\n\n` +
+    `Complete [bgcolor=#51c878]3 rounds[/bgcolor] of this challenge to win the game.\n\n`,
+        {
+            fontSize: scene.game.scale.width * 0.037 + 'px',
+            fontFamily: 'Poppins',
+            fill: '#000000', // Black font color
+            align: 'left',
+            wordWrap: { width: popupWidth * 1 },
+        }
+    ).setOrigin(0.5);
+    popup.add(instructions_end);
+
+
+
 
     // Create close button
     const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.55);

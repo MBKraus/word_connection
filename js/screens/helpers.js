@@ -2,8 +2,7 @@ export const STYLES = {
     fonts: {
         large: (scene) => `${scene.scale.width * 0.08}px Poppins`,
         medium: (scene) => `${scene.scale.width * 0.06}px Poppins`,
-        small: (scene) => `${scene.scale.width * 0.04}px Poppins`,
-        bold: (scene) => `bold ${scene.scale.width * 0.06}px Poppins`
+        small: (scene) => `${scene.scale.width * 0.04}px Poppins`
     },
     colors: {
         text: '#000000',

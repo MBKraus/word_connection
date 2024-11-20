@@ -44,7 +44,9 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
+    this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
+    this.load.image('screenshot', 'https://mbkraus.github.io/word_connection/assets/screenshot.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
     this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
