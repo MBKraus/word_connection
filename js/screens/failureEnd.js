@@ -11,7 +11,7 @@ export function createFailureEndScreen(scene) {
     
     scene.failureScoreText.setStyle({
         fontFamily: 'Poppins',
-        fontSize: '35px',
+        fontSize: `${scene.scale.width * 0.08}px`,
         color: '#000000',
         align: 'center',
         fontStyle: 'bold'
@@ -34,7 +34,7 @@ export function createFailureEndScreen(scene) {
 }
 
 export const showFailureEndScreen = (scene) => {
-    const fontSize = Math.min(scene.scale.height * 0.08, 45);
+    const fontSize = Math.min(scene.scale.height * 0.08, 52);
     scene.failureScoreText.setFontSize(fontSize);
 
     // Clear any existing topic texts from previous games
@@ -66,13 +66,14 @@ export const showFailureEndScreen = (scene) => {
             const topicText = scene.add.text(
                 scene.game.scale.width * 0.5,
                 currentY,
-                topic.name,
+                " "+topic.name+" ",
                 {
                     fontFamily: 'Poppins',
                     fontSize: fontSize,
-                    color: '#51c878',
+                    color: '#000000',
                     align: 'center',
-                    fontStyle: 'bold'
+                    fontStyle: 'bold',
+                    backgroundColor: '#51c878',
                 }
             ).setOrigin(0.5);
             topicText.topicText = true;
@@ -100,10 +101,10 @@ export const showFailureEndScreen = (scene) => {
         });
 
         // Add score text at the bottom after all topics
-        const scoreText = scene.add.text(
+        const scoreText = scene.add.rexBBCodeText(
             scene.game.scale.width * 0.5,
             currentY + 175,
-            `Your Score: ${scene.score}\n\nCome back tomorrow for another puzzle!`,
+            `[bgcolor=#51c878] Your Score: ${scene.score} [/bgcolor]\n\nCome back tomorrow for another puzzle!`,
             {
                 fontFamily: 'Poppins',
                 fontSize: fontSize,

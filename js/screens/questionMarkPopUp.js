@@ -17,14 +17,49 @@ export function createQuestionMarkPopup(scene, triggerImage) {
     background.fillRect(-halfWidth, -halfHeight, popupWidth, popupHeight);
     popup.add(background);
 
-    // Add text
-    const text = scene.add.text(0, -halfHeight * 0.4, 'Explain the game etc.', {
+    // Add main heading
+    const text = scene.add.text(0, -halfHeight * 0.55, 'How to play', {
         font: STYLES.fonts.medium(scene),
         fill: '#000000', // Black font color
         align: 'center',
         lineSpacing: 10,
     }).setOrigin(0.5);
     popup.add(text);
+
+    // Add detailed instructions
+    const instructions = scene.add.rexBBCodeText(0, -halfHeight * 0.33, 
+        `Guess the [bgcolor=#51c878]3 topics[/bgcolor] hidden within the descriptive tiles and earn points.\n\n` +
+        `Analyze the words and identify which belong to the same topic.`,
+        {
+            fontSize: scene.game.scale.width * 0.037 + 'px',
+            fontFamily: 'Poppins',
+            fill: '#000000', // Black font color
+            align: 'left',
+            wordWrap: { width: popupWidth * 1 },
+        }
+    ).setOrigin(0.5);
+    popup.add(instructions);
+    
+
+    const screenshhot = scene.add.image(0, scene.scale.height*0.10, 'screenshot')
+        .setScale(0.9)
+    popup.add(screenshhot);
+
+    const instructions_end = scene.add.rexBBCodeText(0, halfHeight * 0.73, 
+    `Submit your answers within [bgcolor=#51c878]60 seconds[/bgcolor] to complete the round.\n\n` +
+    `Complete [bgcolor=#51c878]3 rounds[/bgcolor] of this challenge to win the game.\n\n`,
+        {
+            fontSize: scene.game.scale.width * 0.037 + 'px',
+            fontFamily: 'Poppins',
+            fill: '#000000', // Black font color
+            align: 'left',
+            wordWrap: { width: popupWidth * 1 },
+        }
+    ).setOrigin(0.5);
+    popup.add(instructions_end);
+
+
+
 
     // Create close button
     const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.55);
