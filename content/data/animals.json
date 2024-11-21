@@ -1,0 +1,304 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Elephant",
+                "Elephants"
+            ],
+            "entries": [
+                "Trunk Flexibility",
+                "Tusks",
+                "Gentle Giants",
+                "Large Ears"
+            ]
+        },
+        {
+            "topic": [
+                "Kangaroo",
+                "Kangaroos"
+            ],
+            "entries": [
+                "Pouch",
+                "Hopping",
+                "Marsupial",
+                "Strong Tail"
+            ]
+        },
+        {
+            "topic": [
+                "Penguin",
+                "Penguins"
+            ],
+            "entries": [
+                "Flightless Bird",
+                "Waddle",
+                "Antarctic Habitat",
+                "Tuxedo-like Plumage"
+            ]
+        },
+        {
+            "topic": [
+                "Shark",
+                "Sharks"
+            ],
+            "entries": [
+                "Cartilaginous Fish",
+                "Multiple Rows of Teeth",
+                "Apex Predator",
+                "Dorsal Fin"
+            ]
+        },
+        {
+            "topic": [
+                "Gorilla",
+                "Gorillas"
+            ],
+            "entries": [
+                "Primate",
+                "Knuckle Walking",
+                "Mountain Habitats",
+                "Silverbacks"
+            ]
+        },
+        {
+            "topic": [
+                "Peacock",
+                "Peacocks"
+            ],
+            "entries": [
+                "Vibrant Plumage",
+                "Courtship Display",
+                "Indian Origin",
+                "Feather Fan"
+            ]
+        },
+        {
+            "topic": [
+                "Cheetah",
+                "Cheetahs"
+            ],
+            "entries": [
+                "Fastest Land Animal",
+                "Spotted Coat",
+                "Tail Control",
+                "Solitary Predators"
+            ]
+        },
+        {
+            "topic": [
+                "Whale",
+                "Whales"
+            ],
+            "entries": [
+                "Ocean Giants",
+                "Baleen or Toothed",
+                "Migratory Patterns",
+                "Songs"
+            ]
+        },
+        {
+            "topic": [
+                "Wombat",
+                "Wombats"
+            ],
+            "entries": [
+                "Burrowing",
+                "Marsupial",
+                "Square Poop",
+                "Nocturnal"
+            ]
+        },
+        {
+            "topic": [
+                "Sparrow",
+                "Sparrows"
+            ],
+            "entries": [
+                "Garden Bird",
+                "Brown Feathers",
+                "Chirpy Song",
+                "Nest Builders"
+            ]
+        },
+        {
+            "topic": [
+                "Alligator",
+                "Alligators"
+            ],
+            "entries": [
+                "Reptilian Predators",
+                "Swampy Environment",
+                "Powerful Jaw",
+                "Scaly Skin"
+            ]
+        },
+        {
+            "topic": [
+                "Koala",
+                "Koalas"
+            ],
+            "entries": [
+                "Eucalyptus Diet",
+                "Arboreal Lifestyle",
+                "Marsupial",
+                "Sleepy"
+            ]
+        },
+        {
+            "topic": [
+                "Bear",
+                "Bears"
+            ],
+            "entries": [
+                "Hibernation",
+                "Omnivorous",
+                "Grizzly Symbol",
+                "Powerful Claws"
+            ]
+        },
+        {
+            "topic": [
+                "Chameleon",
+                "Chameleons"
+            ],
+            "entries": [
+                "Color Change",
+                "Prehensile Tail",
+                "Tongue Extension",
+                "360-Degree Vision"
+            ]
+        },
+        {
+            "topic": [
+                "Ostrich",
+                "Ostriches"
+            ],
+            "entries": [
+                "Largest Bird",
+                "Flightless",
+                "Sprint Runner",
+                "Egg Producers"
+            ]
+        },
+        {
+            "topic": [
+                "Wolf",
+                "Wolves"
+            ],
+            "entries": [
+                "Howling Calls",
+                "Pack Dynamics",
+                "Carnivorous",
+                "Keen Senses"
+            ]
+        },
+        {
+            "topic": [
+                "Tiger",
+                "Tigers"
+            ],
+            "entries": [
+                "Siberian Subspecies",
+                "Striped Fur",
+                "Apex Predator",
+                "Territory Marking"
+            ]
+        },
+        {
+            "topic": [
+                "Owl",
+                "Owls"
+            ],
+            "entries": [
+                "Nocturnal Raptor",
+                "Silent Flight",
+                "360-Degree Neck",
+                "Keen Echolocation"
+            ]
+        },
+        {
+            "topic": [
+                "Flamingo",
+                "Flamingos"
+            ],
+            "entries": [
+                "Pink Hue",
+                "Filter Feeders",
+                "Shallow Water Habitats",
+                "Neck Flexibility"
+            ]
+        },
+        {
+            "topic": [
+                "Moose",
+                "Moose"
+            ],
+            "entries": [
+                "Large Antlers",
+                "Forested Areas",
+                "Herbivorous",
+                "Solitary"
+            ]
+        },
+        {
+            "topic": [
+                "Panda",
+                "Pandas"
+            ],
+            "entries": [
+                "Bamboo Diet",
+                "Endangered Species",
+                "Chinese Symbol",
+                "Gentle Nature"
+            ]
+        },
+        {
+            "topic": [
+                "Camel",
+                "Camels"
+            ],
+            "entries": [
+                "Desert Adaptation",
+                "Humps",
+                "Long Travels",
+                "Water Storage"
+            ]
+        },
+        {
+            "topic": [
+                "Seal",
+                "Seals"
+            ],
+            "entries": [
+                "Aquatic Mammals",
+                "Blubber Layer",
+                "Pinniped",
+                "Flipper Mobility"
+            ]
+        },
+        {
+            "topic": [
+                "Giraffe",
+                "Giraffes"
+            ],
+            "entries": [
+                "Long Neck",
+                "Savannah Browser",
+                "Unique Patterns",
+                "Tallest Animal"
+            ]
+        },
+        {
+            "topic": [
+                "Raccoon",
+                "Raccoons"
+            ],
+            "entries": [
+                "Nocturnal Habits",
+                "Masked Appearance",
+                "Dexterous Paws",
+                "Trash Pandas"
+            ]
+        }
+    ]
+}

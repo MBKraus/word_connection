@@ -1,0 +1,304 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Culinary Arts",
+                "Chef"
+            ],
+            "entries": [
+                "Gourmet Cuisine",
+                "Kitchen Brigade",
+                "Michelin Stars",
+                "Flavor Profiles"
+            ]
+        },
+        {
+            "topic": [
+                "Medicine",
+                "Physician"
+            ],
+            "entries": [
+                "Diagnosis",
+                "Healthcare",
+                "Treatment Plans",
+                "Patient Care"
+            ]
+        },
+        {
+            "topic": [
+                "Legal Profession",
+                "Lawyer"
+            ],
+            "entries": [
+                "Courtroom",
+                "Legal Advice",
+                "Contracts",
+                "Litigation"
+            ]
+        },
+        {
+            "topic": [
+                "Architecture",
+                "Architect"
+            ],
+            "entries": [
+                "Blueprints",
+                "Design Principles",
+                "Urban Planning",
+                "Building Codes"
+            ]
+        },
+        {
+            "topic": [
+                "Software Development",
+                "Programmer"
+            ],
+            "entries": [
+                "Code Debugging",
+                "Algorithms",
+                "Software Applications",
+                "User Interface"
+            ]
+        },
+        {
+            "topic": [
+                "Teaching",
+                "Educator"
+            ],
+            "entries": [
+                "Curriculum Design",
+                "Classroom Management",
+                "Assessment Methods",
+                "Educational Psychology"
+            ]
+        },
+        {
+            "topic": [
+                "Graphic Design",
+                "Designer"
+            ],
+            "entries": [
+                "Typography",
+                "Visual Identity",
+                "Software Tools",
+                "Palettes"
+            ]
+        },
+        {
+            "topic": [
+                "Engineering",
+                "Engineer"
+            ],
+            "entries": [
+                "Structural Analysis",
+                "CAD Software",
+                "Project Design",
+                "Technical Specifications"
+            ]
+        },
+        {
+            "topic": [
+                "Journalism",
+                "Reporter"
+            ],
+            "entries": [
+                "Investigative Reporting",
+                "News Desk",
+                "Editorials",
+                "Sources"
+            ]
+        },
+        {
+            "topic": [
+                "Photography",
+                "Photographer"
+            ],
+            "entries": [
+                "Camera Equipment",
+                "Editing Software",
+                "Composition",
+                "Lighting"
+            ]
+        },
+        {
+            "topic": [
+                "Accounting",
+                "Accountant"
+            ],
+            "entries": [
+                "Financial Statements",
+                "Auditing",
+                "Tax Compliance",
+                "Bookkeeping"
+            ]
+        },
+        {
+            "topic": [
+                "Nursing",
+                "Nurse"
+            ],
+            "entries": [
+                "Patient Monitoring",
+                "Medical Procedures",
+                "Record Keeping",
+                "Healthcare Settings"
+            ]
+        },
+        {
+            "topic": [
+                "Marketing",
+                "Marketer"
+            ],
+            "entries": [
+                "Customer Insights",
+                "Campaign Strategies",
+                "Branding",
+                "Lead Generation"
+            ]
+        },
+        {
+            "topic": [
+                "Real Estate",
+                "Realtor"
+            ],
+            "entries": [
+                "Property Listings",
+                "Market Trends",
+                "Negotiations",
+                "Open Houses"
+            ]
+        },
+        {
+            "topic": [
+                "Veterinary Medicine",
+                "Veterinarian"
+            ],
+            "entries": [
+                "Animal Surgery",
+                "Diagnostics",
+                "Client Education",
+                "Pet Care"
+            ]
+        },
+        {
+            "topic": [
+                "Music Production",
+                "Producer"
+            ],
+            "entries": [
+                "Sound Mixing",
+                "Recording Studios",
+                "Track Arrangement",
+                "Talent Scouting"
+            ]
+        },
+        {
+            "topic": [
+                "Librarianship",
+                "Librarian"
+            ],
+            "entries": [
+                "Information Management",
+                "Cataloging",
+                "Library Programs",
+                "Reference Services"
+            ]
+        },
+        {
+            "topic": [
+                "Carpentry",
+                "Carpenter"
+            ],
+            "entries": [
+                "Woodworking",
+                "Blueprint Reading",
+                "Tools",
+                "Framing Techniques"
+            ]
+        },
+        {
+            "topic": [
+                "Film Direction",
+                "Director"
+            ],
+            "entries": [
+                "Storyboard Planning",
+                "Casting Decisions",
+                "Set Design",
+                "Scene Blocking"
+            ]
+        },
+        {
+            "topic": [
+                "Fashion Design",
+                "Fashion Designer"
+            ],
+            "entries": [
+                "Textile Selection",
+                "Runway Shows",
+                "Sketching",
+                "Collection Themes"
+            ]
+        },
+        {
+            "topic": [
+                "Event Planning",
+                "Event Planner"
+            ],
+            "entries": [
+                "Venue Selection",
+                "Guest Lists",
+                "Budget Management",
+                "Itinerary Coordination"
+            ]
+        },
+        {
+            "topic": [
+                "Dentistry",
+                "Dentist"
+            ],
+            "entries": [
+                "Oral Hygiene",
+                "Restorative Procedures",
+                "X-rays",
+                "Patient Visits"
+            ]
+        },
+        {
+            "topic": [
+                "Pharmacy",
+                "Pharmacist"
+            ],
+            "entries": [
+                "Medication Dispensing",
+                "Prescription Review",
+                "Pharmaceutical Knowledge",
+                "Patient Counseling"
+            ]
+        },
+        {
+            "topic": [
+                "Bartending",
+                "Bartender"
+            ],
+            "entries": [
+                "Mixology",
+                "Customer Service",
+                "Liquor Inventory",
+                "Cocktail Recipes"
+            ]
+        },
+        {
+            "topic": [
+                "Agriculture",
+                "Farmer"
+            ],
+            "entries": [
+                "Crop Management",
+                "Soil Fertility",
+                "Livestock Care",
+                "Harvesting Techniques"
+            ]
+        }
+    ]
+}

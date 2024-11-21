@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Basketball",
+                "Hoops",
+                "Court Play"
+            ],
+            "entries": [
+                "Dribbling",
+                "Slam Dunk",
+                "Three Pointer",
+                "Shot Clock"
+            ]
+        },
+        {
+            "topic": [
+                "Chess",
+                "King's Game",
+                "Checkmate"
+            ],
+            "entries": [
+                "Check",
+                "Grandmaster",
+                "Opening",
+                "Endgame"
+            ]
+        },
+        {
+            "topic": [
+                "Soccer",
+                "Football",
+                "The Beautiful Game"
+            ],
+            "entries": [
+                "Penalty Kick",
+                "Goalkeeper",
+                "Offside",
+                "World Cup"
+            ]
+        },
+        {
+            "topic": [
+                "Tennis",
+                "Racket Sport",
+                "Court Rivalry"
+            ],
+            "entries": [
+                "Grand Slam",
+                "Backhand",
+                "Serve",
+                "Love"
+            ]
+        },
+        {
+            "topic": [
+                "Golf",
+                "Links",
+                "The Fairway Game"
+            ],
+            "entries": [
+                "Hole-in-One",
+                "Birdie",
+                "Caddie",
+                "Putter"
+            ]
+        },
+        {
+            "topic": [
+                "Baseball",
+                "Hardball",
+                "Diamond Sport"
+            ],
+            "entries": [
+                "Home Run",
+                "Pitcher",
+                "Infield",
+                "Dugout"
+            ]
+        },
+        {
+            "topic": [
+                "Cricket",
+                "The Gentleman's Game",
+                "Bat-and-Ball"
+            ],
+            "entries": [
+                "Wicket",
+                "Bowler",
+                "Innings",
+                "Test Match"
+            ]
+        },
+        {
+            "topic": [
+                "Table Tennis",
+                "Ping Pong",
+                "Paddle Sport"
+            ],
+            "entries": [
+                "Rally",
+                "Smash",
+                "Top Spin",
+                "Rubber"
+            ]
+        },
+        {
+            "topic": [
+                "Swimming",
+                "Aquatics",
+                "Pool Racing"
+            ],
+            "entries": [
+                "Freestyle",
+                "Breaststroke",
+                "Swim Cap",
+                "Laps"
+            ]
+        },
+        {
+            "topic": [
+                "Rugby",
+                "Rugger",
+                "Union"
+            ],
+            "entries": [
+                "Scrum",
+                "Try",
+                "Tackle",
+                "Lineout"
+            ]
+        },
+        {
+            "topic": [
+                "Volleyball",
+                "Beach Sport",
+                "Net Game"
+            ],
+            "entries": [
+                "Spike",
+                "Set",
+                "Block",
+                "Serve"
+            ]
+        },
+        {
+            "topic": [
+                "Badminton",
+                "Shuttlecock",
+                "Racket Game"
+            ],
+            "entries": [
+                "Smash",
+                "Drop Shot",
+                "Net Play",
+                "Clear"
+            ]
+        },
+        {
+            "topic": [
+                "Boxing",
+                "The Sweet Science",
+                "Pugilism"
+            ],
+            "entries": [
+                "Jab",
+                "Ring",
+                "Knockout",
+                "Round"
+            ]
+        },
+        {
+            "topic": [
+                "Wrestling",
+                "Grappling",
+                "Mat Sport"
+            ],
+            "entries": [
+                "Pin",
+                "Takedown",
+                "Submission",
+                "Ring"
+            ]
+        },
+        {
+            "topic": [
+                "Bowling",
+                "Tenpin",
+                "Lane Game"
+            ],
+            "entries": [
+                "Strike",
+                "Spare",
+                "Gutter Ball",
+                "Pins"
+            ]
+        },
+        {
+            "topic": [
+                "Cycling",
+                "Velocipede",
+                "Biking"
+            ],
+            "entries": [
+                "Tour de France",
+                "Helmet",
+                "Pedals",
+                "Drafting"
+            ]
+        },
+        {
+            "topic": [
+                "Fencing",
+                "Saber Sport",
+                "The Duel"
+            ],
+            "entries": [
+                "Foil",
+                "Parry",
+                "Lunge",
+                "En Garde"
+            ]
+        },
+        {
+            "topic": [
+                "Gymnastics",
+                "Floor Exercise",
+                "Gymnastic Sport"
+            ],
+            "entries": [
+                "Balance Beam",
+                "Vault",
+                "Routine",
+                "Springboard"
+            ]
+        },
+        {
+            "topic": [
+                "Sailing",
+                "Yachting",
+                "Nautical Racing"
+            ],
+            "entries": [
+                "Regatta",
+                "Sailboat",
+                "Knot",
+                "Spinnaker"
+            ]
+        },
+        {
+            "topic": [
+                "Surfing",
+                "Wave Riding",
+                "Board Sport"
+            ],
+            "entries": [
+                "Tube",
+                "Rip Curl",
+                "Longboard",
+                "Bikini Bottom"
+            ]
+        },
+        {
+            "topic": [
+                "Archery",
+                "Bow Shooting",
+                "Precision Sport"
+            ],
+            "entries": [
+                "Compound Bow",
+                "Target",
+                "Arrow",
+                "Quiver"
+            ]
+        },
+        {
+            "topic": [
+                "Equestrian",
+                "Horse Riding",
+                "Dressage"
+            ],
+            "entries": [
+                "Jumps",
+                "Stirrups",
+                "Bridle",
+                "Reins"
+            ]
+        },
+        {
+            "topic": [
+                "Hockey",
+                "Ice Sport",
+                "Pucks"
+            ],
+            "entries": [
+                "Zamboni",
+                "Stick Handling",
+                "Hat Trick",
+                "Power Play"
+            ]
+        },
+        {
+            "topic": [
+                "Skateboarding",
+                "Skating",
+                "Board Riding"
+            ],
+            "entries": [
+                "Ollie",
+                "Halfpipe",
+                "Kickflip",
+                "Grip Tape"
+            ]
+        },
+        {
+            "topic": [
+                "Field Hockey",
+                "Turf Sport",
+                "Grass Game"
+            ],
+            "entries": [
+                "Penalty Corner",
+                "Goal Cage",
+                "Stick",
+                "Dribble"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Theory of Relativity",
+                "Einstein's Relativity",
+                "Relativity Theory"
+            ],
+            "entries": [
+                "Space-time curvature",
+                "Speed of light",
+                "Mass-energy equivalence",
+                "Gravitational waves"
+            ]
+        },
+        {
+            "topic": [
+                "Penicillin",
+                "Antibiotic Drug",
+                "Mold-Derived Medicine"
+            ],
+            "entries": [
+                "Alexander Fleming",
+                "Bacteria",
+                "Infection treatment",
+                "Accidental discovery"
+            ]
+        },
+        {
+            "topic": [
+                "Internet",
+                "World Wide Web",
+                "Global Network"
+            ],
+            "entries": [
+                "Tim Berners-Lee",
+                "Digital communication",
+                "Web pages",
+                "Connectivity"
+            ]
+        },
+        {
+            "topic": [
+                "Telephone",
+                "Telecom Device",
+                "Speaking Machine"
+            ],
+            "entries": [
+                "Alexander Graham Bell",
+                "Voice transmission",
+                "Bell Labs",
+                "Long-distance"
+            ]
+        },
+        {
+            "topic": [
+                "DNA",
+                "Deoxyribonucleic Acid",
+                "Genetic Blueprint"
+            ],
+            "entries": [
+                "Double helix",
+                "Watson and Crick",
+                "Genetic code",
+                "Hereditary"
+            ]
+        },
+        {
+            "topic": [
+                "Steam Engine",
+                "Steam Power",
+                "Vapor Engine"
+            ],
+            "entries": [
+                "James Watt",
+                "Mechanized revolution",
+                "Industrialization",
+                "Boiling water"
+            ]
+        },
+        {
+            "topic": [
+                "Airplane",
+                "Aeroplane",
+                "Flying Machine"
+            ],
+            "entries": [
+                "Wilbur Wright",
+                "Powered flight",
+                "Aerodynamics",
+                "Wings"
+            ]
+        },
+        {
+            "topic": [
+                "Radio",
+                "Wireless Signal",
+                "Broadcasting Technology"
+            ],
+            "entries": [
+                "Guglielmo Marconi",
+                "Sound waves",
+                "AM/FM",
+                "Communication revolution"
+            ]
+        },
+        {
+            "topic": [
+                "Electricity",
+                "Electric Power",
+                "Current Flow"
+            ],
+            "entries": [
+                "Benjamin Franklin",
+                "Generators",
+                "Power lines",
+                "Electromagnetism"
+            ]
+        },
+        {
+            "topic": [
+                "Nuclear Energy",
+                "Atomic Power",
+                "Nuclear Power"
+            ],
+            "entries": [
+                "Fission and fusion",
+                "Radioactive materials",
+                "Electricity generation",
+                "Atom splitting"
+            ]
+        },
+        {
+            "topic": [
+                "Computer",
+                "Electronic Processor",
+                "Calculating Machine"
+            ],
+            "entries": [
+                "Central processing unit",
+                "Data storage",
+                "Binary code",
+                "Microchips"
+            ]
+        },
+        {
+            "topic": [
+                "Telephone",
+                "Telecom Device",
+                "Speaking Machine"
+            ],
+            "entries": [
+                "Alexander Graham Bell",
+                "Voice transmission",
+                "Bell Labs",
+                "Long-distance"
+            ]
+        },
+        {
+            "topic": [
+                "Vaccination",
+                "Inoculation",
+                "Immunization"
+            ],
+            "entries": [
+                "Edward Jenner",
+                "Virus prevention",
+                "Smallpox",
+                "Immunity"
+            ]
+        },
+        {
+            "topic": [
+                "Photography",
+                "Photo Capture",
+                "Light Image"
+            ],
+            "entries": [
+                "Daguerreotype",
+                "Exposure time",
+                "Camera obscura",
+                "Chemical reactions"
+            ]
+        },
+        {
+            "topic": [
+                "Television",
+                "TV",
+                "Broadcast Media"
+            ],
+            "entries": [
+                "Broadcast signals",
+                "Video display",
+                "Remote control",
+                "Entertainment"
+            ]
+        },
+        {
+            "topic": [
+                "Microscope",
+                "Magnifying Instrument",
+                "Optical Magnifier"
+            ],
+            "entries": [
+                "Antonie van Leeuwenhoek",
+                "Cellular structures",
+                "Lenses",
+                "Microscopic world"
+            ]
+        },
+        {
+            "topic": [
+                "Graphene",
+                "Carbon Nanostructure",
+                "Graphite Derivative"
+            ],
+            "entries": [
+                "Atomic lattice",
+                "Conduction",
+                "Andre Geim",
+                "Flexible electronics"
+            ]
+        },
+        {
+            "topic": [
+                "Bluetooth",
+                "Wireless Communication",
+                "Short-Range Radio"
+            ],
+            "entries": [
+                "Wireless connections",
+                "Signal pairing",
+                "Low energy",
+                "Cordless devices"
+            ]
+        },
+        {
+            "topic": [
+                "CRISPR",
+                "Gene Editing",
+                "DNA Editing Tool"
+            ],
+            "entries": [
+                "Cas9 protein",
+                "Genome modification",
+                "Precision editing",
+                "Biotechnology"
+            ]
+        },
+        {
+            "topic": [
+                "Quantum Computer",
+                "Quantum Computing",
+                "Qubit Processor"
+            ],
+            "entries": [
+                "Superposition",
+                "Quantum bits",
+                "Entanglement",
+                "Subatomic computation"
+            ]
+        },
+        {
+            "topic": [
+                "3D Printing",
+                "Additive Manufacturing",
+                "Layered Fabrication"
+            ],
+            "entries": [
+                "Digital models",
+                "Material layering",
+                "Design flexibility",
+                "Rapid prototyping"
+            ]
+        },
+        {
+            "topic": [
+                "Violin",
+                "Stringed Instrument",
+                "Fiddle"
+            ],
+            "entries": [
+                "Antonio Stradivari",
+                "Bow movement",
+                "Orchestral music",
+                "Sound resonance"
+            ]
+        },
+        {
+            "topic": [
+                "Hovercraft",
+                "Air-Cushion Vehicle",
+                "Amphibious Transport"
+            ],
+            "entries": [
+                "Cushion of air",
+                "Water and land",
+                "Propellers",
+                "Versatile mobility"
+            ]
+        },
+        {
+            "topic": [
+                "Renewable Energy",
+                "Sustainable Power",
+                "Green Electricity"
+            ],
+            "entries": [
+                "Solar panels",
+                "Wind turbines",
+                "Hydropower",
+                "Eco-friendly"
+            ]
+        },
+        {
+            "topic": [
+                "Smartphone",
+                "Mobile Phone",
+                "Cellular Device"
+            ],
+            "entries": [
+                "Touch screen",
+                "Mobile apps",
+                "Wireless internet",
+                "Communication tool"
+            ]
+        }
+    ]
+}

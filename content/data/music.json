@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "The Beatles",
+                "Fab Four",
+                "Beatlemania"
+            ],
+            "entries": [
+                "Liverpool",
+                "British Invasion",
+                "John Lennon",
+                "Abbey Road"
+            ]
+        },
+        {
+            "topic": [
+                "Beyonc\u00e9",
+                "Queen Bey",
+                "Bey"
+            ],
+            "entries": [
+                "Destiny's Child",
+                "Lemonade",
+                "Jay-Z",
+                "Houston"
+            ]
+        },
+        {
+            "topic": [
+                "Elvis Presley",
+                "The King",
+                "Elvis"
+            ],
+            "entries": [
+                "Graceland",
+                "Rock and Roll",
+                "Memphis",
+                "Jailhouse Rock"
+            ]
+        },
+        {
+            "topic": [
+                "Taylor Swift",
+                "Tay-Tay",
+                "Swift"
+            ],
+            "entries": [
+                "Red",
+                "Grammy Awards",
+                "Nashville",
+                "1989"
+            ]
+        },
+        {
+            "topic": [
+                "Queen",
+                "Freddie Mercury",
+                "Bohemian Rhapsody"
+            ],
+            "entries": [
+                "We Will Rock You",
+                "Glam Rock",
+                "Brian May",
+                "Live Aid"
+            ]
+        },
+        {
+            "topic": [
+                "The Rolling Stones",
+                "Stones",
+                "Mick Jagger"
+            ],
+            "entries": [
+                "Sympathy for the Devil",
+                "Keith Richards",
+                "British Rock",
+                "Exile on Main St."
+            ]
+        },
+        {
+            "topic": [
+                "Michael Jackson",
+                "MJ",
+                "King of Pop"
+            ],
+            "entries": [
+                "Moonwalk",
+                "Thriller",
+                "Neverland Ranch",
+                "Quincy Jones"
+            ]
+        },
+        {
+            "topic": [
+                "Madonna",
+                "Material Girl",
+                "Queen of Pop"
+            ],
+            "entries": [
+                "Vogue",
+                "Ray of Light",
+                "Blonde Ambition",
+                "Reinvention"
+            ]
+        },
+        {
+            "topic": [
+                "Led Zeppelin",
+                "Zeppelin",
+                "Zep"
+            ],
+            "entries": [
+                "Jimmy Page",
+                "Stairway to Heaven",
+                "Robert Plant",
+                "Hard Rock"
+            ]
+        },
+        {
+            "topic": [
+                "Whitney Houston",
+                "The Voice",
+                "Houston"
+            ],
+            "entries": [
+                "The Bodyguard",
+                "I Will Always Love You",
+                "Grammy Awards",
+                "Newark"
+            ]
+        },
+        {
+            "topic": [
+                "Adele",
+                "Adele Laurie",
+                "A"
+            ],
+            "entries": [
+                "21",
+                "Skyfall",
+                "London",
+                "Rolling in the Deep"
+            ]
+        },
+        {
+            "topic": [
+                "Pink Floyd",
+                "P. Floyd",
+                "David Gilmour"
+            ],
+            "entries": [
+                "The Wall",
+                "Dark Side of the Moon",
+                "Roger Waters",
+                "Psychedelic Rock"
+            ]
+        },
+        {
+            "topic": [
+                "Nirvana",
+                "Kurt Cobain",
+                "Grunge Band"
+            ],
+            "entries": [
+                "Seattle",
+                "Smells Like Teen Spirit",
+                "Nevermind",
+                "Dave Grohl"
+            ]
+        },
+        {
+            "topic": [
+                "BTS",
+                "Bangtan Boys",
+                "Bulletproof Boy Scouts"
+            ],
+            "entries": [
+                "K-pop",
+                "Dynamite",
+                "South Korea",
+                "ARMY (fans)"
+            ]
+        },
+        {
+            "topic": [
+                "Elton John",
+                "Sir Elton",
+                "Rocket Man"
+            ],
+            "entries": [
+                "Piano",
+                "Crocodile Rock",
+                "Goodbye Yellow Brick Road",
+                "Reginald Dwight"
+            ]
+        },
+        {
+            "topic": [
+                "Coldplay",
+                "Chris Martin",
+                "Clocks Band"
+            ],
+            "entries": [
+                "Viva La Vida",
+                "British Rock",
+                "Fix You",
+                "Parachutes"
+            ]
+        },
+        {
+            "topic": [
+                "U2",
+                "Bono Band",
+                "Irish Rockers"
+            ],
+            "entries": [
+                "Joshua Tree",
+                "Bono",
+                "Sunday Bloody Sunday",
+                "Dublin"
+            ]
+        },
+        {
+            "topic": [
+                "Lady Gaga",
+                "Stefani Germanotta",
+                "Gaga"
+            ],
+            "entries": [
+                "Poker Face",
+                "Born This Way",
+                "Artpop",
+                "Little Monsters"
+            ]
+        },
+        {
+            "topic": [
+                "Maroon 5",
+                "Adam Levine Band",
+                "M5"
+            ],
+            "entries": [
+                "Moves Like Jagger",
+                "Sugar",
+                "Los Angeles",
+                "The Voice"
+            ]
+        },
+        {
+            "topic": [
+                "Fleetwood Mac",
+                "Mac",
+                "Fleetwood"
+            ],
+            "entries": [
+                "Rumours",
+                "Stevie Nicks",
+                "Lindsey Buckingham",
+                "Christine McVie"
+            ]
+        },
+        {
+            "topic": [
+                "Shakira",
+                "Shakira Isabel",
+                "Shaki"
+            ],
+            "entries": [
+                "Hips Don't Lie",
+                "Colombian Singer",
+                "Waka Waka",
+                "Barranquilla"
+            ]
+        },
+        {
+            "topic": [
+                "Katy Perry",
+                "Katheryn Hudson",
+                "KP"
+            ],
+            "entries": [
+                "Teenage Dream",
+                "Roar",
+                "California Gurls",
+                "Prism"
+            ]
+        },
+        {
+            "topic": [
+                "Rihanna",
+                "RiRi",
+                "Fenty"
+            ],
+            "entries": [
+                "Barbados",
+                "Umbrella",
+                "Fenty Beauty",
+                "Savage X Fenty"
+            ]
+        },
+        {
+            "topic": [
+                "The Eagles",
+                "Eagles",
+                "Eag"
+            ],
+            "entries": [
+                "Hotel California",
+                "Don Henley",
+                "Glenn Frey",
+                "1970s Rock"
+            ]
+        },
+        {
+            "topic": [
+                "Billie Eilish",
+                "Pirate Baird",
+                "Eilish"
+            ],
+            "entries": [
+                "Bad Guy",
+                "Finneas",
+                "LA Singer",
+                "Ocean Eyes"
+            ]
+        }
+    ]
+}

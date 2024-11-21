@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Pizza",
+                "Pizzeria",
+                "Italian Pie"
+            ],
+            "entries": [
+                "Mozzarella",
+                "Pepperoni",
+                "Tomato Sauce",
+                "Brick Oven"
+            ]
+        },
+        {
+            "topic": [
+                "Ramen",
+                "Japanese Noodles",
+                "Instant Ramen"
+            ],
+            "entries": [
+                "Broth",
+                "Noodles",
+                "Egg",
+                "Soy Sauce"
+            ]
+        },
+        {
+            "topic": [
+                "Tacos",
+                "Taco",
+                "Mexican Wrap"
+            ],
+            "entries": [
+                "Tortilla",
+                "Salsa",
+                "Guacamole",
+                "Carnitas"
+            ]
+        },
+        {
+            "topic": [
+                "Curry",
+                "Curries",
+                "Indian Stew"
+            ],
+            "entries": [
+                "Spices",
+                "Turmeric",
+                "Coconut Milk",
+                "Chilies"
+            ]
+        },
+        {
+            "topic": [
+                "Dim Sum",
+                "Yum Cha",
+                "Cantonese Tapas"
+            ],
+            "entries": [
+                "Bamboo Steamer",
+                "Dumplings",
+                "Tea",
+                "Shrimp"
+            ]
+        },
+        {
+            "topic": [
+                "Burger",
+                "Burgers",
+                "Hamburger"
+            ],
+            "entries": [
+                "Beef Patty",
+                "Lettuce",
+                "Cheese",
+                "Sesame Bun"
+            ]
+        },
+        {
+            "topic": [
+                "Pasta",
+                "Spaghetti",
+                "Italian Noodles"
+            ],
+            "entries": [
+                "Alfredo Sauce",
+                "Basil",
+                "Parmesan",
+                "Penne"
+            ]
+        },
+        {
+            "topic": [
+                "Samosa",
+                "Samusa",
+                "Indian Pastry"
+            ],
+            "entries": [
+                "Spiced Potatoes",
+                "Peas",
+                "Crispy Dough",
+                "Cumin"
+            ]
+        },
+        {
+            "topic": [
+                "Falafel",
+                "Falafels",
+                "Middle Eastern Fritter"
+            ],
+            "entries": [
+                "Chickpeas",
+                "Cilantro",
+                "Pita Bread",
+                "Tahini"
+            ]
+        },
+        {
+            "topic": [
+                "Goulash",
+                "Hungarian Stew",
+                "Paprikash"
+            ],
+            "entries": [
+                "Beef",
+                "Paprika",
+                "Onions",
+                "Bell Peppers"
+            ]
+        },
+        {
+            "topic": [
+                "Quiche",
+                "Kish",
+                "French Tart"
+            ],
+            "entries": [
+                "Eggs",
+                "Bacon",
+                "Swiss Cheese",
+                "Pastry Crust"
+            ]
+        },
+        {
+            "topic": [
+                "Pho",
+                "Vietnamese Soup",
+                "Fuh"
+            ],
+            "entries": [
+                "Rice Noodles",
+                "Beef Broth",
+                "Basil",
+                "Lime"
+            ]
+        },
+        {
+            "topic": [
+                "Shawarma",
+                "Schwarma",
+                "Middle Eastern Wrap"
+            ],
+            "entries": [
+                "Rotisserie Meat",
+                "Garlic Sauce",
+                "Pickles",
+                "Flatbread"
+            ]
+        },
+        {
+            "topic": [
+                "Tapas",
+                "Spanish Appetizers",
+                "Tapa"
+            ],
+            "entries": [
+                "Olives",
+                "Chorizo",
+                "Patatas Bravas",
+                "Manchego Cheese"
+            ]
+        },
+        {
+            "topic": [
+                "Paella",
+                "Spanish Rice",
+                "Seafood Paella"
+            ],
+            "entries": [
+                "Saffron",
+                "Socarrat",
+                "Shellfish",
+                "Bell Peppers"
+            ]
+        },
+        {
+            "topic": [
+                "Sushi",
+                "Sashimi",
+                "Raw Fish"
+            ],
+            "entries": [
+                "Seaweed",
+                "Wasabi",
+                "Ginger",
+                "Soy Sauce"
+            ]
+        },
+        {
+            "topic": [
+                "Moussaka",
+                "Musaka",
+                "Greek Casserole"
+            ],
+            "entries": [
+                "Eggplant",
+                "B\u00e9chamel Sauce",
+                "Ground Lamb",
+                "Nutmeg"
+            ]
+        },
+        {
+            "topic": [
+                "Borscht",
+                "Borshch",
+                "Beet Soup"
+            ],
+            "entries": [
+                "Beets",
+                "Sour Cream",
+                "Dill",
+                "Cabbage"
+            ]
+        },
+        {
+            "topic": [
+                "Gumbo",
+                "Southern Stew",
+                "Cajun Stew"
+            ],
+            "entries": [
+                "Okra",
+                "Andouille Sausage",
+                "Rice",
+                "Roux"
+            ]
+        },
+        {
+            "topic": [
+                "Biryani",
+                "Biryani Rice",
+                "Indian Pilaf"
+            ],
+            "entries": [
+                "Basmati Rice",
+                "Saffron",
+                "Cardamom",
+                "Chicken"
+            ]
+        },
+        {
+            "topic": [
+                "Schnitzel",
+                "Shnitzel",
+                "Wiener Schnitzel"
+            ],
+            "entries": [
+                "Breaded Meat",
+                "Lemon",
+                "Parsley",
+                "Lard"
+            ]
+        },
+        {
+            "topic": [
+                "Poutine",
+                "Qu\u00e9b\u00e9cois Fries",
+                "Cheese Curds"
+            ],
+            "entries": [
+                "Gravy",
+                "French Fries",
+                "Cheese Curds",
+                "Brown Sauce"
+            ]
+        },
+        {
+            "topic": [
+                "Kimchi",
+                "Kimchee",
+                "Fermented Vegetables"
+            ],
+            "entries": [
+                "Korean Cabbage",
+                "Chili Pepper",
+                "Garlic",
+                "Ginger"
+            ]
+        },
+        {
+            "topic": [
+                "Gazpacho",
+                "Gazpacho Soup",
+                "Cold Tomato Soup"
+            ],
+            "entries": [
+                "Tomatoes",
+                "Cucumbers",
+                "Peppers",
+                "Olive Oil"
+            ]
+        },
+        {
+            "topic": [
+                "Gnocchi",
+                "Italian Dumplings",
+                "Potato Pasta"
+            ],
+            "entries": [
+                "Potato",
+                "Flour",
+                "Egg",
+                "Alfredo Sauce"
+            ]
+        }
+    ]
+}
