@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Refrigerator",
+                "Fridge",
+                "Icebox"
+            ],
+            "entries": [
+                "Cool Storage",
+                "Thermostat Control",
+                "Shelving Racks",
+                "Energy Efficiency"
+            ]
+        },
+        {
+            "topic": [
+                "Sunglasses",
+                "Shades",
+                "Eyewear"
+            ],
+            "entries": [
+                "UV Protection",
+                "Polarized Lenses",
+                "Fashion Accessory",
+                "Summer Essential"
+            ]
+        },
+        {
+            "topic": [
+                "Shoes",
+                "Footwear",
+                "Sneakers"
+            ],
+            "entries": [
+                "Arch Support",
+                "Soles",
+                "Laces",
+                "Athletic Use"
+            ]
+        },
+        {
+            "topic": [
+                "Pencil",
+                "Graphite Stick",
+                "Writing Tool"
+            ],
+            "entries": [
+                "Eraser Tip",
+                "Wooden Shaft",
+                "Graphite Core",
+                "Sketching"
+            ]
+        },
+        {
+            "topic": [
+                "Microwave",
+                "Microwave Oven",
+                "Microwave Cooker"
+            ],
+            "entries": [
+                "Quick Heating",
+                "Rotating Tray",
+                "Radiation",
+                "Digital Timer"
+            ]
+        },
+        {
+            "topic": [
+                "Keyboard",
+                "Keypad",
+                "Typing Device"
+            ],
+            "entries": [
+                "QWERTY Layout",
+                "Mechanical Keys",
+                "Wireless Function",
+                "Backlighting"
+            ]
+        },
+        {
+            "topic": [
+                "Chair",
+                "Seating",
+                "Stool"
+            ],
+            "entries": [
+                "Ergonomic Design",
+                "Upholstered Seat",
+                "Back Support",
+                "Dining Room"
+            ]
+        },
+        {
+            "topic": [
+                "Couch",
+                "Sofa",
+                "Settee"
+            ],
+            "entries": [
+                "Cushioned Seats",
+                "Living Room",
+                "Reclining Options",
+                "Fabric Choices"
+            ]
+        },
+        {
+            "topic": [
+                "Backpack",
+                "Rucksack",
+                "Knapsack"
+            ],
+            "entries": [
+                "Padded Straps",
+                "Multiple Compartments",
+                "Outdoor Gear",
+                "Zipper Closure"
+            ]
+        },
+        {
+            "topic": [
+                "Watch",
+                "Wristwatch",
+                "Timepiece"
+            ],
+            "entries": [
+                "Analog Dial",
+                "Digital Display",
+                "Quartz Movement",
+                "Water Resistance"
+            ]
+        },
+        {
+            "topic": [
+                "Apple",
+                "Apples",
+                "Orchard Fruit"
+            ],
+            "entries": [
+                "Red Delicious",
+                "Sweet Taste",
+                "Crunchy Texture",
+                "Snack Food"
+            ]
+        },
+        {
+            "topic": [
+                "Television",
+                "TV",
+                "Flat Screen"
+            ],
+            "entries": [
+                "Remote Control",
+                "Streaming Apps",
+                "High Definition",
+                "Wall Mount"
+            ]
+        },
+        {
+            "topic": [
+                "Bicycle",
+                "Bike",
+                "Cycle"
+            ],
+            "entries": [
+                "Two Wheels",
+                "Pedal Power",
+                "Mountain Trails",
+                "Chain Drive"
+            ]
+        },
+        {
+            "topic": [
+                "Toothbrush",
+                "Brush",
+                "Dental Tool"
+            ],
+            "entries": [
+                "Bristles",
+                "Handle Grip",
+                "Oral Hygiene",
+                "Electric Option"
+            ]
+        },
+        {
+            "topic": [
+                "Coffee Maker",
+                "Coffeemaker",
+                "Brewing Machine"
+            ],
+            "entries": [
+                "Drip Brew",
+                "Carafe",
+                "Coffee Grounds",
+                "Timer Settings"
+            ]
+        },
+        {
+            "topic": [
+                "Umbrella",
+                "Brolly",
+                "Rainshade"
+            ],
+            "entries": [
+                "Waterproof Fabric",
+                "Collapsible Frame",
+                "Handle",
+                "Rain Protection"
+            ]
+        },
+        {
+            "topic": [
+                "Lamp",
+                "Light",
+                "Lampshade"
+            ],
+            "entries": [
+                "Bulb Socket",
+                "Adjustable Neck",
+                "Nightstand",
+                "Soft Lighting"
+            ]
+        },
+        {
+            "topic": [
+                "Hat",
+                "Cap",
+                "Headwear"
+            ],
+            "entries": [
+                "Brimmed",
+                "Warmth",
+                "Fashion Statement",
+                "Shade Provider"
+            ]
+        },
+        {
+            "topic": [
+                "Sweatshirt",
+                "Jumper",
+                "Pullover"
+            ],
+            "entries": [
+                "Hooded",
+                "Fleece Lined",
+                "Sporty Look",
+                "Casual Wear"
+            ]
+        },
+        {
+            "topic": [
+                "Laptop",
+                "Notebook",
+                "Portable Computer"
+            ],
+            "entries": [
+                "Battery Life",
+                "Touchpad",
+                "USB Ports",
+                "Processing Power"
+            ]
+        },
+        {
+            "topic": [
+                "Mug",
+                "Cup",
+                "Ceramic Vessel"
+            ],
+            "entries": [
+                "Handle",
+                "Hot Beverages",
+                "Dishwasher Safe",
+                "Personalized Designs"
+            ]
+        },
+        {
+            "topic": [
+                "Glasses",
+                "Spectacles",
+                "Eyeglasses"
+            ],
+            "entries": [
+                "Prescription Lenses",
+                "Optical Frame",
+                "Clear Vision",
+                "Lens Coating"
+            ]
+        },
+        {
+            "topic": [
+                "Notebook",
+                "Journal",
+                "Writing Book"
+            ],
+            "entries": [
+                "Ruled Pages",
+                "Hard Cover",
+                "Spiral Binding",
+                "Note-Taking"
+            ]
+        },
+        {
+            "topic": [
+                "Guitar",
+                "Strings",
+                "Music Instrument"
+            ],
+            "entries": [
+                "Acoustic",
+                "Electric Pickups",
+                "Fretboard",
+                "Strumming"
+            ]
+        },
+        {
+            "topic": [
+                "Wallet",
+                "Billfold",
+                "Pocketbook"
+            ],
+            "entries": [
+                "Card Slots",
+                "Cash Compartment",
+                "Leather Finish",
+                "ID Window"
+            ]
+        }
+    ]
+}

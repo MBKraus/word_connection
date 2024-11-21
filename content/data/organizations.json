@@ -1,0 +1,306 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "United Nations",
+                "UN"
+            ],
+            "entries": [
+                "Peacekeeping Missions",
+                "Security Council",
+                "International Law",
+                "Humanitarian Aid"
+            ]
+        },
+        {
+            "topic": [
+                "NASA",
+                "National Aeronautics and Space Administration"
+            ],
+            "entries": [
+                "Space Exploration",
+                "Mars Rover",
+                "Astronauts",
+                "Rocket Launches"
+            ]
+        },
+        {
+            "topic": [
+                "World Health Organization",
+                "WHO"
+            ],
+            "entries": [
+                "Vaccination Programs",
+                "Global Health",
+                "Disease Control",
+                "International Cooperation"
+            ]
+        },
+        {
+            "topic": [
+                "European Union",
+                "EU"
+            ],
+            "entries": [
+                "Monetary Union",
+                "European Commission",
+                "Brussels Headquarters",
+                "Single Market"
+            ]
+        },
+        {
+            "topic": [
+                "International Monetary Fund",
+                "IMF"
+            ],
+            "entries": [
+                "Financial Stability",
+                "Economic Surveillance",
+                "Currency Exchange",
+                "International Loans"
+            ]
+        },
+        {
+            "topic": [
+                "North Atlantic Treaty Organization",
+                "NATO"
+            ],
+            "entries": [
+                "Military Alliance",
+                "Collective Defense",
+                "Transatlantic Security",
+                "Strategic Partnerships"
+            ]
+        },
+        {
+            "topic": [
+                "World Trade Organization",
+                "WTO"
+            ],
+            "entries": [
+                "Global Commerce",
+                "Trade Disputes",
+                "International Standards",
+                "Market Access"
+            ]
+        },
+        {
+            "topic": [
+                "Interpol",
+                "International Criminal Police Organization"
+            ],
+            "entries": [
+                "Global Policing",
+                "Crime Data Exchange",
+                "International Collaboration",
+                "Fugitive Apprehension"
+            ]
+        },
+        {
+            "topic": [
+                "Red Cross",
+                "International Red Crescent",
+                "ICRC"
+            ],
+            "entries": [
+                "Disaster Relief",
+                "Blood Donation",
+                "Humanitarian Aid",
+                "Medical Assistance"
+            ]
+        },
+        {
+            "topic": [
+                "Google",
+                "Alphabet Inc."
+            ],
+            "entries": [
+                "Search Engine",
+                "Ad Technology",
+                "Android",
+                "Cloud Computing"
+            ]
+        },
+        {
+            "topic": [
+                "United States Department of Defense",
+                "DoD"
+            ],
+            "entries": [
+                "National Security",
+                "Military Operations",
+                "Pentagon Headquarters",
+                "Defense Spending"
+            ]
+        },
+        {
+            "topic": [
+                "Amnesty International",
+                "AI"
+            ],
+            "entries": [
+                "Human Rights Advocacy",
+                "Press Freedom",
+                "Campaigns",
+                "Political Prisoners"
+            ]
+        },
+        {
+            "topic": [
+                "The British Museum",
+                "BM"
+            ],
+            "entries": [
+                "Artifacts",
+                "Egyptian Mummies",
+                "Cultural History",
+                "Public Exhibitions"
+            ]
+        },
+        {
+            "topic": [
+                "International Olympic Committee",
+                "IOC"
+            ],
+            "entries": [
+                "Sporting Events",
+                "Olympic Games",
+                "Athlete Regulations",
+                "Worldwide Participation"
+            ]
+        },
+        {
+            "topic": [
+                "Federal Reserve",
+                "The Fed"
+            ],
+            "entries": [
+                "Monetary Policy",
+                "Interest Rates",
+                "Federal Open Market Committee",
+                "Bank Regulation"
+            ]
+        },
+        {
+            "topic": [
+                "Greenpeace",
+                "GP"
+            ],
+            "entries": [
+                "Environmental Activism",
+                "Ocean Conservation",
+                "Climate Change Campaigns",
+                "Forest Protection"
+            ]
+        },
+        {
+            "topic": [
+                "Harvard University",
+                "Harvard College"
+            ],
+            "entries": [
+                "Ivy League",
+                "Research Institution",
+                "Cambridge, Massachusetts",
+                "Alumni Network"
+            ]
+        },
+        {
+            "topic": [
+                "World Wildlife Fund",
+                "WWF"
+            ],
+            "entries": [
+                "Conservation Projects",
+                "Biodiversity",
+                "Endangered Species",
+                "Habitat Protection"
+            ]
+        },
+        {
+            "topic": [
+                "Mayo Clinic",
+                "Mayo Foundation"
+            ],
+            "entries": [
+                "Medical Research",
+                "Healthcare Clinics",
+                "Rochester, Minnesota",
+                "Patient Care"
+            ]
+        },
+        {
+            "topic": [
+                "Amazon",
+                "Amazon.com"
+            ],
+            "entries": [
+                "E-commerce",
+                "Cloud Services",
+                "Shipping Logistics",
+                "Consumer Electronics"
+            ]
+        },
+        {
+            "topic": [
+                "National Aeronautics and Space Administration",
+                "NASA"
+            ],
+            "entries": [
+                "Space Exploration",
+                "Mars Rover",
+                "Astronauts",
+                "Rocket Launches"
+            ]
+        },
+        {
+            "topic": [
+                "Royal Shakespeare Company",
+                "RSC"
+            ],
+            "entries": [
+                "Theatrical Productions",
+                "Shakespearean Plays",
+                "Stratford-upon-Avon",
+                "Live Performances"
+            ]
+        },
+        {
+            "topic": [
+                "Smithsonian Institution",
+                "Smithsonian",
+                "The Smithsonian"
+            ],
+            "entries": [
+                "Museums Complex",
+                "Scientific Research",
+                "Cultural Preservation",
+                "Educational Outreach"
+            ]
+        },
+        {
+            "topic": [
+                "United Nations Educational, Scientific and Cultural Organization",
+                "UNESCO"
+            ],
+            "entries": [
+                "World Heritage Sites",
+                "Cultural Education",
+                "Science Initiatives",
+                "Peace Promotion"
+            ]
+        },
+        {
+            "topic": [
+                "International Court of Justice",
+                "ICJ"
+            ],
+            "entries": [
+                "Judicial Decisions",
+                "International Law",
+                "The Hague",
+                "Dispute Resolution"
+            ]
+        }
+    ]
+}

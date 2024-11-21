@@ -1,0 +1,329 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Olympics",
+                "The Olympic Games",
+                "Summer Olympics"
+            ],
+            "entries": [
+                "Opening Ceremony",
+                "Track and Field",
+                "Gold Medal",
+                "Olympic Rings"
+            ]
+        },
+        {
+            "topic": [
+                "World War II",
+                "WWII",
+                "Second World War"
+            ],
+            "entries": [
+                "Axis Powers",
+                "Allied Forces",
+                "D-Day",
+                "Holocaust"
+            ]
+        },
+        {
+            "topic": [
+                "Super Bowl",
+                "Superbowl",
+                "NFL Championship"
+            ],
+            "entries": [
+                "Halftime Show",
+                "Lombardi Trophy",
+                "Commercials",
+                "Tailgate"
+            ]
+        },
+        {
+            "topic": [
+                "Renaissance",
+                "The Renaissance Period",
+                "Renaissance Era"
+            ],
+            "entries": [
+                "Leonardo da Vinci",
+                "Michelangelo",
+                "Florence",
+                "Humanism"
+            ]
+        },
+        {
+            "topic": [
+                "Independence Day (USA)",
+                "Fourth of July",
+                "July 4th"
+            ],
+            "entries": [
+                "Fireworks",
+                "Barbecue",
+                "Parade",
+                "Declaration of Independence"
+            ]
+        },
+        {
+            "topic": [
+                "World Cup",
+                "FIFA World Cup",
+                "Football World Cup"
+            ],
+            "entries": [
+                "Trophy Ceremony",
+                "Penalty Shootout",
+                "Group Stage",
+                "Fan Zones"
+            ]
+        },
+        {
+            "topic": [
+                "American Revolution",
+                "Revolutionary War",
+                "War of Independence"
+            ],
+            "entries": [
+                "Boston Tea Party",
+                "Continental Army",
+                "George Washington",
+                "Yorktown"
+            ]
+        },
+        {
+            "topic": [
+                "Great Depression",
+                "Economic Depression",
+                "1930s Depression"
+            ],
+            "entries": [
+                "Stock Market Crash",
+                "Dust Bowl",
+                "New Deal",
+                "Hoovervilles"
+            ]
+        },
+        {
+            "topic": [
+                "French Revolution",
+                "Revolution of 1789",
+                "French Rebellion"
+            ],
+            "entries": [
+                "Bastille Storming",
+                "Napoleon Bonaparte",
+                "Reign of Terror",
+                "Louis XVI"
+            ]
+        },
+        {
+            "topic": [
+                "Cold War",
+                "US-Soviet Tension",
+                "Nuclear Standoff"
+            ],
+            "entries": [
+                "Cuban Missile Crisis",
+                "Berlin Wall",
+                "Space Race",
+                "Iron Curtain"
+            ]
+        },
+        {
+            "topic": [
+                "Civil Rights Movement",
+                "African-American Civil Rights",
+                "US Civil Rights Era"
+            ],
+            "entries": [
+                "Martin Luther King Jr.",
+                "Selma March",
+                "Freedom Rides",
+                "Civil Rights Act"
+            ]
+        },
+        {
+            "topic": [
+                "World War I",
+                "WWI",
+                "The Great War"
+            ],
+            "entries": [
+                "Trench Warfare",
+                "Archduke Assassination",
+                "Western Front",
+                "Treaty of Versailles"
+            ]
+        },
+        {
+            "topic": [
+                "Apollo Moon Landing",
+                "Moon Mission 1969",
+                "Apollo 11"
+            ],
+            "entries": [
+                "Neil Armstrong",
+                "Lunar Module",
+                "Sea of Tranquility",
+                "Buzz Aldrin"
+            ]
+        },
+        {
+            "topic": [
+                "Fall of the Berlin Wall",
+                "Berlin Wall Collapse",
+                "Reunification of Germany"
+            ],
+            "entries": [
+                "Checkpoint Charlie",
+                "East Germany",
+                "West Berlin",
+                "November 1989"
+            ]
+        },
+        {
+            "topic": [
+                "Spanish Inquisition",
+                "Inquisition in Spain",
+                "Religious Tribunal"
+            ],
+            "entries": [
+                "Torture Chambers",
+                "Queen Isabella",
+                "Auto-da-f\u00e9",
+                "Tomas de Torquemada"
+            ]
+        },
+        {
+            "topic": [
+                "Industrial Revolution",
+                "Industrial Age",
+                "Industrial Period"
+            ],
+            "entries": [
+                "Steam Engine",
+                "Factory System",
+                "Urbanization",
+                "Coal Mines"
+            ]
+        },
+        {
+            "topic": [
+                "9/11 Attacks",
+                "September 11",
+                "Twin Towers Attack"
+            ],
+            "entries": [
+                "World Trade Center",
+                "Pentagon",
+                "Al-Qaeda",
+                "Ground Zero"
+            ]
+        },
+        {
+            "topic": [
+                "Crusades",
+                "Holy Wars",
+                "Medieval Crusades"
+            ],
+            "entries": [
+                "Knights Templar",
+                "Holy Land",
+                "Pope Urban II",
+                "Jerusalem"
+            ]
+        },
+        {
+            "topic": [
+                "Prohibition Era",
+                "Alcohol Prohibition",
+                "18th Amendment Era"
+            ],
+            "entries": [
+                "Speakeasies",
+                "Al Capone",
+                "Bootlegging",
+                "Volstead Act"
+            ]
+        },
+        {
+            "topic": [
+                "Space Race",
+                "Space Exploration Era",
+                "US-Soviet Space Competition"
+            ],
+            "entries": [
+                "Sputnik Launch",
+                "Apollo Program",
+                "Yuri Gagarin",
+                "NASA Mercury"
+            ]
+        },
+        {
+            "topic": [
+                "Great Wall of China",
+                "Chinese Fortress Wall",
+                "China Wall"
+            ],
+            "entries": [
+                "Ming Dynasty",
+                "Defensive Structure",
+                "Brick Towers",
+                "Silk Road"
+            ]
+        },
+        {
+            "topic": [
+                "Vietnam War",
+                "Vietnam Conflict",
+                "Second Indochina War"
+            ],
+            "entries": [
+                "Viet Cong",
+                "Tet Offensive",
+                "Saigon Fall",
+                "Agent Orange"
+            ]
+        },
+        {
+            "topic": [
+                "Titanic Voyage",
+                "RMS Titanic",
+                "Sinking of Titanic"
+            ],
+            "entries": [
+                "Iceberg Collision",
+                "Lifeboats",
+                "First-Class Passengers",
+                "April 1912"
+            ]
+        },
+        {
+            "topic": [
+                "Cuban Missile Crisis",
+                "Missile Scare",
+                "October Crisis"
+            ],
+            "entries": [
+                "Nuclear Threat",
+                "Khrushchev",
+                "JFK",
+                "Blockade"
+            ]
+        },
+        {
+            "topic": [
+                "Thirty Years' War",
+                "War of Religions",
+                "Habsburg Conflict"
+            ],
+            "entries": [
+                "Peace of Westphalia",
+                "Bohemian Revolt",
+                "Protestant-Catholic",
+                "Habsburgs"
+            ]
+        }
+    ]
+}

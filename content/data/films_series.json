@@ -1,0 +1,279 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Harry Potter"
+            ],
+            "entries": [
+                "Hogwarts",
+                "Wands",
+                "Quidditch",
+                "Muggle"
+            ]
+        },
+        {
+            "topic": [
+                "Breaking Bad"
+            ],
+            "entries": [
+                "Meth",
+                "Heisenberg",
+                "RV",
+                "Chemistry"
+            ]
+        },
+        {
+            "topic": [
+                "The Lord of the Rings"
+            ],
+            "entries": [
+                "Middle-earth",
+                "Frodo",
+                "Ring",
+                "Mordor"
+            ]
+        },
+        {
+            "topic": [
+                "The Godfather"
+            ],
+            "entries": [
+                "Mafia",
+                "Vito Corleone",
+                "Sicily",
+                "Cannoli"
+            ]
+        },
+        {
+            "topic": [
+                "Inception"
+            ],
+            "entries": [
+                "Dreams",
+                "Totem",
+                "DiCaprio",
+                "Mind-bending"
+            ]
+        },
+        {
+            "topic": [
+                "Friends"
+            ],
+            "entries": [
+                "Central Perk",
+                "Ross",
+                "Rachel",
+                "Sitcom"
+            ]
+        },
+        {
+            "topic": [
+                "Stranger Things"
+            ],
+            "entries": [
+                "Hawkins",
+                "Demogorgon",
+                "Upside Down",
+                "80s"
+            ]
+        },
+        {
+            "topic": [
+                "Avatar"
+            ],
+            "entries": [
+                "Pandora",
+                "Na'vi",
+                "James Cameron",
+                "Bioluminescence"
+            ]
+        },
+        {
+            "topic": [
+                "Game of Thrones"
+            ],
+            "entries": [
+                "Westeros",
+                "Dragons",
+                "Iron Throne",
+                "Starks"
+            ]
+        },
+        {
+            "topic": [
+                "Titanic"
+            ],
+            "entries": [
+                "Iceberg",
+                "Jack Dawson",
+                "RMS Titanic",
+                "Chamberlain"
+            ]
+        },
+        {
+            "topic": [
+                "Jurassic Park"
+            ],
+            "entries": [
+                "Dinosaurs",
+                "Isla Nublar",
+                "T-Rex",
+                "Spielberg"
+            ]
+        },
+        {
+            "topic": [
+                "The Simpsons"
+            ],
+            "entries": [
+                "Springfield",
+                "Homer",
+                "Duff Beer",
+                "Yellow"
+            ]
+        },
+        {
+            "topic": [
+                "The Walking Dead"
+            ],
+            "entries": [
+                "Zombies",
+                "Rick Grimes",
+                "Apocalypse",
+                "AMC"
+            ]
+        },
+        {
+            "topic": [
+                "Lost"
+            ],
+            "entries": [
+                "Oceanic Flight 815",
+                "Island",
+                "Smoke Monster",
+                "Hatch"
+            ]
+        },
+        {
+            "topic": [
+                "Sherlock Holmes"
+            ],
+            "entries": [
+                "Detective",
+                "Watson",
+                "London",
+                "221B Baker Street"
+            ]
+        },
+        {
+            "topic": [
+                "House of Cards"
+            ],
+            "entries": [
+                "Political Drama",
+                "Frank Underwood",
+                "Washington D.C.",
+                "Power"
+            ]
+        },
+        {
+            "topic": [
+                "The Office"
+            ],
+            "entries": [
+                "Dunder Mifflin",
+                "Scranton",
+                "Pam",
+                "Michael Scott"
+            ]
+        },
+        {
+            "topic": [
+                "Mad Men"
+            ],
+            "entries": [
+                "Advertising",
+                "1960s",
+                "Don Draper",
+                "Madison Avenue"
+            ]
+        },
+        {
+            "topic": [
+                "The Big Lebowski"
+            ],
+            "entries": [
+                "Bowling",
+                "Dude",
+                "Rug",
+                "Coen Brothers"
+            ]
+        },
+        {
+            "topic": [
+                "Blade Runner"
+            ],
+            "entries": [
+                "Replicants",
+                "Los Angeles",
+                "Deckard",
+                "Sci-Fi Noir"
+            ]
+        },
+        {
+            "topic": [
+                "Toy Story"
+            ],
+            "entries": [
+                "Buzz Lightyear",
+                "Woody",
+                "Pixar",
+                "Andy's Room"
+            ]
+        },
+        {
+            "topic": [
+                "The Crown"
+            ],
+            "entries": [
+                "Queen Elizabeth",
+                "Netflix",
+                "British Monarchy",
+                "Windsor"
+            ]
+        },
+        {
+            "topic": [
+                "Seinfeld"
+            ],
+            "entries": [
+                "Jerry",
+                "Elaine",
+                "Kramer",
+                "Soup Nazi"
+            ]
+        },
+        {
+            "topic": [
+                "Westworld"
+            ],
+            "entries": [
+                "Androids",
+                "Wild West",
+                "Theme Park",
+                "HBO"
+            ]
+        },
+        {
+            "topic": [
+                "The Witcher"
+            ],
+            "entries": [
+                "Geralt of Rivia",
+                "Monsters",
+                "Swordplay",
+                "Yennefer"
+            ]
+        }
+    ]
+}

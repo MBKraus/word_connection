@@ -1,0 +1,304 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Diwali",
+                "Deepavali"
+            ],
+            "entries": [
+                "Festival of Lights",
+                "Lamps",
+                "Sweets",
+                "New Clothes"
+            ]
+        },
+        {
+            "topic": [
+                "Hanami",
+                "Cherry Blossom Festival"
+            ],
+            "entries": [
+                "Cherry Trees",
+                "Picnic",
+                "Spring Season",
+                "Japan"
+            ]
+        },
+        {
+            "topic": [
+                "Carnival",
+                "Carnaval"
+            ],
+            "entries": [
+                "Parades",
+                "Costumes",
+                "Dancing",
+                "Rio de Janeiro"
+            ]
+        },
+        {
+            "topic": [
+                "Mardi Gras",
+                "Fat Tuesday"
+            ],
+            "entries": [
+                "New Orleans",
+                "Masks",
+                "Beads",
+                "Feasting"
+            ]
+        },
+        {
+            "topic": [
+                "Day of the Dead",
+                "D\u00eda de los Muertos"
+            ],
+            "entries": [
+                "Mexican Tradition",
+                "Sugar Skulls",
+                "Altars",
+                "Marigolds"
+            ]
+        },
+        {
+            "topic": [
+                "Thanksgiving",
+                "Turkey Day"
+            ],
+            "entries": [
+                "Harvest Festival",
+                "Family Gathering",
+                "Turkey Dinner",
+                "November"
+            ]
+        },
+        {
+            "topic": [
+                "Cinco de Mayo",
+                "Fifth of May"
+            ],
+            "entries": [
+                "Mexican Heritage",
+                "Celebrations",
+                "Parades",
+                "Historical Events"
+            ]
+        },
+        {
+            "topic": [
+                "Oktoberfest",
+                "Beer Festival"
+            ],
+            "entries": [
+                "Munich",
+                "Bavarian Clothing",
+                "Beer Tents",
+                "German Food"
+            ]
+        },
+        {
+            "topic": [
+                "Ramadan",
+                "Ramazan"
+            ],
+            "entries": [
+                "Fasting",
+                "Iftar",
+                "Holy Month",
+                "Eid Al-Fitr"
+            ]
+        },
+        {
+            "topic": [
+                "Chinese New Year",
+                "Spring Festival"
+            ],
+            "entries": [
+                "Lunar Calendar",
+                "Dragon Dance",
+                "Fireworks",
+                "Red Envelopes"
+            ]
+        },
+        {
+            "topic": [
+                "Easter",
+                "Pascha"
+            ],
+            "entries": [
+                "Resurrection",
+                "Egg Hunts",
+                "Bunny",
+                "Springtime"
+            ]
+        },
+        {
+            "topic": [
+                "Halloween",
+                "All Hallows' Eve"
+            ],
+            "entries": [
+                "Costumes",
+                "Pumpkins",
+                "Trick or Treat",
+                "Spooky Decor"
+            ]
+        },
+        {
+            "topic": [
+                "Kwanzaa",
+                "Kwanza"
+            ],
+            "entries": [
+                "African Heritage",
+                "Seven Principles",
+                "Candles",
+                "Unity"
+            ]
+        },
+        {
+            "topic": [
+                "Hanukkah",
+                "Chanukah"
+            ],
+            "entries": [
+                "Menorah",
+                "Dreidel",
+                "Eight Nights",
+                "Jewish Tradition"
+            ]
+        },
+        {
+            "topic": [
+                "Christmas",
+                "Xmas"
+            ],
+            "entries": [
+                "Nativity",
+                "Santa Claus",
+                "Carols",
+                "Gift Giving"
+            ]
+        },
+        {
+            "topic": [
+                "Bastille Day",
+                "F\u00eate Nationale"
+            ],
+            "entries": [
+                "French Revolution",
+                "Fireworks",
+                "Paris",
+                "July 14"
+            ]
+        },
+        {
+            "topic": [
+                "Vesak",
+                "Buddha Day"
+            ],
+            "entries": [
+                "Buddha's Birth",
+                "Enlightenment",
+                "Celebration",
+                "Full Moon"
+            ]
+        },
+        {
+            "topic": [
+                "Yule",
+                "Yuletide"
+            ],
+            "entries": [
+                "Winter Solstice",
+                "Evergreens",
+                "Pagan Festival",
+                "Feasting"
+            ]
+        },
+        {
+            "topic": [
+                "Rosh Hashanah",
+                "Jewish New Year"
+            ],
+            "entries": [
+                "Blowing Shofar",
+                "Apples and Honey",
+                "Synagogue",
+                "Ten Days"
+            ]
+        },
+        {
+            "topic": [
+                "Holi",
+                "Festival of Colors"
+            ],
+            "entries": [
+                "Colored Powders",
+                "India",
+                "Spring Festival",
+                "Celebration"
+            ]
+        },
+        {
+            "topic": [
+                "St. Patrick's Day",
+                "Paddy's Day"
+            ],
+            "entries": [
+                "Irish Festival",
+                "Shamrock",
+                "Green Clothing",
+                "Parade"
+            ]
+        },
+        {
+            "topic": [
+                "Lunar New Year",
+                "Tet"
+            ],
+            "entries": [
+                "Asia",
+                "Red Envelopes",
+                "Family Reunion",
+                "Lion Dance"
+            ]
+        },
+        {
+            "topic": [
+                "Eid al-Adha",
+                "Festival of Sacrifice"
+            ],
+            "entries": [
+                "Sacrifice",
+                "Muslim Holiday",
+                "Hajj",
+                "Family Meal"
+            ]
+        },
+        {
+            "topic": [
+                "New Year's Eve",
+                "Old Year's Night"
+            ],
+            "entries": [
+                "Fireworks",
+                "Countdown",
+                "Party",
+                "Midnight"
+            ]
+        },
+        {
+            "topic": [
+                "Samhain",
+                "Halloween Ancestor"
+            ],
+            "entries": [
+                "Pagan Roots",
+                "Harvest Celebration",
+                "Bonfires",
+                "Autumn"
+            ]
+        }
+    ]
+}
