@@ -46,7 +46,8 @@
         },
         {
             "topic": [
-                "The Office US"
+                "The Office US",
+                "The Office"
             ],
             "entries": [
                 "Scranton",
@@ -101,7 +102,8 @@
         },
         {
             "topic": [
-                "Lord of the Rings"
+                "Lord of the Rings",
+                "LOTR"
             ],
             "entries": [
                 "Middle-earth",
@@ -244,17 +246,6 @@
         },
         {
             "topic": [
-                "Breaking Bad"
-            ],
-            "entries": [
-                "Albuquerque",
-                "Blue Meth",
-                "Heisenberg",
-                "Chemistry"
-            ]
-        },
-        {
-            "topic": [
                 "The Silence of the Lambs"
             ],
             "entries": [
@@ -332,7 +323,9 @@
         },
         {
             "topic": [
-                "E.T. the Extra-Terrestrial"
+                "E.T. the Extra-Terrestrial",
+                "ET",
+                "E.T."
             ],
             "entries": [
                 "Alien Visitor",
@@ -359,19 +352,8 @@
             "entries": [
                 "Archaeologist",
                 "Raiders",
-                "Temple",
-                "Whip"
-            ]
-        },
-        {
-            "topic": [
-                "The Twilight Zone"
-            ],
-            "entries": [
-                "Rod Serling",
-                "Strange Phenomena",
-                "Black and White",
-                "Twist Ending"
+                "Lost Ark",
+                "Harrison Ford"
             ]
         },
         {
@@ -431,7 +413,8 @@
         },
         {
             "topic": [
-                "The Terminator"
+                "The Terminator",
+                "Terminator"
             ],
             "entries": [
                 "Arnold Schwarzenegger",
@@ -464,12 +447,13 @@
         },
         {
             "topic": [
-                "The Godfather"
+                "The Godfather",
+                "Godfather"
             ],
             "entries": [
                 "Don Corleone",
                 "Mafia",
-                "Family",
+                "Sicily",
                 "Offer"
             ]
         },

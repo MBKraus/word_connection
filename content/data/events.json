@@ -3,6 +3,7 @@
         {
             "topic": [
                 "Olympics",
+                "The Olympics",
                 "The Olympic Games"
             ],
             "entries": [
@@ -16,13 +17,14 @@
             "topic": [
                 "World War I",
                 "WWI",
+                "WW1",
                 "The Great War"
             ],
             "entries": [
                 "Trench Warfare",
                 "Archduke Assassination",
-                "Zimmerman Telegram",
-                "No Man's Land"
+                "Battle of the Somme",
+                "Treaty of Versailles"
             ]
         },
         {
@@ -33,9 +35,9 @@
             ],
             "entries": [
                 "Santa Claus",
-                "Pine Trees",
+                "Advent Calendar",
                 "Gift Giving",
-                "Nativity Scene"
+                "Birth of Jesus"
             ]
         },
         {
@@ -47,7 +49,7 @@
             "entries": [
                 "Egg Hunt",
                 "Bunny",
-                "Holy Week",
+                "Good Friday",
                 "Resurrection"
             ]
         },
@@ -58,9 +60,9 @@
                 "Harvest Festival"
             ],
             "entries": [
-                "Pilgrims",
+                "Pumpkin Pie",
                 "Turkey Feast",
-                "Parades",
+                "Family Gatherings",
                 "Thankfulness"
             ]
         },
@@ -85,9 +87,9 @@
             ],
             "entries": [
                 "Roses",
-                "Chocolate",
+                "Love Letters",
                 "Cupid",
-                "Romantic Dinner"
+                "February"
             ]
         },
         {
@@ -99,19 +101,20 @@
             "entries": [
                 "Costumes",
                 "Trick-or-Treat",
-                "Jack-o'-lanterns",
-                "Haunted House"
+                "Pumpkin Carving",
+                "Spooky Decorations"
             ]
         },
         {
             "topic": [
                 "The Civil War",
                 "American Civil War",
+                "The American Civil War",
                 "War Between the States"
             ],
             "entries": [
                 "Gettysburg",
-                "Emancipation Proclamation",
+                "Abraham Lincoln",
                 "Union vs Confederacy",
                 "Slavery"
             ]
@@ -136,15 +139,17 @@
                 "Rebirth Period"
             ],
             "entries": [
-                "Leonardo da Vinci",
+                "Enlightenment",
                 "Humanism",
-                "Florence",
+                "Started in France",
                 "Art Revival"
             ]
         },
         {
             "topic": [
                 "The Industrial Revolution",
+                "Industrial Age",
+                "Industrial Revolution",
                 "Industry Revolution",
                 "Industrialization Era"
             ],
@@ -171,19 +176,20 @@
         {
             "topic": [
                 "The Cold War",
-                "Cold War Era",
-                "US-Soviet Tensions"
+                "Cold War",
+                "Cold War Era"
             ],
             "entries": [
                 "Nuclear Arms",
                 "Iron Curtain",
-                "Berlin Wall",
+                "US-Soviet Tensions",
                 "Cuban Missile Crisis"
             ]
         },
         {
             "topic": [
                 "The Vietnam War",
+                "Vietnam War",
                 "Vietnam Conflict",
                 "Second Indochina War"
             ],
@@ -197,12 +203,13 @@
         {
             "topic": [
                 "The Korean War",
+                "Korean War",
                 "Korean Conflict",
                 "Korea Police Action"
             ],
             "entries": [
                 "38th Parallel",
-                "Pusan Perimeter",
+                "North vs South",
                 "Inchon Landing",
                 "Communism"
             ]
@@ -210,6 +217,7 @@
         {
             "topic": [
                 "The Gulf War",
+                "Gulf War",
                 "Operation Desert Storm",
                 "First Iraq War"
             ],
@@ -222,26 +230,14 @@
         },
         {
             "topic": [
-                "The Iraq War",
-                "Second Iraq War",
-                "Operation Iraqi Freedom"
-            ],
-            "entries": [
-                "WMDs",
-                "Baghdad",
-                "Saddam Hussein",
-                "Surge Strategy"
-            ]
-        },
-        {
-            "topic": [
-                "The War on Terror",
-                "Global War on Terrorism",
-                "Counterterrorism War"
-            ],
-            "entries": [
                 "9/11 Attacks",
-                "Afghanistan",
+                "911",
+                "911 Attacks",
+                "September 11"
+            ],
+            "entries": [
+                "World Trade Center",
+                "Planes",
                 "Al-Qaeda",
                 "Osama bin Laden"
             ]
@@ -249,7 +245,9 @@
         {
             "topic": [
                 "The European Union",
+                "European Union",
                 "EU",
+                "The EU",
                 "European Economic Community"
             ],
             "entries": [
@@ -262,7 +260,9 @@
         {
             "topic": [
                 "The United Nations",
+                "United Nations",
                 "UN",
+                "the UN",
                 "International Assembly Focus"
             ],
             "entries": [
@@ -276,31 +276,22 @@
             "topic": [
                 "World Health Organization",
                 "WHO",
-                "Global Health Body"
+                "the WHO",
+                "the World Health Organization"
             ],
             "entries": [
                 "Pandemic Response",
                 "Vaccination Campaigns",
                 "Health Regulations",
-                "Global Health Policies"
-            ]
-        },
-        {
-            "topic": [
-                "The Internet",
-                "Worldwide Web",
-                "Information Superhighway"
-            ],
-            "entries": [
-                "WWW",
-                "Browser",
-                "Online Communication",
-                "Digital Revolution"
+                "Global Health Body"
             ]
         },
         {
             "topic": [
                 "The Dot-com Bubble",
+                "Dot-com Bubble",
+                "Dotcom Bubble",
+                "The Dotcom Bubble",
                 "Internet Bubble",
                 "Tech Stock Explosion"
             ],
@@ -308,12 +299,13 @@
                 "Startup Boom",
                 "NASDAQ Crash",
                 "Tech Investment",
-                "E-commerce"
+                "IPO Frenzy"
             ]
         },
         {
             "topic": [
                 "The French Revolution",
+                "French Revolution",
                 "French Political Upheaval",
                 "Revolution of 1789"
             ],
@@ -327,6 +319,7 @@
         {
             "topic": [
                 "The American Revolution",
+                "American Revolution",
                 "US War of Independence",
                 "Revolutionary War"
             ],
@@ -340,6 +333,7 @@
         {
             "topic": [
                 "The Russian Revolution",
+                "Russian Revolution",
                 "Bolshevik Revolution",
                 "Soviet Uprising"
             ],
@@ -353,6 +347,7 @@
         {
             "topic": [
                 "The Protestant Reformation",
+                "Protestant Reformation",
                 "Reformation Era",
                 "Religious Reform Movement"
             ],
@@ -366,6 +361,7 @@
         {
             "topic": [
                 "The Spanish Inquisition",
+                "Spanish Inquisition",
                 "Spanish Religious Persecution",
                 "Inquisition Tribunal"
             ],
@@ -379,8 +375,10 @@
         {
             "topic": [
                 "The Crusades",
+                "Crusades",
                 "Crusading Era",
-                "Holy Wars"
+                "Holy Wars",
+                "The Holy Wars",
             ],
             "entries": [
                 "Jerusalem",
@@ -392,8 +390,11 @@
         {
             "topic": [
                 "Ancient Egypt",
+                "Egypt",
                 "Egyptian Civilization",
-                "Pharaoh Times"
+                "Pharaoh Times",
+                "Pharaohs",
+                "The Pharaohs"
             ],
             "entries": [
                 "Pyramids",
@@ -405,6 +406,7 @@
         {
             "topic": [
                 "The Roman Empire",
+                "Roman Empire",
                 "Roman Imperium",
                 "Empire of Rome"
             ],
@@ -412,12 +414,13 @@
                 "Julius Caesar",
                 "Senate",
                 "Colosseum",
-                "Roman Legions"
+                "Legions"
             ]
         },
         {
             "topic": [
                 "The Byzantine Empire",
+                "Bbyzantine Empire",
                 "Eastern Roman Empire",
                 "Byzantium"
             ],
@@ -431,6 +434,7 @@
         {
             "topic": [
                 "The Ottoman Empire",
+                "Ottoman Empire",
                 "Ottoman Turks",
                 "Turkish Empire"
             ],
@@ -444,6 +448,7 @@
         {
             "topic": [
                 "The British Empire",
+                "British Empire",
                 "British Colonial Expansion",
                 "Empire of Great Britain"
             ],
@@ -457,6 +462,7 @@
         {
             "topic": [
                 "The Ming Dynasty",
+                "Ming Dynasty",
                 "Ming China",
                 "Chinese Empire"
             ],
@@ -470,13 +476,14 @@
         {
             "topic": [
                 "World Cup",
+                "The World Cup",
                 "FIFA World Cup",
                 "Soccer Tournament"
             ],
             "entries": [
                 "Golden Boot",
                 "Penalty Shootouts",
-                "Host Nation",
+                "FIFA",
                 "Trophy Lift"
             ]
         },
@@ -496,13 +503,14 @@
         {
             "topic": [
                 "Tour de France",
+                "The Tour de France",
                 "Le Grand Tour",
                 "French Cycling Race"
             ],
             "entries": [
                 "Yellow Jersey",
                 "Climbs",
-                "Time Trials",
+                "Cycling",
                 "Alpe d'Huez"
             ]
         },
@@ -510,24 +518,24 @@
             "topic": [
                 "Formula One",
                 "F1",
-                "Grand Prix Racing"
             ],
             "entries": [
                 "Pit Stops",
                 "Pole Position",
                 "Monaco Circuit",
-                "Fastest Lap"
+                "Grand Prix"
             ]
         },
         {
             "topic": [
                 "The Nobel Prizes",
+                "Nobel Prize",
                 "Nobel Awards",
                 "International Laurels"
             ],
             "entries": [
                 "Peace Prize",
-                "Literature",
+                "Committees",
                 "Inventor",
                 "Ceremony in Stockholm"
             ]
@@ -535,6 +543,7 @@
         {
             "topic": [
                 "The Oscars",
+                "Oscars",
                 "Academy Awards",
                 "Hollywood's Night"
             ],
@@ -548,13 +557,14 @@
         {
             "topic": [
                 "Comic-Con",
+                "ComicCon",
                 "Comic Convention",
                 "Pop Culture Fest"
             ],
             "entries": [
                 "Cosplay",
                 "Panels",
-                "Vendors",
+                "Celebrity Autographs",
                 "Fan Meetups"
             ]
         },
@@ -562,6 +572,7 @@
             "topic": [
                 "Lunar New Year",
                 "Chinese New Year",
+                "Chinese NY",
                 "Spring Festival"
             ],
             "entries": [
@@ -574,6 +585,7 @@
         {
             "topic": [
                 "Germany Reunification",
+                "German Reunification",
                 "German Unity",
                 "Berlin Wall Fall"
             ],
@@ -582,32 +594,6 @@
                 "Brandenburg Gate",
                 "Unity Day",
                 "Cold War End"
-            ]
-        },
-        {
-            "topic": [
-                "Rise of the Internet",
-                "Digital Age Dawn",
-                "Connected Era"
-            ],
-            "entries": [
-                "Web 1.0",
-                "Email",
-                "Dot-com Boom",
-                "Information Access"
-            ]
-        },
-        {
-            "topic": [
-                "Mount Everest Summit",
-                "Everest Climb",
-                "Highest Peak"
-            ],
-            "entries": [
-                "Himalayas",
-                "Sherpas",
-                "Base Camp",
-                "Nepal"
             ]
         }
     ]
