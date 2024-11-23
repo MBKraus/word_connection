@@ -2,327 +2,262 @@
     "topics": [
         {
             "topic": [
-                "The Great Gatsby",
-                "Gatsby",
-                "Fitzgerald's Masterpiece"
+                "The Starry Night",
+                "Starry Night Painting",
+                "Van Gogh's Starry Night"
             ],
             "entries": [
-                "Roaring Twenties",
-                "Jazz Age",
-                "American Dream",
-                "Jay and Daisy"
+                "Vincent van Gogh",
+                "Post-Impressionism",
+                "Cypress Trees",
+                "Night Sky"
+            ]
+        },
+        {
+            "topic": [
+                "The Diary of a Young Girl",
+                "Anne Frank's Diary",
+                "The Diary of Anne Frank"
+            ],
+            "entries": [
+                "Holocaust",
+                "Amsterdam Attic",
+                "Jewish Oppression",
+                "Adolescent Experiences"
             ]
         },
         {
             "topic": [
                 "The Thinker",
                 "Le Penseur",
-                "Rodin Sculpture"
+                "Rodin's The Thinker"
             ],
             "entries": [
                 "Auguste Rodin",
-                "Contemplation",
-                "Bronze Statue",
-                "Paris Museum"
-            ]
-        },
-        {
-            "topic": [
-                "The Scream",
-                "The Cry",
-                "Edvard Munch Painting"
-            ],
-            "entries": [
-                "Norwegian Artist",
-                "Expressionism",
-                "Piercing Anxiety",
-                "Vibrant Swirls"
-            ]
-        },
-        {
-            "topic": [
-                "The Eiffel Tower",
-                "Tour Eiffel",
-                "Iron Lady"
-            ],
-            "entries": [
-                "Paris Landmark",
-                "Gustave Eiffel",
-                "1889 Exposition",
-                "Lattice Design"
+                "Bronze Sculpture",
+                "Pensive Pose",
+                "Contemplation"
             ]
         },
         {
             "topic": [
                 "Romeo and Juliet",
-                "Juliet and Romeo",
-                "Shakespearean Tragedy"
+                "The Tragedy of Romeo and Juliet",
+                "Romeo & Juliet"
             ],
             "entries": [
-                "Star-crossed Lovers",
+                "William Shakespeare",
+                "Forbidden Love",
                 "Verona Setting",
-                "Famous Balcony",
                 "Feuding Families"
             ]
         },
         {
             "topic": [
-                "The Night Watch",
-                "De Nachtwacht",
-                "Rembrandt Painting"
+                "The Scream",
+                "Edvard Munch's Scream",
+                "The Cry"
             ],
             "entries": [
-                "Dutch Golden Age",
-                "Group Portrait",
-                "Civic Guard",
-                "Amsterdam Display"
+                "Edvard Munch",
+                "Expressionism",
+                "Vibrant Colors",
+                "Anxiety"
             ]
         },
         {
             "topic": [
-                "The Magic Flute",
-                "Die Zauberfl\u00f6te",
-                "Mozart Opera"
+                "The Great Gatsby",
+                "Gatsby",
+                "Fitzgerald's Great Gatsby"
             ],
             "entries": [
-                "Queen of the Night",
-                "Viennese Classical",
-                "Masonic Elements",
-                "Tamino and Pamina"
+                "F. Scott Fitzgerald",
+                "Jazz Age",
+                "American Dream",
+                "Long Island"
             ]
         },
         {
             "topic": [
-                "The Thinker",
-                "Le Penseur",
-                "Rodin Bronze"
+                "The Last Supper",
+                "Da Vinci's Last Supper",
+                "The Final Supper"
             ],
             "entries": [
-                "Muscle Tension",
-                "Philosophical Posture",
-                "Paris Installation",
-                "Reflective Moment"
-            ]
-        },
-        {
-            "topic": [
-                "The Birth of Venus",
-                "La Nascita di Venere",
-                "Botticelli's Masterpiece"
-            ],
-            "entries": [
-                "Renaissance Mythology",
-                "Florence Gallery",
-                "Vibrant Seashell",
-                "Divine Beauty"
-            ]
-        },
-        {
-            "topic": [
-                "The Catcher in the Rye",
-                "Catcher in Rye",
-                "Holden Caulfield Tale"
-            ],
-            "entries": [
-                "J.D. Salinger",
-                "Teen Rebellion",
-                "New York City",
-                "Protective Persona"
-            ]
-        },
-        {
-            "topic": [
-                "The Persistence of Memory",
-                "La Persistencia de la Memoria",
-                "Dali's Clock Painting"
-            ],
-            "entries": [
-                "Surrealist Landscape",
-                "Melting Clocks",
-                "Ants Symbolism",
-                "Catalonian Coast"
-            ]
-        },
-        {
-            "topic": [
-                "Bohemian Rhapsody",
-                "Queen's Opera",
-                "Freddie Mercury Song"
-            ],
-            "entries": [
-                "Galileo Lyrics",
-                "Opera Rock",
-                "1975 Hit",
-                "Epic Ballad"
-            ]
-        },
-        {
-            "topic": [
-                "The David",
-                "Michelangelo's David",
-                "Renaissance Statue"
-            ],
-            "entries": [
-                "Florence Art",
-                "Marble Masterpiece",
-                "Biblical Hero",
-                "Contrapposto Stance"
-            ]
-        },
-        {
-            "topic": [
-                "The Great Wave off Kanagawa",
-                "Under the Wave",
-                "Hokusai Print"
-            ],
-            "entries": [
-                "Japanese Woodblock",
-                "Mount Fuji",
-                "Enormous Wave",
-                "19th Century"
-            ]
-        },
-        {
-            "topic": [
-                "War and Peace",
-                "Voyna i Mir",
-                "Tolstoy Epic"
-            ],
-            "entries": [
-                "Napoleonic Wars",
-                "Russian Nobility",
-                "Literary Magnum Opus",
-                "Pierre Bezukhov"
-            ]
-        },
-        {
-            "topic": [
-                "The Nutcracker",
-                "Tchaikovsky Ballet",
-                "Christmas Ballet"
-            ],
-            "entries": [
-                "Clara and Nutcracker",
-                "Sugar Plum Fairy",
-                "Holiday Tradition",
-                "Dream Journey"
-            ]
-        },
-        {
-            "topic": [
-                "Don Quixote",
-                "Don Quijote de la Mancha",
-                "Cervantes Classic"
-            ],
-            "entries": [
-                "Windmill Battle",
-                "Knight Errant",
-                "Sancho Panza",
-                "Spanish Literature"
-            ]
-        },
-        {
-            "topic": [
-                "La Traviata",
-                "The Fallen Woman",
-                "Verdi Opera"
-            ],
-            "entries": [
-                "Violetta and Alfredo",
-                "Parisian Setting",
-                "Tragic Romance",
-                "Inspiring Libretto"
+                "Leonardo da Vinci",
+                "Apostles Gathered",
+                "Fresco Painting",
+                "Betrayal Announcement"
             ]
         },
         {
             "topic": [
                 "Guernica",
-                "Anti-War Guernica",
-                "Picasso Mural"
+                "Picasso's Guernica",
+                "The Guernica Painting"
             ],
             "entries": [
+                "Pablo Picasso",
                 "Spanish Civil War",
-                "Monochrome Palette",
-                "Madrid Exhibit",
-                "Artful Protest"
+                "Monochromatic Palette",
+                "Bombing Horror"
             ]
         },
         {
             "topic": [
-                "Swan Lake",
-                "Tchaikovsky Swan Ballet",
-                "Lakeside Swan"
+                "David Statue",
+                "Michelangelo's David",
+                "The Statue of David"
             ],
             "entries": [
-                "Odette and Odile",
-                "Romantic Tutu",
-                "Enchanting Score",
-                "Lake Scene"
+                "Michelangelo Buonarroti",
+                "Renaissance Sculpture",
+                "Marble",
+                "Florence Italy"
             ]
         },
         {
             "topic": [
-                "The Odyssey",
-                "Homer's Odyssey",
-                "Greek Epic"
+                "The Nutcracker",
+                "Tchaikovsky's Nutcracker",
+                "The Nutcracker Ballet"
             ],
             "entries": [
-                "Journey of Odysseus",
-                "Trojan War Aftermath",
-                "Cyclops Encounter",
-                "Ithaca's King"
+                "Pyotr Tchaikovsky",
+                "Christmas Eve",
+                "Clara & Nutcracker",
+                "Dance of Sugar Plum Fairy"
             ]
         },
         {
             "topic": [
-                "Christ the Redeemer",
-                "Cristo Redentor",
-                "Brazilian Statue"
+                "The Persistence of Memory",
+                "Dali's Melting Clocks",
+                "Melting Watches Painting"
             ],
             "entries": [
-                "Rio de Janeiro",
-                "Corcovado Mountain",
-                "Arms Outstretched",
-                "Symbol of Peace"
+                "Salvador Dal\u00ed",
+                "Surrealism",
+                "Dripping Clocks",
+                "Dreamlike Landscape"
+            ]
+        },
+        {
+            "topic": [
+                "Ode to Joy",
+                "Beethoven's Ode",
+                "Joyful Symphony Movement"
+            ],
+            "entries": [
+                "Ludwig van Beethoven",
+                "Choral Symphony",
+                "Ninth Symphony",
+                "European Anthem"
+            ]
+        },
+        {
+            "topic": [
+                "The Birth of Venus",
+                "Botticelli's Venus",
+                "Venus Rising"
+            ],
+            "entries": [
+                "Sandro Botticelli",
+                "Goddess Venus",
+                "Seashell Arrival",
+                "Renaissance Mythology"
             ]
         },
         {
             "topic": [
                 "Hamlet",
-                "Shakespeare's Hamlet",
-                "Prince of Denmark"
+                "The Tragedy of Hamlet",
+                "Shakespeare's Hamlet"
             ],
             "entries": [
-                "Tragic Protagonist",
-                "Claudius's Betrayal",
-                "Ghostly Visitation",
-                "Famous Soliloquy"
+                "William Shakespeare",
+                "Prince of Denmark",
+                "Ghost of King",
+                "Question of Being"
             ]
         },
         {
             "topic": [
-                "The Starry Night",
-                "Van Gogh's Starry Night",
-                "Starry Night Over Rhone"
+                "The Sound of Music",
+                "Sound of Music Film",
+                "Musical: Sound of Music"
             ],
             "entries": [
-                "Post-Impressionist Sky",
-                "Vincent van Gogh",
-                "Moody Swirls",
-                "Saint-R\u00e9my View"
+                "Rogers & Hammerstein",
+                "Von Trapp Family",
+                "Austrian Alps",
+                "Do-Re-Mi"
             ]
         },
         {
             "topic": [
-                "The Statue of Liberty",
-                "Lady Liberty",
-                "Liberty Enlightening the World"
+                "The Night Watch",
+                "Rembrandt's Night Watch",
+                "The Militia Company"
             ],
             "entries": [
-                "New York Harbor",
-                "Gift from France",
-                "Symbol of Freedom",
-                "Bronze Torch"
+                "Rembrandt van Rijn",
+                "Group Portrait",
+                "Dutch Golden Age",
+                "Amsterdam Museum"
+            ]
+        },
+        {
+            "topic": [
+                "War and Peace",
+                "Tolstoy's War and Peace",
+                "The Great Masterpiece"
+            ],
+            "entries": [
+                "Leo Tolstoy",
+                "Napoleonic Era",
+                "Russian Aristocracy",
+                "Epic Novel"
+            ]
+        },
+        {
+            "topic": [
+                "The Persistence of Memory",
+                "Dali's Melting Clocks",
+                "Melting Watches Painting"
+            ],
+            "entries": [
+                "Salvador Dal\u00ed",
+                "Surrealism",
+                "Dripping Clocks",
+                "Dreamlike Landscape"
+            ]
+        },
+        {
+            "topic": [
+                "American Gothic",
+                "Wood's Gothic",
+                "American Farmhouse"
+            ],
+            "entries": [
+                "Grant Wood",
+                "Rural America",
+                "Farmer & Daughter",
+                "Iconic Pitchfork"
+            ]
+        },
+        {
+            "topic": [
+                "Night Train",
+                "Duke Ellington's Night Train",
+                "Night Train Song"
+            ],
+            "entries": [
+                "Jazz Orchestra",
+                "Blues Influence",
+                "1951 Release",
+                "Swing Era"
             ]
         }
     ]

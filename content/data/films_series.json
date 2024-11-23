@@ -2,35 +2,24 @@
     "topics": [
         {
             "topic": [
-                "Harry Potter"
+                "Friends"
             ],
             "entries": [
-                "Hogwarts",
-                "Wands",
-                "Quidditch",
-                "Muggle"
+                "Central Perk",
+                "Pivot Scene",
+                "Phoebe's Songs",
+                "Smelly Cat"
             ]
         },
         {
             "topic": [
-                "Breaking Bad"
+                "Schindler's List"
             ],
             "entries": [
-                "Meth",
-                "Heisenberg",
-                "RV",
-                "Chemistry"
-            ]
-        },
-        {
-            "topic": [
-                "The Lord of the Rings"
-            ],
-            "entries": [
-                "Middle-earth",
-                "Frodo",
-                "Ring",
-                "Mordor"
+                "Oskar Schindler",
+                "Red Coat",
+                "Auschwitz",
+                "Holocaust"
             ]
         },
         {
@@ -38,54 +27,32 @@
                 "The Godfather"
             ],
             "entries": [
-                "Mafia",
-                "Vito Corleone",
-                "Sicily",
-                "Cannoli"
+                "Marlon Brando",
+                "Sicilian Mafia",
+                "Offer",
+                "Family Business"
             ]
         },
         {
             "topic": [
-                "Inception"
+                "Breaking Bad"
             ],
             "entries": [
-                "Dreams",
-                "Totem",
-                "DiCaprio",
-                "Mind-bending"
+                "Walter White",
+                "Crystal Meth",
+                "RV Lab",
+                "Blue Product"
             ]
         },
         {
             "topic": [
-                "Friends"
+                "The Office US"
             ],
             "entries": [
-                "Central Perk",
-                "Ross",
-                "Rachel",
-                "Sitcom"
-            ]
-        },
-        {
-            "topic": [
-                "Stranger Things"
-            ],
-            "entries": [
-                "Hawkins",
-                "Demogorgon",
-                "Upside Down",
-                "80s"
-            ]
-        },
-        {
-            "topic": [
-                "Avatar"
-            ],
-            "entries": [
-                "Pandora",
-                "Na'vi",
-                "James Cameron",
-                "Bioluminescence"
+                "Scranton",
+                "Jim Halpert",
+                "Michael Scott",
+                "Dwight Schrute"
             ]
         },
         {
@@ -93,10 +60,21 @@
                 "Game of Thrones"
             ],
             "entries": [
-                "Westeros",
-                "Dragons",
                 "Iron Throne",
-                "Starks"
+                "Westeros",
+                "White Walkers",
+                "Dragons"
+            ]
+        },
+        {
+            "topic": [
+                "The Simpsons"
+            ],
+            "entries": [
+                "Yellow Family",
+                "Homer",
+                "Springfield",
+                "D'oh!"
             ]
         },
         {
@@ -105,9 +83,53 @@
             ],
             "entries": [
                 "Iceberg",
-                "Jack Dawson",
-                "RMS Titanic",
-                "Chamberlain"
+                "Jack and Rose",
+                "Unsinkable Ship",
+                "1912"
+            ]
+        },
+        {
+            "topic": [
+                "Harry Potter"
+            ],
+            "entries": [
+                "Hogwarts",
+                "Voldemort",
+                "Muggle",
+                "Butterbeer"
+            ]
+        },
+        {
+            "topic": [
+                "Lord of the Rings"
+            ],
+            "entries": [
+                "Middle-earth",
+                "The One Ring",
+                "Frodo Baggins",
+                "Mordor"
+            ]
+        },
+        {
+            "topic": [
+                "The Walking Dead"
+            ],
+            "entries": [
+                "Zombies",
+                "Survivors",
+                "Rick Grimes",
+                "Post-apocalypse"
+            ]
+        },
+        {
+            "topic": [
+                "Star Trek"
+            ],
+            "entries": [
+                "USS Enterprise",
+                "Spock",
+                "Warp Speed",
+                "Klingons"
             ]
         },
         {
@@ -118,40 +140,51 @@
                 "Dinosaurs",
                 "Isla Nublar",
                 "T-Rex",
-                "Spielberg"
+                "Life Finds Way"
             ]
         },
         {
             "topic": [
-                "The Simpsons"
+                "Inception"
             ],
             "entries": [
-                "Springfield",
-                "Homer",
-                "Duff Beer",
-                "Yellow"
+                "Dream Layers",
+                "Christopher Nolan",
+                "Spinning Top",
+                "Leonardo DiCaprio"
             ]
         },
         {
             "topic": [
-                "The Walking Dead"
+                "The Lion King"
             ],
             "entries": [
-                "Zombies",
-                "Rick Grimes",
-                "Apocalypse",
-                "AMC"
+                "Simba",
+                "Hakuna Matata",
+                "Pride Rock",
+                "Circle of Life"
             ]
         },
         {
             "topic": [
-                "Lost"
+                "The Avengers"
             ],
             "entries": [
-                "Oceanic Flight 815",
-                "Island",
-                "Smoke Monster",
-                "Hatch"
+                "Iron Man",
+                "Infinity Stones",
+                "S.H.I.E.L.D.",
+                "Thanos"
+            ]
+        },
+        {
+            "topic": [
+                "Stranger Things"
+            ],
+            "entries": [
+                "1980s",
+                "Upside Down",
+                "Eleven",
+                "Hawkins"
             ]
         },
         {
@@ -159,87 +192,120 @@
                 "Sherlock Holmes"
             ],
             "entries": [
+                "221B Baker Street",
                 "Detective",
-                "Watson",
-                "London",
-                "221B Baker Street"
+                "Dr. Watson",
+                "Moriarty"
             ]
         },
         {
             "topic": [
-                "House of Cards"
+                "The Wizard of Oz"
             ],
             "entries": [
-                "Political Drama",
-                "Frank Underwood",
-                "Washington D.C.",
-                "Power"
+                "Yellow Brick Road",
+                "Emerald City",
+                "Wicked Witch",
+                "Dorothy"
             ]
         },
         {
             "topic": [
-                "The Office"
+                "Avatar"
             ],
             "entries": [
-                "Dunder Mifflin",
-                "Scranton",
-                "Pam",
-                "Michael Scott"
+                "Pandora",
+                "Blue Na'vi",
+                "James Cameron",
+                "3D"
             ]
         },
         {
             "topic": [
-                "Mad Men"
+                "Back to the Future"
             ],
             "entries": [
-                "Advertising",
-                "1960s",
-                "Don Draper",
-                "Madison Avenue"
+                "Time Travel",
+                "DeLorean",
+                "Marty McFly",
+                "1985"
             ]
         },
         {
             "topic": [
-                "The Big Lebowski"
+                "The X-Files"
             ],
             "entries": [
-                "Bowling",
-                "Dude",
-                "Rug",
-                "Coen Brothers"
+                "Mulder and Scully",
+                "Aliens",
+                "Conspiracy",
+                "Truth is Out There"
             ]
         },
         {
             "topic": [
-                "Blade Runner"
+                "Breaking Bad"
             ],
             "entries": [
-                "Replicants",
-                "Los Angeles",
-                "Deckard",
-                "Sci-Fi Noir"
+                "Albuquerque",
+                "Blue Meth",
+                "Heisenberg",
+                "Chemistry"
             ]
         },
         {
             "topic": [
-                "Toy Story"
+                "The Silence of the Lambs"
             ],
             "entries": [
-                "Buzz Lightyear",
-                "Woody",
-                "Pixar",
-                "Andy's Room"
+                "Hannibal Lecter",
+                "Clarice Starling",
+                "Census Taker",
+                "Fava Beans"
             ]
         },
         {
             "topic": [
-                "The Crown"
+                "The Sopranos"
             ],
             "entries": [
-                "Queen Elizabeth",
-                "Netflix",
-                "British Monarchy",
-                "Windsor"
+                "Tony Soprano",
+                "New Jersey",
+                "Mafia",
+                "Therapist"
+            ]
+        },
+        {
+            "topic": [
+                "The Matrix"
+            ],
+            "entries": [
+                "Keanu Reeves",
+                "Red Pill",
+                "Neo",
+                "Bullet Time"
+            ]
+        },
+        {
+            "topic": [
+                "Pulp Fiction"
+            ],
+            "entries": [
+                "Quentin Tarantino",
+                "Vega and Winnfield",
+                "Diner Scene",
+                "Royale with Cheese"
+            ]
+        },
+        {
+            "topic": [
+                "Fight Club"
+            ],
+            "entries": [
+                "Brad Pitt",
+                "Soap",
+                "Tyler Durden",
+                "Underground Clubs"
             ]
         },
         {
@@ -247,32 +313,208 @@
                 "Seinfeld"
             ],
             "entries": [
+                "New York",
                 "Jerry",
-                "Elaine",
-                "Kramer",
+                "Stand-Up",
                 "Soup Nazi"
             ]
         },
         {
             "topic": [
-                "Westworld"
+                "Ghostbusters"
             ],
             "entries": [
-                "Androids",
-                "Wild West",
-                "Theme Park",
-                "HBO"
+                "Proton Pack",
+                "Slimy Ghost",
+                "Ecto-1",
+                "Who You Gonna Call"
             ]
         },
         {
             "topic": [
-                "The Witcher"
+                "E.T. the Extra-Terrestrial"
             ],
             "entries": [
-                "Geralt of Rivia",
-                "Monsters",
-                "Swordplay",
-                "Yennefer"
+                "Alien Visitor",
+                "Reese's Pieces",
+                "Bicycle Flying",
+                "Phone Home"
+            ]
+        },
+        {
+            "topic": [
+                "Toy Story"
+            ],
+            "entries": [
+                "Woody",
+                "Buzz Lightyear",
+                "Andy's Room",
+                "Pixar"
+            ]
+        },
+        {
+            "topic": [
+                "Indiana Jones"
+            ],
+            "entries": [
+                "Archaeologist",
+                "Raiders",
+                "Temple",
+                "Whip"
+            ]
+        },
+        {
+            "topic": [
+                "The Twilight Zone"
+            ],
+            "entries": [
+                "Rod Serling",
+                "Strange Phenomena",
+                "Black and White",
+                "Twist Ending"
+            ]
+        },
+        {
+            "topic": [
+                "Rocky"
+            ],
+            "entries": [
+                "Boxing Ring",
+                "Philadelphia",
+                "Balboa",
+                "Eye of the Tiger"
+            ]
+        },
+        {
+            "topic": [
+                "Home Alone"
+            ],
+            "entries": [
+                "Macaulay Culkin",
+                "Sticky Bandits",
+                "Christmas",
+                "Kevin McCallister"
+            ]
+        },
+        {
+            "topic": [
+                "Die Hard"
+            ],
+            "entries": [
+                "John McClane",
+                "Nakatomi Plaza",
+                "Hostage Situation",
+                "Christmas Eve"
+            ]
+        },
+        {
+            "topic": [
+                "Jaws"
+            ],
+            "entries": [
+                "Great White Shark",
+                "Quint",
+                "Amity Island",
+                "Theme Music"
+            ]
+        },
+        {
+            "topic": [
+                "Planet of the Apes"
+            ],
+            "entries": [
+                "Ape Society",
+                "Charlton Heston",
+                "Forbidden Zone",
+                "Statue of Liberty"
+            ]
+        },
+        {
+            "topic": [
+                "The Terminator"
+            ],
+            "entries": [
+                "Arnold Schwarzenegger",
+                "Skynet",
+                "Time Machine",
+                "Judgment Day"
+            ]
+        },
+        {
+            "topic": [
+                "Batman"
+            ],
+            "entries": [
+                "Bruce Wayne",
+                "Gotham City",
+                "Joker",
+                "Cape Crusader"
+            ]
+        },
+        {
+            "topic": [
+                "Star Wars"
+            ],
+            "entries": [
+                "Lucasfilm",
+                "Jedi Knights",
+                "The Force",
+                "Empire"
+            ]
+        },
+        {
+            "topic": [
+                "The Godfather"
+            ],
+            "entries": [
+                "Don Corleone",
+                "Mafia",
+                "Family",
+                "Offer"
+            ]
+        },
+        {
+            "topic": [
+                "Mulan"
+            ],
+            "entries": [
+                "Chinese Warrior",
+                "Dragon",
+                "Disney Princess",
+                "Reflection"
+            ]
+        },
+        {
+            "topic": [
+                "Finding Nemo"
+            ],
+            "entries": [
+                "Clownfish",
+                "Dory",
+                "Great Barrier Reef",
+                "Aquarium"
+            ]
+        },
+        {
+            "topic": [
+                "Frozen"
+            ],
+            "entries": [
+                "Anna and Elsa",
+                "Arendelle",
+                "Let It Go",
+                "Ice Powers"
+            ]
+        },
+        {
+            "topic": [
+                "Cinderella"
+            ],
+            "entries": [
+                "Glass Slipper",
+                "Midnight",
+                "Fairy Godmother",
+                "Pumpkin Carriage"
             ]
         }
     ]

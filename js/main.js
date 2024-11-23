@@ -1,11 +1,9 @@
-import { loadTopics} from './topics.js';
+import { generateGameRounds} from './topics.js';
 import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createCheckmark,
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
-import { createDailyLimitScreen } from './screens/dailyLimit.js';
-import { createButton, STYLES } from './screens/helpers.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
@@ -44,8 +42,8 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
+    this.load.text('data', 'https://mbkraus.github.io/word_connection/content/data.txt');
     this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/data.txt');
     this.load.image('screenshot', 'https://mbkraus.github.io/word_connection/assets/screenshot.png');
     this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
     this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
@@ -66,7 +64,7 @@ function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 30;
+    this.timerDuration = 60;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
@@ -75,9 +73,8 @@ function create() {
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
 
-    const NUMBER_OF_ROUNDS = 3;
+    const NUMBER_OF_ROUNDS = 2;
     const TOPICS_PER_ROUND = 3;
-    const date = "2024-11-08"; 
   
     // Check if user has already played today (cookie-based)
     // if (GameStorage.hasPlayedTodayCookie()) {
@@ -90,8 +87,10 @@ function create() {
     createWelcomeScreen(this);
     showWelcomeScreen(this, 'welcomeScreen');
 
-    const allTopics = loadTopics(this);
-    this.allRounds = allTopics[date]
+    const encodedData = this.cache.text.get('data');
+    const decodedString = atob(encodedData)
+    const jsonData = JSON.parse(decodedString);
+    this.allRounds = generateGameRounds(jsonData);
 
     // Create game elements but don't start the game yet
     createGameElements(this);
@@ -175,29 +174,50 @@ function checkGuess(scene, guess) {
     if (scene.remainingTime <= 0 || !scene.isGameActive) {
         return;
     }
-
-    // Find the matched topic
-    let matchedTopic = scene.currentTopics.find(topic => 
-        topic.name.toLowerCase() === guess.toLowerCase()
-    );
     
-    if (matchedTopic) {
-        highlightTiles(scene, matchedTopic.words);
-        
-        // Find the corresponding entry that matches this topic name
-        let matchedEntry = scene.correctGuessTexts.find(entry => 
-            entry.topicName.toLowerCase() === matchedTopic.name.toLowerCase() && entry.text === null
-        );
+    // Normalize the guess
+    const normalizedGuess = guess.toLowerCase().trim();
 
+    // Find if the guess matches any value in any of the topic arrays
+    let foundMatch = false;
+    let matchedTopicIndex = -1;
+
+    // Check each topic array
+    for (let i = 0; i < scene.currentTopics.length; i++) {
+        // For each topic object, check all its possible values
+        const topicObj = scene.currentTopics[i];
+        
+        // Check if this topic has already been guessed
+        const alreadyGuessed = scene.correctGuessTexts.some(entry => 
+            entry.text !== null && 
+            entry.text.text.toLowerCase() === topicObj.topic[0].toLowerCase()
+        );
+        
+        if (!alreadyGuessed && topicObj.topic.some(value => value.toLowerCase() === normalizedGuess)) {
+            foundMatch = true;
+            matchedTopicIndex = i;
+            break;
+        }
+    }
+
+    if (foundMatch) {
+        let matchedTopic = scene.currentTopics[matchedTopicIndex];
+
+        highlightTiles(scene, matchedTopic.entries);
+        
+        // Find the first unused guess text entry
+        let matchedEntry = scene.correctGuessTexts.find(entry => 
+            entry.text === null
+        );
+        
         if (matchedEntry) {
             const { circle, guessContainer } = matchedEntry;
-
             // Add the topic text to appear next to the circle
             const circleRadius = scene.game.scale.width * 0.0125;
             matchedEntry.text = scene.add.text(
                 circleRadius * 3, // Space after circle
                 0,
-                matchedTopic.name,
+                matchedTopic.topic[0], // Display the main topic name (first in array)
                 {
                     fontSize: scene.game.scale.width * 0.04 + 'px',
                     color: '#000000',
@@ -205,10 +225,10 @@ function checkGuess(scene, guess) {
                     fontWeight: 'bold'
                 }
             ).setOrigin(0, 0.5);
-
+            
             // Use the specific container for this entry
             matchedEntry.guessContainer.add(matchedEntry.text);
-
+            
             // Animate the existing circle fill to green
             scene.tweens.add({
                 targets: circle,
@@ -225,14 +245,15 @@ function checkGuess(scene, guess) {
             });
         }
         
+        // Show checkmark feedback
         scene.checkmarkCircle.setVisible(true);
         scene.checkmarkText.setVisible(true);
-
         scene.time.delayedCall(1000, () => {
             scene.checkmarkCircle.setVisible(false);
             scene.checkmarkText.setVisible(false);
         });
         
+        // Update score
         scene.score += 30;
         updateScoreDisplay(scene);
         scene.sound.play('correctSound');
@@ -245,6 +266,7 @@ function checkGuess(scene, guess) {
             });
         }
     } else {
+        // Handle incorrect guess
         scene.sound.play('incorrectSound');
         scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
@@ -252,6 +274,8 @@ function checkGuess(scene, guess) {
         });
     }
 }
+
+
 
 function calculateRoundPoints(timeRemaining) {
     const points = {

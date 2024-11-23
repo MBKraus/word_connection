@@ -1,0 +1,364 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Moon",
+                "Lunar Body"
+            ],
+            "entries": [
+                "Craters",
+                "Phases",
+                "Apollo Missions",
+                "Tides"
+            ]
+        },
+        {
+            "topic": [
+                "Milky Way",
+                "Galaxy"
+            ],
+            "entries": [
+                "Spiral Arms",
+                "100 Billion Stars",
+                "Solar System",
+                "Sagittarius A*"
+            ]
+        },
+        {
+            "topic": [
+                "Mars",
+                "Red Planet"
+            ],
+            "entries": [
+                "Olympus Mons",
+                "Iron Oxide",
+                "Curiosity Rover",
+                "Polar Ice Caps"
+            ]
+        },
+        {
+            "topic": [
+                "Black Hole",
+                "Singularity"
+            ],
+            "entries": [
+                "Event Horizon",
+                "Gravitational Pull",
+                "Hawking Radiation",
+                "Inescapable"
+            ]
+        },
+        {
+            "topic": [
+                "Saturn",
+                "Ringed Planet"
+            ],
+            "entries": [
+                "Gas Giant",
+                "Hexagon Storm",
+                "Cassini Division",
+                "Titan Moon"
+            ]
+        },
+        {
+            "topic": [
+                "Comet",
+                "Icy Tail"
+            ],
+            "entries": [
+                "Elliptical Orbit",
+                "Halo",
+                "Coma",
+                "Dust Trail"
+            ]
+        },
+        {
+            "topic": [
+                "Sun",
+                "Solar Star"
+            ],
+            "entries": [
+                "Fusion",
+                "Heliosphere",
+                "Solar Flares",
+                "Sunspots"
+            ]
+        },
+        {
+            "topic": [
+                "Andromeda Galaxy",
+                "M31"
+            ],
+            "entries": [
+                "Nearest Galaxy",
+                "Spiral",
+                "Blue Shift",
+                "Collision Course"
+            ]
+        },
+        {
+            "topic": [
+                "Jupiter",
+                "Gas Giant"
+            ],
+            "entries": [
+                "Great Red Spot",
+                "Galilean Moons",
+                "Cyclonic Storms",
+                "Largest Volume"
+            ]
+        },
+        {
+            "topic": [
+                "Asteroid Belt",
+                "Celestial Band"
+            ],
+            "entries": [
+                "Between Mars and Jupiter",
+                "Ceres",
+                "Space Rocks",
+                "Elliptical Path"
+            ]
+        },
+        {
+            "topic": [
+                "Neptune",
+                "Blue Planet"
+            ],
+            "entries": [
+                "Triton",
+                "Methane Atmosphere",
+                "Great Dark Spot",
+                "Strongest Winds"
+            ]
+        },
+        {
+            "topic": [
+                "Venus",
+                "Morning Star"
+            ],
+            "entries": [
+                "Acidic Clouds",
+                "Retrograde Rotation",
+                "Hottest Planet",
+                "Volcanic Plains"
+            ]
+        },
+        {
+            "topic": [
+                "Space Shuttle",
+                "Orbiter"
+            ],
+            "entries": [
+                "Reusable",
+                "Columbia",
+                "Heat Shields",
+                "Payload Bay"
+            ]
+        },
+        {
+            "topic": [
+                "Satellite",
+                "Orbital Craft"
+            ],
+            "entries": [
+                "Communication",
+                "Weather Monitoring",
+                "Geosynchronous",
+                "GPS"
+            ]
+        },
+        {
+            "topic": [
+                "Meteor Shower",
+                "Luminous Streaks"
+            ],
+            "entries": [
+                "Perseid",
+                "Annual Event",
+                "Earth's Atmosphere",
+                "Bright Streaks"
+            ]
+        },
+        {
+            "topic": [
+                "Mercury",
+                "Swift Planet"
+            ],
+            "entries": [
+                "Closest to Sun",
+                "Cratered Surface",
+                "No Atmosphere",
+                "Extreme Temperatures"
+            ]
+        },
+        {
+            "topic": [
+                "Pluto",
+                "Dwarf Planet"
+            ],
+            "entries": [
+                "Kuiper Belt",
+                "New Horizons",
+                "Ice-Covered",
+                "Charon"
+            ]
+        },
+        {
+            "topic": [
+                "Nebula",
+                "Stellar Nursery"
+            ],
+            "entries": [
+                "Ionized Gas",
+                "Luminosity",
+                "Pillars of Creation",
+                "Star Formation"
+            ]
+        },
+        {
+            "topic": [
+                "Space Station",
+                "Orbital Lab"
+            ],
+            "entries": [
+                "American-Russian Collaboration",
+                "Zero Gravity",
+                "Research",
+                "Crew Habitation"
+            ]
+        },
+        {
+            "topic": [
+                "Solar Eclipse",
+                "Lunar Occultation"
+            ],
+            "entries": [
+                "Umbra",
+                "Totality",
+                "Diamond Ring Effect",
+                "Sun Obscured"
+            ]
+        },
+        {
+            "topic": [
+                "Gravity",
+                "Gravitational Force"
+            ],
+            "entries": [
+                "Isaac Newton",
+                "Tidal Forces",
+                "Mass Attraction",
+                "Weight"
+            ]
+        },
+        {
+            "topic": [
+                "Uranus",
+                "Ice Giant"
+            ],
+            "entries": [
+                "Axis Tilt",
+                "Frozen Clouds",
+                "Methane Blue",
+                "Rings"
+            ]
+        },
+        {
+            "topic": [
+                "Constellation",
+                "Star Pattern"
+            ],
+            "entries": [
+                "Celestial Figures",
+                "Orion",
+                "Zodiac Signs",
+                "Astronomical Charts"
+            ]
+        },
+        {
+            "topic": [
+                "Telescope",
+                "Observatory Device"
+            ],
+            "entries": [
+                "Galileo",
+                "Optical Lens",
+                "Star Gazing",
+                "Magnification"
+            ]
+        },
+        {
+            "topic": [
+                "Quasar",
+                "Radio Source"
+            ],
+            "entries": [
+                "Active Galaxy",
+                "Bright Core",
+                "Supermassive Black Hole",
+                "Cosmic Beacons"
+            ]
+        },
+        {
+            "topic": [
+                "Rover",
+                "Mars Buggy"
+            ],
+            "entries": [
+                "Remote Control",
+                "Laboratory Tools",
+                "Martian Terrain",
+                "Solar Panels"
+            ]
+        },
+        {
+            "topic": [
+                "Europa",
+                "Icy Moon"
+            ],
+            "entries": [
+                "Jovian Satellite",
+                "Subsurface Ocean",
+                "Ice Crust",
+                "Potential Life"
+            ]
+        },
+        {
+            "topic": [
+                "Big Bang",
+                "Cosmic Expansion"
+            ],
+            "entries": [
+                "Origin of Universe",
+                "Space-Time",
+                "Cosmic Microwave Background",
+                "Singular Event"
+            ]
+        },
+        {
+            "topic": [
+                "Cosmic Microwave Background",
+                "CMB"
+            ],
+            "entries": [
+                "Primordial Signals",
+                "Big Bang Echo",
+                "Universe's Fog",
+                "Microwave Radiation"
+            ]
+        },
+        {
+            "topic": [
+                "Apollo Program",
+                "Lunar Mission"
+            ],
+            "entries": [
+                "Moon Landing",
+                "Neil Armstrong",
+                "Saturn V",
+                "Eagle Has Landed"
+            ]
+        }
+    ]
+}

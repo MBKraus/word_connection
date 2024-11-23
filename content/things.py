@@ -30,7 +30,7 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- A topic must be an everyday item or category of items that people commonly encounter or use in daily life (e.g., 'Car,' 'Smartphone,' 'Fruits').\n"
+    "- A topic must be an, easy to guess for an average joe, everyday item or category of items that people commonly encounter or use in daily life (e.g., 'Car,' 'Smartphone,' 'Fruits').\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "- Topics must include the plural and non-plural form of the item or category of items. For example, 'Fruit' and 'Fruits'.\n"
@@ -50,7 +50,7 @@ completion = client.beta.chat.completions.parse(
     "  **Entries:** ['Thomas Edison', 'Filament', 'Electric Current', 'Illumination']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 50 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     }
     ],
     response_format=DataModel,

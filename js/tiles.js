@@ -31,9 +31,12 @@ export function getTileConfig(scene) {
 
 // Helper function: Create tiles based on the configuration
 export function createTiles(scene, config) {
+    // Get topics for the current round
     scene.currentTopics = scene.allRounds[scene.currentRound];
-    let allWords = scene.currentTopics.flatMap(topic => topic.words);
-    Phaser.Utils.Array.Shuffle(allWords);
+
+    // Combine all entries (words) from the topics into a single array
+    let allWords = scene.currentTopics.flatMap(topic => topic.entries);
+    Phaser.Utils.Array.Shuffle(allWords); // Shuffle the words
 
     for (let i = 0; i < config.cols; i++) {
         for (let j = 0; j < config.rows; j++) {
@@ -44,14 +47,16 @@ export function createTiles(scene, config) {
             graphics.fillStyle(0xE2E8F1, 1);
             drawRoundedRect(graphics, x, y, config.tileWidth, config.tileHeight, config.cornerRadius);
 
-            const word = allWords[i + j * config.cols];
-            // Create text with word wrapping
+            const wordIndex = i + j * config.cols;
+            const word = allWords[wordIndex] || ""; // Handle cases where there are fewer words than tiles
+
+            // Create text for the tile
             const text = scene.add.text(x + config.tileWidth / 2, y + config.tileHeight / 2, word.toUpperCase(), {
                 fontSize: `${Math.max(24, Math.floor(config.tileHeight * 0.27))}px`,
                 color: '#000000',
                 fontFamily: 'Poppins',
                 fontWeight: 'bold',
-                wordWrap: { width: config.tileWidth - 20 }, // Leave 10px padding on each side
+                wordWrap: { width: config.tileWidth - 20 },
                 align: 'center'
             }).setOrigin(0.5);
 
@@ -61,9 +66,10 @@ export function createTiles(scene, config) {
                 text.setFontSize(currentSize - 2);
             }
 
-            scene.tiles.push({ 
-                tile: graphics, 
-                text, 
+            // Add the tile to the scene
+            scene.tiles.push({
+                tile: graphics,
+                text,
                 word,
                 x,
                 y,

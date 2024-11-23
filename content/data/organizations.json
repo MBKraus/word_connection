@@ -6,10 +6,10 @@
                 "UN"
             ],
             "entries": [
-                "Peacekeeping Missions",
-                "Security Council",
+                "Peacekeeping",
                 "International Law",
-                "Humanitarian Aid"
+                "Human Rights",
+                "Security Council"
             ]
         },
         {
@@ -19,9 +19,9 @@
             ],
             "entries": [
                 "Space Exploration",
-                "Mars Rover",
-                "Astronauts",
-                "Rocket Launches"
+                "Apollo Missions",
+                "Mars Rovers",
+                "Astronauts"
             ]
         },
         {
@@ -30,10 +30,10 @@
                 "WHO"
             ],
             "entries": [
-                "Vaccination Programs",
                 "Global Health",
-                "Disease Control",
-                "International Cooperation"
+                "Pandemic Response",
+                "Vaccination Programs",
+                "Epidemiology"
             ]
         },
         {
@@ -42,10 +42,10 @@
                 "EU"
             ],
             "entries": [
-                "Monetary Union",
-                "European Commission",
+                "Eurozone",
+                "Schengen Area",
                 "Brussels Headquarters",
-                "Single Market"
+                "Member States"
             ]
         },
         {
@@ -56,8 +56,106 @@
             "entries": [
                 "Financial Stability",
                 "Economic Surveillance",
-                "Currency Exchange",
-                "International Loans"
+                "Bailout Packages",
+                "Quota System"
+            ]
+        },
+        {
+            "topic": [
+                "Red Cross",
+                "International Committee of the Red Cross",
+                "ICRC"
+            ],
+            "entries": [
+                "Humanitarian Aid",
+                "Geneva Conventions",
+                "Disaster Relief",
+                "Neutrality"
+            ]
+        },
+        {
+            "topic": [
+                "World Wildlife Fund",
+                "WWF"
+            ],
+            "entries": [
+                "Conservation",
+                "Endangered Species",
+                "Sustainable Development",
+                "Wildlife Protection"
+            ]
+        },
+        {
+            "topic": [
+                "Greenpeace",
+                "Green Peace",
+                "GP"
+            ],
+            "entries": [
+                "Environmental Activism",
+                "Direct Action",
+                "Whale Conservation",
+                "Climate Change"
+            ]
+        },
+        {
+            "topic": [
+                "United Nations Educational, Scientific and Cultural Organization",
+                "UNESCO"
+            ],
+            "entries": [
+                "World Heritage Sites",
+                "Cultural Preservation",
+                "Education Programs",
+                "Science Initiatives"
+            ]
+        },
+        {
+            "topic": [
+                "World Bank",
+                "International Bank for Reconstruction and Development"
+            ],
+            "entries": [
+                "Development Projects",
+                "Poverty Alleviation",
+                "Loans and Grants",
+                "Economic Research"
+            ]
+        },
+        {
+            "topic": [
+                "World Trade Organization",
+                "WTO"
+            ],
+            "entries": [
+                "Global Trade",
+                "Dispute Settlement",
+                "Trade Agreements",
+                "Market Access"
+            ]
+        },
+        {
+            "topic": [
+                "International Olympic Committee",
+                "IOC"
+            ],
+            "entries": [
+                "Olympic Games",
+                "Athletic Competitions",
+                "Host Cities",
+                "Olympic Charter"
+            ]
+        },
+        {
+            "topic": [
+                "Interpol",
+                "International Criminal Police Organization"
+            ],
+            "entries": [
+                "Crime Fighting",
+                "International Cooperation",
+                "Fugitive Tracking",
+                "Criminal Databases"
             ]
         },
         {
@@ -68,69 +166,32 @@
             "entries": [
                 "Military Alliance",
                 "Collective Defense",
-                "Transatlantic Security",
-                "Strategic Partnerships"
+                "Brussels Headquarters",
+                "Member Nations"
             ]
         },
         {
             "topic": [
-                "World Trade Organization",
-                "WTO"
+                "UNICEF",
+                "United Nations Children's Fund"
             ],
             "entries": [
-                "Global Commerce",
-                "Trade Disputes",
-                "International Standards",
-                "Market Access"
-            ]
-        },
-        {
-            "topic": [
-                "Interpol",
-                "International Criminal Police Organization"
-            ],
-            "entries": [
-                "Global Policing",
-                "Crime Data Exchange",
-                "International Collaboration",
-                "Fugitive Apprehension"
-            ]
-        },
-        {
-            "topic": [
-                "Red Cross",
-                "International Red Crescent",
-                "ICRC"
-            ],
-            "entries": [
-                "Disaster Relief",
-                "Blood Donation",
+                "Child Welfare",
+                "Education",
                 "Humanitarian Aid",
-                "Medical Assistance"
+                "Immunization"
             ]
         },
         {
             "topic": [
-                "Google",
-                "Alphabet Inc."
+                "World Food Programme",
+                "WFP"
             ],
             "entries": [
-                "Search Engine",
-                "Ad Technology",
-                "Android",
-                "Cloud Computing"
-            ]
-        },
-        {
-            "topic": [
-                "United States Department of Defense",
-                "DoD"
-            ],
-            "entries": [
-                "National Security",
-                "Military Operations",
-                "Pentagon Headquarters",
-                "Defense Spending"
+                "Hunger Relief",
+                "Emergency Food Aid",
+                "Nutrition Programs",
+                "Food Security"
             ]
         },
         {
@@ -140,166 +201,46 @@
             ],
             "entries": [
                 "Human Rights Advocacy",
-                "Press Freedom",
+                "Prisoners of Conscience",
                 "Campaigns",
-                "Political Prisoners"
+                "Research"
             ]
         },
         {
             "topic": [
-                "The British Museum",
-                "BM"
+                "International Atomic Energy Agency",
+                "IAEA"
             ],
             "entries": [
-                "Artifacts",
-                "Egyptian Mummies",
-                "Cultural History",
-                "Public Exhibitions"
+                "Nuclear Safety",
+                "Non-proliferation",
+                "Energy Use",
+                "Inspections"
             ]
         },
         {
             "topic": [
-                "International Olympic Committee",
-                "IOC"
+                "G7",
+                "Group of Seven",
+                "G-7"
             ],
             "entries": [
-                "Sporting Events",
-                "Olympic Games",
-                "Athlete Regulations",
-                "Worldwide Participation"
+                "Economic Policy",
+                "Annual Summits",
+                "World Leaders",
+                "Advanced Economies"
             ]
         },
         {
             "topic": [
-                "Federal Reserve",
-                "The Fed"
+                "OPEC",
+                "Organization of the Petroleum Exporting Countries"
             ],
             "entries": [
-                "Monetary Policy",
-                "Interest Rates",
-                "Federal Open Market Committee",
-                "Bank Regulation"
-            ]
-        },
-        {
-            "topic": [
-                "Greenpeace",
-                "GP"
-            ],
-            "entries": [
-                "Environmental Activism",
-                "Ocean Conservation",
-                "Climate Change Campaigns",
-                "Forest Protection"
-            ]
-        },
-        {
-            "topic": [
-                "Harvard University",
-                "Harvard College"
-            ],
-            "entries": [
-                "Ivy League",
-                "Research Institution",
-                "Cambridge, Massachusetts",
-                "Alumni Network"
-            ]
-        },
-        {
-            "topic": [
-                "World Wildlife Fund",
-                "WWF"
-            ],
-            "entries": [
-                "Conservation Projects",
-                "Biodiversity",
-                "Endangered Species",
-                "Habitat Protection"
-            ]
-        },
-        {
-            "topic": [
-                "Mayo Clinic",
-                "Mayo Foundation"
-            ],
-            "entries": [
-                "Medical Research",
-                "Healthcare Clinics",
-                "Rochester, Minnesota",
-                "Patient Care"
-            ]
-        },
-        {
-            "topic": [
-                "Amazon",
-                "Amazon.com"
-            ],
-            "entries": [
-                "E-commerce",
-                "Cloud Services",
-                "Shipping Logistics",
-                "Consumer Electronics"
-            ]
-        },
-        {
-            "topic": [
-                "National Aeronautics and Space Administration",
-                "NASA"
-            ],
-            "entries": [
-                "Space Exploration",
-                "Mars Rover",
-                "Astronauts",
-                "Rocket Launches"
-            ]
-        },
-        {
-            "topic": [
-                "Royal Shakespeare Company",
-                "RSC"
-            ],
-            "entries": [
-                "Theatrical Productions",
-                "Shakespearean Plays",
-                "Stratford-upon-Avon",
-                "Live Performances"
-            ]
-        },
-        {
-            "topic": [
-                "Smithsonian Institution",
-                "Smithsonian",
-                "The Smithsonian"
-            ],
-            "entries": [
-                "Museums Complex",
-                "Scientific Research",
-                "Cultural Preservation",
-                "Educational Outreach"
-            ]
-        },
-        {
-            "topic": [
-                "United Nations Educational, Scientific and Cultural Organization",
-                "UNESCO"
-            ],
-            "entries": [
-                "World Heritage Sites",
-                "Cultural Education",
-                "Science Initiatives",
-                "Peace Promotion"
-            ]
-        },
-        {
-            "topic": [
-                "International Court of Justice",
-                "ICJ"
-            ],
-            "entries": [
-                "Judicial Decisions",
-                "International Law",
-                "The Hague",
-                "Dispute Resolution"
+                "Oil Prices",
+                "Petroleum Policies",
+                "Member Nations",
+                "Production Quotas"
             ]
         }
     ]

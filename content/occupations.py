@@ -30,12 +30,12 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- A topic should be a popular professions or occupation (e.g. plumber).\n"
+    "- A topic should be an, easy to guess for an average joe, popular profession or occupation (e.g. plumber).\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "- Include the field of work in the topic in addition to the profession (e.g. 'plumbing' and 'plumber').\n"
     "- Topics must include at least 2 **spelling variants, synonyms, or simplified forms**. This is a key rule. Here are a couple examples: \n"
-    "  - 'Printing Press', 'Gutenberg Press'\n"
+    "  - 'Dentist', 'Dentists'\n"
     "  - 'Light Bulb', 'Electric Lamp'\n"
     "### Requirements for Descriptive Entries:\n"
     "- Provide exactly 4 descriptive words or phrases for each topic.\n"
@@ -44,13 +44,13 @@ completion = client.beta.chat.completions.parse(
     "- Keep entries concise: 1–4 words long. Multi-word phrases (e.g., 'South America') are allowed if they provide meaningful specificity.\n"
     "- Avoid splitting entries into overly generic terms that lose clarity (e.g., 'Luxury ship' is better than splitting into 'Luxury' and 'Ship').\n\n"
     "### Example Topics and Entries:\n"
-    "- **Topic:** ['Printing Press', 'Gutenberg Press']\n"
-    "  **Entries:** ['Johannes Gutenberg', 'Typefaces', 'Books', 'Mass Production']\n"
-    "- **Topic:** '['Light Bulb', 'Electric Lamp']\n"
-    "  **Entries:** ['Thomas Edison', 'Filament', 'Electric Current', 'Illumination']\n\n"
+    "- **Topic:** ['Dentist', 'Dentistry Press']\n"
+    "  **Entries:** 'Cavity Filling', 'Orthodontics', 'Root Canal', 'Dental Implants']\n"
+    "- **Topic:** '['Police', 'Law Enforcement']\n"
+    "  **Entries:** ['Investigation', 'Patrolling', 'Arrest Procedures', 'Traffic Control']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 50 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     }
     ],
     response_format=DataModel,

@@ -6,22 +6,22 @@
                 "Einstein"
             ],
             "entries": [
-                "Theory of Relativity",
-                "E=mc\u00b2",
+                "Theory of relativity",
                 "Physicist",
+                "E=mc^2",
                 "Nobel Prize"
             ]
         },
         {
             "topic": [
-                "Van Gogh",
-                "Vincent van Gogh"
+                "Queen Elizabeth II",
+                "Elizabeth II"
             ],
             "entries": [
-                "Starry Night",
-                "Impressionist",
-                "Posthumous Fame",
-                "Ear Incident"
+                "British monarchy",
+                "Longest reigning",
+                "Commonwealth",
+                "Royal duties"
             ]
         },
         {
@@ -30,190 +30,34 @@
                 "Beatles"
             ],
             "entries": [
-                "Lennon",
-                "British Invasion",
+                "Liverpool",
+                "British invasion",
                 "Abbey Road",
-                "1960s"
+                "Lennon"
             ]
         },
         {
             "topic": [
-                "Mahatma Gandhi",
-                "Gandhi"
-            ],
-            "entries": [
-                "Nonviolent Resistance",
-                "India Independence",
-                "Salt March",
-                "Civil Rights"
-            ]
-        },
-        {
-            "topic": [
-                "J.K. Rowling",
-                "Rowling"
-            ],
-            "entries": [
-                "Harry Potter",
-                "British Author",
-                "Fantasy Fiction",
-                "Wizarding World"
-            ]
-        },
-        {
-            "topic": [
-                "Tesla",
-                "Nikola Tesla"
-            ],
-            "entries": [
-                "AC Power",
-                "Inventor",
-                "Tesla Coil",
-                "Serbian-American"
-            ]
-        },
-        {
-            "topic": [
-                "Cleopatra",
-                "Cleopatra VII"
-            ],
-            "entries": [
-                "Egyptian Pharaoh",
-                "Mark Antony",
-                "Julius Caesar",
-                "Ptolemaic Dynasty"
-            ]
-        },
-        {
-            "topic": [
-                "Apple Inc.",
-                "Apple"
-            ],
-            "entries": [
-                "iPhone",
                 "Steve Jobs",
-                "Cupertino",
-                "Mac Computer"
+                "Jobs"
+            ],
+            "entries": [
+                "Apple co-founder",
+                "iPhone",
+                "Innovative design",
+                "Pixar"
             ]
         },
         {
             "topic": [
-                "Oprah Winfrey",
-                "Oprah"
-            ],
-            "entries": [
-                "Talk Show Host",
-                "Billionaire",
-                "Philanthropist",
-                "O Magazine"
-            ]
-        },
-        {
-            "topic": [
-                "Martin Luther King Jr.",
-                "MLK"
-            ],
-            "entries": [
-                "I Have a Dream",
-                "Civil Rights",
-                "Montgomery Bus Boycott",
-                "Nonviolent Protest"
-            ]
-        },
-        {
-            "topic": [
-                "Leonardo da Vinci",
-                "Da Vinci"
-            ],
-            "entries": [
                 "Mona Lisa",
+                "La Gioconda"
+            ],
+            "entries": [
+                "Leonardo da Vinci",
+                "Louvre",
                 "Renaissance",
-                "Anatomy Studies",
-                "Italian Polymath"
-            ]
-        },
-        {
-            "topic": [
-                "The Wright Brothers",
-                "Wright Brothers"
-            ],
-            "entries": [
-                "First Flight",
-                "Aviation Pioneers",
-                "Kitty Hawk",
-                "1903"
-            ]
-        },
-        {
-            "topic": [
-                "Marie Curie",
-                "Curie"
-            ],
-            "entries": [
-                "Radioactivity",
-                "Nobel Prize",
-                "Polonium",
-                "Physics and Chemistry"
-            ]
-        },
-        {
-            "topic": [
-                "William Shakespeare",
-                "Shakespeare"
-            ],
-            "entries": [
-                "Playwright",
-                "Globe Theatre",
-                "Hamlet",
-                "Elizabethan Era"
-            ]
-        },
-        {
-            "topic": [
-                "Frida Kahlo",
-                "Kahlo"
-            ],
-            "entries": [
-                "Self-Portraits",
-                "Mexican Artist",
-                "Diego Rivera",
-                "Surrealism"
-            ]
-        },
-        {
-            "topic": [
-                "Pablo Picasso",
-                "Picasso"
-            ],
-            "entries": [
-                "Cubism",
-                "Guernica",
-                "Blue Period",
-                "Spanish Painter"
-            ]
-        },
-        {
-            "topic": [
-                "Vincent van Gogh",
-                "Van Gogh"
-            ],
-            "entries": [
-                "Sunflowers",
-                "Netherlands",
-                "Post-Impressionism",
-                "Arles"
-            ]
-        },
-        {
-            "topic": [
-                "Mother Teresa",
-                "Teresa"
-            ],
-            "entries": [
-                "Missionary",
-                "Calcutta",
-                "Nobel Peace Prize",
-                "Charity"
+                "Mysterious smile"
             ]
         },
         {
@@ -223,21 +67,117 @@
             ],
             "entries": [
                 "Mickey Mouse",
-                "Disneyland",
                 "Animation",
-                "Fantasia"
+                "Theme parks",
+                "Fantasy"
             ]
         },
         {
             "topic": [
-                "Steve Jobs",
-                "Jobs"
+                "Nelson Mandela",
+                "Mandela"
             ],
             "entries": [
-                "Apple Inc.",
-                "iPhone Innovator",
-                "Pixar",
-                "Silicon Valley Influential"
+                "Apartheid",
+                "South Africa",
+                "Nobel Peace Prize",
+                "Presidency"
+            ]
+        },
+        {
+            "topic": [
+                "Coca-Cola",
+                "Coke"
+            ],
+            "entries": [
+                "Soft drink",
+                "Atlanta",
+                "Red label",
+                "Soda"
+            ]
+        },
+        {
+            "topic": [
+                "Shakespeare",
+                "William Shakespeare"
+            ],
+            "entries": [
+                "Playwright",
+                "Stratford-upon-Avon",
+                "Hamlet",
+                "Elizabethan England"
+            ]
+        },
+        {
+            "topic": [
+                "Mahatma Gandhi",
+                "Gandhi"
+            ],
+            "entries": [
+                "Nonviolence",
+                "India",
+                "Salt March",
+                "Independence"
+            ]
+        },
+        {
+            "topic": [
+                "Frida Kahlo",
+                "Kahlo"
+            ],
+            "entries": [
+                "Self-portraits",
+                "Mexico",
+                "Surrealism",
+                "Pain"
+            ]
+        },
+        {
+            "topic": [
+                "Mother Teresa",
+                "Teresa"
+            ],
+            "entries": [
+                "Calcutta",
+                "Missionaries of Charity",
+                "Nobel Peace Prize",
+                "Saint"
+            ]
+        },
+        {
+            "topic": [
+                "Microsoft",
+                "Micro-Soft"
+            ],
+            "entries": [
+                "Windows",
+                "Bill Gates",
+                "Software",
+                "Redmond"
+            ]
+        },
+        {
+            "topic": [
+                "Vincent van Gogh",
+                "Van Gogh"
+            ],
+            "entries": [
+                "Starry Night",
+                "Post-Impressionism",
+                "Dutch",
+                "Ear incident"
+            ]
+        },
+        {
+            "topic": [
+                "Harvard University",
+                "Harvard"
+            ],
+            "entries": [
+                "Ivy League",
+                "Cambridge, MA",
+                "Research",
+                "Founded 1636"
             ]
         },
         {
@@ -254,62 +194,122 @@
         },
         {
             "topic": [
-                "Coco Chanel",
-                "Chanel"
+                "Pablo Picasso",
+                "Picasso"
             ],
             "entries": [
-                "Fashion Designer",
-                "Little Black Dress",
-                "No. 5 Perfume",
-                "Parisian Chic"
+                "Cubism",
+                "Blue Period",
+                "Guernica",
+                "Spanish"
             ]
         },
         {
             "topic": [
-                "Elon Musk",
-                "Musk"
+                "Marie Curie",
+                "Curie"
             ],
             "entries": [
-                "Tesla Motors",
-                "SpaceX",
-                "PayPal",
-                "Billionaire"
+                "Radioactivity",
+                "Nobel Laureate",
+                "Poland",
+                "Physics"
             ]
         },
         {
             "topic": [
-                "Nelson Mandela",
-                "Mandela"
+                "Lionel Messi",
+                "Messi"
             ],
             "entries": [
-                "Apartheid",
-                "South Africa",
-                "Robben Island",
-                "Nobel Laureate"
+                "Barcelona",
+                "Argentina",
+                "Goalscorer",
+                "Ballon d'Or"
             ]
         },
         {
             "topic": [
-                "Ludwig van Beethoven",
-                "Beethoven"
+                "The Louvre",
+                "Louvre Museum"
             ],
             "entries": [
-                "Symphonies",
-                "Deaf Composer",
-                "Fifth Symphony",
-                "German"
+                "Paris",
+                "Art museum",
+                "Glass pyramid",
+                "Mona Lisa"
             ]
         },
         {
             "topic": [
-                "Aristotle",
-                "Aristotle"
+                "Amelia Earhart",
+                "Earhart"
             ],
             "entries": [
-                "Greek Philosopher",
-                "Lyceum",
-                "Ethics",
-                "Natural Sciences"
+                "Aviatrix",
+                "Disappearance",
+                "Transatlantic flight",
+                "Pioneering"
+            ]
+        },
+        {
+            "topic": [
+                "Tesla",
+                "Nikola Tesla"
+            ],
+            "entries": [
+                "Alternating current",
+                "Inventor",
+                "Eccentric genius",
+                "Electricity"
+            ]
+        },
+        {
+            "topic": [
+                "Mozart",
+                "Wolfgang Amadeus Mozart"
+            ],
+            "entries": [
+                "Composer",
+                "Classical",
+                "Symphony",
+                "Viennese"
+            ]
+        },
+        {
+            "topic": [
+                "The White House",
+                "Whitehouse"
+            ],
+            "entries": [
+                "Oval Office",
+                "President's residence",
+                "Washington, D.C.",
+                "Historic"
+            ]
+        },
+        {
+            "topic": [
+                "Florence Nightingale",
+                "Nightingale"
+            ],
+            "entries": [
+                "Nursing",
+                "Crimean War",
+                "Statistical work",
+                "Victorian England"
+            ]
+        },
+        {
+            "topic": [
+                "Albert Einstein",
+                "Einstein"
+            ],
+            "entries": [
+                "Theory of relativity",
+                "Physicist",
+                "E=mc^2",
+                "Nobel Prize"
             ]
         },
         {
@@ -318,34 +318,142 @@
                 "Jackson"
             ],
             "entries": [
-                "Thriller Album",
                 "King of Pop",
+                "Thriller",
                 "Moonwalk",
-                "Neverland Ranch"
+                "Neverland"
             ]
         },
         {
             "topic": [
-                "Socrates",
-                "Socrates"
+                "Elvis Presley",
+                "Presley"
             ],
             "entries": [
-                "Athenian Philosopher",
-                "Socratic Method",
-                "Trial",
-                "Plato's Teacher"
+                "Rock and roll",
+                "Graceland",
+                "Blue Suede Shoes",
+                "Memphis"
             ]
         },
         {
             "topic": [
-                "Alexander the Great",
-                "Alexander"
+                "The Eiffel Tower",
+                "Eiffel"
             ],
             "entries": [
-                "Macedonian Empire",
-                "Gordian Knot",
-                "Undefeated in Battle",
-                "Aristotle's Student"
+                "Paris",
+                "Iron structure",
+                "1889",
+                "Gustave Eiffel"
+            ]
+        },
+        {
+            "topic": [
+                "Barack Obama",
+                "Obama"
+            ],
+            "entries": [
+                "44th President",
+                "Affordable Care Act",
+                "Nobel Peace Prize",
+                "Change"
+            ]
+        },
+        {
+            "topic": [
+                "Harry Potter",
+                "Potter"
+            ],
+            "entries": [
+                "J.K. Rowling",
+                "Wizard",
+                "Hogwarts",
+                "Magic"
+            ]
+        },
+        {
+            "topic": [
+                "Taj Mahal",
+                "Taj"
+            ],
+            "entries": [
+                "Agra",
+                "Architecture",
+                "Mughal",
+                "White marble"
+            ]
+        },
+        {
+            "topic": [
+                "Coca-Cola",
+                "Coke"
+            ],
+            "entries": [
+                "Soft drink",
+                "Atlanta",
+                "Red label",
+                "Soda"
+            ]
+        },
+        {
+            "topic": [
+                "Jane Austen",
+                "Austen"
+            ],
+            "entries": [
+                "Pride and Prejudice",
+                "Novelist",
+                "Regency",
+                "Social commentary"
+            ]
+        },
+        {
+            "topic": [
+                "Mickey Mouse",
+                "Mickey"
+            ],
+            "entries": [
+                "Disney",
+                "Animated",
+                "Iconic ears",
+                "Steamboat Willie"
+            ]
+        },
+        {
+            "topic": [
+                "Mother Teresa",
+                "Teresa"
+            ],
+            "entries": [
+                "Calcutta",
+                "Missionaries of Charity",
+                "Nobel Peace Prize",
+                "Saint"
+            ]
+        },
+        {
+            "topic": [
+                "Muhammad Ali",
+                "Ali"
+            ],
+            "entries": [
+                "Boxer",
+                "Float like a butterfly",
+                "Heavyweight champion",
+                "Olympic gold"
+            ]
+        },
+        {
+            "topic": [
+                "Vincent van Gogh",
+                "Van Gogh"
+            ],
+            "entries": [
+                "Starry Night",
+                "Post-Impressionism",
+                "Dutch",
+                "Ear incident"
             ]
         },
         {
@@ -354,22 +462,202 @@
                 "Beatles"
             ],
             "entries": [
-                "Lennon",
-                "British Invasion",
+                "Liverpool",
+                "British invasion",
                 "Abbey Road",
-                "1960s"
+                "Lennon"
             ]
         },
         {
             "topic": [
-                "Wright Brothers",
-                "Wright Brothers"
+                "Albert Einstein",
+                "Einstein"
             ],
             "entries": [
-                "First Flight",
-                "Aviation Pioneers",
-                "Kitty Hawk",
-                "1903"
+                "Theory of relativity",
+                "Physicist",
+                "E=mc^2",
+                "Nobel Prize"
+            ]
+        },
+        {
+            "topic": [
+                "Queen Elizabeth II",
+                "Elizabeth II"
+            ],
+            "entries": [
+                "British monarchy",
+                "Longest reigning",
+                "Commonwealth",
+                "Royal duties"
+            ]
+        },
+        {
+            "topic": [
+                "The Eiffel Tower",
+                "Eiffel"
+            ],
+            "entries": [
+                "Paris",
+                "Iron structure",
+                "1889",
+                "Gustave Eiffel"
+            ]
+        },
+        {
+            "topic": [
+                "Frida Kahlo",
+                "Kahlo"
+            ],
+            "entries": [
+                "Self-portraits",
+                "Mexico",
+                "Surrealism",
+                "Pain"
+            ]
+        },
+        {
+            "topic": [
+                "Julius Caesar",
+                "Caesar"
+            ],
+            "entries": [
+                "Roman leader",
+                "Dictator",
+                "Assassination",
+                "Gallic War"
+            ]
+        },
+        {
+            "topic": [
+                "Vincent van Gogh",
+                "Van Gogh"
+            ],
+            "entries": [
+                "Starry Night",
+                "Post-Impressionism",
+                "Dutch",
+                "Ear incident"
+            ]
+        },
+        {
+            "topic": [
+                "Jane Austen",
+                "Austen"
+            ],
+            "entries": [
+                "Pride and Prejudice",
+                "Novelist",
+                "Regency",
+                "Social commentary"
+            ]
+        },
+        {
+            "topic": [
+                "Harper Lee",
+                "Lee"
+            ],
+            "entries": [
+                "To Kill a Mockingbird",
+                "Alabama",
+                "Pulitzer Prize",
+                "Reclusive"
+            ]
+        },
+        {
+            "topic": [
+                "Mahatma Gandhi",
+                "Gandhi"
+            ],
+            "entries": [
+                "Nonviolence",
+                "India",
+                "Salt March",
+                "Independence"
+            ]
+        },
+        {
+            "topic": [
+                "Stephen Hawking",
+                "Hawking"
+            ],
+            "entries": [
+                "Black holes",
+                "Theoretical physicist",
+                "ALS",
+                "Cosmology"
+            ]
+        },
+        {
+            "topic": [
+                "Napoleon Bonaparte",
+                "Napoleon"
+            ],
+            "entries": [
+                "Emperor",
+                "French Revolution",
+                "Waterloo",
+                "Corsica"
+            ]
+        },
+        {
+            "topic": [
+                "Thomas Edison",
+                "Edison"
+            ],
+            "entries": [
+                "Light bulb",
+                "Inventor",
+                "Menlo Park",
+                "Phonograph"
+            ]
+        },
+        {
+            "topic": [
+                "Coco Chanel",
+                "Chanel"
+            ],
+            "entries": [
+                "Fashion designer",
+                "Chanel No. 5",
+                "Little black dress",
+                "Paris"
+            ]
+        },
+        {
+            "topic": [
+                "Galileo Galilei",
+                "Galileo"
+            ],
+            "entries": [
+                "Astronomy",
+                "Telescope",
+                "Heliocentrism",
+                "Italian"
+            ]
+        },
+        {
+            "topic": [
+                "Queen Victoria",
+                "Victoria"
+            ],
+            "entries": [
+                "British Empire",
+                "Longest reign",
+                "Victorian era",
+                "Industrial age"
+            ]
+        },
+        {
+            "topic": [
+                "Michael Jordan",
+                "Jordan"
+            ],
+            "entries": [
+                "Basketball",
+                "Chicago Bulls",
+                "Air",
+                "23"
             ]
         },
         {
@@ -380,500 +668,8 @@
             "entries": [
                 "The Great Gatsby",
                 "Jazz Age",
-                "American Novelist",
+                "American author",
                 "Roaring Twenties"
-            ]
-        },
-        {
-            "topic": [
-                "Amelia Earhart",
-                "Earhart"
-            ],
-            "entries": [
-                "Aviation Pioneer",
-                "Atlantic Cross",
-                "Disappearance",
-                "Female Pilot"
-            ]
-        },
-        {
-            "topic": [
-                "The Jackson 5",
-                "Jackson 5"
-            ],
-            "entries": [
-                "Motown",
-                "Michael Jackson",
-                "ABC",
-                "Jackson Family"
-            ]
-        },
-        {
-            "topic": [
-                "Neil Armstrong",
-                "Armstrong"
-            ],
-            "entries": [
-                "Moon Landing",
-                "Apollo 11",
-                "NASA Astronaut",
-                "First Moon Walk"
-            ]
-        },
-        {
-            "topic": [
-                "Marilyn Monroe",
-                "Monroe"
-            ],
-            "entries": [
-                "Hollywood Icon",
-                "Blonde Bombshell",
-                "1950s",
-                "Some Like It Hot"
-            ]
-        },
-        {
-            "topic": [
-                "Winston Churchill",
-                "Churchill"
-            ],
-            "entries": [
-                "British Prime Minister",
-                "World War II",
-                "Iron Curtain Speech",
-                "Cigar Smoker"
-            ]
-        },
-        {
-            "topic": [
-                "Jane Austen",
-                "Austen"
-            ],
-            "entries": [
-                "Pride and Prejudice",
-                "Regency Era",
-                "British Author",
-                "Romantic Novels"
-            ]
-        },
-        {
-            "topic": [
-                "The Queen",
-                "Queen Elizabeth II"
-            ],
-            "entries": [
-                "Longest-Serving Monarch",
-                "British Royalty",
-                "Commonwealth",
-                "Corgis"
-            ]
-        },
-        {
-            "topic": [
-                "George Lucas",
-                "Lucas"
-            ],
-            "entries": [
-                "Star Wars",
-                "Filmmaker",
-                "Lucasfilm",
-                "Science Fiction"
-            ]
-        },
-        {
-            "topic": [
-                "Edgar Allan Poe",
-                "Poe"
-            ],
-            "entries": [
-                "Horror Writer",
-                "The Raven",
-                "Gothic",
-                "19th Century"
-            ]
-        },
-        {
-            "topic": [
-                "Queen",
-                "Queen (Band)"
-            ],
-            "entries": [
-                "Freddie Mercury",
-                "British Rock",
-                "Bohemian Rhapsody",
-                "1970s"
-            ]
-        },
-        {
-            "topic": [
-                "Nina Simone",
-                "Simone"
-            ],
-            "entries": [
-                "Soulful Voice",
-                "Civil Rights Activist",
-                "Pianist",
-                "Black Classical Music"
-            ]
-        },
-        {
-            "topic": [
-                "Hemingway",
-                "Ernest Hemingway"
-            ],
-            "entries": [
-                "Old Man and the Sea",
-                "Nobel Prize",
-                "War Correspondent",
-                "Minimalist Prose"
-            ]
-        },
-        {
-            "topic": [
-                "Andy Warhol",
-                "Warhol"
-            ],
-            "entries": [
-                "Pop Art",
-                "Campbell's Soup",
-                "Silver Factory",
-                "American Artist"
-            ]
-        },
-        {
-            "topic": [
-                "Isaac Newton",
-                "Newton"
-            ],
-            "entries": [
-                "Gravity Theory",
-                "Calculus Developer",
-                "Principia Mathematica",
-                "English Physicist"
-            ]
-        },
-        {
-            "topic": [
-                "Sigmund Freud",
-                "Freud"
-            ],
-            "entries": [
-                "Psychoanalysis",
-                "Oedipus Complex",
-                "Dream Interpretation",
-                "Viennese Neurologist"
-            ]
-        },
-        {
-            "topic": [
-                "Salvador Dal\u00ed",
-                "Dal\u00ed"
-            ],
-            "entries": [
-                "Surrealism",
-                "Melting Clocks",
-                "Spanish Artist",
-                "Dal\u00ed Theatre-Museum"
-            ]
-        },
-        {
-            "topic": [
-                "Stephen Hawking",
-                "Hawking"
-            ],
-            "entries": [
-                "Black Holes",
-                "Theoretical Physicist",
-                "ALS Diagnosis",
-                "Brief History"
-            ]
-        },
-        {
-            "topic": [
-                "Marie Antoinette",
-                "Antoinette"
-            ],
-            "entries": [
-                "French Revolution",
-                "Queen of France",
-                "Let Them Eat Cake",
-                "Guillotine"
-            ]
-        },
-        {
-            "topic": [
-                "Houdini",
-                "Harry Houdini"
-            ],
-            "entries": [
-                "Escapologist",
-                "Magic",
-                "Tricks",
-                "Illusionist"
-            ]
-        },
-        {
-            "topic": [
-                "Franz Kafka",
-                "Kafka"
-            ],
-            "entries": [
-                "The Metamorphosis",
-                "Existentialism",
-                "Prague",
-                "Surreal Author"
-            ]
-        },
-        {
-            "topic": [
-                "Bob Marley",
-                "Marley"
-            ],
-            "entries": [
-                "Reggae Music",
-                "Jamaican Legend",
-                "One Love",
-                "Rastafari"
-            ]
-        },
-        {
-            "topic": [
-                "Dalai Lama",
-                "Tenzin Gyatso"
-            ],
-            "entries": [
-                "Tibetan Buddhism",
-                "Spiritual Leader",
-                "Monastic",
-                "Nobel Peace Prize"
-            ]
-        },
-        {
-            "topic": [
-                "Mark Twain",
-                "Twain"
-            ],
-            "entries": [
-                "Huckleberry Finn",
-                "American Humorist",
-                "Mississippi River",
-                "19th Century Author"
-            ]
-        },
-        {
-            "topic": [
-                "Mona Lisa",
-                "La Gioconda"
-            ],
-            "entries": [
-                "Da Vinci's Painting",
-                "Louvre Museum",
-                "Enigmatic Smile",
-                "Italian Renaissance"
-            ]
-        },
-        {
-            "topic": [
-                "Florence Nightingale",
-                "Nightingale"
-            ],
-            "entries": [
-                "Nursing Pioneer",
-                "Crimean War",
-                "Lady with the Lamp",
-                "Statistics Innovator"
-            ]
-        },
-        {
-            "topic": [
-                "Galileo Galilei",
-                "Galileo"
-            ],
-            "entries": [
-                "Telescope Pioneer",
-                "Heliocentric Theory",
-                "Italian Astronomer",
-                "Inquisition Trial"
-            ]
-        },
-        {
-            "topic": [
-                "Bruce Lee",
-                "Lee"
-            ],
-            "entries": [
-                "Martial Arts",
-                "Enter the Dragon",
-                "Jeet Kune Do",
-                "Asian-American Icon"
-            ]
-        },
-        {
-            "topic": [
-                "Henry Ford",
-                "Ford"
-            ],
-            "entries": [
-                "Model T",
-                "Assembly Line",
-                "Automobile Innovator",
-                "Ford Motor Company"
-            ]
-        },
-        {
-            "topic": [
-                "Bill Gates",
-                "Gates"
-            ],
-            "entries": [
-                "Microsoft",
-                "Windows OS",
-                "Philanthropist",
-                "World\u2019s Richest"
-            ]
-        },
-        {
-            "topic": [
-                "Barbara Walters",
-                "Walters"
-            ],
-            "entries": [
-                "Television Journalist",
-                "The View Host",
-                "Trailblazer",
-                "Interviewer"
-            ]
-        },
-        {
-            "topic": [
-                "Prince",
-                "Prince (Musician)"
-            ],
-            "entries": [
-                "Purple Rain",
-                "Minneapolis Sound",
-                "Gender-Bending",
-                "Revolution"
-            ]
-        },
-        {
-            "topic": [
-                "Louisa May Alcott",
-                "Alcott"
-            ],
-            "entries": [
-                "Little Women",
-                "Civil War Nurse",
-                "American Writer",
-                "Transcendentalism"
-            ]
-        },
-        {
-            "topic": [
-                "Malala Yousafzai",
-                "Malala"
-            ],
-            "entries": [
-                "Women's Education",
-                "Nobel Peace Prize",
-                "Pakistani Activist",
-                "Youngest Laureate"
-            ]
-        },
-        {
-            "topic": [
-                "John F. Kennedy",
-                "JFK"
-            ],
-            "entries": [
-                "U.S. President",
-                "Cuban Missile Crisis",
-                "Assassination",
-                "Camelot Era"
-            ]
-        },
-        {
-            "topic": [
-                "Elvis Presley",
-                "Elvis"
-            ],
-            "entries": [
-                "Graceland",
-                "Rock 'n' Roll",
-                "Jailhouse Rock",
-                "The King"
-            ]
-        },
-        {
-            "topic": [
-                "Alfred Hitchcock",
-                "Hitchcock"
-            ],
-            "entries": [
-                "Psycho",
-                "Suspense Films",
-                "Director",
-                "British Filmmaker"
-            ]
-        },
-        {
-            "topic": [
-                "Billie Holiday",
-                "Holiday"
-            ],
-            "entries": [
-                "Jazz Singer",
-                "Strange Fruit",
-                "Lady Day",
-                "Swing Era"
-            ]
-        },
-        {
-            "topic": [
-                "Agatha Christie",
-                "Christie"
-            ],
-            "entries": [
-                "Murder Mysteries",
-                "Poirot",
-                "British Author",
-                "Queen of Crime"
-            ]
-        },
-        {
-            "topic": [
-                "Isaac Asimov",
-                "Asimov"
-            ],
-            "entries": [
-                "Science Fiction",
-                "Robot Laws",
-                "Foundation Series",
-                "American Writer"
-            ]
-        },
-        {
-            "topic": [
-                "The Supremes",
-                "Supremes"
-            ],
-            "entries": [
-                "Motown Legends",
-                "Diana Ross",
-                "1960s",
-                "Girl Group"
-            ]
-        },
-        {
-            "topic": [
-                "Margaret Thatcher",
-                "Thatcher"
-            ],
-            "entries": [
-                "Iron Lady",
-                "British Prime Minister",
-                "Conservative",
-                "Falklands War"
             ]
         },
         {
@@ -882,154 +678,22 @@
                 "Darwin"
             ],
             "entries": [
-                "Evolution Theory",
-                "Natural Selection",
-                "Gal\u00e1pagos Islands",
-                "British Naturalist"
+                "Evolution",
+                "Natural selection",
+                "Galapagos Islands",
+                "Origin of species"
             ]
         },
         {
             "topic": [
-                "Michael Angelo",
-                "Michelangelo"
+                "Elon Musk",
+                "Musk"
             ],
             "entries": [
-                "Sistine Chapel",
-                "Renaissance Artist",
-                "David Sculpture",
-                "Italian Polymath"
-            ]
-        },
-        {
-            "topic": [
-                "Leon Trotsky",
-                "Trotsky"
-            ],
-            "entries": [
-                "Russian Revolution",
-                "Communism",
-                "Exile",
-                "Assassination"
-            ]
-        },
-        {
-            "topic": [
-                "Anne Frank",
-                "Frank"
-            ],
-            "entries": [
-                "Diary",
-                "Holocaust Victim",
-                "Secret Annex",
-                "Jewish History"
-            ]
-        },
-        {
-            "topic": [
-                "Mother Theresa",
-                "Theresa"
-            ],
-            "entries": [
-                "Charity",
-                "Missionaries of Charity",
-                "Calcutta",
-                "Nobel Laureate"
-            ]
-        },
-        {
-            "topic": [
-                "Alexander Graham Bell",
-                "Bell"
-            ],
-            "entries": [
-                "Telephone Inventor",
-                "Bell Company",
-                "Scottish Scientist",
-                "Deaf Education"
-            ]
-        },
-        {
-            "topic": [
-                "Nelson Mandela",
-                "Mandela"
-            ],
-            "entries": [
-                "Anti-Apartheid",
-                "South African President",
-                "Robben Island",
-                "Nobel Peace Prize"
-            ]
-        },
-        {
-            "topic": [
-                "W.E.B. Du Bois",
-                "Du Bois"
-            ],
-            "entries": [
-                "African-American Scholar",
-                "Civil Rights Activist",
-                "Niagara Movement",
-                "NAACP Co-Founder"
-            ]
-        },
-        {
-            "topic": [
-                "Simone de Beauvoir",
-                "Beauvoir"
-            ],
-            "entries": [
-                "Feminist Icon",
-                "The Second Sex",
-                "Existentialist",
-                "French Author"
-            ]
-        },
-        {
-            "topic": [
-                "Zaha Hadid",
-                "Hadid"
-            ],
-            "entries": [
-                "Pritzker Prize",
-                "Deconstructivist Architecture",
-                "Iraqi-British",
-                "Fluid Forms"
-            ]
-        },
-        {
-            "topic": [
-                "Lena Horne",
-                "Horne"
-            ],
-            "entries": [
-                "Jazz Singer",
-                "Civil Rights Activist",
-                "Stormy Weather",
-                "Broadway Star"
-            ]
-        },
-        {
-            "topic": [
-                "Plato",
-                "Plato"
-            ],
-            "entries": [
-                "Philosopher",
-                "Academy Founder",
-                "Socratic Dialogues",
-                "Forms Theory"
-            ]
-        },
-        {
-            "topic": [
-                "Marcus Aurelius",
-                "Aurelius"
-            ],
-            "entries": [
-                "Stoic Philosopher",
-                "Roman Emperor",
-                "Meditations",
-                "Military Campaigns"
+                "Tesla",
+                "SpaceX",
+                "Entrepreneur",
+                "Innovation"
             ]
         },
         {
@@ -1038,22 +702,106 @@
                 "Ludwig van Beethoven"
             ],
             "entries": [
+                "Composer",
                 "Symphonies",
-                "Pianist",
-                "Ludwig",
-                "Classical Composer"
+                "Deafness",
+                "Classical"
             ]
         },
         {
             "topic": [
-                "Astrid Lindgren",
-                "Lindgren"
+                "Cleopatra",
+                "Cleopatra VII"
             ],
             "entries": [
-                "Pippi Longstocking",
-                "Swedish Author",
-                "Children's Literature",
-                "Stockholm"
+                "Egypt",
+                "Julius Caesar",
+                "Mark Antony",
+                "Queen"
+            ]
+        },
+        {
+            "topic": [
+                "Chanel",
+                "Coco Chanel"
+            ],
+            "entries": [
+                "Fashion designer",
+                "Chanel No. 5",
+                "Little black dress",
+                "Paris"
+            ]
+        },
+        {
+            "topic": [
+                "Ernest Hemingway",
+                "Hemingway"
+            ],
+            "entries": [
+                "The Old Man and the Sea",
+                "War correspondent",
+                "Nobel Prize",
+                "Writing style"
+            ]
+        },
+        {
+            "topic": [
+                "Marilyn Monroe",
+                "Monroe"
+            ],
+            "entries": [
+                "Hollywood icon",
+                "Blonde bombshell",
+                "Diamonds",
+                "The Seven Year Itch"
+            ]
+        },
+        {
+            "topic": [
+                "Charles Dickens",
+                "Dickens"
+            ],
+            "entries": [
+                "Oliver Twist",
+                "Victorian London",
+                "Social commentary",
+                "Serial publications"
+            ]
+        },
+        {
+            "topic": [
+                "Martin Luther King Jr.",
+                "MLK"
+            ],
+            "entries": [
+                "Civil rights",
+                "I Have a Dream",
+                "Montgomery Bus Boycott",
+                "Nobel Peace Prize"
+            ]
+        },
+        {
+            "topic": [
+                "Alexander the Great",
+                "Alexander"
+            ],
+            "entries": [
+                "Macedonian empire",
+                "Conqueror",
+                "Aristotle",
+                "Battle of Gaugamela"
+            ]
+        },
+        {
+            "topic": [
+                "Star Wars",
+                "SW"
+            ],
+            "entries": [
+                "George Lucas",
+                "Sci-fi saga",
+                "The Force",
+                "Jedi"
             ]
         }
     ]

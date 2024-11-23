@@ -1,0 +1,364 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Volcano",
+                "Erupting Mountain"
+            ],
+            "entries": [
+                "Lava Flow",
+                "Magma",
+                "Ash Cloud",
+                "Crater"
+            ]
+        },
+        {
+            "topic": [
+                "Rainforest",
+                "Tropical Forest"
+            ],
+            "entries": [
+                "Dense Canopy",
+                "Humidity",
+                "Biodiversity",
+                "Amazon"
+            ]
+        },
+        {
+            "topic": [
+                "Desert",
+                "Arid Land"
+            ],
+            "entries": [
+                "Sand Dunes",
+                "Cacti",
+                "Extreme Heat",
+                "Oasis"
+            ]
+        },
+        {
+            "topic": [
+                "Tornado",
+                "Twister"
+            ],
+            "entries": [
+                "Funnel Cloud",
+                "Strong Winds",
+                "Storm Chase",
+                "Rotating Column"
+            ]
+        },
+        {
+            "topic": [
+                "Glacier",
+                "Ice River"
+            ],
+            "entries": [
+                "Ice Sheets",
+                "Calving",
+                "Polar Regions",
+                "Crevasses"
+            ]
+        },
+        {
+            "topic": [
+                "Coral Reef",
+                "Marine Garden"
+            ],
+            "entries": [
+                "Great Barrier Reef",
+                "Polyps",
+                "Colorful Fish",
+                "Warm Waters"
+            ]
+        },
+        {
+            "topic": [
+                "Waterfall",
+                "Cascading Stream"
+            ],
+            "entries": [
+                "Plunge Pool",
+                "Niagara",
+                "Vertical Drop",
+                "Mist"
+            ]
+        },
+        {
+            "topic": [
+                "Earthquake",
+                "Seismic Event"
+            ],
+            "entries": [
+                "Tectonic Plates",
+                "Richter Scale",
+                "Aftershocks",
+                "Epicenter"
+            ]
+        },
+        {
+            "topic": [
+                "Hurricane",
+                "Cyclone"
+            ],
+            "entries": [
+                "Eye Wall",
+                "Tropical Storm",
+                "Storm Surge",
+                "High Winds"
+            ]
+        },
+        {
+            "topic": [
+                "Fjord",
+                "Glacial Valley"
+            ],
+            "entries": [
+                "Steep Cliffs",
+                "Deep Inlet",
+                "Norway",
+                "U-shaped Valley"
+            ]
+        },
+        {
+            "topic": [
+                "Aurora Borealis",
+                "Northern Lights"
+            ],
+            "entries": [
+                "Magnetic Poles",
+                "Charged Particles",
+                "Colorful Display",
+                "Solar Winds"
+            ]
+        },
+        {
+            "topic": [
+                "Savanna",
+                "Tropical Grassland"
+            ],
+            "entries": [
+                "Elephants",
+                "Acacia Trees",
+                "Rainy Season",
+                "Open Plains"
+            ]
+        },
+        {
+            "topic": [
+                "Cave",
+                "Subterranean Vault"
+            ],
+            "entries": [
+                "Stalactites",
+                "Stalagmites",
+                "Dark Chambers",
+                "Bats"
+            ]
+        },
+        {
+            "topic": [
+                "Tundra",
+                "Frozen Plain"
+            ],
+            "entries": [
+                "Permafrost",
+                "Little Rain",
+                "Polar Bears",
+                "Mosses"
+            ]
+        },
+        {
+            "topic": [
+                "Canyon",
+                "Deep Gorge"
+            ],
+            "entries": [
+                "Grand Canyon",
+                "Erosional Scarp",
+                "Steep Walls",
+                "River Valley"
+            ]
+        },
+        {
+            "topic": [
+                "Geyser",
+                "Hot Spring"
+            ],
+            "entries": [
+                "Old Faithful",
+                "Intermittent Eruptions",
+                "Geothermal Activity",
+                "Steam Jets"
+            ]
+        },
+        {
+            "topic": [
+                "Mountain Range",
+                "Highland Chain"
+            ],
+            "entries": [
+                "Himalayas",
+                "Alpine Ecosystems",
+                "Peak Elevation",
+                "Ridge Line"
+            ]
+        },
+        {
+            "topic": [
+                "Beach",
+                "Sandy Shore"
+            ],
+            "entries": [
+                "Palm Trees",
+                "Beachfront",
+                "Waves",
+                "Seashells"
+            ]
+        },
+        {
+            "topic": [
+                "Ocean",
+                "Sea"
+            ],
+            "entries": [
+                "Marine Life",
+                "Saltwater",
+                "Tides",
+                "Underwater Volcanoes"
+            ]
+        },
+        {
+            "topic": [
+                "Rainstorm",
+                "Thunderstorm"
+            ],
+            "entries": [
+                "Raindrops",
+                "Lightning",
+                "Thundering Clouds",
+                "Heavy Downpour"
+            ]
+        },
+        {
+            "topic": [
+                "Swamp",
+                "Wetland"
+            ],
+            "entries": [
+                "Alligators",
+                "Cypress Trees",
+                "Marshy Soil",
+                "Soggy Land"
+            ]
+        },
+        {
+            "topic": [
+                "Lagoon",
+                "Saltwater Lake"
+            ],
+            "entries": [
+                "Coral Reefs",
+                "Enclosed Bay",
+                "Coastal Water",
+                "Shallow Depth"
+            ]
+        },
+        {
+            "topic": [
+                "Ridge",
+                "Elevated Crest"
+            ],
+            "entries": [
+                "Continental Divide",
+                "Soaring Heights",
+                "Rock Formations",
+                "Diverse Flora"
+            ]
+        },
+        {
+            "topic": [
+                "Archipelago",
+                "Island Chain"
+            ],
+            "entries": [
+                "Gal\u00e1pagos",
+                "Tropical Islands",
+                "Dispersed Landforms",
+                "Unique Species"
+            ]
+        },
+        {
+            "topic": [
+                "Fault Line",
+                "Tectonic Boundary"
+            ],
+            "entries": [
+                "San Andreas",
+                "Seismic Activity",
+                "Crustal Plates",
+                "Geological Rift"
+            ]
+        },
+        {
+            "topic": [
+                "Gulf",
+                "Coastal Basin"
+            ],
+            "entries": [
+                "Mexico",
+                "Coastal Inlet",
+                "Wide Stretch",
+                "Marine Boundaries"
+            ]
+        },
+        {
+            "topic": [
+                "Wetland",
+                "Mire"
+            ],
+            "entries": [
+                "Habitat Diversity",
+                "Flood Zones",
+                "Bogs",
+                "Waterlogged Ground"
+            ]
+        },
+        {
+            "topic": [
+                "Plains",
+                "Flatlands"
+            ],
+            "entries": [
+                "Vast Fields",
+                "Agriculture",
+                "Level Terrain",
+                "Grasslands"
+            ]
+        },
+        {
+            "topic": [
+                "Water Cycle",
+                "Hydrological Loop"
+            ],
+            "entries": [
+                "Evaporation",
+                "Precipitation",
+                "Condensation",
+                "Transpiration"
+            ]
+        },
+        {
+            "topic": [
+                "Savannah",
+                "Grassland"
+            ],
+            "entries": [
+                "Lions",
+                "Seasonal Changes",
+                "Sparse Trees",
+                "Expansive Horizon"
+            ]
+        }
+    ]
+}

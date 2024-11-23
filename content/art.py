@@ -30,7 +30,7 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- A topic should be a well-known, easy to guess, top of mind, literary work, painting or sculpture.\n"
+    "- A topic should be a well-known, easy to guess for an average joe, top of mind, literary work, painting or sculpture.\n"
     "  (e.g. 'Mona Lisa', 'The Starry Night', 'The Diary of Anne Frank').\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
@@ -50,7 +50,7 @@ completion = client.beta.chat.completions.parse(
     "  **Entries:** ['Thomas Edison', 'Filament', 'Electric Current', 'Illumination']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 20 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     "- Ensure there's a good balance between literary works, paintings, sculptures, music, and dance"
     }
     ],

@@ -2,327 +2,639 @@
     "topics": [
         {
             "topic": [
-                "Theory of Relativity",
-                "Einstein's Relativity",
-                "Relativity Theory"
-            ],
-            "entries": [
-                "Space-time curvature",
-                "Speed of light",
-                "Mass-energy equivalence",
-                "Gravitational waves"
-            ]
-        },
-        {
-            "topic": [
-                "Penicillin",
-                "Antibiotic Drug",
-                "Mold-Derived Medicine"
-            ],
-            "entries": [
-                "Alexander Fleming",
-                "Bacteria",
-                "Infection treatment",
-                "Accidental discovery"
-            ]
-        },
-        {
-            "topic": [
-                "Internet",
-                "World Wide Web",
-                "Global Network"
-            ],
-            "entries": [
-                "Tim Berners-Lee",
-                "Digital communication",
-                "Web pages",
-                "Connectivity"
-            ]
-        },
-        {
-            "topic": [
                 "Telephone",
                 "Telecom Device",
-                "Speaking Machine"
+                "Landline"
             ],
             "entries": [
                 "Alexander Graham Bell",
-                "Voice transmission",
-                "Bell Labs",
-                "Long-distance"
+                "Voice Transmission",
+                "Telephone Poles",
+                "Rotary Dial"
             ]
         },
         {
             "topic": [
-                "DNA",
-                "Deoxyribonucleic Acid",
-                "Genetic Blueprint"
+                "Automobile",
+                "Car",
+                "Motor Vehicle"
             ],
             "entries": [
-                "Double helix",
-                "Watson and Crick",
-                "Genetic code",
-                "Hereditary"
-            ]
-        },
-        {
-            "topic": [
-                "Steam Engine",
-                "Steam Power",
-                "Vapor Engine"
-            ],
-            "entries": [
-                "James Watt",
-                "Mechanized revolution",
-                "Industrialization",
-                "Boiling water"
+                "Henry Ford",
+                "Engine",
+                "Wheels",
+                "Steering Wheel"
             ]
         },
         {
             "topic": [
                 "Airplane",
-                "Aeroplane",
+                "Aircraft",
                 "Flying Machine"
             ],
             "entries": [
-                "Wilbur Wright",
-                "Powered flight",
-                "Aerodynamics",
-                "Wings"
+                "Wright Brothers",
+                "Aviation",
+                "Wings",
+                "Cockpit"
+            ]
+        },
+        {
+            "topic": [
+                "Camera",
+                "Photographic Device",
+                "Photo Camera"
+            ],
+            "entries": [
+                "Shutter",
+                "Lens",
+                "Film",
+                "Flash"
+            ]
+        },
+        {
+            "topic": [
+                "Refrigerator",
+                "Fridge",
+                "Icebox"
+            ],
+            "entries": [
+                "Cooling System",
+                "Refrigerant",
+                "Compressor",
+                "Shelves"
             ]
         },
         {
             "topic": [
                 "Radio",
-                "Wireless Signal",
-                "Broadcasting Technology"
+                "Wireless Receiver",
+                "Broadcast Receiver"
             ],
             "entries": [
-                "Guglielmo Marconi",
-                "Sound waves",
                 "AM/FM",
-                "Communication revolution"
+                "Tuning",
+                "Antennas",
+                "Transmitter"
             ]
         },
         {
             "topic": [
-                "Electricity",
-                "Electric Power",
-                "Current Flow"
+                "Bicycle",
+                "Bike",
+                "Cycle"
             ],
             "entries": [
-                "Benjamin Franklin",
-                "Generators",
-                "Power lines",
-                "Electromagnetism"
-            ]
-        },
-        {
-            "topic": [
-                "Nuclear Energy",
-                "Atomic Power",
-                "Nuclear Power"
-            ],
-            "entries": [
-                "Fission and fusion",
-                "Radioactive materials",
-                "Electricity generation",
-                "Atom splitting"
-            ]
-        },
-        {
-            "topic": [
-                "Computer",
-                "Electronic Processor",
-                "Calculating Machine"
-            ],
-            "entries": [
-                "Central processing unit",
-                "Data storage",
-                "Binary code",
-                "Microchips"
-            ]
-        },
-        {
-            "topic": [
-                "Telephone",
-                "Telecom Device",
-                "Speaking Machine"
-            ],
-            "entries": [
-                "Alexander Graham Bell",
-                "Voice transmission",
-                "Bell Labs",
-                "Long-distance"
-            ]
-        },
-        {
-            "topic": [
-                "Vaccination",
-                "Inoculation",
-                "Immunization"
-            ],
-            "entries": [
-                "Edward Jenner",
-                "Virus prevention",
-                "Smallpox",
-                "Immunity"
-            ]
-        },
-        {
-            "topic": [
-                "Photography",
-                "Photo Capture",
-                "Light Image"
-            ],
-            "entries": [
-                "Daguerreotype",
-                "Exposure time",
-                "Camera obscura",
-                "Chemical reactions"
+                "Pedals",
+                "Handlebars",
+                "Two Wheels",
+                "Chain"
             ]
         },
         {
             "topic": [
                 "Television",
                 "TV",
-                "Broadcast Media"
+                "Telly"
             ],
             "entries": [
-                "Broadcast signals",
-                "Video display",
-                "Remote control",
-                "Entertainment"
+                "Channels",
+                "Remote Control",
+                "Screen",
+                "Broadcast"
             ]
         },
         {
             "topic": [
-                "Microscope",
-                "Magnifying Instrument",
-                "Optical Magnifier"
+                "Computer",
+                "PC",
+                "Personal Computer"
             ],
             "entries": [
-                "Antonie van Leeuwenhoek",
-                "Cellular structures",
-                "Lenses",
-                "Microscopic world"
+                "CPU",
+                "Keyboard",
+                "Monitor",
+                "Software"
             ]
         },
         {
             "topic": [
-                "Graphene",
-                "Carbon Nanostructure",
-                "Graphite Derivative"
+                "Washing Machine",
+                "Laundry Washer",
+                "Clothes Washer"
             ],
             "entries": [
-                "Atomic lattice",
-                "Conduction",
-                "Andre Geim",
-                "Flexible electronics"
+                "Drum",
+                "Agitator",
+                "Spin Cycle",
+                "Detergent"
             ]
         },
         {
             "topic": [
-                "Bluetooth",
-                "Wireless Communication",
-                "Short-Range Radio"
+                "Microwave Oven",
+                "Microwave",
+                "Rapid Cooker"
             ],
             "entries": [
-                "Wireless connections",
-                "Signal pairing",
-                "Low energy",
-                "Cordless devices"
+                "Electromagnetic Waves",
+                "Turntable",
+                "Heating",
+                "Timer"
             ]
         },
         {
             "topic": [
-                "CRISPR",
-                "Gene Editing",
-                "DNA Editing Tool"
+                "Vacuum Cleaner",
+                "Hoover",
+                "Suction Cleaner"
             ],
             "entries": [
-                "Cas9 protein",
-                "Genome modification",
-                "Precision editing",
-                "Biotechnology"
+                "Dust Bag",
+                "Carpet",
+                "Suction Power",
+                "Nozzle"
             ]
         },
         {
             "topic": [
-                "Quantum Computer",
-                "Quantum Computing",
-                "Qubit Processor"
+                "Bicycle",
+                "Bike",
+                "Cycle"
             ],
             "entries": [
-                "Superposition",
-                "Quantum bits",
-                "Entanglement",
-                "Subatomic computation"
+                "Pedals",
+                "Handlebars",
+                "Two Wheels",
+                "Chain"
             ]
         },
         {
             "topic": [
-                "3D Printing",
-                "Additive Manufacturing",
-                "Layered Fabrication"
+                "Printing Press",
+                "Gutenberg Press",
+                "Movable Type"
             ],
             "entries": [
-                "Digital models",
-                "Material layering",
-                "Design flexibility",
-                "Rapid prototyping"
+                "Johannes Gutenberg",
+                "Typefaces",
+                "Books",
+                "Mass Production"
             ]
         },
         {
             "topic": [
-                "Violin",
-                "Stringed Instrument",
-                "Fiddle"
+                "Sewing Machine",
+                "Stitcher",
+                "Needlework Machine"
             ],
             "entries": [
-                "Antonio Stradivari",
-                "Bow movement",
-                "Orchestral music",
-                "Sound resonance"
+                "Needle",
+                "Thread",
+                "Presser Foot",
+                "Bobbin"
             ]
         },
         {
             "topic": [
-                "Hovercraft",
-                "Air-Cushion Vehicle",
-                "Amphibious Transport"
+                "Clock",
+                "Timepiece",
+                "Chronometer"
             ],
             "entries": [
-                "Cushion of air",
-                "Water and land",
-                "Propellers",
-                "Versatile mobility"
+                "Hour Hand",
+                "Minutes",
+                "Quartz",
+                "Ticking"
             ]
         },
         {
             "topic": [
-                "Renewable Energy",
-                "Sustainable Power",
-                "Green Electricity"
+                "Toaster",
+                "Bread Toaster",
+                "Pop-up Toaster"
             ],
             "entries": [
-                "Solar panels",
-                "Wind turbines",
-                "Hydropower",
-                "Eco-friendly"
+                "Slices",
+                "Browning",
+                "Heating Elements",
+                "Slots"
+            ]
+        },
+        {
+            "topic": [
+                "Electric Guitar",
+                "Guitar",
+                "Electric Six-string"
+            ],
+            "entries": [
+                "Strings",
+                "Amp",
+                "Fretboard",
+                "Pickups"
+            ]
+        },
+        {
+            "topic": [
+                "Elevator",
+                "Lift",
+                "Vertical Transport"
+            ],
+            "entries": [
+                "Cabin",
+                "Buttons",
+                "Shaft",
+                "Counterweight"
+            ]
+        },
+        {
+            "topic": [
+                "Battery",
+                "Energy Cell",
+                "Power Cell"
+            ],
+            "entries": [
+                "Chemical Reaction",
+                "Electrolyte",
+                "Voltage",
+                "Charge"
+            ]
+        },
+        {
+            "topic": [
+                "Refrigerator",
+                "Fridge",
+                "Cooling Appliance"
+            ],
+            "entries": [
+                "Compressor",
+                "Cooling",
+                "Shelves",
+                "Door"
             ]
         },
         {
             "topic": [
                 "Smartphone",
                 "Mobile Phone",
-                "Cellular Device"
+                "Cellphone"
             ],
             "entries": [
-                "Touch screen",
-                "Mobile apps",
-                "Wireless internet",
-                "Communication tool"
+                "Touchscreen",
+                "Apps",
+                "Camera",
+                "Calls"
+            ]
+        },
+        {
+            "topic": [
+                "Clock",
+                "Timepiece",
+                "Chronometer"
+            ],
+            "entries": [
+                "Hour Hand",
+                "Minutes",
+                "Quartz",
+                "Ticking"
+            ]
+        },
+        {
+            "topic": [
+                "Microwave Oven",
+                "Microwave",
+                "Rapid Cooker"
+            ],
+            "entries": [
+                "Electromagnetic Waves",
+                "Turntable",
+                "Heating",
+                "Timer"
+            ]
+        },
+        {
+            "topic": [
+                "Calculator",
+                "Computing Device",
+                "Adding Machine"
+            ],
+            "entries": [
+                "Buttons",
+                "Display",
+                "Arithmetic",
+                "Electronic"
+            ]
+        },
+        {
+            "topic": [
+                "Submarine",
+                "Submersible",
+                "Underwater Vessel"
+            ],
+            "entries": [
+                "Torpedoes",
+                "Periscope",
+                "Hull",
+                "Navigation"
+            ]
+        },
+        {
+            "topic": [
+                "Hair Dryer",
+                "Hair Drier",
+                "Blow Dryer"
+            ],
+            "entries": [
+                "Hot Air",
+                "Fan",
+                "Hair Styling",
+                "Electric"
+            ]
+        },
+        {
+            "topic": [
+                "Helicopter",
+                "Chopper",
+                "Rotorcraft"
+            ],
+            "entries": [
+                "Rotor Blades",
+                "Vertical Lift",
+                "Pilot",
+                "Skids"
+            ]
+        },
+        {
+            "topic": [
+                "Fountain Pen",
+                "Ink Pen",
+                "Nibbed Pen"
+            ],
+            "entries": [
+                "Ink Cartridge",
+                "Nib",
+                "Cap",
+                "Reservoir"
+            ]
+        },
+        {
+            "topic": [
+                "Escalator",
+                "Moving Staircase",
+                "Automatic Stairs"
+            ],
+            "entries": [
+                "Treads",
+                "Handrails",
+                "Mechanism",
+                "Incline"
+            ]
+        },
+        {
+            "topic": [
+                "Chainsaw",
+                "Saw",
+                "Power Saw"
+            ],
+            "entries": [
+                "Chains",
+                "Motor",
+                "Cutting Teeth",
+                "Bar"
+            ]
+        },
+        {
+            "topic": [
+                "Compass",
+                "Direction Finder",
+                "Navigational Tool"
+            ],
+            "entries": [
+                "North",
+                "Magnetic Field",
+                "Needle",
+                "Degrees"
+            ]
+        },
+        {
+            "topic": [
+                "Flashlight",
+                "Torch",
+                "Portable Light"
+            ],
+            "entries": [
+                "Batteries",
+                "Beam",
+                "LED",
+                "Bulb"
+            ]
+        },
+        {
+            "topic": [
+                "Thermometer",
+                "Temperature Gauge",
+                "Heat Meter"
+            ],
+            "entries": [
+                "Mercury",
+                "Fahrenheit",
+                "Sensor",
+                "Glass Tube"
+            ]
+        },
+        {
+            "topic": [
+                "Air Conditioner",
+                "AC",
+                "Cooling Unit"
+            ],
+            "entries": [
+                "Thermostat",
+                "Compressor",
+                "Cool Air",
+                "Filters"
+            ]
+        },
+        {
+            "topic": [
+                "Stethoscope",
+                "Medical Listening Device",
+                "Acoustic Scope"
+            ],
+            "entries": [
+                "Diaphragm",
+                "Ear Tubes",
+                "Heartbeat",
+                "Doctor"
+            ]
+        },
+        {
+            "topic": [
+                "Wristwatch",
+                "Watch",
+                "Time Watch"
+            ],
+            "entries": [
+                "Strap",
+                "Dial",
+                "Quartz Movement",
+                "Hands"
+            ]
+        },
+        {
+            "topic": [
+                "Calculator",
+                "Computing Device",
+                "Adding Machine"
+            ],
+            "entries": [
+                "Buttons",
+                "Display",
+                "Arithmetic",
+                "Electronic"
+            ]
+        },
+        {
+            "topic": [
+                "Airpot",
+                "Thermos",
+                "Vacuum Flask"
+            ],
+            "entries": [
+                "Vacuum Insulation",
+                "Stainless Steel",
+                "Hot Drinks",
+                "Lid"
+            ]
+        },
+        {
+            "topic": [
+                "Robot",
+                "Automaton",
+                "Mechanical Droid"
+            ],
+            "entries": [
+                "Sensors",
+                "Artificial Intelligence",
+                "Actuators",
+                "Programming"
+            ]
+        },
+        {
+            "topic": [
+                "Paperclip",
+                "Clasp",
+                "Fastener"
+            ],
+            "entries": [
+                "Metal Wire",
+                "Documents",
+                "Binding",
+                "Office"
+            ]
+        },
+        {
+            "topic": [
+                "Pencil",
+                "Graphite Writing Tool",
+                "Lead Stick"
+            ],
+            "entries": [
+                "Graphite Core",
+                "Eraser",
+                "Sharpening",
+                "Wooden Body"
+            ]
+        },
+        {
+            "topic": [
+                "Hair Dryer",
+                "Hair Drier",
+                "Blow Dryer"
+            ],
+            "entries": [
+                "Hot Air",
+                "Fan",
+                "Hair Styling",
+                "Electric"
+            ]
+        },
+        {
+            "topic": [
+                "Umbrella",
+                "Parasol",
+                "Rain Cover"
+            ],
+            "entries": [
+                "Canopy",
+                "Ribs",
+                "Handle",
+                "Rain"
+            ]
+        },
+        {
+            "topic": [
+                "Kettle",
+                "Tea Maker",
+                "Water Boiler"
+            ],
+            "entries": [
+                "Spout",
+                "Whistle",
+                "Heating Element",
+                "Stovetop"
+            ]
+        },
+        {
+            "topic": [
+                "Escalator",
+                "Moving Staircase",
+                "Automatic Stairs"
+            ],
+            "entries": [
+                "Treads",
+                "Handrails",
+                "Mechanism",
+                "Incline"
+            ]
+        },
+        {
+            "topic": [
+                "Matches",
+                "Matchsticks",
+                "Fire Starters"
+            ],
+            "entries": [
+                "Red Phosphorus",
+                "Wood Stick",
+                "Light",
+                "Box"
+            ]
+        },
+        {
+            "topic": [
+                "Thermometer",
+                "Temperature Gauge",
+                "Heat Meter"
+            ],
+            "entries": [
+                "Mercury",
+                "Fahrenheit",
+                "Sensor",
+                "Glass Tube"
+            ]
+        },
+        {
+            "topic": [
+                "Wheelbarrow",
+                "Barrow",
+                "Handcart"
+            ],
+            "entries": [
+                "Wheel",
+                "Tub",
+                "Handles",
+                "Garden"
             ]
         }
     ]

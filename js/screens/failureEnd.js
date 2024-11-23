@@ -35,8 +35,7 @@ export function createFailureEndScreen(scene) {
 
 export const showFailureEndScreen = (scene) => {
     const fontSize = Math.min(scene.scale.height * 0.08, 52);
-    scene.failureScoreText.setFontSize(fontSize);
-
+    
     // Clear any existing topic texts from previous games
     scene.failureEndScreen.getAll().forEach(child => {
         if (child.topicText || child.descText) {
@@ -44,9 +43,11 @@ export const showFailureEndScreen = (scene) => {
         }
     });
 
-    const missedTopics = scene.currentTopics.filter(topic => 
+    // Find missed topics
+    const missedTopics = scene.currentTopics.filter(topicObj => 
         !scene.correctGuessTexts.some(entry => 
-            entry.topicName.toLowerCase() === topic.name.toLowerCase() && entry.text !== null
+            entry.text !== null && 
+            entry.text.text.toLowerCase() === topicObj.topic[0].toLowerCase()
         )
     );
 
@@ -54,72 +55,64 @@ export const showFailureEndScreen = (scene) => {
         const topicsLeft = missedTopics.length;
         const noun = topicsLeft === 1 ? 'topic' : 'topics';
         const desc_text = topicsLeft === 1 ? 'which one it was' : 'what they were';
-        const introText = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:`;
-        scene.failureScoreText.setText(introText);
-
-        // Calculate initial Y position after the intro text
-        let currentY = scene.failureScoreText.y + scene.failureScoreText.height + 25;
         
-        // Create and position text for each topic
-        missedTopics.forEach((topic, index) => {
-            // Topic name in red
-            const topicText = scene.add.text(
-                scene.game.scale.width * 0.5,
-                currentY,
-                " "+topic.name+" ",
-                {
-                    fontFamily: 'Poppins',
-                    fontSize: fontSize,
-                    color: '#000000',
-                    align: 'center',
-                    fontStyle: 'bold',
-                    backgroundColor: '#51c878',
-                }
-            ).setOrigin(0.5);
-            topicText.topicText = true;
-            scene.failureEndScreen.add(topicText);
+        // Build the complete BBCode text content
+        let content = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:\n\n`;
+        
+        // Add each topic and its descriptions
+        missedTopics.forEach((topicObj, index) => {
+            content += `[bgcolor=#51c878] ${topicObj.topic[0]} [/bgcolor]\n`; // Topic name with background
+            content += `${topicObj.entries.join(', ')}`; // Descriptions
             
-            // Description below the topic name
-            const descText = scene.add.text(
-                scene.game.scale.width * 0.5,
-                currentY + fontSize + 10,
-                topic.words.join(', '),
-                {
-                    fontFamily: 'Poppins',
-                    fontSize: Math.max(fontSize * 0.8, 24),  // Slightly smaller font for description
-                    color: '#000000',
-                    align: 'center',
-                    wordWrap: { width: scene.game.scale.width * 0.8 }  // Wrap text if too long
-                }
-            ).setOrigin(0.5);
-            descText.descText = true;
-            scene.failureEndScreen.add(descText);
-
-            // Update currentY for the next topic-description pair
-            // Add more spacing if there are more topics to come
-            currentY = descText.y + descText.height + (index < missedTopics.length - 1 ? 40 : 20);
+            // Add spacing between topic sections
+            if (index < missedTopics.length - 1) {
+                content += '\n\n';
+            }
         });
-
-        // Add score text at the bottom after all topics
-        const scoreText = scene.add.rexBBCodeText(
+        
+        // Add score at the bottom
+        content += `\n\n[bgcolor=#51c878] Your Score: ${scene.score} [/bgcolor]\n\nCome back tomorrow for another puzzle!`;
+        
+        // Create single rexBBCodeText instance
+        const endScreenText = scene.add.rexBBCodeText(
             scene.game.scale.width * 0.5,
-            currentY + 175,
+            scene.game.scale.height * 0.5,
+            content,
+            {
+                fontFamily: 'Poppins',
+                fontSize: fontSize,
+                color: '#000000',
+                align: 'center',
+                lineSpacing: 10,
+                wrap: {
+                    mode: 'word',
+                    width: scene.game.scale.width * 0.8
+                }
+            }
+        ).setOrigin(0.5);
+        
+        endScreenText.descText = true; // Mark for cleanup
+        scene.failureEndScreen.add(endScreenText);
+        
+    } else {
+        // If no missed topics, just show the score
+        const endScreenText = scene.add.rexBBCodeText(
+            scene.game.scale.width * 0.5,
+            scene.game.scale.height * 0.5,
             `[bgcolor=#51c878] Your Score: ${scene.score} [/bgcolor]\n\nCome back tomorrow for another puzzle!`,
             {
                 fontFamily: 'Poppins',
                 fontSize: fontSize,
                 color: '#000000',
-                align: 'center'
+                align: 'center',
+                lineSpacing: 10
             }
         ).setOrigin(0.5);
-        scoreText.descText = true;  // Mark for cleanup
-        scene.failureEndScreen.add(scoreText);
-    } else {
-        scene.failureScoreText.setText(
-            `Your Score: ${scene.score}\n\nCome back tomorrow for another puzzle!`
-        );
+        
+        endScreenText.descText = true;
+        scene.failureEndScreen.add(endScreenText);
     }
-
+    
     showScreen(scene, 'failureEndScreen');
 };
 

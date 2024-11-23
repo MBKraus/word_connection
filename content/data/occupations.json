@@ -2,302 +2,590 @@
     "topics": [
         {
             "topic": [
-                "Culinary Arts",
-                "Chef"
+                "Chef",
+                "Cook"
             ],
             "entries": [
-                "Gourmet Cuisine",
-                "Kitchen Brigade",
-                "Michelin Stars",
-                "Flavor Profiles"
+                "Gourmet Meals",
+                "Culinary Skills",
+                "Menu Design",
+                "Food Preparation"
             ]
         },
         {
             "topic": [
-                "Medicine",
-                "Physician"
-            ],
-            "entries": [
-                "Diagnosis",
-                "Healthcare",
-                "Treatment Plans",
-                "Patient Care"
-            ]
-        },
-        {
-            "topic": [
-                "Legal Profession",
-                "Lawyer"
-            ],
-            "entries": [
-                "Courtroom",
-                "Legal Advice",
-                "Contracts",
-                "Litigation"
-            ]
-        },
-        {
-            "topic": [
-                "Architecture",
-                "Architect"
-            ],
-            "entries": [
-                "Blueprints",
-                "Design Principles",
-                "Urban Planning",
-                "Building Codes"
-            ]
-        },
-        {
-            "topic": [
-                "Software Development",
-                "Programmer"
-            ],
-            "entries": [
-                "Code Debugging",
-                "Algorithms",
-                "Software Applications",
-                "User Interface"
-            ]
-        },
-        {
-            "topic": [
-                "Teaching",
+                "Teacher",
                 "Educator"
             ],
             "entries": [
-                "Curriculum Design",
+                "Lesson Plans",
                 "Classroom Management",
-                "Assessment Methods",
-                "Educational Psychology"
+                "Student Evaluation",
+                "Curriculum Development"
             ]
         },
         {
             "topic": [
-                "Graphic Design",
-                "Designer"
+                "Electrician",
+                "Electrical Worker"
             ],
             "entries": [
-                "Typography",
-                "Visual Identity",
-                "Software Tools",
-                "Palettes"
+                "Wiring Systems",
+                "Circuit Breakers",
+                "Electrical Codes",
+                "Voltage Testing"
             ]
         },
         {
             "topic": [
-                "Engineering",
-                "Engineer"
+                "Lawyer",
+                "Attorney"
             ],
             "entries": [
-                "Structural Analysis",
-                "CAD Software",
-                "Project Design",
-                "Technical Specifications"
+                "Legal Advice",
+                "Court Representation",
+                "Contract Drafting",
+                "Case Research"
             ]
         },
         {
             "topic": [
-                "Journalism",
+                "Pilot",
+                "Aviator"
+            ],
+            "entries": [
+                "Flight Navigation",
+                "Aircraft Control",
+                "Takeoff Procedures",
+                "Safety Checks"
+            ]
+        },
+        {
+            "topic": [
+                "Plumber",
+                "Pipefitter"
+            ],
+            "entries": [
+                "Leak Repairs",
+                "Pipe Installation",
+                "Drain Cleaning",
+                "Fixture Replacement"
+            ]
+        },
+        {
+            "topic": [
+                "Nurse",
+                "Registered Nurse"
+            ],
+            "entries": [
+                "Patient Care",
+                "Medication Administration",
+                "Vital Signs Monitoring",
+                "Wound Dressing"
+            ]
+        },
+        {
+            "topic": [
+                "Architect",
+                "Building Designer"
+            ],
+            "entries": [
+                "Blueprint Design",
+                "Structural Planning",
+                "Space Utilization",
+                "Project Management"
+            ]
+        },
+        {
+            "topic": [
+                "Mechanic",
+                "Auto Technician"
+            ],
+            "entries": [
+                "Engine Repairs",
+                "Brake Systems",
+                "Oil Changes",
+                "Vehicle Diagnostics"
+            ]
+        },
+        {
+            "topic": [
+                "Scientist",
+                "Researcher"
+            ],
+            "entries": [
+                "Data Analysis",
+                "Experiment Design",
+                "Hypothesis Testing",
+                "Field Studies"
+            ]
+        },
+        {
+            "topic": [
+                "Firefighter",
+                "Fireman"
+            ],
+            "entries": [
+                "Fire Suppression",
+                "Rescue Operations",
+                "Safety Inspections",
+                "Emergency Response"
+            ]
+        },
+        {
+            "topic": [
+                "Journalist",
                 "Reporter"
             ],
             "entries": [
-                "Investigative Reporting",
-                "News Desk",
-                "Editorials",
-                "Sources"
+                "News Reporting",
+                "Interviewing",
+                "Article Writing",
+                "Fact Checking"
             ]
         },
         {
             "topic": [
-                "Photography",
-                "Photographer"
+                "Photographer",
+                "Photojournalist"
             ],
             "entries": [
-                "Camera Equipment",
-                "Editing Software",
-                "Composition",
-                "Lighting"
+                "Image Composition",
+                "Lighting Techniques",
+                "Photo Editing",
+                "Event Coverage"
             ]
         },
         {
             "topic": [
-                "Accounting",
-                "Accountant"
+                "Accountant",
+                "CPA"
             ],
             "entries": [
-                "Financial Statements",
-                "Auditing",
-                "Tax Compliance",
-                "Bookkeeping"
+                "Financial Audits",
+                "Tax Preparation",
+                "Budget Analysis",
+                "Ledger Balancing"
             ]
         },
         {
             "topic": [
-                "Nursing",
-                "Nurse"
+                "Artist",
+                "Painter"
             ],
             "entries": [
-                "Patient Monitoring",
-                "Medical Procedures",
-                "Record Keeping",
-                "Healthcare Settings"
+                "Canvas Painting",
+                "Sketching Techniques",
+                "Color Theory",
+                "Art Exhibitions"
             ]
         },
         {
             "topic": [
-                "Marketing",
-                "Marketer"
+                "Veterinarian",
+                "Animal Doctor"
             ],
             "entries": [
-                "Customer Insights",
-                "Campaign Strategies",
-                "Branding",
-                "Lead Generation"
+                "Pet Surgery",
+                "Vaccinations",
+                "Disease Diagnosis",
+                "Animal Welfare"
             ]
         },
         {
             "topic": [
-                "Real Estate",
+                "Builder",
+                "Construction Worker"
+            ],
+            "entries": [
+                "Framework Erection",
+                "Concrete Pouring",
+                "Roof Installation",
+                "Safety Compliance"
+            ]
+        },
+        {
+            "topic": [
+                "Software Developer",
+                "Programmer"
+            ],
+            "entries": [
+                "Code Writing",
+                "System Debugging",
+                "App Development",
+                "Software Testing"
+            ]
+        },
+        {
+            "topic": [
+                "Bartender",
+                "Mixologist"
+            ],
+            "entries": [
+                "Cocktail Mixing",
+                "Customer Service",
+                "Bar Hygiene",
+                "Wine Knowledge"
+            ]
+        },
+        {
+            "topic": [
+                "Librarian",
+                "Library Science"
+            ],
+            "entries": [
+                "Cataloging Books",
+                "Reader Assistance",
+                "Collection Management",
+                "Literacy Programs"
+            ]
+        },
+        {
+            "topic": [
+                "Psychologist",
+                "Therapist"
+            ],
+            "entries": [
+                "Patient Counseling",
+                "Behavioral Assessment",
+                "Therapeutic Techniques",
+                "Psychometric Testing"
+            ]
+        },
+        {
+            "topic": [
+                "Florist",
+                "Flower Arranger"
+            ],
+            "entries": [
+                "Bouquet Design",
+                "Plant Care",
+                "Floral Arrangements",
+                "Event Decor"
+            ]
+        },
+        {
+            "topic": [
+                "Musician",
+                "Performer"
+            ],
+            "entries": [
+                "Instrument Mastery",
+                "Stage Presence",
+                "Song Composition",
+                "Recording Sessions"
+            ]
+        },
+        {
+            "topic": [
+                "Carpenter",
+                "Joiner"
+            ],
+            "entries": [
+                "Woodworking",
+                "Furniture Building",
+                "Cabinet Installation",
+                "Bespoke Joinery"
+            ]
+        },
+        {
+            "topic": [
+                "Taxi Driver",
+                "Cab Driver"
+            ],
+            "entries": [
+                "City Navigation",
+                "Passenger Safety",
+                "Fare Collection",
+                "Road Knowledge"
+            ]
+        },
+        {
+            "topic": [
+                "Lifeguard",
+                "Beach Rescue"
+            ],
+            "entries": [
+                "Pool Surveillance",
+                "Emergency First Aid",
+                "Water Rescues",
+                "Safety Protocols"
+            ]
+        },
+        {
+            "topic": [
+                "Farmer",
+                "Agronomist"
+            ],
+            "entries": [
+                "Crop Cultivation",
+                "Livestock Rearing",
+                "Soil Fertility",
+                "Harvest Management"
+            ]
+        },
+        {
+            "topic": [
+                "Translator",
+                "Interpreter"
+            ],
+            "entries": [
+                "Language Conversion",
+                "Cultural Mediation",
+                "Textual Adaptation",
+                "Simultaneous Translation"
+            ]
+        },
+        {
+            "topic": [
+                "Banker",
+                "Finance Officer"
+            ],
+            "entries": [
+                "Investment Advice",
+                "Loan Processing",
+                "Account Management",
+                "Risk Assessment"
+            ]
+        },
+        {
+            "topic": [
+                "Meteorologist",
+                "Weather Forecaster"
+            ],
+            "entries": [
+                "Climate Analysis",
+                "Weather Prediction",
+                "Storm Tracking",
+                "Data Collection"
+            ]
+        },
+        {
+            "topic": [
+                "Dentist",
+                "Dental Practitioner"
+            ],
+            "entries": [
+                "Oral Hygiene",
+                "Prosthodontics",
+                "Periodontics",
+                "Dental Surgery"
+            ]
+        },
+        {
+            "topic": [
+                "Graphic Designer",
+                "Visual Artist"
+            ],
+            "entries": [
+                "Digital Illustration",
+                "Layout Design",
+                "Brand Identity",
+                "Typography"
+            ]
+        },
+        {
+            "topic": [
+                "Chef",
+                "Culinarian"
+            ],
+            "entries": [
+                "Recipe Creation",
+                "Food Presentation",
+                "Gastronomic Trends",
+                "Kitchen Management"
+            ]
+        },
+        {
+            "topic": [
+                "Social Worker",
+                "Case Manager"
+            ],
+            "entries": [
+                "Family Support",
+                "Crisis Intervention",
+                "Community Networking",
+                "Resource Management"
+            ]
+        },
+        {
+            "topic": [
+                "Real Estate Agent",
                 "Realtor"
             ],
             "entries": [
                 "Property Listings",
-                "Market Trends",
-                "Negotiations",
-                "Open Houses"
+                "Client Negotiations",
+                "Market Analysis",
+                "Home Staging"
             ]
         },
         {
             "topic": [
-                "Veterinary Medicine",
-                "Veterinarian"
+                "Physician",
+                "Doctor"
             ],
             "entries": [
-                "Animal Surgery",
-                "Diagnostics",
-                "Client Education",
-                "Pet Care"
+                "Medical Examination",
+                "Diagnosis Development",
+                "Patient Consultation",
+                "Treatment Plans"
             ]
         },
         {
             "topic": [
-                "Music Production",
-                "Producer"
+                "Chef",
+                "Cuisine Expert"
             ],
             "entries": [
-                "Sound Mixing",
-                "Recording Studios",
-                "Track Arrangement",
-                "Talent Scouting"
+                "Flavor Pairing",
+                "Ingredient Sourcing",
+                "Gourmet Techniques",
+                "Menu Planning"
             ]
         },
         {
             "topic": [
-                "Librarianship",
-                "Librarian"
+                "Welder",
+                "Metalworker"
             ],
             "entries": [
-                "Information Management",
-                "Cataloging",
-                "Library Programs",
-                "Reference Services"
-            ]
-        },
-        {
-            "topic": [
-                "Carpentry",
-                "Carpenter"
-            ],
-            "entries": [
-                "Woodworking",
+                "Welding Techniques",
+                "Metal Fabrication",
                 "Blueprint Reading",
-                "Tools",
-                "Framing Techniques"
+                "Safety Standards"
             ]
         },
         {
             "topic": [
-                "Film Direction",
-                "Director"
+                "Tailor",
+                "Dressmaker"
             ],
             "entries": [
-                "Storyboard Planning",
-                "Casting Decisions",
-                "Set Design",
-                "Scene Blocking"
+                "Garment Construction",
+                "Pattern Fitting",
+                "Fabric Selection",
+                "Costume Design"
             ]
         },
         {
             "topic": [
-                "Fashion Design",
-                "Fashion Designer"
+                "Chauffeur",
+                "Driver"
             ],
             "entries": [
-                "Textile Selection",
-                "Runway Shows",
-                "Sketching",
-                "Collection Themes"
+                "Route Planning",
+                "Passenger Etiquette",
+                "Luxury Car Maintenance",
+                "Punctual Service"
             ]
         },
         {
             "topic": [
-                "Event Planning",
-                "Event Planner"
+                "Zookeeper",
+                "Animal Caretaker"
+            ],
+            "entries": [
+                "Habitat Maintenance",
+                "Animal Feeding",
+                "Species Enrichment",
+                "Conservation Education"
+            ]
+        },
+        {
+            "topic": [
+                "Event Planner",
+                "Coordinator"
             ],
             "entries": [
                 "Venue Selection",
-                "Guest Lists",
-                "Budget Management",
-                "Itinerary Coordination"
+                "Theme Design",
+                "Logistical Support",
+                "Guest Management"
             ]
         },
         {
             "topic": [
-                "Dentistry",
-                "Dentist"
+                "Security Guard",
+                "Watchman"
             ],
             "entries": [
-                "Oral Hygiene",
-                "Restorative Procedures",
-                "X-rays",
-                "Patient Visits"
+                "Access Control",
+                "Surveillance Monitoring",
+                "Incident Reporting",
+                "Risk Mitigation"
             ]
         },
         {
             "topic": [
-                "Pharmacy",
-                "Pharmacist"
+                "Craftsperson",
+                "Artisan"
             ],
             "entries": [
-                "Medication Dispensing",
-                "Prescription Review",
-                "Pharmaceutical Knowledge",
-                "Patient Counseling"
+                "Handmade Goods",
+                "Traditional Methods",
+                "Bespoke Artifacts",
+                "Craftsmanship Skills"
             ]
         },
         {
             "topic": [
-                "Bartending",
-                "Bartender"
+                "Diver",
+                "Submersible Operator"
             ],
             "entries": [
-                "Mixology",
+                "Underwater Exploration",
+                "Dive Planning",
+                "Equipment Maintenance",
+                "Marine Photography"
+            ]
+        },
+        {
+            "topic": [
+                "Geologist",
+                "Earth Scientist"
+            ],
+            "entries": [
+                "Rock Analysis",
+                "Seismic Data",
+                "Field Surveys",
+                "Stratigraphy Studies"
+            ]
+        },
+        {
+            "topic": [
+                "Barista",
+                "Coffee Specialist"
+            ],
+            "entries": [
+                "Espresso Making",
+                "Latte Art",
                 "Customer Service",
-                "Liquor Inventory",
-                "Cocktail Recipes"
+                "Caf\u00e9 Maintenance"
             ]
         },
         {
             "topic": [
-                "Agriculture",
-                "Farmer"
+                "Therapist",
+                "Counselor"
             ],
             "entries": [
-                "Crop Management",
-                "Soil Fertility",
-                "Livestock Care",
-                "Harvesting Techniques"
+                "Client Sessions",
+                "Mood Disorders",
+                "Therapeutic Strategies",
+                "Progress Tracking"
+            ]
+        },
+        {
+            "topic": [
+                "Paramedic",
+                "EMT"
+            ],
+            "entries": [
+                "Emergency Response",
+                "Trauma Care",
+                "Patient Transport",
+                "Life-Saving Skills"
             ]
         }
     ]

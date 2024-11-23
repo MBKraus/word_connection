@@ -2,26 +2,26 @@
     "topics": [
         {
             "topic": [
-                "Elephant",
-                "Elephants"
+                "Tiger",
+                "Tigers"
             ],
             "entries": [
-                "Trunk Flexibility",
-                "Tusks",
-                "Gentle Giants",
-                "Large Ears"
+                "Stripe Pattern",
+                "Jungle Habitat",
+                "Solitary Nature",
+                "Predatory Skills"
             ]
         },
         {
             "topic": [
-                "Kangaroo",
-                "Kangaroos"
+                "Elephant",
+                "Elephants"
             ],
             "entries": [
-                "Pouch",
-                "Hopping",
-                "Marsupial",
-                "Strong Tail"
+                "Trunk Utilization",
+                "Ivory Tusks",
+                "Matriarchal Groups",
+                "Savannahs"
             ]
         },
         {
@@ -30,58 +30,34 @@
                 "Penguins"
             ],
             "entries": [
+                "Antarctic Dweller",
                 "Flightless Bird",
-                "Waddle",
-                "Antarctic Habitat",
-                "Tuxedo-like Plumage"
+                "Tuxedo Appearance",
+                "Waddle Movement"
             ]
         },
         {
             "topic": [
-                "Shark",
-                "Sharks"
+                "Kangaroo",
+                "Kangaroos"
             ],
             "entries": [
-                "Cartilaginous Fish",
-                "Multiple Rows of Teeth",
-                "Apex Predator",
-                "Dorsal Fin"
+                "Pouch Bearing",
+                "Hopping Locomotion",
+                "Outback Resident",
+                "Herbivorous"
             ]
         },
         {
             "topic": [
-                "Gorilla",
-                "Gorillas"
+                "Crocodile",
+                "Crocodiles"
             ],
             "entries": [
-                "Primate",
-                "Knuckle Walking",
-                "Mountain Habitats",
-                "Silverbacks"
-            ]
-        },
-        {
-            "topic": [
-                "Peacock",
-                "Peacocks"
-            ],
-            "entries": [
-                "Vibrant Plumage",
-                "Courtship Display",
-                "Indian Origin",
-                "Feather Fan"
-            ]
-        },
-        {
-            "topic": [
-                "Cheetah",
-                "Cheetahs"
-            ],
-            "entries": [
-                "Fastest Land Animal",
-                "Spotted Coat",
-                "Tail Control",
-                "Solitary Predators"
+                "Reptilian Predator",
+                "Snout Jaws",
+                "River Banks",
+                "Carnivorous"
             ]
         },
         {
@@ -90,94 +66,70 @@
                 "Whales"
             ],
             "entries": [
+                "Blowhole Breathing",
                 "Ocean Giants",
-                "Baleen or Toothed",
-                "Migratory Patterns",
-                "Songs"
+                "Baleen Feeding",
+                "Migrant"
             ]
         },
         {
             "topic": [
-                "Wombat",
-                "Wombats"
+                "Parrot",
+                "Parrots"
             ],
             "entries": [
-                "Burrowing",
-                "Marsupial",
-                "Square Poop",
-                "Nocturnal"
+                "Colorful Plumage",
+                "Mimicking Ability",
+                "Curved Beak",
+                "Tree Dweller"
             ]
         },
         {
             "topic": [
-                "Sparrow",
-                "Sparrows"
+                "Giraffe",
+                "Giraffes"
             ],
             "entries": [
-                "Garden Bird",
-                "Brown Feathers",
-                "Chirpy Song",
-                "Nest Builders"
+                "Tall Neck",
+                "Savannah Browsing",
+                "Spotted Coat",
+                "Leaf Eater"
             ]
         },
         {
             "topic": [
-                "Alligator",
-                "Alligators"
+                "Polar Bear",
+                "Polar Bears"
             ],
             "entries": [
-                "Reptilian Predators",
-                "Swampy Environment",
-                "Powerful Jaw",
-                "Scaly Skin"
+                "Arctic Habitat",
+                "Ice Floes",
+                "Carnivore",
+                "White Fur"
             ]
         },
         {
             "topic": [
-                "Koala",
-                "Koalas"
+                "Shark",
+                "Sharks"
             ],
             "entries": [
-                "Eucalyptus Diet",
-                "Arboreal Lifestyle",
-                "Marsupial",
-                "Sleepy"
+                "Fin Structures",
+                "Cartilaginous Fish",
+                "Apex Predator",
+                "Ocean Hunter"
             ]
         },
         {
             "topic": [
-                "Bear",
-                "Bears"
+                "Monkey",
+                "Monkeys"
             ],
             "entries": [
-                "Hibernation",
-                "Omnivorous",
-                "Grizzly Symbol",
-                "Powerful Claws"
-            ]
-        },
-        {
-            "topic": [
-                "Chameleon",
-                "Chameleons"
-            ],
-            "entries": [
-                "Color Change",
-                "Prehensile Tail",
-                "Tongue Extension",
-                "360-Degree Vision"
-            ]
-        },
-        {
-            "topic": [
-                "Ostrich",
-                "Ostriches"
-            ],
-            "entries": [
-                "Largest Bird",
-                "Flightless",
-                "Sprint Runner",
-                "Egg Producers"
+                "Primate",
+                "Tree Acrobat",
+                "Tool Use",
+                "Tribal Socials"
             ]
         },
         {
@@ -186,58 +138,22 @@
                 "Wolves"
             ],
             "entries": [
-                "Howling Calls",
-                "Pack Dynamics",
-                "Carnivorous",
-                "Keen Senses"
+                "Pack Leader",
+                "Howling Communication",
+                "Forest Hunter",
+                "Grey Fur"
             ]
         },
         {
             "topic": [
-                "Tiger",
-                "Tigers"
+                "Peacock",
+                "Peacocks"
             ],
             "entries": [
-                "Siberian Subspecies",
-                "Striped Fur",
-                "Apex Predator",
-                "Territory Marking"
-            ]
-        },
-        {
-            "topic": [
-                "Owl",
-                "Owls"
-            ],
-            "entries": [
-                "Nocturnal Raptor",
-                "Silent Flight",
-                "360-Degree Neck",
-                "Keen Echolocation"
-            ]
-        },
-        {
-            "topic": [
-                "Flamingo",
-                "Flamingos"
-            ],
-            "entries": [
-                "Pink Hue",
-                "Filter Feeders",
-                "Shallow Water Habitats",
-                "Neck Flexibility"
-            ]
-        },
-        {
-            "topic": [
-                "Moose",
-                "Moose"
-            ],
-            "entries": [
-                "Large Antlers",
-                "Forested Areas",
-                "Herbivorous",
-                "Solitary"
+                "Tail Display",
+                "Iridescent Colors",
+                "Courtship Dance",
+                "Ground Foragers"
             ]
         },
         {
@@ -247,9 +163,201 @@
             ],
             "entries": [
                 "Bamboo Diet",
-                "Endangered Species",
-                "Chinese Symbol",
-                "Gentle Nature"
+                "China Native",
+                "Endangered",
+                "Black-and-White Fur"
+            ]
+        },
+        {
+            "topic": [
+                "Eagle",
+                "Eagles"
+            ],
+            "entries": [
+                "Hooked Beak",
+                "Majestic Soar",
+                "Keen Vision",
+                "Talons"
+            ]
+        },
+        {
+            "topic": [
+                "Koala",
+                "Koalas"
+            ],
+            "entries": [
+                "Eucalyptus Feeder",
+                "Marsupial",
+                "Sleepy Nature",
+                "Australia"
+            ]
+        },
+        {
+            "topic": [
+                "Flamingo",
+                "Flamingos"
+            ],
+            "entries": [
+                "Pink Feathers",
+                "Long Legged",
+                "Shallow Waters",
+                "Mud Nests"
+            ]
+        },
+        {
+            "topic": [
+                "Rhinoceros",
+                "Rhinoceroses"
+            ],
+            "entries": [
+                "Thick Skin",
+                "Horned Face",
+                "Grass Eater",
+                "Savannah Dweller"
+            ]
+        },
+        {
+            "topic": [
+                "Hawk",
+                "Hawks"
+            ],
+            "entries": [
+                "Sharp Beaks",
+                "High Flight",
+                "Rodent Hunter",
+                "Raptor"
+            ]
+        },
+        {
+            "topic": [
+                "Cheetah",
+                "Cheetahs"
+            ],
+            "entries": [
+                "Fastest Runner",
+                "Spotted Coat",
+                "Savannah Predator",
+                "Solitary"
+            ]
+        },
+        {
+            "topic": [
+                "Zebra",
+                "Zebras"
+            ],
+            "entries": [
+                "Black-and-White Stripes",
+                "Herd Behavior",
+                "Grasslands",
+                "Equid Family"
+            ]
+        },
+        {
+            "topic": [
+                "Chimpanzee",
+                "Chimpanzees"
+            ],
+            "entries": [
+                "Great Ape",
+                "Tool Crafting",
+                "Omnivorous Diet",
+                "Complex Socials"
+            ]
+        },
+        {
+            "topic": [
+                "Otter",
+                "Otters"
+            ],
+            "entries": [
+                "Aquatic Mammal",
+                "Playful Demeanor",
+                "Shellfish Diet",
+                "Stream Habitat"
+            ]
+        },
+        {
+            "topic": [
+                "Owl",
+                "Owls"
+            ],
+            "entries": [
+                "Nocturnal Hunter",
+                "Silent Flight",
+                "Rounded Eyes",
+                "Wisdom Symbol"
+            ]
+        },
+        {
+            "topic": [
+                "Fox",
+                "Foxes"
+            ],
+            "entries": [
+                "Bushy Tail",
+                "Burrow Dens",
+                "Adaptive Diet",
+                "Cunning"
+            ]
+        },
+        {
+            "topic": [
+                "Frog",
+                "Frogs"
+            ],
+            "entries": [
+                "Jumping Amphibian",
+                "Wetlands",
+                "Croaking Sound",
+                "Metamorphosis"
+            ]
+        },
+        {
+            "topic": [
+                "Bat",
+                "Bats"
+            ],
+            "entries": [
+                "Echolocation",
+                "Nocturnal Predator",
+                "Winged Mammal",
+                "Fruit Eaters"
+            ]
+        },
+        {
+            "topic": [
+                "Hyena",
+                "Hyenas"
+            ],
+            "entries": [
+                "Laughing Call",
+                "Scavenger",
+                "Spotted Fur",
+                "Clan Society"
+            ]
+        },
+        {
+            "topic": [
+                "Moose",
+                "Moose"
+            ],
+            "entries": [
+                "Antler Growth",
+                "Forest Habitat",
+                "Herbivorous",
+                "Solitary"
+            ]
+        },
+        {
+            "topic": [
+                "Bison",
+                "Bisons"
+            ],
+            "entries": [
+                "Plains Grazer",
+                "Humped Back",
+                "Thick Fur",
+                "Herd Traveling"
             ]
         },
         {
@@ -258,34 +366,10 @@
                 "Camels"
             ],
             "entries": [
-                "Desert Adaptation",
-                "Humps",
-                "Long Travels",
-                "Water Storage"
-            ]
-        },
-        {
-            "topic": [
-                "Seal",
-                "Seals"
-            ],
-            "entries": [
-                "Aquatic Mammals",
-                "Blubber Layer",
-                "Pinniped",
-                "Flipper Mobility"
-            ]
-        },
-        {
-            "topic": [
-                "Giraffe",
-                "Giraffes"
-            ],
-            "entries": [
-                "Long Neck",
-                "Savannah Browser",
-                "Unique Patterns",
-                "Tallest Animal"
+                "Desert Nomad",
+                "Hump Storage",
+                "Water Conservation",
+                "Caravan Use"
             ]
         },
         {
@@ -294,10 +378,214 @@
                 "Raccoons"
             ],
             "entries": [
-                "Nocturnal Habits",
-                "Masked Appearance",
-                "Dexterous Paws",
-                "Trash Pandas"
+                "Mask-like Face",
+                "Trash Forager",
+                "Nimble Hands",
+                "Nocturnal"
+            ]
+        },
+        {
+            "topic": [
+                "Seal",
+                "Seals"
+            ],
+            "entries": [
+                "Marine Mammal",
+                "Blubber Insulation",
+                "Flipping Movement",
+                "Coastal Dwellers"
+            ]
+        },
+        {
+            "topic": [
+                "Gazelle",
+                "Gazelles"
+            ],
+            "entries": [
+                "Bounding Run",
+                "Grassland Resident",
+                "Twisted Horns",
+                "Flock Dynamics"
+            ]
+        },
+        {
+            "topic": [
+                "Lemur",
+                "Lemurs"
+            ],
+            "entries": [
+                "Madagascar Unique",
+                "Ringed Tail",
+                "Social Troops",
+                "Arboreal"
+            ]
+        },
+        {
+            "topic": [
+                "Vulture",
+                "Vultures"
+            ],
+            "entries": [
+                "Scavenger Bird",
+                "Bald Head",
+                "Thermal Soaring",
+                "Duff Feeding"
+            ]
+        },
+        {
+            "topic": [
+                "Scorpion",
+                "Scorpions"
+            ],
+            "entries": [
+                "Exoskeleton",
+                "Pincer Claws",
+                "Venomous Tail",
+                "Desert Dweller"
+            ]
+        },
+        {
+            "topic": [
+                "Starfish",
+                "Starfishes"
+            ],
+            "entries": [
+                "Radial Symmetry",
+                "Sea Floor",
+                "Regenerative Limbs",
+                "Sessile"
+            ]
+        },
+        {
+            "topic": [
+                "Octopus",
+                "Octopuses"
+            ],
+            "entries": [
+                "Eight Arms",
+                "Camouflage",
+                "Intelligent",
+                "Ocean Crawler"
+            ]
+        },
+        {
+            "topic": [
+                "Salmon",
+                "Salmons"
+            ],
+            "entries": [
+                "Migration",
+                "Stream Spawning",
+                "Pink Flesh",
+                "Anadromous Fish"
+            ]
+        },
+        {
+            "topic": [
+                "Lobster",
+                "Lobsters"
+            ],
+            "entries": [
+                "Crustacean",
+                "Claw Defense",
+                "Sea Cuisine",
+                "Ocean Bottom"
+            ]
+        },
+        {
+            "topic": [
+                "Antelope",
+                "Antelopes"
+            ],
+            "entries": [
+                "Grazing Ungulate",
+                "Swift Runner",
+                "Horned",
+                "Grassland Habitat"
+            ]
+        },
+        {
+            "topic": [
+                "Toucan",
+                "Toucans"
+            ],
+            "entries": [
+                "Large Beak",
+                "Tropical Forests",
+                "Brightly Colored",
+                "Fruit Diet"
+            ]
+        },
+        {
+            "topic": [
+                "Caribou",
+                "Caribous"
+            ],
+            "entries": [
+                "Antlered Herbivore",
+                "Arctic Regions",
+                "Migratory Herds",
+                "Ruminant"
+            ]
+        },
+        {
+            "topic": [
+                "Alligator",
+                "Alligators"
+            ],
+            "entries": [
+                "Thick Hide",
+                "Swamp Dweller",
+                "Carnivorous",
+                "Reptilian"
+            ]
+        },
+        {
+            "topic": [
+                "Hippopotamus",
+                "Hippopotamuses"
+            ],
+            "entries": [
+                "Water Dweller",
+                "Massive Size",
+                "Herbivorous",
+                "African Rivers"
+            ]
+        },
+        {
+            "topic": [
+                "Gorilla",
+                "Gorillas"
+            ],
+            "entries": [
+                "Silverback",
+                "Forest Gentle",
+                "Vegetarian Diet",
+                "Troop"
+            ]
+        },
+        {
+            "topic": [
+                "Cobra",
+                "Cobras"
+            ],
+            "entries": [
+                "Hood Display",
+                "Venomous",
+                "Snake Charm",
+                "Desert Sands"
+            ]
+        },
+        {
+            "topic": [
+                "Iguana",
+                "Iguanas"
+            ],
+            "entries": [
+                "Desert Lizard",
+                "Herbivore",
+                "Sun Basker",
+                "Tropical"
             ]
         }
     ]
