@@ -30,7 +30,7 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- Each topic should focus on an easy to guess, top of mind, prominent individual, notable group, or impactful organization from either history or popular culture. (e.g. 'Michael Jordan', 'Leonardo da Vinci,' 'The Beatles').\n"
+    "- Each topic should focus on an easy to guess for an average joe, top of mind, prominent individual, notable group, or impactful organization from either history or popular culture. (e.g. 'Michael Jordan', 'Leonardo da Vinci,' 'The Beatles').\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "- if the topic is a person also include just their last name (e.g., 'Einstein', 'Tesla') in the topic variants.\n"
@@ -50,7 +50,7 @@ completion = client.beta.chat.completions.parse(
     "  **Entries:** ['Jagger', 'Rock', 'British', '1962']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 70 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     "- Ensure there's a well-rounded mix of prominent individuals, notable groups, and impactful organizations from both history and popular culture."
 }
     ],

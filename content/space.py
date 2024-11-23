@@ -30,12 +30,12 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- A topic should be an easy to guess for an average joe, top of mind, cuisine or dish (e.g., Sushi, Pizza, Tacos, Dim Sum)\n"
+    "- a topic should be easy to guess for the average joe, not complex, very simple, and should be a well-known subject related to planets, stars, galaxies, or space exploration.\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "- Topics must include at least 2 **spelling variants, synonyms, or simplified forms**. This is a key rule. Here are a couple examples: \n"
-    "  - 'Lion', 'Lions', 'King of the Jungle'\n"
-    "  - 'Dolphin', 'Dolphins'\n"
+    "  - 'Printing Press', 'Gutenberg Press'\n"
+    "  - 'Light Bulb', 'Electric Lamp'\n"
     "### Requirements for Descriptive Entries:\n"
     "- Provide exactly 4 descriptive words or phrases for each topic.\n"
     "- Entries must be specific, clearly related to the topic, and collectively help define it.\n"
@@ -43,13 +43,13 @@ completion = client.beta.chat.completions.parse(
     "- Keep entries concise: 1–4 words long. Multi-word phrases (e.g., 'South America') are allowed if they provide meaningful specificity.\n"
     "- Avoid splitting entries into overly generic terms that lose clarity (e.g., 'Luxury ship' is better than splitting into 'Luxury' and 'Ship').\n\n"
     "### Example Topics and Entries:\n"
-    "- **Topic:** ['Sushi', 'Sashimi', 'Rolls', 'Nigiri']\n"
-    "  **Entries:** ['Raw Fish', 'Soy Sauce', 'Seaweed Wrap', 'Wasabi']\n"
-    "- **Topic:** '['Paella', 'Spanish Rice Dish', 'Valencian Paella', 'Seafood Paella']\n"
-    "  **Entries:** ['Saffron', 'Socarrat', 'Seafood', 'Bell Peppers']\n\n"
+    "- **Topic:** ['Printing Press', 'Gutenberg Press']\n"
+    "  **Entries:** ['Johannes Gutenberg', 'Typefaces', 'Books', 'Mass Production']\n"
+    "- **Topic:** '['Light Bulb', 'Electric Lamp']\n"
+    "  **Entries:** ['Thomas Edison', 'Filament', 'Electric Current', 'Illumination']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 50 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 30 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     }
     ],
     response_format=DataModel,
@@ -63,7 +63,7 @@ json_data = data_parsed.json()
 data_dict = json.loads(json_data)
 
 # Write to file with pretty formatting
-with open("./data/cuisine.json", "w") as f:
+with open("./data/space.json", "w") as f:
     json.dump(data_dict, f, indent=4) 
 
 # # Load the data back from the JSON file

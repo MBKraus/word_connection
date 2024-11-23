@@ -30,7 +30,7 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- Each topic must represent an easy to guess, top of mind, well-known specific landmark, city, country, or place (e.g., 'Paris', 'Great Wall of China').\n"
+    "- Each topic must represent an easy to guess for an average joe, top of mind, well-known specific landmark, city, country, or place (e.g., 'Paris', 'Great Wall of China').\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- They should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "- Topics must include at least 3 **spelling variants, synonyms, or simplified forms**. This is a key rule. Here are a couple examples: \n"
@@ -50,7 +50,7 @@ completion = client.beta.chat.completions.parse(
     "  **Entries:** [Sinking, Iceberg, Luxury, 1912]\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 50 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     "- Ensure there's a good balance between landmarks, cities, and countries in the topics"
 }
     ],

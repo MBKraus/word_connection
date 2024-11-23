@@ -2,158 +2,67 @@
     "topics": [
         {
             "topic": [
-                "Refrigerator",
-                "Fridge",
-                "Icebox"
+                "Book",
+                "Novel",
+                "Printed Volume"
             ],
             "entries": [
-                "Cool Storage",
-                "Thermostat Control",
-                "Shelving Racks",
-                "Energy Efficiency"
+                "Pages",
+                "Hardcover",
+                "Fiction",
+                "Library"
             ]
         },
         {
             "topic": [
-                "Sunglasses",
-                "Shades",
-                "Eyewear"
-            ],
-            "entries": [
-                "UV Protection",
-                "Polarized Lenses",
-                "Fashion Accessory",
-                "Summer Essential"
-            ]
-        },
-        {
-            "topic": [
-                "Shoes",
+                "Shoe",
                 "Footwear",
-                "Sneakers"
+                "Sneaker"
             ],
             "entries": [
-                "Arch Support",
-                "Soles",
                 "Laces",
-                "Athletic Use"
+                "Sole",
+                "Leather",
+                "Running"
             ]
         },
         {
             "topic": [
-                "Pencil",
-                "Graphite Stick",
-                "Writing Tool"
+                "Computer",
+                "Personal Computer",
+                "PC"
             ],
             "entries": [
-                "Eraser Tip",
-                "Wooden Shaft",
-                "Graphite Core",
-                "Sketching"
-            ]
-        },
-        {
-            "topic": [
-                "Microwave",
-                "Microwave Oven",
-                "Microwave Cooker"
-            ],
-            "entries": [
-                "Quick Heating",
-                "Rotating Tray",
-                "Radiation",
-                "Digital Timer"
-            ]
-        },
-        {
-            "topic": [
+                "Processor",
+                "Monitor",
                 "Keyboard",
-                "Keypad",
-                "Typing Device"
+                "Memory"
+            ]
+        },
+        {
+            "topic": [
+                "Tree",
+                "Oak",
+                "Plant"
             ],
             "entries": [
-                "QWERTY Layout",
-                "Mechanical Keys",
-                "Wireless Function",
-                "Backlighting"
+                "Leaves",
+                "Trunk",
+                "Branches",
+                "Forest"
             ]
         },
         {
             "topic": [
                 "Chair",
-                "Seating",
+                "Seat",
                 "Stool"
             ],
             "entries": [
-                "Ergonomic Design",
-                "Upholstered Seat",
-                "Back Support",
-                "Dining Room"
-            ]
-        },
-        {
-            "topic": [
-                "Couch",
-                "Sofa",
-                "Settee"
-            ],
-            "entries": [
-                "Cushioned Seats",
-                "Living Room",
-                "Reclining Options",
-                "Fabric Choices"
-            ]
-        },
-        {
-            "topic": [
-                "Backpack",
-                "Rucksack",
-                "Knapsack"
-            ],
-            "entries": [
-                "Padded Straps",
-                "Multiple Compartments",
-                "Outdoor Gear",
-                "Zipper Closure"
-            ]
-        },
-        {
-            "topic": [
-                "Watch",
-                "Wristwatch",
-                "Timepiece"
-            ],
-            "entries": [
-                "Analog Dial",
-                "Digital Display",
-                "Quartz Movement",
-                "Water Resistance"
-            ]
-        },
-        {
-            "topic": [
-                "Apple",
-                "Apples",
-                "Orchard Fruit"
-            ],
-            "entries": [
-                "Red Delicious",
-                "Sweet Taste",
-                "Crunchy Texture",
-                "Snack Food"
-            ]
-        },
-        {
-            "topic": [
-                "Television",
-                "TV",
-                "Flat Screen"
-            ],
-            "entries": [
-                "Remote Control",
-                "Streaming Apps",
-                "High Definition",
-                "Wall Mount"
+                "Legs",
+                "Backrest",
+                "Cushion",
+                "Dining"
             ]
         },
         {
@@ -163,166 +72,556 @@
                 "Cycle"
             ],
             "entries": [
-                "Two Wheels",
-                "Pedal Power",
-                "Mountain Trails",
-                "Chain Drive"
+                "Pedals",
+                "Handlebars",
+                "Wheels",
+                "Gears"
             ]
         },
         {
             "topic": [
-                "Toothbrush",
-                "Brush",
-                "Dental Tool"
+                "Coffee",
+                "Beverage",
+                "Espresso"
             ],
             "entries": [
-                "Bristles",
-                "Handle Grip",
-                "Oral Hygiene",
-                "Electric Option"
+                "Caffeine",
+                "Beans",
+                "Mug",
+                "Brew"
             ]
         },
         {
             "topic": [
-                "Coffee Maker",
-                "Coffeemaker",
-                "Brewing Machine"
+                "Telephone",
+                "Landline",
+                "Receiver"
             ],
             "entries": [
-                "Drip Brew",
-                "Carafe",
-                "Coffee Grounds",
-                "Timer Settings"
-            ]
-        },
-        {
-            "topic": [
-                "Umbrella",
-                "Brolly",
-                "Rainshade"
-            ],
-            "entries": [
-                "Waterproof Fabric",
-                "Collapsible Frame",
-                "Handle",
-                "Rain Protection"
+                "Dial Tone",
+                "Ringing",
+                "Handset",
+                "Cord"
             ]
         },
         {
             "topic": [
                 "Lamp",
-                "Light",
-                "Lampshade"
+                "Light Fixture",
+                "Desk Lamp"
             ],
             "entries": [
-                "Bulb Socket",
-                "Adjustable Neck",
-                "Nightstand",
-                "Soft Lighting"
+                "Shade",
+                "Bulb",
+                "Switch",
+                "Base"
             ]
         },
         {
             "topic": [
-                "Hat",
-                "Cap",
-                "Headwear"
+                "Table",
+                "Desk",
+                "Dining Table"
             ],
             "entries": [
-                "Brimmed",
-                "Warmth",
-                "Fashion Statement",
-                "Shade Provider"
+                "Legs",
+                "Surface",
+                "Wood",
+                "Meeting"
             ]
         },
         {
             "topic": [
-                "Sweatshirt",
-                "Jumper",
-                "Pullover"
+                "Clock",
+                "Timepiece",
+                "Wall Clock"
             ],
             "entries": [
-                "Hooded",
-                "Fleece Lined",
-                "Sporty Look",
-                "Casual Wear"
+                "Hands",
+                "Numbers",
+                "Pendulum",
+                "Ticking"
             ]
         },
         {
             "topic": [
-                "Laptop",
-                "Notebook",
-                "Portable Computer"
+                "Cookbook",
+                "Recipe Book",
+                "Culinary Book"
             ],
             "entries": [
-                "Battery Life",
-                "Touchpad",
-                "USB Ports",
-                "Processing Power"
+                "Instructions",
+                "Ingredients",
+                "Cuisine",
+                "Chef"
             ]
         },
         {
             "topic": [
-                "Mug",
-                "Cup",
-                "Ceramic Vessel"
+                "Television",
+                "TV",
+                "Flat Screen"
             ],
             "entries": [
-                "Handle",
-                "Hot Beverages",
-                "Dishwasher Safe",
-                "Personalized Designs"
+                "Remote",
+                "Channels",
+                "Cable",
+                "Streaming"
+            ]
+        },
+        {
+            "topic": [
+                "Refrigerator",
+                "Fridge",
+                "Icebox"
+            ],
+            "entries": [
+                "Cooling",
+                "Shelves",
+                "Compressor",
+                "Freezer"
             ]
         },
         {
             "topic": [
                 "Glasses",
-                "Spectacles",
-                "Eyeglasses"
+                "Eyeglasses",
+                "Spectacles"
             ],
             "entries": [
-                "Prescription Lenses",
-                "Optical Frame",
-                "Clear Vision",
-                "Lens Coating"
+                "Lenses",
+                "Frames",
+                "Vision",
+                "Corrective"
             ]
         },
         {
             "topic": [
-                "Notebook",
-                "Journal",
-                "Writing Book"
+                "Watch",
+                "Wristwatch",
+                "Timepiece"
             ],
             "entries": [
-                "Ruled Pages",
-                "Hard Cover",
-                "Spiral Binding",
-                "Note-Taking"
+                "Strap",
+                "Dial",
+                "Quartz",
+                "Analog"
+            ]
+        },
+        {
+            "topic": [
+                "Car",
+                "Automobile",
+                "Vehicle"
+            ],
+            "entries": [
+                "Engine",
+                "Tires",
+                "Windshield",
+                "Steering"
+            ]
+        },
+        {
+            "topic": [
+                "Towel",
+                "Bath Towel",
+                "Washcloth"
+            ],
+            "entries": [
+                "Cotton",
+                "Absorbent",
+                "Bathroom",
+                "Soft"
+            ]
+        },
+        {
+            "topic": [
+                "Knife",
+                "Blade",
+                "Cutlery"
+            ],
+            "entries": [
+                "Sharp",
+                "Handle",
+                "Stainless",
+                "Chopping"
+            ]
+        },
+        {
+            "topic": [
+                "Pen",
+                "Writing Instrument",
+                "Ballpoint"
+            ],
+            "entries": [
+                "Ink",
+                "Cap",
+                "Nib",
+                "Clip"
+            ]
+        },
+        {
+            "topic": [
+                "Bread",
+                "Loaf",
+                "Baguette"
+            ],
+            "entries": [
+                "Wheat",
+                "Yeast",
+                "Crust",
+                "Baker"
+            ]
+        },
+        {
+            "topic": [
+                "Pillow",
+                "Cushion",
+                "Headrest"
+            ],
+            "entries": [
+                "Cotton",
+                "Fluff",
+                "Sleeping",
+                "Comfort"
+            ]
+        },
+        {
+            "topic": [
+                "Jacket",
+                "Coat",
+                "Outerwear"
+            ],
+            "entries": [
+                "Zipper",
+                "Pocket",
+                "Warm",
+                "Winter"
+            ]
+        },
+        {
+            "topic": [
+                "Spoon",
+                "Utensil",
+                "Teaspoon"
+            ],
+            "entries": [
+                "Stainless",
+                "Dishwasher",
+                "Soup",
+                "Serving"
+            ]
+        },
+        {
+            "topic": [
+                "Pants",
+                "Trousers",
+                "Slacks"
+            ],
+            "entries": [
+                "Belt",
+                "Pockets",
+                "Fabric",
+                "Fit"
+            ]
+        },
+        {
+            "topic": [
+                "Mirror",
+                "Looking Glass",
+                "Reflector"
+            ],
+            "entries": [
+                "Glass",
+                "Frame",
+                "Reflection",
+                "Bathroom"
+            ]
+        },
+        {
+            "topic": [
+                "Carpet",
+                "Rug",
+                "Mat"
+            ],
+            "entries": [
+                "Plush",
+                "Wool",
+                "Patterned",
+                "Floor"
+            ]
+        },
+        {
+            "topic": [
+                "Pencil",
+                "Graphite Stick",
+                "Writing Tool"
+            ],
+            "entries": [
+                "Eraser",
+                "Sharpened",
+                "HB",
+                "Wooden"
+            ]
+        },
+        {
+            "topic": [
+                "Magazine",
+                "Periodical",
+                "Glossy Pages"
+            ],
+            "entries": [
+                "Articles",
+                "Cover",
+                "Monthly",
+                "Editor"
+            ]
+        },
+        {
+            "topic": [
+                "Envelope",
+                "Mailer",
+                "Parcel Post"
+            ],
+            "entries": [
+                "Address",
+                "Stamp",
+                "Seal",
+                "Paper"
+            ]
+        },
+        {
+            "topic": [
+                "Pizza",
+                "Pie",
+                "Flatbread"
+            ],
+            "entries": [
+                "Cheese",
+                "Crust",
+                "Slice",
+                "Pepperoni"
+            ]
+        },
+        {
+            "topic": [
+                "Candle",
+                "Wax Light",
+                "Taper"
+            ],
+            "entries": [
+                "Wick",
+                "Burn",
+                "Scent",
+                "Holder"
+            ]
+        },
+        {
+            "topic": [
+                "Soda",
+                "Soft Drink",
+                "Pop"
+            ],
+            "entries": [
+                "Carbonation",
+                "Fizzy",
+                "Can",
+                "Sugar"
+            ]
+        },
+        {
+            "topic": [
+                "Suit",
+                "Business Attire",
+                "Formal Wear"
+            ],
+            "entries": [
+                "Tie",
+                "Tailored",
+                "Lapels",
+                "Buttoned"
+            ]
+        },
+        {
+            "topic": [
+                "Soap",
+                "Cleanser",
+                "Detergent"
+            ],
+            "entries": [
+                "Lather",
+                "Scent",
+                "Bar",
+                "Hygiene"
+            ]
+        },
+        {
+            "topic": [
+                "Toothbrush",
+                "Dental Brush",
+                "Oral Cleansing Tool"
+            ],
+            "entries": [
+                "Bristles",
+                "Toothpaste",
+                "Handle",
+                "Plaque"
+            ]
+        },
+        {
+            "topic": [
+                "Milk",
+                "Dairy Drink",
+                "Cream"
+            ],
+            "entries": [
+                "Calcium",
+                "Lactose",
+                "Pasteurized",
+                "Bottle"
+            ]
+        },
+        {
+            "topic": [
+                "Camera",
+                "Photographic Device",
+                "Digital Recorder"
+            ],
+            "entries": [
+                "Lens",
+                "Shutter",
+                "Flash",
+                "Tripod"
+            ]
+        },
+        {
+            "topic": [
+                "Blanket",
+                "Quilt",
+                "Throw"
+            ],
+            "entries": [
+                "Warmth",
+                "Flannel",
+                "Bed",
+                "Snuggling"
+            ]
+        },
+        {
+            "topic": [
+                "Ring",
+                "Band",
+                "Wedding Ring"
+            ],
+            "entries": [
+                "Gold",
+                "Diamond",
+                "Engagement",
+                "Finger"
+            ]
+        },
+        {
+            "topic": [
+                "Plate",
+                "Dish",
+                "Dining Ware"
+            ],
+            "entries": [
+                "Ceramic",
+                "Round",
+                "Dinner",
+                "Serving"
+            ]
+        },
+        {
+            "topic": [
+                "Scissors",
+                "Cutting Tool",
+                "Shears"
+            ],
+            "entries": [
+                "Blades",
+                "Handles",
+                "Sharp",
+                "Crafting"
             ]
         },
         {
             "topic": [
                 "Guitar",
-                "Strings",
-                "Music Instrument"
+                "String Instrument",
+                "Electric Guitar"
             ],
             "entries": [
-                "Acoustic",
-                "Electric Pickups",
-                "Fretboard",
-                "Strumming"
+                "Frets",
+                "Strings",
+                "Pick",
+                "Amp"
             ]
         },
         {
             "topic": [
-                "Wallet",
-                "Billfold",
-                "Pocketbook"
+                "Ball",
+                "Sphere",
+                "Round Object"
             ],
             "entries": [
-                "Card Slots",
-                "Cash Compartment",
-                "Leather Finish",
-                "ID Window"
+                "Bounce",
+                "Sports",
+                "Rubber",
+                "Throw"
+            ]
+        },
+        {
+            "topic": [
+                "Bedroom",
+                "Sleeping Chamber",
+                "Dream Room"
+            ],
+            "entries": [
+                "Bed",
+                "Wardrobe",
+                "Privacy",
+                "Rest"
+            ]
+        },
+        {
+            "topic": [
+                "Backpack",
+                "Knapsack",
+                "Rucksack"
+            ],
+            "entries": [
+                "Zipper",
+                "Straps",
+                "Compartments",
+                "Hiking"
+            ]
+        },
+        {
+            "topic": [
+                "Cake",
+                "Pastry",
+                "Baked Dessert"
+            ],
+            "entries": [
+                "Layers",
+                "Icing",
+                "Sweet",
+                "Celebration"
+            ]
+        },
+        {
+            "topic": [
+                "Fan",
+                "Cooling Appliance",
+                "Ventilator"
+            ],
+            "entries": [
+                "Blades",
+                "Rotation",
+                "Breeze",
+                "Electric"
             ]
         }
     ]

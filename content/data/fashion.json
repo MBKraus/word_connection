@@ -1,0 +1,352 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Denim Jeans",
+                "Blue Jeans"
+            ],
+            "entries": [
+                "Rivet Fastening",
+                "Levi Strauss",
+                "Casual Wear",
+                "Indigo Dye"
+            ]
+        },
+        {
+            "topic": [
+                "Little Black Dress",
+                "LBD"
+            ],
+            "entries": [
+                "Classic Elegance",
+                "Coco Chanel",
+                "Evening Outfit",
+                "Versatile Fashion"
+            ]
+        },
+        {
+            "topic": [
+                "Trench Coat",
+                "Raincoat"
+            ],
+            "entries": [
+                "Waterproof Fabric",
+                "Military Origin",
+                "Belted Waist",
+                "Double-breasted"
+            ]
+        },
+        {
+            "topic": [
+                "Miniskirt",
+                "Mini Skirt"
+            ],
+            "entries": [
+                "Mary Quant",
+                "1960s Fashion",
+                "Above-knee Length",
+                "Youthful Style"
+            ]
+        },
+        {
+            "topic": [
+                "Penny Loafers",
+                "Slip-on Shoes"
+            ],
+            "entries": [
+                "Moccasin Stitching",
+                "Laceless Design",
+                "Casual Footwear",
+                "Timeless Style"
+            ]
+        },
+        {
+            "topic": [
+                "Fedora Hat",
+                "Trilby Hat"
+            ],
+            "entries": [
+                "Wide Brim",
+                "Classic Menswear",
+                "Wool Felt",
+                "Center Crease"
+            ]
+        },
+        {
+            "topic": [
+                "Polka Dot",
+                "Spot Pattern"
+            ],
+            "entries": [
+                "Playful Design",
+                "Classic Print",
+                "Round Circles",
+                "Fashion Trend"
+            ]
+        },
+        {
+            "topic": [
+                "Bell-bottoms",
+                "Flared Pants"
+            ],
+            "entries": [
+                "1970s Fashion",
+                "Wide Leg",
+                "Hippie Culture",
+                "Retro Style"
+            ]
+        },
+        {
+            "topic": [
+                "Crew Neck Sweater",
+                "Round-neck Pullover"
+            ],
+            "entries": [
+                "Casual Knit",
+                "Slip-on Style",
+                "Winter Wear",
+                "Simple Design"
+            ]
+        },
+        {
+            "topic": [
+                "Oxford Shoes",
+                "Dress Shoes"
+            ],
+            "entries": [
+                "Formal Footwear",
+                "Laced Style",
+                "Leather Upper",
+                "Wingtip"
+            ]
+        },
+        {
+            "topic": [
+                "Plaid Shirt",
+                "Checkered Shirt"
+            ],
+            "entries": [
+                "Casual Shirt",
+                "Cotton Fabric",
+                "Backwoods Style",
+                "Button-up"
+            ]
+        },
+        {
+            "topic": [
+                "Bermuda Shorts",
+                "Knee-length Shorts"
+            ],
+            "entries": [
+                "Casual Attire",
+                "Summer Wear",
+                "Relaxed Fit",
+                "Tropic Origin"
+            ]
+        },
+        {
+            "topic": [
+                "Bomber Jacket",
+                "Flight Jacket"
+            ],
+            "entries": [
+                "Military Design",
+                "Zipper Front",
+                "Sleek Fit",
+                "Elastic Cuffs"
+            ]
+        },
+        {
+            "topic": [
+                "Puffer Coat",
+                "Down Jacket"
+            ],
+            "entries": [
+                "Insulated Warmth",
+                "Quilted Design",
+                "Winter Wear",
+                "Hooded Style"
+            ]
+        },
+        {
+            "topic": [
+                "Graphic T-shirt",
+                "Printed Tee"
+            ],
+            "entries": [
+                "Casual Top",
+                "Cotton Blend",
+                "Artistic Design",
+                "Slogan Prints"
+            ]
+        },
+        {
+            "topic": [
+                "Chelsea Boots",
+                "Ankle Boots"
+            ],
+            "entries": [
+                "Elastic Sides",
+                "Leather Finish",
+                "Slip-on Ease",
+                "British Heritage"
+            ]
+        },
+        {
+            "topic": [
+                "Peacoat",
+                "Navy Coat"
+            ],
+            "entries": [
+                "Wool Blend",
+                "Double Breast",
+                "Maritime Look",
+                "Winter Outerwear"
+            ]
+        },
+        {
+            "topic": [
+                "Linen Pants",
+                "Summer Trousers"
+            ],
+            "entries": [
+                "Breathable Fabric",
+                "Casual Look",
+                "Lightweight",
+                "Warm Weather"
+            ]
+        },
+        {
+            "topic": [
+                "Ruffle Skirt",
+                "Tutu Skirt"
+            ],
+            "entries": [
+                "Layered Design",
+                "Flouncy Style",
+                "Runway Favorite",
+                "Dramatic Flare"
+            ]
+        },
+        {
+            "topic": [
+                "Sneakers",
+                "Tennis Shoes"
+            ],
+            "entries": [
+                "Athletic Footwear",
+                "Rubber Sole",
+                "Comfort Design",
+                "Casual Wear"
+            ]
+        },
+        {
+            "topic": [
+                "Flip Flops",
+                "Thongs"
+            ],
+            "entries": [
+                "Beach Footwear",
+                "Casual Sandal",
+                "Rubber Strap",
+                "Summer Icon"
+            ]
+        },
+        {
+            "topic": [
+                "Cardigan Sweater",
+                "Open Sweater"
+            ],
+            "entries": [
+                "Button Front",
+                "Versatile Knit",
+                "Layering Piece",
+                "Casual Style"
+            ]
+        },
+        {
+            "topic": [
+                "Argyle Socks",
+                "Patterned Socks"
+            ],
+            "entries": [
+                "Diamond Pattern",
+                "Knitted Design",
+                "Classic Style",
+                "Casual Wear"
+            ]
+        },
+        {
+            "topic": [
+                "Brogues",
+                "Wingtip Shoes"
+            ],
+            "entries": [
+                "Decorative Perforations",
+                "Formal Attire",
+                "Scotch Grain",
+                "Leather Finish"
+            ]
+        },
+        {
+            "topic": [
+                "Kilt",
+                "Scottish Skirt"
+            ],
+            "entries": [
+                "Tartan Fabric",
+                "Plead Design",
+                "Traditional Wear",
+                "Cultural Symbol"
+            ]
+        },
+        {
+            "topic": [
+                "Blazer",
+                "Suit Jacket"
+            ],
+            "entries": [
+                "Classic Fit",
+                "Office Wear",
+                "Lapels",
+                "Buttoned Front"
+            ]
+        },
+        {
+            "topic": [
+                "Cargo Pants",
+                "Utility Pants"
+            ],
+            "entries": [
+                "Multiple Pockets",
+                "Casual Fit",
+                "Durable Fabric",
+                "Outdoor Activities"
+            ]
+        },
+        {
+            "topic": [
+                "Gladiator Sandals",
+                "Roman Sandals"
+            ],
+            "entries": [
+                "Strappy Design",
+                "Flat Sole",
+                "Ancient Origin",
+                "Summer Footwear"
+            ]
+        },
+        {
+            "topic": [
+                "Baseball Cap",
+                "Cap"
+            ],
+            "entries": [
+                "Casual Hat",
+                "Curved Brim",
+                "Sportswear",
+                "Adjustable Strap"
+            ]
+        }
+    ]
+}

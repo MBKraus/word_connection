@@ -1,0 +1,222 @@
+{
+    "animals": {
+        "topics": [
+            {
+                "topic": [
+                    "Tiger",
+                    "Tigers"
+                ],
+                "entries": [
+                    "Stripe Pattern",
+                    "Jungle Habitat",
+                    "Solitary Nature",
+                    "Predatory Skills"
+                ]
+            },
+            {
+                "topic": [
+                    "Elephant",
+                    "Elephants"
+                ],
+                "entries": [
+                    "Trunk Utilization",
+                    "Ivory Tusks",
+                    "Matriarchal Groups",
+                    "Savannahs"
+                ]
+            },
+            {
+                "topic": [
+                    "Penguin",
+                    "Penguins"
+                ],
+                "entries": [
+                    "Antarctic Dweller",
+                    "Flightless Bird",
+                    "Tuxedo Appearance",
+                    "Waddle Movement"
+                ]
+            },
+            {
+                "topic": [
+                    "Kangaroo",
+                    "Kangaroos"
+                ],
+                "entries": [
+                    "Pouch Bearing",
+                    "Hopping Locomotion",
+                    "Outback Resident",
+                    "Herbivorous"
+                ]
+            },
+            {
+                "topic": [
+                    "Crocodile",
+                    "Crocodiles"
+                ],
+                "entries": [
+                    "Reptilian Predator",
+                    "Snout Jaws",
+                    "River Banks",
+                    "Carnivorous"
+                ]
+            }
+        ]
+    },
+    "cuisine": {
+        "topics": [
+            {
+                "topic": [
+                    "Pizza",
+                    "Pizzerias",
+                    "Italian Pie",
+                    "Cheese Slice"
+                ],
+                "entries": [
+                    "Tomato Sauce",
+                    "Mozzarella",
+                    "Pepperoni",
+                    "Oven-baked"
+                ]
+            },
+            {
+                "topic": [
+                    "Tacos",
+                    "Taco",
+                    "Mexican Handheld",
+                    "Tortilla Wrap"
+                ],
+                "entries": [
+                    "Corn Tortilla",
+                    "Salsa",
+                    "Ground Beef",
+                    "Lettuce"
+                ]
+            },
+            {
+                "topic": [
+                    "Dim Sum",
+                    "Dimsum",
+                    "Cantonese Bites",
+                    "Dragon Buns"
+                ],
+                "entries": [
+                    "Steamed Buns",
+                    "Teahouse",
+                    "Dumplings",
+                    "Chicken Feet"
+                ]
+            },
+            {
+                "topic": [
+                    "Omelette",
+                    "Omelet",
+                    "Egg Pancake",
+                    "French Omelette"
+                ],
+                "entries": [
+                    "Whisked Eggs",
+                    "Breakfast Dish",
+                    "Frying Pan",
+                    "Mushrooms"
+                ]
+            },
+            {
+                "topic": [
+                    "Hamburger",
+                    "Burger",
+                    "Beef Patty",
+                    "Burgers"
+                ],
+                "entries": [
+                    "Ground Beef",
+                    "Sesame Bun",
+                    "Pickles",
+                    "Grilled"
+                ]
+            },
+            {
+                "topic": [
+                    "Coffee",
+                    "Coffees",
+                    "Java",
+                    "Brewed Beans"
+                ],
+                "entries": [
+                    "Espresso Shot",
+                    "Arabica",
+                    "Roasted Beans",
+                    "Barista"
+                ]
+            }
+        ]
+    },
+    "events": {
+        "topics": [
+            {
+                "topic": [
+                    "Olympics",
+                    "The Olympic Games"
+                ],
+                "entries": [
+                    "Five Rings",
+                    "Summer and Winter",
+                    "Torch Relay",
+                    "Medal Ceremony"
+                ]
+            },
+            {
+                "topic": [
+                    "World War I",
+                    "WWI",
+                    "The Great War"
+                ],
+                "entries": [
+                    "Trench Warfare",
+                    "Archduke Assassination",
+                    "Zimmerman Telegram",
+                    "No Man's Land"
+                ]
+            },
+            {
+                "topic": [
+                    "Christmas",
+                    "Xmas",
+                    "Yuletide"
+                ],
+                "entries": [
+                    "Santa Claus",
+                    "Pine Trees",
+                    "Gift Giving",
+                    "Nativity Scene"
+                ]
+            },
+            {
+                "topic": [
+                    "Easter",
+                    "Paschal Festival",
+                    "Resurrection Sunday"
+                ],
+                "entries": [
+                    "Egg Hunt",
+                    "Bunny",
+                    "Holy Week",
+                    "Resurrection"
+                ]
+            },
+            {
+                "topic": [
+                    "Thanksgiving",
+                    "Turkey Day",
+                    "Harvest Festival"
+                ],
+                "entries": [
+                    "Pilgrims",
+                    "Turkey Feast",
+                    "Parades",
+                    "Thankfulness"
+                ]
+            }
+        ]
+    }
+}

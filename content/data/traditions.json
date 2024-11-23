@@ -2,302 +2,327 @@
     "topics": [
         {
             "topic": [
-                "Diwali",
-                "Deepavali"
+                "Boxing Day",
+                "Day of Goodwill",
+                "St. Stephen's Day"
             ],
             "entries": [
-                "Festival of Lights",
-                "Lamps",
-                "Sweets",
-                "New Clothes"
-            ]
-        },
-        {
-            "topic": [
-                "Hanami",
-                "Cherry Blossom Festival"
-            ],
-            "entries": [
-                "Cherry Trees",
-                "Picnic",
-                "Spring Season",
-                "Japan"
-            ]
-        },
-        {
-            "topic": [
-                "Carnival",
-                "Carnaval"
-            ],
-            "entries": [
-                "Parades",
-                "Costumes",
-                "Dancing",
-                "Rio de Janeiro"
+                "Post-Christmas",
+                "Gifts",
+                "Shopping Sales",
+                "Charity Events"
             ]
         },
         {
             "topic": [
                 "Mardi Gras",
-                "Fat Tuesday"
+                "Fat Tuesday",
+                "Shrove Tuesday"
             ],
             "entries": [
-                "New Orleans",
-                "Masks",
+                "Parades",
                 "Beads",
-                "Feasting"
+                "New Orleans",
+                "Carnival"
             ]
         },
         {
             "topic": [
                 "Day of the Dead",
-                "D\u00eda de los Muertos"
+                "D\u00eda de los Muertos",
+                "All Saints Day"
             ],
             "entries": [
-                "Mexican Tradition",
                 "Sugar Skulls",
                 "Altars",
+                "Mexico",
                 "Marigolds"
             ]
         },
         {
             "topic": [
-                "Thanksgiving",
-                "Turkey Day"
+                "Chinese New Year",
+                "Spring Festival",
+                "Lunar New Year"
             ],
             "entries": [
-                "Harvest Festival",
-                "Family Gathering",
-                "Turkey Dinner",
-                "November"
-            ]
-        },
-        {
-            "topic": [
-                "Cinco de Mayo",
-                "Fifth of May"
-            ],
-            "entries": [
-                "Mexican Heritage",
-                "Celebrations",
-                "Parades",
-                "Historical Events"
-            ]
-        },
-        {
-            "topic": [
-                "Oktoberfest",
-                "Beer Festival"
-            ],
-            "entries": [
-                "Munich",
-                "Bavarian Clothing",
-                "Beer Tents",
-                "German Food"
+                "Dragon Dance",
+                "Red Envelopes",
+                "Fireworks",
+                "Family Reunion"
             ]
         },
         {
             "topic": [
                 "Ramadan",
-                "Ramazan"
+                "Ramzan",
+                "Sawm"
             ],
             "entries": [
                 "Fasting",
                 "Iftar",
                 "Holy Month",
-                "Eid Al-Fitr"
-            ]
-        },
-        {
-            "topic": [
-                "Chinese New Year",
-                "Spring Festival"
-            ],
-            "entries": [
-                "Lunar Calendar",
-                "Dragon Dance",
-                "Fireworks",
-                "Red Envelopes"
-            ]
-        },
-        {
-            "topic": [
-                "Easter",
-                "Pascha"
-            ],
-            "entries": [
-                "Resurrection",
-                "Egg Hunts",
-                "Bunny",
-                "Springtime"
-            ]
-        },
-        {
-            "topic": [
-                "Halloween",
-                "All Hallows' Eve"
-            ],
-            "entries": [
-                "Costumes",
-                "Pumpkins",
-                "Trick or Treat",
-                "Spooky Decor"
-            ]
-        },
-        {
-            "topic": [
-                "Kwanzaa",
-                "Kwanza"
-            ],
-            "entries": [
-                "African Heritage",
-                "Seven Principles",
-                "Candles",
-                "Unity"
+                "Quran Reading"
             ]
         },
         {
             "topic": [
                 "Hanukkah",
-                "Chanukah"
+                "Chanukah",
+                "Festival of Lights"
             ],
             "entries": [
                 "Menorah",
                 "Dreidel",
                 "Eight Nights",
-                "Jewish Tradition"
+                "Oil"
             ]
         },
         {
             "topic": [
-                "Christmas",
-                "Xmas"
+                "Thanksgiving",
+                "Turkey Day",
+                "Harvest Festival"
             ],
             "entries": [
-                "Nativity",
-                "Santa Claus",
-                "Carols",
-                "Gift Giving"
+                "Pilgrims",
+                "Pumpkin Pie",
+                "Feast",
+                "November"
             ]
         },
         {
             "topic": [
-                "Bastille Day",
-                "F\u00eate Nationale"
+                "Oktoberfest",
+                "Bavarian Beer Festival",
+                "Wiesn"
             ],
             "entries": [
-                "French Revolution",
-                "Fireworks",
-                "Paris",
-                "July 14"
+                "Munich",
+                "Lederhosen",
+                "Beer",
+                "Pretzels"
             ]
         },
         {
             "topic": [
-                "Vesak",
-                "Buddha Day"
+                "Passover",
+                "Pesach",
+                "Jewish Easter"
             ],
             "entries": [
-                "Buddha's Birth",
-                "Enlightenment",
-                "Celebration",
-                "Full Moon"
+                "Seder Meal",
+                "Matzah",
+                "Haggadah",
+                "Plagues"
             ]
         },
         {
             "topic": [
-                "Yule",
-                "Yuletide"
-            ],
-            "entries": [
-                "Winter Solstice",
-                "Evergreens",
-                "Pagan Festival",
-                "Feasting"
-            ]
-        },
-        {
-            "topic": [
-                "Rosh Hashanah",
-                "Jewish New Year"
-            ],
-            "entries": [
-                "Blowing Shofar",
-                "Apples and Honey",
-                "Synagogue",
-                "Ten Days"
-            ]
-        },
-        {
-            "topic": [
+                "Festival of Colors",
                 "Holi",
-                "Festival of Colors"
+                "Phagwah"
             ],
             "entries": [
-                "Colored Powders",
-                "India",
-                "Spring Festival",
+                "Colored Powder",
+                "Spring",
+                "Bonfires",
+                "Water Balloons"
+            ]
+        },
+        {
+            "topic": [
+                "Hanami",
+                "Cherry Blossom Festival",
+                "Flower Viewing"
+            ],
+            "entries": [
+                "Sakura",
+                "Picnic",
+                "Japan",
+                "Springtime"
+            ]
+        },
+        {
+            "topic": [
+                "Carnival",
+                "Carnaval",
+                "Mardi Gras"
+            ],
+            "entries": [
+                "Costumes",
+                "Floats",
+                "Samba",
                 "Celebration"
             ]
         },
         {
             "topic": [
+                "Halloween",
+                "All Hallows' Eve",
+                "Samhain"
+            ],
+            "entries": [
+                "Costumes",
+                "Pumpkins",
+                "Trick-or-Treat",
+                "Haunted Houses"
+            ]
+        },
+        {
+            "topic": [
+                "Diwali",
+                "Deepavali",
+                "Festival of Lights"
+            ],
+            "entries": [
+                "Oil Lamps",
+                "Firecrackers",
+                "New Clothes",
+                "Goddess Lakshmi"
+            ]
+        },
+        {
+            "topic": [
+                "Easter",
+                "Pascha",
+                "Resurrection Sunday"
+            ],
+            "entries": [
+                "Egg Hunts",
+                "Bunnies",
+                "Resurrection",
+                "Spring"
+            ]
+        },
+        {
+            "topic": [
+                "Christmas",
+                "Xmas",
+                "Nativity Festival"
+            ],
+            "entries": [
+                "Santa Claus",
+                "Gifts",
+                "Tree",
+                "Carols"
+            ]
+        },
+        {
+            "topic": [
+                "Kwanzaa",
+                "African Celebration",
+                "Nguzo Saba"
+            ],
+            "entries": [
+                "Seven Principles",
+                "Candles",
+                "Unity Cup",
+                "Red, Black, Green"
+            ]
+        },
+        {
+            "topic": [
+                "Vesak",
+                "Buddha Day",
+                "Vaisakha"
+            ],
+            "entries": [
+                "Enlightenment",
+                "Buddha Statues",
+                "Religious Rituals",
+                "Meditation"
+            ]
+        },
+        {
+            "topic": [
+                "Mid-Autumn Festival",
+                "Moon Festival",
+                "Zhongqiu Jie"
+            ],
+            "entries": [
+                "Mooncakes",
+                "Lanterns",
+                "Harvest",
+                "Full Moon"
+            ]
+        },
+        {
+            "topic": [
+                "Navratri",
+                "Durga Puja",
+                "Dussehra"
+            ],
+            "entries": [
+                "Nine Nights",
+                "Fasting",
+                "Dances",
+                "Goddess Durga"
+            ]
+        },
+        {
+            "topic": [
+                "Thanksgiving",
+                "Canada Harvest Day",
+                "Turkey Day"
+            ],
+            "entries": [
+                "Feast",
+                "Football",
+                "November",
+                "Parades"
+            ]
+        },
+        {
+            "topic": [
                 "St. Patrick's Day",
-                "Paddy's Day"
+                "Irish Day",
+                "L\u00e1 Fh\u00e9ile P\u00e1draig"
             ],
             "entries": [
-                "Irish Festival",
+                "Green Attire",
                 "Shamrock",
-                "Green Clothing",
-                "Parade"
+                "Parades",
+                "Leprechauns"
             ]
         },
         {
             "topic": [
-                "Lunar New Year",
-                "Tet"
+                "Bonfire Night",
+                "Guy Fawkes Night",
+                "Fireworks Night"
             ],
             "entries": [
-                "Asia",
-                "Red Envelopes",
-                "Family Reunion",
-                "Lion Dance"
-            ]
-        },
-        {
-            "topic": [
-                "Eid al-Adha",
-                "Festival of Sacrifice"
-            ],
-            "entries": [
-                "Sacrifice",
-                "Muslim Holiday",
-                "Hajj",
-                "Family Meal"
-            ]
-        },
-        {
-            "topic": [
-                "New Year's Eve",
-                "Old Year's Night"
-            ],
-            "entries": [
+                "Effigies",
                 "Fireworks",
-                "Countdown",
-                "Party",
-                "Midnight"
+                "United Kingdom",
+                "5th November"
             ]
         },
         {
             "topic": [
-                "Samhain",
-                "Halloween Ancestor"
+                "Winter Solstice",
+                "Yule",
+                "Midwinter"
             ],
             "entries": [
-                "Pagan Roots",
-                "Harvest Celebration",
-                "Bonfires",
-                "Autumn"
+                "Shortest Day",
+                "Stonehenge",
+                "Celebration",
+                "Renewal"
+            ]
+        },
+        {
+            "topic": [
+                "Bastille Day",
+                "French National Day",
+                "Quatorze Juillet"
+            ],
+            "entries": [
+                "Liberty",
+                "Revolution",
+                "Fireworks",
+                "Parades"
             ]
         }
     ]

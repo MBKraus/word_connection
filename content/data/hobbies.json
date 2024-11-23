@@ -2,26 +2,62 @@
     "topics": [
         {
             "topic": [
+                "Digital Photography",
+                "Digital Camera"
+            ],
+            "entries": [
+                "Megapixels",
+                "Image Sensor",
+                "Memory Card",
+                "Autofocus"
+            ]
+        },
+        {
+            "topic": [
+                "Bicycle Riding",
+                "Cycling"
+            ],
+            "entries": [
+                "Handlebars",
+                "Pedals",
+                "Chain",
+                "Brake Levers"
+            ]
+        },
+        {
+            "topic": [
                 "Gardening",
                 "Horticulture"
             ],
             "entries": [
+                "Soil",
                 "Pruning Shears",
                 "Compost",
-                "Vegetables",
                 "Perennials"
             ]
         },
         {
             "topic": [
-                "Baking",
-                "Breadmaking"
+                "Baking Bread",
+                "Bread Making"
             ],
             "entries": [
                 "Yeast",
-                "Oven",
                 "Dough",
-                "Measure"
+                "Proofing",
+                "Crust"
+            ]
+        },
+        {
+            "topic": [
+                "Playing Guitar",
+                "Strumming Strings"
+            ],
+            "entries": [
+                "Fretboard",
+                "Strings",
+                "Chords",
+                "Pick"
             ]
         },
         {
@@ -31,21 +67,9 @@
             ],
             "entries": [
                 "Rod",
-                "Bait",
                 "Reel",
-                "Lakeside"
-            ]
-        },
-        {
-            "topic": [
-                "Cycling",
-                "Bicycling"
-            ],
-            "entries": [
-                "Pedals",
-                "Helmet",
-                "Tour de France",
-                "Chain"
+                "Lure",
+                "Catch"
             ]
         },
         {
@@ -56,32 +80,8 @@
             "entries": [
                 "Binoculars",
                 "Field Guide",
-                "Checklists",
-                "Migration"
-            ]
-        },
-        {
-            "topic": [
-                "Photography",
-                "Camerawork"
-            ],
-            "entries": [
-                "Shutter Speed",
-                "Aperture",
-                "Portraits",
-                "DSLR"
-            ]
-        },
-        {
-            "topic": [
-                "Painting",
-                "Visual Art"
-            ],
-            "entries": [
-                "Easel",
-                "Canvas",
-                "Oil Paint",
-                "Palette"
+                "Habitat",
+                "Species"
             ]
         },
         {
@@ -90,22 +90,22 @@
                 "Culinary Arts"
             ],
             "entries": [
-                "Saut\u00e9",
+                "Recipes",
                 "Ingredients",
-                "Stovetop",
-                "Utensils"
+                "Saut\u00e9ing",
+                "Bakeware"
             ]
         },
         {
             "topic": [
-                "Knitting",
-                "Crocheting"
+                "Playing Chess",
+                "Board Game Strategy"
             ],
             "entries": [
-                "Needles",
-                "Yarn",
-                "Sweaters",
-                "Patterns"
+                "Checkmate",
+                "Pawn",
+                "Knight",
+                "Bishop"
             ]
         },
         {
@@ -116,176 +116,128 @@
             "entries": [
                 "Chisel",
                 "Lathe",
-                "Sandpaper",
-                "Dovetail"
+                "Jointer",
+                "Woodgrain"
             ]
         },
         {
             "topic": [
-                "Hiking",
-                "Trekking"
+                "Jogging",
+                "Running"
             ],
             "entries": [
-                "Backpack",
-                "Trail Map",
-                "Boots",
-                "Elevation"
+                "Sneakers",
+                "Pace",
+                "Trail",
+                "Endurance"
             ]
         },
         {
             "topic": [
-                "Running",
-                "Jogging"
+                "Knitting",
+                "Yarn Crafting"
             ],
             "entries": [
-                "Marathon",
-                "Stride",
-                "Fitness",
-                "Pace"
+                "Needle",
+                "Wool",
+                "Pattern",
+                "Row"
             ]
         },
         {
             "topic": [
-                "Writing",
-                "Authorship"
+                "Listening to Music",
+                "Music Appreciation"
             ],
             "entries": [
-                "Manuscript",
-                "Narrative",
-                "Editing",
-                "Drama"
+                "Headphones",
+                "Playlist",
+                "Lyrics",
+                "Beat"
             ]
         },
         {
             "topic": [
-                "Gaming",
-                "Videogames"
+                "Photography",
+                "Camera Use"
             ],
             "entries": [
-                "Controller",
-                "Console",
-                "RPG",
-                "Online Play"
+                "Exposure",
+                "Shutter Speed",
+                "Lens",
+                "Tripod"
             ]
         },
         {
             "topic": [
-                "Camping",
-                "Outdoor Living"
+                "Doodling",
+                "Drawing"
             ],
             "entries": [
-                "Tent",
-                "Campfire",
-                "Sleeping Bag",
-                "S'mores"
-            ]
-        },
-        {
-            "topic": [
-                "Drawing",
-                "Sketching"
-            ],
-            "entries": [
+                "Sketchbook",
                 "Pencil",
-                "Paper",
-                "Charcoal",
+                "Line",
                 "Shading"
             ]
         },
         {
             "topic": [
-                "Dancing",
-                "Dance"
+                "Scrapbooking",
+                "Memory Keeping"
             ],
             "entries": [
-                "Choreography",
-                "Ballet",
-                "Waltz",
-                "Rhythm"
+                "Stickers",
+                "Photographs",
+                "Journal",
+                "Paper"
+            ]
+        },
+        {
+            "topic": [
+                "Writing Poetry",
+                "Verse Creation"
+            ],
+            "entries": [
+                "Stanza",
+                "Meter",
+                "Rhyme",
+                "Imagery"
             ]
         },
         {
             "topic": [
                 "Sewing",
-                "Tailoring"
+                "Stitching"
             ],
             "entries": [
+                "Sewing Machine",
                 "Fabric",
-                "Needle",
-                "Patterns",
-                "Hemline"
+                "Seams",
+                "Pattern"
             ]
         },
         {
             "topic": [
-                "Running",
-                "Jogging"
+                "Playing Piano",
+                "Keyboarding"
             ],
             "entries": [
-                "Track",
-                "Endurance",
-                "Heart Rate",
-                "Shoes"
+                "Keys",
+                "Pedals",
+                "Sheet Music",
+                "Melody"
             ]
         },
         {
             "topic": [
-                "Archery",
-                "Bowmanship"
+                "Ice Skating",
+                "Skating on Ice"
             ],
             "entries": [
-                "Quiver",
-                "Arrows",
-                "Target",
-                "Longbow"
-            ]
-        },
-        {
-            "topic": [
-                "Acting",
-                "Theatre"
-            ],
-            "entries": [
-                "Script",
-                "Stage",
-                "Costumes",
-                "Rehearsal"
-            ]
-        },
-        {
-            "topic": [
-                "Gardening",
-                "Horticulture"
-            ],
-            "entries": [
-                "Sprinklers",
-                "Mulch",
-                "Roses",
-                "Insects"
-            ]
-        },
-        {
-            "topic": [
-                "Reading",
-                "Literature"
-            ],
-            "entries": [
-                "Novels",
-                "Poetry",
-                "Book Clubs",
-                "Authors"
-            ]
-        },
-        {
-            "topic": [
-                "Yoga",
-                "Yogic Practices"
-            ],
-            "entries": [
-                "Mat",
-                "Poses",
-                "Mindfulness",
-                "Flexibility"
+                "Rink",
+                "Blade",
+                "Spin",
+                "Figure Eight"
             ]
         },
         {
@@ -294,10 +246,118 @@
                 "Aquatics"
             ],
             "entries": [
+                "Pool",
                 "Goggles",
-                "Butterfly Stroke",
-                "Lanes",
-                "Dive"
+                "Freestyle",
+                "Diving"
+            ]
+        },
+        {
+            "topic": [
+                "Gardening Vegetables",
+                "Vegetable Cultivation"
+            ],
+            "entries": [
+                "Tomatoes",
+                "Raised Bed",
+                "Irrigation",
+                "Harvest"
+            ]
+        },
+        {
+            "topic": [
+                "Yoga",
+                "Mindful Stretching"
+            ],
+            "entries": [
+                "Mat",
+                "Pose",
+                "Balance",
+                "Breathing"
+            ]
+        },
+        {
+            "topic": [
+                "Camping",
+                "Outdoor Lodging"
+            ],
+            "entries": [
+                "Tent",
+                "Campfire",
+                "Sleeping Bag",
+                "Hiking Boots"
+            ]
+        },
+        {
+            "topic": [
+                "Archery",
+                "Bow Shooting"
+            ],
+            "entries": [
+                "Bowstring",
+                "Arrow",
+                "Target",
+                "Quiver"
+            ]
+        },
+        {
+            "topic": [
+                "Surfing",
+                "Wave Riding"
+            ],
+            "entries": [
+                "Surfboard",
+                "Wetsuit",
+                "Swell",
+                "Pipeline"
+            ]
+        },
+        {
+            "topic": [
+                "Pottery",
+                "Ceramic Arts"
+            ],
+            "entries": [
+                "Clay",
+                "Kiln",
+                "Wheel",
+                "Glaze"
+            ]
+        },
+        {
+            "topic": [
+                "Puzzle Solving",
+                "Riddle Enjoyment"
+            ],
+            "entries": [
+                "Pieces",
+                "Strategy",
+                "Logic",
+                "Brain Teaser"
+            ]
+        },
+        {
+            "topic": [
+                "Meditation",
+                "Mindful Relaxation"
+            ],
+            "entries": [
+                "Mantra",
+                "Focus",
+                "Silence",
+                "Tranquility"
+            ]
+        },
+        {
+            "topic": [
+                "Origami",
+                "Paper Folding"
+            ],
+            "entries": [
+                "Creases",
+                "Folds",
+                "Paper Square",
+                "Crane"
             ]
         }
     ]

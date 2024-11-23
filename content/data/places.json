@@ -3,50 +3,14 @@
         {
             "topic": [
                 "Eiffel Tower",
-                "La Tour Eiffel"
+                "Tour Eiffel",
+                "Eiffel"
             ],
             "entries": [
-                "Iron structure",
+                "Iron lattice",
                 "Paris",
-                "Champs de Mars",
-                "Gustave"
-            ]
-        },
-        {
-            "topic": [
-                "Machu Picchu",
-                "Machu Pikchu"
-            ],
-            "entries": [
-                "Incan ruins",
-                "Andes Mountains",
-                "Peru",
-                "Lost city"
-            ]
-        },
-        {
-            "topic": [
-                "Sydney Opera House",
-                "Opera House Sydney"
-            ],
-            "entries": [
-                "Harbor sails",
-                "Australia",
-                "Performing arts",
-                "J\u00f8rn Utzon"
-            ]
-        },
-        {
-            "topic": [
-                "Mount Everest",
-                "Everest",
-                "Sagarmatha"
-            ],
-            "entries": [
-                "Himalayas",
-                "Tallest peak",
-                "Nepal",
-                "Climbing expeditions"
+                "Gustave Eiffel",
+                "Romantic"
             ]
         },
         {
@@ -56,268 +20,621 @@
                 "Liberty Enlightening the World"
             ],
             "entries": [
-                "New York Harbor",
-                "France gifted",
-                "Copper",
+                "New York",
+                "Gift from France",
+                "Ellis Island",
                 "Torch"
             ]
         },
         {
             "topic": [
                 "Great Wall of China",
-                "China Wall",
-                "Changcheng"
+                "Changcheng",
+                "The Great Wall"
             ],
             "entries": [
                 "Ming Dynasty",
-                "Defense structure",
-                "Stone bricks",
-                "Tourist attraction"
-            ]
-        },
-        {
-            "topic": [
-                "Colosseum",
-                "Coliseum"
-            ],
-            "entries": [
-                "Roman arena",
-                "Gladiators",
-                "Elliptical",
-                "Italy"
-            ]
-        },
-        {
-            "topic": [
-                "Taj Mahal",
-                "T\u0101j Mahal",
-                "Tajmahal"
-            ],
-            "entries": [
-                "Agra",
-                "Mausoleum",
-                "White marble",
-                "Mughal architecture"
-            ]
-        },
-        {
-            "topic": [
-                "Grand Canyon",
-                "The Grand Canyon"
-            ],
-            "entries": [
-                "Arizona",
-                "Erosion",
-                "Colorado River",
-                "National Park"
-            ]
-        },
-        {
-            "topic": [
-                "Stonehenge",
-                "Stonhenge",
-                "Stone Henge"
-            ],
-            "entries": [
-                "Wiltshire",
-                "Neolithic",
-                "Circular stones",
-                "Solstice"
-            ]
-        },
-        {
-            "topic": [
-                "Niagara Falls",
-                "Niagara",
-                "Canadian Horseshoe Falls"
-            ],
-            "entries": [
-                "Waterfall",
-                "Canada",
-                "New York border",
-                "Honeymoon destination"
-            ]
-        },
-        {
-            "topic": [
-                "Big Ben",
-                "The Great Bell",
-                "Clock Tower"
-            ],
-            "entries": [
-                "Elizabeth Tower",
-                "Westminster",
-                "London",
-                "Iconic clock"
+                "Brick",
+                "Northern China",
+                "Dragon"
             ]
         },
         {
             "topic": [
                 "Pyramids of Giza",
                 "Giza Pyramids",
-                "Pyramid of Khufu"
+                "Pyramids"
             ],
             "entries": [
-                "Ancient Egypt",
+                "Egypt",
+                "Ancient Tombs",
                 "Pharaohs",
-                "Limestone",
-                "Tomb"
+                "Sphinx"
             ]
         },
         {
             "topic": [
-                "Great Barrier Reef",
-                "Barrier Reef",
-                "Coral Reef Australia"
+                "Machu Picchu",
+                "Old Peak",
+                "Machu"
             ],
             "entries": [
-                "Marine biodiversity",
-                "Queensland",
-                "Coral bleaching",
-                "Largest reef"
+                "Inca City",
+                "Andes Mountains",
+                "Peru",
+                "Lost City"
             ]
         },
         {
             "topic": [
-                "Acropolis of Athens",
-                "Athenian Acropolis",
-                "Akropolis"
+                "Sydney Opera House",
+                "Opera House Sydney",
+                "Sydney Concert Hall"
             ],
             "entries": [
-                "Parthenon",
-                "Greece",
-                "Hilltop",
-                "Classical Greece"
+                "Sails",
+                "Harbor",
+                "Iconic Architecture",
+                "Performing Arts"
             ]
         },
         {
             "topic": [
-                "Buckingham Palace",
-                "The Royal Palace",
-                "Buckingham Hall"
+                "Big Ben",
+                "Clock Tower",
+                "Elizabeth Tower"
             ],
             "entries": [
-                "Monarch residence",
                 "London",
-                "Changing Guards",
-                "Victoria"
+                "Westminster",
+                "Great Bell",
+                "Time"
             ]
         },
         {
             "topic": [
-                "Loch Ness",
-                "Loch Ness Lake",
-                "Loch Ness Monster"
+                "Taj Mahal",
+                "Crown of Palaces",
+                "Taj"
             ],
             "entries": [
-                "Scotland",
-                "Nessie",
-                "Freshwater loch",
-                "Legends"
+                "India",
+                "Marble",
+                "Mughal Emperor",
+                "Love"
             ]
         },
         {
             "topic": [
-                "Brandenburg Gate",
-                "Brandenburg Tor",
-                "Berlin Gate"
+                "Colosseum",
+                "Flavian Amphitheatre",
+                "Roman Colosseum"
             ],
             "entries": [
-                "18th century",
-                "Germany",
-                "Victory columns",
-                "Berlin Wall"
+                "Rome",
+                "Gladiators",
+                "Ancient Arena",
+                "Italy"
             ]
         },
         {
             "topic": [
                 "Christ the Redeemer",
                 "Cristo Redentor",
-                "Christ Statue"
+                "Redeemer Statue"
             ],
             "entries": [
                 "Rio de Janeiro",
+                "Brazil",
                 "Corcovado Mountain",
-                "Iconic statue",
-                "Open arms"
+                "Iconic"
             ]
         },
         {
             "topic": [
-                "Forbidden City",
-                "Forbidden Palace",
-                "Imperial Palace Beijing"
+                "Grand Canyon",
+                "Great Canyon",
+                "The Canyon"
             ],
             "entries": [
-                "Chinese emperors",
-                "Beijing",
-                "Ming Dynasty",
-                "UNESCO heritage"
+                "Arizona",
+                "Erosion",
+                "River Carving",
+                "Hiking"
             ]
         },
         {
             "topic": [
                 "Empire State Building",
                 "Empire State",
-                "ESB"
+                "New York Landmark"
             ],
             "entries": [
-                "New York",
-                "Art Deco",
                 "Skyscraper",
-                "Observation deck"
+                "Manhattan",
+                "Observation Deck",
+                "Art Deco"
             ]
         },
         {
             "topic": [
-                "The Sphinx of Giza",
-                "Great Sphinx",
-                "Sphinx"
+                "Mount Everest",
+                "Everest",
+                "Sagarmatha"
             ],
             "entries": [
-                "Limestone statue",
-                "Egypt",
-                "Mythical lion",
-                "Missing nose"
+                "Highest Peak",
+                "Himalayas",
+                "Nepal",
+                "Climbers"
             ]
         },
         {
             "topic": [
-                "Louvre Museum",
+                "Stonehenge",
+                "Stone Circle",
+                "Henge"
+            ],
+            "entries": [
+                "Wiltshire",
+                "Prehistoric Monument",
+                "Megalithic",
+                "Astronomy"
+            ]
+        },
+        {
+            "topic": [
+                "Niagara Falls",
+                "Niagara",
+                "Horseshoe Falls"
+            ],
+            "entries": [
+                "Waterfall",
+                "Canada",
+                "Hydropower",
+                "Tourist"
+            ]
+        },
+        {
+            "topic": [
+                "Buckingham Palace",
+                "Buckingham",
+                "The Queen's Palace"
+            ],
+            "entries": [
+                "Royal Residence",
+                "Changing Guard",
+                "London",
+                "Monarchy"
+            ]
+        },
+        {
+            "topic": [
+                "Golden Gate Bridge",
+                "Golden Gate",
+                "San Francisco Bridge"
+            ],
+            "entries": [
+                "Suspension Bridge",
+                "California",
+                "Orange",
+                "Fog"
+            ]
+        },
+        {
+            "topic": [
                 "The Louvre",
-                "Mus\u00e9e du Louvre"
+                "Louvre",
+                "The Louvre Museum"
             ],
             "entries": [
-                "Art gallery",
+                "Art",
+                "Mona Lisa",
                 "Paris",
-                "Da Vinci",
-                "Pyramid entrance"
+                "Glass Pyramid"
+            ]
+        },
+        {
+            "topic": [
+                "Acropolis",
+                "Acropolis of Athens",
+                "Sacred Rock"
+            ],
+            "entries": [
+                "Parthenon",
+                "Greece",
+                "Ancient Citadel",
+                "Athens"
+            ]
+        },
+        {
+            "topic": [
+                "Burj Khalifa",
+                "Khalifa Tower",
+                "Burj"
+            ],
+            "entries": [
+                "Tallest Building",
+                "Dubai",
+                "Skyscraper",
+                "Observation Deck"
+            ]
+        },
+        {
+            "topic": [
+                "Space Needle",
+                "Seattle Space Needle",
+                "Needle"
+            ],
+            "entries": [
+                "Seattle",
+                "Observation",
+                "Futuristic Design",
+                "Revolving Restaurant"
+            ]
+        },
+        {
+            "topic": [
+                "Vatican City",
+                "Vatican",
+                "Holy See"
+            ],
+            "entries": [
+                "Papal Authority",
+                "Rome",
+                "Catholicism",
+                "Sistine Chapel"
+            ]
+        },
+        {
+            "topic": [
+                "Berlin Wall",
+                "Wall of Berlin",
+                "Die Berliner Mauer"
+            ],
+            "entries": [
+                "Cold War",
+                "Germany",
+                "Division",
+                "Historical"
+            ]
+        },
+        {
+            "topic": [
+                "Alcatraz Island",
+                "Alcatraz",
+                "The Rock"
+            ],
+            "entries": [
+                "Prison",
+                "Escape Attempts",
+                "San Francisco",
+                "Tourist Attraction"
+            ]
+        },
+        {
+            "topic": [
+                "Tower of Pisa",
+                "Leaning Tower of Pisa",
+                "Pisa Tower"
+            ],
+            "entries": [
+                "Lean",
+                "Italy",
+                "White Marble",
+                "Bell Tower"
+            ]
+        },
+        {
+            "topic": [
+                "Mount Fuji",
+                "Fuji Mountain",
+                "Fuji-san"
+            ],
+            "entries": [
+                "Japan",
+                "Sacred Volcano",
+                "Cherry Blossom",
+                "Mountain Climbing"
+            ]
+        },
+        {
+            "topic": [
+                "Hollywood Sign",
+                "Hollywood Hills Sign",
+                "The Sign"
+            ],
+            "entries": [
+                "Los Angeles",
+                "Cinema",
+                "Iconic Letters",
+                "Mount Lee"
+            ]
+        },
+        {
+            "topic": [
+                "Forbidden City",
+                "Palace Museum",
+                "Imperial Palace"
+            ],
+            "entries": [
+                "Beijing",
+                "China",
+                "Ming Dynasty",
+                "Ancient"
+            ]
+        },
+        {
+            "topic": [
+                "Petra",
+                "Rose City",
+                "Petra of Jordan"
+            ],
+            "entries": [
+                "Sandstone Facade",
+                "Jordan",
+                "Archaeological",
+                "Treasury"
+            ]
+        },
+        {
+            "topic": [
+                "The Sagrada Familia",
+                "Sagrada Familia",
+                "Basilica of the Holy Family"
+            ],
+            "entries": [
+                "Barcelona",
+                "Gaudi",
+                "Unfinished",
+                "Cathedral"
+            ]
+        },
+        {
+            "topic": [
+                "Great Barrier Reef",
+                "The Reef",
+                "Great Reef"
+            ],
+            "entries": [
+                "Coral",
+                "Australia",
+                "Marine Life",
+                "Diving"
+            ]
+        },
+        {
+            "topic": [
+                "Red Square",
+                "Krasnaya Ploshchad",
+                "Main Square"
+            ],
+            "entries": [
+                "Moscow",
+                "Kremlin",
+                "Russia",
+                "Historical Importance"
+            ]
+        },
+        {
+            "topic": [
+                "Lascaux Caves",
+                "Lascaux",
+                "Prehistoric Caves"
+            ],
+            "entries": [
+                "Cave Paintings",
+                "France",
+                "Prehistoric Art",
+                "Animals"
+            ]
+        },
+        {
+            "topic": [
+                "Matterhorn",
+                "Monte Cervino",
+                "Cervino"
+            ],
+            "entries": [
+                "Alps",
+                "Switzerland",
+                "Iconic Mountain",
+                "Climbing"
+            ]
+        },
+        {
+            "topic": [
+                "Moai Statues",
+                "Moai",
+                "Easter Island Heads"
+            ],
+            "entries": [
+                "Polynesia",
+                "Rapa Nui",
+                "Monolithic",
+                "Stone Figures"
+            ]
+        },
+        {
+            "topic": [
+                "Wailing Wall",
+                "Western Wall",
+                "HaKotel"
+            ],
+            "entries": [
+                "Jerusalem",
+                "Judaism",
+                "Prayer",
+                "Historic"
+            ]
+        },
+        {
+            "topic": [
+                "Santorini",
+                "Thira",
+                "Santorini Island"
+            ],
+            "entries": [
+                "Greek Islands",
+                "White Buildings",
+                "Volcanic Eruption",
+                "Tourism"
+            ]
+        },
+        {
+            "topic": [
+                "Chichen Itza",
+                "Maya Ruins",
+                "El Castillo"
+            ],
+            "entries": [
+                "Mexico",
+                "Pyramid",
+                "Mayan Civilization",
+                "Ancient Cities"
+            ]
+        },
+        {
+            "topic": [
+                "London Eye",
+                "Millennium Wheel",
+                "Observation Wheel"
+            ],
+            "entries": [
+                "Ferris Wheel",
+                "River Thames",
+                "Panoramic Views",
+                "Tourist Attraction"
+            ]
+        },
+        {
+            "topic": [
+                "Champs-\u00c9lys\u00e9es",
+                "Avenue des Champs-\u00c9lys\u00e9es",
+                "\u00c9lysian Fields"
+            ],
+            "entries": [
+                "Paris",
+                "Shopping",
+                "Tree-lined Avenue",
+                "Arc de Triomphe"
             ]
         },
         {
             "topic": [
                 "Edinburgh Castle",
-                "Edinburgh Fortress",
-                "Castle Edinburgh"
+                "Castle Rock",
+                "Edinburgh Fortress"
             ],
             "entries": [
-                "Scotland landmark",
-                "Medieval fortress",
-                "Military museum",
-                "Castle Rock"
+                "Scotland",
+                "Royal Residence",
+                "Historic Fortress",
+                "Tourism"
+            ]
+        },
+        {
+            "topic": [
+                "Great Lakes",
+                "Laurentian Lakes",
+                "Five Lakes"
+            ],
+            "entries": [
+                "North America",
+                "Freshwater",
+                "Border",
+                "Shipping"
+            ]
+        },
+        {
+            "topic": [
+                "Times Square",
+                "The Crossroads of the World",
+                "New York City Square"
+            ],
+            "entries": [
+                "Bright Lights",
+                "Broadway",
+                "Entertainment",
+                "Tourism"
             ]
         },
         {
             "topic": [
                 "Angkor Wat",
-                "Angkor Temple",
-                "Angkor Cambodia"
+                "Angkor",
+                "Wat Arun"
             ],
             "entries": [
-                "Khmer Empire",
                 "Cambodia",
-                "Temple complex",
-                "Religious monument"
+                "Khmer Empire",
+                "Temple Complex",
+                "Religion"
+            ]
+        },
+        {
+            "topic": [
+                "Uluru",
+                "Ayers Rock",
+                "Sacred Rock"
+            ],
+            "entries": [
+                "Australia",
+                "Monolith",
+                "Aboriginal Culture",
+                "Red Sandstone"
+            ]
+        },
+        {
+            "topic": [
+                "Brandenburg Gate",
+                "Brandenburger Tor",
+                "Berlin Gate"
+            ],
+            "entries": [
+                "Berlin",
+                "Neoclassical",
+                "Quadriga",
+                "Reunification"
+            ]
+        },
+        {
+            "topic": [
+                "Blue Mosque",
+                "Sultan Ahmed Mosque",
+                "Sultan Ahmed"
+            ],
+            "entries": [
+                "Istanbul",
+                "Domes",
+                "Islamic Architecture",
+                "Sultan"
+            ]
+        },
+        {
+            "topic": [
+                "Serengeti",
+                "Serengeti National Park",
+                "Endless Plains"
+            ],
+            "entries": [
+                "Tanzania",
+                "Wildlife Safari",
+                "Wildebeest Migration",
+                "Grasslands"
+            ]
+        },
+        {
+            "topic": [
+                "Victoria Falls",
+                "Mosi-oa-Tunya",
+                "The Smoke That Thunders"
+            ],
+            "entries": [
+                "Zimbabwe",
+                "Waterfall",
+                "Africa",
+                "Tourism"
             ]
         }
     ]

@@ -30,7 +30,7 @@ completion = client.beta.chat.completions.parse(
   "content": 
     "Generate unique topics, each with four specific descriptive entries.\n\n"
     "### Requirements for Topics:\n"
-    "- A topic should be an easy to guess, top of mind, well-known film or series (e.g., Friends, Schindler's List).\n"
+    "- A topic should be an easy to guess for an average joe, top of mind, well-known film or series (e.g., Friends, Schindler's List).\n"
     "- Topics must be unique and distinct, occurring only once in all generated topics.\n"
     "- Topics should be familiar, concrete, and easy to recognize based on the entries provided.\n"
     "### Requirements for Descriptive Entries:\n"
@@ -46,7 +46,7 @@ completion = client.beta.chat.completions.parse(
     "  **Entries:** ['Keanu Reeves', 'Red Pill', 'Neo', 'Bullet Time']\n\n"
     "### Output Format:\n"
     "- Provide results in this format: `[{topic: [variant A of topic 1, variant B of topic 2], entries: [entry 1, entry 2, entry 3, entry 4]}]`.\n\n"
-    "- Generate 25 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
+    "- Generate 50 topics with 4 descriptive entries each, ensuring no overlap between topics or their descriptive entries.\n"
     }
     ],
     response_format=DataModel,
