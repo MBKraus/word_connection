@@ -207,11 +207,12 @@
         {
             "topic": [
                 "Rhinoceros",
+                "Rhino",
                 "Rhinoceroses"
             ],
             "entries": [
                 "Thick Skin",
-                "Horned Face",
+                "Horn",
                 "Grass Eater",
                 "Savannah Dweller"
             ]
@@ -542,6 +543,7 @@
         },
         {
             "topic": [
+                "Hippo",
                 "Hippopotamus",
                 "Hippopotamuses"
             ],

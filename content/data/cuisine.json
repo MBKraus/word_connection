@@ -171,15 +171,14 @@
         {
             "topic": [
                 "Paella",
-                "Spanish Rice Dish",
                 "Valencian Paella",
                 "Seafood Paella"
             ],
             "entries": [
                 "Saffron",
-                "Socarrat",
+                "Spanish",
                 "Seafood",
-                "Bell Peppers"
+                "Rice Dish"
             ]
         },
         {
@@ -193,21 +192,20 @@
                 "Rice Noodles",
                 "Tamarind Paste",
                 "Peanuts",
-                "Lime"
+                "Thailand"
             ]
         },
         {
             "topic": [
                 "Croissant",
-                "French Pastry",
                 "Butter Croissant",
                 "Croissants"
             ],
             "entries": [
-                "Laminated Dough",
+                "French",
                 "Flaky Layers",
                 "Breakfast",
-                "Baked"
+                "Pastry"
             ]
         },
         {
@@ -218,7 +216,7 @@
                 "Italian Casserole"
             ],
             "entries": [
-                "Ricotta Cheese",
+                "Oven-baked",
                 "Ground Meat",
                 "Tomato Sauce",
                 "Layers"
@@ -275,7 +273,7 @@
             ],
             "entries": [
                 "Cheese",
-                "Jalape\u00f1os",
+                "Corn Chips",
                 "Sour Cream",
                 "Guacamole"
             ]
@@ -302,7 +300,7 @@
                 "Tapas Bar"
             ],
             "entries": [
-                "Olives",
+                "Spanish",
                 "Manchego Cheese",
                 "Chorizo",
                 "Shared"
@@ -319,20 +317,18 @@
                 "Paprika",
                 "Beef Chunks",
                 "Bell Peppers",
-                "Hearty"
+                "Hungarian"
             ]
         },
         {
             "topic": [
                 "Kimchi",
-                "Fermented Cabbage",
-                "Korean Side Dish",
                 "Kimchee"
             ],
             "entries": [
                 "Napa Cabbage",
                 "Chili Pepper",
-                "Garlic",
+                "Korean Side Dish",
                 "Fermentation"
             ]
         },
@@ -368,14 +364,13 @@
             "topic": [
                 "Gazpacho",
                 "Spanish Soup",
-                "Chilled Gazpacho",
-                "Cold Soup"
+                "Chilled Gazpacho"
             ],
             "entries": [
                 "Tomato Base",
                 "Cucumbers",
                 "Bell Peppers",
-                "Cold"
+                "Cold Soup"
             ]
         },
         {
@@ -444,14 +439,13 @@
             "entries": [
                 "Melted Cheese",
                 "Bread Dippers",
-                "Communal",
+                "Swiss",
                 "Warm"
             ]
         },
         {
             "topic": [
                 "Moussaka",
-                "Greek Layered Dish",
                 "Eggplant Casserole",
                 "Moussakas"
             ],
@@ -459,7 +453,7 @@
                 "Eggplant",
                 "Minced Meat",
                 "B\u00e9chamel Sauce",
-                "Baked"
+                "Greek Layered Dish"
             ]
         },
         {
@@ -484,8 +478,8 @@
                 "Tandoori Oven"
             ],
             "entries": [
-                "Clay Oven",
-                "Marinated",
+                "Indian",
+                "Marinated Chicken",
                 "Spicy",
                 "Yogurt"
             ]
@@ -508,20 +502,18 @@
             "topic": [
                 "Quiche",
                 "French Tart",
-                "Savory Pie",
                 "Quiches"
             ],
             "entries": [
                 "Egg Custard",
                 "Pastry Shell",
-                "Baked",
+                "French Savory Pie",
                 "Cheese Filling"
             ]
         },
         {
             "topic": [
                 "Ratatouille",
-                "French Vegetable Stew",
                 "Proven\u00e7al Stew",
                 "Summer Vegetables"
             ],
@@ -529,7 +521,7 @@
                 "Eggplant",
                 "Zucchini",
                 "Tomato",
-                "Herbs"
+                "French Vegetable Stew"
             ]
         },
         {
@@ -554,8 +546,8 @@
                 "Fried Schnitzel"
             ],
             "entries": [
-                "Breaded",
-                "Fried",
+                "Breaded and Fried",
+                "Austrian",
                 "Lemon Wedge",
                 "Flat"
             ]
@@ -599,7 +591,7 @@
                 "Bell Peppers",
                 "Grilled Meat",
                 "Tortilla",
-                "Mexican"
+                "Mexican Wrap"
             ]
         },
         {
@@ -648,20 +640,18 @@
             "topic": [
                 "Kebab",
                 "Kabob",
-                "Middle Eastern Skewer",
                 "Grilled Skewers"
             ],
             "entries": [
                 "Ground Meat",
                 "Grilled",
-                "Spices",
+                "Middle Eastern Skewer",
                 "Flatbread"
             ]
         },
         {
             "topic": [
                 "Nasi Goreng",
-                "Indonesian Fried Rice",
                 "Fried Rice Dish",
                 "Nasi"
             ],
@@ -669,7 +659,7 @@
                 "Rice",
                 "Fried Egg",
                 "Shrimp",
-                "Spicy Seasoning"
+                "Indonesian Fried Rice"
             ]
         },
         {
@@ -683,7 +673,7 @@
                 "Beetroot",
                 "Sour Cream",
                 "Cabbage",
-                "Hot Soup"
+                "Ukrainian Soup"
             ]
         },
         {
@@ -696,7 +686,7 @@
             "entries": [
                 "Ham",
                 "Gruy\u00e8re Cheese",
-                "B\u00e9chamel",
+                "French",
                 "Grilled"
             ]
         }

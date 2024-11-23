@@ -9,7 +9,7 @@ areas = [
 ]
 
 # Directory containing JSON files
-data_directory = "data"
+data_directory = "content/data"
 
 # Load topics from files into a dictionary
 area_topics = {}
