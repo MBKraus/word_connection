@@ -593,6 +593,700 @@
             }
         ]
     },
+    "cuisine": {
+        "topics": [
+            {
+                "topic": [
+                    "Pizza",
+                    "Pizzerias",
+                    "Italian Pie",
+                    "Cheese Slice"
+                ],
+                "entries": [
+                    "Tomato Sauce",
+                    "Mozzarella",
+                    "Pepperoni",
+                    "Oven-baked"
+                ]
+            },
+            {
+                "topic": [
+                    "Tacos",
+                    "Taco",
+                    "Mexican Handheld",
+                    "Tortilla Wrap"
+                ],
+                "entries": [
+                    "Corn Tortilla",
+                    "Salsa",
+                    "Ground Beef",
+                    "Lettuce"
+                ]
+            },
+            {
+                "topic": [
+                    "Dim Sum",
+                    "Dimsum",
+                    "Cantonese Bites",
+                    "Dragon Buns"
+                ],
+                "entries": [
+                    "Steamed Buns",
+                    "Teahouse",
+                    "Dumplings",
+                    "Chicken Feet"
+                ]
+            },
+            {
+                "topic": [
+                    "Omelette",
+                    "Omelet",
+                    "Egg Pancake",
+                    "French Omelette"
+                ],
+                "entries": [
+                    "Whisked Eggs",
+                    "Breakfast Dish",
+                    "Frying Pan",
+                    "Mushrooms"
+                ]
+            },
+            {
+                "topic": [
+                    "Hamburger",
+                    "Burger",
+                    "Beef Patty",
+                    "Burgers"
+                ],
+                "entries": [
+                    "Ground Beef",
+                    "Sesame Bun",
+                    "Pickles",
+                    "Grilled"
+                ]
+            },
+            {
+                "topic": [
+                    "Coffee",
+                    "Coffees",
+                    "Java",
+                    "Brewed Beans"
+                ],
+                "entries": [
+                    "Espresso Shot",
+                    "Arabica",
+                    "Roasted Beans",
+                    "Barista"
+                ]
+            },
+            {
+                "topic": [
+                    "Samosa",
+                    "Samosas",
+                    "Indian Parcel",
+                    "Triangle Snack"
+                ],
+                "entries": [
+                    "Pastry Shell",
+                    "Potato Filling",
+                    "Fried",
+                    "Spices"
+                ]
+            },
+            {
+                "topic": [
+                    "Spaghetti",
+                    "Spaghetti Noodles",
+                    "Pasta Italian",
+                    "Carbonara"
+                ],
+                "entries": [
+                    "Tomato Sauce",
+                    "Meatballs",
+                    "Parmesan",
+                    "Boiled"
+                ]
+            },
+            {
+                "topic": [
+                    "Sushi",
+                    "Sashimi",
+                    "Rolls",
+                    "Nigiri"
+                ],
+                "entries": [
+                    "Raw Fish",
+                    "Soy Sauce",
+                    "Seaweed Wrap",
+                    "Wasabi"
+                ]
+            },
+            {
+                "topic": [
+                    "Curry",
+                    "Curries",
+                    "Spiced Stew",
+                    "Indian Curry"
+                ],
+                "entries": [
+                    "Coconut Milk",
+                    "Turmeric",
+                    "Chickpeas",
+                    "Simmer"
+                ]
+            },
+            {
+                "topic": [
+                    "Pho",
+                    "Vietnamese Noodle Soup",
+                    "Pho Bo",
+                    "Pho Ga"
+                ],
+                "entries": [
+                    "Beef Broth",
+                    "Rice Noodles",
+                    "Basil Leaves",
+                    "Bowl"
+                ]
+            },
+            {
+                "topic": [
+                    "Falafel",
+                    "Falafels",
+                    "Chickpea Fritter",
+                    "Middle Eastern Ball"
+                ],
+                "entries": [
+                    "Ground Chickpeas",
+                    "Deep-Fried",
+                    "Herbs",
+                    "Tahini Sauce"
+                ]
+            },
+            {
+                "topic": [
+                    "Paella",
+                    "Valencian Paella",
+                    "Seafood Paella"
+                ],
+                "entries": [
+                    "Saffron",
+                    "Spanish",
+                    "Seafood",
+                    "Rice Dish"
+                ]
+            },
+            {
+                "topic": [
+                    "Pad Thai",
+                    "Thai Noodles",
+                    "Street Pad Thai",
+                    "Thai Stir-Fry"
+                ],
+                "entries": [
+                    "Rice Noodles",
+                    "Tamarind Paste",
+                    "Peanuts",
+                    "Thailand"
+                ]
+            },
+            {
+                "topic": [
+                    "Croissant",
+                    "Butter Croissant",
+                    "Croissants"
+                ],
+                "entries": [
+                    "French",
+                    "Flaky Layers",
+                    "Breakfast",
+                    "Pastry"
+                ]
+            },
+            {
+                "topic": [
+                    "Lasagna",
+                    "Lasagne",
+                    "Layered Pasta",
+                    "Italian Casserole"
+                ],
+                "entries": [
+                    "Oven-baked",
+                    "Ground Meat",
+                    "Tomato Sauce",
+                    "Layers"
+                ]
+            },
+            {
+                "topic": [
+                    "Biryani",
+                    "Indian Rice Dish",
+                    "Biryani Rice",
+                    "Hyderabadi Biryani"
+                ],
+                "entries": [
+                    "Basmati Rice",
+                    "Saffron",
+                    "Mixed Spices",
+                    "Marinated Meat"
+                ]
+            },
+            {
+                "topic": [
+                    "Ceviche",
+                    "Cebiche",
+                    "Peruvian Ceviche",
+                    "Marinated Fish"
+                ],
+                "entries": [
+                    "Lime Juice",
+                    "Seafood",
+                    "Onions",
+                    "Cilantro"
+                ]
+            },
+            {
+                "topic": [
+                    "Ramen",
+                    "Ramen Noodles",
+                    "Japanese Soup",
+                    "Broth Noodles"
+                ],
+                "entries": [
+                    "Soy Sauce",
+                    "Pork Broth",
+                    "Miso",
+                    "Egg"
+                ]
+            },
+            {
+                "topic": [
+                    "Nachos",
+                    "Nacho Platter",
+                    "Corn Tortilla Chips",
+                    "Cheesy Nachos"
+                ],
+                "entries": [
+                    "Cheese",
+                    "Corn Chips",
+                    "Sour Cream",
+                    "Guacamole"
+                ]
+            },
+            {
+                "topic": [
+                    "Bruschetta",
+                    "Italian Antipasto",
+                    "Tomato Crostini",
+                    "Bruschette"
+                ],
+                "entries": [
+                    "Grilled Bread",
+                    "Garlic",
+                    "Diced Tomatoes",
+                    "Basil"
+                ]
+            },
+            {
+                "topic": [
+                    "Tapas",
+                    "Spanish Tapas",
+                    "Small Plates",
+                    "Tapas Bar"
+                ],
+                "entries": [
+                    "Spanish",
+                    "Manchego Cheese",
+                    "Chorizo",
+                    "Shared"
+                ]
+            },
+            {
+                "topic": [
+                    "Goulash",
+                    "Hungarian Stew",
+                    "Beef Goulash",
+                    "Goulash Soup"
+                ],
+                "entries": [
+                    "Paprika",
+                    "Beef Chunks",
+                    "Bell Peppers",
+                    "Hungarian"
+                ]
+            },
+            {
+                "topic": [
+                    "Kimchi",
+                    "Kimchee"
+                ],
+                "entries": [
+                    "Napa Cabbage",
+                    "Chili Pepper",
+                    "Korean Side Dish",
+                    "Fermentation"
+                ]
+            },
+            {
+                "topic": [
+                    "Bagel",
+                    "Bagels",
+                    "Boiled Bread",
+                    "New York Bagel"
+                ],
+                "entries": [
+                    "Chewy Texture",
+                    "Baked",
+                    "Dough Ring",
+                    "Sesame Seeds"
+                ]
+            },
+            {
+                "topic": [
+                    "Churros",
+                    "Spanish Doughnuts",
+                    "Mexican Churros",
+                    "Fried Pastry"
+                ],
+                "entries": [
+                    "Cinnamon Sugar",
+                    "Deep-Fried",
+                    "Street Snack",
+                    "Dolce"
+                ]
+            },
+            {
+                "topic": [
+                    "Gazpacho",
+                    "Spanish Soup",
+                    "Chilled Gazpacho"
+                ],
+                "entries": [
+                    "Tomato Base",
+                    "Cucumbers",
+                    "Bell Peppers",
+                    "Cold Soup"
+                ]
+            },
+            {
+                "topic": [
+                    "Poutine",
+                    "Canadian Fries",
+                    "Quebec Poutine",
+                    "Gravy Fries"
+                ],
+                "entries": [
+                    "French Fries",
+                    "Cheese Curds",
+                    "Gravy",
+                    "Canadian"
+                ]
+            },
+            {
+                "topic": [
+                    "Empanada",
+                    "Empanadas",
+                    "Baked Parcel",
+                    "Spanish Pastry"
+                ],
+                "entries": [
+                    "Pastry Dough",
+                    "Beef Filling",
+                    "Oven-baked",
+                    "Flaky"
+                ]
+            },
+            {
+                "topic": [
+                    "Udon",
+                    "Udon Noodles",
+                    "Japanese Udon Soup",
+                    "Thick Noodles"
+                ],
+                "entries": [
+                    "Soy Sauce",
+                    "Dashi Broth",
+                    "Spring Onions",
+                    "Chewy"
+                ]
+            },
+            {
+                "topic": [
+                    "Baozi",
+                    "Bao",
+                    "Chinese Buns",
+                    "Stuffed Buns"
+                ],
+                "entries": [
+                    "Steamed",
+                    "Pork Filling",
+                    "Yeast Dough",
+                    "Street Food"
+                ]
+            },
+            {
+                "topic": [
+                    "Fondue",
+                    "Cheese Fondue",
+                    "Switzerland Fondue",
+                    "Fondue Pot"
+                ],
+                "entries": [
+                    "Melted Cheese",
+                    "Bread Dippers",
+                    "Swiss",
+                    "Warm"
+                ]
+            },
+            {
+                "topic": [
+                    "Moussaka",
+                    "Eggplant Casserole",
+                    "Moussakas"
+                ],
+                "entries": [
+                    "Eggplant",
+                    "Minced Meat",
+                    "B\u00e9chamel Sauce",
+                    "Greek Layered Dish"
+                ]
+            },
+            {
+                "topic": [
+                    "Chow Mein",
+                    "Stir-fried Noodles",
+                    "Chinese Chow Mein",
+                    "Fried Mein"
+                ],
+                "entries": [
+                    "Egg Noodles",
+                    "Soy Sauce",
+                    "Vegetables",
+                    "Stir-fried"
+                ]
+            },
+            {
+                "topic": [
+                    "Tandoori",
+                    "Tandoori Chicken",
+                    "Indian Grill",
+                    "Tandoori Oven"
+                ],
+                "entries": [
+                    "Indian",
+                    "Marinated Chicken",
+                    "Spicy",
+                    "Yogurt"
+                ]
+            },
+            {
+                "topic": [
+                    "Gyoza",
+                    "Japanese Dumplings",
+                    "Pan-fried Gyoza",
+                    "Gyoza Dumpling"
+                ],
+                "entries": [
+                    "Pork Filling",
+                    "Soy Sauce",
+                    "Crispy Bottom",
+                    "Savory"
+                ]
+            },
+            {
+                "topic": [
+                    "Quiche",
+                    "French Tart",
+                    "Quiches"
+                ],
+                "entries": [
+                    "Egg Custard",
+                    "Pastry Shell",
+                    "French Savory Pie",
+                    "Cheese Filling"
+                ]
+            },
+            {
+                "topic": [
+                    "Ratatouille",
+                    "Proven\u00e7al Stew",
+                    "Summer Vegetables"
+                ],
+                "entries": [
+                    "Eggplant",
+                    "Zucchini",
+                    "Tomato",
+                    "French Vegetable Stew"
+                ]
+            },
+            {
+                "topic": [
+                    "Dolma",
+                    "Stuffed Grape Leaves",
+                    "Dolmas",
+                    "Middle Eastern Snack"
+                ],
+                "entries": [
+                    "Stuffed Rice",
+                    "Grape Leaves",
+                    "Lemon Aroma",
+                    "Cold"
+                ]
+            },
+            {
+                "topic": [
+                    "Schnitzel",
+                    "Breaded Cutlet",
+                    "Austrian Schnitzel",
+                    "Fried Schnitzel"
+                ],
+                "entries": [
+                    "Breaded and Fried",
+                    "Austrian",
+                    "Lemon Wedge",
+                    "Flat"
+                ]
+            },
+            {
+                "topic": [
+                    "Baklava",
+                    "Layered Pastry",
+                    "Greek Sweet Pastry",
+                    "Baklavas"
+                ],
+                "entries": [
+                    "Phyllo Dough",
+                    "Walnuts",
+                    "Honey Syrup",
+                    "Sweet"
+                ]
+            },
+            {
+                "topic": [
+                    "Rosti",
+                    "Swiss R\u00fcesti",
+                    "Potato Pancake",
+                    "R\u00f6sti"
+                ],
+                "entries": [
+                    "Grated Potatoes",
+                    "Crispy",
+                    "Fried",
+                    "Swiss Dish"
+                ]
+            },
+            {
+                "topic": [
+                    "Fajitas",
+                    "Tex-Mex Wrap",
+                    "Grilled Fajitas",
+                    "Beef Fajitas"
+                ],
+                "entries": [
+                    "Bell Peppers",
+                    "Grilled Meat",
+                    "Tortilla",
+                    "Mexican Wrap"
+                ]
+            },
+            {
+                "topic": [
+                    "Bouillabaisse",
+                    "French Fish Stew",
+                    "Proven\u00e7al Stew",
+                    "Marseille Soup"
+                ],
+                "entries": [
+                    "Fish Broth",
+                    "Shellfish",
+                    "Saffron",
+                    "Croutons"
+                ]
+            },
+            {
+                "topic": [
+                    "Bibimbap",
+                    "Korean Mixed Rice",
+                    "Bibim Bap",
+                    "Mixed Bowl"
+                ],
+                "entries": [
+                    "Rice Base",
+                    "Vegetables",
+                    "Spicy Sauce",
+                    "Egg"
+                ]
+            },
+            {
+                "topic": [
+                    "Pierogi",
+                    "Polish Dumplings",
+                    "Pierogies",
+                    "Varenyky"
+                ],
+                "entries": [
+                    "Potato Filling",
+                    "Boiled",
+                    "Onion Topping",
+                    "Sour Cream"
+                ]
+            },
+            {
+                "topic": [
+                    "Kebab",
+                    "Kabob",
+                    "Grilled Skewers"
+                ],
+                "entries": [
+                    "Ground Meat",
+                    "Grilled",
+                    "Middle Eastern Skewer",
+                    "Flatbread"
+                ]
+            },
+            {
+                "topic": [
+                    "Nasi Goreng",
+                    "Fried Rice Dish",
+                    "Nasi"
+                ],
+                "entries": [
+                    "Rice",
+                    "Fried Egg",
+                    "Shrimp",
+                    "Indonesian Fried Rice"
+                ]
+            },
+            {
+                "topic": [
+                    "Borscht",
+                    "Beet Soup",
+                    "Ukrainian Borscht",
+                    "Borshch"
+                ],
+                "entries": [
+                    "Beetroot",
+                    "Sour Cream",
+                    "Cabbage",
+                    "Ukrainian Soup"
+                ]
+            },
+            {
+                "topic": [
+                    "Croque Monsieur",
+                    "French Sandwich",
+                    "Ham and Cheese",
+                    "Toasted Monsieur"
+                ],
+                "entries": [
+                    "Ham",
+                    "Gruy\u00e8re Cheese",
+                    "French",
+                    "Grilled"
+                ]
+            }
+        ]
+    },
     "events": {
         "topics": [
             {
