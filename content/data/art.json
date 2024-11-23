@@ -2,6 +2,7 @@
     "topics": [
         {
             "topic": [
+                "Starry Night",
                 "The Starry Night",
                 "Starry Night Painting",
                 "Van Gogh's Starry Night"
@@ -15,6 +16,7 @@
         },
         {
             "topic": [
+                "Anne Frank",
                 "The Diary of a Young Girl",
                 "Anne Frank's Diary",
                 "The Diary of Anne Frank"
@@ -29,6 +31,7 @@
         {
             "topic": [
                 "The Thinker",
+                "Thinker",
                 "Le Penseur",
                 "Rodin's The Thinker"
             ],
@@ -55,6 +58,7 @@
         {
             "topic": [
                 "The Scream",
+                "Scream",
                 "Edvard Munch's Scream",
                 "The Cry"
             ],
@@ -81,6 +85,7 @@
         {
             "topic": [
                 "The Last Supper",
+                "Last Supper",
                 "Da Vinci's Last Supper",
                 "The Final Supper"
             ],
@@ -106,8 +111,9 @@
         },
         {
             "topic": [
-                "David Statue",
                 "Michelangelo's David",
+                "David",
+                "David Statue",
                 "The Statue of David"
             ],
             "entries": [
@@ -121,6 +127,7 @@
             "topic": [
                 "The Nutcracker",
                 "Tchaikovsky's Nutcracker",
+                "Nutcracker",
                 "The Nutcracker Ballet"
             ],
             "entries": [

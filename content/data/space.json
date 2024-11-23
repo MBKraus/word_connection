@@ -3,7 +3,8 @@
         {
             "topic": [
                 "Moon",
-                "Lunar Body"
+                "Lunar Body",
+                "The Moon"
             ],
             "entries": [
                 "Craters",
@@ -15,7 +16,9 @@
         {
             "topic": [
                 "Milky Way",
-                "Galaxy"
+                "The Milky Way",
+                "Galaxy",
+                "The Galaxy"
             ],
             "entries": [
                 "Spiral Arms",
@@ -39,6 +42,7 @@
         {
             "topic": [
                 "Black Hole",
+                "A Black Hole",
                 "Singularity"
             ],
             "entries": [
@@ -63,6 +67,7 @@
         {
             "topic": [
                 "Comet",
+                "A Comet",
                 "Icy Tail"
             ],
             "entries": [
@@ -75,6 +80,7 @@
         {
             "topic": [
                 "Sun",
+                "The Sun",
                 "Solar Star"
             ],
             "entries": [
@@ -87,6 +93,7 @@
         {
             "topic": [
                 "Andromeda Galaxy",
+                "Andromeda",
                 "M31"
             ],
             "entries": [
@@ -106,18 +113,6 @@
                 "Galilean Moons",
                 "Cyclonic Storms",
                 "Largest Volume"
-            ]
-        },
-        {
-            "topic": [
-                "Asteroid Belt",
-                "Celestial Band"
-            ],
-            "entries": [
-                "Between Mars and Jupiter",
-                "Ceres",
-                "Space Rocks",
-                "Elliptical Path"
             ]
         },
         {
@@ -158,26 +153,13 @@
         },
         {
             "topic": [
-                "Satellite",
-                "Orbital Craft"
+                "Satellite"
             ],
             "entries": [
                 "Communication",
                 "Weather Monitoring",
-                "Geosynchronous",
+                "Orbital Craft",
                 "GPS"
-            ]
-        },
-        {
-            "topic": [
-                "Meteor Shower",
-                "Luminous Streaks"
-            ],
-            "entries": [
-                "Perseid",
-                "Annual Event",
-                "Earth's Atmosphere",
-                "Bright Streaks"
             ]
         },
         {
@@ -194,30 +176,19 @@
         },
         {
             "topic": [
-                "Pluto",
-                "Dwarf Planet"
+                "Pluto"
             ],
             "entries": [
                 "Kuiper Belt",
                 "New Horizons",
                 "Ice-Covered",
-                "Charon"
+                "Dwarf Planet"
             ]
         },
         {
             "topic": [
-                "Nebula",
-                "Stellar Nursery"
-            ],
-            "entries": [
-                "Ionized Gas",
-                "Luminosity",
-                "Pillars of Creation",
-                "Star Formation"
-            ]
-        },
-        {
-            "topic": [
+                "International Space Station",
+                "ISS",
                 "Space Station",
                 "Orbital Lab"
             ],
@@ -231,10 +202,10 @@
         {
             "topic": [
                 "Solar Eclipse",
-                "Lunar Occultation"
+                "Eclipse"
             ],
             "entries": [
-                "Umbra",
+                "Lunar Occultation",
                 "Totality",
                 "Diamond Ring Effect",
                 "Sun Obscured"
@@ -254,11 +225,10 @@
         },
         {
             "topic": [
-                "Uranus",
-                "Ice Giant"
+                "Uranus"
             ],
             "entries": [
-                "Axis Tilt",
+                "Ice Giant",
                 "Frozen Clouds",
                 "Methane Blue",
                 "Rings"
@@ -290,18 +260,6 @@
         },
         {
             "topic": [
-                "Quasar",
-                "Radio Source"
-            ],
-            "entries": [
-                "Active Galaxy",
-                "Bright Core",
-                "Supermassive Black Hole",
-                "Cosmic Beacons"
-            ]
-        },
-        {
-            "topic": [
                 "Rover",
                 "Mars Buggy"
             ],
@@ -314,18 +272,6 @@
         },
         {
             "topic": [
-                "Europa",
-                "Icy Moon"
-            ],
-            "entries": [
-                "Jovian Satellite",
-                "Subsurface Ocean",
-                "Ice Crust",
-                "Potential Life"
-            ]
-        },
-        {
-            "topic": [
                 "Big Bang",
                 "Cosmic Expansion"
             ],
@@ -334,18 +280,6 @@
                 "Space-Time",
                 "Cosmic Microwave Background",
                 "Singular Event"
-            ]
-        },
-        {
-            "topic": [
-                "Cosmic Microwave Background",
-                "CMB"
-            ],
-            "entries": [
-                "Primordial Signals",
-                "Big Bang Echo",
-                "Universe's Fog",
-                "Microwave Radiation"
             ]
         },
         {

@@ -16,14 +16,13 @@
         {
             "topic": [
                 "Chess",
-                "Checkmate",
-                "Board Game"
+                "Chess Game"
             ],
             "entries": [
-                "Chessboard",
+                "Board Game",
                 "Knights",
                 "Bishops",
-                "Castling"
+                "Checkmate"
             ]
         },
         {
@@ -33,7 +32,7 @@
                 "Puck Hockey"
             ],
             "entries": [
-                "Zamboni",
+                "Puck",
                 "Penalty Box",
                 "Faceoff",
                 "Stick Handling"
@@ -73,7 +72,7 @@
             ],
             "entries": [
                 "Dribbling",
-                "Slamball",
+                "Dunk",
                 "Three-pointer",
                 "Shot Clock"
             ]
@@ -85,23 +84,10 @@
                 "Hardball"
             ],
             "entries": [
-                "Home Plate",
+                "Bat",
                 "Curveball",
                 "Dugout",
                 "Umpire"
-            ]
-        },
-        {
-            "topic": [
-                "Volleyball",
-                "Beach Volleyball",
-                "Court Volleyball"
-            ],
-            "entries": [
-                "Spike",
-                "Set",
-                "Dig",
-                "Net"
             ]
         },
         {
@@ -167,19 +153,6 @@
                 "Uppercut",
                 "Knockout",
                 "Ring"
-            ]
-        },
-        {
-            "topic": [
-                "Cycling",
-                "Bike Racing",
-                "Velodrome"
-            ],
-            "entries": [
-                "Tour de France",
-                "Peloton",
-                "Gears",
-                "Saddle"
             ]
         },
         {
