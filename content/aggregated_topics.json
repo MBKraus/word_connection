@@ -1287,620 +1287,6 @@
             }
         ]
     },
-    "events": {
-        "topics": [
-            {
-                "topic": [
-                    "Olympics",
-                    "The Olympic Games"
-                ],
-                "entries": [
-                    "Five Rings",
-                    "Summer and Winter",
-                    "Torch Relay",
-                    "Medal Ceremony"
-                ]
-            },
-            {
-                "topic": [
-                    "World War I",
-                    "WWI",
-                    "The Great War"
-                ],
-                "entries": [
-                    "Trench Warfare",
-                    "Archduke Assassination",
-                    "Zimmerman Telegram",
-                    "No Man's Land"
-                ]
-            },
-            {
-                "topic": [
-                    "Christmas",
-                    "Xmas",
-                    "Yuletide"
-                ],
-                "entries": [
-                    "Santa Claus",
-                    "Pine Trees",
-                    "Gift Giving",
-                    "Nativity Scene"
-                ]
-            },
-            {
-                "topic": [
-                    "Easter",
-                    "Paschal Festival",
-                    "Resurrection Sunday"
-                ],
-                "entries": [
-                    "Egg Hunt",
-                    "Bunny",
-                    "Holy Week",
-                    "Resurrection"
-                ]
-            },
-            {
-                "topic": [
-                    "Thanksgiving",
-                    "Turkey Day",
-                    "Harvest Festival"
-                ],
-                "entries": [
-                    "Pilgrims",
-                    "Turkey Feast",
-                    "Parades",
-                    "Thankfulness"
-                ]
-            },
-            {
-                "topic": [
-                    "New Year's Eve",
-                    "NYE",
-                    "December 31st"
-                ],
-                "entries": [
-                    "Countdown",
-                    "Fireworks",
-                    "Ball Drop",
-                    "Midnight Toast"
-                ]
-            },
-            {
-                "topic": [
-                    "Valentine's Day",
-                    "V-Day",
-                    "Saint Valentine's Day"
-                ],
-                "entries": [
-                    "Roses",
-                    "Chocolate",
-                    "Cupid",
-                    "Romantic Dinner"
-                ]
-            },
-            {
-                "topic": [
-                    "Halloween",
-                    "All Hallows' Eve",
-                    "Samhain"
-                ],
-                "entries": [
-                    "Costumes",
-                    "Trick-or-Treat",
-                    "Jack-o'-lanterns",
-                    "Haunted House"
-                ]
-            },
-            {
-                "topic": [
-                    "The Civil War",
-                    "American Civil War",
-                    "War Between the States"
-                ],
-                "entries": [
-                    "Gettysburg",
-                    "Emancipation Proclamation",
-                    "Union vs Confederacy",
-                    "Slavery"
-                ]
-            },
-            {
-                "topic": [
-                    "The Great Depression",
-                    "Economic Depression",
-                    "The Crash of 1929"
-                ],
-                "entries": [
-                    "Stock Market Crash",
-                    "Black Tuesday",
-                    "Breadlines",
-                    "Dust Bowl"
-                ]
-            },
-            {
-                "topic": [
-                    "The Renaissance",
-                    "Renaissance Era",
-                    "Rebirth Period"
-                ],
-                "entries": [
-                    "Leonardo da Vinci",
-                    "Humanism",
-                    "Florence",
-                    "Art Revival"
-                ]
-            },
-            {
-                "topic": [
-                    "The Industrial Revolution",
-                    "Industry Revolution",
-                    "Industrialization Era"
-                ],
-                "entries": [
-                    "Steam Engine",
-                    "Factories",
-                    "Urbanization",
-                    "Mass Production"
-                ]
-            },
-            {
-                "topic": [
-                    "Space Race",
-                    "Cosmic Competition",
-                    "Space Exploration Rivalry"
-                ],
-                "entries": [
-                    "Apollo 11",
-                    "Sputnik",
-                    "Moon Landing",
-                    "Cold War Context"
-                ]
-            },
-            {
-                "topic": [
-                    "The Cold War",
-                    "Cold War Era",
-                    "US-Soviet Tensions"
-                ],
-                "entries": [
-                    "Nuclear Arms",
-                    "Iron Curtain",
-                    "Berlin Wall",
-                    "Cuban Missile Crisis"
-                ]
-            },
-            {
-                "topic": [
-                    "The Vietnam War",
-                    "Vietnam Conflict",
-                    "Second Indochina War"
-                ],
-                "entries": [
-                    "Ho Chi Minh",
-                    "Viet Cong",
-                    "Agent Orange",
-                    "Tet Offensive"
-                ]
-            },
-            {
-                "topic": [
-                    "The Korean War",
-                    "Korean Conflict",
-                    "Korea Police Action"
-                ],
-                "entries": [
-                    "38th Parallel",
-                    "Pusan Perimeter",
-                    "Inchon Landing",
-                    "Communism"
-                ]
-            },
-            {
-                "topic": [
-                    "The Gulf War",
-                    "Operation Desert Storm",
-                    "First Iraq War"
-                ],
-                "entries": [
-                    "Kuwait Invasion",
-                    "Scud Missiles",
-                    "Coalition Forces",
-                    "Saddam Hussein"
-                ]
-            },
-            {
-                "topic": [
-                    "The Iraq War",
-                    "Second Iraq War",
-                    "Operation Iraqi Freedom"
-                ],
-                "entries": [
-                    "WMDs",
-                    "Baghdad",
-                    "Saddam Hussein",
-                    "Surge Strategy"
-                ]
-            },
-            {
-                "topic": [
-                    "The War on Terror",
-                    "Global War on Terrorism",
-                    "Counterterrorism War"
-                ],
-                "entries": [
-                    "9/11 Attacks",
-                    "Afghanistan",
-                    "Al-Qaeda",
-                    "Osama bin Laden"
-                ]
-            },
-            {
-                "topic": [
-                    "The European Union",
-                    "EU",
-                    "European Economic Community"
-                ],
-                "entries": [
-                    "Maastricht Treaty",
-                    "Brussels",
-                    "Euro Currency",
-                    "Schengen Area"
-                ]
-            },
-            {
-                "topic": [
-                    "The United Nations",
-                    "UN",
-                    "International Assembly Focus"
-                ],
-                "entries": [
-                    "Security Council",
-                    "General Assembly",
-                    "Peacekeeping Missions",
-                    "Human Rights"
-                ]
-            },
-            {
-                "topic": [
-                    "World Health Organization",
-                    "WHO",
-                    "Global Health Body"
-                ],
-                "entries": [
-                    "Pandemic Response",
-                    "Vaccination Campaigns",
-                    "Health Regulations",
-                    "Global Health Policies"
-                ]
-            },
-            {
-                "topic": [
-                    "The Internet",
-                    "Worldwide Web",
-                    "Information Superhighway"
-                ],
-                "entries": [
-                    "WWW",
-                    "Browser",
-                    "Online Communication",
-                    "Digital Revolution"
-                ]
-            },
-            {
-                "topic": [
-                    "The Dot-com Bubble",
-                    "Internet Bubble",
-                    "Tech Stock Explosion"
-                ],
-                "entries": [
-                    "Startup Boom",
-                    "NASDAQ Crash",
-                    "Tech Investment",
-                    "E-commerce"
-                ]
-            },
-            {
-                "topic": [
-                    "The French Revolution",
-                    "French Political Upheaval",
-                    "Revolution of 1789"
-                ],
-                "entries": [
-                    "Bastille",
-                    "Guillotine",
-                    "Reign of Terror",
-                    "Napoleon"
-                ]
-            },
-            {
-                "topic": [
-                    "The American Revolution",
-                    "US War of Independence",
-                    "Revolutionary War"
-                ],
-                "entries": [
-                    "George Washington",
-                    "Boston Tea Party",
-                    "Lexington and Concord",
-                    "Declaration of Independence"
-                ]
-            },
-            {
-                "topic": [
-                    "The Russian Revolution",
-                    "Bolshevik Revolution",
-                    "Soviet Uprising"
-                ],
-                "entries": [
-                    "Lenin",
-                    "Tsar Nicholas II",
-                    "Bolsheviks",
-                    "October Revolution"
-                ]
-            },
-            {
-                "topic": [
-                    "The Protestant Reformation",
-                    "Reformation Era",
-                    "Religious Reform Movement"
-                ],
-                "entries": [
-                    "Martin Luther",
-                    "95 Theses",
-                    "Indulgences",
-                    "Church Schism"
-                ]
-            },
-            {
-                "topic": [
-                    "The Spanish Inquisition",
-                    "Spanish Religious Persecution",
-                    "Inquisition Tribunal"
-                ],
-                "entries": [
-                    "Torture Chambers",
-                    "Heretic Trials",
-                    "Auto-da-f\u00e9",
-                    "Expulsion of Jews"
-                ]
-            },
-            {
-                "topic": [
-                    "The Crusades",
-                    "Crusading Era",
-                    "Holy Wars"
-                ],
-                "entries": [
-                    "Jerusalem",
-                    "Knights Templar",
-                    "Saladin",
-                    "Papal Decrees"
-                ]
-            },
-            {
-                "topic": [
-                    "Ancient Egypt",
-                    "Egyptian Civilization",
-                    "Pharaoh Times"
-                ],
-                "entries": [
-                    "Pyramids",
-                    "Hieroglyphics",
-                    "Nile River",
-                    "Mummification"
-                ]
-            },
-            {
-                "topic": [
-                    "The Roman Empire",
-                    "Roman Imperium",
-                    "Empire of Rome"
-                ],
-                "entries": [
-                    "Julius Caesar",
-                    "Senate",
-                    "Colosseum",
-                    "Roman Legions"
-                ]
-            },
-            {
-                "topic": [
-                    "The Byzantine Empire",
-                    "Eastern Roman Empire",
-                    "Byzantium"
-                ],
-                "entries": [
-                    "Constantinople",
-                    "Hagia Sophia",
-                    "Justinian Code",
-                    "Greek Fire"
-                ]
-            },
-            {
-                "topic": [
-                    "The Ottoman Empire",
-                    "Ottoman Turks",
-                    "Turkish Empire"
-                ],
-                "entries": [
-                    "Suleiman the Magnificent",
-                    "Topkapi Palace",
-                    "Janissaries",
-                    "Sultanate"
-                ]
-            },
-            {
-                "topic": [
-                    "The British Empire",
-                    "British Colonial Expansion",
-                    "Empire of Great Britain"
-                ],
-                "entries": [
-                    "India Colony",
-                    "Queen Victoria",
-                    "Commonwealth",
-                    "Redcoats"
-                ]
-            },
-            {
-                "topic": [
-                    "The Ming Dynasty",
-                    "Ming China",
-                    "Chinese Empire"
-                ],
-                "entries": [
-                    "Forbidden City",
-                    "Porcelain",
-                    "Great Wall",
-                    "Zheng He"
-                ]
-            },
-            {
-                "topic": [
-                    "World Cup",
-                    "FIFA World Cup",
-                    "Soccer Tournament"
-                ],
-                "entries": [
-                    "Golden Boot",
-                    "Penalty Shootouts",
-                    "Host Nation",
-                    "Trophy Lift"
-                ]
-            },
-            {
-                "topic": [
-                    "Wimbledon",
-                    "Wimbledon Championships",
-                    "The Championships"
-                ],
-                "entries": [
-                    "Grass Courts",
-                    "All England Club",
-                    "Strawberries and Cream",
-                    "Tennis Whites"
-                ]
-            },
-            {
-                "topic": [
-                    "Tour de France",
-                    "Le Grand Tour",
-                    "French Cycling Race"
-                ],
-                "entries": [
-                    "Yellow Jersey",
-                    "Climbs",
-                    "Time Trials",
-                    "Alpe d'Huez"
-                ]
-            },
-            {
-                "topic": [
-                    "Formula One",
-                    "F1",
-                    "Grand Prix Racing"
-                ],
-                "entries": [
-                    "Pit Stops",
-                    "Pole Position",
-                    "Monaco Circuit",
-                    "Fastest Lap"
-                ]
-            },
-            {
-                "topic": [
-                    "The Nobel Prizes",
-                    "Nobel Awards",
-                    "International Laurels"
-                ],
-                "entries": [
-                    "Peace Prize",
-                    "Literature",
-                    "Inventor",
-                    "Ceremony in Stockholm"
-                ]
-            },
-            {
-                "topic": [
-                    "The Oscars",
-                    "Academy Awards",
-                    "Hollywood's Night"
-                ],
-                "entries": [
-                    "Red Carpet",
-                    "Golden Statuette",
-                    "Best Picture",
-                    "Acceptance Speech"
-                ]
-            },
-            {
-                "topic": [
-                    "Comic-Con",
-                    "Comic Convention",
-                    "Pop Culture Fest"
-                ],
-                "entries": [
-                    "Cosplay",
-                    "Panels",
-                    "Vendors",
-                    "Fan Meetups"
-                ]
-            },
-            {
-                "topic": [
-                    "Lunar New Year",
-                    "Chinese New Year",
-                    "Spring Festival"
-                ],
-                "entries": [
-                    "Zodiac Animals",
-                    "Red Envelopes",
-                    "Firecrackers",
-                    "Lantern Festival"
-                ]
-            },
-            {
-                "topic": [
-                    "Germany Reunification",
-                    "German Unity",
-                    "Berlin Wall Fall"
-                ],
-                "entries": [
-                    "East and West",
-                    "Brandenburg Gate",
-                    "Unity Day",
-                    "Cold War End"
-                ]
-            },
-            {
-                "topic": [
-                    "Rise of the Internet",
-                    "Digital Age Dawn",
-                    "Connected Era"
-                ],
-                "entries": [
-                    "Web 1.0",
-                    "Email",
-                    "Dot-com Boom",
-                    "Information Access"
-                ]
-            },
-            {
-                "topic": [
-                    "Mount Everest Summit",
-                    "Everest Climb",
-                    "Highest Peak"
-                ],
-                "entries": [
-                    "Himalayas",
-                    "Sherpas",
-                    "Base Camp",
-                    "Nepal"
-                ]
-            }
-        ]
-    },
     "films_series": {
         "topics": [
             {
@@ -1949,7 +1335,8 @@
             },
             {
                 "topic": [
-                    "The Office US"
+                    "The Office US",
+                    "The Office"
                 ],
                 "entries": [
                     "Scranton",
@@ -2004,7 +1391,8 @@
             },
             {
                 "topic": [
-                    "Lord of the Rings"
+                    "Lord of the Rings",
+                    "LOTR"
                 ],
                 "entries": [
                     "Middle-earth",
@@ -2147,17 +1535,6 @@
             },
             {
                 "topic": [
-                    "Breaking Bad"
-                ],
-                "entries": [
-                    "Albuquerque",
-                    "Blue Meth",
-                    "Heisenberg",
-                    "Chemistry"
-                ]
-            },
-            {
-                "topic": [
                     "The Silence of the Lambs"
                 ],
                 "entries": [
@@ -2235,7 +1612,9 @@
             },
             {
                 "topic": [
-                    "E.T. the Extra-Terrestrial"
+                    "E.T. the Extra-Terrestrial",
+                    "ET",
+                    "E.T."
                 ],
                 "entries": [
                     "Alien Visitor",
@@ -2262,19 +1641,8 @@
                 "entries": [
                     "Archaeologist",
                     "Raiders",
-                    "Temple",
-                    "Whip"
-                ]
-            },
-            {
-                "topic": [
-                    "The Twilight Zone"
-                ],
-                "entries": [
-                    "Rod Serling",
-                    "Strange Phenomena",
-                    "Black and White",
-                    "Twist Ending"
+                    "Lost Ark",
+                    "Harrison Ford"
                 ]
             },
             {
@@ -2334,7 +1702,8 @@
             },
             {
                 "topic": [
-                    "The Terminator"
+                    "The Terminator",
+                    "Terminator"
                 ],
                 "entries": [
                     "Arnold Schwarzenegger",
@@ -2367,12 +1736,13 @@
             },
             {
                 "topic": [
-                    "The Godfather"
+                    "The Godfather",
+                    "Godfather"
                 ],
                 "entries": [
                     "Don Corleone",
                     "Mafia",
-                    "Family",
+                    "Sicily",
                     "Offer"
                 ]
             },
