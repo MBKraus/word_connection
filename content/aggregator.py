@@ -27,7 +27,7 @@ for area in areas:
         print(f"File not found: {file_path}")
 
 # Save the aggregated data into a single JSON file
-output_file = "aggregated_topics.json"
+output_file = "content/aggregated_topics.json"
 with open(output_file, "w") as f:
     json.dump(area_topics, f, indent=4)
 
