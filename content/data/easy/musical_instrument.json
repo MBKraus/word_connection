@@ -1,0 +1,71 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Piano",
+                "Grand Piano",
+                "Baby Grand"
+            ],
+            "entries": [
+                "Hammer Action",
+                "88 Keys",
+                "Pedals",
+                "Soundboard"
+            ]
+        },
+        {
+            "topic": [
+                "Guitar",
+                "Acoustic Guitar",
+                "Electric Guitar"
+            ],
+            "entries": [
+                "Strings",
+                "Fretboard",
+                "Amplifier",
+                "Pickups"
+            ]
+        },
+        {
+            "topic": [
+                "Drum",
+                "Drums",
+                "Drum Kit",
+                "Drum Set",
+                "Percussion Kit"
+            ],
+            "entries": [
+                "Snare Drum",
+                "Bass Drum",
+                "Cymbals",
+                "Hi-hat"
+            ]
+        },
+        {
+            "topic": [
+                "Violin",
+                "Fiddle",
+                "String Instrument"
+            ],
+            "entries": [
+                "Bow",
+                "Four Strings",
+                "Chin Rest",
+                "Symphony"
+            ]
+        },
+        {
+            "topic": [
+                "Saxophone",
+                "Alto Sax",
+                "Tenor Sax"
+            ],
+            "entries": [
+                "Reed",
+                "Jazz",
+                "Curved Body",
+                "Keys"
+            ]
+        }
+    ]
+}

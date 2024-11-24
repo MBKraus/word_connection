@@ -147,18 +147,6 @@
             },
             {
                 "topic": [
-                    "Peacock",
-                    "Peacocks"
-                ],
-                "entries": [
-                    "Tail Display",
-                    "Iridescent Colors",
-                    "Courtship Dance",
-                    "Ground Foragers"
-                ]
-            },
-            {
-                "topic": [
                     "Panda",
                     "Pandas"
                 ],
@@ -167,18 +155,6 @@
                     "China Native",
                     "Endangered",
                     "Black-and-White Fur"
-                ]
-            },
-            {
-                "topic": [
-                    "Eagle",
-                    "Eagles"
-                ],
-                "entries": [
-                    "Hooked Beak",
-                    "Majestic Soar",
-                    "Keen Vision",
-                    "Talons"
                 ]
             },
             {
@@ -220,18 +196,6 @@
             },
             {
                 "topic": [
-                    "Hawk",
-                    "Hawks"
-                ],
-                "entries": [
-                    "Sharp Beaks",
-                    "High Flight",
-                    "Rodent Hunter",
-                    "Raptor"
-                ]
-            },
-            {
-                "topic": [
                     "Cheetah",
                     "Cheetahs"
                 ],
@@ -264,18 +228,6 @@
                     "Tool Crafting",
                     "Omnivorous Diet",
                     "Complex Socials"
-                ]
-            },
-            {
-                "topic": [
-                    "Otter",
-                    "Otters"
-                ],
-                "entries": [
-                    "Aquatic Mammal",
-                    "Playful Demeanor",
-                    "Shellfish Diet",
-                    "Stream Habitat"
                 ]
             },
             {
@@ -412,18 +364,6 @@
             },
             {
                 "topic": [
-                    "Lemur",
-                    "Lemurs"
-                ],
-                "entries": [
-                    "Madagascar Unique",
-                    "Ringed Tail",
-                    "Social Troops",
-                    "Arboreal"
-                ]
-            },
-            {
-                "topic": [
                     "Vulture",
                     "Vultures"
                 ],
@@ -508,42 +448,6 @@
             },
             {
                 "topic": [
-                    "Toucan",
-                    "Toucans"
-                ],
-                "entries": [
-                    "Large Beak",
-                    "Tropical Forests",
-                    "Brightly Colored",
-                    "Fruit Diet"
-                ]
-            },
-            {
-                "topic": [
-                    "Caribou",
-                    "Caribous"
-                ],
-                "entries": [
-                    "Antlered Herbivore",
-                    "Arctic Regions",
-                    "Migratory Herds",
-                    "Ruminant"
-                ]
-            },
-            {
-                "topic": [
-                    "Alligator",
-                    "Alligators"
-                ],
-                "entries": [
-                    "Thick Hide",
-                    "Swamp Dweller",
-                    "Carnivorous",
-                    "Reptilian"
-                ]
-            },
-            {
-                "topic": [
                     "Hippo",
                     "Hippopotamus",
                     "Hippopotamuses"
@@ -578,17 +482,91 @@
                     "Snake Charm",
                     "Desert Sands"
                 ]
+            }
+        ]
+    },
+    "art": {
+        "topics": [
+            {
+                "topic": [
+                    "Starry Night",
+                    "The Starry Night",
+                    "Starry Night Painting",
+                    "Van Gogh's Starry Night"
+                ],
+                "entries": [
+                    "Vincent van Gogh",
+                    "Post-Impressionism",
+                    "Cypress Trees",
+                    "Night Sky"
+                ]
             },
             {
                 "topic": [
-                    "Iguana",
-                    "Iguanas"
+                    "Anne Frank",
+                    "The Diary of a Young Girl",
+                    "Anne Frank's Diary",
+                    "The Diary of Anne Frank"
                 ],
                 "entries": [
-                    "Desert Lizard",
-                    "Herbivore",
-                    "Sun Basker",
-                    "Tropical"
+                    "Holocaust",
+                    "Amsterdam Attic",
+                    "Jewish Oppression",
+                    "Adolescent Experiences"
+                ]
+            },
+            {
+                "topic": [
+                    "The Thinker",
+                    "Thinker",
+                    "Le Penseur",
+                    "Rodin's The Thinker"
+                ],
+                "entries": [
+                    "Auguste Rodin",
+                    "Bronze Sculpture",
+                    "Pensive Pose",
+                    "Contemplation"
+                ]
+            },
+            {
+                "topic": [
+                    "Romeo and Juliet",
+                    "The Tragedy of Romeo and Juliet",
+                    "Romeo & Juliet"
+                ],
+                "entries": [
+                    "William Shakespeare",
+                    "Forbidden Love",
+                    "Verona Setting",
+                    "Feuding Families"
+                ]
+            },
+            {
+                "topic": [
+                    "The Scream",
+                    "Scream",
+                    "Edvard Munch's Scream",
+                    "The Cry"
+                ],
+                "entries": [
+                    "Edvard Munch",
+                    "Expressionism",
+                    "Vibrant Colors",
+                    "Anxiety"
+                ]
+            },
+            {
+                "topic": [
+                    "The Night Watch",
+                    "Rembrandt's Night Watch",
+                    "The Militia Company"
+                ],
+                "entries": [
+                    "Rembrandt van Rijn",
+                    "Group Portrait",
+                    "Dutch Golden Age",
+                    "Amsterdam Museum"
                 ]
             }
         ]
@@ -639,20 +617,6 @@
             },
             {
                 "topic": [
-                    "Omelette",
-                    "Omelet",
-                    "Egg Pancake",
-                    "French Omelette"
-                ],
-                "entries": [
-                    "Whisked Eggs",
-                    "Breakfast Dish",
-                    "Frying Pan",
-                    "Mushrooms"
-                ]
-            },
-            {
-                "topic": [
                     "Hamburger",
                     "Burger",
                     "Beef Patty",
@@ -681,34 +645,6 @@
             },
             {
                 "topic": [
-                    "Samosa",
-                    "Samosas",
-                    "Indian Parcel",
-                    "Triangle Snack"
-                ],
-                "entries": [
-                    "Pastry Shell",
-                    "Potato Filling",
-                    "Fried",
-                    "Spices"
-                ]
-            },
-            {
-                "topic": [
-                    "Spaghetti",
-                    "Spaghetti Noodles",
-                    "Pasta Italian",
-                    "Carbonara"
-                ],
-                "entries": [
-                    "Tomato Sauce",
-                    "Meatballs",
-                    "Parmesan",
-                    "Boiled"
-                ]
-            },
-            {
-                "topic": [
                     "Sushi",
                     "Sashimi",
                     "Rolls",
@@ -732,35 +668,7 @@
                     "Coconut Milk",
                     "Turmeric",
                     "Chickpeas",
-                    "Simmer"
-                ]
-            },
-            {
-                "topic": [
-                    "Pho",
-                    "Vietnamese Noodle Soup",
-                    "Pho Bo",
-                    "Pho Ga"
-                ],
-                "entries": [
-                    "Beef Broth",
-                    "Rice Noodles",
-                    "Basil Leaves",
-                    "Bowl"
-                ]
-            },
-            {
-                "topic": [
-                    "Falafel",
-                    "Falafels",
-                    "Chickpea Fritter",
-                    "Middle Eastern Ball"
-                ],
-                "entries": [
-                    "Ground Chickpeas",
-                    "Deep-Fried",
-                    "Herbs",
-                    "Tahini Sauce"
+                    "Indian Dish"
                 ]
             },
             {
@@ -819,34 +727,6 @@
             },
             {
                 "topic": [
-                    "Biryani",
-                    "Indian Rice Dish",
-                    "Biryani Rice",
-                    "Hyderabadi Biryani"
-                ],
-                "entries": [
-                    "Basmati Rice",
-                    "Saffron",
-                    "Mixed Spices",
-                    "Marinated Meat"
-                ]
-            },
-            {
-                "topic": [
-                    "Ceviche",
-                    "Cebiche",
-                    "Peruvian Ceviche",
-                    "Marinated Fish"
-                ],
-                "entries": [
-                    "Lime Juice",
-                    "Seafood",
-                    "Onions",
-                    "Cilantro"
-                ]
-            },
-            {
-                "topic": [
                     "Ramen",
                     "Ramen Noodles",
                     "Japanese Soup",
@@ -875,20 +755,6 @@
             },
             {
                 "topic": [
-                    "Bruschetta",
-                    "Italian Antipasto",
-                    "Tomato Crostini",
-                    "Bruschette"
-                ],
-                "entries": [
-                    "Grilled Bread",
-                    "Garlic",
-                    "Diced Tomatoes",
-                    "Basil"
-                ]
-            },
-            {
-                "topic": [
                     "Tapas",
                     "Spanish Tapas",
                     "Small Plates",
@@ -899,20 +765,6 @@
                     "Manchego Cheese",
                     "Chorizo",
                     "Shared"
-                ]
-            },
-            {
-                "topic": [
-                    "Goulash",
-                    "Hungarian Stew",
-                    "Beef Goulash",
-                    "Goulash Soup"
-                ],
-                "entries": [
-                    "Paprika",
-                    "Beef Chunks",
-                    "Bell Peppers",
-                    "Hungarian"
                 ]
             },
             {
@@ -929,172 +781,6 @@
             },
             {
                 "topic": [
-                    "Bagel",
-                    "Bagels",
-                    "Boiled Bread",
-                    "New York Bagel"
-                ],
-                "entries": [
-                    "Chewy Texture",
-                    "Baked",
-                    "Dough Ring",
-                    "Sesame Seeds"
-                ]
-            },
-            {
-                "topic": [
-                    "Churros",
-                    "Spanish Doughnuts",
-                    "Mexican Churros",
-                    "Fried Pastry"
-                ],
-                "entries": [
-                    "Cinnamon Sugar",
-                    "Deep-Fried",
-                    "Street Snack",
-                    "Dolce"
-                ]
-            },
-            {
-                "topic": [
-                    "Gazpacho",
-                    "Spanish Soup",
-                    "Chilled Gazpacho"
-                ],
-                "entries": [
-                    "Tomato Base",
-                    "Cucumbers",
-                    "Bell Peppers",
-                    "Cold Soup"
-                ]
-            },
-            {
-                "topic": [
-                    "Poutine",
-                    "Canadian Fries",
-                    "Quebec Poutine",
-                    "Gravy Fries"
-                ],
-                "entries": [
-                    "French Fries",
-                    "Cheese Curds",
-                    "Gravy",
-                    "Canadian"
-                ]
-            },
-            {
-                "topic": [
-                    "Empanada",
-                    "Empanadas",
-                    "Baked Parcel",
-                    "Spanish Pastry"
-                ],
-                "entries": [
-                    "Pastry Dough",
-                    "Beef Filling",
-                    "Oven-baked",
-                    "Flaky"
-                ]
-            },
-            {
-                "topic": [
-                    "Udon",
-                    "Udon Noodles",
-                    "Japanese Udon Soup",
-                    "Thick Noodles"
-                ],
-                "entries": [
-                    "Soy Sauce",
-                    "Dashi Broth",
-                    "Spring Onions",
-                    "Chewy"
-                ]
-            },
-            {
-                "topic": [
-                    "Baozi",
-                    "Bao",
-                    "Chinese Buns",
-                    "Stuffed Buns"
-                ],
-                "entries": [
-                    "Steamed",
-                    "Pork Filling",
-                    "Yeast Dough",
-                    "Street Food"
-                ]
-            },
-            {
-                "topic": [
-                    "Fondue",
-                    "Cheese Fondue",
-                    "Switzerland Fondue",
-                    "Fondue Pot"
-                ],
-                "entries": [
-                    "Melted Cheese",
-                    "Bread Dippers",
-                    "Swiss",
-                    "Warm"
-                ]
-            },
-            {
-                "topic": [
-                    "Moussaka",
-                    "Eggplant Casserole",
-                    "Moussakas"
-                ],
-                "entries": [
-                    "Eggplant",
-                    "Minced Meat",
-                    "B\u00e9chamel Sauce",
-                    "Greek Layered Dish"
-                ]
-            },
-            {
-                "topic": [
-                    "Chow Mein",
-                    "Stir-fried Noodles",
-                    "Chinese Chow Mein",
-                    "Fried Mein"
-                ],
-                "entries": [
-                    "Egg Noodles",
-                    "Soy Sauce",
-                    "Vegetables",
-                    "Stir-fried"
-                ]
-            },
-            {
-                "topic": [
-                    "Tandoori",
-                    "Tandoori Chicken",
-                    "Indian Grill",
-                    "Tandoori Oven"
-                ],
-                "entries": [
-                    "Indian",
-                    "Marinated Chicken",
-                    "Spicy",
-                    "Yogurt"
-                ]
-            },
-            {
-                "topic": [
-                    "Gyoza",
-                    "Japanese Dumplings",
-                    "Pan-fried Gyoza",
-                    "Gyoza Dumpling"
-                ],
-                "entries": [
-                    "Pork Filling",
-                    "Soy Sauce",
-                    "Crispy Bottom",
-                    "Savory"
-                ]
-            },
-            {
-                "topic": [
                     "Quiche",
                     "French Tart",
                     "Quiches"
@@ -1104,33 +790,6 @@
                     "Pastry Shell",
                     "French Savory Pie",
                     "Cheese Filling"
-                ]
-            },
-            {
-                "topic": [
-                    "Ratatouille",
-                    "Proven\u00e7al Stew",
-                    "Summer Vegetables"
-                ],
-                "entries": [
-                    "Eggplant",
-                    "Zucchini",
-                    "Tomato",
-                    "French Vegetable Stew"
-                ]
-            },
-            {
-                "topic": [
-                    "Dolma",
-                    "Stuffed Grape Leaves",
-                    "Dolmas",
-                    "Middle Eastern Snack"
-                ],
-                "entries": [
-                    "Stuffed Rice",
-                    "Grape Leaves",
-                    "Lemon Aroma",
-                    "Cold"
                 ]
             },
             {
@@ -1149,116 +808,6 @@
             },
             {
                 "topic": [
-                    "Baklava",
-                    "Layered Pastry",
-                    "Greek Sweet Pastry",
-                    "Baklavas"
-                ],
-                "entries": [
-                    "Phyllo Dough",
-                    "Walnuts",
-                    "Honey Syrup",
-                    "Sweet"
-                ]
-            },
-            {
-                "topic": [
-                    "Rosti",
-                    "Swiss R\u00fcesti",
-                    "Potato Pancake",
-                    "R\u00f6sti"
-                ],
-                "entries": [
-                    "Grated Potatoes",
-                    "Crispy",
-                    "Fried",
-                    "Swiss Dish"
-                ]
-            },
-            {
-                "topic": [
-                    "Fajitas",
-                    "Tex-Mex Wrap",
-                    "Grilled Fajitas",
-                    "Beef Fajitas"
-                ],
-                "entries": [
-                    "Bell Peppers",
-                    "Grilled Meat",
-                    "Tortilla",
-                    "Mexican Wrap"
-                ]
-            },
-            {
-                "topic": [
-                    "Bouillabaisse",
-                    "French Fish Stew",
-                    "Proven\u00e7al Stew",
-                    "Marseille Soup"
-                ],
-                "entries": [
-                    "Fish Broth",
-                    "Shellfish",
-                    "Saffron",
-                    "Croutons"
-                ]
-            },
-            {
-                "topic": [
-                    "Bibimbap",
-                    "Korean Mixed Rice",
-                    "Bibim Bap",
-                    "Mixed Bowl"
-                ],
-                "entries": [
-                    "Rice Base",
-                    "Vegetables",
-                    "Spicy Sauce",
-                    "Egg"
-                ]
-            },
-            {
-                "topic": [
-                    "Pierogi",
-                    "Polish Dumplings",
-                    "Pierogies",
-                    "Varenyky"
-                ],
-                "entries": [
-                    "Potato Filling",
-                    "Boiled",
-                    "Onion Topping",
-                    "Sour Cream"
-                ]
-            },
-            {
-                "topic": [
-                    "Kebab",
-                    "Kabob",
-                    "Grilled Skewers"
-                ],
-                "entries": [
-                    "Ground Meat",
-                    "Grilled",
-                    "Middle Eastern Skewer",
-                    "Flatbread"
-                ]
-            },
-            {
-                "topic": [
-                    "Nasi Goreng",
-                    "Fried Rice Dish",
-                    "Nasi"
-                ],
-                "entries": [
-                    "Rice",
-                    "Fried Egg",
-                    "Shrimp",
-                    "Indonesian Fried Rice"
-                ]
-            },
-            {
-                "topic": [
                     "Bread",
                     "Bread Making",
                     "Bread Baking",
@@ -1270,34 +819,6 @@
                     "Dough",
                     "Baking",
                     "Crust"
-                ]
-            },
-            {
-                "topic": [
-                    "Borscht",
-                    "Beet Soup",
-                    "Ukrainian Borscht",
-                    "Borshch"
-                ],
-                "entries": [
-                    "Beetroot",
-                    "Sour Cream",
-                    "Cabbage",
-                    "Ukrainian Soup"
-                ]
-            },
-            {
-                "topic": [
-                    "Croque Monsieur",
-                    "French Sandwich",
-                    "Ham and Cheese",
-                    "Toasted Monsieur"
-                ],
-                "entries": [
-                    "Ham",
-                    "Gruy\u00e8re Cheese",
-                    "French",
-                    "Grilled"
                 ]
             }
         ]
@@ -1425,60 +946,6 @@
             },
             {
                 "topic": [
-                    "The Great Depression",
-                    "Economic Depression",
-                    "The Crash of 1929"
-                ],
-                "entries": [
-                    "Stock Market Crash",
-                    "Black Tuesday",
-                    "Breadlines",
-                    "Dust Bowl"
-                ]
-            },
-            {
-                "topic": [
-                    "The Renaissance",
-                    "Renaissance Era",
-                    "Rebirth Period"
-                ],
-                "entries": [
-                    "Enlightenment",
-                    "Humanism",
-                    "Started in France",
-                    "Art Revival"
-                ]
-            },
-            {
-                "topic": [
-                    "The Industrial Revolution",
-                    "Industrial Age",
-                    "Industrial Revolution",
-                    "Industry Revolution",
-                    "Industrialization Era"
-                ],
-                "entries": [
-                    "Steam Engine",
-                    "Factories",
-                    "Urbanization",
-                    "Mass Production"
-                ]
-            },
-            {
-                "topic": [
-                    "Space Race",
-                    "Cosmic Competition",
-                    "Space Exploration Rivalry"
-                ],
-                "entries": [
-                    "Apollo 11",
-                    "Sputnik",
-                    "Moon Landing",
-                    "Cold War Context"
-                ]
-            },
-            {
-                "topic": [
                     "The Cold War",
                     "Cold War",
                     "Cold War Era"
@@ -1502,20 +969,6 @@
                     "Viet Cong",
                     "Agent Orange",
                     "Tet Offensive"
-                ]
-            },
-            {
-                "topic": [
-                    "The Korean War",
-                    "Korean War",
-                    "Korean Conflict",
-                    "Korea Police Action"
-                ],
-                "entries": [
-                    "38th Parallel",
-                    "North vs South",
-                    "Inchon Landing",
-                    "Communism"
                 ]
             },
             {
@@ -1548,66 +1001,6 @@
             },
             {
                 "topic": [
-                    "The European Union",
-                    "European Union",
-                    "EU",
-                    "The EU",
-                    "European Economic Community"
-                ],
-                "entries": [
-                    "Maastricht Treaty",
-                    "Brussels",
-                    "Euro Currency",
-                    "Schengen Area"
-                ]
-            },
-            {
-                "topic": [
-                    "The United Nations",
-                    "United Nations",
-                    "UN",
-                    "the UN",
-                    "International Assembly Focus"
-                ],
-                "entries": [
-                    "Security Council",
-                    "General Assembly",
-                    "Peacekeeping Missions",
-                    "Human Rights"
-                ]
-            },
-            {
-                "topic": [
-                    "World Health Organization",
-                    "WHO",
-                    "the WHO",
-                    "the World Health Organization"
-                ],
-                "entries": [
-                    "Pandemic Response",
-                    "Vaccination Campaigns",
-                    "Health Regulations",
-                    "Global Health Body"
-                ]
-            },
-            {
-                "topic": [
-                    "The Dot-com Bubble",
-                    "Dot-com Bubble",
-                    "Dotcom Bubble",
-                    "The Dotcom Bubble",
-                    "Internet Bubble",
-                    "Tech Stock Explosion"
-                ],
-                "entries": [
-                    "Startup Boom",
-                    "NASDAQ Crash",
-                    "Tech Investment",
-                    "IPO Frenzy"
-                ]
-            },
-            {
-                "topic": [
                     "The French Revolution",
                     "French Revolution",
                     "French Political Upheaval",
@@ -1632,63 +1025,6 @@
                     "Boston Tea Party",
                     "Lexington and Concord",
                     "Declaration of Independence"
-                ]
-            },
-            {
-                "topic": [
-                    "The Russian Revolution",
-                    "Russian Revolution",
-                    "Bolshevik Revolution",
-                    "Soviet Uprising"
-                ],
-                "entries": [
-                    "Lenin",
-                    "Tsar Nicholas II",
-                    "Bolsheviks",
-                    "October Revolution"
-                ]
-            },
-            {
-                "topic": [
-                    "The Protestant Reformation",
-                    "Protestant Reformation",
-                    "Reformation Era",
-                    "Religious Reform Movement"
-                ],
-                "entries": [
-                    "Martin Luther",
-                    "95 Theses",
-                    "Indulgences",
-                    "Church Schism"
-                ]
-            },
-            {
-                "topic": [
-                    "The Spanish Inquisition",
-                    "Spanish Inquisition",
-                    "Spanish Religious Persecution",
-                    "Inquisition Tribunal"
-                ],
-                "entries": [
-                    "Torture Chambers",
-                    "Heretic Trials",
-                    "Auto-da-f\u00e9",
-                    "Expulsion of Jews"
-                ]
-            },
-            {
-                "topic": [
-                    "The Crusades",
-                    "Crusades",
-                    "Crusading Era",
-                    "Holy Wars",
-                    "The Holy Wars"
-                ],
-                "entries": [
-                    "Jerusalem",
-                    "Knights Templar",
-                    "Saladin",
-                    "Papal Decrees"
                 ]
             },
             {
@@ -1720,62 +1056,6 @@
                     "Senate",
                     "Colosseum",
                     "Legions"
-                ]
-            },
-            {
-                "topic": [
-                    "The Byzantine Empire",
-                    "Bbyzantine Empire",
-                    "Eastern Roman Empire",
-                    "Byzantium"
-                ],
-                "entries": [
-                    "Constantinople",
-                    "Hagia Sophia",
-                    "Justinian Code",
-                    "Greek Fire"
-                ]
-            },
-            {
-                "topic": [
-                    "The Ottoman Empire",
-                    "Ottoman Empire",
-                    "Ottoman Turks",
-                    "Turkish Empire"
-                ],
-                "entries": [
-                    "Suleiman the Magnificent",
-                    "Topkapi Palace",
-                    "Janissaries",
-                    "Sultanate"
-                ]
-            },
-            {
-                "topic": [
-                    "The British Empire",
-                    "British Empire",
-                    "British Colonial Expansion",
-                    "Empire of Great Britain"
-                ],
-                "entries": [
-                    "India Colony",
-                    "Queen Victoria",
-                    "Commonwealth",
-                    "Redcoats"
-                ]
-            },
-            {
-                "topic": [
-                    "The Ming Dynasty",
-                    "Ming Dynasty",
-                    "Ming China",
-                    "Chinese Empire"
-                ],
-                "entries": [
-                    "Forbidden City",
-                    "Porcelain",
-                    "Great Wall",
-                    "Zheng He"
                 ]
             },
             {
@@ -1861,48 +1141,6 @@
             },
             {
                 "topic": [
-                    "Comic-Con",
-                    "ComicCon",
-                    "Comic Convention",
-                    "Pop Culture Fest"
-                ],
-                "entries": [
-                    "Cosplay",
-                    "Panels",
-                    "Celebrity Autographs",
-                    "Fan Meetups"
-                ]
-            },
-            {
-                "topic": [
-                    "Lunar New Year",
-                    "Chinese New Year",
-                    "Chinese NY",
-                    "Spring Festival"
-                ],
-                "entries": [
-                    "Zodiac Animals",
-                    "Red Envelopes",
-                    "Firecrackers",
-                    "Lantern Festival"
-                ]
-            },
-            {
-                "topic": [
-                    "Germany Reunification",
-                    "German Reunification",
-                    "German Unity",
-                    "Berlin Wall Fall"
-                ],
-                "entries": [
-                    "East and West",
-                    "Brandenburg Gate",
-                    "Unity Day",
-                    "Cold War End"
-                ]
-            },
-            {
-                "topic": [
                     "Marathon",
                     "The Marathon"
                 ],
@@ -1954,32 +1192,6 @@
             },
             {
                 "topic": [
-                    "Ramadan",
-                    "Ramzan",
-                    "Sawm"
-                ],
-                "entries": [
-                    "Fasting",
-                    "Iftar",
-                    "Holy Month",
-                    "Quran Reading"
-                ]
-            },
-            {
-                "topic": [
-                    "Hanukkah",
-                    "Chanukah",
-                    "Festival of Lights"
-                ],
-                "entries": [
-                    "Menorah",
-                    "Dreidel",
-                    "Eight Nights",
-                    "Oil"
-                ]
-            },
-            {
-                "topic": [
                     "Oktoberfest",
                     "Bavarian Beer Festival",
                     "Wiesn"
@@ -1989,19 +1201,6 @@
                     "Lederhosen",
                     "Beer",
                     "Pretzels"
-                ]
-            },
-            {
-                "topic": [
-                    "Passover",
-                    "Pesach",
-                    "Jewish Easter"
-                ],
-                "entries": [
-                    "Seder Meal",
-                    "Matzah",
-                    "Haggadah",
-                    "Plagues"
                 ]
             },
             {
@@ -2020,32 +1219,6 @@
             },
             {
                 "topic": [
-                    "Hanami",
-                    "Cherry Blossom Festival",
-                    "Flower Viewing"
-                ],
-                "entries": [
-                    "Sakura",
-                    "Picnic",
-                    "Japan",
-                    "Springtime"
-                ]
-            },
-            {
-                "topic": [
-                    "Carnival",
-                    "Carnaval",
-                    "Mardi Gras"
-                ],
-                "entries": [
-                    "Costumes",
-                    "Floats",
-                    "Samba",
-                    "Celebration"
-                ]
-            },
-            {
-                "topic": [
                     "Diwali",
                     "Deepavali",
                     "Festival of Lights"
@@ -2055,58 +1228,6 @@
                     "Firecrackers",
                     "New Clothes",
                     "Goddess Lakshmi"
-                ]
-            },
-            {
-                "topic": [
-                    "Kwanzaa",
-                    "African Celebration",
-                    "Nguzo Saba"
-                ],
-                "entries": [
-                    "Seven Principles",
-                    "Candles",
-                    "Unity Cup",
-                    "Red, Black, Green"
-                ]
-            },
-            {
-                "topic": [
-                    "Vesak",
-                    "Buddha Day",
-                    "Vaisakha"
-                ],
-                "entries": [
-                    "Enlightenment",
-                    "Buddha Statues",
-                    "Religious Rituals",
-                    "Meditation"
-                ]
-            },
-            {
-                "topic": [
-                    "Mid-Autumn Festival",
-                    "Moon Festival",
-                    "Zhongqiu Jie"
-                ],
-                "entries": [
-                    "Mooncakes",
-                    "Lanterns",
-                    "Harvest",
-                    "Full Moon"
-                ]
-            },
-            {
-                "topic": [
-                    "Navratri",
-                    "Durga Puja",
-                    "Dussehra"
-                ],
-                "entries": [
-                    "Nine Nights",
-                    "Fasting",
-                    "Dances",
-                    "Goddess Durga"
                 ]
             },
             {
@@ -2122,32 +1243,6 @@
                     "Parades",
                     "Leprechauns"
                 ]
-            },
-            {
-                "topic": [
-                    "Bonfire Night",
-                    "Guy Fawkes Night",
-                    "Fireworks Night"
-                ],
-                "entries": [
-                    "Effigies",
-                    "Fireworks",
-                    "United Kingdom",
-                    "5th November"
-                ]
-            },
-            {
-                "topic": [
-                    "Winter Solstice",
-                    "Yule",
-                    "Midwinter"
-                ],
-                "entries": [
-                    "Shortest Day",
-                    "Stonehenge",
-                    "Celebration",
-                    "Renewal"
-                ]
             }
         ]
     },
@@ -2162,6 +1257,20 @@
                     "Pivot Scene",
                     "Phoebe's Songs",
                     "Smelly Cat"
+                ]
+            },
+            {
+                "topic": [
+                    "The Sound of Music",
+                    "Sound of Music Film",
+                    "Musical: Sound of Music",
+                    "Sound of Music"
+                ],
+                "entries": [
+                    "Rogers & Hammerstein",
+                    "Von Trapp Family",
+                    "Austrian Alps",
+                    "Do-Re-Mi"
                 ]
             },
             {
@@ -2613,17 +1722,6 @@
             },
             {
                 "topic": [
-                    "Mulan"
-                ],
-                "entries": [
-                    "Chinese Warrior",
-                    "Dragon",
-                    "Disney Princess",
-                    "Reflection"
-                ]
-            },
-            {
-                "topic": [
                     "Finding Nemo"
                 ],
                 "entries": [
@@ -2646,6 +1744,51 @@
             },
             {
                 "topic": [
+                    "The Little Mermaid"
+                ],
+                "entries": [
+                    "Ariel",
+                    "Under the Sea",
+                    "Ursula",
+                    "Prince Eric"
+                ]
+            },
+            {
+                "topic": [
+                    "Beauty and the Beast"
+                ],
+                "entries": [
+                    "Belle",
+                    "Beast",
+                    "Gaston",
+                    "Enchanted Castle"
+                ]
+            },
+            {
+                "topic": [
+                    "Aladdin"
+                ],
+                "entries": [
+                    "Jasmine",
+                    "Genie",
+                    "Magic Carpet",
+                    "Jafar"
+                ]
+            },
+            {
+                "topic": [
+                    "The Jungle Book",
+                    "Jungle Book"
+                ],
+                "entries": [
+                    "Mowgli",
+                    "Baloo",
+                    "Shere Khan",
+                    "Bagheera"
+                ]
+            },
+            {
+                "topic": [
                     "Cinderella"
                 ],
                 "entries": [
@@ -2659,18 +1802,6 @@
     },
     "hobbies": {
         "topics": [
-            {
-                "topic": [
-                    "Bicycle Riding",
-                    "Cycling"
-                ],
-                "entries": [
-                    "Handlebars",
-                    "Pedals",
-                    "Chain",
-                    "Brake Levers"
-                ]
-            },
             {
                 "topic": [
                     "Gardening",
@@ -2693,30 +1824,6 @@
                     "Reel",
                     "Fishhook",
                     "Catch"
-                ]
-            },
-            {
-                "topic": [
-                    "Woodworking",
-                    "Carpentry"
-                ],
-                "entries": [
-                    "Chisel",
-                    "Lathe",
-                    "Jointer",
-                    "Woodgrain"
-                ]
-            },
-            {
-                "topic": [
-                    "Jogging",
-                    "Running"
-                ],
-                "entries": [
-                    "Sneakers",
-                    "Pace",
-                    "Trail",
-                    "Endurance"
                 ]
             },
             {
@@ -2757,30 +1864,6 @@
             },
             {
                 "topic": [
-                    "Writing Poetry",
-                    "Verse Creation"
-                ],
-                "entries": [
-                    "Stanza",
-                    "Meter",
-                    "Rhyme",
-                    "Imagery"
-                ]
-            },
-            {
-                "topic": [
-                    "Sewing",
-                    "Stitching"
-                ],
-                "entries": [
-                    "Sewing Machine",
-                    "Fabric",
-                    "Seams",
-                    "Pattern"
-                ]
-            },
-            {
-                "topic": [
                     "Yoga",
                     "Mindful Stretching"
                 ],
@@ -2805,18 +1888,6 @@
             },
             {
                 "topic": [
-                    "Archery",
-                    "Bow Shooting"
-                ],
-                "entries": [
-                    "Bowstring",
-                    "Arrow",
-                    "Target",
-                    "Quiver"
-                ]
-            },
-            {
-                "topic": [
                     "Surfing",
                     "Wave Riding"
                 ],
@@ -2837,18 +1908,6 @@
                     "Focus",
                     "Silence",
                     "Tranquility"
-                ]
-            },
-            {
-                "topic": [
-                    "Origami",
-                    "Paper Folding"
-                ],
-                "entries": [
-                    "Creases",
-                    "Folds",
-                    "Paper Square",
-                    "Crane"
                 ]
             }
         ]
@@ -2893,19 +1952,6 @@
                     "Aviation",
                     "Wings",
                     "Cockpit"
-                ]
-            },
-            {
-                "topic": [
-                    "Camera",
-                    "Photographic Device",
-                    "Photo Camera"
-                ],
-                "entries": [
-                    "Shutter",
-                    "Lens",
-                    "Film",
-                    "Flash"
                 ]
             },
             {
@@ -3015,32 +2061,6 @@
             },
             {
                 "topic": [
-                    "Printing Press",
-                    "Gutenberg Press",
-                    "Movable Type"
-                ],
-                "entries": [
-                    "Johannes Gutenberg",
-                    "Typefaces",
-                    "Books",
-                    "Mass Production"
-                ]
-            },
-            {
-                "topic": [
-                    "Sewing Machine",
-                    "Stitcher",
-                    "Needlework Machine"
-                ],
-                "entries": [
-                    "Needle",
-                    "Thread",
-                    "Presser Foot",
-                    "Bobbin"
-                ]
-            },
-            {
-                "topic": [
                     "Clock",
                     "Timepiece",
                     "Chronometer"
@@ -3063,19 +2083,6 @@
                     "Browning",
                     "Heating Elements",
                     "Slots"
-                ]
-            },
-            {
-                "topic": [
-                    "Elevator",
-                    "Lift",
-                    "Vertical Transport"
-                ],
-                "entries": [
-                    "Cabin",
-                    "Buttons",
-                    "Shaft",
-                    "Counterweight"
                 ]
             },
             {
@@ -3145,45 +2152,6 @@
             },
             {
                 "topic": [
-                    "Fountain Pen",
-                    "Ink Pen",
-                    "Nibbed Pen"
-                ],
-                "entries": [
-                    "Ink Cartridge",
-                    "Nib",
-                    "Cap",
-                    "Reservoir"
-                ]
-            },
-            {
-                "topic": [
-                    "Escalator",
-                    "Moving Staircase",
-                    "Automatic Stairs"
-                ],
-                "entries": [
-                    "Treads",
-                    "Handrails",
-                    "Mechanism",
-                    "Incline"
-                ]
-            },
-            {
-                "topic": [
-                    "Chainsaw",
-                    "Saw",
-                    "Power Saw"
-                ],
-                "entries": [
-                    "Chains",
-                    "Motor",
-                    "Cutting Teeth",
-                    "Bar"
-                ]
-            },
-            {
-                "topic": [
                     "Compass",
                     "Direction Finder",
                     "Navigational Tool"
@@ -3236,32 +2204,6 @@
             },
             {
                 "topic": [
-                    "Stethoscope",
-                    "Medical Listening Device",
-                    "Acoustic Scope"
-                ],
-                "entries": [
-                    "Diaphragm",
-                    "Ear Tubes",
-                    "Heartbeat",
-                    "Doctor"
-                ]
-            },
-            {
-                "topic": [
-                    "Airpot",
-                    "Thermos",
-                    "Vacuum Flask"
-                ],
-                "entries": [
-                    "Vacuum Insulation",
-                    "Stainless Steel",
-                    "Hot Drinks",
-                    "Lid"
-                ]
-            },
-            {
-                "topic": [
                     "Paperclip",
                     "Clasp",
                     "Fastener"
@@ -3297,19 +2239,6 @@
                     "Ribs",
                     "Handle",
                     "Rain"
-                ]
-            },
-            {
-                "topic": [
-                    "Kettle",
-                    "Tea Maker",
-                    "Water Boiler"
-                ],
-                "entries": [
-                    "Spout",
-                    "Whistle",
-                    "Heating Element",
-                    "Stovetop"
                 ]
             },
             {
@@ -3799,18 +2728,6 @@
             },
             {
                 "topic": [
-                    "Queen Latifah",
-                    "Latifah"
-                ],
-                "entries": [
-                    "U.N.I.T.Y.",
-                    "Chicago",
-                    "Hip-Hop",
-                    "Royalty"
-                ]
-            },
-            {
-                "topic": [
                     "Celine Dion",
                     "Dion"
                 ],
@@ -3989,32 +2906,6 @@
             },
             {
                 "topic": [
-                    "Flute",
-                    "Concert Flute",
-                    "Woodwind"
-                ],
-                "entries": [
-                    "Embouchure",
-                    "Keys",
-                    "Mouthpiece",
-                    "Orchestra"
-                ]
-            },
-            {
-                "topic": [
-                    "Trumpet",
-                    "Cornet",
-                    "Horn"
-                ],
-                "entries": [
-                    "Valves",
-                    "Brass",
-                    "Mouthpiece",
-                    "Jazz"
-                ]
-            },
-            {
-                "topic": [
                     "Saxophone",
                     "Alto Sax",
                     "Tenor Sax"
@@ -4025,743 +2916,141 @@
                     "Curved Body",
                     "Keys"
                 ]
-            },
-            {
-                "topic": [
-                    "Clarinet",
-                    "Bass Clarinet",
-                    "Woodwind"
-                ],
-                "entries": [
-                    "Reed",
-                    "Keys",
-                    "Ebony Wood",
-                    "Symphony"
-                ]
-            },
-            {
-                "topic": [
-                    "Harp",
-                    "Pedal Harp",
-                    "Lever Harp"
-                ],
-                "entries": [
-                    "Strings",
-                    "Pedals",
-                    "Orchestral",
-                    "Arched Frame"
-                ]
-            },
-            {
-                "topic": [
-                    "Cello",
-                    "Violoncello",
-                    "Bass Violin"
-                ],
-                "entries": [
-                    "Pegbox",
-                    "Bow",
-                    "Endpin",
-                    "Four Strings"
-                ]
-            },
-            {
-                "topic": [
-                    "Trombone",
-                    "Slide Trombone",
-                    "Brass Instrument"
-                ],
-                "entries": [
-                    "Slide",
-                    "Bell",
-                    "Brass",
-                    "Orchestra"
-                ]
-            },
-            {
-                "topic": [
-                    "Oboe",
-                    "Hautboy",
-                    "Woodwind"
-                ],
-                "entries": [
-                    "Reed",
-                    "Keys",
-                    "Concerto",
-                    "Double Reed"
-                ]
-            },
-            {
-                "topic": [
-                    "Bassoon",
-                    "Contrabassoon",
-                    "Woodwind"
-                ],
-                "entries": [
-                    "Reed",
-                    "Keys",
-                    "Double Reed",
-                    "Orchestral"
-                ]
-            },
-            {
-                "topic": [
-                    "Accordion",
-                    "Concertina",
-                    "Squeezebox"
-                ],
-                "entries": [
-                    "Bellows",
-                    "Keys",
-                    "Folk Music",
-                    "Portable"
-                ]
-            },
-            {
-                "topic": [
-                    "Harmonica",
-                    "Blues Harp",
-                    "Mouth Organ"
-                ],
-                "entries": [
-                    "Reed",
-                    "Blues",
-                    "Breath",
-                    "Portable"
-                ]
-            },
-            {
-                "topic": [
-                    "Marimba",
-                    "Xylophone",
-                    "Percussion"
-                ],
-                "entries": [
-                    "Mallets",
-                    "Wood Bars",
-                    "Resonators",
-                    "Orchestral"
-                ]
-            },
-            {
-                "topic": [
-                    "Timpani",
-                    "Kettle Drums",
-                    "Percussion"
-                ],
-                "entries": [
-                    "Pedals",
-                    "Copper Bowls",
-                    "Mallets",
-                    "Orchestra"
-                ]
-            },
-            {
-                "topic": [
-                    "Tuba",
-                    "Sousaphone",
-                    "Brass Instrument"
-                ],
-                "entries": [
-                    "Valves",
-                    "Brass",
-                    "Large Bell",
-                    "Orchestra"
-                ]
-            },
-            {
-                "topic": [
-                    "Banjo",
-                    "Five-String Banjo",
-                    "Bluegrass Banjo"
-                ],
-                "entries": [
-                    "Fretboard",
-                    "Strings",
-                    "Round Body",
-                    "Country"
-                ]
-            },
-            {
-                "topic": [
-                    "Mandolin",
-                    "Lute",
-                    "String Instrument"
-                ],
-                "entries": [
-                    "Strings",
-                    "Pick",
-                    "Oval Body",
-                    "Folk Music"
-                ]
-            },
-            {
-                "topic": [
-                    "Organ",
-                    "Pipe Organ",
-                    "Electronic Organ"
-                ],
-                "entries": [
-                    "Pedals",
-                    "Pipes",
-                    "Keyboard",
-                    "Church"
-                ]
-            },
-            {
-                "topic": [
-                    "Bagpipes",
-                    "Highland Pipes",
-                    "Scottish Pipes"
-                ],
-                "entries": [
-                    "Scotland",
-                    "Reed",
-                    "Bag",
-                    "Tradition"
-                ]
-            },
-            {
-                "topic": [
-                    "Ukulele",
-                    "Uke",
-                    "Hawaiian Guitar"
-                ],
-                "entries": [
-                    "Four Strings",
-                    "Portable",
-                    "Fingerstyle",
-                    "Soprano"
-                ]
-            },
-            {
-                "topic": [
-                    "Double Bass",
-                    "Contrabass",
-                    "Upright Bass"
-                ],
-                "entries": [
-                    "Strings",
-                    "Bow",
-                    "Jazz",
-                    "Orchestra"
-                ]
-            },
-            {
-                "topic": [
-                    "Zither",
-                    "Guzheng",
-                    "Cithara"
-                ],
-                "entries": [
-                    "Strings",
-                    "Sound Box",
-                    "Plucking",
-                    "Folk Music"
-                ]
-            },
-            {
-                "topic": [
-                    "Didgeridoo",
-                    "Yidaki",
-                    "Drone Pipe"
-                ],
-                "entries": [
-                    "Drone",
-                    "Circular Breathing",
-                    "Indigenous",
-                    "Timber"
-                ]
-            },
-            {
-                "topic": [
-                    "Tambourine",
-                    "Riq",
-                    "Frame Drum"
-                ],
-                "entries": [
-                    "Jingles",
-                    "Percussion",
-                    "Circular",
-                    "Hand-held"
-                ]
-            },
-            {
-                "topic": [
-                    "Theremin",
-                    "Etherwave",
-                    "Electronic Instrument"
-                ],
-                "entries": [
-                    "Oscillator",
-                    "Electromagnetic",
-                    "Hands-free",
-                    "Frequency"
-                ]
-            },
-            {
-                "topic": [
-                    "Sitar",
-                    "Veena",
-                    "Indian Guitar"
-                ],
-                "entries": [
-                    "Sympathetic Strings",
-                    "Ravi Shankar",
-                    "Gourd",
-                    "Plucked"
-                ]
-            },
-            {
-                "topic": [
-                    "Conga",
-                    "Conga Drum",
-                    "Tumbadora"
-                ],
-                "entries": [
-                    "Cylindrical",
-                    "Caribbean",
-                    "Rhythm",
-                    "Hand-played"
-                ]
-            },
-            {
-                "topic": [
-                    "Bongo Drums",
-                    "Bongos",
-                    "Afro-Cuban Drums"
-                ],
-                "entries": [
-                    "Pair",
-                    "Pellets",
-                    "Hand-played",
-                    "Latin Music"
-                ]
-            },
-            {
-                "topic": [
-                    "Djembe",
-                    "Jembe",
-                    "African Drum"
-                ],
-                "entries": [
-                    "Rope-tuned",
-                    "Hand-played",
-                    "Goblet Shape",
-                    "West African"
-                ]
-            },
-            {
-                "topic": [
-                    "Lyre",
-                    "Kithara",
-                    "Ancient Greek Harp"
-                ],
-                "entries": [
-                    "Tortoise Shell",
-                    "Strings",
-                    "Classical",
-                    "Antiquity"
-                ]
             }
         ]
     },
-    "occupations": {
+    "nature": {
         "topics": [
             {
                 "topic": [
-                    "Chef",
-                    "Cook"
+                    "Volcano",
+                    "Erupting Mountain"
                 ],
                 "entries": [
-                    "Gourmet Meals",
-                    "Culinary Skills",
-                    "Menu Design",
-                    "Food Preparation"
+                    "Lava Flow",
+                    "Magma",
+                    "Ash Cloud",
+                    "Crater"
                 ]
             },
             {
                 "topic": [
-                    "Teacher",
-                    "Educator"
+                    "Rainforest",
+                    "Tropical Forest"
                 ],
                 "entries": [
-                    "Lesson Plans",
-                    "Classroom Management",
-                    "Student Evaluation",
-                    "Curriculum Development"
+                    "Dense Canopy",
+                    "Humidity",
+                    "Biodiversity",
+                    "Amazon"
                 ]
             },
             {
                 "topic": [
-                    "Electrician",
-                    "Electrical Worker"
+                    "Desert",
+                    "Arid Land"
                 ],
                 "entries": [
-                    "Wiring Systems",
-                    "Circuit Breakers",
-                    "Electrical Codes",
-                    "Voltage Testing"
+                    "Sand Dunes",
+                    "Cacti",
+                    "Extreme Heat",
+                    "Oasis"
                 ]
             },
             {
                 "topic": [
-                    "Lawyer",
-                    "Attorney"
+                    "Tornado",
+                    "Twister"
                 ],
                 "entries": [
-                    "Legal Advice",
-                    "Court Representation",
-                    "Contract Drafting",
-                    "Case Research"
+                    "Funnel Cloud",
+                    "Strong Winds",
+                    "Storm Chase",
+                    "Rotating Column"
                 ]
             },
             {
                 "topic": [
-                    "Pilot",
-                    "Aviator"
+                    "Glacier",
+                    "Ice River"
                 ],
                 "entries": [
-                    "Flight Navigation",
-                    "Aircraft Control",
-                    "Takeoff Procedures",
-                    "Safety Checks"
+                    "Ice Sheets",
+                    "Calving",
+                    "Polar Regions",
+                    "Crevasses"
                 ]
             },
             {
                 "topic": [
-                    "Plumber",
-                    "Pipefitter"
+                    "Coral Reef",
+                    "Marine Garden"
                 ],
                 "entries": [
-                    "Leak Repairs",
-                    "Pipe Installation",
-                    "Drain Cleaning",
-                    "Fixture Replacement"
+                    "Great Barrier Reef",
+                    "Polyps",
+                    "Colorful Fish",
+                    "Warm Waters"
                 ]
             },
             {
                 "topic": [
-                    "Nurse",
-                    "Registered Nurse"
+                    "Waterfall",
+                    "Cascading Stream"
                 ],
                 "entries": [
-                    "Patient Care",
-                    "Medication Administration",
-                    "Vital Signs Monitoring",
-                    "Wound Dressing"
+                    "Plunge Pool",
+                    "Niagara",
+                    "Vertical Drop",
+                    "Mist"
                 ]
             },
             {
                 "topic": [
-                    "Architect",
-                    "Building Designer"
+                    "Earthquake",
+                    "Seismic Event"
                 ],
                 "entries": [
-                    "Blueprint Design",
-                    "Structural Planning",
-                    "Space Utilization",
-                    "Project Management"
+                    "Tectonic Plates",
+                    "Richter Scale",
+                    "Aftershocks",
+                    "Epicenter"
                 ]
             },
             {
                 "topic": [
-                    "Mechanic",
-                    "Auto Technician"
+                    "Hurricane",
+                    "Cyclone"
                 ],
                 "entries": [
-                    "Engine Repairs",
-                    "Brake Systems",
-                    "Oil Changes",
-                    "Vehicle Diagnostics"
+                    "Eye Wall",
+                    "Tropical Storm",
+                    "Storm Surge",
+                    "High Winds"
                 ]
             },
             {
                 "topic": [
-                    "Scientist",
-                    "Researcher"
+                    "Fjord",
+                    "Glacial Valley"
                 ],
                 "entries": [
-                    "Data Analysis",
-                    "Experiment Design",
-                    "Hypothesis Testing",
-                    "Field Studies"
+                    "Steep Cliffs",
+                    "Deep Inlet",
+                    "Norway",
+                    "U-shaped Valley"
                 ]
             },
             {
                 "topic": [
-                    "Firefighter",
-                    "Fireman"
+                    "Aurora Borealis",
+                    "Northern Lights"
                 ],
                 "entries": [
-                    "Fire Suppression",
-                    "Rescue Operations",
-                    "Safety Inspections",
-                    "Emergency Response"
-                ]
-            },
-            {
-                "topic": [
-                    "Journalist",
-                    "Reporter"
-                ],
-                "entries": [
-                    "News Reporting",
-                    "Interviewing",
-                    "Article Writing",
-                    "Fact Checking"
-                ]
-            },
-            {
-                "topic": [
-                    "Photographer",
-                    "Photojournalist"
-                ],
-                "entries": [
-                    "Image Composition",
-                    "Lighting Techniques",
-                    "Photo Editing",
-                    "Event Coverage"
-                ]
-            },
-            {
-                "topic": [
-                    "Accountant",
-                    "CPA"
-                ],
-                "entries": [
-                    "Financial Audits",
-                    "Tax Preparation",
-                    "Budget Analysis",
-                    "Ledger Balancing"
-                ]
-            },
-            {
-                "topic": [
-                    "Artist",
-                    "Painter"
-                ],
-                "entries": [
-                    "Canvas Painting",
-                    "Sketching Techniques",
-                    "Color Theory",
-                    "Art Exhibitions"
-                ]
-            },
-            {
-                "topic": [
-                    "Veterinarian",
-                    "Animal Doctor"
-                ],
-                "entries": [
-                    "Pet Surgery",
-                    "Vaccinations",
-                    "Disease Diagnosis",
-                    "Animal Welfare"
-                ]
-            },
-            {
-                "topic": [
-                    "Builder",
-                    "Construction Worker"
-                ],
-                "entries": [
-                    "Framework Erection",
-                    "Concrete Pouring",
-                    "Roof Installation",
-                    "Safety Compliance"
-                ]
-            },
-            {
-                "topic": [
-                    "Software Developer",
-                    "Programmer"
-                ],
-                "entries": [
-                    "Code Writing",
-                    "System Debugging",
-                    "App Development",
-                    "Software Testing"
-                ]
-            },
-            {
-                "topic": [
-                    "Bartender",
-                    "Mixologist"
-                ],
-                "entries": [
-                    "Cocktail Mixing",
-                    "Customer Service",
-                    "Bar Hygiene",
-                    "Wine Knowledge"
-                ]
-            },
-            {
-                "topic": [
-                    "Librarian",
-                    "Library Science"
-                ],
-                "entries": [
-                    "Cataloging Books",
-                    "Reader Assistance",
-                    "Collection Management",
-                    "Literacy Programs"
-                ]
-            },
-            {
-                "topic": [
-                    "Psychologist",
-                    "Therapist"
-                ],
-                "entries": [
-                    "Patient Counseling",
-                    "Behavioral Assessment",
-                    "Therapeutic Techniques",
-                    "Psychometric Testing"
-                ]
-            },
-            {
-                "topic": [
-                    "Florist",
-                    "Flower Arranger"
-                ],
-                "entries": [
-                    "Bouquet Design",
-                    "Plant Care",
-                    "Floral Arrangements",
-                    "Event Decor"
-                ]
-            },
-            {
-                "topic": [
-                    "Carpenter",
-                    "Joiner"
-                ],
-                "entries": [
-                    "Woodworking",
-                    "Furniture Building",
-                    "Cabinet Installation",
-                    "Bespoke Joinery"
-                ]
-            },
-            {
-                "topic": [
-                    "Taxi Driver",
-                    "Cab Driver"
-                ],
-                "entries": [
-                    "City Navigation",
-                    "Passenger Safety",
-                    "Fare Collection",
-                    "Road Knowledge"
-                ]
-            },
-            {
-                "topic": [
-                    "Lifeguard",
-                    "Beach Rescue"
-                ],
-                "entries": [
-                    "Pool Surveillance",
-                    "Emergency First Aid",
-                    "Water Rescues",
-                    "Safety Protocols"
-                ]
-            },
-            {
-                "topic": [
-                    "Farmer",
-                    "Agronomist"
-                ],
-                "entries": [
-                    "Crop Cultivation",
-                    "Livestock Rearing",
-                    "Soil Fertility",
-                    "Harvest Management"
-                ]
-            },
-            {
-                "topic": [
-                    "Banker",
-                    "Finance Officer"
-                ],
-                "entries": [
-                    "Investment Advice",
-                    "Loan Processing",
-                    "Account Management",
-                    "Risk Assessment"
-                ]
-            },
-            {
-                "topic": [
-                    "Meteorologist",
-                    "Weather Forecaster"
-                ],
-                "entries": [
-                    "Climate Analysis",
-                    "Weather Prediction",
-                    "Storm Tracking",
-                    "Data Collection"
-                ]
-            },
-            {
-                "topic": [
-                    "Dentist",
-                    "Dental Practitioner"
-                ],
-                "entries": [
-                    "Oral Hygiene",
-                    "Prosthodontics",
-                    "Periodontics",
-                    "Dental Surgery"
-                ]
-            },
-            {
-                "topic": [
-                    "Physician",
-                    "Doctor"
-                ],
-                "entries": [
-                    "Medical Examination",
-                    "Diagnosis Development",
-                    "Patient Consultation",
-                    "Treatment Plans"
-                ]
-            },
-            {
-                "topic": [
-                    "Tailor",
-                    "Dressmaker"
-                ],
-                "entries": [
-                    "Garment Construction",
-                    "Pattern Fitting",
-                    "Fabric Selection",
-                    "Costume Design"
-                ]
-            },
-            {
-                "topic": [
-                    "Barista",
-                    "Coffee Specialist"
-                ],
-                "entries": [
-                    "Espresso Making",
-                    "Latte Art",
-                    "Customer Service",
-                    "Caf\u00e9 Maintenance"
-                ]
-            },
-            {
-                "topic": [
-                    "Paramedic",
-                    "EMT"
-                ],
-                "entries": [
-                    "Emergency Response",
-                    "Trauma Care",
-                    "Patient Transport",
-                    "Life-Saving Skills"
+                    "Magnetic Poles",
+                    "Charged Particles",
+                    "Colorful Display",
+                    "Solar Winds"
                 ]
             }
         ]
@@ -4844,24 +3133,12 @@
             },
             {
                 "topic": [
-                    "Coca-Cola",
-                    "Coke"
-                ],
-                "entries": [
-                    "Soft drink",
-                    "Atlanta",
-                    "Red label",
-                    "Soda"
-                ]
-            },
-            {
-                "topic": [
                     "Shakespeare",
                     "William Shakespeare"
                 ],
                 "entries": [
                     "Playwright",
-                    "Stratford-upon-Avon",
+                    "Romeo and Juliet",
                     "Hamlet",
                     "Elizabethan England"
                 ]
@@ -4876,18 +3153,6 @@
                     "India",
                     "Salt March",
                     "Independence"
-                ]
-            },
-            {
-                "topic": [
-                    "Frida Kahlo",
-                    "Kahlo"
-                ],
-                "entries": [
-                    "Self-portraits",
-                    "Mexico",
-                    "Surrealism",
-                    "Pain"
                 ]
             },
             {
@@ -4940,30 +3205,6 @@
             },
             {
                 "topic": [
-                    "Pablo Picasso",
-                    "Picasso"
-                ],
-                "entries": [
-                    "Cubism",
-                    "Blue Period",
-                    "Guernica",
-                    "Spanish"
-                ]
-            },
-            {
-                "topic": [
-                    "Marie Curie",
-                    "Curie"
-                ],
-                "entries": [
-                    "Radioactivity",
-                    "Nobel Laureate",
-                    "Poland",
-                    "Physics"
-                ]
-            },
-            {
-                "topic": [
                     "Lionel Messi",
                     "Messi"
                 ],
@@ -4972,30 +3213,6 @@
                     "Argentina",
                     "Goalscorer",
                     "Ballon d'Or"
-                ]
-            },
-            {
-                "topic": [
-                    "The Louvre",
-                    "Louvre Museum"
-                ],
-                "entries": [
-                    "Paris",
-                    "Art museum",
-                    "Glass pyramid",
-                    "Mona Lisa"
-                ]
-            },
-            {
-                "topic": [
-                    "Amelia Earhart",
-                    "Earhart"
-                ],
-                "entries": [
-                    "Aviatrix",
-                    "Disappearance",
-                    "Transatlantic flight",
-                    "Pioneering"
                 ]
             },
             {
@@ -5025,7 +3242,8 @@
             {
                 "topic": [
                     "The White House",
-                    "Whitehouse"
+                    "Whitehouse",
+                    "White House"
                 ],
                 "entries": [
                     "Oval Office",
@@ -5056,18 +3274,6 @@
                     "Affordable Care Act",
                     "Nobel Peace Prize",
                     "Change"
-                ]
-            },
-            {
-                "topic": [
-                    "Harry Potter",
-                    "Potter"
-                ],
-                "entries": [
-                    "J.K. Rowling",
-                    "Wizard",
-                    "Hogwarts",
-                    "Magic"
                 ]
             },
             {
@@ -5116,30 +3322,6 @@
                     "Dictator",
                     "Assassination",
                     "Gallic War"
-                ]
-            },
-            {
-                "topic": [
-                    "Harper Lee",
-                    "Lee"
-                ],
-                "entries": [
-                    "To Kill a Mockingbird",
-                    "Alabama",
-                    "Pulitzer Prize",
-                    "Reclusive"
-                ]
-            },
-            {
-                "topic": [
-                    "Stephen Hawking",
-                    "Hawking"
-                ],
-                "entries": [
-                    "Black holes",
-                    "Theoretical physicist",
-                    "ALS",
-                    "Cosmology"
                 ]
             },
             {
@@ -5200,18 +3382,6 @@
                     "Chicago Bulls",
                     "Air",
                     "23"
-                ]
-            },
-            {
-                "topic": [
-                    "F. Scott Fitzgerald",
-                    "Fitzgerald"
-                ],
-                "entries": [
-                    "The Great Gatsby",
-                    "Jazz Age",
-                    "American author",
-                    "Roaring Twenties"
                 ]
             },
             {
@@ -5354,19 +3524,6 @@
             },
             {
                 "topic": [
-                    "Great Wall of China",
-                    "Changcheng",
-                    "The Great Wall"
-                ],
-                "entries": [
-                    "Ming Dynasty",
-                    "Brick",
-                    "Northern China",
-                    "Dragon"
-                ]
-            },
-            {
-                "topic": [
                     "Pyramids of Giza",
                     "Giza Pyramids",
                     "Pyramids"
@@ -5376,19 +3533,6 @@
                     "Ancient Tombs",
                     "Pharaohs",
                     "Sphinx"
-                ]
-            },
-            {
-                "topic": [
-                    "Machu Picchu",
-                    "Old Peak",
-                    "Machu"
-                ],
-                "entries": [
-                    "Inca City",
-                    "Andes Mountains",
-                    "Peru",
-                    "Lost City"
                 ]
             },
             {
@@ -5441,19 +3585,6 @@
                     "Brazil",
                     "Corcovado Mountain",
                     "Iconic"
-                ]
-            },
-            {
-                "topic": [
-                    "Grand Canyon",
-                    "Great Canyon",
-                    "The Canyon"
-                ],
-                "entries": [
-                    "Arizona",
-                    "Erosion",
-                    "River Carving",
-                    "Hiking"
                 ]
             },
             {
@@ -5549,19 +3680,6 @@
             },
             {
                 "topic": [
-                    "Acropolis",
-                    "Acropolis of Athens",
-                    "Sacred Rock"
-                ],
-                "entries": [
-                    "Parthenon",
-                    "Greece",
-                    "Ancient Citadel",
-                    "Athens"
-                ]
-            },
-            {
-                "topic": [
                     "Burj Khalifa",
                     "Khalifa Tower",
                     "Burj"
@@ -5575,19 +3693,6 @@
             },
             {
                 "topic": [
-                    "Space Needle",
-                    "Seattle Space Needle",
-                    "Needle"
-                ],
-                "entries": [
-                    "Seattle",
-                    "Observation",
-                    "Futuristic Design",
-                    "Revolving Restaurant"
-                ]
-            },
-            {
-                "topic": [
                     "Vatican City",
                     "Vatican",
                     "Holy See"
@@ -5597,19 +3702,6 @@
                     "Rome",
                     "Catholicism",
                     "Sistine Chapel"
-                ]
-            },
-            {
-                "topic": [
-                    "Berlin Wall",
-                    "Wall of Berlin",
-                    "Die Berliner Mauer"
-                ],
-                "entries": [
-                    "Cold War",
-                    "Germany",
-                    "Division",
-                    "Historical"
                 ]
             },
             {
@@ -5640,58 +3732,6 @@
             },
             {
                 "topic": [
-                    "Mount Fuji",
-                    "Fuji Mountain",
-                    "Fuji-san"
-                ],
-                "entries": [
-                    "Japan",
-                    "Sacred Volcano",
-                    "Cherry Blossom",
-                    "Mountain Climbing"
-                ]
-            },
-            {
-                "topic": [
-                    "Hollywood Sign",
-                    "Hollywood Hills Sign",
-                    "The Sign"
-                ],
-                "entries": [
-                    "Los Angeles",
-                    "Cinema",
-                    "Iconic Letters",
-                    "Mount Lee"
-                ]
-            },
-            {
-                "topic": [
-                    "Forbidden City",
-                    "Palace Museum",
-                    "Imperial Palace"
-                ],
-                "entries": [
-                    "Beijing",
-                    "China",
-                    "Ming Dynasty",
-                    "Ancient"
-                ]
-            },
-            {
-                "topic": [
-                    "Petra",
-                    "Rose City",
-                    "Petra of Jordan"
-                ],
-                "entries": [
-                    "Sandstone Facade",
-                    "Jordan",
-                    "Archaeological",
-                    "Treasury"
-                ]
-            },
-            {
-                "topic": [
                     "The Sagrada Familia",
                     "Sagrada Familia",
                     "Basilica of the Holy Family"
@@ -5718,97 +3758,6 @@
             },
             {
                 "topic": [
-                    "Red Square",
-                    "Krasnaya Ploshchad",
-                    "Main Square"
-                ],
-                "entries": [
-                    "Moscow",
-                    "Kremlin",
-                    "Russia",
-                    "Historical Importance"
-                ]
-            },
-            {
-                "topic": [
-                    "Lascaux Caves",
-                    "Lascaux",
-                    "Prehistoric Caves"
-                ],
-                "entries": [
-                    "Cave Paintings",
-                    "France",
-                    "Prehistoric Art",
-                    "Animals"
-                ]
-            },
-            {
-                "topic": [
-                    "Matterhorn",
-                    "Monte Cervino",
-                    "Cervino"
-                ],
-                "entries": [
-                    "Alps",
-                    "Switzerland",
-                    "Iconic Mountain",
-                    "Climbing"
-                ]
-            },
-            {
-                "topic": [
-                    "Moai Statues",
-                    "Moai",
-                    "Easter Island Heads"
-                ],
-                "entries": [
-                    "Easter Island",
-                    "Rapa Nui",
-                    "Monolithic",
-                    "Stone Figures"
-                ]
-            },
-            {
-                "topic": [
-                    "Wailing Wall",
-                    "Western Wall",
-                    "HaKotel"
-                ],
-                "entries": [
-                    "Jerusalem",
-                    "Judaism",
-                    "Prayer",
-                    "Historic"
-                ]
-            },
-            {
-                "topic": [
-                    "Santorini",
-                    "Thira",
-                    "Santorini Island"
-                ],
-                "entries": [
-                    "Greek Islands",
-                    "White Buildings",
-                    "Volcanic Eruption",
-                    "Tourism"
-                ]
-            },
-            {
-                "topic": [
-                    "Chichen Itza",
-                    "Maya Ruins",
-                    "El Castillo"
-                ],
-                "entries": [
-                    "Mexico",
-                    "Pyramid",
-                    "Mayan Civilization",
-                    "Ancient Cities"
-                ]
-            },
-            {
-                "topic": [
                     "London Eye",
                     "Millennium Wheel",
                     "Observation Wheel"
@@ -5818,110 +3767,6 @@
                     "River Thames",
                     "Panoramic Views",
                     "Tourist Attraction"
-                ]
-            },
-            {
-                "topic": [
-                    "Edinburgh Castle",
-                    "Castle Rock",
-                    "Edinburgh Fortress"
-                ],
-                "entries": [
-                    "Scotland",
-                    "Royal Residence",
-                    "Historic Fortress",
-                    "Tourism"
-                ]
-            },
-            {
-                "topic": [
-                    "Times Square",
-                    "The Crossroads of the World",
-                    "New York City Square"
-                ],
-                "entries": [
-                    "Bright Lights",
-                    "Broadway",
-                    "Entertainment",
-                    "Tourism"
-                ]
-            },
-            {
-                "topic": [
-                    "Angkor Wat",
-                    "Angkor",
-                    "Wat Arun"
-                ],
-                "entries": [
-                    "Cambodia",
-                    "Khmer Empire",
-                    "Temple Complex",
-                    "Religion"
-                ]
-            },
-            {
-                "topic": [
-                    "Uluru",
-                    "Ayers Rock",
-                    "Sacred Rock"
-                ],
-                "entries": [
-                    "Australia",
-                    "Monolith",
-                    "Aboriginal Culture",
-                    "Red Sandstone"
-                ]
-            },
-            {
-                "topic": [
-                    "Brandenburg Gate",
-                    "Brandenburger Tor",
-                    "Berlin Gate"
-                ],
-                "entries": [
-                    "Berlin",
-                    "Neoclassical",
-                    "Quadriga",
-                    "Reunification"
-                ]
-            },
-            {
-                "topic": [
-                    "Blue Mosque",
-                    "Sultan Ahmed Mosque",
-                    "Sultan Ahmed"
-                ],
-                "entries": [
-                    "Istanbul",
-                    "Domes",
-                    "Islamic Architecture",
-                    "Sultan"
-                ]
-            },
-            {
-                "topic": [
-                    "Serengeti",
-                    "Serengeti National Park",
-                    "Endless Plains"
-                ],
-                "entries": [
-                    "Tanzania",
-                    "Wildlife Safari",
-                    "Wildebeest Migration",
-                    "Park"
-                ]
-            },
-            {
-                "topic": [
-                    "Victoria Falls",
-                    "Mosi-oa-Tunya",
-                    "The Smoke That Thunders"
-                ],
-                "entries": [
-                    "Zimbabwe",
-                    "Waterfall",
-                    "Africa",
-                    "Tourism"
                 ]
             }
         ]
@@ -5957,56 +3802,6 @@
             },
             {
                 "topic": [
-                    "Mars",
-                    "Red Planet"
-                ],
-                "entries": [
-                    "Olympus Mons",
-                    "Iron Oxide",
-                    "Curiosity Rover",
-                    "Polar Ice Caps"
-                ]
-            },
-            {
-                "topic": [
-                    "Black Hole",
-                    "A Black Hole",
-                    "Singularity"
-                ],
-                "entries": [
-                    "Event Horizon",
-                    "Gravitational Pull",
-                    "Hawking Radiation",
-                    "Inescapable"
-                ]
-            },
-            {
-                "topic": [
-                    "Saturn",
-                    "Ringed Planet"
-                ],
-                "entries": [
-                    "Gas Giant",
-                    "Hexagon Storm",
-                    "Cassini Division",
-                    "Titan Moon"
-                ]
-            },
-            {
-                "topic": [
-                    "Comet",
-                    "A Comet",
-                    "Icy Tail"
-                ],
-                "entries": [
-                    "Elliptical Orbit",
-                    "Halo",
-                    "Coma",
-                    "Dust Trail"
-                ]
-            },
-            {
-                "topic": [
                     "Sun",
                     "The Sun",
                     "Solar Star"
@@ -6016,55 +3811,6 @@
                     "Heliosphere",
                     "Solar Flares",
                     "Sunspots"
-                ]
-            },
-            {
-                "topic": [
-                    "Andromeda Galaxy",
-                    "Andromeda",
-                    "M31"
-                ],
-                "entries": [
-                    "Nearest Galaxy",
-                    "Spiral",
-                    "Blue Shift",
-                    "Collision Course"
-                ]
-            },
-            {
-                "topic": [
-                    "Jupiter",
-                    "Gas Giant"
-                ],
-                "entries": [
-                    "Great Red Spot",
-                    "Galilean Moons",
-                    "Cyclonic Storms",
-                    "Largest Volume"
-                ]
-            },
-            {
-                "topic": [
-                    "Neptune",
-                    "Blue Planet"
-                ],
-                "entries": [
-                    "Triton",
-                    "Methane Atmosphere",
-                    "Great Dark Spot",
-                    "Strongest Winds"
-                ]
-            },
-            {
-                "topic": [
-                    "Venus",
-                    "Morning Star"
-                ],
-                "entries": [
-                    "Acidic Clouds",
-                    "Retrograde Rotation",
-                    "Hottest Planet",
-                    "Volcanic Plains"
                 ]
             },
             {
@@ -6092,29 +3838,6 @@
             },
             {
                 "topic": [
-                    "Mercury",
-                    "Swift Planet"
-                ],
-                "entries": [
-                    "Closest to Sun",
-                    "Cratered Surface",
-                    "No Atmosphere",
-                    "Extreme Temperatures"
-                ]
-            },
-            {
-                "topic": [
-                    "Pluto"
-                ],
-                "entries": [
-                    "Kuiper Belt",
-                    "New Horizons",
-                    "Ice-Covered",
-                    "Dwarf Planet"
-                ]
-            },
-            {
-                "topic": [
                     "International Space Station",
                     "ISS",
                     "Space Station",
@@ -6137,89 +3860,6 @@
                     "Totality",
                     "Diamond Ring Effect",
                     "Sun Obscured"
-                ]
-            },
-            {
-                "topic": [
-                    "Gravity",
-                    "Gravitational Force"
-                ],
-                "entries": [
-                    "Isaac Newton",
-                    "Tidal Forces",
-                    "Mass Attraction",
-                    "Weight"
-                ]
-            },
-            {
-                "topic": [
-                    "Uranus"
-                ],
-                "entries": [
-                    "Ice Giant",
-                    "Frozen Clouds",
-                    "Methane Blue",
-                    "Rings"
-                ]
-            },
-            {
-                "topic": [
-                    "Constellation",
-                    "Star Pattern"
-                ],
-                "entries": [
-                    "Celestial Figures",
-                    "Orion",
-                    "Zodiac Signs",
-                    "Astronomical Charts"
-                ]
-            },
-            {
-                "topic": [
-                    "Telescope",
-                    "Observatory Device"
-                ],
-                "entries": [
-                    "Galileo",
-                    "Optical Lens",
-                    "Star Gazing",
-                    "Magnification"
-                ]
-            },
-            {
-                "topic": [
-                    "Rover",
-                    "Mars Buggy"
-                ],
-                "entries": [
-                    "Remote Control",
-                    "Laboratory Tools",
-                    "Martian Terrain",
-                    "Solar Panels"
-                ]
-            },
-            {
-                "topic": [
-                    "Big Bang",
-                    "Cosmic Expansion"
-                ],
-                "entries": [
-                    "Origin of Universe",
-                    "Space-Time",
-                    "Cosmic Microwave Background",
-                    "Singular Event"
-                ]
-            },
-            {
-                "topic": [
-                    "Apollo Program",
-                    "Lunar Mission"
-                ],
-                "entries": [
-                    "Moon Landing",
-                    "Neil Armstrong",
-                    "Saturn V",
-                    "Eagle Has Landed"
                 ]
             }
         ]
@@ -6383,45 +4023,6 @@
             },
             {
                 "topic": [
-                    "Fencing",
-                    "Sword Fighting",
-                    "Foil Sport"
-                ],
-                "entries": [
-                    "Epee",
-                    "Parry",
-                    "Riposte",
-                    "Lunge"
-                ]
-            },
-            {
-                "topic": [
-                    "Table Tennis",
-                    "Ping Pong",
-                    "Whiff Waff"
-                ],
-                "entries": [
-                    "Paddle",
-                    "Serve",
-                    "Rally",
-                    "Net"
-                ]
-            },
-            {
-                "topic": [
-                    "Badminton",
-                    "Shuttlecock",
-                    "Racket Sport"
-                ],
-                "entries": [
-                    "Smash",
-                    "Net Drop",
-                    "Clear",
-                    "Serve"
-                ]
-            },
-            {
-                "topic": [
                     "Bowling",
                     "Tenpin Bowling",
                     "Bowling Alley"
@@ -6431,136 +4032,6 @@
                     "Gutter Ball",
                     "Pins",
                     "Lane"
-                ]
-            },
-            {
-                "topic": [
-                    "Archery",
-                    "Bow Shooting",
-                    "Target Archery"
-                ],
-                "entries": [
-                    "Bowstring",
-                    "Bullseye",
-                    "Quiver",
-                    "Target"
-                ]
-            },
-            {
-                "topic": [
-                    "Karate",
-                    "Martial Arts",
-                    "Karate-Do"
-                ],
-                "entries": [
-                    "Dojo",
-                    "Kumite",
-                    "Kata",
-                    "Black Belt"
-                ]
-            },
-            {
-                "topic": [
-                    "Gymnastics",
-                    "Artistic Gymnastics",
-                    "Floor Exercise"
-                ],
-                "entries": [
-                    "Balance Beam",
-                    "Vault",
-                    "Pommel Horse",
-                    "Rings"
-                ]
-            },
-            {
-                "topic": [
-                    "Snooker",
-                    "Cue Sports",
-                    "Billiards"
-                ],
-                "entries": [
-                    "Cue Stick",
-                    "Break Shot",
-                    "Pockets",
-                    "Baize"
-                ]
-            },
-            {
-                "topic": [
-                    "Auto Racing",
-                    "Motor Racing",
-                    "Car Racing"
-                ],
-                "entries": [
-                    "Pit Stop",
-                    "Grand Prix",
-                    "Lap Time",
-                    "Podium"
-                ]
-            },
-            {
-                "topic": [
-                    "Weightlifting",
-                    "Powerlifting",
-                    "Strength Sports"
-                ],
-                "entries": [
-                    "Snatch",
-                    "Clean and Jerk",
-                    "Platform",
-                    "Barbell"
-                ]
-            },
-            {
-                "topic": [
-                    "Rowing",
-                    "Crew",
-                    "Oar Racing"
-                ],
-                "entries": [
-                    "Regatta",
-                    "Coxswain",
-                    "Sculls",
-                    "Stroke Rate"
-                ]
-            },
-            {
-                "topic": [
-                    "Wrestling",
-                    "Greco-Roman Wrestling",
-                    "WWE"
-                ],
-                "entries": [
-                    "Pinfall",
-                    "Grapple",
-                    "Mat",
-                    "Referee"
-                ]
-            },
-            {
-                "topic": [
-                    "Surfing",
-                    "Wave Riding",
-                    "Surf Sport"
-                ],
-                "entries": [
-                    "Surfboard",
-                    "Tube Ride",
-                    "Swell",
-                    "Wax"
-                ]
-            },
-            {
-                "topic": [
-                    "Skateboarding",
-                    "Deck Sports",
-                    "Skate"
-                ],
-                "entries": [
-                    "Kickflip",
-                    "Half Pipe",
-                    "Trucks",
-                    "Grip Tape"
                 ]
             },
             {
@@ -6578,188 +4049,6 @@
             },
             {
                 "topic": [
-                    "Snowboarding",
-                    "Boarding",
-                    "Snow Surfing"
-                ],
-                "entries": [
-                    "Halfpipe",
-                    "Snow Park",
-                    "Bindings",
-                    "Carving"
-                ]
-            },
-            {
-                "topic": [
-                    "Parkour",
-                    "Freerunning",
-                    "L'art du D\u00e9placement"
-                ],
-                "entries": [
-                    "Vault",
-                    "Precision Jump",
-                    "Flow",
-                    "Obstacle Course"
-                ]
-            },
-            {
-                "topic": [
-                    "Lacrosse",
-                    "Lax",
-                    "Stickball"
-                ],
-                "entries": [
-                    "Crease",
-                    "Face-off",
-                    "Crosse",
-                    "Goal"
-                ]
-            },
-            {
-                "topic": [
-                    "Diving",
-                    "Springboard",
-                    "Platform Diving"
-                ],
-                "entries": [
-                    "Pike Position",
-                    "Splash",
-                    "Twist Dive",
-                    "Reverse Dive"
-                ]
-            },
-            {
-                "topic": [
-                    "Sailing",
-                    "Yachting",
-                    "Boating"
-                ],
-                "entries": [
-                    "Mast",
-                    "Tiller",
-                    "Regatta",
-                    "Spinnaker"
-                ]
-            },
-            {
-                "topic": [
-                    "Field Hockey",
-                    "Ice Hockey",
-                    "Hockey"
-                ],
-                "entries": [
-                    "Astro Turf",
-                    "Stick",
-                    "Penalty Corner",
-                    "Dribble"
-                ]
-            },
-            {
-                "topic": [
-                    "Table Football",
-                    "Foosball",
-                    "Mini Soccer"
-                ],
-                "entries": [
-                    "Handles",
-                    "Scoreboard",
-                    "Crossbars",
-                    "Offense"
-                ]
-            },
-            {
-                "topic": [
-                    "Fishing",
-                    "Angling",
-                    "Fly Fishing"
-                ],
-                "entries": [
-                    "Reel",
-                    "Bait",
-                    "Catch",
-                    "Tackle Box"
-                ]
-            },
-            {
-                "topic": [
-                    "Paintball",
-                    "Paintgun",
-                    "Capture the Flag"
-                ],
-                "entries": [
-                    "Marker",
-                    "Mask",
-                    "Hopper",
-                    "Arena"
-                ]
-            },
-            {
-                "topic": [
-                    "Equestrian",
-                    "Horseback Riding",
-                    "Show Jumping"
-                ],
-                "entries": [
-                    "Stirrups",
-                    "Jodhpurs",
-                    "Bridle",
-                    "Arena"
-                ]
-            },
-            {
-                "topic": [
-                    "Skydiving",
-                    "Parachuting",
-                    "Air Jumping"
-                ],
-                "entries": [
-                    "Freefall",
-                    "Canopy",
-                    "Tandem",
-                    "Landing Zone"
-                ]
-            },
-            {
-                "topic": [
-                    "Bullfighting",
-                    "Tauromachia",
-                    "Corrida"
-                ],
-                "entries": [
-                    "Matador",
-                    "Arena",
-                    "Cape",
-                    "Picador"
-                ]
-            },
-            {
-                "topic": [
-                    "Curling",
-                    "Ice Curling",
-                    "Broomstones"
-                ],
-                "entries": [
-                    "Stone",
-                    "Sheet",
-                    "House",
-                    "Skip"
-                ]
-            },
-            {
-                "topic": [
-                    "Rollerblading",
-                    "Inline Skating",
-                    "Roller Skating"
-                ],
-                "entries": [
-                    "Wheels",
-                    "Brake",
-                    "Skate Park",
-                    "Grind"
-                ]
-            },
-            {
-                "topic": [
                     "Ballet",
                     "Dance",
                     "Classical Dance"
@@ -6770,102 +4059,11 @@
                     "Barre",
                     "Pas de Deux"
                 ]
-            },
-            {
-                "topic": [
-                    "Frisbee",
-                    "Disc Golf",
-                    "Flying Disc"
-                ],
-                "entries": [
-                    "Ultimate",
-                    "Catch",
-                    "Wind",
-                    "Throw"
-                ]
-            },
-            {
-                "topic": [
-                    "Polo",
-                    "Equestrian Polo",
-                    "Sport of Kings"
-                ],
-                "entries": [
-                    "Mallet",
-                    "Chukker",
-                    "Grass Field",
-                    "Pony"
-                ]
-            },
-            {
-                "topic": [
-                    "Sumo Wrestling",
-                    "Rikishi",
-                    "Sumo"
-                ],
-                "entries": [
-                    "Dohy\u014d",
-                    "Mawashi",
-                    "Push Out",
-                    "Tachi-ai"
-                ]
-            },
-            {
-                "topic": [
-                    "Motocross",
-                    "MX",
-                    "Dirt Biking"
-                ],
-                "entries": [
-                    "Track",
-                    "Jump",
-                    "Lap Counter",
-                    "Helmet"
-                ]
-            },
-            {
-                "topic": [
-                    "Synchronized Swimming",
-                    "Artistic Swimming",
-                    "Water Ballet"
-                ],
-                "entries": [
-                    "Routine",
-                    "Music",
-                    "Nose Clip",
-                    "Team Event"
-                ]
-            },
-            {
-                "topic": [
-                    "Rodeo",
-                    "Bronco Riding",
-                    "Bull Riding"
-                ],
-                "entries": [
-                    "Roping",
-                    "Barrel Racing",
-                    "Chute",
-                    "Arena"
-                ]
             }
         ]
     },
     "things": {
         "topics": [
-            {
-                "topic": [
-                    "Book",
-                    "Novel",
-                    "Printed Volume"
-                ],
-                "entries": [
-                    "Pages",
-                    "Hardcover",
-                    "Fiction",
-                    "Library"
-                ]
-            },
             {
                 "topic": [
                     "Shoe",
@@ -6877,19 +4075,6 @@
                     "Sole",
                     "Leather",
                     "Running"
-                ]
-            },
-            {
-                "topic": [
-                    "Computer",
-                    "Personal Computer",
-                    "PC"
-                ],
-                "entries": [
-                    "Processor",
-                    "Monitor",
-                    "Keyboard",
-                    "Memory"
                 ]
             },
             {
@@ -6920,45 +4105,6 @@
             },
             {
                 "topic": [
-                    "Bicycle",
-                    "Bike",
-                    "Cycle"
-                ],
-                "entries": [
-                    "Pedals",
-                    "Handlebars",
-                    "Wheels",
-                    "Gears"
-                ]
-            },
-            {
-                "topic": [
-                    "Coffee",
-                    "Beverage",
-                    "Espresso"
-                ],
-                "entries": [
-                    "Caffeine",
-                    "Beans",
-                    "Mug",
-                    "Brew"
-                ]
-            },
-            {
-                "topic": [
-                    "Telephone",
-                    "Landline",
-                    "Receiver"
-                ],
-                "entries": [
-                    "Dial Tone",
-                    "Ringing",
-                    "Handset",
-                    "Cord"
-                ]
-            },
-            {
-                "topic": [
                     "Lamp",
                     "Light Fixture",
                     "Desk Lamp"
@@ -6968,71 +4114,6 @@
                     "Bulb",
                     "Switch",
                     "Base"
-                ]
-            },
-            {
-                "topic": [
-                    "Table",
-                    "Desk",
-                    "Dining Table"
-                ],
-                "entries": [
-                    "Legs",
-                    "Surface",
-                    "Wood",
-                    "Meeting"
-                ]
-            },
-            {
-                "topic": [
-                    "Clock",
-                    "Timepiece",
-                    "Wall Clock"
-                ],
-                "entries": [
-                    "Hands",
-                    "Numbers",
-                    "Pendulum",
-                    "Ticking"
-                ]
-            },
-            {
-                "topic": [
-                    "Cookbook",
-                    "Recipe Book",
-                    "Culinary Book"
-                ],
-                "entries": [
-                    "Instructions",
-                    "Ingredients",
-                    "Cuisine",
-                    "Chef"
-                ]
-            },
-            {
-                "topic": [
-                    "Television",
-                    "TV",
-                    "Flat Screen"
-                ],
-                "entries": [
-                    "Remote",
-                    "Channels",
-                    "Cable",
-                    "Streaming"
-                ]
-            },
-            {
-                "topic": [
-                    "Refrigerator",
-                    "Fridge",
-                    "Icebox"
-                ],
-                "entries": [
-                    "Cooling",
-                    "Shelves",
-                    "Compressor",
-                    "Freezer"
                 ]
             },
             {
@@ -7063,19 +4144,6 @@
             },
             {
                 "topic": [
-                    "Car",
-                    "Automobile",
-                    "Vehicle"
-                ],
-                "entries": [
-                    "Engine",
-                    "Tires",
-                    "Windshield",
-                    "Steering"
-                ]
-            },
-            {
-                "topic": [
                     "Towel",
                     "Bath Towel",
                     "Washcloth"
@@ -7098,32 +4166,6 @@
                     "Handle",
                     "Stainless",
                     "Chopping"
-                ]
-            },
-            {
-                "topic": [
-                    "Pen",
-                    "Writing Instrument",
-                    "Ballpoint"
-                ],
-                "entries": [
-                    "Ink",
-                    "Cap",
-                    "Nib",
-                    "Clip"
-                ]
-            },
-            {
-                "topic": [
-                    "Bread",
-                    "Loaf",
-                    "Baguette"
-                ],
-                "entries": [
-                    "Wheat",
-                    "Yeast",
-                    "Crust",
-                    "Baker"
                 ]
             },
             {
@@ -7206,58 +4248,6 @@
             },
             {
                 "topic": [
-                    "Pencil",
-                    "Graphite Stick",
-                    "Writing Tool"
-                ],
-                "entries": [
-                    "Eraser",
-                    "Sharpened",
-                    "HB",
-                    "Wooden"
-                ]
-            },
-            {
-                "topic": [
-                    "Magazine",
-                    "Periodical",
-                    "Glossy Pages"
-                ],
-                "entries": [
-                    "Articles",
-                    "Cover",
-                    "Monthly",
-                    "Editor"
-                ]
-            },
-            {
-                "topic": [
-                    "Envelope",
-                    "Mailer",
-                    "Parcel Post"
-                ],
-                "entries": [
-                    "Address",
-                    "Stamp",
-                    "Seal",
-                    "Paper"
-                ]
-            },
-            {
-                "topic": [
-                    "Pizza",
-                    "Pie",
-                    "Flatbread"
-                ],
-                "entries": [
-                    "Cheese",
-                    "Crust",
-                    "Slice",
-                    "Pepperoni"
-                ]
-            },
-            {
-                "topic": [
                     "Candle",
                     "Wax Light",
                     "Taper"
@@ -7280,19 +4270,6 @@
                     "Fizzy",
                     "Can",
                     "Sugar"
-                ]
-            },
-            {
-                "topic": [
-                    "Suit",
-                    "Business Attire",
-                    "Formal Wear"
-                ],
-                "entries": [
-                    "Tie",
-                    "Tailored",
-                    "Lapels",
-                    "Buttoned"
                 ]
             },
             {
@@ -7336,32 +4313,6 @@
             },
             {
                 "topic": [
-                    "Camera",
-                    "Photographic Device",
-                    "Digital Recorder"
-                ],
-                "entries": [
-                    "Lens",
-                    "Shutter",
-                    "Flash",
-                    "Tripod"
-                ]
-            },
-            {
-                "topic": [
-                    "Blanket",
-                    "Quilt",
-                    "Throw"
-                ],
-                "entries": [
-                    "Warmth",
-                    "Flannel",
-                    "Bed",
-                    "Snuggling"
-                ]
-            },
-            {
-                "topic": [
                     "Ring",
                     "Band",
                     "Wedding Ring"
@@ -7375,19 +4326,6 @@
             },
             {
                 "topic": [
-                    "Plate",
-                    "Dish",
-                    "Dining Ware"
-                ],
-                "entries": [
-                    "Ceramic",
-                    "Round",
-                    "Dinner",
-                    "Serving"
-                ]
-            },
-            {
-                "topic": [
                     "Scissors",
                     "Cutting Tool",
                     "Shears"
@@ -7397,19 +4335,6 @@
                     "Handles",
                     "Sharp",
                     "Crafting"
-                ]
-            },
-            {
-                "topic": [
-                    "Guitar",
-                    "String Instrument",
-                    "Electric Guitar"
-                ],
-                "entries": [
-                    "Frets",
-                    "Strings",
-                    "Pick",
-                    "Amp"
                 ]
             },
             {
@@ -7449,19 +4374,6 @@
                     "Straps",
                     "Compartments",
                     "Hiking"
-                ]
-            },
-            {
-                "topic": [
-                    "Cake",
-                    "Pastry",
-                    "Baked Dessert"
-                ],
-                "entries": [
-                    "Layers",
-                    "Icing",
-                    "Sweet",
-                    "Celebration"
                 ]
             },
             {

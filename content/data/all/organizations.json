@@ -14,6 +14,35 @@
         },
         {
             "topic": [
+                "The European Union",
+                "European Union",
+                "EU",
+                "The EU",
+                "European Economic Community"
+            ],
+            "entries": [
+                "Maastricht Treaty",
+                "Brussels",
+                "Euro Currency",
+                "Schengen Area"
+            ]
+        },
+        {
+            "topic": [
+                "World Health Organization",
+                "WHO",
+                "the WHO",
+                "the World Health Organization"
+            ],
+            "entries": [
+                "Pandemic Response",
+                "Vaccination Campaigns",
+                "Health Regulations",
+                "Global Health Body"
+            ]
+        },
+        {
+            "topic": [
                 "NASA",
                 "National Aeronautics and Space Administration"
             ],
@@ -22,30 +51,6 @@
                 "Apollo Missions",
                 "Mars Rovers",
                 "Astronauts"
-            ]
-        },
-        {
-            "topic": [
-                "World Health Organization",
-                "WHO"
-            ],
-            "entries": [
-                "Global Health",
-                "Pandemic Response",
-                "Vaccination Programs",
-                "Epidemiology"
-            ]
-        },
-        {
-            "topic": [
-                "European Union",
-                "EU"
-            ],
-            "entries": [
-                "Eurozone",
-                "Schengen Area",
-                "Brussels Headquarters",
-                "Member States"
             ]
         },
         {

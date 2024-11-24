@@ -1,0 +1,252 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Pizza",
+                "Pizzerias",
+                "Italian Pie",
+                "Cheese Slice"
+            ],
+            "entries": [
+                "Tomato Sauce",
+                "Mozzarella",
+                "Pepperoni",
+                "Oven-baked"
+            ]
+        },
+        {
+            "topic": [
+                "Tacos",
+                "Taco",
+                "Mexican Handheld",
+                "Tortilla Wrap"
+            ],
+            "entries": [
+                "Corn Tortilla",
+                "Salsa",
+                "Ground Beef",
+                "Lettuce"
+            ]
+        },
+        {
+            "topic": [
+                "Dim Sum",
+                "Dimsum",
+                "Cantonese Bites",
+                "Dragon Buns"
+            ],
+            "entries": [
+                "Steamed Buns",
+                "Teahouse",
+                "Dumplings",
+                "Chicken Feet"
+            ]
+        },
+        {
+            "topic": [
+                "Hamburger",
+                "Burger",
+                "Beef Patty",
+                "Burgers"
+            ],
+            "entries": [
+                "Ground Beef",
+                "Sesame Bun",
+                "Pickles",
+                "Grilled"
+            ]
+        },
+        {
+            "topic": [
+                "Coffee",
+                "Coffees",
+                "Java",
+                "Brewed Beans"
+            ],
+            "entries": [
+                "Espresso Shot",
+                "Arabica",
+                "Roasted Beans",
+                "Barista"
+            ]
+        },
+        {
+            "topic": [
+                "Sushi",
+                "Sashimi",
+                "Rolls",
+                "Nigiri"
+            ],
+            "entries": [
+                "Raw Fish",
+                "Soy Sauce",
+                "Seaweed Wrap",
+                "Wasabi"
+            ]
+        },
+        {
+            "topic": [
+                "Curry",
+                "Curries",
+                "Spiced Stew",
+                "Indian Curry"
+            ],
+            "entries": [
+                "Coconut Milk",
+                "Turmeric",
+                "Chickpeas",
+                "Indian Dish"
+            ]
+        },
+        {
+            "topic": [
+                "Paella",
+                "Valencian Paella",
+                "Seafood Paella"
+            ],
+            "entries": [
+                "Saffron",
+                "Spanish",
+                "Seafood",
+                "Rice Dish"
+            ]
+        },
+        {
+            "topic": [
+                "Pad Thai",
+                "Thai Noodles",
+                "Street Pad Thai",
+                "Thai Stir-Fry"
+            ],
+            "entries": [
+                "Rice Noodles",
+                "Tamarind Paste",
+                "Peanuts",
+                "Thailand"
+            ]
+        },
+        {
+            "topic": [
+                "Croissant",
+                "Butter Croissant",
+                "Croissants"
+            ],
+            "entries": [
+                "French",
+                "Flaky Layers",
+                "Breakfast",
+                "Pastry"
+            ]
+        },
+        {
+            "topic": [
+                "Lasagna",
+                "Lasagne",
+                "Layered Pasta",
+                "Italian Casserole"
+            ],
+            "entries": [
+                "Oven-baked",
+                "Ground Meat",
+                "Tomato Sauce",
+                "Layers"
+            ]
+        },
+        {
+            "topic": [
+                "Ramen",
+                "Ramen Noodles",
+                "Japanese Soup",
+                "Broth Noodles"
+            ],
+            "entries": [
+                "Soy Sauce",
+                "Pork Broth",
+                "Miso",
+                "Egg"
+            ]
+        },
+        {
+            "topic": [
+                "Nachos",
+                "Nacho Platter",
+                "Corn Tortilla Chips",
+                "Cheesy Nachos"
+            ],
+            "entries": [
+                "Cheese",
+                "Corn Chips",
+                "Sour Cream",
+                "Guacamole"
+            ]
+        },
+        {
+            "topic": [
+                "Tapas",
+                "Spanish Tapas",
+                "Small Plates",
+                "Tapas Bar"
+            ],
+            "entries": [
+                "Spanish",
+                "Manchego Cheese",
+                "Chorizo",
+                "Shared"
+            ]
+        },
+        {
+            "topic": [
+                "Kimchi",
+                "Kimchee"
+            ],
+            "entries": [
+                "Napa Cabbage",
+                "Chili Pepper",
+                "Korean Side Dish",
+                "Fermentation"
+            ]
+        },
+        {
+            "topic": [
+                "Quiche",
+                "French Tart",
+                "Quiches"
+            ],
+            "entries": [
+                "Egg Custard",
+                "Pastry Shell",
+                "French Savory Pie",
+                "Cheese Filling"
+            ]
+        },
+        {
+            "topic": [
+                "Schnitzel",
+                "Breaded Cutlet",
+                "Austrian Schnitzel",
+                "Fried Schnitzel"
+            ],
+            "entries": [
+                "Breaded and Fried",
+                "Austrian",
+                "Lemon Wedge",
+                "Flat"
+            ]
+        },
+        {
+            "topic": [
+                "Bread",
+                "Bread Making",
+                "Bread Baking",
+                "Bakery",
+                "Baker"
+            ],
+            "entries": [
+                "Yeast",
+                "Dough",
+                "Baking",
+                "Crust"
+            ]
+        }
+    ]
+}

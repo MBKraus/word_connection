@@ -1,0 +1,198 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Soccer",
+                "Football",
+                "Association Football"
+            ],
+            "entries": [
+                "Goalkeeper",
+                "Penalty Kick",
+                "Offside Rule",
+                "World Cup"
+            ]
+        },
+        {
+            "topic": [
+                "Chess",
+                "Chess Game"
+            ],
+            "entries": [
+                "Board Game",
+                "Knights",
+                "Bishops",
+                "Checkmate"
+            ]
+        },
+        {
+            "topic": [
+                "Ice Hockey",
+                "Hockey",
+                "Puck Hockey"
+            ],
+            "entries": [
+                "Puck",
+                "Penalty Box",
+                "Faceoff",
+                "Stick Handling"
+            ]
+        },
+        {
+            "topic": [
+                "Tennis",
+                "Lawn Tennis",
+                "Court Tennis"
+            ],
+            "entries": [
+                "Grand Slam",
+                "Racket",
+                "Deuce",
+                "Baseline"
+            ]
+        },
+        {
+            "topic": [
+                "Cricket",
+                "Cricket Match",
+                "Pitch Cricket"
+            ],
+            "entries": [
+                "Wickets",
+                "Batsman",
+                "Innings",
+                "Bowler"
+            ]
+        },
+        {
+            "topic": [
+                "Basketball",
+                "Hoops",
+                "Basketball Game"
+            ],
+            "entries": [
+                "Dribbling",
+                "Dunk",
+                "Three-pointer",
+                "Shot Clock"
+            ]
+        },
+        {
+            "topic": [
+                "Baseball",
+                "Ballgame",
+                "Hardball"
+            ],
+            "entries": [
+                "Bat",
+                "Curveball",
+                "Dugout",
+                "Umpire"
+            ]
+        },
+        {
+            "topic": [
+                "American Football",
+                "Gridiron",
+                "NFL Football"
+            ],
+            "entries": [
+                "Touchdown",
+                "Quarterback",
+                "End Zone",
+                "Linebacker"
+            ]
+        },
+        {
+            "topic": [
+                "Golf",
+                "Links",
+                "Golfing"
+            ],
+            "entries": [
+                "Tee",
+                "Birdie",
+                "Caddie",
+                "Fairway"
+            ]
+        },
+        {
+            "topic": [
+                "Swimming",
+                "Aquatic Sport",
+                "Swim Racing"
+            ],
+            "entries": [
+                "Freestyle",
+                "Backstroke",
+                "Lanes",
+                "Flip Turn"
+            ]
+        },
+        {
+            "topic": [
+                "Rugby",
+                "Rugger",
+                "Rugby Union"
+            ],
+            "entries": [
+                "Scrum",
+                "Conversion",
+                "Try",
+                "Tackle"
+            ]
+        },
+        {
+            "topic": [
+                "Boxing",
+                "Prizefighting",
+                "Ring Sport"
+            ],
+            "entries": [
+                "Heavyweight",
+                "Uppercut",
+                "Knockout",
+                "Ring"
+            ]
+        },
+        {
+            "topic": [
+                "Bowling",
+                "Tenpin Bowling",
+                "Bowling Alley"
+            ],
+            "entries": [
+                "Strike",
+                "Gutter Ball",
+                "Pins",
+                "Lane"
+            ]
+        },
+        {
+            "topic": [
+                "Skiing",
+                "Snow Skiing",
+                "Alpine Skiing"
+            ],
+            "entries": [
+                "Slalom",
+                "Snow Groomer",
+                "Chalet",
+                "Bindings"
+            ]
+        },
+        {
+            "topic": [
+                "Ballet",
+                "Dance",
+                "Classical Dance"
+            ],
+            "entries": [
+                "Pirouette",
+                "Tutu",
+                "Barre",
+                "Pas de Deux"
+            ]
+        }
+    ]
+}
