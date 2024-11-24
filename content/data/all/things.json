@@ -1,0 +1,446 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Book",
+                "Novel",
+                "Printed Volume"
+            ],
+            "entries": [
+                "Pages",
+                "Hardcover",
+                "Fiction",
+                "Library"
+            ]
+        },
+        {
+            "topic": [
+                "Shoe",
+                "Footwear",
+                "Sneaker"
+            ],
+            "entries": [
+                "Laces",
+                "Sole",
+                "Leather",
+                "Running"
+            ]
+        },
+        {
+            "topic": [
+                "Tree",
+                "Oak",
+                "Plant"
+            ],
+            "entries": [
+                "Leaves",
+                "Trunk",
+                "Branches",
+                "Forest"
+            ]
+        },
+        {
+            "topic": [
+                "Chair",
+                "Seat",
+                "Stool"
+            ],
+            "entries": [
+                "Legs",
+                "Backrest",
+                "Cushion",
+                "Dining"
+            ]
+        },
+        {
+            "topic": [
+                "Lamp",
+                "Light Fixture",
+                "Desk Lamp"
+            ],
+            "entries": [
+                "Shade",
+                "Bulb",
+                "Switch",
+                "Base"
+            ]
+        },
+        {
+            "topic": [
+                "Table",
+                "Desk",
+                "Dining Table"
+            ],
+            "entries": [
+                "Legs",
+                "Surface",
+                "Wood",
+                "Meeting"
+            ]
+        },
+        {
+            "topic": [
+                "Cookbook",
+                "Recipe Book",
+                "Culinary Book"
+            ],
+            "entries": [
+                "Instructions",
+                "Ingredients",
+                "Cuisine",
+                "Chef"
+            ]
+        },
+        {
+            "topic": [
+                "Glasses",
+                "Eyeglasses",
+                "Spectacles"
+            ],
+            "entries": [
+                "Lenses",
+                "Frames",
+                "Vision",
+                "Corrective"
+            ]
+        },
+        {
+            "topic": [
+                "Watch",
+                "Wristwatch",
+                "Timepiece"
+            ],
+            "entries": [
+                "Strap",
+                "Dial",
+                "Quartz",
+                "Analog"
+            ]
+        },
+        {
+            "topic": [
+                "Towel",
+                "Bath Towel",
+                "Washcloth"
+            ],
+            "entries": [
+                "Cotton",
+                "Absorbent",
+                "Bathroom",
+                "Soft"
+            ]
+        },
+        {
+            "topic": [
+                "Knife",
+                "Blade",
+                "Cutlery"
+            ],
+            "entries": [
+                "Sharp",
+                "Handle",
+                "Stainless",
+                "Chopping"
+            ]
+        },
+        {
+            "topic": [
+                "Pen",
+                "Writing Instrument",
+                "Ballpoint"
+            ],
+            "entries": [
+                "Ink",
+                "Cap",
+                "Nib",
+                "Clip"
+            ]
+        },
+        {
+            "topic": [
+                "Pillow",
+                "Cushion",
+                "Headrest"
+            ],
+            "entries": [
+                "Cotton",
+                "Fluff",
+                "Sleeping",
+                "Comfort"
+            ]
+        },
+        {
+            "topic": [
+                "Jacket",
+                "Coat",
+                "Outerwear"
+            ],
+            "entries": [
+                "Zipper",
+                "Pocket",
+                "Warm",
+                "Winter"
+            ]
+        },
+        {
+            "topic": [
+                "Spoon",
+                "Utensil",
+                "Teaspoon"
+            ],
+            "entries": [
+                "Stainless",
+                "Dishwasher",
+                "Soup",
+                "Serving"
+            ]
+        },
+        {
+            "topic": [
+                "Pants",
+                "Trousers",
+                "Slacks"
+            ],
+            "entries": [
+                "Belt",
+                "Pockets",
+                "Fabric",
+                "Fit"
+            ]
+        },
+        {
+            "topic": [
+                "Mirror",
+                "Looking Glass",
+                "Reflector"
+            ],
+            "entries": [
+                "Glass",
+                "Frame",
+                "Reflection",
+                "Bathroom"
+            ]
+        },
+        {
+            "topic": [
+                "Carpet",
+                "Rug",
+                "Mat"
+            ],
+            "entries": [
+                "Plush",
+                "Wool",
+                "Patterned",
+                "Floor"
+            ]
+        },
+        {
+            "topic": [
+                "Magazine",
+                "Periodical",
+                "Glossy Pages"
+            ],
+            "entries": [
+                "Articles",
+                "Cover",
+                "Monthly",
+                "Editor"
+            ]
+        },
+        {
+            "topic": [
+                "Envelope",
+                "Mailer",
+                "Parcel Post"
+            ],
+            "entries": [
+                "Address",
+                "Stamp",
+                "Seal",
+                "Paper"
+            ]
+        },
+        {
+            "topic": [
+                "Candle",
+                "Wax Light",
+                "Taper"
+            ],
+            "entries": [
+                "Wick",
+                "Burn",
+                "Scent",
+                "Holder"
+            ]
+        },
+        {
+            "topic": [
+                "Soda",
+                "Soft Drink",
+                "Pop"
+            ],
+            "entries": [
+                "Carbonation",
+                "Fizzy",
+                "Can",
+                "Sugar"
+            ]
+        },
+        {
+            "topic": [
+                "Suit",
+                "Business Attire",
+                "Formal Wear"
+            ],
+            "entries": [
+                "Tie",
+                "Tailored",
+                "Lapels",
+                "Buttoned"
+            ]
+        },
+        {
+            "topic": [
+                "Soap",
+                "Cleanser",
+                "Detergent"
+            ],
+            "entries": [
+                "Lather",
+                "Scent",
+                "Bar",
+                "Hygiene"
+            ]
+        },
+        {
+            "topic": [
+                "Toothbrush",
+                "Dental Brush",
+                "Oral Cleansing Tool"
+            ],
+            "entries": [
+                "Bristles",
+                "Toothpaste",
+                "Handle",
+                "Plaque"
+            ]
+        },
+        {
+            "topic": [
+                "Milk",
+                "Dairy Drink",
+                "Cream"
+            ],
+            "entries": [
+                "Calcium",
+                "Lactose",
+                "Pasteurized",
+                "Bottle"
+            ]
+        },
+        {
+            "topic": [
+                "Blanket",
+                "Quilt",
+                "Throw"
+            ],
+            "entries": [
+                "Warmth",
+                "Flannel",
+                "Bed",
+                "Snuggling"
+            ]
+        },
+        {
+            "topic": [
+                "Ring",
+                "Band",
+                "Wedding Ring"
+            ],
+            "entries": [
+                "Gold",
+                "Diamond",
+                "Engagement",
+                "Finger"
+            ]
+        },
+        {
+            "topic": [
+                "Plate",
+                "Dish",
+                "Dining Ware"
+            ],
+            "entries": [
+                "Ceramic",
+                "Round",
+                "Dinner",
+                "Serving"
+            ]
+        },
+        {
+            "topic": [
+                "Scissors",
+                "Cutting Tool",
+                "Shears"
+            ],
+            "entries": [
+                "Blades",
+                "Handles",
+                "Sharp",
+                "Crafting"
+            ]
+        },
+        {
+            "topic": [
+                "Ball",
+                "Sphere",
+                "Round Object"
+            ],
+            "entries": [
+                "Bounce",
+                "Sports",
+                "Rubber",
+                "Throw"
+            ]
+        },
+        {
+            "topic": [
+                "Bedroom",
+                "Sleeping Chamber",
+                "Dream Room"
+            ],
+            "entries": [
+                "Bed",
+                "Wardrobe",
+                "Privacy",
+                "Rest"
+            ]
+        },
+        {
+            "topic": [
+                "Backpack",
+                "Knapsack",
+                "Rucksack"
+            ],
+            "entries": [
+                "Zipper",
+                "Straps",
+                "Compartments",
+                "Hiking"
+            ]
+        },
+        {
+            "topic": [
+                "Fan",
+                "Cooling Appliance",
+                "Ventilator"
+            ],
+            "entries": [
+                "Blades",
+                "Rotation",
+                "Breeze",
+                "Electric"
+            ]
+        }
+    ]
+}

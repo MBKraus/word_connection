@@ -4,13 +4,13 @@ import os
 # List of areas corresponding to JSON filenames
 # Optional: art, fashion, mythology, nature
 areas = [
-    'animals', 'cuisine', 'events', 'films_series', 'hobbies', 
-    'inventions', 'music', 'musical_instrument', 'occupations', 
+    'animals', 'art', 'cuisine', 'events', 'films_series', 'hobbies', 
+    'inventions', 'music', 'musical_instrument', 'nature', 
     'organizations', 'persons', 'places', 'space', 'sports_games', 'things'
 ]
 
 # Directory containing JSON files
-data_directory = "content/data"
+data_directory = "content/data/easy"
 
 # Load topics from files into a dictionary
 area_topics = {}

@@ -13,6 +13,20 @@
         },
         {
             "topic": [
+                "The Sound of Music",
+                "Sound of Music Film",
+                "Musical: Sound of Music",
+                "Sound of Music"
+            ],
+            "entries": [
+                "Rogers & Hammerstein",
+                "Von Trapp Family",
+                "Austrian Alps",
+                "Do-Re-Mi"
+            ]
+        },
+        {
+            "topic": [
                 "Schindler's List"
             ],
             "entries": [
@@ -460,17 +474,6 @@
         },
         {
             "topic": [
-                "Mulan"
-            ],
-            "entries": [
-                "Chinese Warrior",
-                "Dragon",
-                "Disney Princess",
-                "Reflection"
-            ]
-        },
-        {
-            "topic": [
                 "Finding Nemo"
             ],
             "entries": [
@@ -489,6 +492,51 @@
                 "Arendelle",
                 "Let It Go",
                 "Ice Powers"
+            ]
+        },
+        {
+            "topic": [
+                "The Little Mermaid"
+            ],
+            "entries": [
+                "Ariel",
+                "Under the Sea",
+                "Ursula",
+                "Prince Eric"
+            ]
+        },
+        {
+            "topic": [
+                "Beauty and the Beast"
+            ],
+            "entries": [
+                "Belle",
+                "Beast",
+                "Gaston",
+                "Enchanted Castle"
+            ]
+        },
+        {
+            "topic": [
+                "Aladdin"
+            ],
+            "entries": [
+                "Jasmine",
+                "Genie",
+                "Magic Carpet",
+                "Jafar"
+            ]
+        },
+        {
+            "topic": [
+                "The Jungle Book",
+                "Jungle Book"
+            ],
+            "entries": [
+                "Mowgli",
+                "Baloo",
+                "Shere Khan",
+                "Bagheera"
             ]
         },
         {

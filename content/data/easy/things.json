@@ -2,19 +2,6 @@
     "topics": [
         {
             "topic": [
-                "Book",
-                "Novel",
-                "Printed Volume"
-            ],
-            "entries": [
-                "Pages",
-                "Hardcover",
-                "Fiction",
-                "Library"
-            ]
-        },
-        {
-            "topic": [
                 "Shoe",
                 "Footwear",
                 "Sneaker"
@@ -24,19 +11,6 @@
                 "Sole",
                 "Leather",
                 "Running"
-            ]
-        },
-        {
-            "topic": [
-                "Computer",
-                "Personal Computer",
-                "PC"
-            ],
-            "entries": [
-                "Processor",
-                "Monitor",
-                "Keyboard",
-                "Memory"
             ]
         },
         {
@@ -67,45 +41,6 @@
         },
         {
             "topic": [
-                "Bicycle",
-                "Bike",
-                "Cycle"
-            ],
-            "entries": [
-                "Pedals",
-                "Handlebars",
-                "Wheels",
-                "Gears"
-            ]
-        },
-        {
-            "topic": [
-                "Coffee",
-                "Beverage",
-                "Espresso"
-            ],
-            "entries": [
-                "Caffeine",
-                "Beans",
-                "Mug",
-                "Brew"
-            ]
-        },
-        {
-            "topic": [
-                "Telephone",
-                "Landline",
-                "Receiver"
-            ],
-            "entries": [
-                "Dial Tone",
-                "Ringing",
-                "Handset",
-                "Cord"
-            ]
-        },
-        {
-            "topic": [
                 "Lamp",
                 "Light Fixture",
                 "Desk Lamp"
@@ -115,71 +50,6 @@
                 "Bulb",
                 "Switch",
                 "Base"
-            ]
-        },
-        {
-            "topic": [
-                "Table",
-                "Desk",
-                "Dining Table"
-            ],
-            "entries": [
-                "Legs",
-                "Surface",
-                "Wood",
-                "Meeting"
-            ]
-        },
-        {
-            "topic": [
-                "Clock",
-                "Timepiece",
-                "Wall Clock"
-            ],
-            "entries": [
-                "Hands",
-                "Numbers",
-                "Pendulum",
-                "Ticking"
-            ]
-        },
-        {
-            "topic": [
-                "Cookbook",
-                "Recipe Book",
-                "Culinary Book"
-            ],
-            "entries": [
-                "Instructions",
-                "Ingredients",
-                "Cuisine",
-                "Chef"
-            ]
-        },
-        {
-            "topic": [
-                "Television",
-                "TV",
-                "Flat Screen"
-            ],
-            "entries": [
-                "Remote",
-                "Channels",
-                "Cable",
-                "Streaming"
-            ]
-        },
-        {
-            "topic": [
-                "Refrigerator",
-                "Fridge",
-                "Icebox"
-            ],
-            "entries": [
-                "Cooling",
-                "Shelves",
-                "Compressor",
-                "Freezer"
             ]
         },
         {
@@ -210,19 +80,6 @@
         },
         {
             "topic": [
-                "Car",
-                "Automobile",
-                "Vehicle"
-            ],
-            "entries": [
-                "Engine",
-                "Tires",
-                "Windshield",
-                "Steering"
-            ]
-        },
-        {
-            "topic": [
                 "Towel",
                 "Bath Towel",
                 "Washcloth"
@@ -245,32 +102,6 @@
                 "Handle",
                 "Stainless",
                 "Chopping"
-            ]
-        },
-        {
-            "topic": [
-                "Pen",
-                "Writing Instrument",
-                "Ballpoint"
-            ],
-            "entries": [
-                "Ink",
-                "Cap",
-                "Nib",
-                "Clip"
-            ]
-        },
-        {
-            "topic": [
-                "Bread",
-                "Loaf",
-                "Baguette"
-            ],
-            "entries": [
-                "Wheat",
-                "Yeast",
-                "Crust",
-                "Baker"
             ]
         },
         {
@@ -353,58 +184,6 @@
         },
         {
             "topic": [
-                "Pencil",
-                "Graphite Stick",
-                "Writing Tool"
-            ],
-            "entries": [
-                "Eraser",
-                "Sharpened",
-                "HB",
-                "Wooden"
-            ]
-        },
-        {
-            "topic": [
-                "Magazine",
-                "Periodical",
-                "Glossy Pages"
-            ],
-            "entries": [
-                "Articles",
-                "Cover",
-                "Monthly",
-                "Editor"
-            ]
-        },
-        {
-            "topic": [
-                "Envelope",
-                "Mailer",
-                "Parcel Post"
-            ],
-            "entries": [
-                "Address",
-                "Stamp",
-                "Seal",
-                "Paper"
-            ]
-        },
-        {
-            "topic": [
-                "Pizza",
-                "Pie",
-                "Flatbread"
-            ],
-            "entries": [
-                "Cheese",
-                "Crust",
-                "Slice",
-                "Pepperoni"
-            ]
-        },
-        {
-            "topic": [
                 "Candle",
                 "Wax Light",
                 "Taper"
@@ -427,19 +206,6 @@
                 "Fizzy",
                 "Can",
                 "Sugar"
-            ]
-        },
-        {
-            "topic": [
-                "Suit",
-                "Business Attire",
-                "Formal Wear"
-            ],
-            "entries": [
-                "Tie",
-                "Tailored",
-                "Lapels",
-                "Buttoned"
             ]
         },
         {
@@ -483,32 +249,6 @@
         },
         {
             "topic": [
-                "Camera",
-                "Photographic Device",
-                "Digital Recorder"
-            ],
-            "entries": [
-                "Lens",
-                "Shutter",
-                "Flash",
-                "Tripod"
-            ]
-        },
-        {
-            "topic": [
-                "Blanket",
-                "Quilt",
-                "Throw"
-            ],
-            "entries": [
-                "Warmth",
-                "Flannel",
-                "Bed",
-                "Snuggling"
-            ]
-        },
-        {
-            "topic": [
                 "Ring",
                 "Band",
                 "Wedding Ring"
@@ -522,19 +262,6 @@
         },
         {
             "topic": [
-                "Plate",
-                "Dish",
-                "Dining Ware"
-            ],
-            "entries": [
-                "Ceramic",
-                "Round",
-                "Dinner",
-                "Serving"
-            ]
-        },
-        {
-            "topic": [
                 "Scissors",
                 "Cutting Tool",
                 "Shears"
@@ -544,19 +271,6 @@
                 "Handles",
                 "Sharp",
                 "Crafting"
-            ]
-        },
-        {
-            "topic": [
-                "Guitar",
-                "String Instrument",
-                "Electric Guitar"
-            ],
-            "entries": [
-                "Frets",
-                "Strings",
-                "Pick",
-                "Amp"
             ]
         },
         {
@@ -596,19 +310,6 @@
                 "Straps",
                 "Compartments",
                 "Hiking"
-            ]
-        },
-        {
-            "topic": [
-                "Cake",
-                "Pastry",
-                "Baked Dessert"
-            ],
-            "entries": [
-                "Layers",
-                "Icing",
-                "Sweet",
-                "Celebration"
             ]
         },
         {

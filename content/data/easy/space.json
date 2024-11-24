@@ -1,0 +1,93 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Moon",
+                "Lunar Body",
+                "The Moon"
+            ],
+            "entries": [
+                "Craters",
+                "Phases",
+                "Apollo Missions",
+                "Tides"
+            ]
+        },
+        {
+            "topic": [
+                "Milky Way",
+                "The Milky Way",
+                "Galaxy",
+                "The Galaxy"
+            ],
+            "entries": [
+                "Spiral Arms",
+                "100 Billion Stars",
+                "Solar System",
+                "Sagittarius A*"
+            ]
+        },
+        {
+            "topic": [
+                "Sun",
+                "The Sun",
+                "Solar Star"
+            ],
+            "entries": [
+                "Fusion",
+                "Heliosphere",
+                "Solar Flares",
+                "Sunspots"
+            ]
+        },
+        {
+            "topic": [
+                "Space Shuttle",
+                "Orbiter"
+            ],
+            "entries": [
+                "Reusable",
+                "Columbia",
+                "Heat Shields",
+                "Payload Bay"
+            ]
+        },
+        {
+            "topic": [
+                "Satellite"
+            ],
+            "entries": [
+                "Communication",
+                "Weather Monitoring",
+                "Orbital Craft",
+                "GPS"
+            ]
+        },
+        {
+            "topic": [
+                "International Space Station",
+                "ISS",
+                "Space Station",
+                "Orbital Lab"
+            ],
+            "entries": [
+                "American-Russian Collaboration",
+                "Zero Gravity",
+                "Research",
+                "Crew Habitation"
+            ]
+        },
+        {
+            "topic": [
+                "Solar Eclipse",
+                "Eclipse"
+            ],
+            "entries": [
+                "Lunar Occultation",
+                "Totality",
+                "Diamond Ring Effect",
+                "Sun Obscured"
+            ]
+        }
+    ]
+}

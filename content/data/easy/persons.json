@@ -76,24 +76,12 @@
         },
         {
             "topic": [
-                "Coca-Cola",
-                "Coke"
-            ],
-            "entries": [
-                "Soft drink",
-                "Atlanta",
-                "Red label",
-                "Soda"
-            ]
-        },
-        {
-            "topic": [
                 "Shakespeare",
                 "William Shakespeare"
             ],
             "entries": [
                 "Playwright",
-                "Stratford-upon-Avon",
+                "Romeo and Juliet",
                 "Hamlet",
                 "Elizabethan England"
             ]
@@ -108,18 +96,6 @@
                 "India",
                 "Salt March",
                 "Independence"
-            ]
-        },
-        {
-            "topic": [
-                "Frida Kahlo",
-                "Kahlo"
-            ],
-            "entries": [
-                "Self-portraits",
-                "Mexico",
-                "Surrealism",
-                "Pain"
             ]
         },
         {
@@ -172,30 +148,6 @@
         },
         {
             "topic": [
-                "Pablo Picasso",
-                "Picasso"
-            ],
-            "entries": [
-                "Cubism",
-                "Blue Period",
-                "Guernica",
-                "Spanish"
-            ]
-        },
-        {
-            "topic": [
-                "Marie Curie",
-                "Curie"
-            ],
-            "entries": [
-                "Radioactivity",
-                "Nobel Laureate",
-                "Poland",
-                "Physics"
-            ]
-        },
-        {
-            "topic": [
                 "Lionel Messi",
                 "Messi"
             ],
@@ -204,30 +156,6 @@
                 "Argentina",
                 "Goalscorer",
                 "Ballon d'Or"
-            ]
-        },
-        {
-            "topic": [
-                "The Louvre",
-                "Louvre Museum"
-            ],
-            "entries": [
-                "Paris",
-                "Art museum",
-                "Glass pyramid",
-                "Mona Lisa"
-            ]
-        },
-        {
-            "topic": [
-                "Amelia Earhart",
-                "Earhart"
-            ],
-            "entries": [
-                "Aviatrix",
-                "Disappearance",
-                "Transatlantic flight",
-                "Pioneering"
             ]
         },
         {
@@ -257,7 +185,8 @@
         {
             "topic": [
                 "The White House",
-                "Whitehouse"
+                "Whitehouse",
+                "White House"
             ],
             "entries": [
                 "Oval Office",
@@ -288,18 +217,6 @@
                 "Affordable Care Act",
                 "Nobel Peace Prize",
                 "Change"
-            ]
-        },
-        {
-            "topic": [
-                "Harry Potter",
-                "Potter"
-            ],
-            "entries": [
-                "J.K. Rowling",
-                "Wizard",
-                "Hogwarts",
-                "Magic"
             ]
         },
         {
@@ -348,30 +265,6 @@
                 "Dictator",
                 "Assassination",
                 "Gallic War"
-            ]
-        },
-        {
-            "topic": [
-                "Harper Lee",
-                "Lee"
-            ],
-            "entries": [
-                "To Kill a Mockingbird",
-                "Alabama",
-                "Pulitzer Prize",
-                "Reclusive"
-            ]
-        },
-        {
-            "topic": [
-                "Stephen Hawking",
-                "Hawking"
-            ],
-            "entries": [
-                "Black holes",
-                "Theoretical physicist",
-                "ALS",
-                "Cosmology"
             ]
         },
         {
@@ -432,18 +325,6 @@
                 "Chicago Bulls",
                 "Air",
                 "23"
-            ]
-        },
-        {
-            "topic": [
-                "F. Scott Fitzgerald",
-                "Fitzgerald"
-            ],
-            "entries": [
-                "The Great Gatsby",
-                "Jazz Age",
-                "American author",
-                "Roaring Twenties"
             ]
         },
         {

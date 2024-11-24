@@ -1,0 +1,277 @@
+{
+    "topics": [
+        {
+            "topic": [
+                "Eiffel Tower",
+                "Tour Eiffel",
+                "Eiffel"
+            ],
+            "entries": [
+                "Iron lattice",
+                "Paris",
+                "Gustave Eiffel",
+                "Romantic"
+            ]
+        },
+        {
+            "topic": [
+                "Statue of Liberty",
+                "Lady Liberty",
+                "Liberty Enlightening the World"
+            ],
+            "entries": [
+                "New York",
+                "Gift from France",
+                "Ellis Island",
+                "Torch"
+            ]
+        },
+        {
+            "topic": [
+                "Pyramids of Giza",
+                "Giza Pyramids",
+                "Pyramids"
+            ],
+            "entries": [
+                "Egypt",
+                "Ancient Tombs",
+                "Pharaohs",
+                "Sphinx"
+            ]
+        },
+        {
+            "topic": [
+                "Big Ben",
+                "Clock Tower",
+                "Elizabeth Tower"
+            ],
+            "entries": [
+                "London",
+                "Westminster",
+                "Great Bell",
+                "Time"
+            ]
+        },
+        {
+            "topic": [
+                "Taj Mahal",
+                "Crown of Palaces",
+                "Taj"
+            ],
+            "entries": [
+                "India",
+                "Marble",
+                "Mughal Emperor",
+                "Love"
+            ]
+        },
+        {
+            "topic": [
+                "Colosseum",
+                "Flavian Amphitheatre",
+                "Roman Colosseum"
+            ],
+            "entries": [
+                "Rome",
+                "Gladiators",
+                "Ancient Arena",
+                "Italy"
+            ]
+        },
+        {
+            "topic": [
+                "Christ the Redeemer",
+                "Cristo Redentor",
+                "Redeemer Statue"
+            ],
+            "entries": [
+                "Rio de Janeiro",
+                "Brazil",
+                "Corcovado Mountain",
+                "Iconic"
+            ]
+        },
+        {
+            "topic": [
+                "Empire State Building",
+                "Empire State",
+                "New York Landmark"
+            ],
+            "entries": [
+                "Skyscraper",
+                "Manhattan",
+                "Observation Deck",
+                "Art Deco"
+            ]
+        },
+        {
+            "topic": [
+                "Mount Everest",
+                "Everest",
+                "Sagarmatha"
+            ],
+            "entries": [
+                "Highest Peak",
+                "Himalayas",
+                "Nepal",
+                "Climbers"
+            ]
+        },
+        {
+            "topic": [
+                "Stonehenge",
+                "Stone Circle",
+                "Henge"
+            ],
+            "entries": [
+                "Wiltshire",
+                "Prehistoric Monument",
+                "Megalithic",
+                "Astronomy"
+            ]
+        },
+        {
+            "topic": [
+                "Niagara Falls",
+                "Niagara",
+                "Horseshoe Falls"
+            ],
+            "entries": [
+                "Waterfall",
+                "Canada",
+                "Hydropower",
+                "Tourist"
+            ]
+        },
+        {
+            "topic": [
+                "Buckingham Palace",
+                "Buckingham",
+                "The Queen's Palace"
+            ],
+            "entries": [
+                "Royal Residence",
+                "Changing Guard",
+                "London",
+                "Monarchy"
+            ]
+        },
+        {
+            "topic": [
+                "Golden Gate Bridge",
+                "Golden Gate",
+                "San Francisco Bridge"
+            ],
+            "entries": [
+                "Suspension Bridge",
+                "San Francisco",
+                "Orange",
+                "Fog"
+            ]
+        },
+        {
+            "topic": [
+                "The Louvre",
+                "Louvre",
+                "The Louvre Museum"
+            ],
+            "entries": [
+                "Art",
+                "Mona Lisa",
+                "Paris",
+                "Glass Pyramid"
+            ]
+        },
+        {
+            "topic": [
+                "Burj Khalifa",
+                "Khalifa Tower",
+                "Burj"
+            ],
+            "entries": [
+                "Tallest Building",
+                "Dubai",
+                "Skyscraper",
+                "Observation Deck"
+            ]
+        },
+        {
+            "topic": [
+                "Vatican City",
+                "Vatican",
+                "Holy See"
+            ],
+            "entries": [
+                "Papal Authority",
+                "Rome",
+                "Catholicism",
+                "Sistine Chapel"
+            ]
+        },
+        {
+            "topic": [
+                "Alcatraz Island",
+                "Alcatraz",
+                "The Rock"
+            ],
+            "entries": [
+                "Prison",
+                "Escape Attempts",
+                "San Francisco",
+                "Tourist Attraction"
+            ]
+        },
+        {
+            "topic": [
+                "Tower of Pisa",
+                "Leaning Tower of Pisa",
+                "Pisa Tower"
+            ],
+            "entries": [
+                "Lean",
+                "Italy",
+                "White Marble",
+                "Bell Tower"
+            ]
+        },
+        {
+            "topic": [
+                "The Sagrada Familia",
+                "Sagrada Familia",
+                "Basilica of the Holy Family"
+            ],
+            "entries": [
+                "Barcelona",
+                "Gaudi",
+                "Unfinished",
+                "Cathedral"
+            ]
+        },
+        {
+            "topic": [
+                "Great Barrier Reef",
+                "The Reef",
+                "Great Reef"
+            ],
+            "entries": [
+                "Coral",
+                "Australia",
+                "Marine Life",
+                "Diving"
+            ]
+        },
+        {
+            "topic": [
+                "London Eye",
+                "Millennium Wheel",
+                "Observation Wheel"
+            ],
+            "entries": [
+                "Ferris Wheel",
+                "River Thames",
+                "Panoramic Views",
+                "Tourist Attraction"
+            ]
+        }
+    ]
+}
