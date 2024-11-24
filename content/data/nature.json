@@ -135,6 +135,7 @@
         {
             "topic": [
                 "Savanna",
+                "Savannah",
                 "Tropical Grassland"
             ],
             "entries": [
@@ -170,18 +171,6 @@
         },
         {
             "topic": [
-                "Canyon",
-                "Deep Gorge"
-            ],
-            "entries": [
-                "Grand Canyon",
-                "Erosional Scarp",
-                "Steep Walls",
-                "River Valley"
-            ]
-        },
-        {
-            "topic": [
                 "Geyser",
                 "Hot Spring"
             ],
@@ -194,30 +183,6 @@
         },
         {
             "topic": [
-                "Mountain Range",
-                "Highland Chain"
-            ],
-            "entries": [
-                "Himalayas",
-                "Alpine Ecosystems",
-                "Peak Elevation",
-                "Ridge Line"
-            ]
-        },
-        {
-            "topic": [
-                "Beach",
-                "Sandy Shore"
-            ],
-            "entries": [
-                "Palm Trees",
-                "Beachfront",
-                "Waves",
-                "Seashells"
-            ]
-        },
-        {
-            "topic": [
                 "Ocean",
                 "Sea"
             ],
@@ -226,18 +191,6 @@
                 "Saltwater",
                 "Tides",
                 "Underwater Volcanoes"
-            ]
-        },
-        {
-            "topic": [
-                "Rainstorm",
-                "Thunderstorm"
-            ],
-            "entries": [
-                "Raindrops",
-                "Lightning",
-                "Thundering Clouds",
-                "Heavy Downpour"
             ]
         },
         {
@@ -266,18 +219,6 @@
         },
         {
             "topic": [
-                "Ridge",
-                "Elevated Crest"
-            ],
-            "entries": [
-                "Continental Divide",
-                "Soaring Heights",
-                "Rock Formations",
-                "Diverse Flora"
-            ]
-        },
-        {
-            "topic": [
                 "Archipelago",
                 "Island Chain"
             ],
@@ -298,66 +239,6 @@
                 "Seismic Activity",
                 "Crustal Plates",
                 "Geological Rift"
-            ]
-        },
-        {
-            "topic": [
-                "Gulf",
-                "Coastal Basin"
-            ],
-            "entries": [
-                "Mexico",
-                "Coastal Inlet",
-                "Wide Stretch",
-                "Marine Boundaries"
-            ]
-        },
-        {
-            "topic": [
-                "Wetland",
-                "Mire"
-            ],
-            "entries": [
-                "Habitat Diversity",
-                "Flood Zones",
-                "Bogs",
-                "Waterlogged Ground"
-            ]
-        },
-        {
-            "topic": [
-                "Plains",
-                "Flatlands"
-            ],
-            "entries": [
-                "Vast Fields",
-                "Agriculture",
-                "Level Terrain",
-                "Grasslands"
-            ]
-        },
-        {
-            "topic": [
-                "Water Cycle",
-                "Hydrological Loop"
-            ],
-            "entries": [
-                "Evaporation",
-                "Precipitation",
-                "Condensation",
-                "Transpiration"
-            ]
-        },
-        {
-            "topic": [
-                "Savannah",
-                "Grassland"
-            ],
-            "entries": [
-                "Lions",
-                "Seasonal Changes",
-                "Sparse Trees",
-                "Expansive Horizon"
             ]
         }
     ]

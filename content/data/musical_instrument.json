@@ -28,6 +28,8 @@
         },
         {
             "topic": [
+                "Drum",
+                "Drums",
                 "Drum Kit",
                 "Drum Set",
                 "Percussion Kit"
@@ -262,19 +264,6 @@
         },
         {
             "topic": [
-                "Recorder",
-                "Blockfl\u00f6te",
-                "Woodwind"
-            ],
-            "entries": [
-                "Fingering Holes",
-                "Wood",
-                "Baroque",
-                "Soprano"
-            ]
-        },
-        {
-            "topic": [
                 "Organ",
                 "Pipe Organ",
                 "Electronic Organ"
@@ -293,7 +282,7 @@
                 "Scottish Pipes"
             ],
             "entries": [
-                "Drones",
+                "Scotland",
                 "Reed",
                 "Bag",
                 "Tradition"
@@ -310,19 +299,6 @@
                 "Portable",
                 "Fingerstyle",
                 "Soprano"
-            ]
-        },
-        {
-            "topic": [
-                "Harmonium",
-                "Reed Organ",
-                "Pump Organ"
-            ],
-            "entries": [
-                "Pedals",
-                "Reeds",
-                "Air Pump",
-                "Indian Classical"
             ]
         },
         {
