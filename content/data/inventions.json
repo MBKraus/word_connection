@@ -9,7 +9,7 @@
             "entries": [
                 "Alexander Graham Bell",
                 "Voice Transmission",
-                "Telephone Poles",
+                "Switchboard",
                 "Rotary Dial"
             ]
         },
@@ -29,6 +29,7 @@
         {
             "topic": [
                 "Airplane",
+                "Plane",
                 "Aircraft",
                 "Flying Machine"
             ],
@@ -121,6 +122,7 @@
             "topic": [
                 "Washing Machine",
                 "Laundry Washer",
+                "Laundy Machine",
                 "Clothes Washer"
             ],
             "entries": [
@@ -154,19 +156,6 @@
                 "Carpet",
                 "Suction Power",
                 "Nozzle"
-            ]
-        },
-        {
-            "topic": [
-                "Bicycle",
-                "Bike",
-                "Cycle"
-            ],
-            "entries": [
-                "Pedals",
-                "Handlebars",
-                "Two Wheels",
-                "Chain"
             ]
         },
         {
@@ -223,19 +212,6 @@
         },
         {
             "topic": [
-                "Electric Guitar",
-                "Guitar",
-                "Electric Six-string"
-            ],
-            "entries": [
-                "Strings",
-                "Amp",
-                "Fretboard",
-                "Pickups"
-            ]
-        },
-        {
-            "topic": [
                 "Elevator",
                 "Lift",
                 "Vertical Transport"
@@ -262,19 +238,6 @@
         },
         {
             "topic": [
-                "Refrigerator",
-                "Fridge",
-                "Cooling Appliance"
-            ],
-            "entries": [
-                "Compressor",
-                "Cooling",
-                "Shelves",
-                "Door"
-            ]
-        },
-        {
-            "topic": [
                 "Smartphone",
                 "Mobile Phone",
                 "Cellphone"
@@ -284,45 +247,6 @@
                 "Apps",
                 "Camera",
                 "Calls"
-            ]
-        },
-        {
-            "topic": [
-                "Clock",
-                "Timepiece",
-                "Chronometer"
-            ],
-            "entries": [
-                "Hour Hand",
-                "Minutes",
-                "Quartz",
-                "Ticking"
-            ]
-        },
-        {
-            "topic": [
-                "Microwave Oven",
-                "Microwave",
-                "Rapid Cooker"
-            ],
-            "entries": [
-                "Electromagnetic Waves",
-                "Turntable",
-                "Heating",
-                "Timer"
-            ]
-        },
-        {
-            "topic": [
-                "Calculator",
-                "Computing Device",
-                "Adding Machine"
-            ],
-            "entries": [
-                "Buttons",
-                "Display",
-                "Arithmetic",
-                "Electronic"
             ]
         },
         {
@@ -470,32 +394,6 @@
         },
         {
             "topic": [
-                "Wristwatch",
-                "Watch",
-                "Time Watch"
-            ],
-            "entries": [
-                "Strap",
-                "Dial",
-                "Quartz Movement",
-                "Hands"
-            ]
-        },
-        {
-            "topic": [
-                "Calculator",
-                "Computing Device",
-                "Adding Machine"
-            ],
-            "entries": [
-                "Buttons",
-                "Display",
-                "Arithmetic",
-                "Electronic"
-            ]
-        },
-        {
-            "topic": [
                 "Airpot",
                 "Thermos",
                 "Vacuum Flask"
@@ -505,19 +403,6 @@
                 "Stainless Steel",
                 "Hot Drinks",
                 "Lid"
-            ]
-        },
-        {
-            "topic": [
-                "Robot",
-                "Automaton",
-                "Mechanical Droid"
-            ],
-            "entries": [
-                "Sensors",
-                "Artificial Intelligence",
-                "Actuators",
-                "Programming"
             ]
         },
         {
@@ -548,19 +433,6 @@
         },
         {
             "topic": [
-                "Hair Dryer",
-                "Hair Drier",
-                "Blow Dryer"
-            ],
-            "entries": [
-                "Hot Air",
-                "Fan",
-                "Hair Styling",
-                "Electric"
-            ]
-        },
-        {
-            "topic": [
                 "Umbrella",
                 "Parasol",
                 "Rain Cover"
@@ -587,19 +459,6 @@
         },
         {
             "topic": [
-                "Escalator",
-                "Moving Staircase",
-                "Automatic Stairs"
-            ],
-            "entries": [
-                "Treads",
-                "Handrails",
-                "Mechanism",
-                "Incline"
-            ]
-        },
-        {
-            "topic": [
                 "Matches",
                 "Matchsticks",
                 "Fire Starters"
@@ -609,32 +468,6 @@
                 "Wood Stick",
                 "Light",
                 "Box"
-            ]
-        },
-        {
-            "topic": [
-                "Thermometer",
-                "Temperature Gauge",
-                "Heat Meter"
-            ],
-            "entries": [
-                "Mercury",
-                "Fahrenheit",
-                "Sensor",
-                "Glass Tube"
-            ]
-        },
-        {
-            "topic": [
-                "Wheelbarrow",
-                "Barrow",
-                "Handcart"
-            ],
-            "entries": [
-                "Wheel",
-                "Tub",
-                "Handles",
-                "Garden"
             ]
         }
     ]

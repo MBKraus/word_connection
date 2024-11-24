@@ -2,18 +2,6 @@
     "topics": [
         {
             "topic": [
-                "Digital Photography",
-                "Digital Camera"
-            ],
-            "entries": [
-                "Megapixels",
-                "Image Sensor",
-                "Memory Card",
-                "Autofocus"
-            ]
-        },
-        {
-            "topic": [
                 "Bicycle Riding",
                 "Cycling"
             ],
@@ -38,74 +26,14 @@
         },
         {
             "topic": [
-                "Baking Bread",
-                "Bread Making"
-            ],
-            "entries": [
-                "Yeast",
-                "Dough",
-                "Proofing",
-                "Crust"
-            ]
-        },
-        {
-            "topic": [
-                "Playing Guitar",
-                "Strumming Strings"
-            ],
-            "entries": [
-                "Fretboard",
-                "Strings",
-                "Chords",
-                "Pick"
-            ]
-        },
-        {
-            "topic": [
                 "Fishing",
                 "Angling"
             ],
             "entries": [
                 "Rod",
                 "Reel",
-                "Lure",
+                "Fishhook",
                 "Catch"
-            ]
-        },
-        {
-            "topic": [
-                "Birdwatching",
-                "Birding"
-            ],
-            "entries": [
-                "Binoculars",
-                "Field Guide",
-                "Habitat",
-                "Species"
-            ]
-        },
-        {
-            "topic": [
-                "Cooking",
-                "Culinary Arts"
-            ],
-            "entries": [
-                "Recipes",
-                "Ingredients",
-                "Saut\u00e9ing",
-                "Bakeware"
-            ]
-        },
-        {
-            "topic": [
-                "Playing Chess",
-                "Board Game Strategy"
-            ],
-            "entries": [
-                "Checkmate",
-                "Pawn",
-                "Knight",
-                "Bishop"
             ]
         },
         {
@@ -146,18 +74,6 @@
         },
         {
             "topic": [
-                "Listening to Music",
-                "Music Appreciation"
-            ],
-            "entries": [
-                "Headphones",
-                "Playlist",
-                "Lyrics",
-                "Beat"
-            ]
-        },
-        {
-            "topic": [
                 "Photography",
                 "Camera Use"
             ],
@@ -178,18 +94,6 @@
                 "Pencil",
                 "Line",
                 "Shading"
-            ]
-        },
-        {
-            "topic": [
-                "Scrapbooking",
-                "Memory Keeping"
-            ],
-            "entries": [
-                "Stickers",
-                "Photographs",
-                "Journal",
-                "Paper"
             ]
         },
         {
@@ -218,61 +122,13 @@
         },
         {
             "topic": [
-                "Playing Piano",
-                "Keyboarding"
-            ],
-            "entries": [
-                "Keys",
-                "Pedals",
-                "Sheet Music",
-                "Melody"
-            ]
-        },
-        {
-            "topic": [
-                "Ice Skating",
-                "Skating on Ice"
-            ],
-            "entries": [
-                "Rink",
-                "Blade",
-                "Spin",
-                "Figure Eight"
-            ]
-        },
-        {
-            "topic": [
-                "Swimming",
-                "Aquatics"
-            ],
-            "entries": [
-                "Pool",
-                "Goggles",
-                "Freestyle",
-                "Diving"
-            ]
-        },
-        {
-            "topic": [
-                "Gardening Vegetables",
-                "Vegetable Cultivation"
-            ],
-            "entries": [
-                "Tomatoes",
-                "Raised Bed",
-                "Irrigation",
-                "Harvest"
-            ]
-        },
-        {
-            "topic": [
                 "Yoga",
                 "Mindful Stretching"
             ],
             "entries": [
                 "Mat",
                 "Pose",
-                "Balance",
+                "Downward-Facing Dog",
                 "Breathing"
             ]
         },
@@ -310,30 +166,6 @@
                 "Wetsuit",
                 "Swell",
                 "Pipeline"
-            ]
-        },
-        {
-            "topic": [
-                "Pottery",
-                "Ceramic Arts"
-            ],
-            "entries": [
-                "Clay",
-                "Kiln",
-                "Wheel",
-                "Glaze"
-            ]
-        },
-        {
-            "topic": [
-                "Puzzle Solving",
-                "Riddle Enjoyment"
-            ],
-            "entries": [
-                "Pieces",
-                "Strategy",
-                "Logic",
-                "Brain Teaser"
             ]
         },
         {
