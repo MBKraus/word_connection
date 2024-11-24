@@ -1302,6 +1302,855 @@
             }
         ]
     },
+    "events": {
+        "topics": [
+            {
+                "topic": [
+                    "Olympics",
+                    "The Olympics",
+                    "The Olympic Games"
+                ],
+                "entries": [
+                    "Five Rings",
+                    "Summer and Winter",
+                    "Torch Relay",
+                    "Medal Ceremony"
+                ]
+            },
+            {
+                "topic": [
+                    "World War I",
+                    "WWI",
+                    "WW1",
+                    "The Great War"
+                ],
+                "entries": [
+                    "Trench Warfare",
+                    "Archduke Assassination",
+                    "Battle of the Somme",
+                    "Treaty of Versailles"
+                ]
+            },
+            {
+                "topic": [
+                    "Christmas",
+                    "Xmas",
+                    "Yuletide"
+                ],
+                "entries": [
+                    "Santa Claus",
+                    "Advent Calendar",
+                    "Gift Giving",
+                    "Birth of Jesus"
+                ]
+            },
+            {
+                "topic": [
+                    "Easter",
+                    "Paschal Festival",
+                    "Resurrection Sunday"
+                ],
+                "entries": [
+                    "Egg Hunt",
+                    "Bunny",
+                    "Good Friday",
+                    "Resurrection"
+                ]
+            },
+            {
+                "topic": [
+                    "Thanksgiving",
+                    "Turkey Day",
+                    "Harvest Festival"
+                ],
+                "entries": [
+                    "Pumpkin Pie",
+                    "Turkey Feast",
+                    "Family Gatherings",
+                    "Thankfulness"
+                ]
+            },
+            {
+                "topic": [
+                    "New Year's Eve",
+                    "NYE",
+                    "December 31st"
+                ],
+                "entries": [
+                    "Countdown",
+                    "Fireworks",
+                    "Ball Drop",
+                    "Midnight Toast"
+                ]
+            },
+            {
+                "topic": [
+                    "Valentine's Day",
+                    "V-Day",
+                    "Saint Valentine's Day"
+                ],
+                "entries": [
+                    "Roses",
+                    "Love Letters",
+                    "Cupid",
+                    "February"
+                ]
+            },
+            {
+                "topic": [
+                    "Halloween",
+                    "All Hallows' Eve",
+                    "Samhain"
+                ],
+                "entries": [
+                    "Costumes",
+                    "Trick-or-Treat",
+                    "Pumpkin Carving",
+                    "Spooky Decorations"
+                ]
+            },
+            {
+                "topic": [
+                    "The Civil War",
+                    "American Civil War",
+                    "The American Civil War",
+                    "War Between the States"
+                ],
+                "entries": [
+                    "Gettysburg",
+                    "Abraham Lincoln",
+                    "Union vs Confederacy",
+                    "Slavery"
+                ]
+            },
+            {
+                "topic": [
+                    "The Great Depression",
+                    "Economic Depression",
+                    "The Crash of 1929"
+                ],
+                "entries": [
+                    "Stock Market Crash",
+                    "Black Tuesday",
+                    "Breadlines",
+                    "Dust Bowl"
+                ]
+            },
+            {
+                "topic": [
+                    "The Renaissance",
+                    "Renaissance Era",
+                    "Rebirth Period"
+                ],
+                "entries": [
+                    "Enlightenment",
+                    "Humanism",
+                    "Started in France",
+                    "Art Revival"
+                ]
+            },
+            {
+                "topic": [
+                    "The Industrial Revolution",
+                    "Industrial Age",
+                    "Industrial Revolution",
+                    "Industry Revolution",
+                    "Industrialization Era"
+                ],
+                "entries": [
+                    "Steam Engine",
+                    "Factories",
+                    "Urbanization",
+                    "Mass Production"
+                ]
+            },
+            {
+                "topic": [
+                    "Space Race",
+                    "Cosmic Competition",
+                    "Space Exploration Rivalry"
+                ],
+                "entries": [
+                    "Apollo 11",
+                    "Sputnik",
+                    "Moon Landing",
+                    "Cold War Context"
+                ]
+            },
+            {
+                "topic": [
+                    "The Cold War",
+                    "Cold War",
+                    "Cold War Era"
+                ],
+                "entries": [
+                    "Nuclear Arms",
+                    "Iron Curtain",
+                    "US-Soviet Tensions",
+                    "Cuban Missile Crisis"
+                ]
+            },
+            {
+                "topic": [
+                    "The Vietnam War",
+                    "Vietnam War",
+                    "Vietnam Conflict",
+                    "Second Indochina War"
+                ],
+                "entries": [
+                    "Ho Chi Minh",
+                    "Viet Cong",
+                    "Agent Orange",
+                    "Tet Offensive"
+                ]
+            },
+            {
+                "topic": [
+                    "The Korean War",
+                    "Korean War",
+                    "Korean Conflict",
+                    "Korea Police Action"
+                ],
+                "entries": [
+                    "38th Parallel",
+                    "North vs South",
+                    "Inchon Landing",
+                    "Communism"
+                ]
+            },
+            {
+                "topic": [
+                    "The Gulf War",
+                    "Gulf War",
+                    "Operation Desert Storm",
+                    "First Iraq War"
+                ],
+                "entries": [
+                    "Kuwait Invasion",
+                    "Scud Missiles",
+                    "Coalition Forces",
+                    "Saddam Hussein"
+                ]
+            },
+            {
+                "topic": [
+                    "9/11 Attacks",
+                    "911",
+                    "911 Attacks",
+                    "September 11"
+                ],
+                "entries": [
+                    "World Trade Center",
+                    "Planes",
+                    "Al-Qaeda",
+                    "Osama bin Laden"
+                ]
+            },
+            {
+                "topic": [
+                    "The European Union",
+                    "European Union",
+                    "EU",
+                    "The EU",
+                    "European Economic Community"
+                ],
+                "entries": [
+                    "Maastricht Treaty",
+                    "Brussels",
+                    "Euro Currency",
+                    "Schengen Area"
+                ]
+            },
+            {
+                "topic": [
+                    "The United Nations",
+                    "United Nations",
+                    "UN",
+                    "the UN",
+                    "International Assembly Focus"
+                ],
+                "entries": [
+                    "Security Council",
+                    "General Assembly",
+                    "Peacekeeping Missions",
+                    "Human Rights"
+                ]
+            },
+            {
+                "topic": [
+                    "World Health Organization",
+                    "WHO",
+                    "the WHO",
+                    "the World Health Organization"
+                ],
+                "entries": [
+                    "Pandemic Response",
+                    "Vaccination Campaigns",
+                    "Health Regulations",
+                    "Global Health Body"
+                ]
+            },
+            {
+                "topic": [
+                    "The Dot-com Bubble",
+                    "Dot-com Bubble",
+                    "Dotcom Bubble",
+                    "The Dotcom Bubble",
+                    "Internet Bubble",
+                    "Tech Stock Explosion"
+                ],
+                "entries": [
+                    "Startup Boom",
+                    "NASDAQ Crash",
+                    "Tech Investment",
+                    "IPO Frenzy"
+                ]
+            },
+            {
+                "topic": [
+                    "The French Revolution",
+                    "French Revolution",
+                    "French Political Upheaval",
+                    "Revolution of 1789"
+                ],
+                "entries": [
+                    "Bastille",
+                    "Guillotine",
+                    "Reign of Terror",
+                    "Napoleon"
+                ]
+            },
+            {
+                "topic": [
+                    "The American Revolution",
+                    "American Revolution",
+                    "US War of Independence",
+                    "Revolutionary War"
+                ],
+                "entries": [
+                    "George Washington",
+                    "Boston Tea Party",
+                    "Lexington and Concord",
+                    "Declaration of Independence"
+                ]
+            },
+            {
+                "topic": [
+                    "The Russian Revolution",
+                    "Russian Revolution",
+                    "Bolshevik Revolution",
+                    "Soviet Uprising"
+                ],
+                "entries": [
+                    "Lenin",
+                    "Tsar Nicholas II",
+                    "Bolsheviks",
+                    "October Revolution"
+                ]
+            },
+            {
+                "topic": [
+                    "The Protestant Reformation",
+                    "Protestant Reformation",
+                    "Reformation Era",
+                    "Religious Reform Movement"
+                ],
+                "entries": [
+                    "Martin Luther",
+                    "95 Theses",
+                    "Indulgences",
+                    "Church Schism"
+                ]
+            },
+            {
+                "topic": [
+                    "The Spanish Inquisition",
+                    "Spanish Inquisition",
+                    "Spanish Religious Persecution",
+                    "Inquisition Tribunal"
+                ],
+                "entries": [
+                    "Torture Chambers",
+                    "Heretic Trials",
+                    "Auto-da-f\u00e9",
+                    "Expulsion of Jews"
+                ]
+            },
+            {
+                "topic": [
+                    "The Crusades",
+                    "Crusades",
+                    "Crusading Era",
+                    "Holy Wars",
+                    "The Holy Wars"
+                ],
+                "entries": [
+                    "Jerusalem",
+                    "Knights Templar",
+                    "Saladin",
+                    "Papal Decrees"
+                ]
+            },
+            {
+                "topic": [
+                    "Ancient Egypt",
+                    "Egypt",
+                    "Egyptian Civilization",
+                    "Pharaoh Times",
+                    "Pharaohs",
+                    "The Pharaohs"
+                ],
+                "entries": [
+                    "Pyramids",
+                    "Hieroglyphics",
+                    "Nile River",
+                    "Mummification"
+                ]
+            },
+            {
+                "topic": [
+                    "The Roman Empire",
+                    "The Romans",
+                    "Roman Empire",
+                    "Roman Imperium",
+                    "Empire of Rome"
+                ],
+                "entries": [
+                    "Julius Caesar",
+                    "Senate",
+                    "Colosseum",
+                    "Legions"
+                ]
+            },
+            {
+                "topic": [
+                    "The Byzantine Empire",
+                    "Bbyzantine Empire",
+                    "Eastern Roman Empire",
+                    "Byzantium"
+                ],
+                "entries": [
+                    "Constantinople",
+                    "Hagia Sophia",
+                    "Justinian Code",
+                    "Greek Fire"
+                ]
+            },
+            {
+                "topic": [
+                    "The Ottoman Empire",
+                    "Ottoman Empire",
+                    "Ottoman Turks",
+                    "Turkish Empire"
+                ],
+                "entries": [
+                    "Suleiman the Magnificent",
+                    "Topkapi Palace",
+                    "Janissaries",
+                    "Sultanate"
+                ]
+            },
+            {
+                "topic": [
+                    "The British Empire",
+                    "British Empire",
+                    "British Colonial Expansion",
+                    "Empire of Great Britain"
+                ],
+                "entries": [
+                    "India Colony",
+                    "Queen Victoria",
+                    "Commonwealth",
+                    "Redcoats"
+                ]
+            },
+            {
+                "topic": [
+                    "The Ming Dynasty",
+                    "Ming Dynasty",
+                    "Ming China",
+                    "Chinese Empire"
+                ],
+                "entries": [
+                    "Forbidden City",
+                    "Porcelain",
+                    "Great Wall",
+                    "Zheng He"
+                ]
+            },
+            {
+                "topic": [
+                    "World Cup",
+                    "The World Cup",
+                    "FIFA World Cup",
+                    "Soccer Tournament"
+                ],
+                "entries": [
+                    "Golden Boot",
+                    "Penalty Shootouts",
+                    "FIFA",
+                    "Trophy Lift"
+                ]
+            },
+            {
+                "topic": [
+                    "Wimbledon",
+                    "Wimbledon Championships",
+                    "The Championships"
+                ],
+                "entries": [
+                    "Grass Courts",
+                    "All England Club",
+                    "Strawberries and Cream",
+                    "Tennis Whites"
+                ]
+            },
+            {
+                "topic": [
+                    "Tour de France",
+                    "The Tour de France",
+                    "Le Grand Tour",
+                    "French Cycling Race"
+                ],
+                "entries": [
+                    "Yellow Jersey",
+                    "Climbs",
+                    "Cycling",
+                    "Alpe d'Huez"
+                ]
+            },
+            {
+                "topic": [
+                    "Formula One",
+                    "F1"
+                ],
+                "entries": [
+                    "Pit Stops",
+                    "Pole Position",
+                    "Monaco Circuit",
+                    "Grand Prix"
+                ]
+            },
+            {
+                "topic": [
+                    "The Nobel Prizes",
+                    "Nobel Prize",
+                    "Nobel Awards",
+                    "International Laurels"
+                ],
+                "entries": [
+                    "Peace Prize",
+                    "Committees",
+                    "Inventor",
+                    "Ceremony in Stockholm"
+                ]
+            },
+            {
+                "topic": [
+                    "The Oscars",
+                    "Oscars",
+                    "Academy Awards",
+                    "Hollywood's Night"
+                ],
+                "entries": [
+                    "Red Carpet",
+                    "Golden Statuette",
+                    "Best Picture",
+                    "Acceptance Speech"
+                ]
+            },
+            {
+                "topic": [
+                    "Comic-Con",
+                    "ComicCon",
+                    "Comic Convention",
+                    "Pop Culture Fest"
+                ],
+                "entries": [
+                    "Cosplay",
+                    "Panels",
+                    "Celebrity Autographs",
+                    "Fan Meetups"
+                ]
+            },
+            {
+                "topic": [
+                    "Lunar New Year",
+                    "Chinese New Year",
+                    "Chinese NY",
+                    "Spring Festival"
+                ],
+                "entries": [
+                    "Zodiac Animals",
+                    "Red Envelopes",
+                    "Firecrackers",
+                    "Lantern Festival"
+                ]
+            },
+            {
+                "topic": [
+                    "Germany Reunification",
+                    "German Reunification",
+                    "German Unity",
+                    "Berlin Wall Fall"
+                ],
+                "entries": [
+                    "East and West",
+                    "Brandenburg Gate",
+                    "Unity Day",
+                    "Cold War End"
+                ]
+            },
+            {
+                "topic": [
+                    "Marathon",
+                    "The Marathon"
+                ],
+                "entries": [
+                    "Mount Olympus",
+                    "Messenger",
+                    "42.195 Kilometers",
+                    "Endurance"
+                ]
+            },
+            {
+                "topic": [
+                    "Boxing Day",
+                    "Day of Goodwill",
+                    "St. Stephen's Day"
+                ],
+                "entries": [
+                    "Post-Christmas",
+                    "Gifts",
+                    "Shopping Sales",
+                    "Charity Events"
+                ]
+            },
+            {
+                "topic": [
+                    "Mardi Gras",
+                    "Fat Tuesday",
+                    "Shrove Tuesday"
+                ],
+                "entries": [
+                    "Parades",
+                    "Beads",
+                    "New Orleans",
+                    "Carnival"
+                ]
+            },
+            {
+                "topic": [
+                    "Day of the Dead",
+                    "Dia de los Muertos",
+                    "All Saints Day"
+                ],
+                "entries": [
+                    "Sugar Skulls",
+                    "Altars",
+                    "Mexico",
+                    "Marigolds"
+                ]
+            },
+            {
+                "topic": [
+                    "Ramadan",
+                    "Ramzan",
+                    "Sawm"
+                ],
+                "entries": [
+                    "Fasting",
+                    "Iftar",
+                    "Holy Month",
+                    "Quran Reading"
+                ]
+            },
+            {
+                "topic": [
+                    "Hanukkah",
+                    "Chanukah",
+                    "Festival of Lights"
+                ],
+                "entries": [
+                    "Menorah",
+                    "Dreidel",
+                    "Eight Nights",
+                    "Oil"
+                ]
+            },
+            {
+                "topic": [
+                    "Oktoberfest",
+                    "Bavarian Beer Festival",
+                    "Wiesn"
+                ],
+                "entries": [
+                    "Munich",
+                    "Lederhosen",
+                    "Beer",
+                    "Pretzels"
+                ]
+            },
+            {
+                "topic": [
+                    "Passover",
+                    "Pesach",
+                    "Jewish Easter"
+                ],
+                "entries": [
+                    "Seder Meal",
+                    "Matzah",
+                    "Haggadah",
+                    "Plagues"
+                ]
+            },
+            {
+                "topic": [
+                    "Festival of Colors",
+                    "Holi",
+                    "Holi Festival",
+                    "Phagwah"
+                ],
+                "entries": [
+                    "Colored Powder",
+                    "Spring",
+                    "Bonfires",
+                    "Water Balloons"
+                ]
+            },
+            {
+                "topic": [
+                    "Hanami",
+                    "Cherry Blossom Festival",
+                    "Flower Viewing"
+                ],
+                "entries": [
+                    "Sakura",
+                    "Picnic",
+                    "Japan",
+                    "Springtime"
+                ]
+            },
+            {
+                "topic": [
+                    "Carnival",
+                    "Carnaval",
+                    "Mardi Gras"
+                ],
+                "entries": [
+                    "Costumes",
+                    "Floats",
+                    "Samba",
+                    "Celebration"
+                ]
+            },
+            {
+                "topic": [
+                    "Diwali",
+                    "Deepavali",
+                    "Festival of Lights"
+                ],
+                "entries": [
+                    "Oil Lamps",
+                    "Firecrackers",
+                    "New Clothes",
+                    "Goddess Lakshmi"
+                ]
+            },
+            {
+                "topic": [
+                    "Kwanzaa",
+                    "African Celebration",
+                    "Nguzo Saba"
+                ],
+                "entries": [
+                    "Seven Principles",
+                    "Candles",
+                    "Unity Cup",
+                    "Red, Black, Green"
+                ]
+            },
+            {
+                "topic": [
+                    "Vesak",
+                    "Buddha Day",
+                    "Vaisakha"
+                ],
+                "entries": [
+                    "Enlightenment",
+                    "Buddha Statues",
+                    "Religious Rituals",
+                    "Meditation"
+                ]
+            },
+            {
+                "topic": [
+                    "Mid-Autumn Festival",
+                    "Moon Festival",
+                    "Zhongqiu Jie"
+                ],
+                "entries": [
+                    "Mooncakes",
+                    "Lanterns",
+                    "Harvest",
+                    "Full Moon"
+                ]
+            },
+            {
+                "topic": [
+                    "Navratri",
+                    "Durga Puja",
+                    "Dussehra"
+                ],
+                "entries": [
+                    "Nine Nights",
+                    "Fasting",
+                    "Dances",
+                    "Goddess Durga"
+                ]
+            },
+            {
+                "topic": [
+                    "St. Patrick's Day",
+                    "St. Patrick's",
+                    "Irish Day",
+                    "L\u00e1 Fh\u00e9ile P\u00e1draig"
+                ],
+                "entries": [
+                    "Green Attire",
+                    "Shamrock",
+                    "Parades",
+                    "Leprechauns"
+                ]
+            },
+            {
+                "topic": [
+                    "Bonfire Night",
+                    "Guy Fawkes Night",
+                    "Fireworks Night"
+                ],
+                "entries": [
+                    "Effigies",
+                    "Fireworks",
+                    "United Kingdom",
+                    "5th November"
+                ]
+            },
+            {
+                "topic": [
+                    "Winter Solstice",
+                    "Yule",
+                    "Midwinter"
+                ],
+                "entries": [
+                    "Shortest Day",
+                    "Stonehenge",
+                    "Celebration",
+                    "Renewal"
+                ]
+            }
+        ]
+    },
     "films_series": {
         "topics": [
             {
@@ -1418,7 +2267,8 @@
             },
             {
                 "topic": [
-                    "The Walking Dead"
+                    "The Walking Dead",
+                    "Walking Dead"
                 ],
                 "entries": [
                     "Zombies",
@@ -3111,6 +3961,8 @@
             },
             {
                 "topic": [
+                    "Drum",
+                    "Drums",
                     "Drum Kit",
                     "Drum Set",
                     "Percussion Kit"
@@ -3345,19 +4197,6 @@
             },
             {
                 "topic": [
-                    "Recorder",
-                    "Blockfl\u00f6te",
-                    "Woodwind"
-                ],
-                "entries": [
-                    "Fingering Holes",
-                    "Wood",
-                    "Baroque",
-                    "Soprano"
-                ]
-            },
-            {
-                "topic": [
                     "Organ",
                     "Pipe Organ",
                     "Electronic Organ"
@@ -3376,7 +4215,7 @@
                     "Scottish Pipes"
                 ],
                 "entries": [
-                    "Drones",
+                    "Scotland",
                     "Reed",
                     "Bag",
                     "Tradition"
@@ -3393,19 +4232,6 @@
                     "Portable",
                     "Fingerstyle",
                     "Soprano"
-                ]
-            },
-            {
-                "topic": [
-                    "Harmonium",
-                    "Reed Organ",
-                    "Pump Organ"
-                ],
-                "entries": [
-                    "Pedals",
-                    "Reeds",
-                    "Air Pump",
-                    "Indian Classical"
                 ]
             },
             {
@@ -3808,18 +4634,6 @@
             },
             {
                 "topic": [
-                    "Musician",
-                    "Performer"
-                ],
-                "entries": [
-                    "Instrument Mastery",
-                    "Stage Presence",
-                    "Song Composition",
-                    "Recording Sessions"
-                ]
-            },
-            {
-                "topic": [
                     "Carpenter",
                     "Joiner"
                 ],
@@ -3868,18 +4682,6 @@
             },
             {
                 "topic": [
-                    "Translator",
-                    "Interpreter"
-                ],
-                "entries": [
-                    "Language Conversion",
-                    "Cultural Mediation",
-                    "Textual Adaptation",
-                    "Simultaneous Translation"
-                ]
-            },
-            {
-                "topic": [
                     "Banker",
                     "Finance Officer"
                 ],
@@ -3916,54 +4718,6 @@
             },
             {
                 "topic": [
-                    "Graphic Designer",
-                    "Visual Artist"
-                ],
-                "entries": [
-                    "Digital Illustration",
-                    "Layout Design",
-                    "Brand Identity",
-                    "Typography"
-                ]
-            },
-            {
-                "topic": [
-                    "Chef",
-                    "Culinarian"
-                ],
-                "entries": [
-                    "Recipe Creation",
-                    "Food Presentation",
-                    "Gastronomic Trends",
-                    "Kitchen Management"
-                ]
-            },
-            {
-                "topic": [
-                    "Social Worker",
-                    "Case Manager"
-                ],
-                "entries": [
-                    "Family Support",
-                    "Crisis Intervention",
-                    "Community Networking",
-                    "Resource Management"
-                ]
-            },
-            {
-                "topic": [
-                    "Real Estate Agent",
-                    "Realtor"
-                ],
-                "entries": [
-                    "Property Listings",
-                    "Client Negotiations",
-                    "Market Analysis",
-                    "Home Staging"
-                ]
-            },
-            {
-                "topic": [
                     "Physician",
                     "Doctor"
                 ],
@@ -3972,30 +4726,6 @@
                     "Diagnosis Development",
                     "Patient Consultation",
                     "Treatment Plans"
-                ]
-            },
-            {
-                "topic": [
-                    "Chef",
-                    "Cuisine Expert"
-                ],
-                "entries": [
-                    "Flavor Pairing",
-                    "Ingredient Sourcing",
-                    "Gourmet Techniques",
-                    "Menu Planning"
-                ]
-            },
-            {
-                "topic": [
-                    "Welder",
-                    "Metalworker"
-                ],
-                "entries": [
-                    "Welding Techniques",
-                    "Metal Fabrication",
-                    "Blueprint Reading",
-                    "Safety Standards"
                 ]
             },
             {
@@ -4012,90 +4742,6 @@
             },
             {
                 "topic": [
-                    "Chauffeur",
-                    "Driver"
-                ],
-                "entries": [
-                    "Route Planning",
-                    "Passenger Etiquette",
-                    "Luxury Car Maintenance",
-                    "Punctual Service"
-                ]
-            },
-            {
-                "topic": [
-                    "Zookeeper",
-                    "Animal Caretaker"
-                ],
-                "entries": [
-                    "Habitat Maintenance",
-                    "Animal Feeding",
-                    "Species Enrichment",
-                    "Conservation Education"
-                ]
-            },
-            {
-                "topic": [
-                    "Event Planner",
-                    "Coordinator"
-                ],
-                "entries": [
-                    "Venue Selection",
-                    "Theme Design",
-                    "Logistical Support",
-                    "Guest Management"
-                ]
-            },
-            {
-                "topic": [
-                    "Security Guard",
-                    "Watchman"
-                ],
-                "entries": [
-                    "Access Control",
-                    "Surveillance Monitoring",
-                    "Incident Reporting",
-                    "Risk Mitigation"
-                ]
-            },
-            {
-                "topic": [
-                    "Craftsperson",
-                    "Artisan"
-                ],
-                "entries": [
-                    "Handmade Goods",
-                    "Traditional Methods",
-                    "Bespoke Artifacts",
-                    "Craftsmanship Skills"
-                ]
-            },
-            {
-                "topic": [
-                    "Diver",
-                    "Submersible Operator"
-                ],
-                "entries": [
-                    "Underwater Exploration",
-                    "Dive Planning",
-                    "Equipment Maintenance",
-                    "Marine Photography"
-                ]
-            },
-            {
-                "topic": [
-                    "Geologist",
-                    "Earth Scientist"
-                ],
-                "entries": [
-                    "Rock Analysis",
-                    "Seismic Data",
-                    "Field Surveys",
-                    "Stratigraphy Studies"
-                ]
-            },
-            {
-                "topic": [
                     "Barista",
                     "Coffee Specialist"
                 ],
@@ -4108,18 +4754,6 @@
             },
             {
                 "topic": [
-                    "Therapist",
-                    "Counselor"
-                ],
-                "entries": [
-                    "Client Sessions",
-                    "Mood Disorders",
-                    "Therapeutic Strategies",
-                    "Progress Tracking"
-                ]
-            },
-            {
-                "topic": [
                     "Paramedic",
                     "EMT"
                 ],
@@ -4128,253 +4762,6 @@
                     "Trauma Care",
                     "Patient Transport",
                     "Life-Saving Skills"
-                ]
-            }
-        ]
-    },
-    "organizations": {
-        "topics": [
-            {
-                "topic": [
-                    "United Nations",
-                    "UN"
-                ],
-                "entries": [
-                    "Peacekeeping",
-                    "International Law",
-                    "Human Rights",
-                    "Security Council"
-                ]
-            },
-            {
-                "topic": [
-                    "NASA",
-                    "National Aeronautics and Space Administration"
-                ],
-                "entries": [
-                    "Space Exploration",
-                    "Apollo Missions",
-                    "Mars Rovers",
-                    "Astronauts"
-                ]
-            },
-            {
-                "topic": [
-                    "World Health Organization",
-                    "WHO"
-                ],
-                "entries": [
-                    "Global Health",
-                    "Pandemic Response",
-                    "Vaccination Programs",
-                    "Epidemiology"
-                ]
-            },
-            {
-                "topic": [
-                    "European Union",
-                    "EU"
-                ],
-                "entries": [
-                    "Eurozone",
-                    "Schengen Area",
-                    "Brussels Headquarters",
-                    "Member States"
-                ]
-            },
-            {
-                "topic": [
-                    "International Monetary Fund",
-                    "IMF"
-                ],
-                "entries": [
-                    "Financial Stability",
-                    "Economic Surveillance",
-                    "Bailout Packages",
-                    "Quota System"
-                ]
-            },
-            {
-                "topic": [
-                    "Red Cross",
-                    "International Committee of the Red Cross",
-                    "ICRC"
-                ],
-                "entries": [
-                    "Humanitarian Aid",
-                    "Geneva Conventions",
-                    "Disaster Relief",
-                    "Neutrality"
-                ]
-            },
-            {
-                "topic": [
-                    "World Wildlife Fund",
-                    "WWF"
-                ],
-                "entries": [
-                    "Conservation",
-                    "Endangered Species",
-                    "Sustainable Development",
-                    "Wildlife Protection"
-                ]
-            },
-            {
-                "topic": [
-                    "Greenpeace",
-                    "Green Peace",
-                    "GP"
-                ],
-                "entries": [
-                    "Environmental Activism",
-                    "Direct Action",
-                    "Whale Conservation",
-                    "Climate Change"
-                ]
-            },
-            {
-                "topic": [
-                    "United Nations Educational, Scientific and Cultural Organization",
-                    "UNESCO"
-                ],
-                "entries": [
-                    "World Heritage Sites",
-                    "Cultural Preservation",
-                    "Education Programs",
-                    "Science Initiatives"
-                ]
-            },
-            {
-                "topic": [
-                    "World Bank",
-                    "International Bank for Reconstruction and Development"
-                ],
-                "entries": [
-                    "Development Projects",
-                    "Poverty Alleviation",
-                    "Loans and Grants",
-                    "Economic Research"
-                ]
-            },
-            {
-                "topic": [
-                    "World Trade Organization",
-                    "WTO"
-                ],
-                "entries": [
-                    "Global Trade",
-                    "Dispute Settlement",
-                    "Trade Agreements",
-                    "Market Access"
-                ]
-            },
-            {
-                "topic": [
-                    "International Olympic Committee",
-                    "IOC"
-                ],
-                "entries": [
-                    "Olympic Games",
-                    "Athletic Competitions",
-                    "Host Cities",
-                    "Olympic Charter"
-                ]
-            },
-            {
-                "topic": [
-                    "Interpol",
-                    "International Criminal Police Organization"
-                ],
-                "entries": [
-                    "Crime Fighting",
-                    "International Cooperation",
-                    "Fugitive Tracking",
-                    "Criminal Databases"
-                ]
-            },
-            {
-                "topic": [
-                    "North Atlantic Treaty Organization",
-                    "NATO"
-                ],
-                "entries": [
-                    "Military Alliance",
-                    "Collective Defense",
-                    "Brussels Headquarters",
-                    "Member Nations"
-                ]
-            },
-            {
-                "topic": [
-                    "UNICEF",
-                    "United Nations Children's Fund"
-                ],
-                "entries": [
-                    "Child Welfare",
-                    "Education",
-                    "Humanitarian Aid",
-                    "Immunization"
-                ]
-            },
-            {
-                "topic": [
-                    "World Food Programme",
-                    "WFP"
-                ],
-                "entries": [
-                    "Hunger Relief",
-                    "Emergency Food Aid",
-                    "Nutrition Programs",
-                    "Food Security"
-                ]
-            },
-            {
-                "topic": [
-                    "Amnesty International",
-                    "AI"
-                ],
-                "entries": [
-                    "Human Rights Advocacy",
-                    "Prisoners of Conscience",
-                    "Campaigns",
-                    "Research"
-                ]
-            },
-            {
-                "topic": [
-                    "International Atomic Energy Agency",
-                    "IAEA"
-                ],
-                "entries": [
-                    "Nuclear Safety",
-                    "Non-proliferation",
-                    "Energy Use",
-                    "Inspections"
-                ]
-            },
-            {
-                "topic": [
-                    "G7",
-                    "Group of Seven",
-                    "G-7"
-                ],
-                "entries": [
-                    "Economic Policy",
-                    "Annual Summits",
-                    "World Leaders",
-                    "Advanced Economies"
-                ]
-            },
-            {
-                "topic": [
-                    "OPEC",
-                    "Organization of the Petroleum Exporting Countries"
-                ],
-                "entries": [
-                    "Oil Prices",
-                    "Petroleum Policies",
-                    "Member Nations",
-                    "Production Quotas"
                 ]
             }
         ]
@@ -4396,6 +4783,8 @@
             {
                 "topic": [
                     "Queen Elizabeth II",
+                    "Queen Elizabeth",
+                    "Elizabeth",
                     "Elizabeth II"
                 ],
                 "entries": [
@@ -4403,18 +4792,6 @@
                     "Longest reigning",
                     "Commonwealth",
                     "Royal duties"
-                ]
-            },
-            {
-                "topic": [
-                    "The Beatles",
-                    "Beatles"
-                ],
-                "entries": [
-                    "Liverpool",
-                    "British invasion",
-                    "Abbey Road",
-                    "Lennon"
                 ]
             },
             {
@@ -4563,18 +4940,6 @@
             },
             {
                 "topic": [
-                    "The Rolling Stones",
-                    "Rolling Stones"
-                ],
-                "entries": [
-                    "Jagger",
-                    "Rock",
-                    "British",
-                    "1962"
-                ]
-            },
-            {
-                "topic": [
                     "Pablo Picasso",
                     "Picasso"
                 ],
@@ -4683,54 +5048,6 @@
             },
             {
                 "topic": [
-                    "Albert Einstein",
-                    "Einstein"
-                ],
-                "entries": [
-                    "Theory of relativity",
-                    "Physicist",
-                    "E=mc^2",
-                    "Nobel Prize"
-                ]
-            },
-            {
-                "topic": [
-                    "Michael Jackson",
-                    "Jackson"
-                ],
-                "entries": [
-                    "King of Pop",
-                    "Thriller",
-                    "Moonwalk",
-                    "Neverland"
-                ]
-            },
-            {
-                "topic": [
-                    "Elvis Presley",
-                    "Presley"
-                ],
-                "entries": [
-                    "Rock and roll",
-                    "Graceland",
-                    "Blue Suede Shoes",
-                    "Memphis"
-                ]
-            },
-            {
-                "topic": [
-                    "The Eiffel Tower",
-                    "Eiffel"
-                ],
-                "entries": [
-                    "Paris",
-                    "Iron structure",
-                    "1889",
-                    "Gustave Eiffel"
-                ]
-            },
-            {
-                "topic": [
                     "Barack Obama",
                     "Obama"
                 ],
@@ -4751,30 +5068,6 @@
                     "Wizard",
                     "Hogwarts",
                     "Magic"
-                ]
-            },
-            {
-                "topic": [
-                    "Taj Mahal",
-                    "Taj"
-                ],
-                "entries": [
-                    "Agra",
-                    "Architecture",
-                    "Mughal",
-                    "White marble"
-                ]
-            },
-            {
-                "topic": [
-                    "Coca-Cola",
-                    "Coke"
-                ],
-                "entries": [
-                    "Soft drink",
-                    "Atlanta",
-                    "Red label",
-                    "Soda"
                 ]
             },
             {
@@ -4803,18 +5096,6 @@
             },
             {
                 "topic": [
-                    "Mother Teresa",
-                    "Teresa"
-                ],
-                "entries": [
-                    "Calcutta",
-                    "Missionaries of Charity",
-                    "Nobel Peace Prize",
-                    "Saint"
-                ]
-            },
-            {
-                "topic": [
                     "Muhammad Ali",
                     "Ali"
                 ],
@@ -4823,78 +5104,6 @@
                     "Float like a butterfly",
                     "Heavyweight champion",
                     "Olympic gold"
-                ]
-            },
-            {
-                "topic": [
-                    "Vincent van Gogh",
-                    "Van Gogh"
-                ],
-                "entries": [
-                    "Starry Night",
-                    "Post-Impressionism",
-                    "Dutch",
-                    "Ear incident"
-                ]
-            },
-            {
-                "topic": [
-                    "The Beatles",
-                    "Beatles"
-                ],
-                "entries": [
-                    "Liverpool",
-                    "British invasion",
-                    "Abbey Road",
-                    "Lennon"
-                ]
-            },
-            {
-                "topic": [
-                    "Albert Einstein",
-                    "Einstein"
-                ],
-                "entries": [
-                    "Theory of relativity",
-                    "Physicist",
-                    "E=mc^2",
-                    "Nobel Prize"
-                ]
-            },
-            {
-                "topic": [
-                    "Queen Elizabeth II",
-                    "Elizabeth II"
-                ],
-                "entries": [
-                    "British monarchy",
-                    "Longest reigning",
-                    "Commonwealth",
-                    "Royal duties"
-                ]
-            },
-            {
-                "topic": [
-                    "The Eiffel Tower",
-                    "Eiffel"
-                ],
-                "entries": [
-                    "Paris",
-                    "Iron structure",
-                    "1889",
-                    "Gustave Eiffel"
-                ]
-            },
-            {
-                "topic": [
-                    "Frida Kahlo",
-                    "Kahlo"
-                ],
-                "entries": [
-                    "Self-portraits",
-                    "Mexico",
-                    "Surrealism",
-                    "Pain"
                 ]
             },
             {
@@ -4911,30 +5120,6 @@
             },
             {
                 "topic": [
-                    "Vincent van Gogh",
-                    "Van Gogh"
-                ],
-                "entries": [
-                    "Starry Night",
-                    "Post-Impressionism",
-                    "Dutch",
-                    "Ear incident"
-                ]
-            },
-            {
-                "topic": [
-                    "Jane Austen",
-                    "Austen"
-                ],
-                "entries": [
-                    "Pride and Prejudice",
-                    "Novelist",
-                    "Regency",
-                    "Social commentary"
-                ]
-            },
-            {
-                "topic": [
                     "Harper Lee",
                     "Lee"
                 ],
@@ -4943,18 +5128,6 @@
                     "Alabama",
                     "Pulitzer Prize",
                     "Reclusive"
-                ]
-            },
-            {
-                "topic": [
-                    "Mahatma Gandhi",
-                    "Gandhi"
-                ],
-                "entries": [
-                    "Nonviolence",
-                    "India",
-                    "Salt March",
-                    "Independence"
                 ]
             },
             {
@@ -5015,18 +5188,6 @@
                     "Telescope",
                     "Heliocentrism",
                     "Italian"
-                ]
-            },
-            {
-                "topic": [
-                    "Queen Victoria",
-                    "Victoria"
-                ],
-                "entries": [
-                    "British Empire",
-                    "Longest reign",
-                    "Victorian era",
-                    "Industrial age"
                 ]
             },
             {
@@ -5103,18 +5264,6 @@
             },
             {
                 "topic": [
-                    "Chanel",
-                    "Coco Chanel"
-                ],
-                "entries": [
-                    "Fashion designer",
-                    "Chanel No. 5",
-                    "Little black dress",
-                    "Paris"
-                ]
-            },
-            {
-                "topic": [
                     "Ernest Hemingway",
                     "Hemingway"
                 ],
@@ -5171,18 +5320,6 @@
                     "Conqueror",
                     "Aristotle",
                     "Battle of Gaugamela"
-                ]
-            },
-            {
-                "topic": [
-                    "Star Wars",
-                    "SW"
-                ],
-                "entries": [
-                    "George Lucas",
-                    "Sci-fi saga",
-                    "The Force",
-                    "Jedi"
                 ]
             }
         ]
@@ -5252,19 +5389,6 @@
                     "Andes Mountains",
                     "Peru",
                     "Lost City"
-                ]
-            },
-            {
-                "topic": [
-                    "Sydney Opera House",
-                    "Opera House Sydney",
-                    "Sydney Concert Hall"
-                ],
-                "entries": [
-                    "Sails",
-                    "Harbor",
-                    "Iconic Architecture",
-                    "Performing Arts"
                 ]
             },
             {
@@ -5405,7 +5529,7 @@
                 ],
                 "entries": [
                     "Suspension Bridge",
-                    "California",
+                    "San Francisco",
                     "Orange",
                     "Fog"
                 ]
@@ -5638,7 +5762,7 @@
                     "Easter Island Heads"
                 ],
                 "entries": [
-                    "Polynesia",
+                    "Easter Island",
                     "Rapa Nui",
                     "Monolithic",
                     "Stone Figures"
@@ -5698,19 +5822,6 @@
             },
             {
                 "topic": [
-                    "Champs-\u00c9lys\u00e9es",
-                    "Avenue des Champs-\u00c9lys\u00e9es",
-                    "\u00c9lysian Fields"
-                ],
-                "entries": [
-                    "Paris",
-                    "Shopping",
-                    "Tree-lined Avenue",
-                    "Arc de Triomphe"
-                ]
-            },
-            {
-                "topic": [
                     "Edinburgh Castle",
                     "Castle Rock",
                     "Edinburgh Fortress"
@@ -5720,19 +5831,6 @@
                     "Royal Residence",
                     "Historic Fortress",
                     "Tourism"
-                ]
-            },
-            {
-                "topic": [
-                    "Great Lakes",
-                    "Laurentian Lakes",
-                    "Five Lakes"
-                ],
-                "entries": [
-                    "North America",
-                    "Freshwater",
-                    "Border",
-                    "Shipping"
                 ]
             },
             {
@@ -5810,7 +5908,7 @@
                     "Tanzania",
                     "Wildlife Safari",
                     "Wildebeest Migration",
-                    "Grasslands"
+                    "Park"
                 ]
             },
             {
@@ -7377,335 +7475,6 @@
                     "Rotation",
                     "Breeze",
                     "Electric"
-                ]
-            }
-        ]
-    },
-    "traditions": {
-        "topics": [
-            {
-                "topic": [
-                    "Boxing Day",
-                    "Day of Goodwill",
-                    "St. Stephen's Day"
-                ],
-                "entries": [
-                    "Post-Christmas",
-                    "Gifts",
-                    "Shopping Sales",
-                    "Charity Events"
-                ]
-            },
-            {
-                "topic": [
-                    "Mardi Gras",
-                    "Fat Tuesday",
-                    "Shrove Tuesday"
-                ],
-                "entries": [
-                    "Parades",
-                    "Beads",
-                    "New Orleans",
-                    "Carnival"
-                ]
-            },
-            {
-                "topic": [
-                    "Day of the Dead",
-                    "D\u00eda de los Muertos",
-                    "All Saints Day"
-                ],
-                "entries": [
-                    "Sugar Skulls",
-                    "Altars",
-                    "Mexico",
-                    "Marigolds"
-                ]
-            },
-            {
-                "topic": [
-                    "Chinese New Year",
-                    "Spring Festival",
-                    "Lunar New Year"
-                ],
-                "entries": [
-                    "Dragon Dance",
-                    "Red Envelopes",
-                    "Fireworks",
-                    "Family Reunion"
-                ]
-            },
-            {
-                "topic": [
-                    "Ramadan",
-                    "Ramzan",
-                    "Sawm"
-                ],
-                "entries": [
-                    "Fasting",
-                    "Iftar",
-                    "Holy Month",
-                    "Quran Reading"
-                ]
-            },
-            {
-                "topic": [
-                    "Hanukkah",
-                    "Chanukah",
-                    "Festival of Lights"
-                ],
-                "entries": [
-                    "Menorah",
-                    "Dreidel",
-                    "Eight Nights",
-                    "Oil"
-                ]
-            },
-            {
-                "topic": [
-                    "Thanksgiving",
-                    "Turkey Day",
-                    "Harvest Festival"
-                ],
-                "entries": [
-                    "Pilgrims",
-                    "Pumpkin Pie",
-                    "Feast",
-                    "November"
-                ]
-            },
-            {
-                "topic": [
-                    "Oktoberfest",
-                    "Bavarian Beer Festival",
-                    "Wiesn"
-                ],
-                "entries": [
-                    "Munich",
-                    "Lederhosen",
-                    "Beer",
-                    "Pretzels"
-                ]
-            },
-            {
-                "topic": [
-                    "Passover",
-                    "Pesach",
-                    "Jewish Easter"
-                ],
-                "entries": [
-                    "Seder Meal",
-                    "Matzah",
-                    "Haggadah",
-                    "Plagues"
-                ]
-            },
-            {
-                "topic": [
-                    "Festival of Colors",
-                    "Holi",
-                    "Phagwah"
-                ],
-                "entries": [
-                    "Colored Powder",
-                    "Spring",
-                    "Bonfires",
-                    "Water Balloons"
-                ]
-            },
-            {
-                "topic": [
-                    "Hanami",
-                    "Cherry Blossom Festival",
-                    "Flower Viewing"
-                ],
-                "entries": [
-                    "Sakura",
-                    "Picnic",
-                    "Japan",
-                    "Springtime"
-                ]
-            },
-            {
-                "topic": [
-                    "Carnival",
-                    "Carnaval",
-                    "Mardi Gras"
-                ],
-                "entries": [
-                    "Costumes",
-                    "Floats",
-                    "Samba",
-                    "Celebration"
-                ]
-            },
-            {
-                "topic": [
-                    "Halloween",
-                    "All Hallows' Eve",
-                    "Samhain"
-                ],
-                "entries": [
-                    "Costumes",
-                    "Pumpkins",
-                    "Trick-or-Treat",
-                    "Haunted Houses"
-                ]
-            },
-            {
-                "topic": [
-                    "Diwali",
-                    "Deepavali",
-                    "Festival of Lights"
-                ],
-                "entries": [
-                    "Oil Lamps",
-                    "Firecrackers",
-                    "New Clothes",
-                    "Goddess Lakshmi"
-                ]
-            },
-            {
-                "topic": [
-                    "Easter",
-                    "Pascha",
-                    "Resurrection Sunday"
-                ],
-                "entries": [
-                    "Egg Hunts",
-                    "Bunnies",
-                    "Resurrection",
-                    "Spring"
-                ]
-            },
-            {
-                "topic": [
-                    "Christmas",
-                    "Xmas",
-                    "Nativity Festival"
-                ],
-                "entries": [
-                    "Santa Claus",
-                    "Gifts",
-                    "Tree",
-                    "Carols"
-                ]
-            },
-            {
-                "topic": [
-                    "Kwanzaa",
-                    "African Celebration",
-                    "Nguzo Saba"
-                ],
-                "entries": [
-                    "Seven Principles",
-                    "Candles",
-                    "Unity Cup",
-                    "Red, Black, Green"
-                ]
-            },
-            {
-                "topic": [
-                    "Vesak",
-                    "Buddha Day",
-                    "Vaisakha"
-                ],
-                "entries": [
-                    "Enlightenment",
-                    "Buddha Statues",
-                    "Religious Rituals",
-                    "Meditation"
-                ]
-            },
-            {
-                "topic": [
-                    "Mid-Autumn Festival",
-                    "Moon Festival",
-                    "Zhongqiu Jie"
-                ],
-                "entries": [
-                    "Mooncakes",
-                    "Lanterns",
-                    "Harvest",
-                    "Full Moon"
-                ]
-            },
-            {
-                "topic": [
-                    "Navratri",
-                    "Durga Puja",
-                    "Dussehra"
-                ],
-                "entries": [
-                    "Nine Nights",
-                    "Fasting",
-                    "Dances",
-                    "Goddess Durga"
-                ]
-            },
-            {
-                "topic": [
-                    "Thanksgiving",
-                    "Canada Harvest Day",
-                    "Turkey Day"
-                ],
-                "entries": [
-                    "Feast",
-                    "Football",
-                    "November",
-                    "Parades"
-                ]
-            },
-            {
-                "topic": [
-                    "St. Patrick's Day",
-                    "Irish Day",
-                    "L\u00e1 Fh\u00e9ile P\u00e1draig"
-                ],
-                "entries": [
-                    "Green Attire",
-                    "Shamrock",
-                    "Parades",
-                    "Leprechauns"
-                ]
-            },
-            {
-                "topic": [
-                    "Bonfire Night",
-                    "Guy Fawkes Night",
-                    "Fireworks Night"
-                ],
-                "entries": [
-                    "Effigies",
-                    "Fireworks",
-                    "United Kingdom",
-                    "5th November"
-                ]
-            },
-            {
-                "topic": [
-                    "Winter Solstice",
-                    "Yule",
-                    "Midwinter"
-                ],
-                "entries": [
-                    "Shortest Day",
-                    "Stonehenge",
-                    "Celebration",
-                    "Renewal"
-                ]
-            },
-            {
-                "topic": [
-                    "Bastille Day",
-                    "French National Day",
-                    "Quatorze Juillet"
-                ],
-                "entries": [
-                    "Liberty",
-                    "Revolution",
-                    "Fireworks",
-                    "Parades"
                 ]
             }
         ]
