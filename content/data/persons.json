@@ -15,6 +15,8 @@
         {
             "topic": [
                 "Queen Elizabeth II",
+                "Queen Elizabeth",
+                "Elizabeth",
                 "Elizabeth II"
             ],
             "entries": [
@@ -22,18 +24,6 @@
                 "Longest reigning",
                 "Commonwealth",
                 "Royal duties"
-            ]
-        },
-        {
-            "topic": [
-                "The Beatles",
-                "Beatles"
-            ],
-            "entries": [
-                "Liverpool",
-                "British invasion",
-                "Abbey Road",
-                "Lennon"
             ]
         },
         {
@@ -182,18 +172,6 @@
         },
         {
             "topic": [
-                "The Rolling Stones",
-                "Rolling Stones"
-            ],
-            "entries": [
-                "Jagger",
-                "Rock",
-                "British",
-                "1962"
-            ]
-        },
-        {
-            "topic": [
                 "Pablo Picasso",
                 "Picasso"
             ],
@@ -302,54 +280,6 @@
         },
         {
             "topic": [
-                "Albert Einstein",
-                "Einstein"
-            ],
-            "entries": [
-                "Theory of relativity",
-                "Physicist",
-                "E=mc^2",
-                "Nobel Prize"
-            ]
-        },
-        {
-            "topic": [
-                "Michael Jackson",
-                "Jackson"
-            ],
-            "entries": [
-                "King of Pop",
-                "Thriller",
-                "Moonwalk",
-                "Neverland"
-            ]
-        },
-        {
-            "topic": [
-                "Elvis Presley",
-                "Presley"
-            ],
-            "entries": [
-                "Rock and roll",
-                "Graceland",
-                "Blue Suede Shoes",
-                "Memphis"
-            ]
-        },
-        {
-            "topic": [
-                "The Eiffel Tower",
-                "Eiffel"
-            ],
-            "entries": [
-                "Paris",
-                "Iron structure",
-                "1889",
-                "Gustave Eiffel"
-            ]
-        },
-        {
-            "topic": [
                 "Barack Obama",
                 "Obama"
             ],
@@ -370,30 +300,6 @@
                 "Wizard",
                 "Hogwarts",
                 "Magic"
-            ]
-        },
-        {
-            "topic": [
-                "Taj Mahal",
-                "Taj"
-            ],
-            "entries": [
-                "Agra",
-                "Architecture",
-                "Mughal",
-                "White marble"
-            ]
-        },
-        {
-            "topic": [
-                "Coca-Cola",
-                "Coke"
-            ],
-            "entries": [
-                "Soft drink",
-                "Atlanta",
-                "Red label",
-                "Soda"
             ]
         },
         {
@@ -422,18 +328,6 @@
         },
         {
             "topic": [
-                "Mother Teresa",
-                "Teresa"
-            ],
-            "entries": [
-                "Calcutta",
-                "Missionaries of Charity",
-                "Nobel Peace Prize",
-                "Saint"
-            ]
-        },
-        {
-            "topic": [
                 "Muhammad Ali",
                 "Ali"
             ],
@@ -442,78 +336,6 @@
                 "Float like a butterfly",
                 "Heavyweight champion",
                 "Olympic gold"
-            ]
-        },
-        {
-            "topic": [
-                "Vincent van Gogh",
-                "Van Gogh"
-            ],
-            "entries": [
-                "Starry Night",
-                "Post-Impressionism",
-                "Dutch",
-                "Ear incident"
-            ]
-        },
-        {
-            "topic": [
-                "The Beatles",
-                "Beatles"
-            ],
-            "entries": [
-                "Liverpool",
-                "British invasion",
-                "Abbey Road",
-                "Lennon"
-            ]
-        },
-        {
-            "topic": [
-                "Albert Einstein",
-                "Einstein"
-            ],
-            "entries": [
-                "Theory of relativity",
-                "Physicist",
-                "E=mc^2",
-                "Nobel Prize"
-            ]
-        },
-        {
-            "topic": [
-                "Queen Elizabeth II",
-                "Elizabeth II"
-            ],
-            "entries": [
-                "British monarchy",
-                "Longest reigning",
-                "Commonwealth",
-                "Royal duties"
-            ]
-        },
-        {
-            "topic": [
-                "The Eiffel Tower",
-                "Eiffel"
-            ],
-            "entries": [
-                "Paris",
-                "Iron structure",
-                "1889",
-                "Gustave Eiffel"
-            ]
-        },
-        {
-            "topic": [
-                "Frida Kahlo",
-                "Kahlo"
-            ],
-            "entries": [
-                "Self-portraits",
-                "Mexico",
-                "Surrealism",
-                "Pain"
             ]
         },
         {
@@ -530,30 +352,6 @@
         },
         {
             "topic": [
-                "Vincent van Gogh",
-                "Van Gogh"
-            ],
-            "entries": [
-                "Starry Night",
-                "Post-Impressionism",
-                "Dutch",
-                "Ear incident"
-            ]
-        },
-        {
-            "topic": [
-                "Jane Austen",
-                "Austen"
-            ],
-            "entries": [
-                "Pride and Prejudice",
-                "Novelist",
-                "Regency",
-                "Social commentary"
-            ]
-        },
-        {
-            "topic": [
                 "Harper Lee",
                 "Lee"
             ],
@@ -562,18 +360,6 @@
                 "Alabama",
                 "Pulitzer Prize",
                 "Reclusive"
-            ]
-        },
-        {
-            "topic": [
-                "Mahatma Gandhi",
-                "Gandhi"
-            ],
-            "entries": [
-                "Nonviolence",
-                "India",
-                "Salt March",
-                "Independence"
             ]
         },
         {
@@ -634,18 +420,6 @@
                 "Telescope",
                 "Heliocentrism",
                 "Italian"
-            ]
-        },
-        {
-            "topic": [
-                "Queen Victoria",
-                "Victoria"
-            ],
-            "entries": [
-                "British Empire",
-                "Longest reign",
-                "Victorian era",
-                "Industrial age"
             ]
         },
         {
@@ -722,18 +496,6 @@
         },
         {
             "topic": [
-                "Chanel",
-                "Coco Chanel"
-            ],
-            "entries": [
-                "Fashion designer",
-                "Chanel No. 5",
-                "Little black dress",
-                "Paris"
-            ]
-        },
-        {
-            "topic": [
                 "Ernest Hemingway",
                 "Hemingway"
             ],
@@ -790,18 +552,6 @@
                 "Conqueror",
                 "Aristotle",
                 "Battle of Gaugamela"
-            ]
-        },
-        {
-            "topic": [
-                "Star Wars",
-                "SW"
-            ],
-            "entries": [
-                "George Lucas",
-                "Sci-fi saga",
-                "The Force",
-                "Jedi"
             ]
         }
     ]

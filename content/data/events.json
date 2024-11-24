@@ -378,7 +378,7 @@
                 "Crusades",
                 "Crusading Era",
                 "Holy Wars",
-                "The Holy Wars",
+                "The Holy Wars"
             ],
             "entries": [
                 "Jerusalem",
@@ -406,6 +406,7 @@
         {
             "topic": [
                 "The Roman Empire",
+                "The Romans",
                 "Roman Empire",
                 "Roman Imperium",
                 "Empire of Rome"
@@ -517,7 +518,7 @@
         {
             "topic": [
                 "Formula One",
-                "F1",
+                "F1"
             ],
             "entries": [
                 "Pit Stops",
@@ -606,6 +607,242 @@
                 "Messenger",
                 "42.195 Kilometers",
                 "Endurance"
+            ]
+        },
+        {
+            "topic": [
+                "Boxing Day",
+                "Day of Goodwill",
+                "St. Stephen's Day"
+            ],
+            "entries": [
+                "Post-Christmas",
+                "Gifts",
+                "Shopping Sales",
+                "Charity Events"
+            ]
+        },
+        {
+            "topic": [
+                "Mardi Gras",
+                "Fat Tuesday",
+                "Shrove Tuesday"
+            ],
+            "entries": [
+                "Parades",
+                "Beads",
+                "New Orleans",
+                "Carnival"
+            ]
+        },
+        {
+            "topic": [
+                "Day of the Dead",
+                "Dia de los Muertos",
+                "All Saints Day"
+            ],
+            "entries": [
+                "Sugar Skulls",
+                "Altars",
+                "Mexico",
+                "Marigolds"
+            ]
+        },
+        {
+            "topic": [
+                "Ramadan",
+                "Ramzan",
+                "Sawm"
+            ],
+            "entries": [
+                "Fasting",
+                "Iftar",
+                "Holy Month",
+                "Quran Reading"
+            ]
+        },
+        {
+            "topic": [
+                "Hanukkah",
+                "Chanukah",
+                "Festival of Lights"
+            ],
+            "entries": [
+                "Menorah",
+                "Dreidel",
+                "Eight Nights",
+                "Oil"
+            ]
+        },
+        {
+            "topic": [
+                "Oktoberfest",
+                "Bavarian Beer Festival",
+                "Wiesn"
+            ],
+            "entries": [
+                "Munich",
+                "Lederhosen",
+                "Beer",
+                "Pretzels"
+            ]
+        },
+        {
+            "topic": [
+                "Passover",
+                "Pesach",
+                "Jewish Easter"
+            ],
+            "entries": [
+                "Seder Meal",
+                "Matzah",
+                "Haggadah",
+                "Plagues"
+            ]
+        },
+        {
+            "topic": [
+                "Festival of Colors",
+                "Holi",
+                "Holi Festival",
+                "Phagwah"
+            ],
+            "entries": [
+                "Colored Powder",
+                "Spring",
+                "Bonfires",
+                "Water Balloons"
+            ]
+        },
+        {
+            "topic": [
+                "Hanami",
+                "Cherry Blossom Festival",
+                "Flower Viewing"
+            ],
+            "entries": [
+                "Sakura",
+                "Picnic",
+                "Japan",
+                "Springtime"
+            ]
+        },
+        {
+            "topic": [
+                "Carnival",
+                "Carnaval",
+                "Mardi Gras"
+            ],
+            "entries": [
+                "Costumes",
+                "Floats",
+                "Samba",
+                "Celebration"
+            ]
+        },
+        {
+            "topic": [
+                "Diwali",
+                "Deepavali",
+                "Festival of Lights"
+            ],
+            "entries": [
+                "Oil Lamps",
+                "Firecrackers",
+                "New Clothes",
+                "Goddess Lakshmi"
+            ]
+        },
+        {
+            "topic": [
+                "Kwanzaa",
+                "African Celebration",
+                "Nguzo Saba"
+            ],
+            "entries": [
+                "Seven Principles",
+                "Candles",
+                "Unity Cup",
+                "Red, Black, Green"
+            ]
+        },
+        {
+            "topic": [
+                "Vesak",
+                "Buddha Day",
+                "Vaisakha"
+            ],
+            "entries": [
+                "Enlightenment",
+                "Buddha Statues",
+                "Religious Rituals",
+                "Meditation"
+            ]
+        },
+        {
+            "topic": [
+                "Mid-Autumn Festival",
+                "Moon Festival",
+                "Zhongqiu Jie"
+            ],
+            "entries": [
+                "Mooncakes",
+                "Lanterns",
+                "Harvest",
+                "Full Moon"
+            ]
+        },
+        {
+            "topic": [
+                "Navratri",
+                "Durga Puja",
+                "Dussehra"
+            ],
+            "entries": [
+                "Nine Nights",
+                "Fasting",
+                "Dances",
+                "Goddess Durga"
+            ]
+        },
+        {
+            "topic": [
+                "St. Patrick's Day",
+                "St. Patrick's",
+                "Irish Day",
+                "L\u00e1 Fh\u00e9ile P\u00e1draig"
+            ],
+            "entries": [
+                "Green Attire",
+                "Shamrock",
+                "Parades",
+                "Leprechauns"
+            ]
+        },
+        {
+            "topic": [
+                "Bonfire Night",
+                "Guy Fawkes Night",
+                "Fireworks Night"
+            ],
+            "entries": [
+                "Effigies",
+                "Fireworks",
+                "United Kingdom",
+                "5th November"
+            ]
+        },
+        {
+            "topic": [
+                "Winter Solstice",
+                "Yule",
+                "Midwinter"
+            ],
+            "entries": [
+                "Shortest Day",
+                "Stonehenge",
+                "Celebration",
+                "Renewal"
             ]
         }
     ]

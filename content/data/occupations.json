@@ -266,18 +266,6 @@
         },
         {
             "topic": [
-                "Musician",
-                "Performer"
-            ],
-            "entries": [
-                "Instrument Mastery",
-                "Stage Presence",
-                "Song Composition",
-                "Recording Sessions"
-            ]
-        },
-        {
-            "topic": [
                 "Carpenter",
                 "Joiner"
             ],
@@ -326,18 +314,6 @@
         },
         {
             "topic": [
-                "Translator",
-                "Interpreter"
-            ],
-            "entries": [
-                "Language Conversion",
-                "Cultural Mediation",
-                "Textual Adaptation",
-                "Simultaneous Translation"
-            ]
-        },
-        {
-            "topic": [
                 "Banker",
                 "Finance Officer"
             ],
@@ -374,54 +350,6 @@
         },
         {
             "topic": [
-                "Graphic Designer",
-                "Visual Artist"
-            ],
-            "entries": [
-                "Digital Illustration",
-                "Layout Design",
-                "Brand Identity",
-                "Typography"
-            ]
-        },
-        {
-            "topic": [
-                "Chef",
-                "Culinarian"
-            ],
-            "entries": [
-                "Recipe Creation",
-                "Food Presentation",
-                "Gastronomic Trends",
-                "Kitchen Management"
-            ]
-        },
-        {
-            "topic": [
-                "Social Worker",
-                "Case Manager"
-            ],
-            "entries": [
-                "Family Support",
-                "Crisis Intervention",
-                "Community Networking",
-                "Resource Management"
-            ]
-        },
-        {
-            "topic": [
-                "Real Estate Agent",
-                "Realtor"
-            ],
-            "entries": [
-                "Property Listings",
-                "Client Negotiations",
-                "Market Analysis",
-                "Home Staging"
-            ]
-        },
-        {
-            "topic": [
                 "Physician",
                 "Doctor"
             ],
@@ -430,30 +358,6 @@
                 "Diagnosis Development",
                 "Patient Consultation",
                 "Treatment Plans"
-            ]
-        },
-        {
-            "topic": [
-                "Chef",
-                "Cuisine Expert"
-            ],
-            "entries": [
-                "Flavor Pairing",
-                "Ingredient Sourcing",
-                "Gourmet Techniques",
-                "Menu Planning"
-            ]
-        },
-        {
-            "topic": [
-                "Welder",
-                "Metalworker"
-            ],
-            "entries": [
-                "Welding Techniques",
-                "Metal Fabrication",
-                "Blueprint Reading",
-                "Safety Standards"
             ]
         },
         {
@@ -470,90 +374,6 @@
         },
         {
             "topic": [
-                "Chauffeur",
-                "Driver"
-            ],
-            "entries": [
-                "Route Planning",
-                "Passenger Etiquette",
-                "Luxury Car Maintenance",
-                "Punctual Service"
-            ]
-        },
-        {
-            "topic": [
-                "Zookeeper",
-                "Animal Caretaker"
-            ],
-            "entries": [
-                "Habitat Maintenance",
-                "Animal Feeding",
-                "Species Enrichment",
-                "Conservation Education"
-            ]
-        },
-        {
-            "topic": [
-                "Event Planner",
-                "Coordinator"
-            ],
-            "entries": [
-                "Venue Selection",
-                "Theme Design",
-                "Logistical Support",
-                "Guest Management"
-            ]
-        },
-        {
-            "topic": [
-                "Security Guard",
-                "Watchman"
-            ],
-            "entries": [
-                "Access Control",
-                "Surveillance Monitoring",
-                "Incident Reporting",
-                "Risk Mitigation"
-            ]
-        },
-        {
-            "topic": [
-                "Craftsperson",
-                "Artisan"
-            ],
-            "entries": [
-                "Handmade Goods",
-                "Traditional Methods",
-                "Bespoke Artifacts",
-                "Craftsmanship Skills"
-            ]
-        },
-        {
-            "topic": [
-                "Diver",
-                "Submersible Operator"
-            ],
-            "entries": [
-                "Underwater Exploration",
-                "Dive Planning",
-                "Equipment Maintenance",
-                "Marine Photography"
-            ]
-        },
-        {
-            "topic": [
-                "Geologist",
-                "Earth Scientist"
-            ],
-            "entries": [
-                "Rock Analysis",
-                "Seismic Data",
-                "Field Surveys",
-                "Stratigraphy Studies"
-            ]
-        },
-        {
-            "topic": [
                 "Barista",
                 "Coffee Specialist"
             ],
@@ -562,18 +382,6 @@
                 "Latte Art",
                 "Customer Service",
                 "Caf\u00e9 Maintenance"
-            ]
-        },
-        {
-            "topic": [
-                "Therapist",
-                "Counselor"
-            ],
-            "entries": [
-                "Client Sessions",
-                "Mood Disorders",
-                "Therapeutic Strategies",
-                "Progress Tracking"
             ]
         },
         {

@@ -67,19 +67,6 @@
         },
         {
             "topic": [
-                "Sydney Opera House",
-                "Opera House Sydney",
-                "Sydney Concert Hall"
-            ],
-            "entries": [
-                "Sails",
-                "Harbor",
-                "Iconic Architecture",
-                "Performing Arts"
-            ]
-        },
-        {
-            "topic": [
                 "Big Ben",
                 "Clock Tower",
                 "Elizabeth Tower"
@@ -216,7 +203,7 @@
             ],
             "entries": [
                 "Suspension Bridge",
-                "California",
+                "San Francisco",
                 "Orange",
                 "Fog"
             ]
@@ -449,7 +436,7 @@
                 "Easter Island Heads"
             ],
             "entries": [
-                "Polynesia",
+                "Easter Island",
                 "Rapa Nui",
                 "Monolithic",
                 "Stone Figures"
@@ -509,19 +496,6 @@
         },
         {
             "topic": [
-                "Champs-\u00c9lys\u00e9es",
-                "Avenue des Champs-\u00c9lys\u00e9es",
-                "\u00c9lysian Fields"
-            ],
-            "entries": [
-                "Paris",
-                "Shopping",
-                "Tree-lined Avenue",
-                "Arc de Triomphe"
-            ]
-        },
-        {
-            "topic": [
                 "Edinburgh Castle",
                 "Castle Rock",
                 "Edinburgh Fortress"
@@ -531,19 +505,6 @@
                 "Royal Residence",
                 "Historic Fortress",
                 "Tourism"
-            ]
-        },
-        {
-            "topic": [
-                "Great Lakes",
-                "Laurentian Lakes",
-                "Five Lakes"
-            ],
-            "entries": [
-                "North America",
-                "Freshwater",
-                "Border",
-                "Shipping"
             ]
         },
         {
@@ -621,7 +582,7 @@
                 "Tanzania",
                 "Wildlife Safari",
                 "Wildebeest Migration",
-                "Grasslands"
+                "Park"
             ]
         },
         {

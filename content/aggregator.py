@@ -5,7 +5,7 @@ import os
 areas = [
     'animals', 'cuisine', 'events', 'films_series', 'hobbies', 
     'inventions', 'music', 'musical_instrument', 'occupations', 
-    'organizations', 'persons', 'places', 'space', 'sports_games', 'things', 'traditions'
+    'organizations', 'persons', 'places', 'space', 'sports_games', 'things'
 ]
 
 # Directory containing JSON files
