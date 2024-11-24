@@ -5,6 +5,8 @@ export function pauseTimer(scene) {
         scene.timerEvent.paused = true;
         // Store the pause time to calculate elapsed time when resumed
         scene.pauseStartTime = Date.now();
+        // Add a paused flag to prevent sound effects while paused
+        scene.isTimerPaused = true;
     }
 }
 
@@ -14,6 +16,8 @@ export function resumeTimer(scene) {
         const pauseDuration = Date.now() - scene.pauseStartTime;
         scene.gameStartTime += pauseDuration;
         scene.timerEvent.paused = false;
+        // Reset the paused flag
+        scene.isTimerPaused = false;
     }
 }
 
@@ -27,6 +31,7 @@ export function resetTimerAndBar(scene) {
     scene.lastUpdateTime = null;
     scene.countdownAudioInRoundPlayed = false;
     scene.isGameActive = true;  // Make sure game state is reset
+    scene.isTimerPaused = false;  // Reset pause state
     
     // Recreate timer graphics if they don't exist
     if (!scene.timeBar) {
@@ -140,7 +145,10 @@ function updateTimer(scene) {
     // Update display every frame for smooth bar movement
     updateTimerDisplay(scene);
 
-    if (scene.isGameActive && scene.remainingTime <= 3.05 && scene.remainingTime > 2.95 && !scene.countdownAudioInRoundPlayed) {
+    // Only play countdown sound if timer is not paused
+    if (!scene.isTimerPaused && scene.isGameActive && 
+        scene.remainingTime <= 3.05 && scene.remainingTime > 2.95 && 
+        !scene.countdownAudioInRoundPlayed) {
         scene.sound.play('countdownSound');
         scene.countdownAudioInRoundPlayed = true;
     }

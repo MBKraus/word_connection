@@ -54,7 +54,7 @@
                 "IMF"
             ],
             "entries": [
-                "Financial Stability",
+                "International Financial Stability",
                 "Economic Surveillance",
                 "Bailout Packages",
                 "Quota System"
@@ -100,8 +100,8 @@
         },
         {
             "topic": [
-                "United Nations Educational, Scientific and Cultural Organization",
-                "UNESCO"
+                "UNESCO",
+                "United Nations Educational, Scientific and Cultural Organization"
             ],
             "entries": [
                 "World Heritage Sites",
@@ -113,6 +113,7 @@
         {
             "topic": [
                 "World Bank",
+                "The World Bank",
                 "International Bank for Reconstruction and Development"
             ],
             "entries": [
@@ -160,8 +161,8 @@
         },
         {
             "topic": [
+                "NATO",
                 "North Atlantic Treaty Organization",
-                "NATO"
             ],
             "entries": [
                 "Military Alliance",
@@ -208,8 +209,8 @@
         },
         {
             "topic": [
-                "International Atomic Energy Agency",
-                "IAEA"
+                "IAEA",
+                "International Atomic Energy Agency"
             ],
             "entries": [
                 "Nuclear Safety",
@@ -228,7 +229,7 @@
                 "Economic Policy",
                 "Annual Summits",
                 "World Leaders",
-                "Advanced Economies"
+                "7 Advanced Economies"
             ]
         },
         {
