@@ -2,6 +2,7 @@ import json
 import os
 
 # List of areas corresponding to JSON filenames
+# Optional: art, fashion, mythology, nature
 areas = [
     'animals', 'cuisine', 'events', 'films_series', 'hobbies', 
     'inventions', 'music', 'musical_instrument', 'occupations', 
