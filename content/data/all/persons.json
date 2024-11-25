@@ -541,6 +541,246 @@
                 "Aristotle",
                 "Battle of Gaugamela"
             ]
+        },
+        {
+            "topic": [
+                "Meryl Streep",
+                "Streep"
+            ],
+            "entries": [
+                "The Iron Lady",
+                "Academy Awards",
+                "Drama roles",
+                "Acting legend"
+            ]
+        },
+        {
+            "topic": [
+                "Leonardo DiCaprio",
+                "DiCaprio"
+            ],
+            "entries": [
+                "Titanic",
+                "Environmental activism",
+                "Oscar winner",
+                "Martin Scorsese collaborations"
+            ]
+        },
+        {
+            "topic": [
+                "Scarlett Johansson",
+                "Johansson"
+            ],
+            "entries": [
+                "Black Widow",
+                "Marvel Cinematic Universe",
+                "Tony Award winner",
+                "Independent films"
+            ]
+        },
+        {
+            "topic": [
+                "Denzel Washington",
+                "Washington"
+            ],
+            "entries": [
+                "Training Day",
+                "Oscar winner",
+                "Stage acting",
+                "Director"
+            ]
+        },
+        {
+            "topic": [
+                "Angelina Jolie",
+                "Jolie"
+            ],
+            "entries": [
+                "Tomb Raider",
+                "Humanitarian work",
+                "Oscar winner",
+                "Action roles"
+            ]
+        },
+        {
+            "topic": [
+                "Tom Hanks",
+                "Hanks"
+            ],
+            "entries": [
+                "Forrest Gump",
+                "Toy Story",
+                "Oscar winner",
+                "American culture icon"
+            ]
+        },
+        {
+            "topic": [
+                "Natalie Portman",
+                "Portman"
+            ],
+            "entries": [
+                "Black Swan",
+                "Star Wars prequels",
+                "Harvard graduate",
+                "Academy Award winner"
+            ]
+        },
+        {
+            "topic": [
+                "Robert De Niro",
+                "De Niro"
+            ],
+            "entries": [
+                "Taxi Driver",
+                "The Godfather Part II",
+                "Method acting",
+                "Martin Scorsese collaborations"
+            ]
+        },
+        {
+            "topic": [
+                "Jennifer Lawrence",
+                "Lawrence"
+            ],
+            "entries": [
+                "The Hunger Games",
+                "Silver Linings Playbook",
+                "Youngest Oscar nominee",
+                "Comedy and drama"
+            ]
+        },
+        {
+            "topic": [
+                "Morgan Freeman",
+                "Freeman"
+            ],
+            "entries": [
+                "The Shawshank Redemption",
+                "Distinctive voice",
+                "Narration roles",
+                "Oscar winner"
+            ]
+        },
+        {
+            "topic": [
+                "Emma Watson",
+                "Watson"
+            ],
+            "entries": [
+                "Harry Potter series",
+                "Hermione Granger",
+                "Gender equality advocacy",
+                "UN Women Goodwill Ambassador"
+            ]
+        },
+        {
+            "topic": [
+                "Brad Pitt",
+                "Pitt"
+            ],
+            "entries": [
+                "Fight Club",
+                "Once Upon a Time in Hollywood",
+                "Oscar winner",
+                "Hollywood producer"
+            ]
+        },
+        {
+            "topic": [
+                "Cate Blanchett",
+                "Blanchett"
+            ],
+            "entries": [
+                "Blue Jasmine",
+                "Elizabeth",
+                "Oscar winner",
+                "Versatile actress"
+            ]
+        },
+        {
+            "topic": [
+                "Johnny Depp",
+                "Depp"
+            ],
+            "entries": [
+                "Pirates of the Caribbean",
+                "Tim Burton collaborations",
+                "Golden Globe winner",
+                "Eccentric roles"
+            ]
+        },
+        {
+            "topic": [
+                "Nicole Kidman",
+                "Kidman"
+            ],
+            "entries": [
+                "Moulin Rouge",
+                "Big Little Lies",
+                "Oscar winner",
+                "Australian actress"
+            ]
+        },
+        {
+            "topic": [
+                "Will Smith",
+                "Smith"
+            ],
+            "entries": [
+                "The Fresh Prince of Bel-Air",
+                "Men in Black",
+                "Oscar winner",
+                "Blockbuster actor"
+            ]
+        },
+        {
+            "topic": [
+                "Anne Hathaway",
+                "Hathaway"
+            ],
+            "entries": [
+                "Les Misérables",
+                "The Devil Wears Prada",
+                "Oscar winner",
+                "Broadway experience"
+            ]
+        },
+        {
+            "topic": [
+                "Christian Bale",
+                "Bale"
+            ],
+            "entries": [
+                "The Dark Knight",
+                "American Psycho",
+                "Method acting",
+                "Oscar winner"
+            ]
+        },
+        {
+            "topic": [
+                "Charlize Theron",
+                "Theron"
+            ],
+            "entries": [
+                "Mad Max: Fury Road",
+                "Monster",
+                "Oscar winner",
+                "Action and drama"
+            ]
+        },
+        {
+            "topic": [
+                "Hugh Jackman",
+                "Jackman"
+            ],
+            "entries": [
+                "Wolverine",
+                "The Greatest Showman",
+                "Tony Award winner",
+                "Australian star"
+            ]
         }
     ]
 }

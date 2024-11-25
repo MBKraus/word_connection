@@ -193,6 +193,72 @@
                 "Barre",
                 "Pas de Deux"
             ]
+        },
+        {
+            "topic": [
+                "Badminton",
+                "Shuttlecock",
+                "Court Sports"
+            ],
+            "entries": [
+                "Smash",
+                "Shuttle",
+                "Drop shot",
+                "Rally"
+            ]
+        },
+        {
+            "topic": [
+                "Horse Racing",
+                "Equestrian",
+                "Thoroughbred"
+            ],
+            "entries": [
+                "Jockey",
+                "Track",
+                "Finish line",
+                "Stakes"
+            ]
+        },
+        {
+            "topic": [
+                "Judo",
+                "Martial Arts",
+                "Combat Sports"
+            ],
+            "entries": [
+                "Throw",
+                "Ippon",
+                "Grapple",
+                "Tatami"
+            ]
+        },
+        {
+            "topic": [
+                "Bungee Jumping",
+                "Extreme Sports",
+                "Adventure Sports"
+            ],
+            "entries": [
+                "Cord",
+                "Jump",
+                "Plunge",
+                "Leap"
+            ]
+        },
+        {
+            "topic": [
+                "Rally Racing",
+                "Rally",
+                "Motorsport",
+                "Racing"
+            ],
+            "entries": [
+                "Stage",
+                "Car",
+                "Driver",
+                "Navigator"
+            ]
         }
     ]
 }

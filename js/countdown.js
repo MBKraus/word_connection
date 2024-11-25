@@ -36,6 +36,8 @@ export function showCountdown(scene) {
     hideTiles(scene);
 
     let countdownStartTime = Date.now();
+
+    scene.sound.play('countdownSound');
     
     const countdownInterval = setInterval(() => {
         const elapsedTime = (Date.now() - countdownStartTime) / 1000;
