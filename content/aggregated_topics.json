@@ -3491,6 +3491,246 @@
                     "Aristotle",
                     "Battle of Gaugamela"
                 ]
+            },
+            {
+                "topic": [
+                    "Meryl Streep",
+                    "Streep"
+                ],
+                "entries": [
+                    "The Iron Lady",
+                    "Academy Awards",
+                    "Drama roles",
+                    "Acting legend"
+                ]
+            },
+            {
+                "topic": [
+                    "Leonardo DiCaprio",
+                    "DiCaprio"
+                ],
+                "entries": [
+                    "Titanic",
+                    "Environmental activism",
+                    "Oscar winner",
+                    "Martin Scorsese collaborations"
+                ]
+            },
+            {
+                "topic": [
+                    "Scarlett Johansson",
+                    "Johansson"
+                ],
+                "entries": [
+                    "Black Widow",
+                    "Marvel Cinematic Universe",
+                    "Tony Award winner",
+                    "Independent films"
+                ]
+            },
+            {
+                "topic": [
+                    "Denzel Washington",
+                    "Washington"
+                ],
+                "entries": [
+                    "Training Day",
+                    "Oscar winner",
+                    "Stage acting",
+                    "Director"
+                ]
+            },
+            {
+                "topic": [
+                    "Angelina Jolie",
+                    "Jolie"
+                ],
+                "entries": [
+                    "Tomb Raider",
+                    "Humanitarian work",
+                    "Oscar winner",
+                    "Action roles"
+                ]
+            },
+            {
+                "topic": [
+                    "Tom Hanks",
+                    "Hanks"
+                ],
+                "entries": [
+                    "Forrest Gump",
+                    "Toy Story",
+                    "Oscar winner",
+                    "American culture icon"
+                ]
+            },
+            {
+                "topic": [
+                    "Natalie Portman",
+                    "Portman"
+                ],
+                "entries": [
+                    "Black Swan",
+                    "Star Wars prequels",
+                    "Harvard graduate",
+                    "Academy Award winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Robert De Niro",
+                    "De Niro"
+                ],
+                "entries": [
+                    "Taxi Driver",
+                    "The Godfather Part II",
+                    "Method acting",
+                    "Martin Scorsese collaborations"
+                ]
+            },
+            {
+                "topic": [
+                    "Jennifer Lawrence",
+                    "Lawrence"
+                ],
+                "entries": [
+                    "The Hunger Games",
+                    "Silver Linings Playbook",
+                    "Youngest Oscar nominee",
+                    "Comedy and drama"
+                ]
+            },
+            {
+                "topic": [
+                    "Morgan Freeman",
+                    "Freeman"
+                ],
+                "entries": [
+                    "The Shawshank Redemption",
+                    "Distinctive voice",
+                    "Narration roles",
+                    "Oscar winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Emma Watson",
+                    "Watson"
+                ],
+                "entries": [
+                    "Harry Potter series",
+                    "Hermione Granger",
+                    "Gender equality advocacy",
+                    "UN Women Goodwill Ambassador"
+                ]
+            },
+            {
+                "topic": [
+                    "Brad Pitt",
+                    "Pitt"
+                ],
+                "entries": [
+                    "Fight Club",
+                    "Once Upon a Time in Hollywood",
+                    "Oscar winner",
+                    "Hollywood producer"
+                ]
+            },
+            {
+                "topic": [
+                    "Cate Blanchett",
+                    "Blanchett"
+                ],
+                "entries": [
+                    "Blue Jasmine",
+                    "Elizabeth",
+                    "Oscar winner",
+                    "Versatile actress"
+                ]
+            },
+            {
+                "topic": [
+                    "Johnny Depp",
+                    "Depp"
+                ],
+                "entries": [
+                    "Pirates of the Caribbean",
+                    "Tim Burton collaborations",
+                    "Golden Globe winner",
+                    "Eccentric roles"
+                ]
+            },
+            {
+                "topic": [
+                    "Nicole Kidman",
+                    "Kidman"
+                ],
+                "entries": [
+                    "Moulin Rouge",
+                    "Big Little Lies",
+                    "Oscar winner",
+                    "Australian actress"
+                ]
+            },
+            {
+                "topic": [
+                    "Will Smith",
+                    "Smith"
+                ],
+                "entries": [
+                    "The Fresh Prince of Bel-Air",
+                    "Men in Black",
+                    "Oscar winner",
+                    "Blockbuster actor"
+                ]
+            },
+            {
+                "topic": [
+                    "Anne Hathaway",
+                    "Hathaway"
+                ],
+                "entries": [
+                    "Les Mis\u00e9rables",
+                    "The Devil Wears Prada",
+                    "Oscar winner",
+                    "Broadway experience"
+                ]
+            },
+            {
+                "topic": [
+                    "Christian Bale",
+                    "Bale"
+                ],
+                "entries": [
+                    "The Dark Knight",
+                    "American Psycho",
+                    "Method acting",
+                    "Oscar winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Charlize Theron",
+                    "Theron"
+                ],
+                "entries": [
+                    "Mad Max: Fury Road",
+                    "Monster",
+                    "Oscar winner",
+                    "Action and drama"
+                ]
+            },
+            {
+                "topic": [
+                    "Hugh Jackman",
+                    "Jackman"
+                ],
+                "entries": [
+                    "Wolverine",
+                    "The Greatest Showman",
+                    "Tony Award winner",
+                    "Australian star"
+                ]
             }
         ]
     },
@@ -3767,6 +4007,199 @@
                     "River Thames",
                     "Panoramic Views",
                     "Tourist Attraction"
+                ]
+            },
+            {
+                "topic": [
+                    "Paris",
+                    "City of Light"
+                ],
+                "entries": [
+                    "Eiffel Tower",
+                    "Louvre Museum",
+                    "Notre-Dame Cathedral",
+                    "Romantic city"
+                ]
+            },
+            {
+                "topic": [
+                    "New York City",
+                    "NYC"
+                ],
+                "entries": [
+                    "Statue of Liberty",
+                    "Times Square",
+                    "Central Park",
+                    "Empire State Building"
+                ]
+            },
+            {
+                "topic": [
+                    "Tokyo",
+                    "Japanese capital"
+                ],
+                "entries": [
+                    "Shibuya Crossing",
+                    "Tokyo Tower",
+                    "Cherry blossoms",
+                    "High-tech city"
+                ]
+            },
+            {
+                "topic": [
+                    "London",
+                    "British capital"
+                ],
+                "entries": [
+                    "Big Ben",
+                    "Tower Bridge",
+                    "Buckingham Palace",
+                    "West End theaters"
+                ]
+            },
+            {
+                "topic": [
+                    "Rome",
+                    "Eternal City"
+                ],
+                "entries": [
+                    "Colosseum",
+                    "Vatican City",
+                    "Roman Forum",
+                    "Piazza Navona"
+                ]
+            },
+            {
+                "topic": [
+                    "Bangkok",
+                    "Thai capital"
+                ],
+                "entries": [
+                    "Grand Palace",
+                    "Floating markets",
+                    "Wat Arun",
+                    "Street food"
+                ]
+            },
+            {
+                "topic": [
+                    "Dubai",
+                    "Modern metropolis"
+                ],
+                "entries": [
+                    "Burj Khalifa",
+                    "Palm Jumeirah",
+                    "Mall",
+                    "Desert safaris"
+                ]
+            },
+            {
+                "topic": [
+                    "Rio de Janeiro",
+                    "Rio"
+                ],
+                "entries": [
+                    "Christ the Redeemer",
+                    "Copacabana Beach",
+                    "Sugarloaf Mountain",
+                    "Carnival"
+                ]
+            },
+            {
+                "topic": [
+                    "Beijing",
+                    "Peking",
+                    "Chinese capital"
+                ],
+                "entries": [
+                    "Great Wall of China",
+                    "Forbidden City",
+                    "Tiananmen Square",
+                    "Temple of Heaven"
+                ]
+            },
+            {
+                "topic": [
+                    "Sydney",
+                    "Harbour City"
+                ],
+                "entries": [
+                    "Opera House",
+                    "Harbour Bridge",
+                    "Bondi Beach",
+                    "Blue Mountains"
+                ]
+            },
+            {
+                "topic": [
+                    "Cape Town",
+                    "Mother City"
+                ],
+                "entries": [
+                    "Table Mountain",
+                    "Robben Island",
+                    "Cape of Good Hope",
+                    "Winelands"
+                ]
+            },
+            {
+                "topic": [
+                    "Berlin",
+                    "German capital"
+                ],
+                "entries": [
+                    "Brandenburg Gate",
+                    "Wall",
+                    "Museum Island",
+                    "Reichstag"
+                ]
+            },
+            {
+                "topic": [
+                    "Amsterdam",
+                    "Dutch capital"
+                ],
+                "entries": [
+                    "Canals",
+                    "Anne Frank House",
+                    "Van Gogh Museum",
+                    "Bicycles"
+                ]
+            },
+            {
+                "topic": [
+                    "Barcelona",
+                    "Catalan capital"
+                ],
+                "entries": [
+                    "Sagrada Familia",
+                    "Park G\u00fcell",
+                    "Las Ramblas",
+                    "Beach city"
+                ]
+            },
+            {
+                "topic": [
+                    "Istanbul",
+                    "City of Two Continents"
+                ],
+                "entries": [
+                    "Hagia Sophia",
+                    "Blue Mosque",
+                    "Grand Bazaar",
+                    "Bosphorus"
+                ]
+            },
+            {
+                "topic": [
+                    "Moscow",
+                    "Russian capital"
+                ],
+                "entries": [
+                    "Red Square",
+                    "Kremlin",
+                    "St. Basil's Cathedral",
+                    "Bolshoi Theatre"
                 ]
             }
         ]
@@ -4058,6 +4491,72 @@
                     "Tutu",
                     "Barre",
                     "Pas de Deux"
+                ]
+            },
+            {
+                "topic": [
+                    "Badminton",
+                    "Shuttlecock",
+                    "Court Sports"
+                ],
+                "entries": [
+                    "Smash",
+                    "Shuttle",
+                    "Drop shot",
+                    "Rally"
+                ]
+            },
+            {
+                "topic": [
+                    "Horse Racing",
+                    "Equestrian",
+                    "Thoroughbred"
+                ],
+                "entries": [
+                    "Jockey",
+                    "Track",
+                    "Finish line",
+                    "Stakes"
+                ]
+            },
+            {
+                "topic": [
+                    "Judo",
+                    "Martial Arts",
+                    "Combat Sports"
+                ],
+                "entries": [
+                    "Throw",
+                    "Ippon",
+                    "Grapple",
+                    "Tatami"
+                ]
+            },
+            {
+                "topic": [
+                    "Bungee Jumping",
+                    "Extreme Sports",
+                    "Adventure Sports"
+                ],
+                "entries": [
+                    "Cord",
+                    "Jump",
+                    "Plunge",
+                    "Leap"
+                ]
+            },
+            {
+                "topic": [
+                    "Rally Racing",
+                    "Rally",
+                    "Motorsport",
+                    "Racing"
+                ],
+                "entries": [
+                    "Stage",
+                    "Car",
+                    "Driver",
+                    "Navigator"
                 ]
             }
         ]
@@ -4387,6 +4886,149 @@
                     "Rotation",
                     "Breeze",
                     "Electric"
+                ]
+            },
+            {
+                "topic": [
+                    "Door",
+                    "Gate",
+                    "Entrance"
+                ],
+                "entries": [
+                    "Hinge",
+                    "Handle",
+                    "Knock",
+                    "Frame"
+                ]
+            },
+            {
+                "topic": [
+                    "Pumpkin",
+                    "Squash",
+                    "Gourd"
+                ],
+                "entries": [
+                    "Orange",
+                    "Seeds",
+                    "Carve",
+                    "Pie"
+                ]
+            },
+            {
+                "topic": [
+                    "Brick",
+                    "Block",
+                    "Masonry"
+                ],
+                "entries": [
+                    "Clay",
+                    "Building",
+                    "Wall",
+                    "Stack"
+                ]
+            },
+            {
+                "topic": [
+                    "Cloud",
+                    "Sky",
+                    "Mist"
+                ],
+                "entries": [
+                    "Fluffy",
+                    "Rain",
+                    "White",
+                    "Drift"
+                ]
+            },
+            {
+                "topic": [
+                    "Window",
+                    "Glass",
+                    "Pane"
+                ],
+                "entries": [
+                    "Frame",
+                    "View",
+                    "Curtain",
+                    "Sunlight"
+                ]
+            },
+            {
+                "topic": [
+                    "Castle",
+                    "Fort",
+                    "Stronghold"
+                ],
+                "entries": [
+                    "Stone",
+                    "Tower",
+                    "Moat",
+                    "Knight"
+                ]
+            },
+            {
+                "topic": [
+                    "Oven",
+                    "Stove",
+                    "Cooker"
+                ],
+                "entries": [
+                    "Heat",
+                    "Bake",
+                    "Tray",
+                    "Temperature"
+                ]
+            },
+            {
+                "topic": [
+                    "Necklace",
+                    "Jewelry",
+                    "Pendant"
+                ],
+                "entries": [
+                    "Chain",
+                    "Beads",
+                    "Clasp",
+                    "Wear"
+                ]
+            },
+            {
+                "topic": [
+                    "Aquarium",
+                    "Tank",
+                    "Habitat"
+                ],
+                "entries": [
+                    "Fish",
+                    "Water",
+                    "Plants",
+                    "Glass"
+                ]
+            },
+            {
+                "topic": [
+                    "Train",
+                    "Locomotive",
+                    "Railway"
+                ],
+                "entries": [
+                    "Tracks",
+                    "Engine",
+                    "Carriage",
+                    "Journey"
+                ]
+            },
+            {
+                "topic": [
+                    "Lighthouse",
+                    "Beacon",
+                    "Tower"
+                ],
+                "entries": [
+                    "Light",
+                    "Coast",
+                    "Guide",
+                    "Ocean"
                 ]
             }
         ]

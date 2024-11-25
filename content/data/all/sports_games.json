@@ -190,7 +190,7 @@
             "entries": [
                 "Smash",
                 "Net Drop",
-                "Clear",
+                "Shuttle",
                 "Serve"
             ]
         },
@@ -621,6 +621,202 @@
                 "Barrel Racing",
                 "Chute",
                 "Arena"
+            ]
+        },
+        {
+            "topic": [
+                "Handball",
+                "Team Handball",
+                "European Handball"
+            ],
+            "entries": [
+                "Pivot",
+                "Goalkeeper",
+                "Pass",
+                "Throw-off"
+            ]
+        },
+        {
+            "topic": [
+                "Rock Climbing",
+                "Bouldering",
+                "Sport Climbing"
+            ],
+            "entries": [
+                "Belay",
+                "Crux",
+                "Chalk",
+                "Route"
+            ]
+        },
+        {
+            "topic": [
+                "Archery",
+                "Target Archery",
+                "Bow and Arrow"
+            ],
+            "entries": [
+                "Arrow",
+                "Bowstring",
+                "Quiver",
+                "Release"
+            ]
+        },
+        {
+            "topic": [
+                "Bobsleigh",
+                "Skeleton",
+                "Luge"
+            ],
+            "entries": [
+                "Track",
+                "Curve",
+                "Runner",
+                "Push"
+            ]
+        },
+        {
+            "topic": [
+                "Badminton",
+                "Shuttlecock",
+                "Court Sports"
+            ],
+            "entries": [
+                "Smash",
+                "Clear",
+                "Drop shot",
+                "Rally"
+            ]
+        },
+        {
+            "topic": [
+                "Trampolining",
+                "Gymnastics",
+                "Acrobatics"
+            ],
+            "entries": [
+                "Bounce",
+                "Somersault",
+                "Double backflip",
+                "Tuck"
+            ]
+        },
+        {
+            "topic": [
+                "Gymnastics",
+                "Artistic Gymnastics",
+                "Rhythmic Gymnastics"
+            ],
+            "entries": [
+                "Vault",
+                "Balance Beam",
+                "Parallel Bars",
+                "Pommel Horse"
+            ]
+        },
+        {
+            "topic": [
+                "Horse Racing",
+                "Equestrian",
+                "Thoroughbred"
+            ],
+            "entries": [
+                "Jockey",
+                "Track",
+                "Finish line",
+                "Stakes"
+            ]
+        },
+        {
+            "topic": [
+                "Crossfit",
+                "Strength Training",
+                "Fitness"
+            ],
+            "entries": [
+                "WOD",
+                "Reps",
+                "Burpees",
+                "AMRAP"
+            ]
+        },
+        {
+            "topic": [
+                "Judo",
+                "Martial Arts",
+                "Combat Sports"
+            ],
+            "entries": [
+                "Throw",
+                "Ippon",
+                "Grapple",
+                "Tatami"
+            ]
+        },
+        {
+            "topic": [
+                "Paragliding",
+                "Aerial Sports",
+                "Extreme Sports"
+            ],
+            "entries": [
+                "Glider",
+                "Launch",
+                "Thermals",
+                "Canopy"
+            ]
+        },
+        {
+            "topic": [
+                "Bungee Jumping",
+                "Extreme Sports",
+                "Adventure Sports"
+            ],
+            "entries": [
+                "Cord",
+                "Jump",
+                "Plunge",
+                "Leap"
+            ]
+        },
+        {
+            "topic": [
+                "BMX Racing",
+                "Cycling",
+                "Extreme Sports"
+            ],
+            "entries": [
+                "Track",
+                "Jump",
+                "Bicycle",
+                "Race"
+            ]
+        },
+        {
+            "topic": [
+                "Rally Racing",
+                "Rally",
+                "Motorsport",
+                "Racing"
+            ],
+            "entries": [
+                "Stage",
+                "Car",
+                "Driver",
+                "Navigator"
+            ]
+        },
+        {
+            "topic": [
+                "Curling",
+                "Winter Sports",
+                "Ice Sports"
+            ],
+            "entries": [
+                "Stone",
+                "Sweep",
+                "House",
+                "End"
             ]
         }
     ]

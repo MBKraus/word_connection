@@ -8,7 +8,7 @@ areas = [
 ]
 
 # Directory containing JSON files
-data_directory = "content/data"
+data_directory = "content/data/all"
 
 # Load topics from files into a dictionary
 area_topics = {}
@@ -18,5 +18,6 @@ for area in areas:
         with open(file_path, "r") as f:
             # Load topics from the JSON file
             topics = json.load(f).get("topics", [])
+            print(f"Number of topics: {len(topics)}")
             for topic in topics:
                 print(topic["topic"][0])

@@ -324,6 +324,149 @@
                 "Breeze",
                 "Electric"
             ]
+        },
+        {
+            "topic": [
+                "Door",
+                "Gate",
+                "Entrance"
+            ],
+            "entries": [
+                "Hinge",
+                "Handle",
+                "Knock",
+                "Frame"
+            ]
+        },
+        {
+            "topic": [
+                "Pumpkin",
+                "Squash",
+                "Gourd"
+            ],
+            "entries": [
+                "Orange",
+                "Seeds",
+                "Carve",
+                "Pie"
+            ]
+        },
+        {
+            "topic": [
+                "Brick",
+                "Block",
+                "Masonry"
+            ],
+            "entries": [
+                "Clay",
+                "Building",
+                "Wall",
+                "Stack"
+            ]
+        },
+        {
+            "topic": [
+                "Cloud",
+                "Sky",
+                "Mist"
+            ],
+            "entries": [
+                "Fluffy",
+                "Rain",
+                "White",
+                "Drift"
+            ]
+        },
+        {
+            "topic": [
+                "Window",
+                "Glass",
+                "Pane"
+            ],
+            "entries": [
+                "Frame",
+                "View",
+                "Curtain",
+                "Sunlight"
+            ]
+        },
+        {
+            "topic": [
+                "Castle",
+                "Fort",
+                "Stronghold"
+            ],
+            "entries": [
+                "Stone",
+                "Tower",
+                "Moat",
+                "Knight"
+            ]
+        },
+        {
+            "topic": [
+                "Oven",
+                "Stove",
+                "Cooker"
+            ],
+            "entries": [
+                "Heat",
+                "Bake",
+                "Tray",
+                "Temperature"
+            ]
+        },
+        {
+            "topic": [
+                "Necklace",
+                "Jewelry",
+                "Pendant"
+            ],
+            "entries": [
+                "Chain",
+                "Beads",
+                "Clasp",
+                "Wear"
+            ]
+        },
+        {
+            "topic": [
+                "Aquarium",
+                "Tank",
+                "Habitat"
+            ],
+            "entries": [
+                "Fish",
+                "Water",
+                "Plants",
+                "Glass"
+            ]
+        },
+        {
+            "topic": [
+                "Train",
+                "Locomotive",
+                "Railway"
+            ],
+            "entries": [
+                "Tracks",
+                "Engine",
+                "Carriage",
+                "Journey"
+            ]
+        },
+        {
+            "topic": [
+                "Lighthouse",
+                "Beacon",
+                "Tower"
+            ],
+            "entries": [
+                "Light",
+                "Coast",
+                "Guide",
+                "Ocean"
+            ]
         }
     ]
 }

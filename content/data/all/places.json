@@ -597,6 +597,235 @@
                 "Africa",
                 "Tourism"
             ]
+        },
+        {
+            "topic": [
+                "Paris",
+                "City of Light"
+            ],
+            "entries": [
+                "Eiffel Tower",
+                "Louvre Museum",
+                "Notre-Dame Cathedral",
+                "Romantic city"
+            ]
+        },
+        {
+            "topic": [
+                "New York City",
+                "NYC"
+            ],
+            "entries": [
+                "Statue of Liberty",
+                "Times Square",
+                "Central Park",
+                "Empire State Building"
+            ]
+        },
+        {
+            "topic": [
+                "Tokyo",
+                "Japanese capital"
+            ],
+            "entries": [
+                "Shibuya Crossing",
+                "Tokyo Tower",
+                "Cherry blossoms",
+                "High-tech city"
+            ]
+        },
+        {
+            "topic": [
+                "London",
+                "British capital"
+            ],
+            "entries": [
+                "Big Ben",
+                "Tower Bridge",
+                "Buckingham Palace",
+                "West End theaters"
+            ]
+        },
+        {
+            "topic": [
+                "Rome",
+                "Eternal City"
+            ],
+            "entries": [
+                "Colosseum",
+                "Vatican City",
+                "Roman Forum",
+                "Piazza Navona"
+            ]
+        },
+        {
+            "topic": [
+                "Bangkok",
+                "Thai capital"
+            ],
+            "entries": [
+                "Grand Palace",
+                "Floating markets",
+                "Wat Arun",
+                "Street food"
+            ]
+        },
+        {
+            "topic": [
+                "Dubai",
+                "Modern metropolis"
+            ],
+            "entries": [
+                "Burj Khalifa",
+                "Palm Jumeirah",
+                "Mall",
+                "Desert safaris"
+            ]
+        },
+        {
+            "topic": [
+                "Rio de Janeiro",
+                "Rio"
+            ],
+            "entries": [
+                "Christ the Redeemer",
+                "Copacabana Beach",
+                "Sugarloaf Mountain",
+                "Carnival"
+            ]
+        },
+        {
+            "topic": [
+                "Beijing",
+                "Peking",
+                "Chinese capital"
+            ],
+            "entries": [
+                "Great Wall of China",
+                "Forbidden City",
+                "Tiananmen Square",
+                "Temple of Heaven"
+            ]
+        },
+        {
+            "topic": [
+                "Mexico City",
+                "CDMX"
+            ],
+            "entries": [
+                "Zócalo",
+                "Chapultepec Park",
+                "Frida Kahlo Museum",
+                "Aztec heritage"
+            ]
+        },
+        {
+            "topic": [
+                "Sydney",
+                "Harbour City"
+            ],
+            "entries": [
+                "Opera House",
+                "Harbour Bridge",
+                "Bondi Beach",
+                "Blue Mountains"
+            ]
+        },
+        {
+            "topic": [
+                "Cape Town",
+                "Mother City"
+            ],
+            "entries": [
+                "Table Mountain",
+                "Robben Island",
+                "Cape of Good Hope",
+                "Winelands"
+            ]
+        },
+        {
+            "topic": [
+                "Berlin",
+                "German capital"
+            ],
+            "entries": [
+                "Brandenburg Gate",
+                "Wall",
+                "Museum Island",
+                "Reichstag"
+            ]
+        },
+        {
+            "topic": [
+                "Amsterdam",
+                "Dutch capital"
+            ],
+            "entries": [
+                "Canals",
+                "Anne Frank House",
+                "Van Gogh Museum",
+                "Bicycles"
+            ]
+        },
+        {
+            "topic": [
+                "Barcelona",
+                "Catalan capital"
+            ],
+            "entries": [
+                "Sagrada Familia",
+                "Park Güell",
+                "Las Ramblas",
+                "Beach city"
+            ]
+        },
+        {
+            "topic": [
+                "Istanbul",
+                "City of Two Continents"
+            ],
+            "entries": [
+                "Hagia Sophia",
+                "Blue Mosque",
+                "Grand Bazaar",
+                "Bosphorus"
+            ]
+        },
+        {
+            "topic": [
+                "Mumbai",
+                "City of Dreams"
+            ],
+            "entries": [
+                "Gateway of India",
+                "Marine Drive",
+                "Bollywood",
+                "Chhatrapati Shivaji Terminus"
+            ]
+        },
+        {
+            "topic": [
+                "Seoul",
+                "South Korean capital"
+            ],
+            "entries": [
+                "Gyeongbokgung Palace",
+                "Namsan Tower",
+                "K-pop culture",
+                "Han River"
+            ]
+        },
+        {
+            "topic": [
+                "Moscow",
+                "Russian capital"
+            ],
+            "entries": [
+                "Red Square",
+                "Kremlin",
+                "St. Basil's Cathedral",
+                "Bolshoi Theatre"
+            ]
         }
     ]
 }
