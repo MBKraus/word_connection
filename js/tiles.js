@@ -56,7 +56,7 @@ export function createTiles(scene, config) {
                 color: '#000000',
                 fontFamily: 'Poppins',
                 fontWeight: 'bold',
-                wordWrap: { width: config.tileWidth - 20 },
+                wordWrap: { width: config.tileWidth - 25 },
                 align: 'center'
             }).setOrigin(0.5);
 

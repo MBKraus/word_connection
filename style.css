@@ -20,24 +20,6 @@ input, textarea, select {
     background: white;
 }
 
-#ad-container {
-    display: none;  /* Hide the ad container by default */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: calc(2.5vh + 30px);
-    border: 0;
-    background: black;
-    z-index: 1000;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    /* Default desktop size */
-    width: 728px !important;
-    height: 90px !important;
-}
-
 .text-container {
     width: 378px; /* Set the width of the text container */
     margin: 20px auto 0; /* Center horizontally and add space above */

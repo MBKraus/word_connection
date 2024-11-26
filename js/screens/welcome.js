@@ -18,10 +18,10 @@ export function createWelcomeScreen(scene) {
 
     const explainerText = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.45,
-        'Uncover the hidden connections – can you crack the 3 secret themes?',
+        scene.scale.height * 0.35,
+        'Can you crack the 3 secret themes?',
         {
-            fontSize: scene.scale.width * 0.04 + 'px',
+            fontSize: scene.scale.width * 0.047 + 'px',
             fontFamily: 'Poppins',
             color: STYLES.colors.text,
             align: 'center',
@@ -33,7 +33,7 @@ export function createWelcomeScreen(scene) {
     const playButton = createButton(
         scene,
         scene.scale.width * 0.5,
-        scene.scale.height * 0.65,
+        scene.scale.height * 0.50,
         'Play',
         () => {
             hideScreen(scene, 'welcomeScreen');
@@ -42,17 +42,17 @@ export function createWelcomeScreen(scene) {
         STYLES.colors.playButtonBg,
         STYLES.colors.playButtonText,
         STYLES.colors.playButtonBorder,
-        150,
-        150,
-        STYLES.padding.button.top,
-        STYLES.padding.button.bottom
+        170,
+        170,
+        33,
+        33
     );
     scene.welcomeScreen.add(playButton);
     
     const loginButton = createButton(
         scene,
         scene.scale.width * 0.5,
-        scene.scale.height * 0.75,
+        scene.scale.height * 0.59,
         'Login',
         () => {
             showAuthModal();
@@ -60,10 +60,10 @@ export function createWelcomeScreen(scene) {
         STYLES.colors.loginButtonBg,
         STYLES.colors.loginButtonText,
         STYLES.colors.loginButtonBorder,
-        STYLES.padding.button.left,
-        STYLES.padding.button.right,
-        20,
-        20
+        143,
+        143,
+        30,
+        30
     );
     scene.welcomeScreen.add(loginButton);
     loginButton.setVisible(false); // Initially hidden
@@ -87,7 +87,7 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.85,
         formattedDate,
         {
-            fontSize: scene.scale.width * 0.0375 + 'px',
+            fontSize: scene.scale.width * 0.045 + 'px',
             fontFamily: 'Poppins',
             fontWeight: 'bold',
             color: STYLES.colors.text,
@@ -101,7 +101,7 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.88,
         "# 1",
         {
-            fontSize: scene.scale.width * 0.0355 + 'px',
+            fontSize: scene.scale.width * 0.045 + 'px',
             fontFamily: 'Poppins',
             color: STYLES.colors.text,
             align: 'center'

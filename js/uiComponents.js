@@ -1,4 +1,3 @@
-import { createQuestionMarkPopup} from './screens/questionMarkPopUp.js';
 import { createStatsPopup} from './screens/statsPopUp.js';
 import { isMobile, isTablet } from './utils.js';
 
@@ -14,44 +13,6 @@ export function createHeader(scene) {
             fontWeight: 'bold',
         }
     ).setOrigin(0.5);
-}
-
-export function createAdContainer(scene) {
-    const adContainer = document.getElementById('ad-container');
-    const adElement = adContainer.querySelector('.adsbygoogle');
-    
-    if (isMobile()) {
-        adElement.style.width = '300px';
-        adElement.style.height = '50px';
-        adElement.dataset.adFormat = 'mobile';
-    } else {
-        adElement.style.width = '728px';
-        adElement.style.height = '90px';
-        adElement.dataset.adFormat = 'horizontal';
-    }
-
-    // Ensure display is set to flex by default
-    adContainer.style.display = 'flex';
-
-    // Calculate top position based on device type
-    const getTopPosition = () => {
-        if (isTablet()) {
-            return Math.round(scene.game.scale.height * 0.3); // 25% height for tablets
-        } else {
-            return Math.round(scene.game.scale.height * 0.0175); // 10% height for other devices
-        }
-    };
-
-    // Set initial position
-    adContainer.style.top = `${getTopPosition()}px`;
-
-    // Update position on resize
-    scene.scale.on('resize', () => {
-        adContainer.style.top = `${getTopPosition()}px`;
-    });
-
-    // Initialize AdSense
-    (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
 export function getStartY(scene) {
@@ -86,7 +47,7 @@ export function createInputDisplay(scene) {
         startY,
         scene.currentInputText || placeholderText, // Show placeholder if no input
         {
-            fontSize: `${scene.game.scale.width * 0.045}px`,
+            fontSize: `${scene.game.scale.width * 0.04}px`,
             color: '#5A5A5A', // Gray color for placeholder
             fontFamily: 'Poppins',
             wordWrap: { width: inputBgWidth - 20 }
@@ -210,7 +171,37 @@ export function createHeaderIcons(scene) {
     const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
         .setScale(0.12)
         .setInteractive();
-    createQuestionMarkPopup(scene, questionIcon);
+    
+    // Add event listener for questionIcon to scroll to the HTML div
+    questionIcon.on('pointerdown', () => {
+        const targetDiv = document.getElementById('targetDiv');
+        if (targetDiv) {
+            targetDiv.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
+        } else {
+            console.warn('Target div not found!');
+        }
+    });
+
+    // Add grey horizontal line with rounded edges
+    const lineGraphics = scene.add.graphics();
+    lineGraphics.lineStyle(4, 0xA0A0A0, 1); // 4px thick, grey color, full opacity
+    lineGraphics.beginPath();
+
+    // Calculate line width and position
+    const lineWidth = scene.scale.width * 0.9; // 90% of screen width
+    const lineX = scene.scale.width * 0.05; // Start 5% from the left edge
+    const lineY = scene.scale.height * 0.06; // Positioned just below the header
+
+    // Draw rounded horizontal line
+    lineGraphics.moveTo(lineX, lineY);
+    lineGraphics.lineTo(lineX + lineWidth, lineY);
+    lineGraphics.strokePath();
+
+    // Optional: Add rounded line caps
+    const capRadius = 2; // Adjust as needed
+    lineGraphics.fillStyle(0x808080, 1);
+    lineGraphics.fillCircle(lineX, lineY, capRadius);
+    lineGraphics.fillCircle(lineX + lineWidth, lineY, capRadius);
 }
 
 
@@ -262,7 +253,7 @@ export function createCorrectGuessContainer(scene) {
     ? scene.game.scale.height * 0.51 
     : scene.game.scale.height * 0.55;
 
-    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, startY);
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.01, startY);
 } 
 
 export function initializeCorrectGuessPlaceholders(scene) {
@@ -270,7 +261,7 @@ export function initializeCorrectGuessPlaceholders(scene) {
         const yOffset = index * (scene.game.scale.height * 0.045);
         const circleRadius = scene.game.scale.width * 0.0125;
 
-        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.05, yOffset);
+        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.035, yOffset);
         const circle = scene.add.graphics();
         circle.lineStyle(10, 0x51c878); // Green border
         circle.fillStyle(0xFFFFFF); // White fill

@@ -1,5 +1,5 @@
 import { generateGameRounds} from './topics.js';
-import { createHeader, createAdContainer, createInputDisplay, createRoundDisplay, createCheckmark,
+import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark,
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
@@ -9,7 +9,7 @@ import { setupKeyboardInput, createKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
-import { createConfettiEffect } from './confetti.js';
+import {createDailyLimitScreen} from './screens/dailyLimit.js';
 import { GameStorage } from './gameStorage.js';
 import { saveGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
@@ -76,9 +76,9 @@ function create() {
     const NUMBER_OF_ROUNDS = 2;
     const TOPICS_PER_ROUND = 3;
   
-    // Check if user has already played today (cookie-based)
+    // // Check if user has already played today (cookie-based)
     // if (GameStorage.hasPlayedTodayCookie()) {
-        // Only create and show the daily limit screen
+    //     // Only create and show the daily limit screen
     //     this.dailyLimitControls = createDailyLimitScreen(this);
     //     this.dailyLimitControls.show();
     // } else {
@@ -105,20 +105,11 @@ function create() {
     document.querySelector('.text-container').classList.add('loaded');
 }
 
-function showAdContainer() {
-    const adContainer = document.getElementById('ad-container');
-    if (adContainer) {
-        adContainer.style.display = 'block';
-    }
-}
 
 function createGameElements(scene) {
 
     createHeader(scene);
-    createAdContainer(scene);
     const headerBottom = (scene.headerText.height * 0.5) - 2;
-    document.getElementById('ad-container').style.top = `${headerBottom}px`;
-    document.getElementById('ad-container').style.display = `none`;
 
     createInputDisplay(scene);
     createRoundDisplay(scene);
@@ -153,9 +144,6 @@ function startGame(scene) {
     scene.currentRound = 0;
     scene.score = 0;
     updateScoreDisplay(scene);
-
-    // Show the ad container only after welcome screen/login is complete
-    showAdContainer();
 
     if (scene.correctGuessContainer) {
         scene.correctGuessContainer.removeAll(true);
@@ -256,7 +244,7 @@ function checkGuess(scene, guess) {
         // Update score
         scene.score += 30;
         updateScoreDisplay(scene);
-        scene.sound.play('correctSound');
+        // scene.sound.play('correctSound');
         
         // End round if all topics have been guessed
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
@@ -267,7 +255,7 @@ function checkGuess(scene, guess) {
         }
     } else {
         // Handle incorrect guess
-        scene.sound.play('incorrectSound');
+        // scene.sound.play('incorrectSound');
         scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
             scene.cross.setVisible(false);
@@ -310,10 +298,6 @@ function handleRoundEnd(scene) {
 
     scene.interRoundScoreText.setText(interRoundMessage);
     showInterRoundScreen(scene);
-
-    scene.time.delayedCall(100, () => {
-        createConfettiEffect();
-    });
 
     scene.okButton.removeAllListeners('pointerdown');
     scene.okButton.on('pointerdown', () => {
@@ -360,6 +344,7 @@ function startRound(scene) {
     
     const tileConfig = getTileConfig(scene);
     createTiles(scene, tileConfig);
+    
     initializeCorrectGuessPlaceholders(scene);
     window.showGameElements(scene);
 }
@@ -439,10 +424,6 @@ function endGame(scene) {
 
         showInterRoundScreen(scene);
 
-        // Trigger confetti for completing the game
-        scene.time.delayedCall(100, () => {
-            createConfettiEffect();
-        });
     } else if (!allTopicsGuessed) {
         // Show failure end screen if not all topics guessed
         showFailureEndScreen(scene);
