@@ -105,12 +105,9 @@ function create() {
     document.querySelector('.text-container').classList.add('loaded');
 }
 
-
 function createGameElements(scene) {
 
     createHeader(scene);
-    const headerBottom = (scene.headerText.height * 0.5) - 2;
-
     createInputDisplay(scene);
     createRoundDisplay(scene);
     createScoreDisplay(scene);

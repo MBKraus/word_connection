@@ -15,6 +15,7 @@ export function createHeader(scene) {
     ).setOrigin(0.5);
 }
 
+
 export function getStartY(scene) {
     return window.innerWidth < 728 
         ? scene.game.scale.height * 0.65 
