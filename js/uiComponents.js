@@ -18,7 +18,7 @@ export function createHeader(scene) {
 
 export function getStartY(scene) {
     return window.innerWidth < 728 
-        ? scene.game.scale.height * 0.65 
+        ? scene.game.scale.height * 0.5975 
         : scene.game.scale.height * 0.605;
 }
 
@@ -251,10 +251,10 @@ export function createCheckmark(scene, x, y) {
 
 export function createCorrectGuessContainer(scene) {
     const startY = window.innerWidth < 728  
-    ? scene.game.scale.height * 0.47 
+    ? scene.game.scale.height * 0.445 
     : scene.game.scale.height * 0.45;
 
-    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.04, startY);
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.02, startY);
 } 
 
 export function initializeCorrectGuessPlaceholders(scene) {
@@ -262,7 +262,7 @@ export function initializeCorrectGuessPlaceholders(scene) {
         const yOffset = index * (scene.game.scale.height * 0.045);
         const circleRadius = scene.game.scale.width * 0.0125;
 
-        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.035, yOffset);
+        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.02, yOffset);
         const circle = scene.add.graphics();
         circle.lineStyle(10, 0x51c878); // Green border
         circle.fillStyle(0xFFFFFF); // White fill

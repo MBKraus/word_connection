@@ -43,15 +43,15 @@ export function createKeyboard(scene, game) {
     ];
 
     // Adjust keyboard height based on device type
-    const keyboardHeightRatio = isTablet() ? 0.24 : 0.28; // Less reduction for tablets
-    const bottomPadding = isTablet() ? 40 : 50; // More padding for tablets than before
+    const keyboardHeightRatio = isTablet() ? 0.24 : 0.26; // Less reduction for tablets
+    const bottomPadding = isTablet() ? 80 : 210; // More padding for tablets than before
 
     const keyboardContainer = scene.add.container(0, 0);
     const keyboardWidth = game.scale.width;
     const keyboardHeight = game.scale.height * keyboardHeightRatio;
 
     const rowHeight = keyboardHeight / 4;
-    const keyWidthRatio = isTablet() ? 0.7 : 0.73; // Less reduction in width for tablets
+    const keyWidthRatio = isTablet() ? 0.7 : 0.8; // Less reduction in width for tablets
     const keySpacing = isTablet() ? 9 : 10; // Similar spacing
     const rowSpacing = isTablet() ? 9 : 10;
     const keyboardY = game.scale.height - keyboardHeight - bottomPadding;
@@ -89,7 +89,7 @@ export function createKeyboard(scene, game) {
             let keyWidth = rowHeight * keyWidthRatio;
 
             if (key === '←') {
-                keyWidth = rowHeight * keyWidthRatio * 2;
+                keyWidth = rowHeight * keyWidthRatio * 1.9;
             } else if (key === '✓') {
                 keyWidth = rowHeight * keyWidthRatio * (isTablet() ? 2.3 : 2.45);
             } else if (key === 'SPACE') {
