@@ -4,7 +4,7 @@ import { isMobile, isTablet } from './utils.js';
 export function createHeader(scene) {
     scene.headerText = scene.add.text(
         scene.cameras.main.centerX, 
-        scene.game.scale.height * 0.025, 
+        scene.game.scale.height * 0.035, 
         'Word Connection', 
         {
             fontSize: scene.game.scale.width * 0.05 + 'px',
@@ -19,7 +19,7 @@ export function createHeader(scene) {
 export function getStartY(scene) {
     return window.innerWidth < 728 
         ? scene.game.scale.height * 0.65 
-        : scene.game.scale.height * 0.70;
+        : scene.game.scale.height * 0.605;
 }
 
 export function createInputDisplay(scene) {
@@ -64,7 +64,7 @@ export function createRoundDisplay(scene) {
 
     function updateRoundPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.roundText) {
@@ -73,7 +73,7 @@ export function createRoundDisplay(scene) {
         }
     }
 
-    scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.22, `Round: ${scene.currentRound + 1}`, {
+    scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.10, `Round: ${scene.currentRound + 1}`, {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
@@ -87,7 +87,7 @@ export function createRoundDisplay(scene) {
 export function createScoreDisplay(scene) {
     function updateScorePosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.scoreText) {
@@ -96,7 +96,7 @@ export function createScoreDisplay(scene) {
         }
     }
 
-    scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.22, 'Score: 0', {
+    scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.10, 'Score: 0', {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
@@ -112,7 +112,7 @@ export function createTimerDisplay(scene) {
     // Define a function to update the timer's position based on actual screen width
     function updateTimerPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.timerText) {
@@ -124,7 +124,7 @@ export function createTimerDisplay(scene) {
     // Create the timer text initially
     scene.timerText = scene.add.text(
         scene.game.scale.width * 0.15,
-        scene.game.scale.height * 0.22,  // Initial position for desktop
+        scene.game.scale.height * 0.15,  // Initial position for desktop
         `Time: ${scene.timer_duration}`,
         {
             fontSize: `${scene.game.scale.width * 0.04}px`,
@@ -143,7 +143,7 @@ export function createTimerDisplay(scene) {
 export function createHeaderIcons(scene) {
     // Create bar chart icon using graphics
     const chartGraphics = scene.add.graphics();
-    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.03);
+    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
     
     // Set fill style
     chartGraphics.fillStyle(0x000000, 1);
@@ -169,7 +169,7 @@ export function createHeaderIcons(scene) {
     createStatsPopup(scene, chartGraphics);
 
     // Question mark icon (existing code)
-    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
+    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.03, 'question')
         .setScale(0.12)
         .setInteractive();
     
@@ -191,7 +191,7 @@ export function createHeaderIcons(scene) {
     // Calculate line width and position
     const lineWidth = scene.scale.width * 0.9; // 90% of screen width
     const lineX = scene.scale.width * 0.05; // Start 5% from the left edge
-    const lineY = scene.scale.height * 0.06; // Positioned just below the header
+    const lineY = scene.scale.height * 0.065; // Positioned just below the header
 
     // Draw rounded horizontal line
     lineGraphics.moveTo(lineX, lineY);
@@ -251,10 +251,10 @@ export function createCheckmark(scene, x, y) {
 
 export function createCorrectGuessContainer(scene) {
     const startY = window.innerWidth < 728  
-    ? scene.game.scale.height * 0.51 
-    : scene.game.scale.height * 0.55;
+    ? scene.game.scale.height * 0.47 
+    : scene.game.scale.height * 0.45;
 
-    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.01, startY);
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.04, startY);
 } 
 
 export function initializeCorrectGuessPlaceholders(scene) {
