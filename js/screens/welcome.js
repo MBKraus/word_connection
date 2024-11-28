@@ -84,7 +84,7 @@ export function createWelcomeScreen(scene) {
 
     const dateText = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.85,
+        scene.scale.height * 0.75,
         formattedDate,
         {
             fontSize: scene.scale.width * 0.045 + 'px',
@@ -98,7 +98,7 @@ export function createWelcomeScreen(scene) {
 
     const gameNumber = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.88,
+        scene.scale.height * 0.78,
         "# 1",
         {
             fontSize: scene.scale.width * 0.045 + 'px',

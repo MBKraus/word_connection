@@ -169,7 +169,7 @@ export function createHeaderIcons(scene) {
     createStatsPopup(scene, chartGraphics);
 
     // Question mark icon (existing code)
-    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.03, 'question')
+    const questionIcon = scene.add.image(scene.scale.width * 0.94, scene.scale.height * 0.0325, 'question')
         .setScale(0.12)
         .setInteractive();
     
