@@ -76,7 +76,7 @@ export const showFailureEndScreen = (scene) => {
         // Create single rexBBCodeText instance
         const endScreenText = scene.add.rexBBCodeText(
             scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.5,
+            scene.game.scale.height * 0.40,
             content,
             {
                 fontFamily: 'Poppins',

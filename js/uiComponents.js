@@ -1,5 +1,8 @@
 import { createStatsPopup} from './screens/statsPopUp.js';
 import { isMobile, isTablet } from './utils.js';
+import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
+import { showWelcomeScreen } from './screens/welcome.js'; 
+
 
 export function createHeader(scene) {
     scene.headerText = scene.add.text(
@@ -140,7 +143,125 @@ export function createTimerDisplay(scene) {
     window.addEventListener('resize', updateTimerPosition);
 }
 
+function createHamburgerMenu(scene, x, y, scale) {
+    const menuContainer = scene.add.container(x, y);
+    
+    // Create graphics for the hamburger menu
+    const menuGraphics = scene.add.graphics();
+    
+    function drawBars(color) {
+        menuGraphics.clear();
+        menuGraphics.fillStyle(color, 1);
+        
+        // Draw three horizontal bars
+        menuGraphics.fillRect(-scale * 1.5, -scale, scale * 3, scale * 0.4);
+        menuGraphics.fillRect(-scale * 1.5, 0, scale * 3, scale * 0.4);
+        menuGraphics.fillRect(-scale * 1.5, scale, scale * 3, scale * 0.4);
+    }
+    
+    // Initial drawing
+    drawBars(0x000000);
+    
+    // Add graphics to container
+    menuContainer.add(menuGraphics);
+    
+    // Make interactive
+    const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale, scale * 3, scale * 2);
+    menuGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
+    
+    // Add hover effects
+    menuGraphics.on('pointerover', () => drawBars(0x444444));
+    menuGraphics.on('pointerout', () => drawBars(0x000000));
+    
+    // Create a rectangle for the 'Logout' button
+    const buttonBackground = scene.add.graphics();
+    const buttonWidth = scale * 8;
+    const buttonHeight = scale * 3;
+    
+    buttonBackground.fillStyle(0xFFFFFF, 1);  // White background
+    buttonBackground.lineStyle(14, 0x000000);  // Black border with 2px thickness
+    buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+    buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+    
+    // Create the text inside the button
+    const logoutText = scene.add.text(0, 0, 'Logout', {
+        fontFamily: 'Poppins',
+        fontSize: scene.scale.width * 0.04 + 'px',
+        color: '#000000',  // Black text
+    }).setOrigin(0.5);
+    
+    // Create a container for both the background and the text
+    const logoutButton = scene.add.container(scale * 2, scale * 4.5, [buttonBackground, logoutText]).setVisible(false);
+    
+    // Add logout button to the main container
+    menuContainer.add(logoutButton);
+    
+    // Toggle menu visibility on click
+    let isMenuOpen = false;
+    menuGraphics.on('pointerdown', () => {
+        isMenuOpen = !isMenuOpen;
+        logoutButton.setVisible(isMenuOpen);
+    });
+    
+    // Handle logout button interaction
+    logoutButton.setSize(buttonWidth, buttonHeight);  // Set the interactive area to match the rectangle
+    logoutButton.setInteractive();
+    logoutButton.on('pointerdown', async () => {
+        try {
+            await signOut(auth);  // Firebase sign out
+            console.log('Logout successful');
+            
+            // Show the welcome screen after logging out
+            showWelcomeScreen(scene);  
+        } catch (error) {
+            console.error('Logout Error: ', error.message);
+        }
+    });
+
+    // Hover effect for the Logout button
+    logoutButton.on('pointerover', () => {
+        // Change background color to #666666 when hovered
+        buttonBackground.clear();
+        buttonBackground.fillStyle(0x666666, 1);  // #666666 background
+        buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+        buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+
+        // Keep text color as black (no change)
+        logoutText.setColor('#000000');
+    });
+
+    logoutButton.on('pointerout', () => {
+        // Restore original colors when hover ends
+        buttonBackground.clear();
+        buttonBackground.fillStyle(0xFFFFFF, 1);  // White background
+        buttonBackground.lineStyle(14, 0x000000);
+        buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+        buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+
+        // Keep text color as black (no change)
+        logoutText.setColor('#000000');
+    });
+    
+    // Method to change position
+    menuContainer.updatePosition = (newX, newY) => {
+        menuContainer.setPosition(newX, newY);
+    };
+
+    return menuContainer;
+}
+
 export function createHeaderIcons(scene) {
+
+    // Hamburger Menu
+    const menuScale = scene.scale.width * 0.02;
+    scene.hamburgerMenu = createHamburgerMenu(
+        scene,
+        scene.scale.width * 0.065,  // Initial X position
+        scene.scale.height * 0.03,  // Initial Y position
+        menuScale
+    );
+    scene.hamburgerMenu.setDepth(1);
+    
     // Create bar chart icon using graphics
     const chartGraphics = scene.add.graphics();
     chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
@@ -189,8 +310,8 @@ export function createHeaderIcons(scene) {
     lineGraphics.beginPath();
 
     // Calculate line width and position
-    const lineWidth = scene.scale.width * 0.9; // 90% of screen width
-    const lineX = scene.scale.width * 0.05; // Start 5% from the left edge
+    const lineWidth = scene.scale.width * 0.99; // 90% of screen width
+    const lineX = scene.scale.width * 0.01; // Start 5% from the left edge
     const lineY = scene.scale.height * 0.065; // Positioned just below the header
 
     // Draw rounded horizontal line

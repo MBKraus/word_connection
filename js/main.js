@@ -142,6 +142,14 @@ function startGame(scene) {
     scene.score = 0;
     updateScoreDisplay(scene);
 
+    if (scene.hamburgerMenu) {
+        if (window.auth && window.auth.currentUser) {
+            scene.hamburgerMenu.setVisible(true);
+        } else {
+            scene.hamburgerMenu.setVisible(false);
+        }
+    }
+
     if (scene.correctGuessContainer) {
         scene.correctGuessContainer.removeAll(true);
     }
