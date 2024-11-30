@@ -1,41 +1,40 @@
-/* Reset default body and html padding and margin */
 html, body {
     margin: 0;
     padding: 0;
-    min-width: 378px;
+    min-width: 800;
     min-height: 672px;
-    /* overflow: hidden; */
-    height: 100%;
+    height: 100%; /* Ensure the body takes full height */
+    font-family: Arial, sans-serif; /* Set a default font */
 }
 
 input, textarea, select {
     font-size: 16px; /* Ensure font size is 16px or larger */
 }
 
+#ad-container {
+    display: flex; /* Center content within the ad container */
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0; /* Align to the top of the page */
+    left: 50%; /* Start positioning from the center of the screen */
+    transform: translateX(-50%); /* Adjust for the width to center horizontally */
+    z-index: 1000; /* Ensure it's above other elements */
+    background-color: black; /* Background color for visibility */
+    width: 100%; /* Make it span the full width of the screen */
+    height: 90px !important;
+    max-width: 728px; /* Restrict to max width */
+    margin: 0 auto; /* Automatically center horizontally */
+}
+
 #game-container {
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
-    position: relative;
+    margin-top: 100px;
+    position: relative; /* Ensure it doesn't create a stacking context */
     background: white;
-}
-
-#ad-container {
-    display: none;  /* Hide the ad container by default */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: calc(2.5vh + 30px);
-    border: 0;
-    background: black;
-    z-index: 1000;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    /* Default desktop size */
-    width: 728px !important;
-    height: 90px !important;
+    z-index: 0; /* Explicitly set below the ad-container */
 }
 
 .text-container {
@@ -67,6 +66,10 @@ input, textarea, select {
         width: 300px !important;
         height: 50px !important;
         max-width: 95vw; /* Prevent overflow */
+    }
+
+    #game-container {
+        margin-top: 50px; /* Adjust the margin-top for smaller screens */
     }
 }
 

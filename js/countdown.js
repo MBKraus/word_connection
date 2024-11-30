@@ -37,7 +37,7 @@ export function showCountdown(scene) {
 
     let countdownStartTime = Date.now();
 
-    scene.sound.play('countdownSound');
+    // scene.sound.play('countdownSound');
     
     const countdownInterval = setInterval(() => {
         const elapsedTime = (Date.now() - countdownStartTime) / 1000;

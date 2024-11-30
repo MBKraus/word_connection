@@ -79,12 +79,6 @@ export function createDailyLimitScreen(scene) {
             updateCountdown();
             countdownInterval = setInterval(updateCountdown, 1000);
 
-            // Hide ad container if it exists
-            const adContainer = document.getElementById('ad-container');
-            if (adContainer) {
-                adContainer.style.display = 'none';
-            }
-
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(false);
             }
@@ -113,11 +107,6 @@ export function createDailyLimitScreen(scene) {
             screen.setVisible(false);
             if (countdownInterval) {
                 clearInterval(countdownInterval);
-            }
-
-            const adContainer = document.getElementById('ad-container');
-            if (adContainer) {
-                adContainer.style.display = 'flex';
             }
 
             if (scene.authDOMElement) {

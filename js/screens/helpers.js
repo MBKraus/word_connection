@@ -94,7 +94,7 @@ export function createOverlay(scene, container) {
 
 export function createText(scene, x, y, initialText = '') {
     return scene.add.text(x, y, initialText, {
-        fontSize: scene.scale.width * 0.08 + 'px',
+        fontSize: scene.scale.width * 0.09 + 'px',
         color: STYLES.colors.text,
         fontFamily: 'Poppins',
     }).setOrigin(0.5);
@@ -111,11 +111,6 @@ export function createScreen(scene, name, visibility = false) {
 export function showScreen(scene, screenName) {
     scene[screenName].setVisible(true);
     window.hideGameElements(scene);
-    
-    const adContainer = document.getElementById('ad-container');
-    if (adContainer) {
-        adContainer.style.display = 'none';
-    }
 
     if (scene.authDOMElement) {
         scene.authDOMElement.setVisible(false);
@@ -125,11 +120,6 @@ export function showScreen(scene, screenName) {
 export function hideScreen(scene, screenName) {
     scene[screenName].setVisible(false);
     window.showGameElements(scene);
-    
-    const adContainer = document.getElementById('ad-container');
-    if (adContainer) {
-        adContainer.style.display = 'flex';
-    }
 
     if (scene.authDOMElement) {
         scene.authDOMElement.setVisible(true);

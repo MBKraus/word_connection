@@ -11,8 +11,8 @@ export function getTileConfig(scene) {
     const tileHeight = tileWidth * 0.36;
     
     const startY = window.innerWidth < 728 
-        ? scene.game.scale.height * 0.20 
-        : scene.game.scale.height * 0.24;
+        ? scene.game.scale.height * 0.13 
+        : scene.game.scale.height * 0.13;
     
     const startX = (scene.game.scale.width - (cols * tileWidth + totalHorizontalGaps)) / 2;
 
@@ -56,7 +56,7 @@ export function createTiles(scene, config) {
                 color: '#000000',
                 fontFamily: 'Poppins',
                 fontWeight: 'bold',
-                wordWrap: { width: config.tileWidth - 20 },
+                wordWrap: { width: config.tileWidth - 25 },
                 align: 'center'
             }).setOrigin(0.5);
 

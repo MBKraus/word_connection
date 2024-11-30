@@ -14,6 +14,7 @@ import { hideWelcomeScreen } from './screens/welcome.js';
 
 const app = await getFirebaseApp();
 const auth = getAuth(app);
+window.auth = auth; 
 const googleProvider = new GoogleAuthProvider();
 
 let isAuthSuccess = false;

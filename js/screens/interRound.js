@@ -7,7 +7,7 @@ export function createInterRoundScreen(scene) {
     scene.interRoundScoreText = createText(
         scene,
         scene.scale.width * 0.5,
-        scene.scale.height * 0.4
+        scene.scale.height * 0.35
     );
     scene.interRoundScreen.add(scene.interRoundScoreText);
 

@@ -1,11 +1,13 @@
-import { createQuestionMarkPopup} from './screens/questionMarkPopUp.js';
 import { createStatsPopup} from './screens/statsPopUp.js';
 import { isMobile, isTablet } from './utils.js';
+import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
+import { showWelcomeScreen } from './screens/welcome.js'; 
+
 
 export function createHeader(scene) {
     scene.headerText = scene.add.text(
         scene.cameras.main.centerX, 
-        scene.game.scale.height * 0.025, 
+        scene.game.scale.height * 0.035, 
         'Word Connection', 
         {
             fontSize: scene.game.scale.width * 0.05 + 'px',
@@ -16,48 +18,11 @@ export function createHeader(scene) {
     ).setOrigin(0.5);
 }
 
-export function createAdContainer(scene) {
-    const adContainer = document.getElementById('ad-container');
-    const adElement = adContainer.querySelector('.adsbygoogle');
-    
-    if (isMobile()) {
-        adElement.style.width = '300px';
-        adElement.style.height = '50px';
-        adElement.dataset.adFormat = 'mobile';
-    } else {
-        adElement.style.width = '728px';
-        adElement.style.height = '90px';
-        adElement.dataset.adFormat = 'horizontal';
-    }
-
-    // Ensure display is set to flex by default
-    adContainer.style.display = 'flex';
-
-    // Calculate top position based on device type
-    const getTopPosition = () => {
-        if (isTablet()) {
-            return Math.round(scene.game.scale.height * 0.3); // 25% height for tablets
-        } else {
-            return Math.round(scene.game.scale.height * 0.0175); // 10% height for other devices
-        }
-    };
-
-    // Set initial position
-    adContainer.style.top = `${getTopPosition()}px`;
-
-    // Update position on resize
-    scene.scale.on('resize', () => {
-        adContainer.style.top = `${getTopPosition()}px`;
-    });
-
-    // Initialize AdSense
-    (adsbygoogle = window.adsbygoogle || []).push({});
-}
 
 export function getStartY(scene) {
     return window.innerWidth < 728 
-        ? scene.game.scale.height * 0.65 
-        : scene.game.scale.height * 0.70;
+        ? scene.game.scale.height * 0.5975 
+        : scene.game.scale.height * 0.605;
 }
 
 export function createInputDisplay(scene) {
@@ -86,7 +51,7 @@ export function createInputDisplay(scene) {
         startY,
         scene.currentInputText || placeholderText, // Show placeholder if no input
         {
-            fontSize: `${scene.game.scale.width * 0.045}px`,
+            fontSize: `${scene.game.scale.width * 0.04}px`,
             color: '#5A5A5A', // Gray color for placeholder
             fontFamily: 'Poppins',
             wordWrap: { width: inputBgWidth - 20 }
@@ -102,7 +67,7 @@ export function createRoundDisplay(scene) {
 
     function updateRoundPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.roundText) {
@@ -111,7 +76,7 @@ export function createRoundDisplay(scene) {
         }
     }
 
-    scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.22, `Round: ${scene.currentRound + 1}`, {
+    scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.10, `Round: ${scene.currentRound + 1}`, {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
@@ -125,7 +90,7 @@ export function createRoundDisplay(scene) {
 export function createScoreDisplay(scene) {
     function updateScorePosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.scoreText) {
@@ -134,7 +99,7 @@ export function createScoreDisplay(scene) {
         }
     }
 
-    scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.22, 'Score: 0', {
+    scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.10, 'Score: 0', {
         fontSize: `${scene.game.scale.width * 0.04}px`,
         color: '#000000',
         fontFamily: 'Poppins',
@@ -150,7 +115,7 @@ export function createTimerDisplay(scene) {
     // Define a function to update the timer's position based on actual screen width
     function updateTimerPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
-        const yPos = isMobile ? scene.game.scale.height * 0.17 : scene.game.scale.height * 0.22;
+        const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
         // Update timerText position and font size
         if (scene.timerText) {
@@ -162,7 +127,7 @@ export function createTimerDisplay(scene) {
     // Create the timer text initially
     scene.timerText = scene.add.text(
         scene.game.scale.width * 0.15,
-        scene.game.scale.height * 0.22,  // Initial position for desktop
+        scene.game.scale.height * 0.15,  // Initial position for desktop
         `Time: ${scene.timer_duration}`,
         {
             fontSize: `${scene.game.scale.width * 0.04}px`,
@@ -178,10 +143,128 @@ export function createTimerDisplay(scene) {
     window.addEventListener('resize', updateTimerPosition);
 }
 
+function createHamburgerMenu(scene, x, y, scale) {
+    const menuContainer = scene.add.container(x, y);
+    
+    // Create graphics for the hamburger menu
+    const menuGraphics = scene.add.graphics();
+    
+    function drawBars(color) {
+        menuGraphics.clear();
+        menuGraphics.fillStyle(color, 1);
+        
+        // Draw three horizontal bars
+        menuGraphics.fillRect(-scale * 1.5, -scale, scale * 3, scale * 0.4);
+        menuGraphics.fillRect(-scale * 1.5, 0, scale * 3, scale * 0.4);
+        menuGraphics.fillRect(-scale * 1.5, scale, scale * 3, scale * 0.4);
+    }
+    
+    // Initial drawing
+    drawBars(0x000000);
+    
+    // Add graphics to container
+    menuContainer.add(menuGraphics);
+    
+    // Make interactive
+    const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale, scale * 3, scale * 2);
+    menuGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
+    
+    // Add hover effects
+    menuGraphics.on('pointerover', () => drawBars(0x444444));
+    menuGraphics.on('pointerout', () => drawBars(0x000000));
+    
+    // Create a rectangle for the 'Logout' button
+    const buttonBackground = scene.add.graphics();
+    const buttonWidth = scale * 8;
+    const buttonHeight = scale * 3;
+    
+    buttonBackground.fillStyle(0xFFFFFF, 1);  // White background
+    buttonBackground.lineStyle(14, 0x000000);  // Black border with 2px thickness
+    buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+    buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+    
+    // Create the text inside the button
+    const logoutText = scene.add.text(0, 0, 'Logout', {
+        fontFamily: 'Poppins',
+        fontSize: scene.scale.width * 0.04 + 'px',
+        color: '#000000',  // Black text
+    }).setOrigin(0.5);
+    
+    // Create a container for both the background and the text
+    const logoutButton = scene.add.container(scale * 2, scale * 4.5, [buttonBackground, logoutText]).setVisible(false);
+    
+    // Add logout button to the main container
+    menuContainer.add(logoutButton);
+    
+    // Toggle menu visibility on click
+    let isMenuOpen = false;
+    menuGraphics.on('pointerdown', () => {
+        isMenuOpen = !isMenuOpen;
+        logoutButton.setVisible(isMenuOpen);
+    });
+    
+    // Handle logout button interaction
+    logoutButton.setSize(buttonWidth, buttonHeight);  // Set the interactive area to match the rectangle
+    logoutButton.setInteractive();
+    logoutButton.on('pointerdown', async () => {
+        try {
+            await signOut(auth);  // Firebase sign out
+            console.log('Logout successful');
+            
+            // Show the welcome screen after logging out
+            showWelcomeScreen(scene);  
+        } catch (error) {
+            console.error('Logout Error: ', error.message);
+        }
+    });
+
+    // Hover effect for the Logout button
+    logoutButton.on('pointerover', () => {
+        // Change background color to #666666 when hovered
+        buttonBackground.clear();
+        buttonBackground.fillStyle(0x666666, 1);  // #666666 background
+        buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+        buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+
+        // Keep text color as black (no change)
+        logoutText.setColor('#000000');
+    });
+
+    logoutButton.on('pointerout', () => {
+        // Restore original colors when hover ends
+        buttonBackground.clear();
+        buttonBackground.fillStyle(0xFFFFFF, 1);  // White background
+        buttonBackground.lineStyle(14, 0x000000);
+        buttonBackground.strokeRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+        buttonBackground.fillRect(-buttonWidth / 2, -buttonHeight / 2, buttonWidth, buttonHeight);
+
+        // Keep text color as black (no change)
+        logoutText.setColor('#000000');
+    });
+    
+    // Method to change position
+    menuContainer.updatePosition = (newX, newY) => {
+        menuContainer.setPosition(newX, newY);
+    };
+
+    return menuContainer;
+}
+
 export function createHeaderIcons(scene) {
+
+    // Hamburger Menu
+    const menuScale = scene.scale.width * 0.02;
+    scene.hamburgerMenu = createHamburgerMenu(
+        scene,
+        scene.scale.width * 0.065,  // Initial X position
+        scene.scale.height * 0.03,  // Initial Y position
+        menuScale
+    );
+    scene.hamburgerMenu.setDepth(1);
+    
     // Create bar chart icon using graphics
     const chartGraphics = scene.add.graphics();
-    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.03);
+    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
     
     // Set fill style
     chartGraphics.fillStyle(0x000000, 1);
@@ -207,10 +290,40 @@ export function createHeaderIcons(scene) {
     createStatsPopup(scene, chartGraphics);
 
     // Question mark icon (existing code)
-    const questionIcon = scene.add.image(scene.scale.width * 0.95, scene.scale.height * 0.0225, 'question')
+    const questionIcon = scene.add.image(scene.scale.width * 0.94, scene.scale.height * 0.0325, 'question')
         .setScale(0.12)
         .setInteractive();
-    createQuestionMarkPopup(scene, questionIcon);
+    
+    // Add event listener for questionIcon to scroll to the HTML div
+    questionIcon.on('pointerdown', () => {
+        const targetDiv = document.getElementById('targetDiv');
+        if (targetDiv) {
+            targetDiv.scrollIntoView({ behavior: 'smooth' }); // Smooth scrolling
+        } else {
+            console.warn('Target div not found!');
+        }
+    });
+
+    // Add grey horizontal line with rounded edges
+    const lineGraphics = scene.add.graphics();
+    lineGraphics.lineStyle(4, 0xA0A0A0, 1); // 4px thick, grey color, full opacity
+    lineGraphics.beginPath();
+
+    // Calculate line width and position
+    const lineWidth = scene.scale.width * 0.99; // 90% of screen width
+    const lineX = scene.scale.width * 0.01; // Start 5% from the left edge
+    const lineY = scene.scale.height * 0.065; // Positioned just below the header
+
+    // Draw rounded horizontal line
+    lineGraphics.moveTo(lineX, lineY);
+    lineGraphics.lineTo(lineX + lineWidth, lineY);
+    lineGraphics.strokePath();
+
+    // Optional: Add rounded line caps
+    const capRadius = 2; // Adjust as needed
+    lineGraphics.fillStyle(0x808080, 1);
+    lineGraphics.fillCircle(lineX, lineY, capRadius);
+    lineGraphics.fillCircle(lineX + lineWidth, lineY, capRadius);
 }
 
 
@@ -259,10 +372,10 @@ export function createCheckmark(scene, x, y) {
 
 export function createCorrectGuessContainer(scene) {
     const startY = window.innerWidth < 728  
-    ? scene.game.scale.height * 0.51 
-    : scene.game.scale.height * 0.55;
+    ? scene.game.scale.height * 0.445 
+    : scene.game.scale.height * 0.45;
 
-    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.03, startY);
+    scene.correctGuessContainer = scene.add.container(scene.game.scale.width * 0.02, startY);
 } 
 
 export function initializeCorrectGuessPlaceholders(scene) {
@@ -270,7 +383,7 @@ export function initializeCorrectGuessPlaceholders(scene) {
         const yOffset = index * (scene.game.scale.height * 0.045);
         const circleRadius = scene.game.scale.width * 0.0125;
 
-        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.05, yOffset);
+        scene.guessContainer = scene.add.container(scene.game.scale.width * 0.02, yOffset);
         const circle = scene.add.graphics();
         circle.lineStyle(10, 0x51c878); // Green border
         circle.fillStyle(0xFFFFFF); // White fill
