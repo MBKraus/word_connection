@@ -7,6 +7,11 @@ html, body {
     font-family: Arial, sans-serif; /* Set a default font */
 }
 
+/* Disable page scroll */
+body.locked {
+    overflow: hidden;  /* Prevent scrolling */
+}
+
 input, textarea, select {
     font-size: 16px; /* Ensure font size is 16px or larger */
 }
@@ -85,4 +90,82 @@ input, textarea, select {
     src: url('https://mbkraus.github.io/word_connection/assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+#cookiewall {
+    position: fixed;
+    bottom: 0 !important; /* Force the popup to be visible */
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Cover the entire viewport */
+    z-index: 3000; /* Ensure it's above everything */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 1; /* Ensure it starts visible */
+}
+
+/* Grey overlay covering 70% of the screen */
+#cookiewall .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Slight grey/black overlay */
+    z-index: 1; /* Ensure the overlay is below the popup content */
+}
+
+/* Popup content (covering 30% of the screen) */
+.cookiewall-content {
+    position: relative;
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 20vh;
+    z-index: 3001; /* Ensure button is above the overlay */
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cookiewall-content h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+}
+
+.cookiewall-content p {
+    margin: 0 0 20px;
+    font-size: 16px;
+}
+
+.cookiewall-content .cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+}
+
+.cookiewall-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: black; /* Both buttons now black */
+    color: white; /* White text for both */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cookiewall-content button:hover {
+    background-color: #333; /* Slightly lighter black on hover */
+}
+
+/* Show animation */
+.show {
+    bottom: 0;
+}
+
+#cookiewall.hide {
+    opacity: 0;
+    pointer-events: none; /* Disable interaction after hiding */
 }
