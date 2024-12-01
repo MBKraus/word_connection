@@ -437,5 +437,4 @@ function endGame(scene) {
     GameStorage.recordGamePlayed();
 
 }
-
 })

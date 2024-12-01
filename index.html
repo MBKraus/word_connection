@@ -25,11 +25,65 @@
         }
     </script>
     <div id="game-container"></div>
+    <div id="cookiewall" class="cookiewall">
+        <div class="overlay"></div>
+        <div class="cookiewall-content">
+            <h3>We Use Cookies</h3>
+            <p>This website uses cookies to ensure you get the best experience on our website.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies">Accept</button>
+                <button id="reject-cookies">Reject</button>
+            </div>
+        </div>
+    </div>
     <div class="text-container", id="targetDiv">
         <h2>Word Connections</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
     <script type="module" src="js/main.js"></script>
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cookiewall = document.getElementById('cookiewall');
+            const acceptButton = document.getElementById('accept-cookies');
+            const rejectButton = document.getElementById('reject-cookies');
 
+            // Check if cookies have been accepted or rejected previously
+            if (localStorage.getItem('cookiesAccepted') === 'true') {
+                cookiewall.style.display = 'none';
+                document.body.classList.remove('locked');
+                window.dispatchEvent(new Event('cookiesAccepted'));
+            } else if (localStorage.getItem('cookiesRejected') === 'true') {
+                cookiewall.style.display = 'none';
+                document.body.classList.remove('locked');
+                window.dispatchEvent(new Event('cookiesRejected'));
+            } else {
+                // Lock the page and show the cookiewall
+                document.body.classList.add('locked');
+                window.dispatchEvent(new Event('cookiesBlocking'));
+                
+                setTimeout(() => {
+                    cookiewall.classList.add('show');
+                }, 1000);
+            }
+
+            // Add click event listener to accept button
+            acceptButton.addEventListener('click', function() {
+                cookiewall.style.display = 'none';
+                localStorage.setItem('cookiesAccepted', 'true');
+                localStorage.removeItem('cookiesRejected');
+                document.body.classList.remove('locked');
+                window.dispatchEvent(new Event('cookiesAccepted'));
+            });
+
+            // Add click event listener to reject button
+            rejectButton.addEventListener('click', function() {
+                cookiewall.style.display = 'none';
+                localStorage.setItem('cookiesRejected', 'true');
+                localStorage.removeItem('cookiesAccepted');
+                document.body.classList.remove('locked');
+                window.dispatchEvent(new Event('cookiesRejected'));
+            });
+        });
+    </script>
+</body>
 </html>

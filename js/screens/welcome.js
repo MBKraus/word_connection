@@ -66,7 +66,10 @@ export function createWelcomeScreen(scene) {
         30
     );
     scene.welcomeScreen.add(loginButton);
-    loginButton.setVisible(false); // Initially hidden
+    loginButton.setVisible(false);
+
+    // Set up cookie wall interactions
+    setupCookieWallInteractions(scene, playButton, loginButton);
 
     // Listen for auth state changes
     onAuthStateChanged(auth, (user) => {
@@ -113,6 +116,59 @@ export function createWelcomeScreen(scene) {
         show: () => showScreen(scene, 'welcomeScreen'),
         hide: () => hideScreen(scene, 'welcomeScreen')
     };
+}
+
+function setupCookieWallInteractions(scene, playButton, loginButton) {
+    const checkCookieStatus = () => {
+        const cookiewall = document.getElementById('cookiewall');
+        const isVisible = cookiewall && cookiewall.style.display !== 'none';
+
+        if (isVisible) {
+            playButton.disableInteractive();
+            loginButton.disableInteractive();
+        } else {
+            playButton.setInteractive();
+            loginButton.setInteractive();
+        }
+    };
+
+    // Initial check
+    checkCookieStatus();
+
+    // Add listeners for cookie acceptance and rejection
+    window.addEventListener('cookiesAccepted', () => {
+        playButton.setInteractive();
+        loginButton.setInteractive();
+    });
+
+    window.addEventListener('cookiesRejected', () => {
+        playButton.disableInteractive();
+        loginButton.disableInteractive();
+        // Optionally, you could add additional handling for rejected cookies
+    });
+
+    window.addEventListener('cookiesBlocking', () => {
+        playButton.disableInteractive();
+        loginButton.disableInteractive();
+    });
+
+    // Add a mutation observer to watch for cookiewall changes
+    const observeCookiewall = () => {
+        const cookiewall = document.getElementById('cookiewall');
+        if (!cookiewall) return;
+
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                    checkCookieStatus();
+                }
+            });
+        });
+
+        observer.observe(cookiewall, { attributes: true });
+    };
+
+    observeCookiewall();
 }
 
 export const showWelcomeScreen = (scene) => showScreen(scene, 'welcomeScreen');
