@@ -42,14 +42,13 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-    this.load.text('data', 'https://mbkraus.github.io/word_connection/content/data.txt');
+    this.load.text('data', './content/data.txt');
     this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
-    this.load.image('screenshot', 'https://mbkraus.github.io/word_connection/assets/screenshot.png');
-    this.load.image('question', 'https://mbkraus.github.io/word_connection/assets/question.png');
-    this.load.image('cross', 'https://mbkraus.github.io/word_connection/assets/wrong.png');
-    this.load.audio('correctSound', 'https://mbkraus.github.io/word_connection/assets/audio/correct.wav');
-    this.load.audio('incorrectSound', 'https://mbkraus.github.io/word_connection/assets/audio/incorrect.mp3');
-    this.load.audio('countdownSound', 'https://mbkraus.github.io/word_connection/assets/audio/countdown.wav');
+    this.load.image('question', './assets/question.png');
+    this.load.image('cross', './assets/wrong.png');
+    this.load.audio('correctSound', './assets/audio/correct.wav');
+    this.load.audio('incorrectSound', './assets/audio/incorrect.mp3');
+    this.load.audio('countdownSound', './assets/audio/countdown.wav');
 }
 
 window.startGame = startGame;
