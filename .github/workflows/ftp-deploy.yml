@@ -1,14 +1,14 @@
 name: FTP Deployment
 
-on:
-  push:
-    branches:
-      - master
-
 # on:
 #   push:
 #     branches:
-#       - '**'  # This will trigger the action for all branches
+#       - master
+
+on:
+  push:
+    branches:
+      - '**'  # This will trigger the action for all branches
 
 jobs:
   ftp-deploy:
