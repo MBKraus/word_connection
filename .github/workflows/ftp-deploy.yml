@@ -39,5 +39,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./filtered-deploy/
-          server-dir: /
+          server-dir: /httpdocs/
           # dry-run: ${{ github.ref != 'refs/heads/main' }}  # Only actually deploy on main branch
