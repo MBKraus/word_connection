@@ -17,7 +17,7 @@ jobs:
     steps:
       # Checkout the repository code
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Filter and prepare files to deploy
       - name: Filter files
@@ -33,7 +33,7 @@ jobs:
 
       # Deploy to FTP server
       - name: Deploy to FTP Server
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
