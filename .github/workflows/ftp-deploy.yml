@@ -27,8 +27,8 @@ jobs:
           cp style.css filtered-deploy/
           cp auth.txt filtered-deploy/
           cp robots.txt filtered-deploy/
-          mkdir -p filtered-deploy/js && cp -r js/ filtered-deploy/js/
-          mkdir -p filtered-deploy/assets && cp -r assets/ filtered-deploy/assets/
+          mkdir -p filtered-deploy/js && cp -r js/* filtered-deploy/js/
+          mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
 
       # Deploy to FTP server
