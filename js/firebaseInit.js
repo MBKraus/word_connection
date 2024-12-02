@@ -7,7 +7,7 @@ export async function initializeFirebase() {
     if (!firebaseAppPromise) {
         firebaseAppPromise = (async () => {
             try {
-                const response = await fetch('https://mbkraus.github.io/word_connection/auth.txt');
+                const response = await fetch('./auth.txt');
                 const encodedData = await response.text();
                 const jsonString = atob(encodedData);
                 const firebaseConfig = JSON.parse(jsonString);
