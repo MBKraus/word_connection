@@ -42,6 +42,14 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
+
+    const loadingSpinner = document.getElementById('loading-spinner');
+    loadingSpinner.style.display = 'block'; 
+
+    this.load.on('complete', function () {
+        loadingSpinner.style.display = 'none'; 
+    });
+
     this.load.text('data', './content/data.txt');
     this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     this.load.image('question', './assets/question.png');
