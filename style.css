@@ -169,3 +169,28 @@ input, textarea, select {
     opacity: 0;
     pointer-events: none; /* Disable interaction after hiding */
 }
+
+/* Loading Circle */
+#loading-spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+    border-top: 8px solid #3498db; /* Blue animated part */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
