@@ -111,6 +111,8 @@ export async function fetchGameStats(userId) {
     const stats = {
         totalGamesPlayed: 0,
         lastPlayed: null,
+        currentStreak: 0,
+        longestStreak: 0,
         recentSessions: [],
         averageTopicsGuessed: 0,
         averageScore: 0
