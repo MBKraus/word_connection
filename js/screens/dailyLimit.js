@@ -1,5 +1,5 @@
 import { GameStorage } from '../gameStorage.js';
-import { getGameStats } from '../gameStorage.js';
+import { fetchGameStats } from '../gameStorage.js';
 import { auth } from '../auth.js';
 import { createProgressCircles } from './statsPopUp.js';
 
@@ -85,7 +85,7 @@ export function createDailyLimitScreen(scene) {
 
             // If the user is logged in, fetch and display stats
             if (auth.currentUser) {
-                const stats = await getGameStats(auth.currentUser.uid);
+                const stats = await fetchGameStats(auth.currentUser.uid);
                 if (stats) {
                     // Update stats text
                     statsText.setText([
