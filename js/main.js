@@ -11,7 +11,7 @@ import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
 import { GameStorage } from './gameStorage.js';
-import { saveGameStats, updateUserProfile } from './gameStorage.js';
+import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
 
 Promise.all([
@@ -407,7 +407,7 @@ function endGame(scene) {
         updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
 
         // Save game stats to Firebase with total topics guessed
-        saveGameStats(scene.score, totalTopicsGuessed);
+        writeGameStats(scene.score, totalTopicsGuessed);
     }
 
     if (isGameComplete && allTopicsGuessed) {
@@ -441,7 +441,7 @@ function endGame(scene) {
         showFailureEndScreen(scene);
     }
 
-    GameStorage.recordGamePlayed();
+    GameStorage.recordGamePlayedLocal();
 
 }
 })

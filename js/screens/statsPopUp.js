@@ -1,4 +1,4 @@
-import { getGameStats } from '../gameStorage.js';
+import { fetchGameStats } from '../gameStorage.js';
 import { showAuthModal, auth } from '../auth.js';
 import { createButton, STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
@@ -24,17 +24,17 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.46, auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?', {
+    const titleText = scene.add.text(0, -halfHeight * 0.70, auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?', {
         font: STYLES.fonts.medium(scene),
         fill: '#000000',
     }).setOrigin(0.5);
     popup.add(titleText);
 
     // Create container for progress circles
-    const circlesContainer = scene.add.container(0, -halfHeight * 0.3);
+    const circlesContainer = scene.add.container(0, -halfHeight * 0.45);
     popup.add(circlesContainer);
 
-    const statsText = scene.add.text(0, halfHeight * 0.1, 'Loading...', {
+    const statsText = scene.add.text(0, -halfHeight * 0.02, 'Loading...', {
         font: STYLES.fonts.small(scene),
         fill: STYLES.colors.text,
         align: 'center',
@@ -68,7 +68,7 @@ function createBackground(scene, popupWidth, popupHeight, halfWidth, halfHeight)
 
 // Helper function to create the close button container
 function createCloseButtonContainer(scene, halfWidth, halfHeight) {
-    const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.55);
+    const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.75);
 
     // Create a larger, thicker, black close cross
     const closeButton = scene.add.graphics();
@@ -205,13 +205,17 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
             signupButton.setVisible(false);
             signupButtonText.setVisible(false);
             graphics.setVisible(false);
-            const stats = await getGameStats(auth.currentUser.uid);
+            const stats = await fetchGameStats(auth.currentUser.uid);
             if (stats) {
                 createProgressCircles(stats.recentSessions, scene, circlesContainer);
                 statsText.setText([
+                    `Current Streak (# of days): ${stats.currentStreak}`,
+                    `Longest Streak (# of days): ${stats.longestStreak}`,
+                    ``,
+                    `Daily Average Score: ${stats.averageScore}`,
+                    `Daily Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
+                    ``,
                     `Total Games Played: ${stats.totalGamesPlayed}`,
-                    `Average Score: ${stats.averageScore}`,
-                    `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
                     `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
                 ]);
             } else {
@@ -255,7 +259,7 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphi
             signupButton.setVisible(false);
             signupButtonText.setVisible(false);
             graphics.setVisible(false);
-            const stats = await getGameStats(auth.currentUser.uid);
+            const stats = await fetchGameStats(auth.currentUser.uid);
             if (stats) {
                 createProgressCircles(stats.recentSessions, scene, circlesContainer);
                 statsText.setText([

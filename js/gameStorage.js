@@ -16,6 +16,8 @@ async function initializeDb() {
 
 export class GameStorage {
     static hasPlayedTodayCookie() {
+        // Check if 'last played time' cookie exists and if it does
+        // return True if it equals today's date
         try {
             const lastPlayedTime = localStorage.getItem(LAST_PLAYED_KEY);
             if (!lastPlayedTime) return false;
@@ -28,7 +30,22 @@ export class GameStorage {
         }
     }
 
-    static recordGamePlayed() {
+    static async hasPlayedTodayDB(userId) {
+        // Check in Firebase DB if user has played today
+        await initializeDb();
+        const today = new Date().toISOString().split('T')[0];
+        try {
+            const statsRef = doc(db, 'gameStats', userId, 'dailyStats', today);
+            const statsDoc = await getDoc(statsRef);
+            return statsDoc.exists();
+        } catch (error) {
+            console.error('Error checking if user played today:', error);
+            return false;
+        }
+    }
+
+    static recordGamePlayedLocal() {
+        // Store last_played_key locally
         try {
             localStorage.setItem(LAST_PLAYED_KEY, new Date().toISOString());
         } catch (error) {
@@ -37,6 +54,7 @@ export class GameStorage {
     }
 
     static getNextPlayTime() {
+        // Get tomorrow's date at 00:00
         const tomorrow = new Date();
         tomorrow.setDate(tomorrow.getDate() + 1);
         tomorrow.setHours(0, 0, 0, 0);
@@ -46,7 +64,7 @@ export class GameStorage {
 
 const LAST_PLAYED_KEY = 'wordconnect_last_played';
 
-export async function saveGameStats(score, totalTopicsGuessed) {
+export async function writeGameStats(score, totalTopicsGuessed) {
     if (!auth.currentUser) {
         console.log('User not logged in - stats not saved');
         return;
@@ -65,6 +83,9 @@ export async function saveGameStats(score, totalTopicsGuessed) {
             timestamp: serverTimestamp(),
             date: dateString
         });
+
+        await updateStreak(userId, dateString, totalTopicsGuessed);
+
         console.log('Game stats saved successfully');
     } catch (error) {
         console.error('Error saving game stats:', error);
@@ -85,7 +106,7 @@ export async function updateUserProfile(userId) {
     }
 }
 
-export async function getGameStats(userId) {
+export async function fetchGameStats(userId) {
     await initializeDb();
     const stats = {
         totalGamesPlayed: 0,
@@ -102,6 +123,8 @@ export async function getGameStats(userId) {
         if (userSnap.exists()) {
             stats.totalGamesPlayed = userSnap.data().totalGamesPlayed || 0;
             stats.lastPlayed = userSnap.data().lastPlayed ? userSnap.data().lastPlayed.toDate() : null;
+            stats.currentStreak = userSnap.data().currentStreak || 0;
+            stats.longestStreak = userSnap.data().longestStreak || 0;
         }
 
         // Get all game sessions to calculate averages
@@ -143,17 +166,47 @@ export async function getGameStats(userId) {
     }
 }
 
-export async function hasPlayedTodayDB(userId) {
-    await initializeDb();
-    const today = new Date().toISOString().split('T')[0];
-    
+async function updateStreak(userId, todayDate, totalTopicsGuessed) {
+    const userRef = doc(db, 'users', userId);
+    const userSnap = await getDoc(userRef);
+
+    let currentStreak = 1;
+    let longestStreak = 1;
+    let lastPlayedDate = null;
+
+    if (userSnap.exists()) {
+        const userData = userSnap.data();
+        currentStreak = userData.currentStreak || 0;
+        longestStreak = userData.longestStreak || 0;
+        lastPlayedDate = userData.lastPlayed ? userData.lastPlayed.toDate().toISOString().split('T')[0] : null;
+    }
+
+    // Check if played yesterday
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    const formattedYesterday = yesterday.toISOString().split('T')[0];
+
+    // Update streak only if totalTopicsGuessed is 6
+    if (totalTopicsGuessed === 6) {
+        if (lastPlayedDate === formattedYesterday) {
+            currentStreak += 1;
+        } else  {
+            currentStreak = 1; 
+        }
+    } else {
+        currentStreak = 0; 
+    }
+    longestStreak = Math.max(longestStreak, currentStreak);
+
+    // Update user profile with streak information
     try {
-        const statsRef = doc(db, 'gameStats', userId, 'dailyStats', today);
-        const statsDoc = await getDoc(statsRef);
-        console.log(userId)
-        return statsDoc.exists();
+        await setDoc(userRef, {
+            currentStreak: currentStreak,
+            longestStreak: longestStreak,
+        }, { merge: true });
+
+        console.log('Streak updated successfully');
     } catch (error) {
-        console.error('Error checking if user played today:', error);
-        return false;
+        console.error('Error updating streak:', error);
     }
 }

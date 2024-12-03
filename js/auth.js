@@ -1,5 +1,5 @@
 import { getFirebaseApp } from './firebaseInit.js';
-import { hasPlayedTodayDB } from './gameStorage.js';
+import { GameStorage } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { 
     getAuth, 
@@ -62,7 +62,7 @@ function recenterScreen() {
 // Only start checking for daily limit after successful auth and modal close
 onAuthStateChanged(auth, async (user) => {
     if (user && !isAuthModalOpen) {
-        const hasPlayed = await hasPlayedTodayDB(user.uid);
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
             console.log("has played per DB check ")
             // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
@@ -235,7 +235,28 @@ async function handleSignIn(e) {
         isAuthSuccess = true;
         await hideAuthModal();
     } catch (error) {
-        alert("Sign-In Error: " + error.message);
+        let errorMessage;
+        console.log(error.code)
+        switch (error.code) {
+            case 'auth/invalid-credential':
+                errorMessage = 'Invalid credentials. Please try again.';
+                break
+            case 'auth/user-not-found':
+                errorMessage = 'No account found with this email. Please sign up or check your email address.';
+                break;
+            case 'auth/wrong-password':
+                errorMessage = 'Incorrect password. Please try again or reset your password.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email address is not valid. Please enter a valid email address.';
+                break;
+            case 'auth/too-many-requests':
+                errorMessage = 'Too many unsuccessful login attempts. Please try again later or reset your password.';
+                break;
+            default:
+                errorMessage = 'Sign-In Error: ' + error.message;
+        }
+        alert(errorMessage);
     }
 }
 
@@ -276,7 +297,7 @@ function handlePasswordReset(e) {
 async function hideAuthModal() {
 
     // if (isAuthSuccess && auth.currentUser) {
-    //     const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+    //     const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
         
     //     if (hasPlayed) {
     //         modalContainer.style.display = 'none';
@@ -298,7 +319,7 @@ async function hideAuthModal() {
 
 
     if (isAuthSuccess && auth.currentUser) {
-        const hasPlayed = await hasPlayedTodayDB(auth.currentUser.uid);
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
             
         modalContainer.style.display = 'none';
         overlay.style.display = 'none';
