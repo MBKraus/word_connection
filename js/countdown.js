@@ -17,6 +17,8 @@ export function createCountdown(scene) {
 }
 
 export function showCountdown(scene) {
+    scene.guessedTopicsOrder = [];
+
     let countdownTime = 3;
     scene.roundText.setText(`Round: ${scene.currentRound + 1}`);
     scene.roundText.setVisible(true);

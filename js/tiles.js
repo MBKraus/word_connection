@@ -105,16 +105,18 @@ function drawRoundedRect(graphics, x, y, width, height, radius) {
 }
 
 export function highlightTiles(scene, words, topicIndex) {
-    const colors = [0x9bcf53, 0x6d92e6, 0xbf53cf];
+    // Define the colors for the guessed topics
+    const colors = [0xbf53cf, 0x6d92e6, 0x9bcf53];
     
-    const fillColor = colors[topicIndex % colors.length]; // Cycle through colors
-
+    // We need to assign the correct color based on the order of guesses
+    const fillColor = colors[scene.guessedTopicsOrder.length % colors.length]; // Cycle through colors based on the order
+    
     scene.tiles.forEach(tile => {
         if (words.includes(tile.word)) {
             // Clear the previous graphics
             tile.tile.clear();
             
-            // Draw with new color
+            // Draw with the assigned color
             tile.tile.fillStyle(fillColor, 1);
             drawRoundedRect(
                 tile.tile, 

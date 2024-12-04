@@ -148,6 +148,7 @@ function startGame(scene) {
     scene.isGameActive = true;
     scene.currentRound = 0;
     scene.score = 0;
+    scene.guessedTopicsOrder = [];
     updateScoreDisplay(scene);
 
     if (scene.hamburgerMenu) {
@@ -175,7 +176,7 @@ function checkGuess(scene, guess) {
     if (scene.remainingTime <= 0 || !scene.isGameActive) {
         return;
     }
-    
+
     // Normalize the guess
     const normalizedGuess = guess.toLowerCase().trim();
 
@@ -185,7 +186,6 @@ function checkGuess(scene, guess) {
 
     // Check each topic array
     for (let i = 0; i < scene.currentTopics.length; i++) {
-        // For each topic object, check all its possible values
         const topicObj = scene.currentTopics[i];
         
         // Check if this topic has already been guessed
@@ -204,6 +204,9 @@ function checkGuess(scene, guess) {
     if (foundMatch) {
         let matchedTopic = scene.currentTopics[matchedTopicIndex];
 
+        // Track the order of guessed topics
+        scene.guessedTopicsOrder.push(matchedTopicIndex);
+        
         highlightTiles(scene, matchedTopic.entries, matchedTopicIndex);
         
         // Find the first unused guess text entry
@@ -230,15 +233,21 @@ function checkGuess(scene, guess) {
             // Use the specific container for this entry
             matchedEntry.guessContainer.add(matchedEntry.text);
             
-            // Animate the existing circle fill to green
+            // Apply the appropriate color to the circle based on the order
+            const colors = [0x6d92e6, 0x9bcf53, 0xbf53cf]; // Blue, Green, Purple
+            console.log(scene.guessedTopicsOrder)
+            console.log(scene.guessedTopicsOrder.length)
+            const color = colors[scene.guessedTopicsOrder.length - 1]; // Get the color based on the order of guesses
+
+            // Animate the existing circle fill to the correct color
             scene.tweens.add({
                 targets: circle,
                 alpha: 0,
                 duration: 25,
                 onComplete: () => {
                     circle.clear();
-                    circle.lineStyle(10, 0x51c878);
-                    circle.fillStyle(0x51c878);
+                    circle.lineStyle(10, color);
+                    circle.fillStyle(color);
                     circle.strokeCircle(0, 0, circleRadius);
                     circle.fillCircle(0, 0, circleRadius);
                     circle.alpha = 1;
@@ -257,8 +266,7 @@ function checkGuess(scene, guess) {
         // Update score
         scene.score += 30;
         updateScoreDisplay(scene);
-        // scene.sound.play('correctSound');
-        
+
         // End round if all topics have been guessed
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
             scene.isGameActive = false; // Disable further guesses
@@ -268,7 +276,6 @@ function checkGuess(scene, guess) {
         }
     } else {
         // Handle incorrect guess
-        // scene.sound.play('incorrectSound');
         scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
             scene.cross.setVisible(false);
@@ -276,7 +283,38 @@ function checkGuess(scene, guess) {
     }
 }
 
+function handleRoundEnd(scene) {
+  
+    // Handle the end of the round
+    clearTimerEvent(scene);
+    scene.countdownAudioInRoundPlayed = false;
 
+    const points = calculateRoundPoints(scene.remainingTime);
+    scene.score += points.roundBonus + points.timeBonus;
+
+    let interRoundMessage = `Awesome!\n\n+ ${points.wordPoints} Word Points`;
+    interRoundMessage += `\n+ ${points.roundBonus} Round Bonus`;
+    if (points.timeBonus > 0) {
+        interRoundMessage += `\n+ ${points.timeBonus} Time Bonus`;
+    }
+    interRoundMessage += `\n\nTotal Score: ${scene.score}`;
+
+    scene.interRoundScoreText.setText(interRoundMessage);
+    showInterRoundScreen(scene);
+
+    scene.okButton.removeAllListeners('pointerdown');
+    scene.okButton.on('pointerdown', () => {
+        hideInterRoundScreen(scene);
+        if (scene.currentRound >= scene.allRounds.length - 1) {
+            // If this was the final round, end the game after a delay
+            endGame(scene);
+            return;
+            // Else proceed with the next round
+        } else {
+            startNextRound(scene);
+        }
+    });
+}
 
 function calculateRoundPoints(timeRemaining) {
     const points = {
