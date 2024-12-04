@@ -115,7 +115,7 @@ export function createKeyboard(scene, game) {
                     fontFamily: 'Poppins',
                 }).setOrigin(0.5);
             } else if (key === '✓') {
-                button.fillStyle(0x51c878, 1);
+                button.fillStyle(0x9bcf53, 1);
                 keyText = scene.add.text(0, 0, key, {
                     fontSize,
                     color: '#FFFFFF',

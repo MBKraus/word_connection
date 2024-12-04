@@ -181,11 +181,10 @@ export function createProgressCircles(sessions, scene, circlesContainer) {
 
 // Helper function to determine border color
 export function getBorderColor(topicsGuessed) {
-    if (topicsGuessed >= 9) return 0x51c878;
-    if (topicsGuessed >= 6) return 0x90EE90;
-    if (topicsGuessed >= 3) return 0xFFA500;
-    if (topicsGuessed >= 1) return 0xFF0000;
-    return 0x8B0000;
+    if (topicsGuessed >= 6) return 0x9bcf53; // Light Green
+    if (topicsGuessed >= 3) return 0xFFA500; // Orange 
+    if (topicsGuessed >= 1) return 0x8B0000; // Dark Red 
+    return 0x8B0000;                         // Dark Red 
 }
 
 function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, circlesContainer, scene) {

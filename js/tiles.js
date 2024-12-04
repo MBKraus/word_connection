@@ -106,7 +106,7 @@ function drawRoundedRect(graphics, x, y, width, height, radius) {
 
 export function highlightTiles(scene, words, topicIndex) {
     // Define the colors for the guessed topics
-    const colors = [0xbf53cf, 0x6d92e6, 0x9bcf53];
+    const colors = [0xbf53cf, 0x6d92e6, 0x9bcf53];  // purple, blue, green
     
     // We need to assign the correct color based on the order of guesses
     const fillColor = colors[scene.guessedTopicsOrder.length % colors.length]; // Cycle through colors based on the order
