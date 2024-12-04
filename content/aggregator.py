@@ -4,9 +4,9 @@ import os
 # List of areas corresponding to JSON filenames
 # Optional: art, fashion, mythology, nature
 areas = [
-    'animals', 'art', 'cuisine', 'events', 'films_series', 'hobbies', 
-    'inventions', 'music', 'musical_instrument', 'nature', 
-    'organizations', 'persons', 'places', 'space', 'sports_games', 'things'
+    'animals', 'cuisine', 'events', 'films_series_art', 
+    'music_and_instruments', 'nature_and_space', 
+    'persons_and_organizations', 'places', 'sports_games_hobbies', 'things_and_inventions'
 ]
 
 # Directory containing JSON files

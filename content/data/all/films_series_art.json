@@ -94,7 +94,8 @@
         },
         {
             "topic": [
-                "The Little Mermaid"
+                "The Little Mermaid",
+                "Little Mermaid"
             ],
             "entries": [
                 "Ariel",
@@ -317,7 +318,8 @@
         },
         {
             "topic": [
-                "The Sopranos"
+                "The Sopranos",
+                "Sopranos"
             ],
             "entries": [
                 "Tony Soprano",
@@ -559,6 +561,259 @@
                 "Midnight",
                 "Fairy Godmother",
                 "Pumpkin Carriage"
+            ]
+        },
+        {
+            "topic": [
+                "Starry Night",
+                "The Starry Night",
+                "Starry Night Painting",
+                "Van Gogh's Starry Night"
+            ],
+            "entries": [
+                "Vincent van Gogh",
+                "Post-Impressionism",
+                "Cypress Trees",
+                "Night Sky"
+            ]
+        },
+        {
+            "topic": [
+                "The Thinker",
+                "Thinker",
+                "Le Penseur",
+                "Rodin's The Thinker"
+            ],
+            "entries": [
+                "Auguste Rodin",
+                "Bronze Sculpture",
+                "Pensive Pose",
+                "Contemplation"
+            ]
+        },
+        {
+            "topic": [
+                "Romeo and Juliet",
+                "The Tragedy of Romeo and Juliet",
+                "Romeo & Juliet"
+            ],
+            "entries": [
+                "William Shakespeare",
+                "Forbidden Love",
+                "Verona Setting",
+                "Feuding Families"
+            ]
+        },
+        {
+            "topic": [
+                "The Scream",
+                "Scream",
+                "Edvard Munch's Scream",
+                "The Cry"
+            ],
+            "entries": [
+                "Edvard Munch",
+                "Expressionism",
+                "Vibrant Colors",
+                "Anxiety"
+            ]
+        },
+        {
+            "topic": [
+                "The Great Gatsby",
+                "Gatsby",
+                "Fitzgerald's Great Gatsby"
+            ],
+            "entries": [
+                "F. Scott Fitzgerald",
+                "Jazz Age",
+                "American Dream",
+                "Long Island"
+            ]
+        },
+        {
+            "topic": [
+                "The Last Supper",
+                "Last Supper",
+                "Da Vinci's Last Supper",
+                "The Final Supper"
+            ],
+            "entries": [
+                "Leonardo da Vinci",
+                "Apostles Gathered",
+                "Fresco Painting",
+                "Betrayal Announcement"
+            ]
+        },
+        {
+            "topic": [
+                "Guernica",
+                "Picasso's Guernica",
+                "The Guernica Painting"
+            ],
+            "entries": [
+                "Pablo Picasso",
+                "Spanish Civil War",
+                "Monochromatic Palette",
+                "Bombing Horror"
+            ]
+        },
+        {
+            "topic": [
+                "Michelangelo's David",
+                "David",
+                "David Statue",
+                "The Statue of David"
+            ],
+            "entries": [
+                "Michelangelo Buonarroti",
+                "Renaissance Sculpture",
+                "Marble",
+                "Florence Italy"
+            ]
+        },
+        {
+            "topic": [
+                "The Nutcracker",
+                "Tchaikovsky's Nutcracker",
+                "Nutcracker",
+                "The Nutcracker Ballet"
+            ],
+            "entries": [
+                "Pyotr Tchaikovsky",
+                "Christmas Eve",
+                "Clara & Nutcracker",
+                "Dance of Sugar Plum Fairy"
+            ]
+        },
+        {
+            "topic": [
+                "The Persistence of Memory",
+                "Dali's Melting Clocks",
+                "Melting Watches Painting"
+            ],
+            "entries": [
+                "Salvador Dal\u00ed",
+                "Surrealism",
+                "Dripping Clocks",
+                "Dreamlike Landscape"
+            ]
+        },
+        {
+            "topic": [
+                "Ode to Joy",
+                "Beethoven's Ode",
+                "Joyful Symphony Movement"
+            ],
+            "entries": [
+                "Ludwig van Beethoven",
+                "Choral Symphony",
+                "Ninth Symphony",
+                "European Anthem"
+            ]
+        },
+        {
+            "topic": [
+                "The Birth of Venus",
+                "Botticelli's Venus",
+                "Venus Rising"
+            ],
+            "entries": [
+                "Sandro Botticelli",
+                "Goddess Venus",
+                "Seashell Arrival",
+                "Renaissance Mythology"
+            ]
+        },
+        {
+            "topic": [
+                "Hamlet",
+                "The Tragedy of Hamlet",
+                "Shakespeare's Hamlet"
+            ],
+            "entries": [
+                "William Shakespeare",
+                "Prince of Denmark",
+                "Ghost of King",
+                "Question of Being"
+            ]
+        },
+        {
+            "topic": [
+                "The Sound of Music",
+                "Sound of Music Film",
+                "Musical: Sound of Music"
+            ],
+            "entries": [
+                "Rogers & Hammerstein",
+                "Von Trapp Family",
+                "Austrian Alps",
+                "Do-Re-Mi"
+            ]
+        },
+        {
+            "topic": [
+                "The Night Watch",
+                "Rembrandt's Night Watch",
+                "The Militia Company"
+            ],
+            "entries": [
+                "Rembrandt van Rijn",
+                "Group Portrait",
+                "Dutch Golden Age",
+                "Amsterdam Museum"
+            ]
+        },
+        {
+            "topic": [
+                "War and Peace",
+                "Tolstoy's War and Peace",
+                "The Great Masterpiece"
+            ],
+            "entries": [
+                "Leo Tolstoy",
+                "Napoleonic Era",
+                "Russian Aristocracy",
+                "Epic Novel"
+            ]
+        },
+        {
+            "topic": [
+                "The Persistence of Memory",
+                "Dali's Melting Clocks",
+                "Melting Watches Painting"
+            ],
+            "entries": [
+                "Salvador Dal\u00ed",
+                "Surrealism",
+                "Dripping Clocks",
+                "Dreamlike Landscape"
+            ]
+        },
+        {
+            "topic": [
+                "American Gothic",
+                "Wood's Gothic",
+                "American Farmhouse"
+            ],
+            "entries": [
+                "Grant Wood",
+                "Rural America",
+                "Farmer & Daughter",
+                "Iconic Pitchfork"
+            ]
+        },
+        {
+            "topic": [
+                "Night Train",
+                "Duke Ellington's Night Train",
+                "Night Train Song"
+            ],
+            "entries": [
+                "Jazz Orchestra",
+                "Blues Influence",
+                "1951 Release",
+                "Swing Era"
             ]
         }
     ]
