@@ -38,7 +38,8 @@
         },
         {
             "topic": [
-                "The Godfather"
+                "The Godfather",
+                "Godfather"
             ],
             "entries": [
                 "Marlon Brando",
@@ -83,7 +84,8 @@
         },
         {
             "topic": [
-                "The Simpsons"
+                "The Simpsons",
+                "Simpsons"
             ],
             "entries": [
                 "Yellow Family",
@@ -219,7 +221,8 @@
         },
         {
             "topic": [
-                "The Lion King"
+                "The Lion King",
+                "Lion King"
             ],
             "entries": [
                 "Simba",
@@ -230,7 +233,8 @@
         },
         {
             "topic": [
-                "The Avengers"
+                "The Avengers",
+                "Avengers",
             ],
             "entries": [
                 "Iron Man",
@@ -263,7 +267,8 @@
         },
         {
             "topic": [
-                "The Wizard of Oz"
+                "The Wizard of Oz",
+                "Wizard of Oz"
             ],
             "entries": [
                 "Yellow Brick Road",
@@ -296,7 +301,8 @@
         },
         {
             "topic": [
-                "The X-Files"
+                "The X-Files",
+                "X-Files"
             ],
             "entries": [
                 "Mulder and Scully",
@@ -307,7 +313,8 @@
         },
         {
             "topic": [
-                "The Silence of the Lambs"
+                "The Silence of the Lambs",
+                "Silence of the Lambs"
             ],
             "entries": [
                 "Hannibal Lecter",
@@ -330,7 +337,8 @@
         },
         {
             "topic": [
-                "The Matrix"
+                "The Matrix",
+                "Matrix",
             ],
             "entries": [
                 "Keanu Reeves",
@@ -740,20 +748,8 @@
         },
         {
             "topic": [
-                "The Sound of Music",
-                "Sound of Music Film",
-                "Musical: Sound of Music"
-            ],
-            "entries": [
-                "Rogers & Hammerstein",
-                "Von Trapp Family",
-                "Austrian Alps",
-                "Do-Re-Mi"
-            ]
-        },
-        {
-            "topic": [
                 "The Night Watch",
+                "Night Watch",
                 "Rembrandt's Night Watch",
                 "The Militia Company"
             ],
