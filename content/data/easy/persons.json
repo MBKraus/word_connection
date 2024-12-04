@@ -632,6 +632,20 @@
         },
         {
             "topic": [
+                "Anne Frank",
+                "The Diary of a Young Girl",
+                "Anne Frank's Diary",
+                "The Diary of Anne Frank"
+            ],
+            "entries": [
+                "Holocaust",
+                "Amsterdam Attic",
+                "Diary",
+                "Adolescent Experiences"
+            ]
+        },
+        {
+            "topic": [
                 "Anne Hathaway",
                 "Hathaway"
             ],
