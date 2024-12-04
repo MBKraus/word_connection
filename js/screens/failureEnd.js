@@ -34,7 +34,7 @@ export function createFailureEndScreen(scene) {
 }
 
 export const showFailureEndScreen = (scene) => {
-    const fontSize = Math.min(scene.scale.height * 0.08, 52);
+    const fontSize = Math.min(scene.scale.height * 0.08, 45);
     
     // Clear any existing topic texts from previous games
     scene.failureEndScreen.getAll().forEach(child => {
@@ -61,7 +61,7 @@ export const showFailureEndScreen = (scene) => {
         
         // Add each topic and its descriptions
         missedTopics.forEach((topicObj, index) => {
-            content += `[bgcolor=#51c878] ${topicObj.topic[0]} [/bgcolor]\n`; // Topic name with background
+            content += `[bgcolor=#9bcf53][color=white] ${topicObj.topic[0]} [/color][/bgcolor]\n`; // Topic name with background
             content += `${topicObj.entries.join(', ')}`; // Descriptions
             
             // Add spacing between topic sections
@@ -71,7 +71,7 @@ export const showFailureEndScreen = (scene) => {
         });
         
         // Add score at the bottom
-        content += `\n\n[bgcolor=#51c878] Your Score: ${scene.score} [/bgcolor]\n\nCome back tomorrow for another puzzle!`;
+        content += `\n\n[bgcolor=#bf53cf][color=white]Your Score: ${scene.score} [/color][/bgcolor]\n\nCome back tomorrow for another puzzle!`;
         
         // Create single rexBBCodeText instance
         const endScreenText = scene.add.rexBBCodeText(
@@ -99,7 +99,7 @@ export const showFailureEndScreen = (scene) => {
         const endScreenText = scene.add.rexBBCodeText(
             scene.game.scale.width * 0.5,
             scene.game.scale.height * 0.5,
-            `[bgcolor=#51c878] Your Score: ${scene.score} [/bgcolor]\n\nCome back tomorrow for another puzzle!`,
+            `[bgcolor=#bf53cf][color=white]Your Score: ${scene.score} [/color][/bgcolor]\n\nCome back tomorrow for another puzzle!`,
             {
                 fontFamily: 'Poppins',
                 fontSize: fontSize,

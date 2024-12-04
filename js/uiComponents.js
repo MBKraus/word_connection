@@ -412,7 +412,7 @@ export function createCheckmark(scene, x, y) {
 
     // Create the circle
     const checkmarkCircle = scene.add.graphics()
-        .fillStyle(0x51c878) // Green fill color
+        .fillStyle(0x9bcf53) // Green fill color
         .fillCircle(0, 0, checkmarkRadius)
         .setVisible(false);
 
