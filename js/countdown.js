@@ -39,6 +39,7 @@ export function showCountdown(scene) {
 
     let countdownStartTime = Date.now();
 
+    scene.inputDisplay.setText("Type your answer")
     // scene.sound.play('countdownSound');
     
     const countdownInterval = setInterval(() => {

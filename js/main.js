@@ -55,9 +55,9 @@ function preload() {
     this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     this.load.image('question', './assets/question.png');
     this.load.image('cross', './assets/wrong.png');
-    this.load.audio('correctSound', './assets/audio/correct.wav');
+    this.load.audio('correctSound', './assets/audio/countdown.mp3');
     this.load.audio('incorrectSound', './assets/audio/incorrect.mp3');
-    this.load.audio('countdownSound', './assets/audio/countdown.wav');
+    this.load.audio('countdownSound', './assets/audio/countdown.mp3');
 }
 
 window.startGame = startGame;
