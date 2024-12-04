@@ -4,6 +4,63 @@ import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth
 import { showWelcomeScreen } from './screens/welcome.js'; 
 
 
+export function createLogo(scene, width, height, yPosition) {
+    const logo = scene.add.graphics();
+
+    const baseColor = 0xe2e8f0;
+    const highlightColor = 0x9bcf53;
+    const greyColor = 0xD7D7D7;
+
+    // Outer margin (relative to width)
+    const outerMargin = width * 0.1;
+    const rectX = (scene.scale.width - width) * 0.5 + outerMargin;
+    const rectY = yPosition;
+    const borderRadius = width * 0.1;
+
+    // Calculate the actual base rectangle dimensions
+    const baseWidth = width - outerMargin * 2;
+    const baseHeight = height - outerMargin * 2;
+
+    // Draw the main base rectangle
+    logo.fillStyle(baseColor, 1);
+    logo.fillRoundedRect(rectX, rectY, baseWidth, baseHeight, borderRadius);
+
+    // Adjust outer grid padding
+    const outerGridPadding = width * 0.06;
+    const gridPadding = width * 0.02;
+
+    // Calculate sub-rectangle dimensions
+    // Divide the remaining space by 3 to get the sub-rectangle dimensions
+    const subRectWidth = (baseWidth - (outerGridPadding * 2) - (gridPadding * 2)) / 3;
+    const subRectHeight = (baseHeight - (outerGridPadding * 2) - (gridPadding * 2)) / 3;
+    const subRadius = subRectWidth * 0.15;
+
+    // Draw the 3x3 grid of sub-rectangles
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 3; col++) {
+            const x = rectX + outerGridPadding + col * (subRectWidth + gridPadding);
+            const y = rectY + outerGridPadding + row * (subRectHeight + gridPadding);
+            
+            let fillColor = greyColor;
+            if (
+                (row === 0 && col === 1) || 
+                (row === 1 && col === 1) || 
+                (row === 2 && col === 2)
+            ) {
+                fillColor = highlightColor;
+            }
+
+            logo.fillStyle(fillColor, 1);
+            logo.fillRoundedRect(x, y, subRectWidth, subRectHeight, subRadius);
+        }
+    }
+
+    logo.setDepth(1);
+    return logo;
+}
+
+
+
 export function createHeader(scene) {
     scene.headerText = scene.add.text(
         scene.cameras.main.centerX, 

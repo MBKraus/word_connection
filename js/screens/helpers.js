@@ -96,7 +96,9 @@ export function createText(scene, x, y, initialText = '') {
     return scene.add.text(x, y, initialText, {
         fontSize: scene.scale.width * 0.09 + 'px',
         color: STYLES.colors.text,
-        fontFamily: 'Poppins',
+        // fontFamily: 'Poppins',
+        fontFamily: 'Helvetica Neue, Arial, sans-serif',
+        fontWeight: 'bold',
     }).setOrigin(0.5);
 }
 

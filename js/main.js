@@ -15,7 +15,8 @@ import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
 
 Promise.all([
-    document.fonts.load('16px "Poppins"'),
+    document.fonts.load('16px "Poppins"'),        // Default Poppins (Regular)
+    document.fonts.load('16px "Poppins Light"', '300'), // Poppins Light (Weight 300)
     document.fonts.load('16px "Play"'),
 ]).then(function() {
 const config = {
@@ -203,7 +204,7 @@ function checkGuess(scene, guess) {
     if (foundMatch) {
         let matchedTopic = scene.currentTopics[matchedTopicIndex];
 
-        highlightTiles(scene, matchedTopic.entries);
+        highlightTiles(scene, matchedTopic.entries, matchedTopicIndex);
         
         // Find the first unused guess text entry
         let matchedEntry = scene.correctGuessTexts.find(entry => 
