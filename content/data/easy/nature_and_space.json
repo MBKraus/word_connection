@@ -134,111 +134,91 @@
         },
         {
             "topic": [
-                "Savanna",
-                "Savannah",
-                "Tropical Grassland"
+                "Moon",
+                "Lunar Body",
+                "The Moon"
             ],
             "entries": [
-                "Elephants",
-                "Acacia Trees",
-                "Rainy Season",
-                "Open Plains"
+                "Craters",
+                "Phases",
+                "Apollo Missions",
+                "Tides"
             ]
         },
         {
             "topic": [
-                "Cave",
-                "Subterranean Vault"
+                "Milky Way",
+                "The Milky Way",
+                "Galaxy",
+                "The Galaxy"
             ],
             "entries": [
-                "Stalactites",
-                "Stalagmites",
-                "Dark Chambers",
-                "Bats"
+                "Spiral Arms",
+                "100 Billion Stars",
+                "Solar System",
+                "Sagittarius A*"
             ]
         },
         {
             "topic": [
-                "Tundra",
-                "Frozen Plain"
+                "Sun",
+                "The Sun",
+                "Solar Star"
             ],
             "entries": [
-                "Permafrost",
-                "Little Rain",
-                "Polar Bears",
-                "Mosses"
+                "Fusion",
+                "Heliosphere",
+                "Solar Flares",
+                "Sunspots"
             ]
         },
         {
             "topic": [
-                "Geyser",
-                "Hot Spring"
+                "Space Shuttle",
+                "Orbiter"
             ],
             "entries": [
-                "Old Faithful",
-                "Intermittent Eruptions",
-                "Geothermal Activity",
-                "Steam Jets"
+                "Reusable",
+                "Columbia",
+                "Heat Shields",
+                "Payload Bay"
             ]
         },
         {
             "topic": [
-                "Ocean",
-                "Sea"
+                "Satellite"
             ],
             "entries": [
-                "Marine Life",
-                "Saltwater",
-                "Tides",
-                "Underwater Volcanoes"
+                "Communication",
+                "Weather Monitoring",
+                "Orbital Craft",
+                "GPS"
             ]
         },
         {
             "topic": [
-                "Swamp",
-                "Wetland"
+                "International Space Station",
+                "ISS",
+                "Space Station",
+                "Orbital Lab"
             ],
             "entries": [
-                "Alligators",
-                "Cypress Trees",
-                "Marshy Soil",
-                "Soggy Land"
+                "American-Russian Collaboration",
+                "Zero Gravity",
+                "Research",
+                "Crew Habitation"
             ]
         },
         {
             "topic": [
-                "Lagoon",
-                "Saltwater Lake"
+                "Solar Eclipse",
+                "Eclipse"
             ],
             "entries": [
-                "Coral Reefs",
-                "Enclosed Bay",
-                "Coastal Water",
-                "Shallow Depth"
-            ]
-        },
-        {
-            "topic": [
-                "Archipelago",
-                "Island Chain"
-            ],
-            "entries": [
-                "Gal\u00e1pagos",
-                "Tropical Islands",
-                "Dispersed Landforms",
-                "Unique Species"
-            ]
-        },
-        {
-            "topic": [
-                "Fault Line",
-                "Tectonic Boundary"
-            ],
-            "entries": [
-                "San Andreas",
-                "Seismic Activity",
-                "Crustal Plates",
-                "Geological Rift"
+                "Lunar Occultation",
+                "Totality",
+                "Diamond Ring Effect",
+                "Sun Obscured"
             ]
         }
     ]

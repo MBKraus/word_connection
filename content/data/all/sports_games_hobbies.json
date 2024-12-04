@@ -818,6 +818,186 @@
                 "House",
                 "End"
             ]
+        },
+        {
+            "topic": [
+                "Gardening",
+                "Horticulture"
+            ],
+            "entries": [
+                "Soil",
+                "Pruning Shears",
+                "Compost",
+                "Perennials"
+            ]
+        },
+        {
+            "topic": [
+                "Fishing",
+                "Angling"
+            ],
+            "entries": [
+                "Rod",
+                "Reel",
+                "Fishhook",
+                "Catch"
+            ]
+        },
+        {
+            "topic": [
+                "Woodworking",
+                "Carpentry"
+            ],
+            "entries": [
+                "Chisel",
+                "Lathe",
+                "Jointer",
+                "Woodgrain"
+            ]
+        },
+        {
+            "topic": [
+                "Jogging",
+                "Running"
+            ],
+            "entries": [
+                "Sneakers",
+                "Pace",
+                "Trail",
+                "Endurance"
+            ]
+        },
+        {
+            "topic": [
+                "Knitting",
+                "Yarn Crafting"
+            ],
+            "entries": [
+                "Needle",
+                "Wool",
+                "Pattern",
+                "Row"
+            ]
+        },
+        {
+            "topic": [
+                "Photography",
+                "Camera Use"
+            ],
+            "entries": [
+                "Exposure",
+                "Shutter Speed",
+                "Lens",
+                "Tripod"
+            ]
+        },
+        {
+            "topic": [
+                "Doodling",
+                "Drawing"
+            ],
+            "entries": [
+                "Sketchbook",
+                "Pencil",
+                "Line",
+                "Shading"
+            ]
+        },
+        {
+            "topic": [
+                "Writing Poetry",
+                "Verse Creation"
+            ],
+            "entries": [
+                "Stanza",
+                "Meter",
+                "Rhyme",
+                "Imagery"
+            ]
+        },
+        {
+            "topic": [
+                "Sewing",
+                "Stitching"
+            ],
+            "entries": [
+                "Sewing Machine",
+                "Fabric",
+                "Seams",
+                "Pattern"
+            ]
+        },
+        {
+            "topic": [
+                "Yoga",
+                "Mindful Stretching"
+            ],
+            "entries": [
+                "Mat",
+                "Pose",
+                "Downward-Facing Dog",
+                "Breathing"
+            ]
+        },
+        {
+            "topic": [
+                "Camping",
+                "Outdoor Lodging"
+            ],
+            "entries": [
+                "Tent",
+                "Campfire",
+                "Sleeping Bag",
+                "Hiking Boots"
+            ]
+        },
+        {
+            "topic": [
+                "Archery",
+                "Bow Shooting"
+            ],
+            "entries": [
+                "Bowstring",
+                "Arrow",
+                "Target",
+                "Quiver"
+            ]
+        },
+        {
+            "topic": [
+                "Surfing",
+                "Wave Riding"
+            ],
+            "entries": [
+                "Surfboard",
+                "Wetsuit",
+                "Swell",
+                "Pipeline"
+            ]
+        },
+        {
+            "topic": [
+                "Meditation",
+                "Mindful Relaxation"
+            ],
+            "entries": [
+                "Mantra",
+                "Focus",
+                "Silence",
+                "Tranquility"
+            ]
+        },
+        {
+            "topic": [
+                "Origami",
+                "Paper Folding"
+            ],
+            "entries": [
+                "Creases",
+                "Folds",
+                "Paper Square",
+                "Crane"
+            ]
         }
     ]
 }

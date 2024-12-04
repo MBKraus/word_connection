@@ -485,78 +485,6 @@
             }
         ]
     },
-    "art": {
-        "topics": [
-            {
-                "topic": [
-                    "Starry Night",
-                    "The Starry Night",
-                    "Starry Night Painting",
-                    "Van Gogh's Starry Night"
-                ],
-                "entries": [
-                    "Vincent van Gogh",
-                    "Post-Impressionism",
-                    "Cypress Trees",
-                    "Night Sky"
-                ]
-            },
-            {
-                "topic": [
-                    "The Thinker",
-                    "Thinker",
-                    "Le Penseur",
-                    "Rodin's The Thinker"
-                ],
-                "entries": [
-                    "Auguste Rodin",
-                    "Bronze Sculpture",
-                    "Pensive Pose",
-                    "Contemplation"
-                ]
-            },
-            {
-                "topic": [
-                    "Romeo and Juliet",
-                    "The Tragedy of Romeo and Juliet",
-                    "Romeo & Juliet"
-                ],
-                "entries": [
-                    "William Shakespeare",
-                    "Forbidden Love",
-                    "Verona Setting",
-                    "Feuding Families"
-                ]
-            },
-            {
-                "topic": [
-                    "The Scream",
-                    "Scream",
-                    "Edvard Munch's Scream",
-                    "The Cry"
-                ],
-                "entries": [
-                    "Edvard Munch",
-                    "Expressionism",
-                    "Vibrant Colors",
-                    "Anxiety"
-                ]
-            },
-            {
-                "topic": [
-                    "The Night Watch",
-                    "Rembrandt's Night Watch",
-                    "The Militia Company"
-                ],
-                "entries": [
-                    "Rembrandt van Rijn",
-                    "Group Portrait",
-                    "Dutch Golden Age",
-                    "Amsterdam Museum"
-                ]
-            }
-        ]
-    },
     "cuisine": {
         "topics": [
             {
@@ -1236,7 +1164,7 @@
             }
         ]
     },
-    "films_series": {
+    "films_series_art": {
         "topics": [
             {
                 "topic": [
@@ -1510,7 +1438,8 @@
             },
             {
                 "topic": [
-                    "The Sopranos"
+                    "The Sopranos",
+                    "Sopranos"
                 ],
                 "entries": [
                     "Tony Soprano",
@@ -1734,7 +1663,8 @@
             },
             {
                 "topic": [
-                    "The Little Mermaid"
+                    "The Little Mermaid",
+                    "Little Mermaid"
                 ],
                 "entries": [
                     "Ariel",
@@ -1787,466 +1717,78 @@
                     "Fairy Godmother",
                     "Pumpkin Carriage"
                 ]
-            }
-        ]
-    },
-    "hobbies": {
-        "topics": [
+            },
             {
                 "topic": [
-                    "Gardening",
-                    "Horticulture"
+                    "Starry Night",
+                    "The Starry Night",
+                    "Starry Night Painting",
+                    "Van Gogh's Starry Night"
                 ],
                 "entries": [
-                    "Soil",
-                    "Pruning Shears",
-                    "Compost",
-                    "Perennials"
+                    "Vincent van Gogh",
+                    "Post-Impressionism",
+                    "Cypress Trees",
+                    "Night Sky"
                 ]
             },
             {
                 "topic": [
-                    "Fishing",
-                    "Angling"
+                    "The Thinker",
+                    "Thinker",
+                    "Le Penseur",
+                    "Rodin's The Thinker"
                 ],
                 "entries": [
-                    "Rod",
-                    "Reel",
-                    "Fishhook",
-                    "Catch"
+                    "Auguste Rodin",
+                    "Bronze Sculpture",
+                    "Pensive Pose",
+                    "Contemplation"
                 ]
             },
             {
                 "topic": [
-                    "Knitting",
-                    "Yarn Crafting"
+                    "Romeo and Juliet",
+                    "The Tragedy of Romeo and Juliet",
+                    "Romeo & Juliet"
                 ],
                 "entries": [
-                    "Needle",
-                    "Wool",
-                    "Pattern",
-                    "Row"
+                    "William Shakespeare",
+                    "Forbidden Love",
+                    "Verona Setting",
+                    "Feuding Families"
                 ]
             },
             {
                 "topic": [
-                    "Photography",
-                    "Camera Use"
+                    "The Scream",
+                    "Scream",
+                    "Edvard Munch's Scream",
+                    "The Cry"
                 ],
                 "entries": [
-                    "Exposure",
-                    "Shutter Speed",
-                    "Lens",
-                    "Tripod"
+                    "Edvard Munch",
+                    "Expressionism",
+                    "Vibrant Colors",
+                    "Anxiety"
                 ]
             },
             {
                 "topic": [
-                    "Doodling",
-                    "Drawing"
+                    "The Night Watch",
+                    "Rembrandt's Night Watch",
+                    "The Militia Company"
                 ],
                 "entries": [
-                    "Sketchbook",
-                    "Pencil",
-                    "Line",
-                    "Shading"
-                ]
-            },
-            {
-                "topic": [
-                    "Yoga",
-                    "Mindful Stretching"
-                ],
-                "entries": [
-                    "Mat",
-                    "Pose",
-                    "Downward-Facing Dog",
-                    "Breathing"
-                ]
-            },
-            {
-                "topic": [
-                    "Camping",
-                    "Outdoor Lodging"
-                ],
-                "entries": [
-                    "Tent",
-                    "Campfire",
-                    "Sleeping Bag",
-                    "Hiking Boots"
-                ]
-            },
-            {
-                "topic": [
-                    "Surfing",
-                    "Wave Riding"
-                ],
-                "entries": [
-                    "Surfboard",
-                    "Wetsuit",
-                    "Swell",
-                    "Pipeline"
-                ]
-            },
-            {
-                "topic": [
-                    "Meditation",
-                    "Mindful Relaxation"
-                ],
-                "entries": [
-                    "Mantra",
-                    "Focus",
-                    "Silence",
-                    "Tranquility"
+                    "Rembrandt van Rijn",
+                    "Group Portrait",
+                    "Dutch Golden Age",
+                    "Amsterdam Museum"
                 ]
             }
         ]
     },
-    "inventions": {
-        "topics": [
-            {
-                "topic": [
-                    "Telephone",
-                    "Telecom Device",
-                    "Landline"
-                ],
-                "entries": [
-                    "Alexander Graham Bell",
-                    "Voice Transmission",
-                    "Switchboard",
-                    "Rotary Dial"
-                ]
-            },
-            {
-                "topic": [
-                    "Automobile",
-                    "Car",
-                    "Motor Vehicle"
-                ],
-                "entries": [
-                    "Henry Ford",
-                    "Engine",
-                    "Wheels",
-                    "Steering Wheel"
-                ]
-            },
-            {
-                "topic": [
-                    "Airplane",
-                    "Plane",
-                    "Aircraft",
-                    "Flying Machine"
-                ],
-                "entries": [
-                    "Wright Brothers",
-                    "Aviation",
-                    "Wings",
-                    "Cockpit"
-                ]
-            },
-            {
-                "topic": [
-                    "Refrigerator",
-                    "Fridge",
-                    "Icebox"
-                ],
-                "entries": [
-                    "Cooling System",
-                    "Refrigerant",
-                    "Compressor",
-                    "Shelves"
-                ]
-            },
-            {
-                "topic": [
-                    "Radio",
-                    "Wireless Receiver",
-                    "Broadcast Receiver"
-                ],
-                "entries": [
-                    "AM/FM",
-                    "Tuning",
-                    "Antennas",
-                    "Transmitter"
-                ]
-            },
-            {
-                "topic": [
-                    "Bicycle",
-                    "Bike",
-                    "Cycle"
-                ],
-                "entries": [
-                    "Pedals",
-                    "Handlebars",
-                    "Two Wheels",
-                    "Chain"
-                ]
-            },
-            {
-                "topic": [
-                    "Television",
-                    "TV",
-                    "Telly"
-                ],
-                "entries": [
-                    "Channels",
-                    "Remote Control",
-                    "Screen",
-                    "Broadcast"
-                ]
-            },
-            {
-                "topic": [
-                    "Computer",
-                    "PC",
-                    "Personal Computer"
-                ],
-                "entries": [
-                    "CPU",
-                    "Keyboard",
-                    "Monitor",
-                    "Software"
-                ]
-            },
-            {
-                "topic": [
-                    "Washing Machine",
-                    "Laundry Washer",
-                    "Laundy Machine",
-                    "Clothes Washer"
-                ],
-                "entries": [
-                    "Drum",
-                    "Agitator",
-                    "Spin Cycle",
-                    "Detergent"
-                ]
-            },
-            {
-                "topic": [
-                    "Microwave Oven",
-                    "Microwave",
-                    "Rapid Cooker"
-                ],
-                "entries": [
-                    "Electromagnetic Waves",
-                    "Turntable",
-                    "Heating",
-                    "Timer"
-                ]
-            },
-            {
-                "topic": [
-                    "Vacuum Cleaner",
-                    "Hoover",
-                    "Suction Cleaner"
-                ],
-                "entries": [
-                    "Dust Bag",
-                    "Carpet",
-                    "Suction Power",
-                    "Nozzle"
-                ]
-            },
-            {
-                "topic": [
-                    "Clock",
-                    "Timepiece",
-                    "Chronometer"
-                ],
-                "entries": [
-                    "Hour Hand",
-                    "Minutes",
-                    "Quartz",
-                    "Ticking"
-                ]
-            },
-            {
-                "topic": [
-                    "Toaster",
-                    "Bread Toaster",
-                    "Pop-up Toaster"
-                ],
-                "entries": [
-                    "Slices",
-                    "Browning",
-                    "Heating Elements",
-                    "Slots"
-                ]
-            },
-            {
-                "topic": [
-                    "Battery",
-                    "Energy Cell",
-                    "Power Cell"
-                ],
-                "entries": [
-                    "Chemical Reaction",
-                    "Electrolyte",
-                    "Voltage",
-                    "Charge"
-                ]
-            },
-            {
-                "topic": [
-                    "Smartphone",
-                    "Mobile Phone",
-                    "Cellphone"
-                ],
-                "entries": [
-                    "Touchscreen",
-                    "Apps",
-                    "Camera",
-                    "Calls"
-                ]
-            },
-            {
-                "topic": [
-                    "Submarine",
-                    "Submersible",
-                    "Underwater Vessel"
-                ],
-                "entries": [
-                    "Torpedoes",
-                    "Periscope",
-                    "Hull",
-                    "Navigation"
-                ]
-            },
-            {
-                "topic": [
-                    "Hair Dryer",
-                    "Hair Drier",
-                    "Blow Dryer"
-                ],
-                "entries": [
-                    "Hot Air",
-                    "Fan",
-                    "Hair Styling",
-                    "Electric"
-                ]
-            },
-            {
-                "topic": [
-                    "Helicopter",
-                    "Chopper",
-                    "Rotorcraft"
-                ],
-                "entries": [
-                    "Rotor Blades",
-                    "Vertical Lift",
-                    "Pilot",
-                    "Skids"
-                ]
-            },
-            {
-                "topic": [
-                    "Compass",
-                    "Direction Finder",
-                    "Navigational Tool"
-                ],
-                "entries": [
-                    "North",
-                    "Magnetic Field",
-                    "Needle",
-                    "Degrees"
-                ]
-            },
-            {
-                "topic": [
-                    "Flashlight",
-                    "Torch",
-                    "Portable Light"
-                ],
-                "entries": [
-                    "Batteries",
-                    "Beam",
-                    "LED",
-                    "Bulb"
-                ]
-            },
-            {
-                "topic": [
-                    "Thermometer",
-                    "Temperature Gauge",
-                    "Heat Meter"
-                ],
-                "entries": [
-                    "Mercury",
-                    "Fahrenheit",
-                    "Sensor",
-                    "Glass Tube"
-                ]
-            },
-            {
-                "topic": [
-                    "Air Conditioner",
-                    "AC",
-                    "Cooling Unit"
-                ],
-                "entries": [
-                    "Thermostat",
-                    "Compressor",
-                    "Cool Air",
-                    "Filters"
-                ]
-            },
-            {
-                "topic": [
-                    "Paperclip",
-                    "Clasp",
-                    "Fastener"
-                ],
-                "entries": [
-                    "Metal Wire",
-                    "Documents",
-                    "Binding",
-                    "Office"
-                ]
-            },
-            {
-                "topic": [
-                    "Pencil",
-                    "Graphite Writing Tool",
-                    "Lead Stick"
-                ],
-                "entries": [
-                    "Graphite Core",
-                    "Eraser",
-                    "Sharpening",
-                    "Wooden Body"
-                ]
-            },
-            {
-                "topic": [
-                    "Umbrella",
-                    "Parasol",
-                    "Rain Cover"
-                ],
-                "entries": [
-                    "Canopy",
-                    "Ribs",
-                    "Handle",
-                    "Rain"
-                ]
-            },
-            {
-                "topic": [
-                    "Matches",
-                    "Matchsticks",
-                    "Fire Starters"
-                ],
-                "entries": [
-                    "Red Phosphorus",
-                    "Wood Stick",
-                    "Light",
-                    "Box"
-                ]
-            }
-        ]
-    },
-    "music": {
+    "music_and_instruments": {
         "topics": [
             {
                 "topic": [
@@ -2835,11 +2377,7 @@
                     "New York",
                     "The Voice"
                 ]
-            }
-        ]
-    },
-    "musical_instrument": {
-        "topics": [
+            },
             {
                 "topic": [
                     "Piano",
@@ -2909,7 +2447,7 @@
             }
         ]
     },
-    "nature": {
+    "nature_and_space": {
         "topics": [
             {
                 "topic": [
@@ -3042,701 +2580,94 @@
                     "Colorful Display",
                     "Solar Winds"
                 ]
-            }
-        ]
-    },
-    "persons": {
-        "topics": [
+            },
             {
                 "topic": [
-                    "Albert Einstein",
-                    "Einstein"
+                    "Moon",
+                    "Lunar Body",
+                    "The Moon"
                 ],
                 "entries": [
-                    "Theory of relativity",
-                    "Physicist",
-                    "E=mc^2",
-                    "Nobel Prize"
+                    "Craters",
+                    "Phases",
+                    "Apollo Missions",
+                    "Tides"
                 ]
             },
             {
                 "topic": [
-                    "Queen Elizabeth II",
-                    "Queen Elizabeth",
-                    "Elizabeth",
-                    "Elizabeth II"
+                    "Milky Way",
+                    "The Milky Way",
+                    "Galaxy",
+                    "The Galaxy"
                 ],
                 "entries": [
-                    "British monarchy",
-                    "Longest reigning",
-                    "Commonwealth",
-                    "Royal duties"
+                    "Spiral Arms",
+                    "100 Billion Stars",
+                    "Solar System",
+                    "Sagittarius A*"
                 ]
             },
             {
                 "topic": [
-                    "Steve Jobs",
-                    "Jobs"
+                    "Sun",
+                    "The Sun",
+                    "Solar Star"
                 ],
                 "entries": [
-                    "Apple co-founder",
-                    "iPhone",
-                    "Innovative design",
-                    "Pixar"
+                    "Fusion",
+                    "Heliosphere",
+                    "Solar Flares",
+                    "Sunspots"
                 ]
             },
             {
                 "topic": [
-                    "Mona Lisa",
-                    "La Gioconda"
+                    "Space Shuttle",
+                    "Orbiter"
                 ],
                 "entries": [
-                    "Leonardo da Vinci",
-                    "Louvre",
-                    "Renaissance",
-                    "Mysterious smile"
+                    "Reusable",
+                    "Columbia",
+                    "Heat Shields",
+                    "Payload Bay"
                 ]
             },
             {
                 "topic": [
-                    "Walt Disney",
-                    "Disney"
+                    "Satellite"
                 ],
                 "entries": [
-                    "Mickey Mouse",
-                    "Animation",
-                    "Theme parks",
-                    "Fantasy"
+                    "Communication",
+                    "Weather Monitoring",
+                    "Orbital Craft",
+                    "GPS"
                 ]
             },
             {
                 "topic": [
-                    "Nelson Mandela",
-                    "Mandela"
+                    "International Space Station",
+                    "ISS",
+                    "Space Station",
+                    "Orbital Lab"
                 ],
                 "entries": [
-                    "Apartheid",
-                    "South Africa",
-                    "Nobel Peace Prize",
-                    "Presidency"
-                ]
-            },
-            {
-                "topic": [
-                    "Shakespeare",
-                    "William Shakespeare"
-                ],
-                "entries": [
-                    "Playwright",
-                    "Romeo and Juliet",
-                    "Hamlet",
-                    "Elizabethan England"
-                ]
-            },
-            {
-                "topic": [
-                    "Mahatma Gandhi",
-                    "Gandhi"
-                ],
-                "entries": [
-                    "Nonviolence",
-                    "India",
-                    "Salt March",
-                    "Independence"
-                ]
-            },
-            {
-                "topic": [
-                    "Mother Teresa",
-                    "Teresa"
-                ],
-                "entries": [
-                    "Calcutta",
-                    "Missionaries of Charity",
-                    "Nobel Peace Prize",
-                    "Saint"
-                ]
-            },
-            {
-                "topic": [
-                    "Microsoft",
-                    "Micro-Soft"
-                ],
-                "entries": [
-                    "Windows",
-                    "Bill Gates",
-                    "Software",
-                    "Redmond"
-                ]
-            },
-            {
-                "topic": [
-                    "Vincent van Gogh",
-                    "Van Gogh"
-                ],
-                "entries": [
-                    "Starry Night",
-                    "Post-Impressionism",
-                    "Dutch",
-                    "Ear incident"
-                ]
-            },
-            {
-                "topic": [
-                    "Harvard University",
-                    "Harvard"
-                ],
-                "entries": [
-                    "Ivy League",
-                    "Cambridge, MA",
+                    "American-Russian Collaboration",
+                    "Zero Gravity",
                     "Research",
-                    "Founded 1636"
+                    "Crew Habitation"
                 ]
             },
             {
                 "topic": [
-                    "Lionel Messi",
-                    "Messi"
+                    "Solar Eclipse",
+                    "Eclipse"
                 ],
                 "entries": [
-                    "Barcelona",
-                    "Argentina",
-                    "Goalscorer",
-                    "Ballon d'Or"
-                ]
-            },
-            {
-                "topic": [
-                    "Tesla",
-                    "Nikola Tesla"
-                ],
-                "entries": [
-                    "Alternating current",
-                    "Inventor",
-                    "Eccentric genius",
-                    "Electricity"
-                ]
-            },
-            {
-                "topic": [
-                    "Mozart",
-                    "Wolfgang Amadeus Mozart"
-                ],
-                "entries": [
-                    "Composer",
-                    "Classical",
-                    "Symphony",
-                    "Viennese"
-                ]
-            },
-            {
-                "topic": [
-                    "The White House",
-                    "Whitehouse",
-                    "White House"
-                ],
-                "entries": [
-                    "Oval Office",
-                    "President's residence",
-                    "Washington, D.C.",
-                    "Historic"
-                ]
-            },
-            {
-                "topic": [
-                    "Florence Nightingale",
-                    "Nightingale"
-                ],
-                "entries": [
-                    "Nursing",
-                    "Crimean War",
-                    "Statistical work",
-                    "Victorian England"
-                ]
-            },
-            {
-                "topic": [
-                    "Barack Obama",
-                    "Obama"
-                ],
-                "entries": [
-                    "44th President",
-                    "Affordable Care Act",
-                    "Nobel Peace Prize",
-                    "Change"
-                ]
-            },
-            {
-                "topic": [
-                    "Jane Austen",
-                    "Austen"
-                ],
-                "entries": [
-                    "Pride and Prejudice",
-                    "Novelist",
-                    "Regency",
-                    "Social commentary"
-                ]
-            },
-            {
-                "topic": [
-                    "Mickey Mouse",
-                    "Mickey"
-                ],
-                "entries": [
-                    "Disney",
-                    "Animated",
-                    "Iconic ears",
-                    "Steamboat Willie"
-                ]
-            },
-            {
-                "topic": [
-                    "Muhammad Ali",
-                    "Ali"
-                ],
-                "entries": [
-                    "Boxer",
-                    "Float like a butterfly",
-                    "Heavyweight champion",
-                    "Olympic gold"
-                ]
-            },
-            {
-                "topic": [
-                    "Julius Caesar",
-                    "Caesar"
-                ],
-                "entries": [
-                    "Roman leader",
-                    "Dictator",
-                    "Assassination",
-                    "Gallic War"
-                ]
-            },
-            {
-                "topic": [
-                    "Napoleon Bonaparte",
-                    "Napoleon"
-                ],
-                "entries": [
-                    "Emperor",
-                    "French Revolution",
-                    "Waterloo",
-                    "Corsica"
-                ]
-            },
-            {
-                "topic": [
-                    "Thomas Edison",
-                    "Edison"
-                ],
-                "entries": [
-                    "Light bulb",
-                    "Inventor",
-                    "Menlo Park",
-                    "Phonograph"
-                ]
-            },
-            {
-                "topic": [
-                    "Coco Chanel",
-                    "Chanel"
-                ],
-                "entries": [
-                    "Fashion designer",
-                    "Chanel No. 5",
-                    "Little black dress",
-                    "Paris"
-                ]
-            },
-            {
-                "topic": [
-                    "Galileo Galilei",
-                    "Galileo"
-                ],
-                "entries": [
-                    "Astronomy",
-                    "Telescope",
-                    "Heliocentrism",
-                    "Italian"
-                ]
-            },
-            {
-                "topic": [
-                    "Michael Jordan",
-                    "Jordan"
-                ],
-                "entries": [
-                    "Basketball",
-                    "Chicago Bulls",
-                    "Air",
-                    "23"
-                ]
-            },
-            {
-                "topic": [
-                    "Charles Darwin",
-                    "Darwin"
-                ],
-                "entries": [
-                    "Evolution",
-                    "Natural selection",
-                    "Galapagos Islands",
-                    "Origin of species"
-                ]
-            },
-            {
-                "topic": [
-                    "Elon Musk",
-                    "Musk"
-                ],
-                "entries": [
-                    "Tesla",
-                    "SpaceX",
-                    "Entrepreneur",
-                    "Innovation"
-                ]
-            },
-            {
-                "topic": [
-                    "Beethoven",
-                    "Ludwig van Beethoven"
-                ],
-                "entries": [
-                    "Composer",
-                    "Symphonies",
-                    "Deafness",
-                    "Classical"
-                ]
-            },
-            {
-                "topic": [
-                    "Cleopatra",
-                    "Cleopatra VII"
-                ],
-                "entries": [
-                    "Egypt",
-                    "Julius Caesar",
-                    "Mark Antony",
-                    "Queen"
-                ]
-            },
-            {
-                "topic": [
-                    "Ernest Hemingway",
-                    "Hemingway"
-                ],
-                "entries": [
-                    "The Old Man and the Sea",
-                    "War correspondent",
-                    "Nobel Prize",
-                    "Writing style"
-                ]
-            },
-            {
-                "topic": [
-                    "Marilyn Monroe",
-                    "Monroe"
-                ],
-                "entries": [
-                    "Hollywood icon",
-                    "Blonde bombshell",
-                    "Diamonds",
-                    "The Seven Year Itch"
-                ]
-            },
-            {
-                "topic": [
-                    "Charles Dickens",
-                    "Dickens"
-                ],
-                "entries": [
-                    "Oliver Twist",
-                    "Victorian London",
-                    "Social commentary",
-                    "Serial publications"
-                ]
-            },
-            {
-                "topic": [
-                    "Martin Luther King Jr.",
-                    "Martin Luther King",
-                    "Martin Luther King JR",
-                    "Martin Luther King Junior",
-                    "MLK"
-                ],
-                "entries": [
-                    "Civil rights",
-                    "I Have a Dream",
-                    "Montgomery Bus Boycott",
-                    "Nobel Peace Prize"
-                ]
-            },
-            {
-                "topic": [
-                    "Alexander the Great",
-                    "Alexander"
-                ],
-                "entries": [
-                    "Macedonian empire",
-                    "Conqueror",
-                    "Aristotle",
-                    "Battle of Gaugamela"
-                ]
-            },
-            {
-                "topic": [
-                    "Meryl Streep",
-                    "Streep"
-                ],
-                "entries": [
-                    "The Iron Lady",
-                    "Academy Awards",
-                    "Drama roles",
-                    "Acting legend"
-                ]
-            },
-            {
-                "topic": [
-                    "Leonardo DiCaprio",
-                    "DiCaprio"
-                ],
-                "entries": [
-                    "Titanic",
-                    "Environmental activism",
-                    "Oscar winner",
-                    "Martin Scorsese collaborations"
-                ]
-            },
-            {
-                "topic": [
-                    "Scarlett Johansson",
-                    "Johansson"
-                ],
-                "entries": [
-                    "Black Widow",
-                    "Marvel Cinematic Universe",
-                    "Tony Award winner",
-                    "Independent films"
-                ]
-            },
-            {
-                "topic": [
-                    "Denzel Washington",
-                    "Washington"
-                ],
-                "entries": [
-                    "Training Day",
-                    "Oscar winner",
-                    "Stage acting",
-                    "Director"
-                ]
-            },
-            {
-                "topic": [
-                    "Angelina Jolie",
-                    "Jolie"
-                ],
-                "entries": [
-                    "Tomb Raider",
-                    "Humanitarian work",
-                    "Oscar winner",
-                    "Action roles"
-                ]
-            },
-            {
-                "topic": [
-                    "Tom Hanks",
-                    "Hanks"
-                ],
-                "entries": [
-                    "Forrest Gump",
-                    "Toy Story",
-                    "Oscar winner",
-                    "American culture icon"
-                ]
-            },
-            {
-                "topic": [
-                    "Natalie Portman",
-                    "Portman"
-                ],
-                "entries": [
-                    "Black Swan",
-                    "Star Wars prequels",
-                    "Harvard graduate",
-                    "Academy Award winner"
-                ]
-            },
-            {
-                "topic": [
-                    "Robert De Niro",
-                    "De Niro"
-                ],
-                "entries": [
-                    "Taxi Driver",
-                    "The Godfather Part II",
-                    "Method acting",
-                    "Martin Scorsese collaborations"
-                ]
-            },
-            {
-                "topic": [
-                    "Jennifer Lawrence",
-                    "Lawrence"
-                ],
-                "entries": [
-                    "The Hunger Games",
-                    "Silver Linings Playbook",
-                    "Youngest Oscar nominee",
-                    "Comedy and drama"
-                ]
-            },
-            {
-                "topic": [
-                    "Morgan Freeman",
-                    "Freeman"
-                ],
-                "entries": [
-                    "The Shawshank Redemption",
-                    "Distinctive voice",
-                    "Narration roles",
-                    "Oscar winner"
-                ]
-            },
-            {
-                "topic": [
-                    "Emma Watson",
-                    "Watson"
-                ],
-                "entries": [
-                    "Harry Potter series",
-                    "Hermione Granger",
-                    "Gender equality advocacy",
-                    "UN Women Goodwill Ambassador"
-                ]
-            },
-            {
-                "topic": [
-                    "Brad Pitt",
-                    "Pitt"
-                ],
-                "entries": [
-                    "Fight Club",
-                    "Once Upon a Time in Hollywood",
-                    "Oscar winner",
-                    "Hollywood producer"
-                ]
-            },
-            {
-                "topic": [
-                    "Cate Blanchett",
-                    "Blanchett"
-                ],
-                "entries": [
-                    "Blue Jasmine",
-                    "Elizabeth",
-                    "Oscar winner",
-                    "Versatile actress"
-                ]
-            },
-            {
-                "topic": [
-                    "Johnny Depp",
-                    "Depp"
-                ],
-                "entries": [
-                    "Pirates of the Caribbean",
-                    "Tim Burton collaborations",
-                    "Golden Globe winner",
-                    "Eccentric roles"
-                ]
-            },
-            {
-                "topic": [
-                    "Nicole Kidman",
-                    "Kidman"
-                ],
-                "entries": [
-                    "Moulin Rouge",
-                    "Big Little Lies",
-                    "Oscar winner",
-                    "Australian actress"
-                ]
-            },
-            {
-                "topic": [
-                    "Will Smith",
-                    "Smith"
-                ],
-                "entries": [
-                    "The Fresh Prince of Bel-Air",
-                    "Men in Black",
-                    "Oscar winner",
-                    "Blockbuster actor"
-                ]
-            },
-            {
-                "topic": [
-                    "Anne Frank",
-                    "The Diary of a Young Girl",
-                    "Anne Frank's Diary",
-                    "The Diary of Anne Frank"
-                ],
-                "entries": [
-                    "Holocaust",
-                    "Amsterdam Attic",
-                    "Diary",
-                    "Adolescent Experiences"
-                ]
-            },
-            {
-                "topic": [
-                    "Anne Hathaway",
-                    "Hathaway"
-                ],
-                "entries": [
-                    "Les Mis\u00e9rables",
-                    "The Devil Wears Prada",
-                    "Oscar winner",
-                    "Broadway experience"
-                ]
-            },
-            {
-                "topic": [
-                    "Christian Bale",
-                    "Bale"
-                ],
-                "entries": [
-                    "The Dark Knight",
-                    "American Psycho",
-                    "Method acting",
-                    "Oscar winner"
-                ]
-            },
-            {
-                "topic": [
-                    "Charlize Theron",
-                    "Theron"
-                ],
-                "entries": [
-                    "Mad Max: Fury Road",
-                    "Monster",
-                    "Oscar winner",
-                    "Action and drama"
-                ]
-            },
-            {
-                "topic": [
-                    "Hugh Jackman",
-                    "Jackman"
-                ],
-                "entries": [
-                    "Wolverine",
-                    "The Greatest Showman",
-                    "Tony Award winner",
-                    "Australian star"
+                    "Lunar Occultation",
+                    "Totality",
+                    "Diamond Ring Effect",
+                    "Sun Obscured"
                 ]
             }
         ]
@@ -4047,7 +2978,7 @@
                 ],
                 "entries": [
                     "Shibuya Crossing",
-                    "Tokyo Tower",
+                    "Skytree",
                     "Cherry blossoms",
                     "High-tech city"
                 ]
@@ -4211,100 +3142,7 @@
             }
         ]
     },
-    "space": {
-        "topics": [
-            {
-                "topic": [
-                    "Moon",
-                    "Lunar Body",
-                    "The Moon"
-                ],
-                "entries": [
-                    "Craters",
-                    "Phases",
-                    "Apollo Missions",
-                    "Tides"
-                ]
-            },
-            {
-                "topic": [
-                    "Milky Way",
-                    "The Milky Way",
-                    "Galaxy",
-                    "The Galaxy"
-                ],
-                "entries": [
-                    "Spiral Arms",
-                    "100 Billion Stars",
-                    "Solar System",
-                    "Sagittarius A*"
-                ]
-            },
-            {
-                "topic": [
-                    "Sun",
-                    "The Sun",
-                    "Solar Star"
-                ],
-                "entries": [
-                    "Fusion",
-                    "Heliosphere",
-                    "Solar Flares",
-                    "Sunspots"
-                ]
-            },
-            {
-                "topic": [
-                    "Space Shuttle",
-                    "Orbiter"
-                ],
-                "entries": [
-                    "Reusable",
-                    "Columbia",
-                    "Heat Shields",
-                    "Payload Bay"
-                ]
-            },
-            {
-                "topic": [
-                    "Satellite"
-                ],
-                "entries": [
-                    "Communication",
-                    "Weather Monitoring",
-                    "Orbital Craft",
-                    "GPS"
-                ]
-            },
-            {
-                "topic": [
-                    "International Space Station",
-                    "ISS",
-                    "Space Station",
-                    "Orbital Lab"
-                ],
-                "entries": [
-                    "American-Russian Collaboration",
-                    "Zero Gravity",
-                    "Research",
-                    "Crew Habitation"
-                ]
-            },
-            {
-                "topic": [
-                    "Solar Eclipse",
-                    "Eclipse"
-                ],
-                "entries": [
-                    "Lunar Occultation",
-                    "Totality",
-                    "Diamond Ring Effect",
-                    "Sun Obscured"
-                ]
-            }
-        ]
-    },
-    "sports_games": {
+    "sports_games_hobbies": {
         "topics": [
             {
                 "topic": [
@@ -4565,10 +3403,118 @@
                     "Driver",
                     "Navigator"
                 ]
+            },
+            {
+                "topic": [
+                    "Gardening",
+                    "Horticulture"
+                ],
+                "entries": [
+                    "Soil",
+                    "Pruning Shears",
+                    "Compost",
+                    "Perennials"
+                ]
+            },
+            {
+                "topic": [
+                    "Fishing",
+                    "Angling"
+                ],
+                "entries": [
+                    "Rod",
+                    "Reel",
+                    "Fishhook",
+                    "Catch"
+                ]
+            },
+            {
+                "topic": [
+                    "Knitting",
+                    "Yarn Crafting"
+                ],
+                "entries": [
+                    "Needle",
+                    "Wool",
+                    "Pattern",
+                    "Row"
+                ]
+            },
+            {
+                "topic": [
+                    "Photography",
+                    "Camera Use"
+                ],
+                "entries": [
+                    "Exposure",
+                    "Shutter Speed",
+                    "Lens",
+                    "Tripod"
+                ]
+            },
+            {
+                "topic": [
+                    "Doodling",
+                    "Drawing"
+                ],
+                "entries": [
+                    "Sketchbook",
+                    "Pencil",
+                    "Line",
+                    "Shading"
+                ]
+            },
+            {
+                "topic": [
+                    "Yoga",
+                    "Mindful Stretching"
+                ],
+                "entries": [
+                    "Mat",
+                    "Pose",
+                    "Downward-Facing Dog",
+                    "Breathing"
+                ]
+            },
+            {
+                "topic": [
+                    "Camping",
+                    "Outdoor Lodging"
+                ],
+                "entries": [
+                    "Tent",
+                    "Campfire",
+                    "Sleeping Bag",
+                    "Hiking Boots"
+                ]
+            },
+            {
+                "topic": [
+                    "Surfing",
+                    "Wave Riding"
+                ],
+                "entries": [
+                    "Surfboard",
+                    "Wetsuit",
+                    "Swell",
+                    "Pipeline"
+                ]
+            },
+            {
+                "topic": [
+                    "Meditation",
+                    "Mindful Relaxation"
+                ],
+                "entries": [
+                    "Mantra",
+                    "Focus",
+                    "Silence",
+                    "Tranquility"
+                ]
             }
         ]
     },
-    "things": {
+    "things_and_inventions": {
         "topics": [
             {
                 "topic": [
@@ -5036,6 +3982,346 @@
                     "Coast",
                     "Guide",
                     "Ocean"
+                ]
+            },
+            {
+                "topic": [
+                    "Telephone",
+                    "Telecom Device",
+                    "Landline"
+                ],
+                "entries": [
+                    "Alexander Graham Bell",
+                    "Voice Transmission",
+                    "Switchboard",
+                    "Rotary Dial"
+                ]
+            },
+            {
+                "topic": [
+                    "Automobile",
+                    "Car",
+                    "Motor Vehicle"
+                ],
+                "entries": [
+                    "Henry Ford",
+                    "Engine",
+                    "Wheels",
+                    "Steering Wheel"
+                ]
+            },
+            {
+                "topic": [
+                    "Airplane",
+                    "Plane",
+                    "Aircraft",
+                    "Flying Machine"
+                ],
+                "entries": [
+                    "Wright Brothers",
+                    "Aviation",
+                    "Wings",
+                    "Cockpit"
+                ]
+            },
+            {
+                "topic": [
+                    "Refrigerator",
+                    "Fridge",
+                    "Icebox"
+                ],
+                "entries": [
+                    "Cooling System",
+                    "Refrigerant",
+                    "Compressor",
+                    "Shelves"
+                ]
+            },
+            {
+                "topic": [
+                    "Radio",
+                    "Wireless Receiver",
+                    "Broadcast Receiver"
+                ],
+                "entries": [
+                    "AM/FM",
+                    "Tuning",
+                    "Antennas",
+                    "Transmitter"
+                ]
+            },
+            {
+                "topic": [
+                    "Bicycle",
+                    "Bike",
+                    "Cycle"
+                ],
+                "entries": [
+                    "Pedals",
+                    "Handlebars",
+                    "Two Wheels",
+                    "Chain"
+                ]
+            },
+            {
+                "topic": [
+                    "Television",
+                    "TV",
+                    "Telly"
+                ],
+                "entries": [
+                    "Channels",
+                    "Remote Control",
+                    "Screen",
+                    "Broadcast"
+                ]
+            },
+            {
+                "topic": [
+                    "Computer",
+                    "PC",
+                    "Personal Computer"
+                ],
+                "entries": [
+                    "CPU",
+                    "Keyboard",
+                    "Monitor",
+                    "Software"
+                ]
+            },
+            {
+                "topic": [
+                    "Washing Machine",
+                    "Laundry Washer",
+                    "Laundy Machine",
+                    "Clothes Washer"
+                ],
+                "entries": [
+                    "Drum",
+                    "Agitator",
+                    "Spin Cycle",
+                    "Detergent"
+                ]
+            },
+            {
+                "topic": [
+                    "Microwave Oven",
+                    "Microwave",
+                    "Rapid Cooker"
+                ],
+                "entries": [
+                    "Electromagnetic Waves",
+                    "Turntable",
+                    "Heating",
+                    "Timer"
+                ]
+            },
+            {
+                "topic": [
+                    "Vacuum Cleaner",
+                    "Hoover",
+                    "Suction Cleaner"
+                ],
+                "entries": [
+                    "Dust Bag",
+                    "Carpet",
+                    "Suction Power",
+                    "Nozzle"
+                ]
+            },
+            {
+                "topic": [
+                    "Clock",
+                    "Timepiece",
+                    "Chronometer"
+                ],
+                "entries": [
+                    "Hour Hand",
+                    "Minutes",
+                    "Quartz",
+                    "Ticking"
+                ]
+            },
+            {
+                "topic": [
+                    "Toaster",
+                    "Bread Toaster",
+                    "Pop-up Toaster"
+                ],
+                "entries": [
+                    "Slices",
+                    "Browning",
+                    "Heating Elements",
+                    "Slots"
+                ]
+            },
+            {
+                "topic": [
+                    "Battery",
+                    "Energy Cell",
+                    "Power Cell"
+                ],
+                "entries": [
+                    "Chemical Reaction",
+                    "Electrolyte",
+                    "Voltage",
+                    "Charge"
+                ]
+            },
+            {
+                "topic": [
+                    "Smartphone",
+                    "Mobile Phone",
+                    "Cellphone"
+                ],
+                "entries": [
+                    "Touchscreen",
+                    "Apps",
+                    "Camera",
+                    "Calls"
+                ]
+            },
+            {
+                "topic": [
+                    "Submarine",
+                    "Submersible",
+                    "Underwater Vessel"
+                ],
+                "entries": [
+                    "Torpedoes",
+                    "Periscope",
+                    "Hull",
+                    "Navigation"
+                ]
+            },
+            {
+                "topic": [
+                    "Hair Dryer",
+                    "Hair Drier",
+                    "Blow Dryer"
+                ],
+                "entries": [
+                    "Hot Air",
+                    "Fan",
+                    "Hair Styling",
+                    "Electric"
+                ]
+            },
+            {
+                "topic": [
+                    "Helicopter",
+                    "Chopper",
+                    "Rotorcraft"
+                ],
+                "entries": [
+                    "Rotor Blades",
+                    "Vertical Lift",
+                    "Pilot",
+                    "Skids"
+                ]
+            },
+            {
+                "topic": [
+                    "Compass",
+                    "Direction Finder",
+                    "Navigational Tool"
+                ],
+                "entries": [
+                    "North",
+                    "Magnetic Field",
+                    "Needle",
+                    "Degrees"
+                ]
+            },
+            {
+                "topic": [
+                    "Flashlight",
+                    "Torch",
+                    "Portable Light"
+                ],
+                "entries": [
+                    "Batteries",
+                    "Beam",
+                    "LED",
+                    "Bulb"
+                ]
+            },
+            {
+                "topic": [
+                    "Thermometer",
+                    "Temperature Gauge",
+                    "Heat Meter"
+                ],
+                "entries": [
+                    "Mercury",
+                    "Fahrenheit",
+                    "Sensor",
+                    "Glass Tube"
+                ]
+            },
+            {
+                "topic": [
+                    "Air Conditioner",
+                    "AC",
+                    "Cooling Unit"
+                ],
+                "entries": [
+                    "Thermostat",
+                    "Compressor",
+                    "Cool Air",
+                    "Filters"
+                ]
+            },
+            {
+                "topic": [
+                    "Paperclip",
+                    "Clasp",
+                    "Fastener"
+                ],
+                "entries": [
+                    "Metal Wire",
+                    "Documents",
+                    "Binding",
+                    "Office"
+                ]
+            },
+            {
+                "topic": [
+                    "Pencil",
+                    "Graphite Writing Tool",
+                    "Lead Stick"
+                ],
+                "entries": [
+                    "Graphite Core",
+                    "Eraser",
+                    "Sharpening",
+                    "Wooden Body"
+                ]
+            },
+            {
+                "topic": [
+                    "Umbrella",
+                    "Parasol",
+                    "Rain Cover"
+                ],
+                "entries": [
+                    "Canopy",
+                    "Ribs",
+                    "Handle",
+                    "Rain"
+                ]
+            },
+            {
+                "topic": [
+                    "Matches",
+                    "Matchsticks",
+                    "Fire Starters"
+                ],
+                "entries": [
+                    "Red Phosphorus",
+                    "Wood Stick",
+                    "Light",
+                    "Box"
                 ]
             }
         ]

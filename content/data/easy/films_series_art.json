@@ -272,7 +272,8 @@
         },
         {
             "topic": [
-                "The Sopranos"
+                "The Sopranos",
+                "Sopranos"
             ],
             "entries": [
                 "Tony Soprano",
@@ -496,7 +497,8 @@
         },
         {
             "topic": [
-                "The Little Mermaid"
+                "The Little Mermaid",
+                "Little Mermaid"
             ],
             "entries": [
                 "Ariel",
@@ -548,6 +550,74 @@
                 "Midnight",
                 "Fairy Godmother",
                 "Pumpkin Carriage"
+            ]
+        },
+        {
+            "topic": [
+                "Starry Night",
+                "The Starry Night",
+                "Starry Night Painting",
+                "Van Gogh's Starry Night"
+            ],
+            "entries": [
+                "Vincent van Gogh",
+                "Post-Impressionism",
+                "Cypress Trees",
+                "Night Sky"
+            ]
+        },
+        {
+            "topic": [
+                "The Thinker",
+                "Thinker",
+                "Le Penseur",
+                "Rodin's The Thinker"
+            ],
+            "entries": [
+                "Auguste Rodin",
+                "Bronze Sculpture",
+                "Pensive Pose",
+                "Contemplation"
+            ]
+        },
+        {
+            "topic": [
+                "Romeo and Juliet",
+                "The Tragedy of Romeo and Juliet",
+                "Romeo & Juliet"
+            ],
+            "entries": [
+                "William Shakespeare",
+                "Forbidden Love",
+                "Verona Setting",
+                "Feuding Families"
+            ]
+        },
+        {
+            "topic": [
+                "The Scream",
+                "Scream",
+                "Edvard Munch's Scream",
+                "The Cry"
+            ],
+            "entries": [
+                "Edvard Munch",
+                "Expressionism",
+                "Vibrant Colors",
+                "Anxiety"
+            ]
+        },
+        {
+            "topic": [
+                "The Night Watch",
+                "Rembrandt's Night Watch",
+                "The Militia Company"
+            ],
+            "entries": [
+                "Rembrandt van Rijn",
+                "Group Portrait",
+                "Dutch Golden Age",
+                "Amsterdam Museum"
             ]
         }
     ]

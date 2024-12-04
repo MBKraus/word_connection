@@ -470,6 +470,18 @@
         },
         {
             "topic": [
+                "Queen Latifah",
+                "Latifah"
+            ],
+            "entries": [
+                "U.N.I.T.Y.",
+                "Chicago",
+                "Hip-Hop",
+                "Royalty"
+            ]
+        },
+        {
+            "topic": [
                 "Celine Dion",
                 "Dion"
             ],
@@ -586,6 +598,437 @@
                 "Falling",
                 "New York",
                 "The Voice"
+            ]
+        },
+        {
+            "topic": [
+                "Piano",
+                "Grand Piano",
+                "Baby Grand"
+            ],
+            "entries": [
+                "Hammer Action",
+                "88 Keys",
+                "Pedals",
+                "Soundboard"
+            ]
+        },
+        {
+            "topic": [
+                "Guitar",
+                "Acoustic Guitar",
+                "Electric Guitar"
+            ],
+            "entries": [
+                "Strings",
+                "Fretboard",
+                "Amplifier",
+                "Pickups"
+            ]
+        },
+        {
+            "topic": [
+                "Drum",
+                "Drums",
+                "Drum Kit",
+                "Drum Set",
+                "Percussion Kit"
+            ],
+            "entries": [
+                "Snare Drum",
+                "Bass Drum",
+                "Cymbals",
+                "Hi-hat"
+            ]
+        },
+        {
+            "topic": [
+                "Violin",
+                "Fiddle",
+                "String Instrument"
+            ],
+            "entries": [
+                "Bow",
+                "Four Strings",
+                "Chin Rest",
+                "Symphony"
+            ]
+        },
+        {
+            "topic": [
+                "Flute",
+                "Concert Flute",
+                "Woodwind"
+            ],
+            "entries": [
+                "Embouchure",
+                "Keys",
+                "Mouthpiece",
+                "Orchestra"
+            ]
+        },
+        {
+            "topic": [
+                "Trumpet",
+                "Cornet",
+                "Horn"
+            ],
+            "entries": [
+                "Valves",
+                "Brass",
+                "Mouthpiece",
+                "Jazz"
+            ]
+        },
+        {
+            "topic": [
+                "Saxophone",
+                "Alto Sax",
+                "Tenor Sax"
+            ],
+            "entries": [
+                "Reed",
+                "Jazz",
+                "Curved Body",
+                "Keys"
+            ]
+        },
+        {
+            "topic": [
+                "Clarinet",
+                "Bass Clarinet",
+                "Woodwind"
+            ],
+            "entries": [
+                "Reed",
+                "Keys",
+                "Ebony Wood",
+                "Symphony"
+            ]
+        },
+        {
+            "topic": [
+                "Harp",
+                "Pedal Harp",
+                "Lever Harp"
+            ],
+            "entries": [
+                "Strings",
+                "Pedals",
+                "Orchestral",
+                "Arched Frame"
+            ]
+        },
+        {
+            "topic": [
+                "Cello",
+                "Violoncello",
+                "Bass Violin"
+            ],
+            "entries": [
+                "Pegbox",
+                "Bow",
+                "Endpin",
+                "Four Strings"
+            ]
+        },
+        {
+            "topic": [
+                "Trombone",
+                "Slide Trombone",
+                "Brass Instrument"
+            ],
+            "entries": [
+                "Slide",
+                "Bell",
+                "Brass",
+                "Orchestra"
+            ]
+        },
+        {
+            "topic": [
+                "Oboe",
+                "Hautboy",
+                "Woodwind"
+            ],
+            "entries": [
+                "Reed",
+                "Keys",
+                "Concerto",
+                "Double Reed"
+            ]
+        },
+        {
+            "topic": [
+                "Bassoon",
+                "Contrabassoon",
+                "Woodwind"
+            ],
+            "entries": [
+                "Reed",
+                "Keys",
+                "Double Reed",
+                "Orchestral"
+            ]
+        },
+        {
+            "topic": [
+                "Accordion",
+                "Concertina",
+                "Squeezebox"
+            ],
+            "entries": [
+                "Bellows",
+                "Keys",
+                "Folk Music",
+                "Portable"
+            ]
+        },
+        {
+            "topic": [
+                "Harmonica",
+                "Blues Harp",
+                "Mouth Organ"
+            ],
+            "entries": [
+                "Reed",
+                "Blues",
+                "Breath",
+                "Portable"
+            ]
+        },
+        {
+            "topic": [
+                "Marimba",
+                "Xylophone",
+                "Percussion"
+            ],
+            "entries": [
+                "Mallets",
+                "Wood Bars",
+                "Resonators",
+                "Orchestral"
+            ]
+        },
+        {
+            "topic": [
+                "Timpani",
+                "Kettle Drums",
+                "Percussion"
+            ],
+            "entries": [
+                "Pedals",
+                "Copper Bowls",
+                "Mallets",
+                "Orchestra"
+            ]
+        },
+        {
+            "topic": [
+                "Tuba",
+                "Sousaphone",
+                "Brass Instrument"
+            ],
+            "entries": [
+                "Valves",
+                "Brass",
+                "Large Bell",
+                "Orchestra"
+            ]
+        },
+        {
+            "topic": [
+                "Banjo",
+                "Five-String Banjo",
+                "Bluegrass Banjo"
+            ],
+            "entries": [
+                "Fretboard",
+                "Strings",
+                "Round Body",
+                "Country"
+            ]
+        },
+        {
+            "topic": [
+                "Mandolin",
+                "Lute",
+                "String Instrument"
+            ],
+            "entries": [
+                "Strings",
+                "Pick",
+                "Oval Body",
+                "Folk Music"
+            ]
+        },
+        {
+            "topic": [
+                "Organ",
+                "Pipe Organ",
+                "Electronic Organ"
+            ],
+            "entries": [
+                "Pedals",
+                "Pipes",
+                "Keyboard",
+                "Church"
+            ]
+        },
+        {
+            "topic": [
+                "Bagpipes",
+                "Highland Pipes",
+                "Scottish Pipes"
+            ],
+            "entries": [
+                "Scotland",
+                "Reed",
+                "Bag",
+                "Tradition"
+            ]
+        },
+        {
+            "topic": [
+                "Ukulele",
+                "Uke",
+                "Hawaiian Guitar"
+            ],
+            "entries": [
+                "Four Strings",
+                "Portable",
+                "Fingerstyle",
+                "Soprano"
+            ]
+        },
+        {
+            "topic": [
+                "Double Bass",
+                "Contrabass",
+                "Upright Bass"
+            ],
+            "entries": [
+                "Strings",
+                "Bow",
+                "Jazz",
+                "Orchestra"
+            ]
+        },
+        {
+            "topic": [
+                "Zither",
+                "Guzheng",
+                "Cithara"
+            ],
+            "entries": [
+                "Strings",
+                "Sound Box",
+                "Plucking",
+                "Folk Music"
+            ]
+        },
+        {
+            "topic": [
+                "Didgeridoo",
+                "Yidaki",
+                "Drone Pipe"
+            ],
+            "entries": [
+                "Drone",
+                "Circular Breathing",
+                "Indigenous",
+                "Timber"
+            ]
+        },
+        {
+            "topic": [
+                "Tambourine",
+                "Riq",
+                "Frame Drum"
+            ],
+            "entries": [
+                "Jingles",
+                "Percussion",
+                "Circular",
+                "Hand-held"
+            ]
+        },
+        {
+            "topic": [
+                "Theremin",
+                "Etherwave",
+                "Electronic Instrument"
+            ],
+            "entries": [
+                "Oscillator",
+                "Electromagnetic",
+                "Hands-free",
+                "Frequency"
+            ]
+        },
+        {
+            "topic": [
+                "Sitar",
+                "Veena",
+                "Indian Guitar"
+            ],
+            "entries": [
+                "Sympathetic Strings",
+                "Ravi Shankar",
+                "Gourd",
+                "Plucked"
+            ]
+        },
+        {
+            "topic": [
+                "Conga",
+                "Conga Drum",
+                "Tumbadora"
+            ],
+            "entries": [
+                "Cylindrical",
+                "Caribbean",
+                "Rhythm",
+                "Hand-played"
+            ]
+        },
+        {
+            "topic": [
+                "Bongo Drums",
+                "Bongos",
+                "Afro-Cuban Drums"
+            ],
+            "entries": [
+                "Pair",
+                "Pellets",
+                "Hand-played",
+                "Latin Music"
+            ]
+        },
+        {
+            "topic": [
+                "Djembe",
+                "Jembe",
+                "African Drum"
+            ],
+            "entries": [
+                "Rope-tuned",
+                "Hand-played",
+                "Goblet Shape",
+                "West African"
+            ]
+        },
+        {
+            "topic": [
+                "Lyre",
+                "Kithara",
+                "Ancient Greek Harp"
+            ],
+            "entries": [
+                "Tortoise Shell",
+                "Strings",
+                "Classical",
+                "Antiquity"
             ]
         }
     ]
