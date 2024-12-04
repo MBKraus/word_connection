@@ -85,6 +85,13 @@ input, textarea, select {
     font-style: normal;
   }
 
+  @font-face {
+    font-family: 'Poppins Light';
+    src: url('./assets/fonts/Poppins-Light.ttf') format('truetype');
+    font-weight: 300; /* Light weight */
+    font-style: normal;
+  }
+
 @font-face {
     font-family: 'Play';
     src: url('./assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
@@ -173,7 +180,7 @@ input, textarea, select {
 /* Loading Circle */
 #loading-spinner {
     border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
-    border-top: 8px solid #3498db; /* Blue animated part */
+    border-top: 8px solid #9bcf53; 
     border-radius: 50%;
     width: 60px;
     height: 60px;

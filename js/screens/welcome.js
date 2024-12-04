@@ -1,5 +1,6 @@
 import { createScreen, showScreen, hideScreen, createButton, createText, STYLES } from './helpers.js';
 import { showAuthModal, auth } from '../auth.js';
+import { createLogo } from '../uiComponents.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 
 export function createWelcomeScreen(scene) {
@@ -8,11 +9,17 @@ export function createWelcomeScreen(scene) {
     
     scene.welcomeScreen = createScreen(scene, 'welcomeScreen', true);
 
+    const logoWidth = scene.scale.width * 0.4;
+    const logoHeight = logoWidth;
+    const logoYPosition = scene.scale.height * 0.05;
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition);
+    scene.welcomeScreen.add(logo);
+
     const titleText = createText(
         scene,
         scene.scale.width * 0.5,
-        scene.scale.height * 0.25,
-        'Word Connection'
+        scene.scale.height * 0.30,
+        'Connections Game'
     );
     scene.welcomeScreen.add(titleText);
 
@@ -21,8 +28,9 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.35,
         'Can you crack the 3 secret themes?',
         {
-            fontSize: scene.scale.width * 0.047 + 'px',
-            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.035 + 'px',
+            fontFamily: 'Poppins Light',
+            fontWeight: '300',
             color: STYLES.colors.text,
             align: 'center',
             wordWrap: { width: scene.scale.width * 0.8 }
@@ -90,9 +98,8 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.75,
         formattedDate,
         {
-            fontSize: scene.scale.width * 0.045 + 'px',
-            fontFamily: 'Poppins',
-            fontWeight: 'bold',
+            fontSize: scene.scale.width * 0.04 + 'px',
+            fontFamily: 'Poppins Light',
             color: STYLES.colors.text,
             align: 'center'
         }
@@ -104,8 +111,8 @@ export function createWelcomeScreen(scene) {
         scene.scale.height * 0.78,
         "# 1",
         {
-            fontSize: scene.scale.width * 0.045 + 'px',
-            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.04 + 'px',
+            fontFamily: 'Poppins Light',
             color: STYLES.colors.text,
             align: 'center'
         }

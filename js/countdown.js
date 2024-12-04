@@ -22,7 +22,7 @@ export function showCountdown(scene) {
     scene.roundText.setVisible(true);
 
     scene.countdownCircle.clear();
-    scene.countdownCircle.fillStyle(0x51c878, 1);
+    scene.countdownCircle.fillStyle(0x9bcf53, 1);
     const radius = 100;
     scene.countdownCircle.fillCircle(scene.game.scale.width / 2, scene.game.scale.height * 0.3, radius);
 

@@ -44,7 +44,7 @@ export function createTiles(scene, config) {
             const y = config.startY + j * (config.tileHeight + config.verticalGap);
 
             let graphics = scene.add.graphics();
-            graphics.fillStyle(0xE2E8F1, 1);
+            graphics.fillStyle(0xe2e8f0, 1);
             drawRoundedRect(graphics, x, y, config.tileWidth, config.tileHeight, config.cornerRadius);
 
             const wordIndex = i + j * config.cols;
@@ -104,14 +104,18 @@ function drawRoundedRect(graphics, x, y, width, height, radius) {
     graphics.fillPath();
 }
 
-export function highlightTiles(scene, words) {
+export function highlightTiles(scene, words, topicIndex) {
+    const colors = [0x9bcf53, 0x6d92e6, 0xbf53cf];
+    
+    const fillColor = colors[topicIndex % colors.length]; // Cycle through colors
+
     scene.tiles.forEach(tile => {
         if (words.includes(tile.word)) {
             // Clear the previous graphics
             tile.tile.clear();
             
             // Draw with new color
-            tile.tile.fillStyle(0x51c878, 1);
+            tile.tile.fillStyle(fillColor, 1);
             drawRoundedRect(
                 tile.tile, 
                 tile.x,
@@ -120,6 +124,9 @@ export function highlightTiles(scene, words) {
                 tile.height,
                 15  // cornerRadius
             );
+
+            // Change the text color to white
+            tile.text.setColor('#FFFFFF');
         }
     });
 }
