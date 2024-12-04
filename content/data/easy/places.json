@@ -408,6 +408,54 @@
         },
         {
             "topic": [
+                "Table Mountain"
+            ],
+            "entries": [
+                "Cape Town",
+                "Iconic landmark",
+                "Flat-topped",
+                "Natural Wonder"
+            ]
+        },
+        {
+            "topic": [
+                "Florence",
+                "Firenze",
+                "Italian city"
+            ],
+            "entries": [
+                "Duomo",
+                "Uffizi Gallery",
+                "Ponte Vecchio",
+                "Michelangelo's David"
+            ]
+        },
+        {
+            "topic": [
+                "San Francisco",
+                "City by the Bay"
+            ],
+            "entries": [
+                "Golden Gate Bridge",
+                "Alcatraz Island",
+                "Fisherman's Wharf",
+                "Cable cars"
+            ]
+        },
+        {
+            "topic": [
+                "Venice",
+                "City of Canals"
+            ],
+            "entries": [
+                "Grand Canal",
+                "St. Mark's Basilica",
+                "Gondolas",
+                "Piazza San Marco"
+            ]
+        },
+        {
+            "topic": [
                 "Berlin",
                 "German capital"
             ],

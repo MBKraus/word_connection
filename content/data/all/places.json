@@ -709,6 +709,126 @@
         },
         {
             "topic": [
+                "Table Mountain",
+            ],
+            "entries": [
+                "Cape Town",
+                "Iconic landmark",
+                "Flat-topped",
+                "Natural Wonder"
+            ]
+        },
+        {
+            "topic": [
+                "Venice",
+                "City of Canals"
+            ],
+            "entries": [
+                "Grand Canal",
+                "St. Mark's Basilica",
+                "Gondolas",
+                "Piazza San Marco"
+            ]
+        },
+        {
+            "topic": [
+                "San Francisco",
+                "City by the Bay"
+            ],
+            "entries": [
+                "Golden Gate Bridge",
+                "Alcatraz Island",
+                "Fisherman's Wharf",
+                "Cable cars"
+            ]
+        },
+        {
+            "topic": [
+                "Cairo",
+                "Egyptian capital"
+            ],
+            "entries": [
+                "Pyramids of Giza",
+                "Khan el-Khalili",
+                "Tahrir Square",
+                "Nile River"
+            ]
+        },
+        {
+            "topic": [
+                "Cusco",
+                "Peruvian capital"
+            ],
+            "entries": [
+                "Machu Picchu",
+                "Inca Empire",
+                "Plaza de Armas",
+                "Sacred Valley"
+            ]
+        },
+        {
+            "topic": [
+                "Florence",
+                "Firenze",
+                "Italian city"
+            ],
+            "entries": [
+                "Duomo",
+                "Uffizi Gallery",
+                "Ponte Vecchio",
+                "Michelangelo's David"
+            ]
+        },
+        {
+            "topic": [
+                "Kyoto",
+                "Japanese city"
+            ],
+            "entries": [
+                "Golden Pavilion",
+                "Fushimi Inari Shrine",
+                "Arashiyama Bamboo Grove",
+                "Geisha district"
+            ]
+        },
+        {
+            "topic": [
+                "Edinburgh",
+                "Scottish capital"
+            ],
+            "entries": [
+                "Edinburgh Castle",
+                "Royal Mile",
+                "Arthur's Seat",
+                "Fringe Festival"
+            ]
+        },
+        {
+            "topic": [
+                "Prague",
+                "Czech capital"
+            ],
+            "entries": [
+                "Charles Bridge",
+                "Prague Castle",
+                "Old Town Square",
+                "Astronomical Clock"
+            ]
+        },
+        {
+            "topic": [
+                "Vienna",
+                "Austrian capital"
+            ],
+            "entries": [
+                "Schönbrunn Palace",
+                "St. Stephen's Cathedral",
+                "Belvedere Palace",
+                "Opera House",
+            ]
+        },
+        {
+            "topic": [
                 "Mexico City",
                 "CDMX"
             ],
