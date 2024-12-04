@@ -503,20 +503,6 @@
             },
             {
                 "topic": [
-                    "Anne Frank",
-                    "The Diary of a Young Girl",
-                    "Anne Frank's Diary",
-                    "The Diary of Anne Frank"
-                ],
-                "entries": [
-                    "Holocaust",
-                    "Amsterdam Attic",
-                    "Jewish Oppression",
-                    "Adolescent Experiences"
-                ]
-            },
-            {
-                "topic": [
                     "The Thinker",
                     "Thinker",
                     "Le Penseur",
@@ -1234,6 +1220,10 @@
                 "topic": [
                     "St. Patrick's Day",
                     "St. Patrick's",
+                    "St Patrick's Day",
+                    "St Patrick's",
+                    "Saint Patrick's Day",
+                    "Saint Patrick's",
                     "Irish Day",
                     "L\u00e1 Fh\u00e9ile P\u00e1draig"
                 ],
@@ -3471,6 +3461,9 @@
             {
                 "topic": [
                     "Martin Luther King Jr.",
+                    "Martin Luther King",
+                    "Martin Luther King JR",
+                    "Martin Luther King Junior",
                     "MLK"
                 ],
                 "entries": [
@@ -3682,6 +3675,20 @@
                     "Men in Black",
                     "Oscar winner",
                     "Blockbuster actor"
+                ]
+            },
+            {
+                "topic": [
+                    "Anne Frank",
+                    "The Diary of a Young Girl",
+                    "Anne Frank's Diary",
+                    "The Diary of Anne Frank"
+                ],
+                "entries": [
+                    "Holocaust",
+                    "Amsterdam Attic",
+                    "Diary",
+                    "Adolescent Experiences"
                 ]
             },
             {
