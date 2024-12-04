@@ -442,7 +442,19 @@ export function initializeCorrectGuessPlaceholders(scene) {
 
         scene.guessContainer = scene.add.container(scene.game.scale.width * 0.02, yOffset);
         const circle = scene.add.graphics();
-        circle.lineStyle(10, 0x51c878); // Green border
+   
+        // Set border color based on index
+        let borderColor;
+        if (index === 0) {
+            borderColor = 0x6d92e6;
+        } else if (index === 1) {
+            borderColor = 0x9bcf53;
+        } else if (index === 2) {
+            borderColor = 0xbf53cf;
+        }
+
+        // Apply border color
+        circle.lineStyle(10, borderColor); 
         circle.fillStyle(0xFFFFFF); // White fill
         circle.strokeCircle(0, 0, circleRadius);
         circle.fillCircle(0, 0, circleRadius);
