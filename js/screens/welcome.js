@@ -12,7 +12,8 @@ export function createWelcomeScreen(scene) {
     const logoWidth = scene.scale.width * 0.4;
     const logoHeight = logoWidth;
     const logoYPosition = scene.scale.height * 0.05;
-    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition);
+    const logoXPosition = 0.5;
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
     scene.welcomeScreen.add(logo);
 
     const titleText = createText(

@@ -4,7 +4,7 @@ import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth
 import { showWelcomeScreen } from './screens/welcome.js'; 
 
 
-export function createLogo(scene, width, height, yPosition) {
+export function createLogo(scene, width, height, yPosition, xPosition) {
     const logo = scene.add.graphics();
 
     const baseColor = 0xe2e8f0;
@@ -13,8 +13,11 @@ export function createLogo(scene, width, height, yPosition) {
 
     // Outer margin (relative to width)
     const outerMargin = width * 0.1;
-    const rectX = (scene.scale.width - width) * 0.5 + outerMargin;
+
+    // Set the xPosition passed in the argument
+    const rectX = (scene.scale.width - width) * xPosition + outerMargin;
     const rectY = yPosition;
+
     const borderRadius = width * 0.1;
 
     // Calculate the actual base rectangle dimensions
@@ -62,14 +65,22 @@ export function createLogo(scene, width, height, yPosition) {
 
 
 export function createHeader(scene) {
+
+    // Create the logo
+    const logoWidth = scene.scale.width * 0.08;
+    const logoHeight = scene.scale.height * 0.0475;
+    const logoYPosition = scene.scale.height * 0.015;
+    const logoXPosition = 0.42;
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
+
     scene.headerText = scene.add.text(
-        scene.cameras.main.centerX, 
+        scene.game.scale.width * 0.56, 
         scene.game.scale.height * 0.035, 
-        'Word Connection', 
+        'Connections\nGame', 
         {
-            fontSize: scene.game.scale.width * 0.05 + 'px',
+            fontSize: scene.game.scale.width * 0.03 + 'px',
             color: '#000000',
-            fontFamily: 'Play',
+            fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
         }
     ).setOrigin(0.5);
@@ -129,14 +140,14 @@ export function createRoundDisplay(scene) {
         // Update timerText position and font size
         if (scene.roundText) {
             scene.roundText.setPosition(scene.game.scale.width * 0.5, yPos);
-            scene.roundText.setFontSize(scene.game.scale.width * 0.04);
+            scene.roundText.setFontSize(scene.game.scale.width * 0.035);
         }
     }
 
     scene.roundText = scene.add.text(scene.game.scale.width * 0.5, scene.game.scale.height * 0.10, `Round: ${scene.currentRound + 1}`, {
-        fontSize: `${scene.game.scale.width * 0.04}px`,
+        fontSize: `${scene.game.scale.width * 0.035}px`,
         color: '#000000',
-        fontFamily: 'Poppins',
+        fontFamily: 'Poppins Light',
     }).setOrigin(0.5);
 
     updateRoundPosition();
@@ -152,14 +163,14 @@ export function createScoreDisplay(scene) {
         // Update timerText position and font size
         if (scene.scoreText) {
             scene.scoreText.setPosition(scene.game.scale.width * 0.85, yPos);
-            scene.scoreText.setFontSize(scene.game.scale.width * 0.04);
+            scene.scoreText.setFontSize(scene.game.scale.width * 0.035);
         }
     }
 
     scene.scoreText = scene.add.text(scene.game.scale.width * 0.85, scene.game.scale.height * 0.10, 'Score: 0', {
-        fontSize: `${scene.game.scale.width * 0.04}px`,
+        fontSize: `${scene.game.scale.width * 0.035}px`,
         color: '#000000',
-        fontFamily: 'Poppins',
+        fontFamily: 'Poppins Light',
     }).setOrigin(0.5);
 
     updateScorePosition();
@@ -177,7 +188,7 @@ export function createTimerDisplay(scene) {
         // Update timerText position and font size
         if (scene.timerText) {
             scene.timerText.setPosition(scene.game.scale.width * 0.15, yPos);
-            scene.timerText.setFontSize(scene.game.scale.width * 0.04);
+            scene.timerText.setFontSize(scene.game.scale.width * 0.035);
         }
     }
 
@@ -187,9 +198,9 @@ export function createTimerDisplay(scene) {
         scene.game.scale.height * 0.15,  // Initial position for desktop
         `Time: ${scene.timer_duration}`,
         {
-            fontSize: `${scene.game.scale.width * 0.04}px`,
+            fontSize: `${scene.game.scale.width * 0.035}px`,
             color: '#000000',
-            fontFamily: 'Poppins',
+            fontFamily: 'Poppins Light',
         }
     ).setOrigin(0.5);
 
