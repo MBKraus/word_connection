@@ -234,8 +234,6 @@ function checkGuess(scene, guess) {
             
             // Apply the appropriate color to the circle based on the order
             const colors = [0x6d92e6, 0x9bcf53, 0xbf53cf]; // Blue, Green, Purple
-            console.log(scene.guessedTopicsOrder)
-            console.log(scene.guessedTopicsOrder.length)
             const color = colors[scene.guessedTopicsOrder.length - 1]; // Get the color based on the order of guesses
 
             // Animate the existing circle fill to the correct color
@@ -442,10 +440,12 @@ function endGame(scene) {
 
     if (auth.currentUser) {  // Check if a user is logged in
         const userId = auth.currentUser.uid;
-        updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
 
         // Save game stats to Firebase with total topics guessed
         writeGameStats(scene.score, totalTopicsGuessed);
+
+        updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
+
     }
 
     if (isGameComplete && allTopicsGuessed) {

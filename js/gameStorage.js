@@ -188,9 +188,16 @@ async function updateStreak(userId, todayDate, totalTopicsGuessed) {
     yesterday.setDate(yesterday.getDate() - 1);
     const formattedYesterday = yesterday.toISOString().split('T')[0];
 
+    console.log("current streak: ", currentStreak);
+    console.log("longest streak: ", longestStreak);
+    console.log("last played date: ", lastPlayedDate);
+    console.log("today played date: ", todayDate);
+    console.log("formatted yesterday: ", formattedYesterday);
+    
     // Update streak only if totalTopicsGuessed is 6
     if (totalTopicsGuessed === 6) {
-        if (lastPlayedDate === formattedYesterday) {
+        // if (lastPlayedDate === formattedYesterday) {
+        if (lastPlayedDate === todayDate) {
             currentStreak += 1;
         } else  {
             currentStreak = 1; 
@@ -198,7 +205,12 @@ async function updateStreak(userId, todayDate, totalTopicsGuessed) {
     } else {
         currentStreak = 0; 
     }
+
     longestStreak = Math.max(longestStreak, currentStreak);
+
+    console.log("updated")
+    console.log("current streak: ", currentStreak);
+    console.log("longest streak: ", longestStreak);
 
     // Update user profile with streak information
     try {
