@@ -45,7 +45,7 @@ input, textarea, select {
 .text-container {
     width: 378px; /* Set the width of the text container */
     margin: 20px auto 0; /* Center horizontally and add space above */
-    background-color: #d3d3d3; /* Set a lighter gray background */
+    background-color: white; /* Set a lighter gray background */
     padding: 10px; /* Optional: Add padding for better spacing */
     overflow-wrap: break-word; /* Ensure long words break to the next line */
     z-index: 2; /* Ensure it stays on top of the game container */
@@ -63,6 +63,28 @@ input, textarea, select {
 
 .text-container p {
     color: #333333; /* Set the regular paragraph text color to dark gray */
+}
+
+/* Style the header */
+.header {
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-weight: bold;
+font-size: 24px;
+margin-bottom: 15px;
+}
+
+/* Style the description */
+.description {
+font-family: 'Poppins Light', sans-serif;
+font-size: 16px;
+color: black;  /* Adjust color if needed */
+margin-bottom: 20px;
+}
+
+/* Style the image */
+img {
+max-width: 100%;
+height: auto;
 }
 
 /* Override for mobile */
@@ -91,13 +113,6 @@ input, textarea, select {
     font-weight: 300; /* Light weight */
     font-style: normal;
   }
-
-@font-face {
-    font-family: 'Play';
-    src: url('./assets/fonts/PlaywriteGBS-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
 
 #cookiewall {
     position: fixed;
