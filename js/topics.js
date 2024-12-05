@@ -51,6 +51,5 @@ export function generateGameRounds(aggregatedTopics) {
 
         rounds.push(roundTopics);
     }
-    console.log(rounds)
     return rounds;
 }
