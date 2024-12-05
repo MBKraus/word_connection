@@ -145,16 +145,25 @@ height: auto;
     background-color: white;
     color: black;
     width: 100%;
-    height: 20vh;
+    height: 30vh;
     z-index: 3001; /* Ensure button is above the overlay */
     text-align: center;
-    padding: 20px;
+    padding: 20px 50px 20px 50px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* On mobile, set the height to 60vh */
+@media (max-width: 767px) {
+    .cookiewall-content {
+        height: 53vh;
+        padding: 20px;
+    }
 }
 
 .cookiewall-content h3 {
     margin: 0 0 10px;
     font-size: 24px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
 }
 
 .cookiewall-content p {
