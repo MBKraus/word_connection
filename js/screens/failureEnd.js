@@ -1,41 +1,53 @@
 import {showScreen, hideScreen, createText, createScreen, createButton, STYLES} from './helpers.js';
+import {createLogo} from '../uiComponents.js';
 
 export function createFailureEndScreen(scene) {
     scene.failureEndScreen = createScreen(scene, 'failureEndScreen');
 
-    scene.failureScoreText = createText(
+    const logoWidth = scene.scale.width * 0.3;
+    const logoHeight = logoWidth;
+    const logoYPosition = scene.scale.height*0.05;
+    const logoXPosition = 0.5
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
+    scene.failureEndScreen.add(logo);
+
+    scene.failureTitle = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.25,
+        'Out of Time!', {
+            fontSize: scene.scale.width * 0.06 + 'px',
+            color: STYLES.colors.text,
+            fontFamily: 'Helvetica Neue, Arial, sans-serif',
+            fontWeight: 'bold',
+    }).setOrigin(0.5);
+    scene.failureEndScreen.add( scene.failureTitle);
+
+    // Add Next Round button at the bottom
+    const buttonText = scene.currentRound >= scene.allRounds.length - 1 ? 'Statistics' : 'Next Round';
+    scene.nextRoundButton = createButton(
         scene,
         scene.game.scale.width * 0.5,
-        scene.game.scale.height * 0.25  // Moved up to make room for topics
+        scene.game.scale.height * 0.75,  // Position at bottom
+        buttonText,
+        () => {
+            if (scene.currentRound >= scene.allRounds.length - 1) {
+                window.endGame(scene);
+            } else {
+                hideFailureEndScreen(scene);
+                startNextRound(scene);
+            }
+        },
+        STYLES.colors.playButtonBg,
+        STYLES.colors.playButtonText,
+        STYLES.colors.playButtonBorder
     );
-    
-    scene.failureScoreText.setStyle({
-        fontFamily: 'Poppins',
-        fontSize: `${scene.scale.width * 0.08}px`,
-        color: '#000000',
-        align: 'center',
-        fontStyle: 'bold'
-    });
-    scene.failureEndScreen.add(scene.failureScoreText);
-
-    // const shareButton = createButton(
-    //     scene,
-    //     scene.game.scale.width * 0.5,
-    //     scene.game.scale.height * 0.85,  // Moved down
-    //     'Share your score!',
-    //     () => {
-    //         hideScreen(scene, 'failureEndScreen');
-    //     },
-    //     STYLES.colors.loginButtonBg,
-    //     STYLES.colors.loginButtonText,
-    //     STYLES.colors.loginButtonBorder
-    // );
-    // scene.failureEndScreen.add(shareButton);
+    scene.failureEndScreen.add(scene.nextRoundButton);
 }
 
 export const showFailureEndScreen = (scene) => {
-    const fontSize = Math.min(scene.scale.height * 0.08, 45);
-    
+    const fontSize = Math.min(scene.scale.height * 0.08, 35);
+    const entryFontSize = fontSize * 0.7; // Smaller font size for entries
+
     // Clear any existing topic texts from previous games
     scene.failureEndScreen.getAll().forEach(child => {
         if (child.topicText || child.descText) {
@@ -44,9 +56,9 @@ export const showFailureEndScreen = (scene) => {
     });
 
     // Find missed topics
-    const missedTopics = scene.currentTopics.filter(topicObj => 
-        !scene.correctGuessTexts.some(entry => 
-            entry.text !== null && 
+    const missedTopics = scene.currentTopics.filter(topicObj =>
+        !scene.correctGuessTexts.some(entry =>
+            entry.text !== null &&
             entry.text.text.toLowerCase() === topicObj.topic[0].toLowerCase()
         )
     );
@@ -54,72 +66,120 @@ export const showFailureEndScreen = (scene) => {
     if (missedTopics.length > 0) {
         const topicsLeft = missedTopics.length;
         const noun = topicsLeft === 1 ? 'topic' : 'topics';
-        const desc_text = topicsLeft === 1 ? 'which one it was' : 'what they were';
-        
-        // Build the complete BBCode text content
-        let content = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:\n\n`;
-        
-        const colors = [0xbf53cf, 0x9bcf53, 0x6d92e6]
 
-        // Add each topic and its descriptions
+        // Show header message
+        const headerText = scene.add.text(
+            scene.game.scale.width * 0.5,
+            scene.game.scale.height * 0.30,
+            `So close, but ${topicsLeft} ${noun} slipped by!`,
+            {
+                fontFamily: 'Poppins Light',
+                fontSize: fontSize,
+                color: '#000000',
+                align: 'center',
+            }
+        ).setOrigin(0.5);
+        headerText.descText = true; // Mark for cleanup
+        scene.failureEndScreen.add(headerText);
+
+        const colors = [0xbf53cf, 0x9bcf53, 0x6d92e6]; // Colors for backgrounds
+        const padding = 20; // Padding around rectangles
+        const spacing = 25; // Space between topic rectangles
+        const borderRadius = 15; // Corner radius
+
+        // Start placing topics
+        let yOffset = scene.game.scale.height * 0.35;
+
         missedTopics.forEach((topicObj, index) => {
-
-            const bgColor = colors[index % colors.length].toString(16); // Convert to hex string
-            const formattedBgColor = `#${bgColor.padStart(6, '0')}`; // Ensure the hex color is properly formatted
+            const bgColor = colors[index % colors.length];
+            const containerWidth = scene.game.scale.width * 0.8;
+            const containerHeight = fontSize + entryFontSize + padding * 2;
         
-            content += `[bgcolor=${formattedBgColor}][color=white] ${topicObj.topic[0]} [/color][/bgcolor]\n`; // Topic name with background
-            content += `${topicObj.entries.join(', ')}`; // Descriptions
-            
-            // Add spacing between topic sections
-            if (index < missedTopics.length - 1) {
-                content += '\n\n';
-            }
-        });
+            // Calculate the y-position for the current rectangle
+            const rectX = scene.game.scale.width * 0.1; // x-position
+            const rectY = yOffset; // y-position
+            const rectCenterY = rectY + containerHeight / 2;
         
-        // Add score at the bottom
-        content += `\n\n[bgcolor=#bf53cf][color=white]Your Score: ${scene.score} [/color][/bgcolor]\n\nCome back tomorrow for another puzzle!`;
+            // Create graphics for the rounded rectangle
+            const graphics = scene.add.graphics();
+            graphics.fillStyle(bgColor); // Background fill color
+            graphics.fillRoundedRect(
+                rectX, // x-position
+                rectY, // y-position
+                containerWidth, // Width
+                containerHeight, // Height
+                borderRadius // Corner radius
+            );
         
-        // Create single rexBBCodeText instance
-        const endScreenText = scene.add.rexBBCodeText(
-            scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.40,
-            content,
-            {
-                fontFamily: 'Poppins',
-                fontSize: fontSize,
-                color: '#000000',
-                align: 'center',
-                lineSpacing: 10,
-                wrap: {
-                    mode: 'word',
-                    width: scene.game.scale.width * 0.8
+            // Add topic text
+            const topicText = scene.add.text(
+                scene.game.scale.width * 0.5,
+                rectY + padding, // Place topic text at the top with padding
+                topicObj.topic[0],
+                {
+                    fontFamily: 'Poppins',
+                    fontSize: fontSize,
+                    color: '#FFFFFF',
+                    align: 'center',
                 }
-            }
-        ).setOrigin(0.5);
+            ).setOrigin(0.5);
         
-        endScreenText.descText = true; // Mark for cleanup
-        scene.failureEndScreen.add(endScreenText);
+            // Add entries text
+            const entriesText = scene.add.text(
+                scene.game.scale.width * 0.5,
+                topicText.y + fontSize + padding / 2, // Add distance below the topic text
+                topicObj.entries.join(' - '),
+                {
+                    fontFamily: 'Poppins',
+                    fontSize: entryFontSize,
+                    color: '#FFFFFF',
+                    align: 'center',
+                    wordWrap: {
+                        width: containerWidth * 0.9,
+                    },
+                }
+            ).setOrigin(0.5);
         
-    } else {
-        // If no missed topics, just show the score
-        const endScreenText = scene.add.rexBBCodeText(
+            // Dynamically adjust rectangle height to fit wrapped text
+            const totalHeight = fontSize + padding + entriesText.height + padding; // Account for both texts and padding
+            graphics.clear(); // Clear the existing rectangle
+            graphics.fillStyle(bgColor); // Redraw the rectangle with updated height
+            graphics.fillRoundedRect(
+                rectX,
+                rectY,
+                containerWidth,
+                totalHeight,
+                borderRadius
+            );
+        
+            // Update yOffset for next topic
+            yOffset += totalHeight + spacing;
+        
+            // Add to the failureEndScreen group for cleanup
+            scene.failureEndScreen.add(graphics);
+            scene.failureEndScreen.add(topicText);
+            scene.failureEndScreen.add(entriesText);
+        });
+
+        // Add score at the bottom
+        const scoreText = scene.add.text(
             scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.5,
-            `[bgcolor=#bf53cf][color=white]Your Score: ${scene.score} [/color][/bgcolor]\n\nCome back tomorrow for another puzzle!`,
+            scene.game.scale.height * 0.7,
+            `Your Score: ${scene.score}`,
             {
                 fontFamily: 'Poppins',
                 fontSize: fontSize,
-                color: '#000000',
+                color: '#bf53cf',
                 align: 'center',
-                lineSpacing: 10
             }
         ).setOrigin(0.5);
-        
-        endScreenText.descText = true;
-        scene.failureEndScreen.add(endScreenText);
+        scoreText.descText = true; // Mark for cleanup
+        scene.failureEndScreen.add(scoreText);
     }
-    
+
+    // Show the failure end screen
     showScreen(scene, 'failureEndScreen');
 };
+
 
 export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');
