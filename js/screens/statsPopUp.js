@@ -32,12 +32,16 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.55, auth.currentUser ? 'Statistics' : 'Want to start tracking\nyour stats and streaks?', {
-        fontSize: scene.scale.width * 0.035 + 'px',
-        fontFamily: 'Poppins Light',
-        fontWeight: '300',
-        fill: '#000000',
-    }).setOrigin(0.5);
+    const titleText = scene.add.text(0, -halfHeight * 0.55, auth.currentUser 
+        ? 'Statistics' 
+        : 'Create an account to start tracking your streaks,\npoints and number of games played!', {
+            fontSize: scene.scale.width * 0.035 + 'px',
+            fontFamily: 'Poppins Light',
+            fontWeight: '300',
+            fill: '#000000',
+            align: 'center', // Center the text alignment
+            wordWrap: { width: scene.scale.width * 0.9 }, // Wrap text within 80% of the screen width
+        }).setOrigin(0.5); // Center the text origin
     popup.add(titleText);
 
     const statsText = scene.add.text(0, -halfHeight * 0.02, 'Loading...', {
@@ -101,7 +105,7 @@ function createCloseButtonContainer(scene, halfWidth, halfHeight) {
 
 function createSignupButton(scene, popupWidth, halfHeight) {
     const graphics = scene.add.graphics();
-    const textWidth = popupWidth * 0.8;
+    const textWidth = popupWidth * 0.5;
     const textHeight = scene.scale.height * 0.07;
     const yPos = scene.scale.height * -0.1;
 
@@ -136,7 +140,7 @@ function createSignupButton(scene, popupWidth, halfHeight) {
 
     // Create the button text
     const signupButtonText = scene.add.text(0, yPos, 'Create a free account', {
-        fontSize: scene.scale.width * 0.04 + 'px',
+        fontSize: scene.scale.width * 0.03 + 'px',
         fontFamily: 'Poppins',
         color: STYLES.colors.playButtonText
     }).setOrigin(0.5);
@@ -224,13 +228,26 @@ function createLastPlayedText(scene, stats, halfHeight) {
 
 function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
     chartGraphics.on('pointerdown', async () => {
-        cleanupPopup(statsText, signupButton, signupButtonText, graphics);
+        // Remove any existing metrics containers
+        const existingTopMetrics = popup.list.find(item => 
+            item.name === 'topMetricsContainer');
+        const existingStreakMetrics = popup.list.find(item => 
+            item.name === 'streakMetricsContainer');
+        const existingLastPlayedText = popup.list.find(item => 
+            item.name === 'lastPlayedText');
+
+        if (existingTopMetrics) popup.remove(existingTopMetrics);
+        if (existingStreakMetrics) popup.remove(existingStreakMetrics);
+        if (existingLastPlayedText) popup.remove(existingLastPlayedText);
+
+        cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup);
         popup.setVisible(true);
     
         pauseTimer(scene);
     
         const titleText = popup.list.find(item => item instanceof Phaser.GameObjects.Text 
             && (item.text === 'Statistics' || item.text.includes('Want to start tracking')));
+        
         if (titleText) {
             titleText.setText(auth.currentUser ? 'Statistics' : 'Want to start tracking\nyour stats and streaks?');
         }
@@ -245,12 +262,15 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
                 statsText.setText('');
     
                 const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
+                topMetricsContainer.name = 'topMetricsContainer';
                 popup.add(topMetricsContainer);
                 
                 const streakMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'streak', topMetricsContainer);
+                streakMetricsContainer.name = 'streakMetricsContainer';
                 popup.add(streakMetricsContainer);
 
                 const lastPlayedText = createLastPlayedText(scene, stats, halfHeight);
+                lastPlayedText.name = 'lastPlayedText';
                 popup.add(lastPlayedText);
 
             } else {
@@ -270,7 +290,7 @@ function setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, 
     const closeButtonHitArea = closeButtonContainer.list[1];
 
     closeButtonHitArea.on('pointerdown', () => {
-        cleanupPopup(statsText, signupButton, signupButtonText, graphics);
+        cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup);
         popup.setVisible(false);
         
         // Resume the timer when closing the popup
@@ -306,9 +326,28 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphi
     });
 }
 
-function cleanupPopup(statsText, signupButton, signupButtonText, graphics) {
+function cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup) {
+    // Reset stats text
     statsText.setText('Loading...');
+
+    // Hide and reset signup button elements
     signupButton.setVisible(false);
     signupButtonText.setVisible(false);
     graphics.setVisible(false);
+
+    // Helper function to remove and destroy elements by name
+    const removeElementByName = (name) => {
+        const element = popup.list.find(item => item.name === name);
+        if (element) {
+            popup.remove(element);
+            element.destroy(); // Ensure the element is fully removed
+        }
+    };
+
+    // Remove last played text if it exists
+    removeElementByName('lastPlayedText');
+
+    // Remove top and streak metrics containers
+    removeElementByName('topMetricsContainer');
+    removeElementByName('streakMetricsContainer');
 }
