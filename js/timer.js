@@ -7,6 +7,10 @@ export function pauseTimer(scene) {
         scene.pauseStartTime = Date.now();
         // Add a paused flag to prevent sound effects while paused
         scene.isTimerPaused = true;
+    } else if (!scene.timerEvent) {
+        console.warn('Cannot pause timer: scene.timerEvent is undefined');
+    } else if (scene.timerEvent.paused) {
+        console.warn('Timer is already paused');
     }
 }
 
@@ -135,6 +139,11 @@ export function startTimer(scene) {
         args: [scene],
         loop: true
     });
+
+    // Ensure the timer event was created
+    if (!scene.timerEvent) {
+        console.error('Error creating timer event');
+    }
 }
 
 function updateTimer(scene) {

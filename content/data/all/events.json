@@ -18,6 +18,8 @@
                 "World War I",
                 "WWI",
                 "WW1",
+                "First World War",
+                "The First World War",
                 "The Great War"
             ],
             "entries": [
@@ -229,20 +231,6 @@
                 "Scud Missiles",
                 "Coalition Forces",
                 "Saddam Hussein"
-            ]
-        },
-        {
-            "topic": [
-                "9/11 Attacks",
-                "911",
-                "911 Attacks",
-                "September 11"
-            ],
-            "entries": [
-                "World Trade Center",
-                "Planes",
-                "Al-Qaeda",
-                "Osama bin Laden"
             ]
         },
         {
@@ -472,18 +460,6 @@
                 "Climbs",
                 "Cycling",
                 "Alpe d'Huez"
-            ]
-        },
-        {
-            "topic": [
-                "Formula One",
-                "F1"
-            ],
-            "entries": [
-                "Pit Stops",
-                "Pole Position",
-                "Monaco Circuit",
-                "Grand Prix"
             ]
         },
         {

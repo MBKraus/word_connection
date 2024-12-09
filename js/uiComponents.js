@@ -84,6 +84,7 @@ export function createHeader(scene) {
             fontWeight: 'bold',
         }
     ).setOrigin(0.5);
+    
 }
 
 

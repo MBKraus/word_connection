@@ -59,9 +59,15 @@ export const showFailureEndScreen = (scene) => {
         // Build the complete BBCode text content
         let content = `Out of time!\nSo close, but ${topicsLeft} ${noun} slipped by.\n\nLet's see ${desc_text}:\n\n`;
         
+        const colors = [0xbf53cf, 0x9bcf53, 0x6d92e6]
+
         // Add each topic and its descriptions
         missedTopics.forEach((topicObj, index) => {
-            content += `[bgcolor=#9bcf53][color=white] ${topicObj.topic[0]} [/color][/bgcolor]\n`; // Topic name with background
+
+            const bgColor = colors[index % colors.length].toString(16); // Convert to hex string
+            const formattedBgColor = `#${bgColor.padStart(6, '0')}`; // Ensure the hex color is properly formatted
+        
+            content += `[bgcolor=${formattedBgColor}][color=white] ${topicObj.topic[0]} [/color][/bgcolor]\n`; // Topic name with background
             content += `${topicObj.entries.join(', ')}`; // Descriptions
             
             // Add spacing between topic sections
