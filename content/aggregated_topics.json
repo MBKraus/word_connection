@@ -271,6 +271,9 @@
                     "World War I",
                     "WWI",
                     "WW1",
+                    "First World War",
+                    "The First World War",
+                    "Great War",
                     "The Great War"
                 ],
                 "entries": [
@@ -416,20 +419,6 @@
             },
             {
                 "topic": [
-                    "9/11 Attacks",
-                    "911",
-                    "911 Attacks",
-                    "September 11"
-                ],
-                "entries": [
-                    "World Trade Center",
-                    "Planes",
-                    "Al-Qaeda",
-                    "Osama bin Laden"
-                ]
-            },
-            {
-                "topic": [
                     "The French Revolution",
                     "French Revolution",
                     "French Political Upheaval",
@@ -526,18 +515,6 @@
                     "Climbs",
                     "Cycling",
                     "Alpe d'Huez"
-                ]
-            },
-            {
-                "topic": [
-                    "Formula One",
-                    "F1"
-                ],
-                "entries": [
-                    "Pit Stops",
-                    "Pole Position",
-                    "Monaco Circuit",
-                    "Grand Prix"
                 ]
             },
             {
@@ -848,18 +825,6 @@
                     "Viva La Vida",
                     "Fix You",
                     "Head Full of Dreams"
-                ]
-            },
-            {
-                "topic": [
-                    "U2",
-                    "Bono"
-                ],
-                "entries": [
-                    "The Joshua Tree",
-                    "Dublin",
-                    "With or Without You",
-                    "Elevation"
                 ]
             },
             {

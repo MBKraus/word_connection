@@ -1,7 +1,6 @@
 import { GameStorage } from '../gameStorage.js';
 import { fetchGameStats } from '../gameStorage.js';
 import { auth } from '../auth.js';
-import { createProgressCircles } from './statsPopUp.js';
 
 export function createDailyLimitScreen(scene) {
     const screen = scene.add.container(0, 0);
@@ -41,7 +40,7 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     screen.add(countdownText);
 
-    // Placeholder for stats text and circles container (hidden until data loads)
+    // Placeholder for stats text (hidden until data loads)
     const statsText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.6, "Loading stats...", {
         fontSize: scene.scale.width * 0.035 + 'px',
         fontFamily: 'Poppins',
@@ -51,9 +50,6 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     statsText.setVisible(false);
     screen.add(statsText);
-
-    const circlesContainer = scene.add.container(scene.scale.width * 0.5, scene.scale.height * 0.75);
-    screen.add(circlesContainer);
 
     // Countdown timer function
     let countdownInterval;
@@ -95,8 +91,6 @@ export function createDailyLimitScreen(scene) {
                     ]);
                     statsText.setVisible(true);
 
-                    // Create progress circles
-                    createProgressCircles(stats.recentSessions, scene, circlesContainer);
                 } else {
                     statsText.setText("Error loading stats.");
                     statsText.setVisible(true);
@@ -113,9 +107,8 @@ export function createDailyLimitScreen(scene) {
                 scene.authDOMElement.setVisible(true);
             }
 
-            // Hide the stats text and clear circles
+            // Hide the stats text
             statsText.setVisible(false);
-            circlesContainer.removeAll(true); // Clear circles
         }
     };
 }

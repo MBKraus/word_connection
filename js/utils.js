@@ -23,6 +23,38 @@ export function isTablet() {
     return isIPad || isAndroidTablet || isGenericTablet;
 }
 
+export function isFuzzyMatchSimple(input, word) {
+    // Character-by-Character Comparison with Early Exit
+    if (Math.abs(input.length - word.length) > 1) return false; // Quick length check
+
+    let mismatches = 0;
+    let i = 0, j = 0;
+
+    while (i < input.length && j < word.length) {
+        if (input[i] !== word[j]) {
+            mismatches++;
+            if (mismatches > 1) return false;
+
+            // Handle insertions/deletions by advancing the longer string
+            if (input.length > word.length) {
+                i++;
+            } else if (input.length < word.length) {
+                j++;
+            } else {
+                i++;
+                j++;
+            }
+        } else {
+            i++;
+            j++;
+        }
+    }
+
+    // Account for leftover characters
+    mismatches += Math.abs((input.length - i) - (word.length - j));
+    return mismatches <= 1;
+}
+
 export function isDesktop() {
     return !isMobile();
 }

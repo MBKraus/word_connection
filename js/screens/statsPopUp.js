@@ -2,6 +2,7 @@ import { fetchGameStats } from '../gameStorage.js';
 import { showAuthModal, auth } from '../auth.js';
 import { createButton, STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
+import { createLogo } from '../uiComponents.js';
 
 export async function createStatsPopup(scene, chartGraphics) {
     // Make the popup container cover the entire screen
@@ -19,20 +20,25 @@ export async function createStatsPopup(scene, chartGraphics) {
     const background = createBackground(scene, popupWidth, popupHeight, halfWidth, halfHeight);
     popup.add(background);
 
+    const logoWidth = scene.scale.width * 0.3;
+    const logoHeight = logoWidth;
+    const logoYPosition = -halfHeight * 0.95;
+    const logoXPosition = -0.22;
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
+    popup.add(logo);
+
     // Create close button
     const closeButtonContainer = createCloseButtonContainer(scene, halfWidth, halfHeight);
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.70, auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?', {
-        font: STYLES.fonts.medium(scene),
+    const titleText = scene.add.text(0, -halfHeight * 0.55, auth.currentUser ? 'Statistics' : 'Want to start tracking\nyour stats and streaks?', {
+        fontSize: scene.scale.width * 0.035 + 'px',
+        fontFamily: 'Poppins Light',
+        fontWeight: '300',
         fill: '#000000',
     }).setOrigin(0.5);
     popup.add(titleText);
-
-    // Create container for progress circles
-    const circlesContainer = scene.add.container(0, -halfHeight * 0.45);
-    popup.add(circlesContainer);
 
     const statsText = scene.add.text(0, -halfHeight * 0.02, 'Loading...', {
         font: STYLES.fonts.small(scene),
@@ -53,9 +59,11 @@ export async function createStatsPopup(scene, chartGraphics) {
     graphics.setVisible(false);
 
     // Set up event handlers
-    setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, circlesContainer, scene);
-    setupCloseButtonHandler(scene, closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics);
-    setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, circlesContainer, statsText, scene);
+    setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
+    setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, signupButton, signupButtonText, graphics);
+    setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, statsText, scene);
+
+
 }
 
 // Helper function to create the background
@@ -68,7 +76,7 @@ function createBackground(scene, popupWidth, popupHeight, halfWidth, halfHeight)
 
 // Helper function to create the close button container
 function createCloseButtonContainer(scene, halfWidth, halfHeight) {
-    const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.75);
+    const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.95);
 
     // Create a larger, thicker, black close cross
     const closeButton = scene.add.graphics();
@@ -156,67 +164,95 @@ function createSignupButton(scene, popupWidth, halfHeight) {
     return { signupButton, signupButtonText, graphics };
 }
 
-// Helper function to create progress circles
-export function createProgressCircles(sessions, scene, circlesContainer) {
-    circlesContainer.removeAll(true);
-    const circleRadius = 75;
-    const spacing = 140;
-    const startX = -(spacing * (sessions.length - 1)) / 2;
 
-    sessions.forEach((session, index) => {
-        const x = startX + (index * spacing);
-        const circle = scene.add.graphics();
-        circle.lineStyle(10, getBorderColor(session.totalTopicsGuessed));
-        circle.fillStyle(0xFFFFFF);
-        circle.fillCircle(x, 0, circleRadius);
-        circle.strokeCircle(x, 0, circleRadius);
-        const date = new Date(session.date);
-        const day = date.getDate();
-        const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
-        const dayText = scene.add.text(x, -13, day, { font: STYLES.fonts.small(scene), fill: '#000000', fontSize: '18px' }).setOrigin(0.5);
-        const monthText = scene.add.text(x, 28, month, { font: STYLES.fonts.small(scene), fill: '#000000', fontSize: '14px' }).setOrigin(0.5);
-        circlesContainer.add([circle, dayText, monthText]);
-    });
-}
+function createMetricsContainer(scene, stats, popupWidth, halfHeight, type, alignTo) {
+    const isTop = type === 'top';
+    const metrics = isTop ? [
+        { label: 'Played', value: stats.totalGamesPlayed },
+        { label: 'Average Score', value: stats.averageScore },
+        { label: 'Avg Topics Guessed', value: stats.averageTopicsGuessed },
+    ] : [
+        { label: 'Current Streak', value: stats.currentStreak },
+        { label: 'Longest Streak', value: stats.longestStreak },
+    ];
 
-// Helper function to determine border color
-export function getBorderColor(topicsGuessed) {
-    if (topicsGuessed >= 6) return 0x9bcf53; // Light Green
-    if (topicsGuessed >= 3) return 0xFFA500; // Orange 
-    if (topicsGuessed >= 1) return 0x8B0000; // Dark Red 
-    return 0x8B0000;                         // Dark Red 
-}
+    // Create the container for the metrics
+    const container = scene.add.container(0, isTop ? -halfHeight * 0.35 : -halfHeight * 0.10);
+    const segmentWidth = popupWidth / metrics.length;
 
-function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, circlesContainer, scene) {
-    chartGraphics.on('pointerdown', async () => {
-        cleanupPopup(circlesContainer, statsText, signupButton, signupButtonText, graphics);
-        popup.setVisible(true);
+    metrics.forEach((metric, index) => {
+        // Calculate position to center metrics
+        const metricX = alignTo
+            ? alignTo.list[index].x // Use the horizontal alignment from the top metrics
+            : (index - (metrics.length - 1) / 2) * segmentWidth;
+
+        const metricContainer = scene.add.container(metricX, 0);
+
+        const valueText = scene.add.text(0, -25, metric.value, { // Slightly smaller offset
+            fontSize: scene.scale.width * 0.07 + 'px',
+            fontFamily: 'Poppins',
+            color: '#000000',
+        }).setOrigin(0.5);
         
+        const labelText = scene.add.text(0, 45, metric.label, { // Slightly smaller offset
+            fontSize: scene.scale.width * 0.03 + 'px',
+            fontFamily: 'Poppins Light',
+            color: '#555555',
+        }).setOrigin(0.5);
+        
+        metricContainer.add([valueText, labelText]);
+        container.add(metricContainer);
+    });
+
+    return container;
+}
+
+function createLastPlayedText(scene, stats, halfHeight) {
+    const lastPlayedFormatted = stats.lastPlayed
+        ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: '2-digit' }).format(stats.lastPlayed)
+        : 'N/A';
+
+    const lastPlayedText = scene.add.text(0, halfHeight * 0.14, `Last played\n${lastPlayedFormatted}`, {
+        fontSize: scene.scale.width * 0.03 + 'px',
+        fontFamily: 'Poppins Light',
+        align: 'center',
+        color: '#555555',
+    }).setOrigin(0.5);
+
+    return lastPlayedText;
+}
+
+function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
+    chartGraphics.on('pointerdown', async () => {
+        cleanupPopup(statsText, signupButton, signupButtonText, graphics);
+        popup.setVisible(true);
+    
         pauseTimer(scene);
-
+    
         const titleText = popup.list.find(item => item instanceof Phaser.GameObjects.Text 
-            && (item.text === 'Your progress' || item.text.includes('Want to start tracking')));
+            && (item.text === 'Statistics' || item.text.includes('Want to start tracking')));
         if (titleText) {
-            titleText.setText(auth.currentUser ? 'Your progress' : 'Want to start tracking\nyour stats and streaks?');
+            titleText.setText(auth.currentUser ? 'Statistics' : 'Want to start tracking\nyour stats and streaks?');
         }
-
+    
         if (auth.currentUser) {
             signupButton.setVisible(false);
             signupButtonText.setVisible(false);
             graphics.setVisible(false);
+    
             const stats = await fetchGameStats(auth.currentUser.uid);
             if (stats) {
-                createProgressCircles(stats.recentSessions, scene, circlesContainer);
-                statsText.setText([
-                    `Current Streak (# of days): ${stats.currentStreak}`,
-                    `Longest Streak (# of days): ${stats.longestStreak}`,
-                    ``,
-                    `Daily Average Score: ${stats.averageScore}`,
-                    `Daily Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
-                    ``,
-                    `Total Games Played: ${stats.totalGamesPlayed}`,
-                    `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
-                ]);
+                statsText.setText('');
+    
+                const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
+                popup.add(topMetricsContainer);
+                
+                const streakMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'streak', topMetricsContainer);
+                popup.add(streakMetricsContainer);
+
+                const lastPlayedText = createLastPlayedText(scene, stats, halfHeight);
+                popup.add(lastPlayedText);
+
             } else {
                 statsText.setText('Error loading stats.');
             }
@@ -230,11 +266,11 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
 }
 
 // Event handler for close button
-function setupCloseButtonHandler(scene, closeButtonContainer, popup, circlesContainer, statsText, signupButton, signupButtonText, graphics) {
+function setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, signupButton, signupButtonText, graphics) {
     const closeButtonHitArea = closeButtonContainer.list[1];
 
     closeButtonHitArea.on('pointerdown', () => {
-        cleanupPopup(circlesContainer, statsText, signupButton, signupButtonText, graphics);
+        cleanupPopup(statsText, signupButton, signupButtonText, graphics);
         popup.setVisible(false);
         
         // Resume the timer when closing the popup
@@ -243,7 +279,7 @@ function setupCloseButtonHandler(scene, closeButtonContainer, popup, circlesCont
 }
 
 
-function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, circlesContainer, statsText, scene) {
+function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, statsText, scene) {
     signupButton.on('pointerdown', async () => {
         popup.setVisible(false);
         // Resume timer when hiding popup for auth
@@ -260,7 +296,6 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphi
             graphics.setVisible(false);
             const stats = await fetchGameStats(auth.currentUser.uid);
             if (stats) {
-                createProgressCircles(stats.recentSessions, scene, circlesContainer);
                 statsText.setText([
                     `Total Games Played: ${stats.totalGamesPlayed}`,
                     `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
@@ -271,11 +306,7 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphi
     });
 }
 
-function cleanupPopup(circlesContainer, statsText, signupButton, signupButtonText, graphics) {
-    circlesContainer.list.forEach(child => {
-        child.destroy();
-    });
-    circlesContainer.removeAll(true);
+function cleanupPopup(statsText, signupButton, signupButtonText, graphics) {
     statsText.setText('Loading...');
     signupButton.setVisible(false);
     signupButtonText.setVisible(false);

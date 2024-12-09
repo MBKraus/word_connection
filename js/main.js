@@ -10,6 +10,7 @@ import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
+import { isFuzzyMatchSimple } from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
@@ -193,10 +194,17 @@ function checkGuess(scene, guess) {
             entry.text.text.toLowerCase() === topicObj.topic[0].toLowerCase()
         );
         
-        if (!alreadyGuessed && topicObj.topic.some(value => value.toLowerCase() === normalizedGuess)) {
-            foundMatch = true;
-            matchedTopicIndex = i;
-            break;
+        if (!alreadyGuessed) {
+            // Use isFuzzyMatchSimple for each word in the topic
+            const fuzzyMatched = topicObj.topic.some(value => 
+                isFuzzyMatchSimple(normalizedGuess, value.toLowerCase())
+            );
+
+            if (fuzzyMatched) {
+                foundMatch = true;
+                matchedTopicIndex = i;
+                break;
+            }
         }
     }
 
@@ -382,6 +390,9 @@ function startNextRound(scene) {
 
 
 function startRound(scene) {
+
+    console.log("Starting round")
+    
     // Start a new round
     resetRoundState(scene);
     
