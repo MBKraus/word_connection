@@ -32,16 +32,17 @@ export async function createStatsPopup(scene, chartGraphics) {
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.55, auth.currentUser 
-        ? 'Statistics' 
-        : 'Create an account to start tracking your streaks,\npoints and number of games played!', {
-            fontSize: scene.scale.width * 0.035 + 'px',
-            fontFamily: 'Poppins Light',
-            fontWeight: '300',
-            fill: '#000000',
-            align: 'center', // Center the text alignment
-            wordWrap: { width: scene.scale.width * 0.9 }, // Wrap text within 80% of the screen width
-        }).setOrigin(0.5); // Center the text origin
+    const titleText = scene.add.text(0, -halfHeight * 0.55, '', { // Start with empty text
+        fontSize: scene.scale.width * 0.035 + 'px',
+        fontFamily: 'Poppins Light',
+        fontWeight: '300',
+        fill: '#000000',
+        align: 'center',
+        wordWrap: { width: scene.scale.width * 0.9 },
+    }).setOrigin(0.5);
+    
+    // Give it a name to easily find it later
+    titleText.name = 'statsPopupTitle';
     popup.add(titleText);
 
     const statsText = scene.add.text(0, -halfHeight * 0.02, 'Loading...', {
@@ -245,11 +246,11 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
     
         pauseTimer(scene);
     
-        const titleText = popup.list.find(item => item instanceof Phaser.GameObjects.Text 
-            && (item.text === 'Statistics' || item.text.includes('Want to start tracking')));
-        
+        const titleText = popup.list.find(item => item.name === 'statsPopupTitle');
         if (titleText) {
-            titleText.setText(auth.currentUser ? 'Statistics' : 'Want to start tracking\nyour stats and streaks?');
+            titleText.setText(auth.currentUser 
+                ? 'Statistics' 
+                : 'Create an account to start tracking your streaks,\npoints and number of games played!');
         }
     
         if (auth.currentUser) {
