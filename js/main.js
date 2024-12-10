@@ -85,14 +85,13 @@ function create() {
     const NUMBER_OF_ROUNDS = 2;
     const TOPICS_PER_ROUND = 3;
   
-    // // Check if user has already played today (cookie-based)
-    // if (GameStorage.hasPlayedTodayCookie()) {
-    //     // Only create and show the daily limit screen
-    //     this.dailyLimitControls = createDailyLimitScreen(this);
-    //     this.dailyLimitControls.show();
-    // } else {
+    // Check if user has already played today (cookie-based)
+    if (GameStorage.hasPlayedTodayCookie()) {
+        // Only create and show the daily limit screen
+        this.dailyLimitControls = createDailyLimitScreen(this);
+        this.dailyLimitControls.show();
+    } else {
         
-    // Create and show the welcome screen
     createWelcomeScreen(this);
     showWelcomeScreen(this, 'welcomeScreen');
 
@@ -101,16 +100,14 @@ function create() {
     const jsonData = JSON.parse(decodedString);
     this.allRounds = generateGameRounds(jsonData);
 
-    // Create game elements but don't start the game yet
     createGameElements(this);
-
     setupKeyboardInput(this);
     createCompleteScreen(this);
     createFailureEndScreen(this);
     createCountdown(this);
-    // }
 
-    // At the end of the create function, show the text container
+    }
+
     document.querySelector('.text-container').classList.add('loaded');
 }
 
@@ -130,14 +127,15 @@ function createGameElements(scene) {
         createKeyboard(scene, game);
     }
 
-    // Create and start the timer globally
-    scene.nextGameTimer = createNextGameTimer(
-        GameStorage.getNextPlayTime,
-        (text) => {
-            // Placeholder for global updates, if needed.
-        }
-    );
-    scene.nextGameTimer.start();
+    if (!scene.nextGameTimer) {
+        // Create and start the timer globally
+        scene.nextGameTimer = createNextGameTimer(
+            GameStorage.getNextPlayTime,
+            (text) => {
+            }
+        );
+        scene.nextGameTimer.start();
+    }
 }
 
 // Visibility management helper

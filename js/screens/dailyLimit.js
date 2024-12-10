@@ -1,62 +1,103 @@
+import { createScreen, STYLES } from './helpers.js';
+import { createLogo } from '../uiComponents.js';
+import { createNextGameTimer } from '../utils.js';
+import { GameStorage } from '../gameStorage.js';
 
 export function createDailyLimitScreen(scene) {
-    const screen = scene.add.container(0, 0);
-    screen.setDepth(1000);
-    screen.setVisible(false);
+    scene.dailyLimitScreen = createScreen(scene, 'dailyLimitScreen');
 
-    // Create semi-transparent background
-    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, 0xffffff, 1);
-    bg.setOrigin(0);
-    screen.add(bg);
+    const fontSize = Math.min(scene.scale.height * 0.08, 40);
 
-    // Title and message text
-    const titleText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.2, "Thanks for Playing!", {
-        fontSize: scene.scale.width * 0.08 + 'px',
-        fontFamily: 'Poppins',
-        color: '#000000',
-        align: 'center'
+    // Create logo
+    const logoWidth = scene.scale.width * 0.3;
+    const logoHeight = logoWidth;
+    const logoYPosition = scene.scale.height*0.05;
+    const logoXPosition = 0.5
+    const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
+    scene.dailyLimitScreen.add(logo);
+
+    // Title and SubTitle text
+
+    scene.dailyLimitTitle = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.25,
+        "Thanks for Playing!", {
+            fontSize: scene.scale.width * 0.06 + 'px',
+            color: STYLES.colors.text,
+            fontFamily: 'Helvetica Neue, Arial, sans-serif',
+            fontWeight: 'bold',
     }).setOrigin(0.5);
-    screen.add(titleText);
+    scene.dailyLimitScreen.add(scene.dailyLimitTitle);
 
-    const messageText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.3, 
-        "Great job on today's puzzle!\nCome back tomorrow for a new challenge!", {
-        fontSize: scene.scale.width * 0.04 + 'px',
-        fontFamily: 'Poppins',
-        color: '#000000',
+    scene.dailyLimitSubTitle = scene.add.text(
+        scene.game.scale.width * 0.5,
+        scene.game.scale.height * 0.30,
+        "Great job on today's puzzle!\nCome back tomorrow for a new challenge!",
+        {
+            fontFamily: 'Poppins Light',
+            fontSize: fontSize,
+            color: '#000000',
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.dailyLimitScreen.add(scene.dailyLimitSubTitle);
+
+    // Next game time
+
+    scene.nextGameLabel = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.63,
+        `Next game available in`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
         align: 'center',
-        lineSpacing: 10
-    }).setOrigin(0.5);
-    screen.add(messageText);
+    }
+    ).setOrigin(0.5);
+    scene.dailyLimitScreen.add(scene.nextGameLabel);
 
-    // Countdown text
-    const countdownText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.4, "", {
-        fontSize: scene.scale.width * 0.035 + 'px',
-        fontFamily: 'Poppins',
-        color: '#000000',
-        align: 'center'
-    }).setOrigin(0.5);
-    screen.add(countdownText);
+    scene.nextGameTime = scene.add.text(
+        scene.game.scale.width * 0.5,
+        scene.game.scale.height * 0.67,
+        `test`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.dailyLimitScreen.add(scene.nextGameTime);
 
-    scene.dailyLimitScreen = screen;
+    // Create and start the timer globally
+    scene.nextGameTimer = createNextGameTimer(
+        GameStorage.getNextPlayTime,
+        (text) => {
+            // Placeholder for global updates, if needed.
+        }
+    );
+    scene.nextGameTimer.start();
+
+    scene.nextGameTimer.setOnUpdate((text) => {
+        scene.nextGameTime.setText(text);
+    });
 
     return {
         show: async () => {
-            screen.setVisible(true);
-            scene.nextGameTimer.onUpdate = (text) => countdownText.setText(text);
-
+            scene.dailyLimitScreen.setVisible(true);
+            
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(false);
             }
         },
         hide: () => {
-            screen.setVisible(false);
+            scene.dailyLimitScreen.setVisible(false);
 
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(true);
             }
-
-            // Hide the stats text
-            statsText.setVisible(false);
         }
     };
 }
