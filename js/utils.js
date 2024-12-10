@@ -59,9 +59,9 @@ export function isDesktop() {
     return !isMobile();
 }
 
-export function calculateRoundPoints(timeRemaining) {
+export function calculateRoundPoints(timeRemaining, topicsGuessed) {
     const points = {
-        wordPoints: 3 * 30,
+        wordPoints: topicsGuessed * 30,
         roundBonus: 50,
         timeBonus: 0
     };
