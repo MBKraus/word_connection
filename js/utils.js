@@ -74,3 +74,36 @@ export function calculateRoundPoints(timeRemaining) {
 
     return points;
 }
+
+export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
+    let interval;
+    let currentOnUpdate = defaultOnUpdate;
+
+    const update = () => {
+        const now = new Date();
+        const nextPlay = getNextPlayTime();
+        const diff = nextPlay - now;
+
+        if (diff <= 0) {
+            currentOnUpdate("Next puzzle available now!");
+            return;
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        currentOnUpdate(`${hours}h ${minutes}m ${seconds}s`);
+    };
+
+    const start = () => {
+        update(); // Run immediately
+        interval = setInterval(update, 1000);
+    };
+
+    const setOnUpdate = (callback) => {
+        currentOnUpdate = callback || defaultOnUpdate;
+    };
+
+    return { start, setOnUpdate };
+}

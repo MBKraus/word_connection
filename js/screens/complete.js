@@ -51,7 +51,7 @@ export function createCompleteScreen(scene) {
     ).setOrigin(0.5);
     scene.completeScreen.add(scene.completeSubScoreText);
 
-    scene.completeTotalScoreText = scene.add.text(
+    scene.completeInterRoundScore = scene.add.text(
         scene.scale.width * 0.5,
         scene.scale.height * 0.55,
         '', {
@@ -60,7 +60,67 @@ export function createCompleteScreen(scene) {
             fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
     }).setOrigin(0.5);
-    scene.completeScreen.add( scene.completeTotalScoreText);
+    scene.completeScreen.add(scene.completeInterRoundScore);
+    scene.completeInterRoundScore.setVisible(false);
+
+    // Add end of game score / time at
+    scene.completeFinalScoreLabel = scene.add.text(
+        scene.scale.width * 0.25,
+        scene.scale.height * 0.55,
+        `Final Score`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
+        align: 'center',
+    }
+    ).setOrigin(0.5);
+    scene.completeScreen.add(scene.completeFinalScoreLabel);
+    scene.completeFinalScoreLabel.setVisible(false)
+
+    scene.completeFinalScoreValue = scene.add.text(
+        scene.game.scale.width * 0.25,
+        scene.game.scale.height * 0.59,
+        `${scene.score}`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.completeScreen.add(scene.completeFinalScoreValue);
+    scene.completeFinalScoreValue.setVisible(false)
+
+    scene.completeNextGameLabel = scene.add.text(
+        scene.scale.width * 0.75,
+        scene.scale.height * 0.55,
+        `Next game available in`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
+        align: 'center',
+    }
+    ).setOrigin(0.5);
+    scene.completeScreen.add(scene.completeNextGameLabel);
+    scene.completeNextGameLabel.setVisible(false)
+
+    scene.completeNextGameTime = scene.add.text(
+        scene.game.scale.width * 0.75,
+        scene.game.scale.height * 0.59,
+        `test`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.completeScreen.add(scene.completeNextGameTime);
+    scene.completeNextGameTime.setVisible(false);
 
     scene.okButton = createButton(
         scene,
@@ -76,6 +136,10 @@ export function createCompleteScreen(scene) {
         STYLES.colors.playButtonBorder
     );
     scene.completeScreen.add(scene.okButton);
+
+    scene.nextGameTimer.setOnUpdate((text) => {
+        scene.completeNextGameTime.setText(text);
+    });
 }
 
 // Export show/hide functions

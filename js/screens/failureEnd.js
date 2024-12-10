@@ -51,6 +51,34 @@ export function createFailureEndScreen(scene) {
     ).setOrigin(0.5);
     scene.failureEndScreen.add(scene.scoreValue);
 
+    scene.nextGameLabel = scene.add.text(
+        scene.scale.width * 0.75,
+        scene.scale.height * 0.63,
+        `Next game available in`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
+        align: 'center',
+    }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.nextGameLabel);
+    scene.nextGameLabel.setVisible(false)
+
+    scene.nextGameTime = scene.add.text(
+        scene.game.scale.width * 0.75,
+        scene.game.scale.height * 0.67,
+        `test`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.nextGameTime);
+    scene.nextGameTime.setVisible(false);
 
     // Add Next Round button at the bottom
     const buttonText = scene.currentRound >= scene.allRounds.length - 1 ? 'Statistics' : 'Next Round';
@@ -181,6 +209,10 @@ export const showFailureEndScreen = (scene) => {
         });
         
     }
+
+    scene.nextGameTimer.setOnUpdate((text) => {
+        scene.nextGameTime.setText(text);
+    });
 
     // Show the failure end screen
     showScreen(scene, 'failureEndScreen');
