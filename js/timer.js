@@ -167,14 +167,11 @@ function updateTimer(scene) {
         updateTimerDisplay(scene, true);
         clearTimerEvent(scene);
         scene.isGameActive = false;
-        handleTimeUp(scene);
-    }
-}
-
-function handleTimeUp(scene) {
-    if (scene.correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
-        scene.time.delayedCall(1500, () => {
-            endGame(scene);
-        }, [], scene);
+        
+        if (scene.correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
+            scene.time.delayedCall(1500, () => {
+                window.handleRoundEndOutofTime(scene);
+            }, [], scene);
+        }
     }
 }

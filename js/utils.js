@@ -58,3 +58,19 @@ export function isFuzzyMatchSimple(input, word) {
 export function isDesktop() {
     return !isMobile();
 }
+
+export function calculateRoundPoints(timeRemaining) {
+    const points = {
+        wordPoints: 3 * 30,
+        roundBonus: 50,
+        timeBonus: 0
+    };
+
+    if (timeRemaining > 20) {
+        points.timeBonus = 30;
+    } else if (timeRemaining > 10) {
+        points.timeBonus = 10;
+    }
+
+    return points;
+}

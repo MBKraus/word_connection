@@ -1,3 +1,5 @@
+import { createLogo } from "../uiComponents.js";
+
 export const STYLES = {
     fonts: {
         large: (scene) => `${scene.scale.width * 0.08}px Poppins`,
@@ -84,13 +86,6 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     return container;
 }
 
-// Keep other helper functions unchanged
-export function createOverlay(scene, container) {
-    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, STYLES.colors.overlay);
-    bg.setOrigin(0);
-    container.add(bg);
-    return bg;
-}
 
 export function createText(scene, x, y, initialText = '') {
     return scene.add.text(x, y, initialText, {
@@ -105,8 +100,13 @@ export function createText(scene, x, y, initialText = '') {
 export function createScreen(scene, name, visibility = false) {
     const screen = scene.add.container(0, 0);
     screen.setDepth(1000);
-    createOverlay(scene, screen);
+
+    const bg = scene.add.rectangle(0, 0, scene.game.scale.width, scene.game.scale.height, STYLES.colors.overlay);
+    bg.setOrigin(0);
+    screen.add(bg);
+
     screen.setVisible(visibility);
+
     return screen;
 }
 

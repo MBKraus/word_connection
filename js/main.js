@@ -2,7 +2,7 @@ import { generateGameRounds} from './topics.js';
 import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark,
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createInterRoundScreen, showInterRoundScreen, hideInterRoundScreen } from './screens/interRound.js';
+import { createCompleteScreen, showCompleteScreen, hideCompleteScreen } from './screens/complete.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createKeyboard } from './keyboard.js';
@@ -10,7 +10,7 @@ import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
-import { isFuzzyMatchSimple } from './utils.js';
+import { isFuzzyMatchSimple, calculateRoundPoints } from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
@@ -67,6 +67,7 @@ window.showGameElements = (scene) => setElementsVisibility(scene, true);
 window.startRound = startRound;
 window.startNextRound = startNextRound;
 window.endGame = endGame;
+window.handleRoundEndOutofTime = handleRoundEndOutofTime;
 
 function create() {
     this.currentRound = 0;
@@ -104,7 +105,7 @@ function create() {
     createGameElements(this);
 
     setupKeyboardInput(this);
-    createInterRoundScreen(this);
+    createCompleteScreen(this);
     createFailureEndScreen(this);
     createCountdown(this);
     // }
@@ -276,7 +277,7 @@ function checkGuess(scene, guess) {
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
             scene.isGameActive = false; // Disable further guesses
             scene.time.delayedCall(1500, () => {
-                handleRoundEnd(scene);
+                handleRoundEndComplete(scene);
             });
         }
     } else {
@@ -288,92 +289,12 @@ function checkGuess(scene, guess) {
     }
 }
 
-function handleRoundEnd(scene) {
-  
-    // Handle the end of the round
-    clearTimerEvent(scene);
-    scene.countdownAudioInRoundPlayed = false;
-
-    const points = calculateRoundPoints(scene.remainingTime);
-    scene.score += points.roundBonus + points.timeBonus;
-
-    let interRoundMessage = `Awesome!\n\n+ ${points.wordPoints} Word Points`;
-    interRoundMessage += `\n+ ${points.roundBonus} Round Bonus`;
-    if (points.timeBonus > 0) {
-        interRoundMessage += `\n+ ${points.timeBonus} Time Bonus`;
-    }
-    interRoundMessage += `\n\nTotal Score: ${scene.score}`;
-
-    scene.interRoundScoreText.setText(interRoundMessage);
-    showInterRoundScreen(scene);
-
-    scene.okButton.removeAllListeners('pointerdown');
-    scene.okButton.on('pointerdown', () => {
-        hideInterRoundScreen(scene);
-        if (scene.currentRound >= scene.allRounds.length - 1) {
-            // If this was the final round, end the game after a delay
-            endGame(scene);
-            return;
-            // Else proceed with the next round
-        } else {
-            startNextRound(scene);
-        }
-    });
-}
-
-function calculateRoundPoints(timeRemaining) {
-    const points = {
-        wordPoints: 3 * 30,
-        roundBonus: 50,
-        timeBonus: 0
-    };
-
-    if (timeRemaining > 20) {
-        points.timeBonus = 30;
-    } else if (timeRemaining > 10) {
-        points.timeBonus = 10;
-    }
-
-    return points;
-}
-
-function handleRoundEnd(scene) {
-    // Handle the end of the round when you guessed all three topics
-    clearTimerEvent(scene);
-    scene.countdownAudioInRoundPlayed = false;
-
-    const points = calculateRoundPoints(scene.remainingTime);
-    scene.score += points.roundBonus + points.timeBonus;
-
-    let interRoundMessage = `Awesome!\n\n+ ${points.wordPoints} Word Points`;
-    interRoundMessage += `\n+ ${points.roundBonus} Round Bonus`;
-    if (points.timeBonus > 0) {
-        interRoundMessage += `\n+ ${points.timeBonus} Time Bonus`;
-    }
-    interRoundMessage += `\n\nTotal Score: ${scene.score}`;
-
-    scene.interRoundScoreText.setText(interRoundMessage);
-    showInterRoundScreen(scene);
-
-    scene.okButton.removeAllListeners('pointerdown');
-    scene.okButton.on('pointerdown', () => {
-        hideInterRoundScreen(scene);
-        if (scene.currentRound >= scene.allRounds.length - 1) {
-            // If this was the final round, end the game after a delay
-            endGame(scene);
-            return;
-            // Else proceed with the next round
-        } else {
-            startNextRound(scene);
-        }
-    });
-}
 
 function startNextRound(scene) {
     // Start the next round
     scene.isGameActive = true;
     scene.currentRound++;
-    hideInterRoundScreen(scene);
+    hideCompleteScreen(scene);
     hideTiles(scene);
     clearTimerEvent(scene);
 
@@ -430,24 +351,67 @@ function resetRoundState(scene) {
     }
 }
 
-function endGame(scene) {
-    // Called in two situations:
-    // - when you guessed all topics right in the final round
-    // - when time's up
-
+function handleRoundEndComplete(scene) {
+    // Handle the end of the round when you guessed all three topics
+    clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
+
+    const points = calculateRoundPoints(scene.remainingTime);
+    scene.score += points.roundBonus + points.timeBonus;
+
+    let componentScores = `+ ${points.wordPoints} Word Points`;
+    componentScores += `\n+ ${points.roundBonus} Round Bonus`;
+    if (points.timeBonus > 0) {
+        componentScores += `\n+ ${points.timeBonus} Time Bonus`;
+    }
+  
+    scene.completeSubScoreText.setText(componentScores);
+
+    const totalScoreText = `${scene.score} Points`;
+
+    scene.completeTotalScoreText.setText(totalScoreText);
+
+    const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
+
+    if (isGameComplete) {
+        scene.completeTitle.setText('All rounds completed!');
+        scene.completeSubTitle.setText('You did great! See you tomorrow!');
+
+        endGame(scene);
+        scene.okButton.setVisible(false);  // hides the button
+    } else {
+        scene.completeTitle.setText('Round completed!');
+        scene.completeSubTitle.setText('You did great!');
+        scene.okButton.setVisible(true);
+    }
+
+    showCompleteScreen(scene);
+}
+
+
+function handleRoundEndOutofTime(scene) {
+    scene.countdownAudioInRoundPlayed = false;
+
+    const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
+     
+    if (isGameComplete) {
+        endGame(scene);
+        scene.nextRoundButton.setVisible(false);  // hides the button
+    } else {
+        scene.nextRoundButton.setVisible(true);
+    }
+
+    showFailureEndScreen(scene);
+}
+
+
+function endGame(scene) {
 
     // Calculate total number of topics guessed correctly across all rounds
     // Each round has 3 topics, so multiply currentRound by 3 and add current round's correct guesses
     const topicsInPreviousRounds = scene.currentRound * 3;
     const topicsInCurrentRound = scene.correctGuessTexts.filter(entry => entry.text !== null).length;
     const totalTopicsGuessed = topicsInPreviousRounds + topicsInCurrentRound;
-
-    // Check if all topics were guessed in the current round
-    const allTopicsGuessed = scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3;
-
-    // Check if the player has completed all rounds
-    const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
 
     if (auth.currentUser) {  // Check if a user is logged in
         const userId = auth.currentUser.uid;
@@ -458,39 +422,6 @@ function endGame(scene) {
         updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
 
     }
-
-    if (isGameComplete && allTopicsGuessed) {
-        // Show final victory screen
-        scene.interRoundScoreText.setText(`All rounds completed!\n\nCome back tomorrow\nfor another puzzle!\n\nFinal Score: ${scene.score}`);
-        
-        // Remove the old button and replace it with a new one
-        if (scene.okButton) {
-        scene.okButton.destroy(); // Remove the existing button
-    }
-        
-        // // Create a new button with updated text
-        // scene.okButton = createButton(
-        //     scene,
-        //     scene.scale.width * 0.5,
-        //     scene.scale.height * 0.74,
-        //     'Share your score!', // Updated text
-        //     () => {
-        //         hideInterRoundScreen(scene);
-        //     },
-        //     STYLES.colors.loginButtonBg,
-        //     STYLES.colors.loginButtonText,
-        //     STYLES.colors.loginButtonBorder
-        // );
-        // scene.interRoundScreen.add(scene.okButton);
-
-        showInterRoundScreen(scene);
-
-    } else if (!allTopicsGuessed) {
-        // Show failure end screen if not all topics guessed
-        showFailureEndScreen(scene);
-    }
-
     GameStorage.recordGamePlayedLocal();
-
 }
 })
