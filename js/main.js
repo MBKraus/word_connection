@@ -363,7 +363,7 @@ function handleRoundEndComplete(scene) {
     clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
 
-    const points = calculateRoundPoints(scene.remainingTime);
+    const points = calculateRoundPoints(scene.remainingTime, 3);
     scene.score += points.roundBonus + points.timeBonus;
 
     let componentScores = `+ ${points.wordPoints} Word Points`;
@@ -415,7 +415,11 @@ function handleRoundEndComplete(scene) {
 
 
 function handleRoundEndOutofTime(scene) {
+    clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
+
+    const totalScoreText = `${scene.score} Points`;
+    scene.scoreValue.setText(totalScoreText);
 
     const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
      
