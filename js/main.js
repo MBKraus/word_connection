@@ -73,7 +73,7 @@ function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 60;
+    this.timerDuration = 3;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
@@ -395,8 +395,13 @@ function handleRoundEndOutofTime(scene) {
     if (isGameComplete) {
         endGame(scene);
         scene.nextRoundButton.setVisible(false);  // hides the button
+
+        scene.scoreLabel.setX(scene.scale.width * 0.25)
+        scene.scoreValue.setX(scene.scale.width * 0.25)
     } else {
         scene.nextRoundButton.setVisible(true);
+        scene.scoreLabel.setX(scene.scale.width * 0.5)
+        scene.scoreValue.setX(scene.scale.width * 0.5)
     }
 
     showFailureEndScreen(scene);
