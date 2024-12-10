@@ -224,3 +224,9 @@ height: auto;
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
+/* Form fields focus green */
+input:focus {
+    border-color: #9bcf53 !important;
+    outline: none; /* Removes the default blue outline */
+}

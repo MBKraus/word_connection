@@ -332,31 +332,31 @@ export function createHeaderIcons(scene) {
     scene.hamburgerMenu.setDepth(1);
     
     // Create bar chart icon using graphics
-    const chartGraphics = scene.add.graphics();
-    chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
+    scene.chartGraphics = scene.add.graphics();
+    scene.chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
     
     // Set fill style
-    chartGraphics.fillStyle(0x000000, 1);
+    scene.chartGraphics.fillStyle(0x000000, 1);
     
     // Scale factor for the bars
     const scale = scene.scale.width * 0.02; // Base scale remains the same
     
     // Draw the three bars with increased heights
     // Middle height bar (left)
-    chartGraphics.fillRect(-scale * 1.5, -scale * 1.4, scale * 0.8, scale * 2.0); // Increased height to 2.0
+    scene.chartGraphics.fillRect(-scale * 1.5, -scale * 1.4, scale * 0.8, scale * 2.0); // Increased height to 2.0
     
     // Highest bar (middle)
-    chartGraphics.fillRect(-scale * 0.3, -scale * 1.8, scale * 0.8, scale * 2.4); // Increased height to 2.4
+    scene.chartGraphics.fillRect(-scale * 0.3, -scale * 1.8, scale * 0.8, scale * 2.4); // Increased height to 2.4
     
     // Shortest bar (right)
-    chartGraphics.fillRect(scale * 0.9, -scale * 1.0, scale * 0.8, scale * 1.6); // Increased height to 1.6
+    scene.chartGraphics.fillRect(scale * 0.9, -scale * 1.0, scale * 0.8, scale * 1.6); // Increased height to 1.6
     
     // Adjust hit area to match taller bars
     const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale * 1.8, scale * 3, scale * 2.4); // Adjusted to fit the tallest bar
-    chartGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
+    scene.chartGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
     
     // Create stats popup for chart icon
-    createStatsPopup(scene, chartGraphics);
+    createStatsPopup(scene);
 
     // Question mark icon (existing code)
     const questionIcon = scene.add.image(scene.scale.width * 0.94, scene.scale.height * 0.0325, 'question')

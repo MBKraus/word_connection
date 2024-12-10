@@ -4,7 +4,7 @@ import { createButton, STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
 import { createLogo } from '../uiComponents.js';
 
-export async function createStatsPopup(scene, chartGraphics) {
+export async function createStatsPopup(scene) {
     // Make the popup container cover the entire screen
     const popup = scene.add.container(scene.scale.width / 2, scene.scale.height / 2);
     popup.setVisible(false);
@@ -71,7 +71,7 @@ export async function createStatsPopup(scene, chartGraphics) {
     graphics.setVisible(false);
 
     // Set up event handlers
-    setupChartGraphicsHandler(chartGraphics, popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
+    setupChartIconHandler(popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
     setupCloseButtonHandler(scene, closeButtonContainer, popup, signupButton, signupButtonText, graphics);
     setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, scene);
 
@@ -234,19 +234,8 @@ function createLastPlayedText(scene, stats, halfHeight) {
     return lastPlayedText;
 }
 
-function setupChartGraphicsHandler(chartGraphics, popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
-    chartGraphics.on('pointerdown', async () => {
-        // Remove any existing metrics containers
-        const existingTopMetrics = popup.list.find(item => 
-            item.name === 'topMetricsContainer');
-        const existingStreakMetrics = popup.list.find(item => 
-            item.name === 'streakMetricsContainer');
-        const existingLastPlayedText = popup.list.find(item => 
-            item.name === 'lastPlayedText');
-
-        if (existingTopMetrics) popup.remove(existingTopMetrics);
-        if (existingStreakMetrics) popup.remove(existingStreakMetrics);
-        if (existingLastPlayedText) popup.remove(existingLastPlayedText);
+function setupChartIconHandler(popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
+    scene.chartGraphics.on('pointerdown', async () => {
 
         cleanupPopup(signupButton, signupButtonText, graphics, popup);
         popup.setVisible(true);
@@ -331,7 +320,7 @@ function cleanupPopup(signupButton, signupButtonText, graphics, popup) {
     signupButton.setVisible(false);
     signupButtonText.setVisible(false);
     graphics.setVisible(false);
-
+    
     // Helper function to remove and destroy elements by name
     const removeElementByName = (name) => {
         const element = popup.list.find(item => item.name === name);

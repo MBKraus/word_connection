@@ -312,8 +312,6 @@ function startNextRound(scene) {
 
 function startRound(scene) {
 
-    console.log("Starting round")
-    
     // Start a new round
     resetRoundState(scene);
     
