@@ -45,7 +45,7 @@ export function createFailureEndScreen(scene) {
 }
 
 export const showFailureEndScreen = (scene) => {
-    const fontSize = Math.min(scene.scale.height * 0.08, 35);
+    const fontSize = Math.min(scene.scale.height * 0.08, 40);
     const entryFontSize = fontSize * 0.7; // Smaller font size for entries
 
     // Clear any existing topic texts from previous games
@@ -93,93 +93,93 @@ export const showFailureEndScreen = (scene) => {
         missedTopics.forEach((topicObj, index) => {
             const bgColor = colors[index % colors.length];
             const containerWidth = scene.game.scale.width * 0.8;
-            const containerHeight = fontSize + entryFontSize + padding * 2;
-        
-            // Calculate the y-position for the current rectangle
-            const rectX = scene.game.scale.width * 0.1; // x-position
-            const rectY = yOffset; // y-position
-            const rectCenterY = rectY + containerHeight / 2;
-        
+
+            // Calculate text bounds
+            const topicText = scene.add.text(0, 0, topicObj.topic[0], {
+                fontFamily: 'Poppins',
+                fontSize: fontSize,
+                color: '#FFFFFF',
+                align: 'center',
+            }).setWordWrapWidth(containerWidth * 0.9).setOrigin(0.5);
+
+            const entriesText = scene.add.text(0, 0, topicObj.entries.join(' - '), {
+                fontFamily: 'Poppins',
+                fontSize: entryFontSize,
+                color: '#FFFFFF',
+                align: 'center',
+                wordWrap: { width: containerWidth * 0.9 },
+            }).setOrigin(0.5);
+
+            // Calculate total height
+            const totalHeight = padding * 2 + topicText.height + entriesText.height;
+
             // Create graphics for the rounded rectangle
             const graphics = scene.add.graphics();
-            graphics.fillStyle(bgColor); // Background fill color
+            graphics.fillStyle(bgColor);
             graphics.fillRoundedRect(
-                rectX, // x-position
-                rectY, // y-position
-                containerWidth, // Width
-                containerHeight, // Height
-                borderRadius // Corner radius
+                scene.game.scale.width * 0.1, // x
+                yOffset, // y
+                containerWidth, // width
+                totalHeight, // height
+                borderRadius // radius
             );
-        
-            // Add topic text
-            const topicText = scene.add.text(
-                scene.game.scale.width * 0.5,
-                rectY + padding, // Place topic text at the top with padding
-                topicObj.topic[0],
-                {
-                    fontFamily: 'Poppins',
-                    fontSize: fontSize,
-                    color: '#FFFFFF',
-                    align: 'center',
-                }
-            ).setOrigin(0.5);
-        
-            // Add entries text
-            const entriesText = scene.add.text(
-                scene.game.scale.width * 0.5,
-                topicText.y + fontSize + padding / 2, // Add distance below the topic text
-                topicObj.entries.join(' - '),
-                {
-                    fontFamily: 'Poppins',
-                    fontSize: entryFontSize,
-                    color: '#FFFFFF',
-                    align: 'center',
-                    wordWrap: {
-                        width: containerWidth * 0.9,
-                    },
-                }
-            ).setOrigin(0.5);
-        
-            // Dynamically adjust rectangle height to fit wrapped text
-            const totalHeight = fontSize + padding + entriesText.height + padding; // Account for both texts and padding
-            graphics.clear(); // Clear the existing rectangle
-            graphics.fillStyle(bgColor); // Redraw the rectangle with updated height
-            graphics.fillRoundedRect(
-                rectX,
-                rectY,
-                containerWidth,
-                totalHeight,
-                borderRadius
+
+            // Position the topic and entries text inside the rectangle
+            topicText.setPosition(
+                scene.game.scale.width * 0.5, // x
+                yOffset + padding + topicText.height / 2 // y
             );
-        
-            // Update yOffset for next topic
+
+            entriesText.setPosition(
+                scene.game.scale.width * 0.5, // x
+                topicText.y + topicText.height / 2 + entriesText.height / 2 // y
+            );
+
+            // Update yOffset for the next rectangle
             yOffset += totalHeight + spacing;
-        
-            // Add to the failureEndScreen group for cleanup
+
+            // Add everything to the failureEndScreen group for cleanup
             scene.failureEndScreen.add(graphics);
             scene.failureEndScreen.add(topicText);
             scene.failureEndScreen.add(entriesText);
         });
 
         // Add score at the bottom
-        const scoreText = scene.add.text(
+        const scoreLabel = scene.add.text(
             scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.7,
-            `Your Score: ${scene.score}`,
+            scene.game.scale.height * 0.63,
+            `Your Score`,
             {
-                fontFamily: 'Poppins',
+                fontFamily: 'Poppins Light',
                 fontSize: fontSize,
-                color: '#bf53cf',
+                color: '#000000',
                 align: 'center',
             }
         ).setOrigin(0.5);
-        scoreText.descText = true; // Mark for cleanup
-        scene.failureEndScreen.add(scoreText);
+        scoreLabel.descText = true; // Mark for cleanup
+        scene.failureEndScreen.add(scoreLabel);
+
+        const scoreValue = scene.add.text(
+            scene.game.scale.width * 0.5,
+            scene.game.scale.height * 0.66,
+            `${scene.score}`,
+            {
+                fontFamily: 'Poppins',
+                fontSize: fontSize,
+                fontWeight: 'bold',
+                color: '#000000',
+                align: 'center',
+            }
+        ).setOrigin(0.5);
+        scoreValue.descText = true; // Mark for cleanup
+        scene.failureEndScreen.add(scoreValue);
     }
 
     // Show the failure end screen
     showScreen(scene, 'failureEndScreen');
 };
+
+
 
 
 export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');

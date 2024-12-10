@@ -73,7 +73,7 @@ function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 5;
+    this.timerDuration = 60;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
@@ -359,21 +359,29 @@ function handleRoundEndComplete(scene) {
     const points = calculateRoundPoints(scene.remainingTime);
     scene.score += points.roundBonus + points.timeBonus;
 
-    let completeMessage = `Awesome!\n\n+ ${points.wordPoints} Word Points`;
-    completeMessage += `\n+ ${points.roundBonus} Round Bonus`;
+    let componentScores = `+ ${points.wordPoints} Word Points`;
+    componentScores += `\n+ ${points.roundBonus} Round Bonus`;
     if (points.timeBonus > 0) {
-        completeMessage += `\n+ ${points.timeBonus} Time Bonus`;
+        componentScores += `\n+ ${points.timeBonus} Time Bonus`;
     }
-    completeMessage += `\n\nTotal Score: ${scene.score}`;
+  
+    scene.completeSubScoreText.setText(componentScores);
 
-    scene.completeScoreText.setText(completeMessage);
+    const totalScoreText = `${scene.score} Points`;
+
+    scene.completeTotalScoreText.setText(totalScoreText);
 
     const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
 
     if (isGameComplete) {
+        scene.completeTitle.setText('All rounds completed!');
+        scene.completeSubTitle.setText('You did great! See you tomorrow!');
+
         endGame(scene);
         scene.okButton.setVisible(false);  // hides the button
     } else {
+        scene.completeTitle.setText('Round completed!');
+        scene.completeSubTitle.setText('You did great!');
         scene.okButton.setVisible(true);
     }
 

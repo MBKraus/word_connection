@@ -27,12 +27,27 @@ export async function createStatsPopup(scene, chartGraphics) {
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
     popup.add(logo);
 
+    // title
+    scene.statsTitle = scene.add.text(
+        0,
+        -halfHeight * 0.55,
+        'Track statistics?', {
+            fontSize: scene.scale.width * 0.06 + 'px',
+            color: STYLES.colors.text,
+            fontFamily: 'Helvetica Neue, Arial, sans-serif',
+            fontWeight: 'bold',
+            align: 'center',
+    }).setOrigin(0.5);
+    scene.statsTitle.name = 'statsTitle';
+    popup.add( scene.statsTitle);
+
     // Create close button
     const closeButtonContainer = createCloseButtonContainer(scene, halfWidth, halfHeight);
     popup.add(closeButtonContainer);
 
     // Add title text
-    const titleText = scene.add.text(0, -halfHeight * 0.55, '', { // Start with empty text
+    scene.statsSubTitleText = scene.add.text(0, -halfHeight * 0.35, 
+        'Create a free account to start tracking your streaks,\npoints and number of games played!', { // Start with empty text
         fontSize: scene.scale.width * 0.035 + 'px',
         fontFamily: 'Poppins Light',
         fontWeight: '300',
@@ -42,16 +57,8 @@ export async function createStatsPopup(scene, chartGraphics) {
     }).setOrigin(0.5);
     
     // Give it a name to easily find it later
-    titleText.name = 'statsPopupTitle';
-    popup.add(titleText);
-
-    const statsText = scene.add.text(0, -halfHeight * 0.02, 'Loading...', {
-        font: STYLES.fonts.small(scene),
-        fill: STYLES.colors.text,
-        align: 'center',
-        lineSpacing: 10
-    }).setOrigin(0.5);
-    popup.add(statsText);
+    scene.statsSubTitleText.name = 'subTitleText';
+    popup.add(scene.statsSubTitleText);
 
     // Create signup button
     const { signupButton, signupButtonText, graphics } = createSignupButton(scene, popupWidth, halfHeight);
@@ -64,9 +71,9 @@ export async function createStatsPopup(scene, chartGraphics) {
     graphics.setVisible(false);
 
     // Set up event handlers
-    setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
-    setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, signupButton, signupButtonText, graphics);
-    setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, statsText, scene);
+    setupChartGraphicsHandler(chartGraphics, popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
+    setupCloseButtonHandler(scene, closeButtonContainer, popup, signupButton, signupButtonText, graphics);
+    setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, scene);
 
 
 }
@@ -108,7 +115,7 @@ function createSignupButton(scene, popupWidth, halfHeight) {
     const graphics = scene.add.graphics();
     const textWidth = popupWidth * 0.5;
     const textHeight = scene.scale.height * 0.07;
-    const yPos = scene.scale.height * -0.1;
+    const yPos = halfHeight * 0.1;
 
     const drawButton = (graphics, fillColor, borderCol) => {
         graphics.clear();
@@ -140,7 +147,7 @@ function createSignupButton(scene, popupWidth, halfHeight) {
         .setOrigin(0.5);
 
     // Create the button text
-    const signupButtonText = scene.add.text(0, yPos, 'Create a free account', {
+    const signupButtonText = scene.add.text(0, yPos, 'Create account', {
         fontSize: scene.scale.width * 0.03 + 'px',
         fontFamily: 'Poppins',
         color: STYLES.colors.playButtonText
@@ -227,7 +234,7 @@ function createLastPlayedText(scene, stats, halfHeight) {
     return lastPlayedText;
 }
 
-function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
+function setupChartGraphicsHandler(chartGraphics, popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
     chartGraphics.on('pointerdown', async () => {
         // Remove any existing metrics containers
         const existingTopMetrics = popup.list.find(item => 
@@ -241,27 +248,26 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
         if (existingStreakMetrics) popup.remove(existingStreakMetrics);
         if (existingLastPlayedText) popup.remove(existingLastPlayedText);
 
-        cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup);
+        cleanupPopup(signupButton, signupButtonText, graphics, popup);
         popup.setVisible(true);
     
         pauseTimer(scene);
     
-        const titleText = popup.list.find(item => item.name === 'statsPopupTitle');
+        const titleText = popup.list.find(item => item.name === 'statsTitle');
         if (titleText) {
             titleText.setText(auth.currentUser 
                 ? 'Statistics' 
-                : 'Create an account to start tracking your streaks,\npoints and number of games played!');
+                : 'Track statistics?');
         }
     
         if (auth.currentUser) {
             signupButton.setVisible(false);
             signupButtonText.setVisible(false);
             graphics.setVisible(false);
+            scene.statsSubTitleText.setVisible(false);
     
             const stats = await fetchGameStats(auth.currentUser.uid);
             if (stats) {
-                statsText.setText('');
-    
                 const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
                 topMetricsContainer.name = 'topMetricsContainer';
                 popup.add(topMetricsContainer);
@@ -275,23 +281,23 @@ function setupChartGraphicsHandler(chartGraphics, popup, statsText, signupButton
                 popup.add(lastPlayedText);
 
             } else {
-                statsText.setText('Error loading stats.');
+                console.log('Error loading stats.');
             }
         } else {
-            statsText.setText('');
             signupButton.setVisible(true);
             signupButtonText.setVisible(true);
             graphics.setVisible(true);
+            scene.statsSubTitleText.setVisible(true);
         }
     });
 }
 
 // Event handler for close button
-function setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, signupButton, signupButtonText, graphics) {
+function setupCloseButtonHandler(scene, closeButtonContainer, popup, signupButton, signupButtonText, graphics) {
     const closeButtonHitArea = closeButtonContainer.list[1];
 
     closeButtonHitArea.on('pointerdown', () => {
-        cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup);
+        cleanupPopup(signupButton, signupButtonText, graphics, popup);
         popup.setVisible(false);
         
         // Resume the timer when closing the popup
@@ -300,7 +306,7 @@ function setupCloseButtonHandler(scene, closeButtonContainer, popup, statsText, 
 }
 
 
-function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, statsText, scene) {
+function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, scene) {
     signupButton.on('pointerdown', async () => {
         popup.setVisible(false);
         // Resume timer when hiding popup for auth
@@ -316,21 +322,11 @@ function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphi
             signupButtonText.setVisible(false);
             graphics.setVisible(false);
             const stats = await fetchGameStats(auth.currentUser.uid);
-            if (stats) {
-                statsText.setText([
-                    `Total Games Played: ${stats.totalGamesPlayed}`,
-                    `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
-                    `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
-                ]);
-            }
         }
     });
 }
 
-function cleanupPopup(statsText, signupButton, signupButtonText, graphics, popup) {
-    // Reset stats text
-    statsText.setText('Loading...');
-
+function cleanupPopup(signupButton, signupButtonText, graphics, popup) {
     // Hide and reset signup button elements
     signupButton.setVisible(false);
     signupButtonText.setVisible(false);
