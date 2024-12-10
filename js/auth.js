@@ -65,8 +65,9 @@ onAuthStateChanged(auth, async (user) => {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
             console.log("has played per DB check ")
-            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            // dailyLimitScreen.show();
+            // Comment out to turn off daily limit screen
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
         } 
     }
 });
@@ -296,27 +297,30 @@ function handlePasswordReset(e) {
 
 async function hideAuthModal() {
 
-    // if (isAuthSuccess && auth.currentUser) {
-    //     const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
-        
-    //     if (hasPlayed) {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //         const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-    //         dailyLimitScreen.show();
-    //     } else if (window.gameScene) {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //         hideWelcomeScreen(window.gameScene);
-    //         window.startGame(window.gameScene);
-    //     }} else {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //     }
+    // Comment below out to turn off daily limit screen
 
+    if (isAuthSuccess && auth.currentUser) {
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
+        
+        if (hasPlayed) {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            dailyLimitScreen.show();
+        } else if (window.gameScene) {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+            hideWelcomeScreen(window.gameScene);
+            window.startGame(window.gameScene);
+        }} else {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+        }
+
+    // Comment above out to turn off daily limit screen
 
     if (isAuthSuccess && auth.currentUser) {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
