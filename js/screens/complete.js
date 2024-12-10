@@ -110,7 +110,7 @@ export function createCompleteScreen(scene) {
     scene.completeNextGameTime = scene.add.text(
         scene.game.scale.width * 0.75,
         scene.game.scale.height * 0.59,
-        `test`,
+        ``,
         {
             fontFamily: 'Poppins',
             fontSize: scene.scale.width * 0.06 + 'px',

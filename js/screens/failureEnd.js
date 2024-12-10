@@ -68,7 +68,7 @@ export function createFailureEndScreen(scene) {
     scene.nextGameTime = scene.add.text(
         scene.game.scale.width * 0.75,
         scene.game.scale.height * 0.67,
-        `test`,
+        ``,
         {
             fontFamily: 'Poppins',
             fontSize: scene.scale.width * 0.06 + 'px',
