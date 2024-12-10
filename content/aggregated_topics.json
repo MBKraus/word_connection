@@ -1,256 +1,4 @@
 {
-    "cuisine": {
-        "topics": [
-            {
-                "topic": [
-                    "Pizza",
-                    "Pizzerias",
-                    "Italian Pie",
-                    "Cheese Slice"
-                ],
-                "entries": [
-                    "Tomato Sauce",
-                    "Mozzarella",
-                    "Pepperoni",
-                    "Oven-baked"
-                ]
-            },
-            {
-                "topic": [
-                    "Tacos",
-                    "Taco",
-                    "Mexican Handheld",
-                    "Tortilla Wrap"
-                ],
-                "entries": [
-                    "Corn Tortilla",
-                    "Salsa",
-                    "Ground Beef",
-                    "Lettuce"
-                ]
-            },
-            {
-                "topic": [
-                    "Dim Sum",
-                    "Dimsum",
-                    "Cantonese Bites",
-                    "Dragon Buns"
-                ],
-                "entries": [
-                    "Steamed Buns",
-                    "Teahouse",
-                    "Dumplings",
-                    "Chicken Feet"
-                ]
-            },
-            {
-                "topic": [
-                    "Hamburger",
-                    "Burger",
-                    "Beef Patty",
-                    "Burgers"
-                ],
-                "entries": [
-                    "Ground Beef",
-                    "Sesame Bun",
-                    "Pickles",
-                    "Grilled"
-                ]
-            },
-            {
-                "topic": [
-                    "Coffee",
-                    "Coffees",
-                    "Java",
-                    "Brewed Beans"
-                ],
-                "entries": [
-                    "Espresso Shot",
-                    "Arabica",
-                    "Roasted Beans",
-                    "Barista"
-                ]
-            },
-            {
-                "topic": [
-                    "Sushi",
-                    "Sashimi",
-                    "Rolls",
-                    "Nigiri"
-                ],
-                "entries": [
-                    "Raw Fish",
-                    "Soy Sauce",
-                    "Seaweed Wrap",
-                    "Wasabi"
-                ]
-            },
-            {
-                "topic": [
-                    "Curry",
-                    "Curries",
-                    "Spiced Stew",
-                    "Indian Curry"
-                ],
-                "entries": [
-                    "Coconut Milk",
-                    "Turmeric",
-                    "Chickpeas",
-                    "Indian Dish"
-                ]
-            },
-            {
-                "topic": [
-                    "Paella",
-                    "Valencian Paella",
-                    "Seafood Paella"
-                ],
-                "entries": [
-                    "Saffron",
-                    "Spanish",
-                    "Seafood",
-                    "Rice Dish"
-                ]
-            },
-            {
-                "topic": [
-                    "Pad Thai",
-                    "Thai Noodles",
-                    "Street Pad Thai",
-                    "Thai Stir-Fry"
-                ],
-                "entries": [
-                    "Rice Noodles",
-                    "Tamarind Paste",
-                    "Peanuts",
-                    "Thailand"
-                ]
-            },
-            {
-                "topic": [
-                    "Croissant",
-                    "Butter Croissant",
-                    "Croissants"
-                ],
-                "entries": [
-                    "French",
-                    "Flaky Layers",
-                    "Breakfast",
-                    "Pastry"
-                ]
-            },
-            {
-                "topic": [
-                    "Lasagna",
-                    "Lasagne",
-                    "Layered Pasta",
-                    "Italian Casserole"
-                ],
-                "entries": [
-                    "Oven-baked",
-                    "Ground Meat",
-                    "Tomato Sauce",
-                    "Layers"
-                ]
-            },
-            {
-                "topic": [
-                    "Ramen",
-                    "Ramen Noodles",
-                    "Japanese Soup",
-                    "Broth Noodles"
-                ],
-                "entries": [
-                    "Soy Sauce",
-                    "Pork Broth",
-                    "Miso",
-                    "Egg"
-                ]
-            },
-            {
-                "topic": [
-                    "Nachos",
-                    "Nacho Platter",
-                    "Corn Tortilla Chips",
-                    "Cheesy Nachos"
-                ],
-                "entries": [
-                    "Cheese",
-                    "Corn Chips",
-                    "Sour Cream",
-                    "Guacamole"
-                ]
-            },
-            {
-                "topic": [
-                    "Tapas",
-                    "Spanish Tapas",
-                    "Small Plates",
-                    "Tapas Bar"
-                ],
-                "entries": [
-                    "Spanish",
-                    "Manchego Cheese",
-                    "Chorizo",
-                    "Shared"
-                ]
-            },
-            {
-                "topic": [
-                    "Kimchi",
-                    "Kimchee"
-                ],
-                "entries": [
-                    "Napa Cabbage",
-                    "Chili Pepper",
-                    "Korean Side Dish",
-                    "Fermentation"
-                ]
-            },
-            {
-                "topic": [
-                    "Quiche",
-                    "French Tart",
-                    "Quiches"
-                ],
-                "entries": [
-                    "Egg Custard",
-                    "Pastry Shell",
-                    "French Savory Pie",
-                    "Cheese Filling"
-                ]
-            },
-            {
-                "topic": [
-                    "Schnitzel",
-                    "Breaded Cutlet",
-                    "Austrian Schnitzel",
-                    "Fried Schnitzel"
-                ],
-                "entries": [
-                    "Breaded and Fried",
-                    "Austrian",
-                    "Lemon Wedge",
-                    "Flat"
-                ]
-            },
-            {
-                "topic": [
-                    "Bread",
-                    "Bread Making",
-                    "Bread Baking",
-                    "Bakery",
-                    "Baker"
-                ],
-                "entries": [
-                    "Yeast",
-                    "Dough",
-                    "Baking",
-                    "Crust"
-                ]
-            }
-        ]
-    },
     "events": {
         "topics": [
             {
@@ -652,6 +400,640 @@
                     "Shamrock",
                     "Parades",
                     "Leprechauns"
+                ]
+            }
+        ]
+    },
+    "films_series_art": {
+        "topics": [
+            {
+                "topic": [
+                    "Friends"
+                ],
+                "entries": [
+                    "Central Perk",
+                    "Pivot Scene",
+                    "Phoebe's Songs",
+                    "Smelly Cat"
+                ]
+            },
+            {
+                "topic": [
+                    "The Sound of Music",
+                    "Sound of Music Film",
+                    "Musical: Sound of Music",
+                    "Sound of Music"
+                ],
+                "entries": [
+                    "Rogers & Hammerstein",
+                    "Von Trapp Family",
+                    "Austrian Alps",
+                    "Do-Re-Mi"
+                ]
+            },
+            {
+                "topic": [
+                    "Schindler's List"
+                ],
+                "entries": [
+                    "Oskar Schindler",
+                    "Red Coat",
+                    "Auschwitz",
+                    "Holocaust"
+                ]
+            },
+            {
+                "topic": [
+                    "The Godfather",
+                    "Godfather"
+                ],
+                "entries": [
+                    "Marlon Brando",
+                    "Sicilian Mafia",
+                    "Offer",
+                    "Family Business"
+                ]
+            },
+            {
+                "topic": [
+                    "Breaking Bad"
+                ],
+                "entries": [
+                    "Walter White",
+                    "Crystal Meth",
+                    "RV Lab",
+                    "Blue Product"
+                ]
+            },
+            {
+                "topic": [
+                    "The Office US",
+                    "The Office"
+                ],
+                "entries": [
+                    "Scranton",
+                    "Jim Halpert",
+                    "Michael Scott",
+                    "Dwight Schrute"
+                ]
+            },
+            {
+                "topic": [
+                    "Game of Thrones"
+                ],
+                "entries": [
+                    "Iron Throne",
+                    "Westeros",
+                    "White Walkers",
+                    "Dragons"
+                ]
+            },
+            {
+                "topic": [
+                    "The Simpsons",
+                    "Simpsons"
+                ],
+                "entries": [
+                    "Yellow Family",
+                    "Homer",
+                    "Springfield",
+                    "D'oh!"
+                ]
+            },
+            {
+                "topic": [
+                    "Titanic"
+                ],
+                "entries": [
+                    "Iceberg",
+                    "Jack and Rose",
+                    "Unsinkable Ship",
+                    "1912"
+                ]
+            },
+            {
+                "topic": [
+                    "Harry Potter"
+                ],
+                "entries": [
+                    "Hogwarts",
+                    "Voldemort",
+                    "Muggle",
+                    "Butterbeer"
+                ]
+            },
+            {
+                "topic": [
+                    "Lord of the Rings",
+                    "LOTR"
+                ],
+                "entries": [
+                    "Middle-earth",
+                    "The One Ring",
+                    "Frodo Baggins",
+                    "Mordor"
+                ]
+            },
+            {
+                "topic": [
+                    "The Walking Dead",
+                    "Walking Dead"
+                ],
+                "entries": [
+                    "Zombies",
+                    "Survivors",
+                    "Rick Grimes",
+                    "Post-apocalypse"
+                ]
+            },
+            {
+                "topic": [
+                    "Star Trek"
+                ],
+                "entries": [
+                    "USS Enterprise",
+                    "Spock",
+                    "Warp Speed",
+                    "Klingons"
+                ]
+            },
+            {
+                "topic": [
+                    "Jurassic Park"
+                ],
+                "entries": [
+                    "Dinosaurs",
+                    "Isla Nublar",
+                    "T-Rex",
+                    "Life Finds Way"
+                ]
+            },
+            {
+                "topic": [
+                    "Inception"
+                ],
+                "entries": [
+                    "Dream Layers",
+                    "Christopher Nolan",
+                    "Spinning Top",
+                    "Leonardo DiCaprio"
+                ]
+            },
+            {
+                "topic": [
+                    "The Lion King",
+                    "Lion King"
+                ],
+                "entries": [
+                    "Simba",
+                    "Hakuna Matata",
+                    "Pride Rock",
+                    "Circle of Life"
+                ]
+            },
+            {
+                "topic": [
+                    "The Avengers",
+                    "Avengers"
+                ],
+                "entries": [
+                    "Iron Man",
+                    "Infinity Stones",
+                    "S.H.I.E.L.D.",
+                    "Thanos"
+                ]
+            },
+            {
+                "topic": [
+                    "Stranger Things"
+                ],
+                "entries": [
+                    "1980s",
+                    "Upside Down",
+                    "Eleven",
+                    "Hawkins"
+                ]
+            },
+            {
+                "topic": [
+                    "Sherlock Holmes"
+                ],
+                "entries": [
+                    "221B Baker Street",
+                    "Detective",
+                    "Dr. Watson",
+                    "Moriarty"
+                ]
+            },
+            {
+                "topic": [
+                    "The Wizard of Oz",
+                    "Wizard of Oz"
+                ],
+                "entries": [
+                    "Yellow Brick Road",
+                    "Emerald City",
+                    "Wicked Witch",
+                    "Dorothy"
+                ]
+            },
+            {
+                "topic": [
+                    "Avatar"
+                ],
+                "entries": [
+                    "Pandora",
+                    "Blue Na'vi",
+                    "James Cameron",
+                    "3D"
+                ]
+            },
+            {
+                "topic": [
+                    "Back to the Future"
+                ],
+                "entries": [
+                    "Time Travel",
+                    "DeLorean",
+                    "Marty McFly",
+                    "1985"
+                ]
+            },
+            {
+                "topic": [
+                    "The X-Files",
+                    "X-Files",
+                    "X Files"
+                ],
+                "entries": [
+                    "Mulder and Scully",
+                    "Aliens",
+                    "Conspiracy",
+                    "Truth is Out There"
+                ]
+            },
+            {
+                "topic": [
+                    "The Silence of the Lambs",
+                    "Silence of the Lambs"
+                ],
+                "entries": [
+                    "Hannibal Lecter",
+                    "Clarice Starling",
+                    "Census Taker",
+                    "Fava Beans"
+                ]
+            },
+            {
+                "topic": [
+                    "The Sopranos",
+                    "Sopranos"
+                ],
+                "entries": [
+                    "Tony Soprano",
+                    "New Jersey",
+                    "Mafia",
+                    "Therapist"
+                ]
+            },
+            {
+                "topic": [
+                    "The Matrix",
+                    "Matrix"
+                ],
+                "entries": [
+                    "Keanu Reeves",
+                    "Red Pill",
+                    "Neo",
+                    "Bullet Time"
+                ]
+            },
+            {
+                "topic": [
+                    "Pulp Fiction"
+                ],
+                "entries": [
+                    "Quentin Tarantino",
+                    "Vega and Winnfield",
+                    "Diner Scene",
+                    "Royale with Cheese"
+                ]
+            },
+            {
+                "topic": [
+                    "Fight Club"
+                ],
+                "entries": [
+                    "Brad Pitt",
+                    "Soap",
+                    "Tyler Durden",
+                    "Underground Clubs"
+                ]
+            },
+            {
+                "topic": [
+                    "Seinfeld"
+                ],
+                "entries": [
+                    "New York",
+                    "Jerry",
+                    "Stand-Up",
+                    "Soup Nazi"
+                ]
+            },
+            {
+                "topic": [
+                    "Ghostbusters"
+                ],
+                "entries": [
+                    "Proton Pack",
+                    "Slimy Ghost",
+                    "Ecto-1",
+                    "Who You Gonna Call"
+                ]
+            },
+            {
+                "topic": [
+                    "E.T. the Extra-Terrestrial",
+                    "ET",
+                    "E.T."
+                ],
+                "entries": [
+                    "Alien Visitor",
+                    "Reese's Pieces",
+                    "Bicycle Flying",
+                    "Phone Home"
+                ]
+            },
+            {
+                "topic": [
+                    "Toy Story"
+                ],
+                "entries": [
+                    "Woody",
+                    "Buzz Lightyear",
+                    "Andy's Room",
+                    "Pixar"
+                ]
+            },
+            {
+                "topic": [
+                    "Indiana Jones"
+                ],
+                "entries": [
+                    "Archaeologist",
+                    "Raiders",
+                    "Lost Ark",
+                    "Harrison Ford"
+                ]
+            },
+            {
+                "topic": [
+                    "Rocky"
+                ],
+                "entries": [
+                    "Boxing Ring",
+                    "Philadelphia",
+                    "Balboa",
+                    "Eye of the Tiger"
+                ]
+            },
+            {
+                "topic": [
+                    "Home Alone"
+                ],
+                "entries": [
+                    "Macaulay Culkin",
+                    "Sticky Bandits",
+                    "Christmas",
+                    "Kevin McCallister"
+                ]
+            },
+            {
+                "topic": [
+                    "Die Hard"
+                ],
+                "entries": [
+                    "John McClane",
+                    "Nakatomi Plaza",
+                    "Hostage Situation",
+                    "Christmas Eve"
+                ]
+            },
+            {
+                "topic": [
+                    "Jaws"
+                ],
+                "entries": [
+                    "Great White Shark",
+                    "Quint",
+                    "Amity Island",
+                    "Theme Music"
+                ]
+            },
+            {
+                "topic": [
+                    "Planet of the Apes"
+                ],
+                "entries": [
+                    "Ape Society",
+                    "Charlton Heston",
+                    "Forbidden Zone",
+                    "Statue of Liberty"
+                ]
+            },
+            {
+                "topic": [
+                    "The Terminator",
+                    "Terminator"
+                ],
+                "entries": [
+                    "Arnold Schwarzenegger",
+                    "Skynet",
+                    "Time Machine",
+                    "Judgment Day"
+                ]
+            },
+            {
+                "topic": [
+                    "Batman"
+                ],
+                "entries": [
+                    "Bruce Wayne",
+                    "Gotham City",
+                    "Joker",
+                    "Cape Crusader"
+                ]
+            },
+            {
+                "topic": [
+                    "Star Wars"
+                ],
+                "entries": [
+                    "Lucasfilm",
+                    "Jedi Knights",
+                    "The Force",
+                    "Empire"
+                ]
+            },
+            {
+                "topic": [
+                    "The Godfather",
+                    "Godfather"
+                ],
+                "entries": [
+                    "Don Corleone",
+                    "Mafia",
+                    "Sicily",
+                    "Offer"
+                ]
+            },
+            {
+                "topic": [
+                    "Finding Nemo"
+                ],
+                "entries": [
+                    "Clownfish",
+                    "Dory",
+                    "Great Barrier Reef",
+                    "Aquarium"
+                ]
+            },
+            {
+                "topic": [
+                    "Frozen"
+                ],
+                "entries": [
+                    "Anna and Elsa",
+                    "Arendelle",
+                    "Let It Go",
+                    "Ice Powers"
+                ]
+            },
+            {
+                "topic": [
+                    "The Little Mermaid",
+                    "Little Mermaid"
+                ],
+                "entries": [
+                    "Ariel",
+                    "Under the Sea",
+                    "Ursula",
+                    "Prince Eric"
+                ]
+            },
+            {
+                "topic": [
+                    "Beauty and the Beast"
+                ],
+                "entries": [
+                    "Belle",
+                    "Beast",
+                    "Gaston",
+                    "Enchanted Castle"
+                ]
+            },
+            {
+                "topic": [
+                    "Aladdin"
+                ],
+                "entries": [
+                    "Jasmine",
+                    "Genie",
+                    "Magic Carpet",
+                    "Jafar"
+                ]
+            },
+            {
+                "topic": [
+                    "The Jungle Book",
+                    "Jungle Book"
+                ],
+                "entries": [
+                    "Mowgli",
+                    "Baloo",
+                    "Shere Khan",
+                    "Bagheera"
+                ]
+            },
+            {
+                "topic": [
+                    "Cinderella"
+                ],
+                "entries": [
+                    "Glass Slipper",
+                    "Midnight",
+                    "Fairy Godmother",
+                    "Pumpkin Carriage"
+                ]
+            },
+            {
+                "topic": [
+                    "Starry Night",
+                    "The Starry Night",
+                    "Starry Night Painting",
+                    "Van Gogh's Starry Night"
+                ],
+                "entries": [
+                    "Vincent van Gogh",
+                    "Post-Impressionism",
+                    "Cypress Trees",
+                    "Night Sky"
+                ]
+            },
+            {
+                "topic": [
+                    "The Thinker",
+                    "Thinker",
+                    "Le Penseur",
+                    "Rodin's The Thinker"
+                ],
+                "entries": [
+                    "Auguste Rodin",
+                    "Bronze Sculpture",
+                    "Pensive Pose",
+                    "Contemplation"
+                ]
+            },
+            {
+                "topic": [
+                    "Romeo and Juliet",
+                    "The Tragedy of Romeo and Juliet",
+                    "Romeo & Juliet"
+                ],
+                "entries": [
+                    "William Shakespeare",
+                    "Forbidden Love",
+                    "Verona Setting",
+                    "Feuding Families"
+                ]
+            },
+            {
+                "topic": [
+                    "The Scream",
+                    "Scream",
+                    "Edvard Munch's Scream",
+                    "The Cry"
+                ],
+                "entries": [
+                    "Edvard Munch",
+                    "Expressionism",
+                    "Vibrant Colors",
+                    "Anxiety"
+                ]
+            },
+            {
+                "topic": [
+                    "The Night Watch",
+                    "Night Watch",
+                    "Rembrandt's Night Watch",
+                    "The Militia Company"
+                ],
+                "entries": [
+                    "Rembrandt van Rijn",
+                    "Group Portrait",
+                    "Dutch Golden Age",
+                    "Amsterdam Museum"
                 ]
             }
         ]
@@ -1999,6 +2381,817 @@
             }
         ]
     },
+    "persons_and_organizations": {
+        "topics": [
+            {
+                "topic": [
+                    "Albert Einstein",
+                    "Einstein"
+                ],
+                "entries": [
+                    "Theory of relativity",
+                    "Physicist",
+                    "E=mc^2",
+                    "Nobel Prize"
+                ]
+            },
+            {
+                "topic": [
+                    "Queen Elizabeth II",
+                    "Queen Elizabeth",
+                    "Elizabeth",
+                    "Elizabeth II"
+                ],
+                "entries": [
+                    "British monarchy",
+                    "Longest reigning",
+                    "Commonwealth",
+                    "Royal duties"
+                ]
+            },
+            {
+                "topic": [
+                    "Steve Jobs",
+                    "Jobs"
+                ],
+                "entries": [
+                    "Apple co-founder",
+                    "iPhone",
+                    "Innovative design",
+                    "Pixar"
+                ]
+            },
+            {
+                "topic": [
+                    "Mona Lisa",
+                    "La Gioconda"
+                ],
+                "entries": [
+                    "Leonardo da Vinci",
+                    "Louvre",
+                    "Renaissance",
+                    "Mysterious smile"
+                ]
+            },
+            {
+                "topic": [
+                    "Walt Disney",
+                    "Disney"
+                ],
+                "entries": [
+                    "Mickey Mouse",
+                    "Animation",
+                    "Theme parks",
+                    "Fantasy"
+                ]
+            },
+            {
+                "topic": [
+                    "Nelson Mandela",
+                    "Mandela"
+                ],
+                "entries": [
+                    "Apartheid",
+                    "South Africa",
+                    "Nobel Peace Prize",
+                    "Presidency"
+                ]
+            },
+            {
+                "topic": [
+                    "Shakespeare",
+                    "William Shakespeare"
+                ],
+                "entries": [
+                    "Playwright",
+                    "Romeo and Juliet",
+                    "Hamlet",
+                    "Elizabethan England"
+                ]
+            },
+            {
+                "topic": [
+                    "Mahatma Gandhi",
+                    "Gandhi"
+                ],
+                "entries": [
+                    "Nonviolence",
+                    "India",
+                    "Salt March",
+                    "Independence"
+                ]
+            },
+            {
+                "topic": [
+                    "Mother Teresa",
+                    "Teresa"
+                ],
+                "entries": [
+                    "Calcutta",
+                    "Missionaries of Charity",
+                    "Nobel Peace Prize",
+                    "Saint"
+                ]
+            },
+            {
+                "topic": [
+                    "Microsoft",
+                    "Micro-Soft"
+                ],
+                "entries": [
+                    "Windows",
+                    "Bill Gates",
+                    "Software",
+                    "Redmond"
+                ]
+            },
+            {
+                "topic": [
+                    "Vincent van Gogh",
+                    "Van Gogh"
+                ],
+                "entries": [
+                    "Starry Night",
+                    "Post-Impressionism",
+                    "Dutch",
+                    "Ear incident"
+                ]
+            },
+            {
+                "topic": [
+                    "Harvard University",
+                    "Harvard"
+                ],
+                "entries": [
+                    "Ivy League",
+                    "Cambridge, MA",
+                    "Research",
+                    "Founded 1636"
+                ]
+            },
+            {
+                "topic": [
+                    "Lionel Messi",
+                    "Messi"
+                ],
+                "entries": [
+                    "Barcelona",
+                    "Argentina",
+                    "Goalscorer",
+                    "Ballon d'Or"
+                ]
+            },
+            {
+                "topic": [
+                    "Tesla",
+                    "Nikola Tesla"
+                ],
+                "entries": [
+                    "Alternating current",
+                    "Inventor",
+                    "Eccentric genius",
+                    "Electricity"
+                ]
+            },
+            {
+                "topic": [
+                    "Mozart",
+                    "Wolfgang Amadeus Mozart"
+                ],
+                "entries": [
+                    "Composer",
+                    "Classical",
+                    "Symphony",
+                    "Viennese"
+                ]
+            },
+            {
+                "topic": [
+                    "The White House",
+                    "Whitehouse",
+                    "White House"
+                ],
+                "entries": [
+                    "Oval Office",
+                    "President's residence",
+                    "Washington, D.C.",
+                    "Historic"
+                ]
+            },
+            {
+                "topic": [
+                    "Florence Nightingale",
+                    "Nightingale"
+                ],
+                "entries": [
+                    "Nursing",
+                    "Crimean War",
+                    "Statistical work",
+                    "Victorian England"
+                ]
+            },
+            {
+                "topic": [
+                    "Barack Obama",
+                    "Obama"
+                ],
+                "entries": [
+                    "44th President",
+                    "Affordable Care Act",
+                    "Nobel Peace Prize",
+                    "Change"
+                ]
+            },
+            {
+                "topic": [
+                    "Jane Austen",
+                    "Austen"
+                ],
+                "entries": [
+                    "Pride and Prejudice",
+                    "Novelist",
+                    "Regency",
+                    "Social commentary"
+                ]
+            },
+            {
+                "topic": [
+                    "Mickey Mouse",
+                    "Mickey"
+                ],
+                "entries": [
+                    "Disney",
+                    "Animated",
+                    "Iconic ears",
+                    "Steamboat Willie"
+                ]
+            },
+            {
+                "topic": [
+                    "Muhammad Ali",
+                    "Ali"
+                ],
+                "entries": [
+                    "Boxer",
+                    "Float like a butterfly",
+                    "Heavyweight champion",
+                    "Olympic gold"
+                ]
+            },
+            {
+                "topic": [
+                    "Julius Caesar",
+                    "Caesar"
+                ],
+                "entries": [
+                    "Roman leader",
+                    "Dictator",
+                    "Assassination",
+                    "Gallic War"
+                ]
+            },
+            {
+                "topic": [
+                    "Napoleon Bonaparte",
+                    "Napoleon"
+                ],
+                "entries": [
+                    "Emperor",
+                    "French Revolution",
+                    "Waterloo",
+                    "Corsica"
+                ]
+            },
+            {
+                "topic": [
+                    "Thomas Edison",
+                    "Edison"
+                ],
+                "entries": [
+                    "Light bulb",
+                    "Inventor",
+                    "Menlo Park",
+                    "Phonograph"
+                ]
+            },
+            {
+                "topic": [
+                    "Coco Chanel",
+                    "Chanel"
+                ],
+                "entries": [
+                    "Fashion designer",
+                    "No. 5",
+                    "Little black dress",
+                    "Paris"
+                ]
+            },
+            {
+                "topic": [
+                    "Galileo Galilei",
+                    "Galileo"
+                ],
+                "entries": [
+                    "Astronomy",
+                    "Telescope",
+                    "Heliocentrism",
+                    "Italian"
+                ]
+            },
+            {
+                "topic": [
+                    "Michael Jordan",
+                    "Jordan"
+                ],
+                "entries": [
+                    "Basketball",
+                    "Chicago Bulls",
+                    "Air",
+                    "23"
+                ]
+            },
+            {
+                "topic": [
+                    "Charles Darwin",
+                    "Darwin"
+                ],
+                "entries": [
+                    "Evolution",
+                    "Natural selection",
+                    "Galapagos Islands",
+                    "Origin of species"
+                ]
+            },
+            {
+                "topic": [
+                    "Elon Musk",
+                    "Musk"
+                ],
+                "entries": [
+                    "Tesla",
+                    "SpaceX",
+                    "Entrepreneur",
+                    "Innovation"
+                ]
+            },
+            {
+                "topic": [
+                    "Beethoven",
+                    "Ludwig van Beethoven"
+                ],
+                "entries": [
+                    "Composer",
+                    "Symphonies",
+                    "Deafness",
+                    "Classical"
+                ]
+            },
+            {
+                "topic": [
+                    "Cleopatra",
+                    "Cleopatra VII"
+                ],
+                "entries": [
+                    "Egypt",
+                    "Julius Caesar",
+                    "Mark Antony",
+                    "Queen"
+                ]
+            },
+            {
+                "topic": [
+                    "Ernest Hemingway",
+                    "Hemingway"
+                ],
+                "entries": [
+                    "The Old Man and the Sea",
+                    "War correspondent",
+                    "Nobel Prize",
+                    "Writing style"
+                ]
+            },
+            {
+                "topic": [
+                    "Marilyn Monroe",
+                    "Monroe"
+                ],
+                "entries": [
+                    "Hollywood icon",
+                    "Blonde bombshell",
+                    "Diamonds",
+                    "The Seven Year Itch"
+                ]
+            },
+            {
+                "topic": [
+                    "Charles Dickens",
+                    "Dickens"
+                ],
+                "entries": [
+                    "Oliver Twist",
+                    "Victorian London",
+                    "Social commentary",
+                    "Serial publications"
+                ]
+            },
+            {
+                "topic": [
+                    "Martin Luther King Jr.",
+                    "Martin Luther King",
+                    "Martin Luther King JR",
+                    "Martin Luther King Junior",
+                    "MLK"
+                ],
+                "entries": [
+                    "Civil rights",
+                    "I Have a Dream",
+                    "Montgomery Bus Boycott",
+                    "Nobel Peace Prize"
+                ]
+            },
+            {
+                "topic": [
+                    "Alexander the Great",
+                    "Alexander"
+                ],
+                "entries": [
+                    "Macedonian empire",
+                    "Conqueror",
+                    "Aristotle",
+                    "Battle of Gaugamela"
+                ]
+            },
+            {
+                "topic": [
+                    "Meryl Streep",
+                    "Streep"
+                ],
+                "entries": [
+                    "The Iron Lady",
+                    "Academy Awards",
+                    "Drama roles",
+                    "Acting legend"
+                ]
+            },
+            {
+                "topic": [
+                    "Leonardo DiCaprio",
+                    "DiCaprio"
+                ],
+                "entries": [
+                    "Titanic",
+                    "Environmental activism",
+                    "Oscar winner",
+                    "Martin Scorsese collaborations"
+                ]
+            },
+            {
+                "topic": [
+                    "Scarlett Johansson",
+                    "Johansson"
+                ],
+                "entries": [
+                    "Black Widow",
+                    "Marvel Cinematic Universe",
+                    "Tony Award winner",
+                    "Independent films"
+                ]
+            },
+            {
+                "topic": [
+                    "Denzel Washington",
+                    "Washington"
+                ],
+                "entries": [
+                    "Training Day",
+                    "Oscar winner",
+                    "Stage acting",
+                    "Director"
+                ]
+            },
+            {
+                "topic": [
+                    "Angelina Jolie",
+                    "Jolie"
+                ],
+                "entries": [
+                    "Tomb Raider",
+                    "Humanitarian work",
+                    "Oscar winner",
+                    "Action roles"
+                ]
+            },
+            {
+                "topic": [
+                    "Tom Hanks",
+                    "Hanks"
+                ],
+                "entries": [
+                    "Forrest Gump",
+                    "Toy Story",
+                    "Oscar winner",
+                    "American culture icon"
+                ]
+            },
+            {
+                "topic": [
+                    "Natalie Portman",
+                    "Portman"
+                ],
+                "entries": [
+                    "Black Swan",
+                    "Star Wars prequels",
+                    "Harvard graduate",
+                    "Academy Award winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Robert De Niro",
+                    "De Niro"
+                ],
+                "entries": [
+                    "Taxi Driver",
+                    "The Godfather Part II",
+                    "Method acting",
+                    "Martin Scorsese collaborations"
+                ]
+            },
+            {
+                "topic": [
+                    "Jennifer Lawrence",
+                    "Lawrence"
+                ],
+                "entries": [
+                    "The Hunger Games",
+                    "Silver Linings Playbook",
+                    "Youngest Oscar nominee",
+                    "Comedy and drama"
+                ]
+            },
+            {
+                "topic": [
+                    "Morgan Freeman",
+                    "Freeman"
+                ],
+                "entries": [
+                    "The Shawshank Redemption",
+                    "Distinctive voice",
+                    "Narration roles",
+                    "Oscar winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Emma Watson",
+                    "Watson"
+                ],
+                "entries": [
+                    "Harry Potter series",
+                    "Hermione Granger",
+                    "Gender equality advocacy",
+                    "UN Women Goodwill Ambassador"
+                ]
+            },
+            {
+                "topic": [
+                    "Brad Pitt",
+                    "Pitt"
+                ],
+                "entries": [
+                    "Fight Club",
+                    "Once Upon a Time in Hollywood",
+                    "Oscar winner",
+                    "Hollywood producer"
+                ]
+            },
+            {
+                "topic": [
+                    "Cate Blanchett",
+                    "Blanchett"
+                ],
+                "entries": [
+                    "Blue Jasmine",
+                    "Elizabeth",
+                    "Oscar winner",
+                    "Versatile actress"
+                ]
+            },
+            {
+                "topic": [
+                    "Johnny Depp",
+                    "Depp"
+                ],
+                "entries": [
+                    "Pirates of the Caribbean",
+                    "Tim Burton collaborations",
+                    "Golden Globe winner",
+                    "Eccentric roles"
+                ]
+            },
+            {
+                "topic": [
+                    "Nicole Kidman",
+                    "Kidman"
+                ],
+                "entries": [
+                    "Moulin Rouge",
+                    "Big Little Lies",
+                    "Oscar winner",
+                    "Australian actress"
+                ]
+            },
+            {
+                "topic": [
+                    "Will Smith",
+                    "Smith"
+                ],
+                "entries": [
+                    "The Fresh Prince of Bel-Air",
+                    "Men in Black",
+                    "Oscar winner",
+                    "Blockbuster actor"
+                ]
+            },
+            {
+                "topic": [
+                    "Anne Frank",
+                    "The Diary of a Young Girl",
+                    "Anne Frank's Diary",
+                    "The Diary of Anne Frank"
+                ],
+                "entries": [
+                    "Holocaust",
+                    "Amsterdam Attic",
+                    "Diary",
+                    "Adolescent Experiences"
+                ]
+            },
+            {
+                "topic": [
+                    "Anne Hathaway",
+                    "Hathaway"
+                ],
+                "entries": [
+                    "Les Mis\u00e9rables",
+                    "The Devil Wears Prada",
+                    "Oscar winner",
+                    "Broadway experience"
+                ]
+            },
+            {
+                "topic": [
+                    "Christian Bale",
+                    "Bale"
+                ],
+                "entries": [
+                    "The Dark Knight",
+                    "American Psycho",
+                    "Method acting",
+                    "Oscar winner"
+                ]
+            },
+            {
+                "topic": [
+                    "Charlize Theron",
+                    "Theron"
+                ],
+                "entries": [
+                    "Mad Max: Fury Road",
+                    "Monster",
+                    "Oscar winner",
+                    "Action and drama"
+                ]
+            },
+            {
+                "topic": [
+                    "Hugh Jackman",
+                    "Jackman"
+                ],
+                "entries": [
+                    "Wolverine",
+                    "The Greatest Showman",
+                    "Tony Award winner",
+                    "Australian star"
+                ]
+            },
+            {
+                "topic": [
+                    "United Nations",
+                    "UN"
+                ],
+                "entries": [
+                    "Peacekeeping",
+                    "International Law",
+                    "Human Rights",
+                    "Security Council"
+                ]
+            },
+            {
+                "topic": [
+                    "The European Union",
+                    "European Union",
+                    "EU",
+                    "The EU",
+                    "European Economic Community"
+                ],
+                "entries": [
+                    "Maastricht Treaty",
+                    "Brussels",
+                    "Euro Currency",
+                    "Schengen Area"
+                ]
+            },
+            {
+                "topic": [
+                    "World Health Organization",
+                    "WHO",
+                    "the WHO",
+                    "the World Health Organization"
+                ],
+                "entries": [
+                    "Pandemic Response",
+                    "Vaccination Campaigns",
+                    "Health Regulations",
+                    "Global Health Body"
+                ]
+            },
+            {
+                "topic": [
+                    "NASA",
+                    "National Aeronautics and Space Administration"
+                ],
+                "entries": [
+                    "Space Exploration",
+                    "Apollo Missions",
+                    "Mars Rovers",
+                    "Astronauts"
+                ]
+            },
+            {
+                "topic": [
+                    "International Monetary Fund",
+                    "IMF"
+                ],
+                "entries": [
+                    "International Financial Stability",
+                    "Economic Surveillance",
+                    "Bailout Packages",
+                    "Quota System"
+                ]
+            },
+            {
+                "topic": [
+                    "Red Cross",
+                    "International Committee of the Red Cross",
+                    "ICRC"
+                ],
+                "entries": [
+                    "Humanitarian Aid",
+                    "Geneva Conventions",
+                    "Disaster Relief",
+                    "Neutrality"
+                ]
+            },
+            {
+                "topic": [
+                    "Greenpeace",
+                    "Green Peace",
+                    "GP"
+                ],
+                "entries": [
+                    "Environmental Activism",
+                    "Direct Action",
+                    "Whale Conservation",
+                    "Climate Change"
+                ]
+            },
+            {
+                "topic": [
+                    "UNESCO",
+                    "United Nations Educational, Scientific and Cultural Organization"
+                ],
+                "entries": [
+                    "World Heritage Sites",
+                    "Cultural Preservation",
+                    "Education Programs",
+                    "Science Initiatives"
+                ]
+            },
+            {
+                "topic": [
+                    "NATO",
+                    "North Atlantic Treaty Organization"
+                ],
+                "entries": [
+                    "Military Alliance",
+                    "Collective Defense",
+                    "Brussels Headquarters",
+                    "Member Nations"
+                ]
+            }
+        ]
+    },
     "places": {
         "topics": [
             {
@@ -2518,7 +3711,7 @@
             }
         ]
     },
-    "sports_games_hobbies": {
+    "sports_games_hobbies_cuisine": {
         "topics": [
             {
                 "topic": [
@@ -2886,6 +4079,254 @@
                     "Focus",
                     "Silence",
                     "Tranquility"
+                ]
+            },
+            {
+                "topic": [
+                    "Pizza",
+                    "Pizzerias",
+                    "Italian Pie",
+                    "Cheese Slice"
+                ],
+                "entries": [
+                    "Tomato Sauce",
+                    "Mozzarella",
+                    "Pepperoni",
+                    "Oven-baked"
+                ]
+            },
+            {
+                "topic": [
+                    "Tacos",
+                    "Taco",
+                    "Mexican Handheld",
+                    "Tortilla Wrap"
+                ],
+                "entries": [
+                    "Corn Tortilla",
+                    "Salsa",
+                    "Ground Beef",
+                    "Lettuce"
+                ]
+            },
+            {
+                "topic": [
+                    "Dim Sum",
+                    "Dimsum",
+                    "Cantonese Bites",
+                    "Dragon Buns"
+                ],
+                "entries": [
+                    "Steamed Buns",
+                    "Teahouse",
+                    "Dumplings",
+                    "Chicken Feet"
+                ]
+            },
+            {
+                "topic": [
+                    "Hamburger",
+                    "Burger",
+                    "Beef Patty",
+                    "Burgers"
+                ],
+                "entries": [
+                    "Ground Beef",
+                    "Sesame Bun",
+                    "Pickles",
+                    "Grilled"
+                ]
+            },
+            {
+                "topic": [
+                    "Coffee",
+                    "Coffees",
+                    "Java",
+                    "Brewed Beans"
+                ],
+                "entries": [
+                    "Espresso Shot",
+                    "Arabica",
+                    "Roasted Beans",
+                    "Barista"
+                ]
+            },
+            {
+                "topic": [
+                    "Sushi",
+                    "Sashimi",
+                    "Rolls",
+                    "Nigiri"
+                ],
+                "entries": [
+                    "Raw Fish",
+                    "Soy Sauce",
+                    "Seaweed Wrap",
+                    "Wasabi"
+                ]
+            },
+            {
+                "topic": [
+                    "Curry",
+                    "Curries",
+                    "Spiced Stew",
+                    "Indian Curry"
+                ],
+                "entries": [
+                    "Coconut Milk",
+                    "Turmeric",
+                    "Chickpeas",
+                    "Indian Dish"
+                ]
+            },
+            {
+                "topic": [
+                    "Paella",
+                    "Valencian Paella",
+                    "Seafood Paella"
+                ],
+                "entries": [
+                    "Saffron",
+                    "Spanish",
+                    "Seafood",
+                    "Rice Dish"
+                ]
+            },
+            {
+                "topic": [
+                    "Pad Thai",
+                    "Thai Noodles",
+                    "Street Pad Thai",
+                    "Thai Stir-Fry"
+                ],
+                "entries": [
+                    "Rice Noodles",
+                    "Tamarind Paste",
+                    "Peanuts",
+                    "Thailand"
+                ]
+            },
+            {
+                "topic": [
+                    "Croissant",
+                    "Butter Croissant",
+                    "Croissants"
+                ],
+                "entries": [
+                    "French",
+                    "Flaky Layers",
+                    "Breakfast",
+                    "Pastry"
+                ]
+            },
+            {
+                "topic": [
+                    "Lasagna",
+                    "Lasagne",
+                    "Layered Pasta",
+                    "Italian Casserole"
+                ],
+                "entries": [
+                    "Oven-baked",
+                    "Ground Meat",
+                    "Tomato Sauce",
+                    "Layers"
+                ]
+            },
+            {
+                "topic": [
+                    "Ramen",
+                    "Ramen Noodles",
+                    "Japanese Soup",
+                    "Broth Noodles"
+                ],
+                "entries": [
+                    "Soy Sauce",
+                    "Pork Broth",
+                    "Miso",
+                    "Egg"
+                ]
+            },
+            {
+                "topic": [
+                    "Nachos",
+                    "Nacho Platter",
+                    "Corn Tortilla Chips",
+                    "Cheesy Nachos"
+                ],
+                "entries": [
+                    "Cheese",
+                    "Corn Chips",
+                    "Sour Cream",
+                    "Guacamole"
+                ]
+            },
+            {
+                "topic": [
+                    "Tapas",
+                    "Spanish Tapas",
+                    "Small Plates",
+                    "Tapas Bar"
+                ],
+                "entries": [
+                    "Spanish",
+                    "Manchego Cheese",
+                    "Chorizo",
+                    "Shared"
+                ]
+            },
+            {
+                "topic": [
+                    "Kimchi",
+                    "Kimchee"
+                ],
+                "entries": [
+                    "Napa Cabbage",
+                    "Chili Pepper",
+                    "Korean Side Dish",
+                    "Fermentation"
+                ]
+            },
+            {
+                "topic": [
+                    "Quiche",
+                    "French Tart",
+                    "Quiches"
+                ],
+                "entries": [
+                    "Egg Custard",
+                    "Pastry Shell",
+                    "French Savory Pie",
+                    "Cheese Filling"
+                ]
+            },
+            {
+                "topic": [
+                    "Schnitzel",
+                    "Breaded Cutlet",
+                    "Austrian Schnitzel",
+                    "Fried Schnitzel"
+                ],
+                "entries": [
+                    "Breaded and Fried",
+                    "Austrian",
+                    "Lemon Wedge",
+                    "Flat"
+                ]
+            },
+            {
+                "topic": [
+                    "Bread",
+                    "Bread Making",
+                    "Bread Baking",
+                    "Bakery",
+                    "Baker"
+                ],
+                "entries": [
+                    "Yeast",
+                    "Dough",
+                    "Baking",
+                    "Crust"
                 ]
             }
         ]
@@ -3698,6 +5139,17 @@
                     "Wood Stick",
                     "Light",
                     "Box"
+                ]
+            },
+            {
+                "topic": [
+                    "Lego"
+                ],
+                "entries": [
+                    "Plastic bricks",
+                    "Toy",
+                    "Danish origins",
+                    "Minifigures"
                 ]
             }
         ]
