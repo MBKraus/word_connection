@@ -10,7 +10,7 @@ import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
-import { isFuzzyMatchSimple, calculateRoundPoints } from './utils.js';
+import { isFuzzyMatchSimple, calculateRoundPoints, createNextGameTimer } from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
@@ -129,6 +129,15 @@ function createGameElements(scene) {
     if (isMobile()) {
         createKeyboard(scene, game);
     }
+
+    // Create and start the timer globally
+    scene.nextGameTimer = createNextGameTimer(
+        GameStorage.getNextPlayTime,
+        (text) => {
+            // Placeholder for global updates, if needed.
+        }
+    );
+    scene.nextGameTimer.start();
 }
 
 // Visibility management helper
@@ -312,8 +321,6 @@ function startNextRound(scene) {
 
 function startRound(scene) {
 
-    console.log("Starting round")
-    
     // Start a new round
     resetRoundState(scene);
     
@@ -369,19 +376,37 @@ function handleRoundEndComplete(scene) {
 
     const totalScoreText = `${scene.score} Points`;
 
-    scene.completeTotalScoreText.setText(totalScoreText);
-
     const isGameComplete = scene.currentRound >= scene.allRounds.length - 1;
 
     if (isGameComplete) {
         scene.completeTitle.setText('All rounds completed!');
         scene.completeSubTitle.setText('You did great! See you tomorrow!');
 
-        endGame(scene);
+        scene.completeNextGameLabel.setVisible(true);
+        scene.completeNextGameTime.setVisible(true);
+
+        scene.completeInterRoundScore.setVisible(false);
+
+        scene.completeFinalScoreLabel.setVisible(true);
+        scene.completeFinalScoreValue.setText(totalScoreText);
+        scene.completeFinalScoreValue.setVisible(true);
+
         scene.okButton.setVisible(false);  // hides the button
+
+        endGame(scene);
     } else {
         scene.completeTitle.setText('Round completed!');
         scene.completeSubTitle.setText('You did great!');
+
+        scene.completeInterRoundScore.setText(totalScoreText);
+        scene.completeInterRoundScore.setVisible(true);
+
+        scene.completeFinalScoreLabel.setVisible(false);
+        scene.completeFinalScoreValue.setVisible(false);
+
+        scene.completeNextGameLabel.setVisible(false);
+        scene.completeNextGameTime.setVisible(false);
+      
         scene.okButton.setVisible(true);
     }
 
@@ -397,8 +422,19 @@ function handleRoundEndOutofTime(scene) {
     if (isGameComplete) {
         endGame(scene);
         scene.nextRoundButton.setVisible(false);  // hides the button
+
+        scene.scoreLabel.setX(scene.scale.width * 0.25)
+        scene.scoreValue.setX(scene.scale.width * 0.25)
+
+        scene.nextGameLabel.setVisible(true)
+        scene.nextGameTime.setVisible(true);
     } else {
         scene.nextRoundButton.setVisible(true);
+        scene.scoreLabel.setX(scene.scale.width * 0.5)
+        scene.scoreValue.setX(scene.scale.width * 0.5)
+
+        scene.nextGameLabel.setVisible(false)
+        scene.nextGameTime.setVisible(false);
     }
 
     showFailureEndScreen(scene);

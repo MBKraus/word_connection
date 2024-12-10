@@ -120,6 +120,9 @@ export function clearTimerEvent(scene) {
 export function startTimer(scene) {
     clearTimerEvent(scene);
 
+    // Make stats button active again
+    scene.chartGraphics.setInteractive(true);
+
     // Reset game state
     scene.isGameActive = true;
     scene.countdownAudioInRoundPlayed = false;
@@ -139,11 +142,6 @@ export function startTimer(scene) {
         args: [scene],
         loop: true
     });
-
-    // Ensure the timer event was created
-    if (!scene.timerEvent) {
-        console.error('Error creating timer event');
-    }
 }
 
 function updateTimer(scene) {

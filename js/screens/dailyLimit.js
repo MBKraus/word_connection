@@ -1,6 +1,3 @@
-import { GameStorage } from '../gameStorage.js';
-import { fetchGameStats } from '../gameStorage.js';
-import { auth } from '../auth.js';
 
 export function createDailyLimitScreen(scene) {
     const screen = scene.add.container(0, 0);
@@ -40,68 +37,19 @@ export function createDailyLimitScreen(scene) {
     }).setOrigin(0.5);
     screen.add(countdownText);
 
-    // Placeholder for stats text (hidden until data loads)
-    const statsText = scene.add.text(scene.scale.width * 0.5, scene.scale.height * 0.6, "Loading stats...", {
-        fontSize: scene.scale.width * 0.035 + 'px',
-        fontFamily: 'Poppins',
-        color: '#000000',
-        align: 'center',
-        lineSpacing: 10
-    }).setOrigin(0.5);
-    statsText.setVisible(false);
-    screen.add(statsText);
-
-    // Countdown timer function
-    let countdownInterval;
-    function updateCountdown() {
-        const now = new Date();
-        const nextPlay = GameStorage.getNextPlayTime();
-        const diff = nextPlay - now;
-
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        countdownText.setText(
-            `Next puzzle available in:\n${hours}h ${minutes}m ${seconds}s`
-        );
-    }
-
     scene.dailyLimitScreen = screen;
 
     return {
         show: async () => {
             screen.setVisible(true);
-            updateCountdown();
-            countdownInterval = setInterval(updateCountdown, 1000);
+            scene.nextGameTimer.onUpdate = (text) => countdownText.setText(text);
 
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(false);
             }
-
-            // If the user is logged in, fetch and display stats
-            if (auth.currentUser) {
-                const stats = await fetchGameStats(auth.currentUser.uid);
-                if (stats) {
-                    // Update stats text
-                    statsText.setText([
-                        `Total Games Played: ${stats.totalGamesPlayed}`,
-                        `Average # Topics Guessed: ${stats.averageTopicsGuessed}`,
-                        `Last Played: ${stats.lastPlayed ? stats.lastPlayed.toDateString() : 'N/A'}`
-                    ]);
-                    statsText.setVisible(true);
-
-                } else {
-                    statsText.setText("Error loading stats.");
-                    statsText.setVisible(true);
-                }
-            }
         },
         hide: () => {
             screen.setVisible(false);
-            if (countdownInterval) {
-                clearInterval(countdownInterval);
-            }
 
             if (scene.authDOMElement) {
                 scene.authDOMElement.setVisible(true);

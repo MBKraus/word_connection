@@ -20,7 +20,65 @@ export function createFailureEndScreen(scene) {
             fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
     }).setOrigin(0.5);
-    scene.failureEndScreen.add( scene.failureTitle);
+    scene.failureEndScreen.add(scene.failureTitle);
+
+
+    // Add score at the bottom
+    scene.scoreLabel = scene.add.text(
+        scene.scale.width * 0.5,
+        scene.scale.height * 0.63,
+        `Your Score`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
+        align: 'center',
+    }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.scoreLabel);
+
+    scene.scoreValue = scene.add.text(
+        scene.game.scale.width * 0.5,
+        scene.game.scale.height * 0.67,
+        `${scene.score}`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.scoreValue);
+
+    scene.nextGameLabel = scene.add.text(
+        scene.scale.width * 0.75,
+        scene.scale.height * 0.63,
+        `Next game available in`,
+    {
+        fontFamily: 'Poppins Light',
+        fontSize: scene.scale.width * 0.03 + 'px',
+        color: STYLES.colors.text,
+        align: 'center',
+    }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.nextGameLabel);
+    scene.nextGameLabel.setVisible(false)
+
+    scene.nextGameTime = scene.add.text(
+        scene.game.scale.width * 0.75,
+        scene.game.scale.height * 0.67,
+        `test`,
+        {
+            fontFamily: 'Poppins',
+            fontSize: scene.scale.width * 0.06 + 'px',
+            fontWeight: 'bold',
+            color: STYLES.colors.text,
+            align: 'center',
+        }
+    ).setOrigin(0.5);
+    scene.failureEndScreen.add(scene.nextGameTime);
+    scene.nextGameTime.setVisible(false);
 
     // Add Next Round button at the bottom
     const buttonText = scene.currentRound >= scene.allRounds.length - 1 ? 'Statistics' : 'Next Round';
@@ -102,6 +160,8 @@ export const showFailureEndScreen = (scene) => {
                 align: 'center',
             }).setWordWrapWidth(containerWidth * 0.9).setOrigin(0.5);
 
+            topicText.descText = true; // Mark for cleanup
+
             const entriesText = scene.add.text(0, 0, topicObj.entries.join(' - '), {
                 fontFamily: 'Poppins',
                 fontSize: entryFontSize,
@@ -109,6 +169,8 @@ export const showFailureEndScreen = (scene) => {
                 align: 'center',
                 wordWrap: { width: containerWidth * 0.9 },
             }).setOrigin(0.5);
+
+            entriesText.descText = true; // Mark for cleanup
 
             // Calculate total height
             const totalHeight = padding * 2 + topicText.height + entriesText.height;
@@ -123,6 +185,8 @@ export const showFailureEndScreen = (scene) => {
                 totalHeight, // height
                 borderRadius // radius
             );
+
+            graphics.descText = true; // Mark for cleanup
 
             // Position the topic and entries text inside the rectangle
             topicText.setPosition(
@@ -143,43 +207,28 @@ export const showFailureEndScreen = (scene) => {
             scene.failureEndScreen.add(topicText);
             scene.failureEndScreen.add(entriesText);
         });
-
-        // Add score at the bottom
-        const scoreLabel = scene.add.text(
-            scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.63,
-            `Your Score`,
-            {
-                fontFamily: 'Poppins Light',
-                fontSize: fontSize,
-                color: '#000000',
-                align: 'center',
-            }
-        ).setOrigin(0.5);
-        scoreLabel.descText = true; // Mark for cleanup
-        scene.failureEndScreen.add(scoreLabel);
-
-        const scoreValue = scene.add.text(
-            scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.66,
-            `${scene.score}`,
-            {
-                fontFamily: 'Poppins',
-                fontSize: fontSize,
-                fontWeight: 'bold',
-                color: '#000000',
-                align: 'center',
-            }
-        ).setOrigin(0.5);
-        scoreValue.descText = true; // Mark for cleanup
-        scene.failureEndScreen.add(scoreValue);
+        
     }
+
+    scene.nextGameTimer.setOnUpdate((text) => {
+        scene.nextGameTime.setText(text);
+    });
 
     // Show the failure end screen
     showScreen(scene, 'failureEndScreen');
 };
 
 
+export const hideFailureEndScreen = (scene) => {
+    const failureEndScreen = scene.failureEndScreen;
 
+    // Destroy all dynamically added children marked as descText
+    failureEndScreen.getAll().forEach(child => {
+        if (child.descText) {
+            child.destroy(); // Destroy the child from the scene
+        }
+    });
 
-export const hideFailureEndScreen = (scene) => hideScreen(scene, 'failureEndScreen');
+    // Hide the screen
+    hideScreen(scene, 'failureEndScreen');
+};
