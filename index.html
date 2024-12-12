@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- Google Adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6630596411552747"
-     crossorigin="anonymous"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6630596411552747"
+     crossorigin="anonymous"></script> -->
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBY4JREBD"></script>
     <script>
@@ -23,20 +23,21 @@
 </head>
 
 <body>
-    <div id="ad-container">
-        <ins class="adsbygoogle"
-             style="display:inline-block"
-             data-ad-client="ca-pub-31195613323232"
-             data-ad-slot="YOUR_AD_SLOT_ID"
-             data-full-width-responsive="true"></ins>
-    </div>
-    <script>
-        // Your existing AdSense script
-        window.adsbygoogle = window.adsbygoogle || [];
-        var adBreak = adConfig = function(o) {
-            adsbygoogle.push(o);
-        }
-    </script>
+    <!-- <div id="ad-container">
+    </div> -->
+    <style>
+        .test_responsive { width: 320px; height: 100px; }
+        @media(min-width: 500px) { .test_responsive { width: 468px; height: 60px; } }
+        @media(min-width: 800px) { .test_responsive { width: 728px; height: 90px; } }
+        </style>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1234567890123456" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle test_responsive"
+             style="display:block"
+             data-ad-client="ca-pub-6630596411552747"
+             data-ad-slot="6475068180"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     <div id="game-container"></div>
     <div id="loading-spinner"></div>
     <div id="cookiewall" class="cookiewall">
