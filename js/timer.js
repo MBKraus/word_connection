@@ -67,9 +67,9 @@ function updateTimerDisplay(scene, forceTextUpdate = false) {
     scene.timeBar.clear();
 
     // Calculate dimensions and position
-    const inputBgWidth = scene.game.scale.width * 1;
+    const inputBgWidth = scene.game.scale.width * 0.88;
     const inputBgHeight = scene.game.scale.height * 0.055;
-    const x = (scene.game.scale.width - inputBgWidth) / 2;
+    const x = scene.game.scale.width * 0.12;
 
     // Always draw the background bar first
     scene.timeBar.fillStyle(0xE2E8F1, 1); // Background color (light grey)
@@ -120,8 +120,9 @@ export function clearTimerEvent(scene) {
 export function startTimer(scene) {
     clearTimerEvent(scene);
 
-    // Make stats button active again
+    // Make stats button and giveup active
     scene.chartGraphics.setInteractive(true);
+    scene.giveUpButton.setInteractive(true);
 
     // Reset game state
     scene.isGameActive = true;
@@ -168,7 +169,7 @@ function updateTimer(scene) {
         
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length < 3) {
             scene.time.delayedCall(1500, () => {
-                window.handleRoundEndOutofTime(scene);
+                window.handleRoundEndNotAllTopicsGuessed(scene);
             }, [], scene);
         }
     }

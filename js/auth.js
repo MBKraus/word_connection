@@ -66,8 +66,8 @@ onAuthStateChanged(auth, async (user) => {
         if (hasPlayed) {
             console.log("has played per DB check ")
             // Comment out to turn off daily limit screen
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
+            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            // dailyLimitScreen.show();
         } 
     }
 });
@@ -299,26 +299,26 @@ async function hideAuthModal() {
 
     // Comment below out to turn off daily limit screen
 
-    if (isAuthSuccess && auth.currentUser) {
-        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
+    // if (isAuthSuccess && auth.currentUser) {
+    //     const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
         
-        if (hasPlayed) {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            dailyLimitScreen.show();
-        } else if (window.gameScene) {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        }} else {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-        }
+    //     if (hasPlayed) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+    //         dailyLimitScreen.show();
+    //     } else if (window.gameScene) {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //         hideWelcomeScreen(window.gameScene);
+    //         window.startGame(window.gameScene);
+    //     }} else {
+    //         modalContainer.style.display = 'none';
+    //         overlay.style.display = 'none';
+    //         isAuthModalOpen = false;
+    //     }
 
     // Comment above out to turn off daily limit screen
 

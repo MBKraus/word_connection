@@ -18,8 +18,9 @@ export function createCountdown(scene) {
 
 export function showCountdown(scene) {
 
-    // Disable stats button during countdown
+    // Disable stats and giveup button during countdown
     scene.chartGraphics.disableInteractive();
+    scene.giveUpButton.disableInteractive();
 
     scene.guessedTopicsOrder = [];
 
