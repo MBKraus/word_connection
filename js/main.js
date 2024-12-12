@@ -73,7 +73,7 @@ function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 10;
+    this.timerDuration = 60;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
