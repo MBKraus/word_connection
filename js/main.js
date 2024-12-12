@@ -1,5 +1,5 @@
 import { generateGameRounds} from './topics.js';
-import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark,
+import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark, createGiveUpButton,
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createCompleteScreen, showCompleteScreen, hideCompleteScreen } from './screens/complete.js';
@@ -67,13 +67,13 @@ window.showGameElements = (scene) => setElementsVisibility(scene, true);
 window.startRound = startRound;
 window.startNextRound = startNextRound;
 window.endGame = endGame;
-window.handleRoundEndOutofTime = handleRoundEndOutofTime;
+window.handleRoundEndNotAllTopicsGuessed = handleRoundEndNotAllTopicsGuessed;
 
 function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 60;
+    this.timerDuration = 10;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
@@ -86,11 +86,11 @@ function create() {
     const TOPICS_PER_ROUND = 3;
   
     // Check if user has already played today (cookie-based)
-    if (GameStorage.hasPlayedTodayCookie()) {
-        // Only create and show the daily limit screen
-        this.dailyLimitControls = createDailyLimitScreen(this);
-        this.dailyLimitControls.show();
-    } else {
+    // if (GameStorage.hasPlayedTodayCookie()) {
+    //     // Only create and show the daily limit screen
+    //     this.dailyLimitControls = createDailyLimitScreen(this);
+    //     this.dailyLimitControls.show();
+    // } else {
         
     createWelcomeScreen(this);
     showWelcomeScreen(this, 'welcomeScreen');
@@ -106,7 +106,7 @@ function create() {
     createFailureEndScreen(this);
     createCountdown(this);
 
-    }
+    // }
 
     document.querySelector('.text-container').classList.add('loaded');
 }
@@ -120,6 +120,7 @@ function createGameElements(scene) {
     createTimerDisplay(scene);
     createHeaderIcons(scene);
     createCorrectGuessContainer(scene);
+    createGiveUpButton(scene);
     createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.98 * 0.4), scene.inputDisplay.y);
     createCrossIcon(scene);
 
@@ -284,7 +285,7 @@ function checkGuess(scene, guess) {
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
             scene.isGameActive = false; // Disable further guesses
             scene.time.delayedCall(1500, () => {
-                handleRoundEndComplete(scene);
+                handleRoundEndAllTopicsGuessed(scene);
             });
         }
     } else {
@@ -356,7 +357,7 @@ function resetRoundState(scene) {
     }
 }
 
-function handleRoundEndComplete(scene) {
+function handleRoundEndAllTopicsGuessed(scene) {
     // Handle the end of the round when you guessed all three topics
     clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
@@ -412,7 +413,7 @@ function handleRoundEndComplete(scene) {
 }
 
 
-function handleRoundEndOutofTime(scene) {
+function handleRoundEndNotAllTopicsGuessed(scene) {
     clearTimerEvent(scene);
     scene.countdownAudioInRoundPlayed = false;
 

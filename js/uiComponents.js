@@ -62,8 +62,6 @@ export function createLogo(scene, width, height, yPosition, xPosition) {
     return logo;
 }
 
-
-
 export function createHeader(scene) {
 
     // Create the logo
@@ -95,7 +93,7 @@ export function getStartY(scene) {
 }
 
 export function createInputDisplay(scene) {
-    const inputBgWidth = scene.game.scale.width * 0.98;
+    const inputBgWidth = scene.game.scale.width * 0.88;
     const inputBgHeight = scene.game.scale.height * 0.055;
     const startY = getStartY(scene);
 
@@ -106,7 +104,7 @@ export function createInputDisplay(scene) {
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xE2E8F1, 1);
     inputBgGraphics.fillRoundedRect(
-        scene.game.scale.width * 0.5 - inputBgWidth / 2,
+        scene.game.scale.width * 0.12,
         scene.initialTimeBarY,
         inputBgWidth,
         inputBgHeight,
@@ -116,7 +114,7 @@ export function createInputDisplay(scene) {
     // Input Text Display with Placeholder
     const placeholderText = "Type your answer";
     scene.inputDisplay = scene.add.text(
-        scene.game.scale.width * 0.5,
+        scene.game.scale.width * 0.57,
         startY,
         scene.currentInputText || placeholderText, // Show placeholder if no input
         {
@@ -131,6 +129,77 @@ export function createInputDisplay(scene) {
     scene.timeBar = scene.add.graphics();
     scene.timeBar.fillStyle(0xB8B8B8, 1).setDepth(1);
 }
+
+export function createGiveUpButton(scene) {
+    const buttonWidth = scene.game.scale.width * 0.10;
+    const buttonHeight = scene.game.scale.height * 0.055;
+    const buttonX = scene.game.scale.width * 0.05;
+    const buttonY = getStartY(scene);
+
+    const cornerRadius = 15;
+    const defaultColor = 0xE2E8F1;
+    const hoverColor = 0xD8DEE7;
+
+    // Create a container for the button
+    scene.giveUpButton = scene.add.container(buttonX, buttonY);
+
+    // Create the button graphics
+    const buttonGraphics = scene.add.graphics();
+    scene.giveUpButton.add(buttonGraphics);
+
+    // Initial button state
+    buttonGraphics.fillStyle(defaultColor, 1);
+    buttonGraphics.fillRoundedRect(
+        -buttonWidth / 2,
+        -buttonHeight / 2,
+        buttonWidth,
+        buttonHeight,
+        cornerRadius
+    );
+
+    // Add text
+    const buttonText = scene.add.text(0, 0, 'Give\nUp', {
+        fontFamily: 'Poppins',
+        fontSize: scene.scale.width * 0.0275 + 'px',
+        color: '#000000',
+        align: 'center'
+    }).setOrigin(0.5);
+    scene.giveUpButton.add(buttonText);
+
+    // Make the container interactive
+    scene.giveUpButton.setSize(buttonWidth, buttonHeight);
+    scene.giveUpButton.setInteractive();
+
+    // Add hover effects
+    scene.giveUpButton.on('pointerover', () => {
+        buttonGraphics.clear();
+        buttonGraphics.fillStyle(hoverColor, 1);
+        buttonGraphics.fillRoundedRect(
+            -buttonWidth / 2,
+            -buttonHeight / 2,
+            buttonWidth,
+            buttonHeight,
+            cornerRadius
+        );
+    });
+
+    scene.giveUpButton.on('pointerout', () => {
+        buttonGraphics.clear();
+        buttonGraphics.fillStyle(defaultColor, 1);
+        buttonGraphics.fillRoundedRect(
+            -buttonWidth / 2,
+            -buttonHeight / 2,
+            buttonWidth,
+            buttonHeight,
+            cornerRadius
+        );
+    });
+
+    scene.giveUpButton.on('pointerdown', () => {
+        window.handleRoundEndNotAllTopicsGuessed(scene);
+    });
+}
+
 
 export function createRoundDisplay(scene) {
 
