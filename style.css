@@ -16,8 +16,9 @@ input, textarea, select {
     font-size: 16px; /* Ensure font size is 16px or larger */
 }
 
-#ad-container {
-    display: flex; /* Center content within the ad container */
+/* styles.css */
+.responsive_ad {
+    display: flex; /* Center content within the container */
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -26,10 +27,23 @@ input, textarea, select {
     transform: translateX(-50%); /* Adjust for the width to center horizontally */
     z-index: 1000; /* Ensure it's above other elements */
     background-color: black; /* Background color for visibility */
-    width: 100%; /* Make it span the full width of the screen */
-    height: 90px !important;
-    max-width: 728px; /* Restrict to max width */
+    width: 300px; /* Default width for smaller screens */
+    height: 50px; /* Default height for smaller screens */
     margin: 0 auto; /* Automatically center horizontally */
+}
+
+@media (min-width: 729px) {
+    .responsive_ad {
+        width: 728px; /* Set to 728px for screens 729px and larger */
+        height: 90px; /* Set to 90px for larger screens */
+    }
+}
+
+@media (max-width: 728px) {
+    .responsive_ad {
+        width: 300px !important; /* Set to 300px for screens 728px or smaller */
+        height: 50px !important; /* Set to 50px for screens 728px or smaller */
+    }
 }
 
 #game-container {
@@ -89,11 +103,6 @@ height: auto;
 
 /* Override for mobile */
 @media screen and (max-width: 728px) {
-    #ad-container {
-        width: 300px !important;
-        height: 50px !important;
-        max-width: 95vw; /* Prevent overflow */
-    }
 
     #game-container {
         margin-top: 50px; /* Adjust the margin-top for smaller screens */
