@@ -96,15 +96,37 @@ export function createInputDisplay(scene) {
     const inputBgWidth = scene.game.scale.width * 0.88;
     const inputBgHeight = scene.game.scale.height * 0.055;
     const startY = getStartY(scene);
+    const x = scene.game.scale.width * 0.12;
 
-    // Store the initial Y position for the timebar
     scene.initialTimeBarY = startY - inputBgHeight / 2;
 
-    // Background for input
+    // Create a container for the time bar
+    scene.timeBarContainer = scene.add.container(0, 0);
+
+    // Create the time bar graphics
+    scene.timeBar = scene.add.graphics();
+    scene.timeBarContainer.add(scene.timeBar);
+
+    // Create a mask using a rounded rectangle
+    const maskGraphics = scene.add.graphics();
+    maskGraphics.fillStyle(0xffffff);
+    maskGraphics.fillRoundedRect(
+        x,
+        scene.initialTimeBarY,
+        inputBgWidth,
+        inputBgHeight,
+        20
+    );
+
+    // Apply the mask to the time bar container
+    const mask = maskGraphics.createGeometryMask();
+    scene.timeBarContainer.setMask(mask);
+
+    // Background for input (if needed for other purposes)
     const inputBgGraphics = scene.add.graphics();
     inputBgGraphics.fillStyle(0xE2E8F1, 1);
     inputBgGraphics.fillRoundedRect(
-        scene.game.scale.width * 0.12,
+        x,
         scene.initialTimeBarY,
         inputBgWidth,
         inputBgHeight,
