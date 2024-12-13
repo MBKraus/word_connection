@@ -1,5 +1,6 @@
 import { createScreen, createText, createButton, hideScreen, showScreen, STYLES } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
+import { showStatsPopup } from './statsPopUp.js';
 
 // Main screen creation functions
 export function createCompleteScreen(scene) {
@@ -128,8 +129,12 @@ export function createCompleteScreen(scene) {
         scene.scale.height * 0.74,
         'Next Round',
         () => {
-            hideCompleteScreen(scene);
-            window.startNextRound(scene);
+            if (scene.currentRound >= scene.allRounds.length - 1) {
+                showStatsPopup(scene);
+            } else {
+                hideCompleteScreen(scene);
+                window.startNextRound(scene);
+            }
         },
         STYLES.colors.playButtonBg,
         STYLES.colors.playButtonText,

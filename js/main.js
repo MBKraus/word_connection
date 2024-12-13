@@ -121,7 +121,7 @@ function createGameElements(scene) {
     createHeaderIcons(scene);
     createCorrectGuessContainer(scene);
     createGiveUpButton(scene);
-    createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.98 * 0.4), scene.inputDisplay.y);
+    createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.90 * 0.4), scene.inputDisplay.y);
     createCrossIcon(scene);
 
     if (isMobile()) {
@@ -390,7 +390,12 @@ function handleRoundEndAllTopicsGuessed(scene) {
         scene.completeFinalScoreValue.setText(totalScoreText);
         scene.completeFinalScoreValue.setVisible(true);
 
-        scene.okButton.setVisible(false);  // hides the button
+        if (auth.currentUser) {
+            scene.okButton.buttonText.setText('Statistics');
+            scene.okButton.setVisible(true);
+        } else {
+            scene.okButton.setVisible(false);
+        }
 
         endGame(scene);
     } else {
@@ -406,6 +411,7 @@ function handleRoundEndAllTopicsGuessed(scene) {
         scene.completeNextGameLabel.setVisible(false);
         scene.completeNextGameTime.setVisible(false);
       
+        scene.okButton.buttonText.setText('Next Round');
         scene.okButton.setVisible(true);
     }
 
@@ -424,15 +430,22 @@ function handleRoundEndNotAllTopicsGuessed(scene) {
      
     if (isGameComplete) {
         endGame(scene);
-        scene.nextRoundButton.setVisible(false);  // hides the button
-
+        if (auth.currentUser) {
+            scene.nextRoundButton.buttonText.setText('Statistics');
+            scene.nextRoundButton.setVisible(true);
+        } else {
+            scene.nextRoundButton.setVisible(false);
+        }
+ 
         scene.scoreLabel.setX(scene.scale.width * 0.25)
         scene.scoreValue.setX(scene.scale.width * 0.25)
 
         scene.nextGameLabel.setVisible(true)
         scene.nextGameTime.setVisible(true);
     } else {
+        scene.nextRoundButton.buttonText.setText('Next Round');
         scene.nextRoundButton.setVisible(true);
+
         scene.scoreLabel.setX(scene.scale.width * 0.5)
         scene.scoreValue.setX(scene.scale.width * 0.5)
 

@@ -1,5 +1,6 @@
 import {showScreen, hideScreen, createText, createScreen, createButton, STYLES} from './helpers.js';
 import {createLogo} from '../uiComponents.js';
+import { showStatsPopup } from './statsPopUp.js';
 
 export function createFailureEndScreen(scene) {
     scene.failureEndScreen = createScreen(scene, 'failureEndScreen');
@@ -81,15 +82,14 @@ export function createFailureEndScreen(scene) {
     scene.nextGameTime.setVisible(false);
 
     // Add Next Round button at the bottom
-    const buttonText = scene.currentRound >= scene.allRounds.length - 1 ? 'Statistics' : 'Next Round';
     scene.nextRoundButton = createButton(
         scene,
         scene.game.scale.width * 0.5,
         scene.game.scale.height * 0.75,  // Position at bottom
-        buttonText,
+        'Next Round',
         () => {
             if (scene.currentRound >= scene.allRounds.length - 1) {
-                window.endGame(scene);
+                showStatsPopup(scene);
             } else {
                 hideFailureEndScreen(scene);
                 startNextRound(scene);

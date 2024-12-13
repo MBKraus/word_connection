@@ -1,7 +1,7 @@
-import { createStatsPopup} from './screens/statsPopUp.js';
-import { isMobile, isTablet } from './utils.js';
+import { createStatsPopup, showStatsPopup} from './screens/statsPopUp.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { showWelcomeScreen } from './screens/welcome.js'; 
+import { auth } from './auth.js';
 
 
 export function createLogo(scene, width, height, yPosition, xPosition) {
@@ -388,6 +388,41 @@ function createHamburgerMenu(scene, x, y, scale) {
     return menuContainer;
 }
 
+function createChartIcon(scene) {
+    // Create bar chart icon using graphics
+    scene.chartIcon = scene.add.graphics();
+    scene.chartIcon.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
+    
+    // Set fill style
+    scene.chartIcon.fillStyle(0x000000, 1);
+    
+    // Scale factor for the bars
+    const scale = scene.scale.width * 0.02; // Base scale remains the same
+    
+    // Draw the three bars with increased heights
+    // Middle height bar (left)
+    scene.chartIcon.fillRect(-scale * 1.5, -scale * 1.4, scale * 0.8, scale * 2.0); // Increased height to 2.0
+    
+    // Highest bar (middle)
+    scene.chartIcon.fillRect(-scale * 0.3, -scale * 1.8, scale * 0.8, scale * 2.4); // Increased height to 2.4
+    
+    // Shortest bar (right)
+    scene.chartIcon.fillRect(scale * 0.9, -scale * 1.0, scale * 0.8, scale * 1.6); // Increased height to 1.6
+    
+    // Adjust hit area to match taller bars
+    const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale * 1.8, scale * 3, scale * 2.4); // Adjusted to fit the tallest bar
+    scene.chartIcon.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
+
+    // Add Handler
+
+    const popupWidth = scene.scale.width;
+    const halfHeight = scene.scale.height / 2;
+
+    scene.chartIcon.on('pointerdown', async () => {
+        showStatsPopup(scene)
+    });
+}
+
 export function createHeaderIcons(scene) {
 
     // Hamburger Menu
@@ -400,34 +435,13 @@ export function createHeaderIcons(scene) {
     );
     scene.hamburgerMenu.setDepth(1);
     
-    // Create bar chart icon using graphics
-    scene.chartGraphics = scene.add.graphics();
-    scene.chartGraphics.setPosition(scene.scale.width * 0.85, scene.scale.height * 0.04);
-    
-    // Set fill style
-    scene.chartGraphics.fillStyle(0x000000, 1);
-    
-    // Scale factor for the bars
-    const scale = scene.scale.width * 0.02; // Base scale remains the same
-    
-    // Draw the three bars with increased heights
-    // Middle height bar (left)
-    scene.chartGraphics.fillRect(-scale * 1.5, -scale * 1.4, scale * 0.8, scale * 2.0); // Increased height to 2.0
-    
-    // Highest bar (middle)
-    scene.chartGraphics.fillRect(-scale * 0.3, -scale * 1.8, scale * 0.8, scale * 2.4); // Increased height to 2.4
-    
-    // Shortest bar (right)
-    scene.chartGraphics.fillRect(scale * 0.9, -scale * 1.0, scale * 0.8, scale * 1.6); // Increased height to 1.6
-    
-    // Adjust hit area to match taller bars
-    const hitArea = new Phaser.Geom.Rectangle(-scale * 1.5, -scale * 1.8, scale * 3, scale * 2.4); // Adjusted to fit the tallest bar
-    scene.chartGraphics.setInteractive(hitArea, Phaser.Geom.Rectangle.Contains);
-    
     // Create stats popup for chart icon
     createStatsPopup(scene);
 
-    // Question mark icon (existing code)
+    // Chart Icon
+    createChartIcon(scene);
+    
+    // Question Mark Icon 
     const questionIcon = scene.add.image(scene.scale.width * 0.94, scene.scale.height * 0.0325, 'question')
         .setScale(0.12)
         .setInteractive();
@@ -474,7 +488,7 @@ export function createCrossIcon(scene) {
         .setVisible(false)
         .setDepth(2)
         .setScale(scene.game.scale.width * 0.000028)
-        .setPosition(scene.inputDisplay.x + inputBgWidth * 0.4, scene.inputDisplay.y);
+        .setPosition(scene.inputDisplay.x + inputBgWidth * 0.33, scene.inputDisplay.y);
 }
 
 export function createCheckmark(scene, x, y) {
