@@ -1,17 +1,17 @@
 import { getStartY } from './uiComponents.js';
 
 export function pauseTimer(scene) {
-    if (scene.timerEvent) {
-        scene.timerEvent.paused = true;
-        // Store the pause time to calculate elapsed time when resumed
-        scene.pauseStartTime = Date.now();
-        // Add a paused flag to prevent sound effects while paused
-        scene.isTimerPaused = true;
-    } else if (!scene.timerEvent) {
-        console.warn('Cannot pause timer: scene.timerEvent is undefined');
-    } else if (scene.timerEvent.paused) {
-        console.warn('Timer is already paused');
+    if (!scene.timerEvent) {
+        console.warn('Cannot pause timer: scene.timerEvent is undefined homie');
+        return;
     }
+    if (scene.timerEvent.paused) {
+        console.warn('Timer is already paused');
+        return;
+    }
+    scene.timerEvent.paused = true;
+    scene.pauseStartTime = Date.now();
+    scene.isTimerPaused = true;
 }
 
 export function resumeTimer(scene) {
@@ -121,7 +121,7 @@ export function startTimer(scene) {
     clearTimerEvent(scene);
 
     // Make stats button and giveup active
-    scene.chartGraphics.setInteractive(true);
+    scene.chartIcon.setInteractive(true);
     scene.giveUpButton.setInteractive(true);
 
     // Reset game state

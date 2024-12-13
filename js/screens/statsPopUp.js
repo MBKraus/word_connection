@@ -1,31 +1,27 @@
 import { fetchGameStats } from '../gameStorage.js';
 import { showAuthModal, auth } from '../auth.js';
-import { createButton, STYLES } from './helpers.js';
+import { STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
 import { createLogo } from '../uiComponents.js';
 
 export async function createStatsPopup(scene) {
     // Make the popup container cover the entire screen
-    const popup = scene.add.container(scene.scale.width / 2, scene.scale.height / 2);
-    popup.setVisible(false);
-    popup.setDepth(1000);
-
-    // Set popup width and height to cover entire screen
-    const popupWidth = scene.scale.width;
-    const popupHeight = scene.scale.height;
-    const halfWidth = popupWidth / 2;
-    const halfHeight = popupHeight / 2;
+    scene.statsPopup = scene.add.container(scene.scale.width / 2, scene.scale.height / 2);
+    scene.statsPopup.setVisible(false).setDepth(1000);
 
     // Create background
-    const background = createBackground(scene, popupWidth, popupHeight, halfWidth, halfHeight);
-    popup.add(background);
+    const background = scene.add.graphics();
+    background.fillStyle(STYLES.colors.overlay, 1);
+    background.fillRect(-scene.scale.width / 2, -scene.scale.height / 2, scene.scale.width , scene.scale.height); // Fullscreen rectangle
+    scene.statsPopup.add(background);
 
+    const halfHeight = scene.scale.height / 2;
     const logoWidth = scene.scale.width * 0.3;
     const logoHeight = logoWidth;
     const logoYPosition = -halfHeight * 0.95;
     const logoXPosition = -0.22;
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
-    popup.add(logo);
+    scene.statsPopup.add(logo);
 
     // title
     scene.statsTitle = scene.add.text(
@@ -39,11 +35,7 @@ export async function createStatsPopup(scene) {
             align: 'center',
     }).setOrigin(0.5);
     scene.statsTitle.name = 'statsTitle';
-    popup.add( scene.statsTitle);
-
-    // Create close button
-    const closeButtonContainer = createCloseButtonContainer(scene, halfWidth, halfHeight);
-    popup.add(closeButtonContainer);
+    scene.statsPopup.add( scene.statsTitle);
 
     // Add title text
     scene.statsSubTitleText = scene.add.text(0, -halfHeight * 0.35, 
@@ -58,36 +50,23 @@ export async function createStatsPopup(scene) {
     
     // Give it a name to easily find it later
     scene.statsSubTitleText.name = 'subTitleText';
-    popup.add(scene.statsSubTitleText);
+    scene.statsPopup.add(scene.statsSubTitleText);
+
+    // Create close button
+    const closeButton = createCloseButton(scene);
+    scene.statsPopup.add(closeButton);
 
     // Create signup button
-    const { signupButton, signupButtonText, graphics } = createSignupButton(scene, popupWidth, halfHeight);
-    popup.add(graphics);
-    popup.add(signupButton);
-    popup.add(signupButtonText);
-    // Initially hide signup button
-    signupButton.setVisible(false);
-    signupButtonText.setVisible(false);
-    graphics.setVisible(false);
-
-    // Set up event handlers
-    setupChartIconHandler(popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene);
-    setupCloseButtonHandler(scene, closeButtonContainer, popup, signupButton, signupButtonText, graphics);
-    setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, scene);
-
-
+    createSignupButton(scene);
+    scene.statsPopup.add(scene.signupButton);
 }
 
-// Helper function to create the background
-function createBackground(scene, popupWidth, popupHeight, halfWidth, halfHeight) {
-    const background = scene.add.graphics();
-    background.fillStyle(STYLES.colors.overlay, 1);
-    background.fillRect(-halfWidth, -halfHeight, popupWidth, popupHeight); // Fullscreen rectangle
-    return background;
-}
 
 // Helper function to create the close button container
-function createCloseButtonContainer(scene, halfWidth, halfHeight) {
+function createCloseButton(scene) {
+    const halfWidth = scene.scale.width / 2;
+    const halfHeight = scene.scale.height / 2;
+
     const closeButtonContainer = scene.add.container(halfWidth - 50, -halfHeight * 0.95);
 
     // Create a larger, thicker, black close cross
@@ -108,76 +87,92 @@ function createCloseButtonContainer(scene, halfWidth, halfHeight) {
     // Add closeButton and hit area to the container
     closeButtonContainer.add([closeButton, closeButtonHitArea]);
 
+    closeButtonHitArea.on('pointerdown', () => {
+        cleanupPopup(scene);
+        scene.statsPopup.setVisible(false);
+        
+        // Resume the timer when closing the popup
+        resumeTimer(scene);
+
+    });
+
     return closeButtonContainer;
 }
 
-function createSignupButton(scene, popupWidth, halfHeight) {
-    const graphics = scene.add.graphics();
+function createSignupButton(scene) {
+
+    const popupWidth = scene.scale.width;
+    const halfHeight = scene.scale.height / 2;
     const textWidth = popupWidth * 0.5;
     const textHeight = scene.scale.height * 0.07;
     const yPos = halfHeight * 0.1;
 
+    // Create an interactive container
+    scene.signupButton = scene.add.container(0, yPos).setInteractive(
+        new Phaser.Geom.Rectangle(-textWidth/2, -textHeight/2, textWidth, textHeight),
+        Phaser.Geom.Rectangle.Contains
+    );
+
+    const graphics = scene.add.graphics();
+    
     const drawButton = (graphics, fillColor, borderCol) => {
         graphics.clear();
-        graphics.lineStyle(6, parseInt(borderCol.replace('#', ''), 16));
-        graphics.fillStyle(parseInt(fillColor.replace('#', ''), 16));
-
-        const radius = STYLES.borderRadius.sides;
-        const halfWidth = textWidth / 2;
-        const buttonHalfHeight = textHeight / 2;
-
-        graphics.beginPath();
-        graphics.moveTo(-halfWidth + radius, -buttonHalfHeight);
-        graphics.lineTo(halfWidth - radius, -buttonHalfHeight);
-        graphics.arc(halfWidth - radius, -buttonHalfHeight + radius, radius, -Math.PI/2, 0);
-        graphics.lineTo(halfWidth, buttonHalfHeight - radius);
-        graphics.arc(halfWidth - radius, buttonHalfHeight - radius, radius, 0, Math.PI/2);
-        graphics.lineTo(-halfWidth + radius, buttonHalfHeight);
-        graphics.arc(-halfWidth + radius, buttonHalfHeight - radius, radius, Math.PI/2, Math.PI);
-        graphics.lineTo(-halfWidth, -buttonHalfHeight + radius);
-        graphics.arc(-halfWidth + radius, -buttonHalfHeight + radius, radius, Math.PI, -Math.PI/2);
-        graphics.closePath();
-        graphics.fillPath();
-        graphics.strokePath();
+        const fillColorNum = parseInt(fillColor.replace('#', ''), 16);
+        const borderColorNum = parseInt(borderCol.replace('#', ''), 16);
+        
+        graphics.fillStyle(fillColorNum);
+        graphics.lineStyle(6, borderColorNum);
+        graphics.fillRoundedRect(-textWidth/2, -textHeight/2, textWidth, textHeight, STYLES.borderRadius.sides);
+        graphics.strokeRoundedRect(-textWidth/2, -textHeight/2, textWidth, textHeight, STYLES.borderRadius.sides);
     };
 
-    // Create the hitbox for interactions
-    const signupButton = scene.add.rectangle(0, yPos, textWidth, textHeight)
-        .setInteractive()
+    // Create the visual rectangle (non-interactive now)
+    const signupButton = scene.add.rectangle(0, 0, textWidth, textHeight)
         .setOrigin(0.5);
 
     // Create the button text
-    const signupButtonText = scene.add.text(0, yPos, 'Create account', {
+    const signupButtonText = scene.add.text(0, 0, 'Create account', {
         fontSize: scene.scale.width * 0.03 + 'px',
         fontFamily: 'Poppins',
         color: STYLES.colors.playButtonText
     }).setOrigin(0.5);
 
-    // Position graphics at the same position as the button
-    graphics.setPosition(0, yPos);
-
     // Initial button draw
     drawButton(graphics, STYLES.colors.playButtonBg, STYLES.colors.playButtonBorder);
 
-    // Add hover effects to the hitbox
-    signupButton
+    // Handle all interactions on the container
+    scene.signupButton
         .on('pointerover', () => {
             drawButton(graphics, STYLES.colors.buttonHover, STYLES.colors.playButtonBorder);
         })
         .on('pointerout', () => {
             drawButton(graphics, STYLES.colors.playButtonBg, STYLES.colors.playButtonBorder);
+        })
+        .on('pointerdown', async () => {
+            scene.statsPopup.setVisible(false);
+            // Resume timer when hiding popup for auth
+            resumeTimer(scene);
+            
+            await showAuthModal('signup');
+            if (auth.currentUser) {
+                scene.statsPopup.setVisible(true);
+                // Pause timer again if showing stats after auth
+                pauseTimer(scene);
+                
+                scene.signupButton.setVisible(false);
+                const stats = await fetchGameStats(auth.currentUser.uid);
+            }
         });
 
-    // Initially hide all elements
-    signupButton.setVisible(false);
-    signupButtonText.setVisible(false);
-    graphics.setVisible(false);
-
-    return { signupButton, signupButtonText, graphics };
+    // Add all elements to the container
+    scene.signupButton.add([graphics, signupButton, signupButtonText]);
+    
+    // Hide the container initially
+    scene.signupButton.setVisible(false);
 }
 
 
-function createMetricsContainer(scene, stats, popupWidth, halfHeight, type, alignTo) {
+export function createMetricsContainer(scene, stats, popupWidth, halfHeight, type, alignTo) {
     const isTop = type === 'top';
     const metrics = isTop ? [
         { label: 'Played', value: stats.totalGamesPlayed },
@@ -219,7 +214,7 @@ function createMetricsContainer(scene, stats, popupWidth, halfHeight, type, alig
     return container;
 }
 
-function createLastPlayedText(scene, stats, halfHeight) {
+export function createLastPlayedText(scene, stats, halfHeight) {
     const lastPlayedFormatted = stats.lastPlayed
         ? new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: '2-digit' }).format(stats.lastPlayed)
         : 'N/A';
@@ -234,98 +229,60 @@ function createLastPlayedText(scene, stats, halfHeight) {
     return lastPlayedText;
 }
 
-function setupChartIconHandler(popup, signupButton, signupButtonText, graphics, halfHeight, popupWidth, scene) {
-    scene.chartGraphics.on('pointerdown', async () => {
+export async function showStatsPopup(scene) {
 
-        cleanupPopup(signupButton, signupButtonText, graphics, popup);
-        popup.setVisible(true);
-    
-        pauseTimer(scene);
-    
-        const titleText = popup.list.find(item => item.name === 'statsTitle');
-        if (titleText) {
-            titleText.setText(auth.currentUser 
-                ? 'Statistics' 
-                : 'Track statistics?');
-        }
-    
-        if (auth.currentUser) {
-            signupButton.setVisible(false);
-            signupButtonText.setVisible(false);
-            graphics.setVisible(false);
-            scene.statsSubTitleText.setVisible(false);
-    
-            const stats = await fetchGameStats(auth.currentUser.uid);
-            if (stats) {
-                const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
-                topMetricsContainer.name = 'topMetricsContainer';
-                popup.add(topMetricsContainer);
-                
-                const streakMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'streak', topMetricsContainer);
-                streakMetricsContainer.name = 'streakMetricsContainer';
-                popup.add(streakMetricsContainer);
+    const popupWidth = scene.scale.width;
+    const halfHeight = scene.scale.height / 2;
 
-                const lastPlayedText = createLastPlayedText(scene, stats, halfHeight);
-                lastPlayedText.name = 'lastPlayedText';
-                popup.add(lastPlayedText);
+    cleanupPopup(scene);
+    scene.statsPopup.setDepth(10000);
+    scene.statsPopup.setVisible(true);
 
-            } else {
-                console.log('Error loading stats.');
-            }
-        } else {
-            signupButton.setVisible(true);
-            signupButtonText.setVisible(true);
-            graphics.setVisible(true);
-            scene.statsSubTitleText.setVisible(true);
-        }
-    });
-}
+    pauseTimer(scene);
 
-// Event handler for close button
-function setupCloseButtonHandler(scene, closeButtonContainer, popup, signupButton, signupButtonText, graphics) {
-    const closeButtonHitArea = closeButtonContainer.list[1];
+    const titleText = scene.statsPopup.list.find(item => item.name === 'statsTitle');
+    if (titleText) {
+        titleText.setText(auth.currentUser 
+            ? 'Statistics' 
+            : 'Track statistics?');
+    }
 
-    closeButtonHitArea.on('pointerdown', () => {
-        cleanupPopup(signupButton, signupButtonText, graphics, popup);
-        popup.setVisible(false);
-        
-        // Resume the timer when closing the popup
-        resumeTimer(scene);
-    });
-}
+    if (auth.currentUser) {
+        scene.signupButton.setVisible(false);
+        scene.statsSubTitleText.setVisible(false);
 
-
-function setupSignupButtonHandlers(signupButton, popup, signupButtonText, graphics, scene) {
-    signupButton.on('pointerdown', async () => {
-        popup.setVisible(false);
-        // Resume timer when hiding popup for auth
-        resumeTimer(scene);
-        
-        await showAuthModal('signup');
-        if (auth.currentUser) {
-            popup.setVisible(true);
-            // Pause timer again if showing stats after auth
-            pauseTimer(scene);
+        const stats = await fetchGameStats(auth.currentUser.uid);
+        if (stats) {
+            const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
+            topMetricsContainer.name = 'topMetricsContainer';
+            scene.statsPopup.add(topMetricsContainer);
             
-            signupButton.setVisible(false);
-            signupButtonText.setVisible(false);
-            graphics.setVisible(false);
-            const stats = await fetchGameStats(auth.currentUser.uid);
+            const streakMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'streak', topMetricsContainer);
+            streakMetricsContainer.name = 'streakMetricsContainer';
+            scene.statsPopup.add(streakMetricsContainer);
+
+            const lastPlayedText = createLastPlayedText(scene, stats, halfHeight);
+            lastPlayedText.name = 'lastPlayedText';
+            scene.statsPopup.add(lastPlayedText);
+
+        } else {
+            console.log('Error loading stats.');
         }
-    });
+    } else {
+        scene.signupButton.setVisible(true);
+        scene.statsSubTitleText.setVisible(true);
+    }
 }
 
-function cleanupPopup(signupButton, signupButtonText, graphics, popup) {
+export function cleanupPopup(scene) {
     // Hide and reset signup button elements
-    signupButton.setVisible(false);
-    signupButtonText.setVisible(false);
-    graphics.setVisible(false);
+    scene.signupButton.setVisible(false);
     
     // Helper function to remove and destroy elements by name
     const removeElementByName = (name) => {
-        const element = popup.list.find(item => item.name === name);
+        const element =  scene.statsPopup.list.find(item => item.name === name);
         if (element) {
-            popup.remove(element);
+            scene.statsPopup.remove(element);
             element.destroy(); // Ensure the element is fully removed
         }
     };

@@ -83,6 +83,9 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
 
     container.on('pointerdown', onClick);
 
+    // Expose buttonText for dynamic updates
+    container.buttonText = buttonText;
+
     return container;
 }
 
