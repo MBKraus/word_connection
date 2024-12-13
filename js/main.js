@@ -305,6 +305,7 @@ function startNextRound(scene) {
     hideCompleteScreen(scene);
     hideTiles(scene);
     clearTimerEvent(scene);
+    updateScoreDisplay(scene);
 
     if (scene.correctGuessContainer) {
         scene.correctGuessContainer.removeAll(true);
