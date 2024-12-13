@@ -78,6 +78,7 @@ export function calculateRoundPoints(timeRemaining, topicsGuessed) {
 export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
     let interval;
     let currentOnUpdate = defaultOnUpdate;
+    let initialUpdateComplete = false;
 
     const update = () => {
         const now = new Date();
@@ -85,7 +86,8 @@ export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
         const diff = nextPlay - now;
 
         if (diff <= 0) {
-            currentOnUpdate("Next puzzle available now!");
+            currentOnUpdate("Next puzzle available now!", true);
+            initialUpdateComplete = true;
             return;
         }
 
@@ -93,7 +95,8 @@ export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        currentOnUpdate(`${hours}h ${minutes}m ${seconds}s`);
+        currentOnUpdate(`${hours}h ${minutes}m ${seconds}s`, true);
+        initialUpdateComplete = true;
     };
 
     const start = () => {
@@ -105,5 +108,7 @@ export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
         currentOnUpdate = callback || defaultOnUpdate;
     };
 
-    return { start, setOnUpdate };
+    const isInitialUpdateComplete = () => initialUpdateComplete;
+
+    return { start, setOnUpdate, isInitialUpdateComplete };
 }

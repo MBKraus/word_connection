@@ -86,11 +86,11 @@ function create() {
     const TOPICS_PER_ROUND = 3;
   
     // Check if user has already played today (cookie-based)
-    // if (GameStorage.hasPlayedTodayCookie()) {
-    //     // Only create and show the daily limit screen
-    //     this.dailyLimitControls = createDailyLimitScreen(this);
-    //     this.dailyLimitControls.show();
-    // } else {
+    if (GameStorage.hasPlayedTodayCookie()) {
+        // Only create and show the daily limit screen
+        this.dailyLimitControls = createDailyLimitScreen(this);
+        this.dailyLimitControls.show();
+    } else {
         
     createWelcomeScreen(this);
     showWelcomeScreen(this, 'welcomeScreen');
@@ -106,7 +106,7 @@ function create() {
     createFailureEndScreen(this);
     createCountdown(this);
 
-    // }
+    }
 
     document.querySelector('.text-container').classList.add('loaded');
 }
