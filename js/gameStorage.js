@@ -1,17 +1,56 @@
-// gameStorage.js
-
 import { getFirestore, increment, doc, setDoc, serverTimestamp, collection, getDocs, limit, orderBy, query, getDoc, getAggregateFromServer, average } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 import { auth } from './auth.js';
 import { getFirebaseApp } from './firebaseInit.js';
 
+const LAST_PLAYED_KEY = 'wordconnect_last_played';
 let db = null;
+let gameStatsPromise = null;
+export let currentUser = null;  // You'll need to keep track of the current user
 
+// Initialize DB connection
 async function initializeDb() {
     if (!db) {
         const app = await getFirebaseApp();
         db = getFirestore(app);
     }
     return db;
+}
+
+// Fetch game stats for the current user along a promise
+async function initializeStats(user) {
+    if (user) {
+        gameStatsPromise = fetchGameStats(user.uid);
+        return gameStatsPromise;
+    }
+    return null;
+}
+
+// Get cached stats or fetch them if not available
+export async function getCachedOrFetchGameStats() {
+    if (!currentUser) {
+        return null;
+    }
+    if (!gameStatsPromise) {
+        console.log('No existing stats promise, creating new one');
+        gameStatsPromise = initializeStats(currentUser);
+    }
+    try {
+        const stats = await gameStatsPromise;
+        return stats;
+    } catch (error) {
+        console.error('Error loading stats:', error);
+        return null;
+    }
+}
+
+// Update the current user and initialize stats (used on login)
+export function updateUserAndInitializeStats(user) {
+    currentUser = user;
+    if (user) {
+        initializeStats(user);
+    } else {
+        gameStatsPromise = null;
+    }
 }
 
 export class GameStorage {
@@ -30,6 +69,15 @@ export class GameStorage {
         }
     }
 
+    static storePlayedTodayCookie() {
+        // Store last_played_key locally
+        try {
+            localStorage.setItem(LAST_PLAYED_KEY, new Date().toISOString());
+        } catch (error) {
+            console.error('Error recording game played:', error);
+        }
+    }
+
     static async hasPlayedTodayDB(userId) {
         // Check in Firebase DB if user has played today
         await initializeDb();
@@ -43,26 +91,9 @@ export class GameStorage {
             return false;
         }
     }
-
-    static recordGamePlayedLocal() {
-        // Store last_played_key locally
-        try {
-            localStorage.setItem(LAST_PLAYED_KEY, new Date().toISOString());
-        } catch (error) {
-            console.error('Error recording game played:', error);
-        }
-    }
-
-    static getNextPlayTime() {
-        // Get tomorrow's date at 00:00
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        tomorrow.setHours(0, 0, 0, 0);
-        return tomorrow;
-    }
 }
 
-const LAST_PLAYED_KEY = 'wordconnect_last_played';
+
 
 export async function writeGameStats(score, totalTopicsGuessed) {
     if (!auth.currentUser) {
@@ -86,7 +117,6 @@ export async function writeGameStats(score, totalTopicsGuessed) {
 
         await updateStreak(userId, dateString, totalTopicsGuessed);
 
-        console.log('Game stats saved successfully');
     } catch (error) {
         console.error('Error saving game stats:', error);
     }
@@ -100,7 +130,6 @@ export async function updateUserProfile(userId) {
             totalGamesPlayed: increment(1),
             lastPlayed: serverTimestamp()
         }, { merge: true });
-        console.log('User profile updated successfully');
     } catch (error) {
         console.error('Error updating user profile:', error);
     }
@@ -188,12 +217,6 @@ async function updateStreak(userId, todayDate, totalTopicsGuessed) {
     yesterday.setDate(yesterday.getDate() - 1);
     const formattedYesterday = yesterday.toISOString().split('T')[0];
 
-    console.log("current streak: ", currentStreak);
-    console.log("longest streak: ", longestStreak);
-    console.log("last played date: ", lastPlayedDate);
-    console.log("today played date: ", todayDate);
-    console.log("formatted yesterday: ", formattedYesterday);
-    
     // Update streak only if totalTopicsGuessed is 6
     if (totalTopicsGuessed === 6) {
         // if (lastPlayedDate === formattedYesterday) {
@@ -208,18 +231,12 @@ async function updateStreak(userId, todayDate, totalTopicsGuessed) {
 
     longestStreak = Math.max(longestStreak, currentStreak);
 
-    console.log("updated")
-    console.log("current streak: ", currentStreak);
-    console.log("longest streak: ", longestStreak);
-
     // Update user profile with streak information
     try {
         await setDoc(userRef, {
             currentStreak: currentStreak,
             longestStreak: longestStreak,
         }, { merge: true });
-
-        console.log('Streak updated successfully');
     } catch (error) {
         console.error('Error updating streak:', error);
     }

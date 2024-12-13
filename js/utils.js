@@ -1,4 +1,9 @@
-// Device detection utility functions
+// Screen utility functions
+
+export function isDesktop() {
+    return !isMobile();
+}
+
 export function isMobile() {
     return isPhone() || isTablet();
 }
@@ -22,6 +27,17 @@ export function isTablet() {
 
     return isIPad || isAndroidTablet || isGenericTablet;
 }
+
+export function recenterScreen() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Game logic helpers
 
 export function isFuzzyMatchSimple(input, word) {
     // Character-by-Character Comparison with Early Exit
@@ -55,10 +71,6 @@ export function isFuzzyMatchSimple(input, word) {
     return mismatches <= 1;
 }
 
-export function isDesktop() {
-    return !isMobile();
-}
-
 export function calculateRoundPoints(timeRemaining, topicsGuessed) {
     const points = {
         wordPoints: topicsGuessed * 30,
@@ -74,6 +86,8 @@ export function calculateRoundPoints(timeRemaining, topicsGuessed) {
 
     return points;
 }
+
+// Timer helpers
 
 export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
     let interval;
@@ -111,4 +125,12 @@ export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
     const isInitialUpdateComplete = () => initialUpdateComplete;
 
     return { start, setOnUpdate, isInitialUpdateComplete };
+}
+
+export function getNextPlayTime() {
+    // Get tomorrow's date at 00:00
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    return tomorrow;
 }

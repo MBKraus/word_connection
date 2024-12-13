@@ -1,7 +1,6 @@
 import { createScreen, STYLES } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
-import { createNextGameTimer } from '../utils.js';
-import { GameStorage } from '../gameStorage.js';
+import { createNextGameTimer, getNextPlayTime } from '../utils.js';
 
 export function createDailyLimitScreen(scene) {
     const loadingSpinner = document.getElementById('loading-spinner');
@@ -76,7 +75,7 @@ export function createDailyLimitScreen(scene) {
 
             // Create and start the timer
             scene.nextGameTimer = createNextGameTimer(
-                GameStorage.getNextPlayTime,
+                getNextPlayTime,
                 (text) => {
                     // Placeholder for global updates
                 }

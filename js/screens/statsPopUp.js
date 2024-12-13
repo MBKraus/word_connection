@@ -1,5 +1,5 @@
-import { fetchGameStats } from '../gameStorage.js';
-import { showAuthModal, auth } from '../auth.js';
+import { showAuthModal, auth} from '../auth.js';
+import {currentUser, getCachedOrFetchGameStats} from '../gameStorage.js';
 import { STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
 import { createLogo } from '../uiComponents.js';
@@ -247,11 +247,12 @@ export async function showStatsPopup(scene) {
             : 'Track statistics?');
     }
 
-    if (auth.currentUser) {
+    if (currentUser)  {
         scene.signupButton.setVisible(false);
         scene.statsSubTitleText.setVisible(false);
 
-        const stats = await fetchGameStats(auth.currentUser.uid);
+        const stats = await getCachedOrFetchGameStats();
+        console.log("stats", stats);
         if (stats) {
             const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
             topMetricsContainer.name = 'topMetricsContainer';

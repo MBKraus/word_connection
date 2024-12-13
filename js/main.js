@@ -10,7 +10,7 @@ import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
-import { isFuzzyMatchSimple, calculateRoundPoints, createNextGameTimer } from './utils.js';
+import { isFuzzyMatchSimple, calculateRoundPoints, createNextGameTimer, getNextPlayTime } from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import { auth } from './auth.js';
@@ -131,7 +131,7 @@ function createGameElements(scene) {
     if (!scene.nextGameTimer) {
         // Create and start the timer globally
         scene.nextGameTimer = createNextGameTimer(
-            GameStorage.getNextPlayTime,
+            getNextPlayTime,
             (text) => {
             }
         );
@@ -474,6 +474,6 @@ function endGame(scene) {
         updateUserProfile(userId);  // Call updateUserProfile with the current user's ID
 
     }
-    GameStorage.recordGamePlayedLocal();
+    GameStorage.storePlayedTodayCookie();
 }
 })
