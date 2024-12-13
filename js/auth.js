@@ -1,6 +1,7 @@
 import { getFirebaseApp } from './firebaseInit.js';
-import { GameStorage } from './gameStorage.js';
+import { GameStorage, updateUserAndInitializeStats } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
+import { recenterScreen } from './utils.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -18,6 +19,7 @@ window.auth = auth;
 const googleProvider = new GoogleAuthProvider();
 
 let isAuthSuccess = false;
+let isAuthModalOpen = false;
 
 // Modified modal container for fullscreen
 const modalContainer = document.createElement('div');
@@ -48,29 +50,18 @@ overlay.style.cssText = `
 `;
 document.body.appendChild(overlay);
 
-let isAuthModalOpen = false;
-
-function recenterScreen() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-}
-
-// Only start checking for daily limit after successful auth and modal close
+// Only start checking for daily limit after successful auth and auth modal close
+// Fetch game stats on login
 onAuthStateChanged(auth, async (user) => {
+    updateUserAndInitializeStats(user);
     if (user && !isAuthModalOpen) {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
             console.log("has played per DB check ")
-            // Comment out to turn off daily limit screen
-            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            // dailyLimitScreen.show();
         } 
-    }
+    } 
 });
+
 
 function showAuthModal(mode = 'signin') {
     isAuthModalOpen = true;
