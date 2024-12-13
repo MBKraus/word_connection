@@ -63,51 +63,64 @@ function updateTimerDisplay(scene, forceTextUpdate = false) {
         }
     }
 
-    // Clear the previous bar to prevent any lingering visuals
+    // Clear the previous bar
     scene.timeBar.clear();
 
     // Calculate dimensions and position
-    const inputBgWidth = scene.game.scale.width * 0.88;
+    const inputBgWidth = scene.game.scale.width * 0.87;
     const inputBgHeight = scene.game.scale.height * 0.055;
     const x = scene.game.scale.width * 0.12;
+    const cornerRadius = 20;
 
-    // Always draw the background bar first
-    scene.timeBar.fillStyle(0xE2E8F1, 1); // Background color (light grey)
+    // Draw the background bar
+    scene.timeBar.fillStyle(0xE2E8F1, 1);
     scene.timeBar.fillRoundedRect(
         x,
         scene.initialTimeBarY,
         inputBgWidth,
         inputBgHeight,
-        20 // Rounded corners
+        cornerRadius
     );
 
     // Calculate the progress bar width
     const barProgress = Math.max(0, Math.min(1, scene.remainingTime / scene.timerDuration));
-    const barWidth = inputBgWidth * barProgress;
+    let barWidth = Math.max(0, inputBgWidth * barProgress);
 
-    // Avoid drawing the bar if barWidth is zero or negative
+    // Draw the progress bar (if width > 0)
     if (barWidth > 0) {
-        scene.timeBar.fillStyle(0xCAD2DE, 1); // Foreground color (light blue)
-        scene.timeBar.fillRoundedRect(
-            x, // Same x position as background
-            scene.initialTimeBarY,
-            barWidth,
-            inputBgHeight,
-            20 // Rounded corners
-        );
-    } else {
-        // Ensure no stray visuals are left on the left side
-        scene.timeBar.fillStyle(0xE2E8F1, 1); // Clear the remaining space
+        scene.timeBar.fillStyle(0xCAD2DE, 1);
+
+        // Adjust width when in the rounded corner area
+        if (barWidth <= cornerRadius) {
+            // Calculate the available width at this y-position in the rounded corner
+            // Using the circle equation: x = sqrt(r² - y²) where r is cornerRadius
+            // At the middle of the height, y = cornerRadius/2
+            const y = cornerRadius/2;
+            const availableWidth = cornerRadius - Math.sqrt(cornerRadius * cornerRadius - y * y);
+            
+            // Scale the remaining width proportionally within the curved space
+            const scaleFactor = barWidth / cornerRadius;
+            barWidth = availableWidth + (barWidth - availableWidth) * scaleFactor;
+        }
+
+        // Calculate dynamic corner radius based on remaining width
+        const dynamicRadius = Math.min(cornerRadius, barWidth / 2);
+
+        // Draw the progress bar with adjusted corner radius
         scene.timeBar.fillRoundedRect(
             x,
             scene.initialTimeBarY,
-            0, // Zero width to explicitly clear
+            barWidth,
             inputBgHeight,
-            20
+            {
+                tl: dynamicRadius,
+                tr: 0,
+                bl: dynamicRadius,
+                br: 0
+            }
         );
     }
 }
-
 
 
 export function clearTimerEvent(scene) {
