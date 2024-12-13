@@ -58,6 +58,8 @@ onAuthStateChanged(auth, async (user) => {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(user.uid);
         if (hasPlayed) {
             console.log("has played per DB check ")
+            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
+            // dailyLimitScreen.show();
         } 
     } 
 });
