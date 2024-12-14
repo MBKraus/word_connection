@@ -2,6 +2,7 @@ import { getFirebaseApp } from './firebaseInit.js';
 import { GameStorage, updateUserAndInitializeStats } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { recenterScreen } from './utils.js';
+import { showStatsPopup } from './screens/statsPopUp.js';
 import { 
     getAuth, 
     onAuthStateChanged,
@@ -55,11 +56,12 @@ document.body.appendChild(overlay);
 onAuthStateChanged(auth, async (user) => {
     updateUserAndInitializeStats(user);
     if (user && !isAuthModalOpen) {
-        const hasPlayed = await GameStorage.hasPlayedTodayDB(user.uid);
-        if (hasPlayed) {
-            console.log("has played per DB check ")
-            // const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-            // dailyLimitScreen.show();
+        const hasPlayedPerLocalCookie = GameStorage.hasPlayedTodayCookie();
+        const hasPlayedPerDB = await GameStorage.hasPlayedTodayDB(user.uid);
+        if (hasPlayedPerDB || hasPlayedPerLocalCookie) {
+            console.log("has played per either DB or local check ")
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, user);
+            dailyLimitScreen.show();
         } 
     } 
 });
@@ -292,26 +294,26 @@ async function hideAuthModal() {
 
     // Comment below out to turn off daily limit screen
 
-    // if (isAuthSuccess && auth.currentUser) {
-    //     const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
+    if (isAuthSuccess && auth.currentUser) {
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
         
-    //     if (hasPlayed) {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //         const dailyLimitScreen = createDailyLimitScreen(window.gameScene);
-    //         dailyLimitScreen.show();
-    //     } else if (window.gameScene) {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //         hideWelcomeScreen(window.gameScene);
-    //         window.startGame(window.gameScene);
-    //     }} else {
-    //         modalContainer.style.display = 'none';
-    //         overlay.style.display = 'none';
-    //         isAuthModalOpen = false;
-    //     }
+        if (hasPlayed) {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, auth.currentUser);
+            dailyLimitScreen.show();
+        } else if (window.gameScene) {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+            hideWelcomeScreen(window.gameScene);
+            window.startGame(window.gameScene);
+        }} else {
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+        }
 
     // Comment above out to turn off daily limit screen
 

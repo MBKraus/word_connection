@@ -1,8 +1,9 @@
-import { createScreen, STYLES } from './helpers.js';
+import { createScreen, STYLES, createButton } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
 import { createNextGameTimer, getNextPlayTime } from '../utils.js';
+import { showStatsPopup } from './statsPopUp.js';
 
-export function createDailyLimitScreen(scene) {
+export function createDailyLimitScreen(scene, user) {
     const loadingSpinner = document.getElementById('loading-spinner');
     loadingSpinner.style.display = 'block';
 
@@ -48,7 +49,7 @@ export function createDailyLimitScreen(scene) {
             // Next game time elements
             scene.nextGameLabel = scene.add.text(
                 scene.scale.width * 0.5,
-                scene.scale.height * 0.63,
+                scene.scale.height * 0.40,
                 `Next game available in`,
                 {
                     fontFamily: 'Poppins Light',
@@ -61,7 +62,7 @@ export function createDailyLimitScreen(scene) {
 
             scene.nextGameTime = scene.add.text(
                 scene.game.scale.width * 0.5,
-                scene.game.scale.height * 0.67,
+                scene.game.scale.height * 0.435,
                 ``,
                 {
                     fontFamily: 'Poppins',
@@ -73,6 +74,27 @@ export function createDailyLimitScreen(scene) {
             ).setOrigin(0.5);
             scene.dailyLimitScreen.add(scene.nextGameTime);
 
+            scene.dailyLimitStatsButton = createButton(
+                scene,
+                scene.game.scale.width * 0.5,
+                scene.game.scale.height * 0.57,  // Position at bottom
+                'Statistics',
+                () => {
+                        showStatsPopup(scene);
+                    },
+                STYLES.colors.playButtonBg,
+                STYLES.colors.playButtonText,
+                STYLES.colors.playButtonBorder
+            );
+
+            scene.dailyLimitScreen.add(scene.dailyLimitStatsButton);
+
+            if (user) {
+                scene.dailyLimitStatsButton.setVisible(true);
+            } else {
+            scene.dailyLimitStatsButton.setVisible(false)
+            }
+            
             // Create and start the timer
             scene.nextGameTimer = createNextGameTimer(
                 getNextPlayTime,
@@ -97,6 +119,7 @@ export function createDailyLimitScreen(scene) {
         show: async () => {
             loadingSpinner.style.display = 'block';
             await setupScreen();
+
             scene.dailyLimitScreen.setVisible(true);
             
             if (scene.authDOMElement) {

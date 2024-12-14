@@ -69,7 +69,13 @@ window.startNextRound = startNextRound;
 window.endGame = endGame;
 window.handleRoundEndNotAllTopicsGuessed = handleRoundEndNotAllTopicsGuessed;
 
+
 function create() {
+
+    const loadingSpinner = document.getElementById('loading-spinner');
+    loadingSpinner.style.display = 'block';
+    document.body.style.backgroundColor = '#ffffff'; // Set background to white
+
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
@@ -81,34 +87,33 @@ function create() {
     this.gameStartTime = null;
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
-
     const NUMBER_OF_ROUNDS = 2;
     const TOPICS_PER_ROUND = 3;
-  
-    // Check if user has already played today (cookie-based)
-    if (GameStorage.hasPlayedTodayCookie()) {
-        // Only create and show the daily limit screen
-        this.dailyLimitControls = createDailyLimitScreen(this);
-        this.dailyLimitControls.show();
-    } else {
-        
-    createWelcomeScreen(this);
-    showWelcomeScreen(this, 'welcomeScreen');
 
-    const encodedData = this.cache.text.get('data');
-    const decodedString = atob(encodedData)
-    const jsonData = JSON.parse(decodedString);
-    this.allRounds = generateGameRounds(jsonData);
+        if (GameStorage.hasPlayedTodayCookie()) {
+            this.dailyLimitControls = createDailyLimitScreen(this);
+            this.dailyLimitControls.show();
+    
+            loadingSpinner.style.display = 'none';
+        } else {
+            createWelcomeScreen(this);
+            showWelcomeScreen(this, 'welcomeScreen');
+    
+            document.querySelector('.text-container').classList.add('loaded');
+            loadingSpinner.style.display = 'none';
+        }
 
-    createGameElements(this);
-    setupKeyboardInput(this);
-    createCompleteScreen(this);
-    createFailureEndScreen(this);
-    createCountdown(this);
-
-    }
-
-    document.querySelector('.text-container').classList.add('loaded');
+        const encodedData = this.cache.text.get('data');
+        const decodedString = atob(encodedData)
+        const jsonData = JSON.parse(decodedString);
+        this.allRounds = generateGameRounds(jsonData);
+    
+        createGameElements(this);
+        setupKeyboardInput(this);
+        createCompleteScreen(this);
+        createFailureEndScreen(this);
+        createCountdown(this);
+ 
 }
 
 function createGameElements(scene) {
