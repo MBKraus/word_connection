@@ -1,5 +1,4 @@
 import { getFirestore, increment, doc, setDoc, serverTimestamp, collection, getDocs, limit, orderBy, query, getDoc, getAggregateFromServer, average } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
-import { auth } from './auth.js';
 import { getFirebaseApp } from './firebaseInit.js';
 
 const LAST_PLAYED_KEY = 'wordconnect_last_played';
@@ -96,13 +95,13 @@ export class GameStorage {
 
 
 export async function writeGameStats(score, totalTopicsGuessed) {
-    if (!auth.currentUser) {
+    if (!window.auth.currentUser) {
         console.log('User not logged in - stats not saved');
         return;
     }
 
     await initializeDb();
-    const userId = auth.currentUser.uid;
+    const userId = window.auth.currentUser.uid;
     const today = new Date();
     const dateString = today.toISOString().split('T')[0];
 

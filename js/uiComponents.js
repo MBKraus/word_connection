@@ -1,7 +1,6 @@
 import { createStatsPopup, showStatsPopup} from './screens/statsPopUp.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { showWelcomeScreen } from './screens/welcome.js'; 
-import { auth } from './auth.js';
 
 
 export function createLogo(scene, width, height, yPosition, xPosition) {
@@ -368,7 +367,7 @@ function createHamburgerMenu(scene, x, y, scale) {
     logoutButton.setInteractive();
     logoutButton.on('pointerdown', async () => {
         try {
-            await signOut(auth);  // Firebase sign out
+            await signOut(window.auth);  // Firebase sign out
             console.log('Logout successful');
             
             // Show the welcome screen after logging out

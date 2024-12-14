@@ -13,7 +13,13 @@ import {createDailyLimitScreen} from './screens/dailyLimit.js';
 import { isFuzzyMatchSimple, calculateRoundPoints, createNextGameTimer, getNextPlayTime } from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
-import { auth } from './auth.js';
+import {handleAuthStateChange} from './auth.js';
+import { getFirebaseApp } from './firebaseInit.js';
+import { 
+    getAuth, 
+    onAuthStateChanged,
+    GoogleAuthProvider,
+} from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),        // Default Poppins (Regular)
@@ -69,7 +75,13 @@ window.startNextRound = startNextRound;
 window.endGame = endGame;
 window.handleRoundEndNotAllTopicsGuessed = handleRoundEndNotAllTopicsGuessed;
 
-function create() {
+
+async function create() {
+
+    const loadingSpinner = document.getElementById('loading-spinner');
+    loadingSpinner.style.display = 'block';
+    document.body.style.backgroundColor = '#ffffff'; // Set background to white
+
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
@@ -81,19 +93,40 @@ function create() {
     this.gameStartTime = null;
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
-
     const NUMBER_OF_ROUNDS = 2;
     const TOPICS_PER_ROUND = 3;
-  
-    // Check if user has already played today (cookie-based)
-    if (GameStorage.hasPlayedTodayCookie()) {
-        // Only create and show the daily limit screen
-        this.dailyLimitControls = createDailyLimitScreen(this);
+
+    const app = await getFirebaseApp();
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+
+    window.auth = auth; 
+    window.googleProvider = googleProvider;
+    window.scene = this;
+
+    // Wait for AuthStateChange and fetch user and hasPlayedPerDB
+    const { user, hasPlayedPerDB } = await new Promise((resolve) => {
+        onAuthStateChanged(window.auth, async (user) => {
+            const hasPlayedPerDB = await handleAuthStateChange(user);
+            resolve({ user, hasPlayedPerDB }); 
+        });
+    });
+
+
+    if (GameStorage.hasPlayedTodayCookie() || hasPlayedPerDB) {
+        if (!this.dailyLimitControls) {
+        this.dailyLimitControls = createDailyLimitScreen(this, user);
+        }
         this.dailyLimitControls.show();
+
+        loadingSpinner.style.display = 'none';
     } else {
-        
-    createWelcomeScreen(this);
-    showWelcomeScreen(this, 'welcomeScreen');
+        createWelcomeScreen(this);
+        showWelcomeScreen(this, 'welcomeScreen');
+
+        document.querySelector('.text-container').classList.add('loaded');
+        loadingSpinner.style.display = 'none';
+    }
 
     const encodedData = this.cache.text.get('data');
     const decodedString = atob(encodedData)
@@ -105,10 +138,6 @@ function create() {
     createCompleteScreen(this);
     createFailureEndScreen(this);
     createCountdown(this);
-
-    }
-
-    document.querySelector('.text-container').classList.add('loaded');
 }
 
 function createGameElements(scene) {
@@ -391,7 +420,7 @@ function handleRoundEndAllTopicsGuessed(scene) {
         scene.completeFinalScoreValue.setText(totalScoreText);
         scene.completeFinalScoreValue.setVisible(true);
 
-        if (auth.currentUser) {
+        if (window.auth.currentUser) {
             scene.okButton.buttonText.setText('Statistics');
             scene.okButton.setVisible(true);
         } else {
@@ -431,7 +460,7 @@ function handleRoundEndNotAllTopicsGuessed(scene) {
      
     if (isGameComplete) {
         endGame(scene);
-        if (auth.currentUser) {
+        if (window.auth.currentUser) {
             scene.nextRoundButton.buttonText.setText('Statistics');
             scene.nextRoundButton.setVisible(true);
         } else {
@@ -466,8 +495,8 @@ function endGame(scene) {
     const topicsInCurrentRound = scene.correctGuessTexts.filter(entry => entry.text !== null).length;
     const totalTopicsGuessed = topicsInPreviousRounds + topicsInCurrentRound;
 
-    if (auth.currentUser) {  // Check if a user is logged in
-        const userId = auth.currentUser.uid;
+    if (window.auth.currentUser) {  // Check if a user is logged in
+        const userId = window.auth.currentUser.uid;
 
         // Save game stats to Firebase with total topics guessed
         writeGameStats(scene.score, totalTopicsGuessed);
