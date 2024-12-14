@@ -1,4 +1,4 @@
-import { showAuthModal, auth} from '../auth.js';
+import { showAuthModal} from '../auth.js';
 import {currentUser, getCachedOrFetchGameStats} from '../gameStorage.js';
 import { STYLES } from './helpers.js';
 import { pauseTimer, resumeTimer } from '../timer.js';
@@ -154,13 +154,13 @@ function createSignupButton(scene) {
             resumeTimer(scene);
             
             await showAuthModal('signup');
-            if (auth.currentUser) {
+            if (window.auth.currentUser) {
                 scene.statsPopup.setVisible(true);
                 // Pause timer again if showing stats after auth
                 pauseTimer(scene);
                 
                 scene.signupButton.setVisible(false);
-                const stats = await fetchGameStats(auth.currentUser.uid);
+                const stats = await fetchGameStats(window.auth.currentUser.uid);
             }
         });
 
@@ -242,7 +242,7 @@ export async function showStatsPopup(scene) {
 
     const titleText = scene.statsPopup.list.find(item => item.name === 'statsTitle');
     if (titleText) {
-        titleText.setText(auth.currentUser 
+        titleText.setText(window.auth.currentUser 
             ? 'Statistics' 
             : 'Track statistics?');
     }

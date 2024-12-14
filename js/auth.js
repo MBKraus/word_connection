@@ -1,23 +1,15 @@
-import { getFirebaseApp } from './firebaseInit.js';
+
 import { GameStorage, updateUserAndInitializeStats } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { recenterScreen } from './utils.js';
 import { showStatsPopup } from './screens/statsPopUp.js';
 import { 
-    getAuth, 
-    onAuthStateChanged,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
     signInWithPopup,
-    GoogleAuthProvider,
     sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { hideWelcomeScreen } from './screens/welcome.js';
-
-const app = await getFirebaseApp();
-const auth = getAuth(app);
-window.auth = auth; 
-const googleProvider = new GoogleAuthProvider();
 
 let isAuthSuccess = false;
 let isAuthModalOpen = false;
@@ -51,21 +43,25 @@ overlay.style.cssText = `
 `;
 document.body.appendChild(overlay);
 
-// Only start checking for daily limit after successful auth and auth modal close
-// Fetch game stats on login
-onAuthStateChanged(auth, async (user) => {
-    updateUserAndInitializeStats(user);
-    if (user && !isAuthModalOpen) {
-        const hasPlayedPerLocalCookie = GameStorage.hasPlayedTodayCookie();
-        const hasPlayedPerDB = await GameStorage.hasPlayedTodayDB(user.uid);
-        if (hasPlayedPerDB || hasPlayedPerLocalCookie) {
-            console.log("has played per either DB or local check ")
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, user);
-            dailyLimitScreen.show();
-        } 
-    } 
-});
 
+// Global listener for auth events
+// Fetches stats and checks if user has played today
+export async function handleAuthStateChange(user) {
+    await updateUserAndInitializeStats(user); // Ensure this is awaited
+    let hasPlayedPerDB = false;
+
+    if (user && !isAuthModalOpen) {
+        hasPlayedPerDB = await GameStorage.hasPlayedTodayDB(user.uid);
+        if (hasPlayedPerDB) {
+            console.log("has played per either DB or local check");
+            if (!window.scene.dailyLimitControls)
+                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, user);;
+            window.scene.dailyLimitControls.show();
+        }
+    }
+
+    return hasPlayedPerDB;
+}
 
 function showAuthModal(mode = 'signin') {
     isAuthModalOpen = true;
@@ -227,7 +223,7 @@ async function handleSignIn(e) {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     try {
-        await signInWithEmailAndPassword(auth, email, password);
+        await signInWithEmailAndPassword(window.auth, email, password);
         isAuthSuccess = true;
         await hideAuthModal();
     } catch (error) {
@@ -261,7 +257,7 @@ async function handleSignUp(e) {
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
     try {
-        await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(window.auth, email, password);
         isAuthSuccess = true;
         await hideAuthModal();
     } catch (error) {
@@ -271,7 +267,7 @@ async function handleSignUp(e) {
 
 async function handleGoogleSignIn() {
     try {
-        await signInWithPopup(auth, googleProvider);
+        await signInWithPopup(window.auth, googleProvider);
         isAuthSuccess = true;
         await hideAuthModal();
     } catch (error) {
@@ -282,7 +278,7 @@ async function handleGoogleSignIn() {
 function handlePasswordReset(e) {
     e.preventDefault();
     const email = document.getElementById('resetEmail').value.trim();
-    sendPasswordResetEmail(auth, email)
+    sendPasswordResetEmail(window.auth, email)
         .then(() => {
             alert("Password reset email sent!");
             hideAuthModal();
@@ -294,14 +290,14 @@ async function hideAuthModal() {
 
     // Comment below out to turn off daily limit screen
 
-    if (isAuthSuccess && auth.currentUser) {
+    if (isAuthSuccess && window.auth.currentUser) {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
         
         if (hasPlayed) {
             modalContainer.style.display = 'none';
             overlay.style.display = 'none';
             isAuthModalOpen = false;
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, auth.currentUser);
+            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, window.auth.currentUser);
             dailyLimitScreen.show();
         } else if (window.gameScene) {
             modalContainer.style.display = 'none';
@@ -317,8 +313,8 @@ async function hideAuthModal() {
 
     // Comment above out to turn off daily limit screen
 
-    if (isAuthSuccess && auth.currentUser) {
-        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
+    if (isAuthSuccess && window.auth.currentUser) {
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(window.auth.currentUser.uid);
             
         modalContainer.style.display = 'none';
         overlay.style.display = 'none';
@@ -333,4 +329,4 @@ async function hideAuthModal() {
         }
 }
 
-export { showAuthModal, auth, hideAuthModal };
+export { showAuthModal, hideAuthModal };
