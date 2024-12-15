@@ -61,8 +61,8 @@ function preload() {
     this.load.plugin('rexbbcodetextplugin', 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexbbcodetextplugin.min.js', true);
     this.load.image('question', './assets/question.png');
     this.load.image('cross', './assets/wrong.png');
-    this.load.audio('correctSound', './assets/audio/countdown.mp3');
-    this.load.audio('incorrectSound', './assets/audio/incorrect.mp3');
+    this.load.audio('correctSound', './assets/audio/correct.mp3');
+    this.load.audio('incorrectSound', './assets/audio/wrong.mp3');
     this.load.audio('countdownSound', './assets/audio/countdown.mp3');
 }
 
@@ -309,6 +309,8 @@ function checkGuess(scene, guess) {
             scene.checkmarkCircle.setVisible(false);
             scene.checkmarkText.setVisible(false);
         });
+
+        scene.sound.play('correctSound');
         
         // Update score
         scene.score += 30;
@@ -323,6 +325,7 @@ function checkGuess(scene, guess) {
         }
     } else {
         // Handle incorrect guess
+        scene.sound.play('incorrectSound');
         scene.cross.setVisible(true);
         scene.time.delayedCall(1000, () => {
             scene.cross.setVisible(false);
