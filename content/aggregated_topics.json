@@ -1,463 +1,4 @@
 {
-    "events": {
-        "topics": [
-            {
-                "topic": [
-                    "Olympics",
-                    "The Olympics",
-                    "The Olympic Games",
-                    "Olympic Games"
-                ],
-                "entries": [
-                    "Five Rings",
-                    "Summer and Winter",
-                    "Torch Relay",
-                    "Medal Ceremony"
-                ]
-            },
-            {
-                "topic": [
-                    "World War I",
-                    "World War One",
-                    "WWI",
-                    "WW1",
-                    "First World War",
-                    "The First World War",
-                    "Great War",
-                    "The Great War"
-                ],
-                "entries": [
-                    "Trench Warfare",
-                    "Archduke Assassination",
-                    "Battle of the Somme",
-                    "Treaty of Versailles"
-                ]
-            },
-            {
-                "topic": [
-                    "Christmas",
-                    "Xmas",
-                    "Yuletide"
-                ],
-                "entries": [
-                    "Santa Claus",
-                    "Advent Calendar",
-                    "Gift Giving",
-                    "Birth of Jesus"
-                ]
-            },
-            {
-                "topic": [
-                    "Easter",
-                    "Paschal Festival",
-                    "Resurrection Sunday"
-                ],
-                "entries": [
-                    "Egg Hunt",
-                    "Bunny",
-                    "Good Friday",
-                    "Resurrection"
-                ]
-            },
-            {
-                "topic": [
-                    "Thanksgiving",
-                    "Turkey Day",
-                    "Harvest Festival"
-                ],
-                "entries": [
-                    "Pumpkin Pie",
-                    "Turkey Feast",
-                    "Family Gatherings",
-                    "Thankfulness"
-                ]
-            },
-            {
-                "topic": [
-                    "New Year's Eve",
-                    "NYE",
-                    "December 31st"
-                ],
-                "entries": [
-                    "Countdown",
-                    "Fireworks",
-                    "Ball Drop",
-                    "Midnight Toast"
-                ]
-            },
-            {
-                "topic": [
-                    "Valentine's Day",
-                    "V-Day",
-                    "Saint Valentine's Day",
-                    "Valentine's"
-                ],
-                "entries": [
-                    "Roses",
-                    "Love Letters",
-                    "Cupid",
-                    "February"
-                ]
-            },
-            {
-                "topic": [
-                    "Halloween",
-                    "All Hallows' Eve",
-                    "Samhain"
-                ],
-                "entries": [
-                    "Costumes",
-                    "Trick-or-Treat",
-                    "Pumpkin Carving",
-                    "Spooky Decorations"
-                ]
-            },
-            {
-                "topic": [
-                    "The Civil War",
-                    "Civil War",
-                    "American Civil War",
-                    "The American Civil War",
-                    "War Between the States"
-                ],
-                "entries": [
-                    "Gettysburg",
-                    "Abraham Lincoln",
-                    "Union vs Confederacy",
-                    "Slavery"
-                ]
-            },
-            {
-                "topic": [
-                    "The Cold War",
-                    "Cold War",
-                    "Cold War Era"
-                ],
-                "entries": [
-                    "Nuclear Arms",
-                    "Iron Curtain",
-                    "US-Soviet Tensions",
-                    "Cuban Missile Crisis"
-                ]
-            },
-            {
-                "topic": [
-                    "The Vietnam War",
-                    "Vietnam War",
-                    "Vietnam Conflict",
-                    "Second Indochina War"
-                ],
-                "entries": [
-                    "Ho Chi Minh",
-                    "Viet Cong",
-                    "Agent Orange",
-                    "Tet Offensive"
-                ]
-            },
-            {
-                "topic": [
-                    "The Gulf War",
-                    "Gulf War",
-                    "Operation Desert Storm",
-                    "First Iraq War"
-                ],
-                "entries": [
-                    "Kuwait Invasion",
-                    "Scud Missiles",
-                    "Coalition Forces",
-                    "Saddam Hussein"
-                ]
-            },
-            {
-                "topic": [
-                    "The French Revolution",
-                    "French Revolution",
-                    "French Political Upheaval",
-                    "Revolution of 1789"
-                ],
-                "entries": [
-                    "Bastille",
-                    "Guillotine",
-                    "Reign of Terror",
-                    "Napoleon"
-                ]
-            },
-            {
-                "topic": [
-                    "The American Revolution",
-                    "American Revolution",
-                    "War of Independence",
-                    "US War of Independence",
-                    "Revolutionary War"
-                ],
-                "entries": [
-                    "George Washington",
-                    "Boston Tea Party",
-                    "Lexington and Concord",
-                    "Declaration of Independence"
-                ]
-            },
-            {
-                "topic": [
-                    "Ancient Egypt",
-                    "Egypt",
-                    "Egyptian Civilization",
-                    "Pharaoh Times",
-                    "Pharaohs",
-                    "The Pharaohs"
-                ],
-                "entries": [
-                    "Pyramids",
-                    "Hieroglyphics",
-                    "Nile River",
-                    "Mummification"
-                ]
-            },
-            {
-                "topic": [
-                    "The Roman Empire",
-                    "The Romans",
-                    "Roman Empire",
-                    "Roman Imperium",
-                    "Empire of Rome"
-                ],
-                "entries": [
-                    "Julius Caesar",
-                    "Senate",
-                    "Colosseum",
-                    "Legions"
-                ]
-            },
-            {
-                "topic": [
-                    "World Cup",
-                    "The World Cup",
-                    "FIFA World Cup",
-                    "Soccer Tournament"
-                ],
-                "entries": [
-                    "Golden Boot",
-                    "Penalty Shootouts",
-                    "FIFA",
-                    "Trophy Lift"
-                ]
-            },
-            {
-                "topic": [
-                    "Wimbledon",
-                    "Wimbledon Championships",
-                    "The Championships"
-                ],
-                "entries": [
-                    "Grass Courts",
-                    "All England Club",
-                    "Strawberries and Cream",
-                    "Tennis Whites"
-                ]
-            },
-            {
-                "topic": [
-                    "Tour de France",
-                    "The Tour de France",
-                    "Le Grand Tour",
-                    "French Cycling Race"
-                ],
-                "entries": [
-                    "Yellow Jersey",
-                    "Climbs",
-                    "Cycling",
-                    "Alpe d'Huez"
-                ]
-            },
-            {
-                "topic": [
-                    "The Nobel Prizes",
-                    "Nobel Prize",
-                    "Nobel Prizes",
-                    "Nobel Awards",
-                    "International Laurels"
-                ],
-                "entries": [
-                    "Peace Prize",
-                    "Committees",
-                    "Inventor",
-                    "Ceremony in Stockholm"
-                ]
-            },
-            {
-                "topic": [
-                    "The Oscars",
-                    "Oscars",
-                    "Academy Awards",
-                    "Hollywood's Night"
-                ],
-                "entries": [
-                    "Red Carpet",
-                    "Golden Statuette",
-                    "Best Picture",
-                    "Acceptance Speech"
-                ]
-            },
-            {
-                "topic": [
-                    "Marathon",
-                    "The Marathon"
-                ],
-                "entries": [
-                    "Mount Olympus",
-                    "Messenger",
-                    "42.195 Kilometers",
-                    "Endurance"
-                ]
-            },
-            {
-                "topic": [
-                    "Boxing Day",
-                    "Day of Goodwill",
-                    "St. Stephen's Day"
-                ],
-                "entries": [
-                    "Post-Christmas",
-                    "Gifts",
-                    "Shopping Sales",
-                    "Charity Events"
-                ]
-            },
-            {
-                "topic": [
-                    "Mardi Gras",
-                    "Fat Tuesday",
-                    "Shrove Tuesday"
-                ],
-                "entries": [
-                    "Parades",
-                    "Beads",
-                    "New Orleans",
-                    "Carnival"
-                ]
-            },
-            {
-                "topic": [
-                    "Day of the Dead",
-                    "Dia de los Muertos",
-                    "All Saints Day"
-                ],
-                "entries": [
-                    "Sugar Skulls",
-                    "Altars",
-                    "Mexico",
-                    "Marigolds"
-                ]
-            },
-            {
-                "topic": [
-                    "Oktoberfest",
-                    "Bavarian Beer Festival",
-                    "Wiesn"
-                ],
-                "entries": [
-                    "Munich",
-                    "Lederhosen",
-                    "Beer",
-                    "Pretzels"
-                ]
-            },
-            {
-                "topic": [
-                    "Festival of Colors",
-                    "Holi",
-                    "Holi Festival",
-                    "Phagwah"
-                ],
-                "entries": [
-                    "Colored Powder",
-                    "Spring",
-                    "Bonfires",
-                    "Water Balloons"
-                ]
-            },
-            {
-                "topic": [
-                    "Diwali",
-                    "Deepavali",
-                    "Festival of Lights"
-                ],
-                "entries": [
-                    "Oil Lamps",
-                    "Firecrackers",
-                    "New Clothes",
-                    "Goddess Lakshmi"
-                ]
-            },
-            {
-                "topic": [
-                    "St. Patrick's Day",
-                    "St. Patrick's",
-                    "St Patrick's Day",
-                    "St Patrick's",
-                    "Saint Patrick's Day",
-                    "Saint Patrick's",
-                    "Irish Day",
-                    "L\u00e1 Fh\u00e9ile P\u00e1draig"
-                ],
-                "entries": [
-                    "Green Attire",
-                    "Shamrock",
-                    "Parades",
-                    "Leprechauns"
-                ]
-            },
-            {
-                "topic": [
-                    "Pearl Harbor",
-                    "Pearl Harbour"
-                ],
-                "entries": [
-                    "World War II",
-                    "Attack",
-                    "Hawaii",
-                    "Naval Base"
-                ]
-            },
-            {
-                "topic": [
-                    "Battle of Waterloo",
-                    "Waterloo"
-                ],
-                "entries": [
-                    "Napoleon",
-                    "Defeat",
-                    "Battle",
-                    "Belgium"
-                ]
-            },
-            {
-                "topic": [
-                    "JFK Assassination",
-                    "JFK Killing",
-                    "JFK"
-                ],
-                "entries": [
-                    "Lee Harvey Oswald",
-                    "Dallas",
-                    "President",
-                    "Motorcade"
-                ]
-            },
-            {
-                "topic": [
-                    "The Moon Landing",
-                    "Moon Landing"
-                ],
-                "entries": [
-                    "One Small Step",
-                    "Neil Armstrong",
-                    "1969",
-                    "Apollo 11"
-                ]
-            }
-        ]
-    },
     "films_series_art": {
         "topics": [
             {
@@ -3246,7 +2787,7 @@
             }
         ]
     },
-    "places": {
+    "places_events": {
         "topics": [
             {
                 "topic": [
@@ -3717,6 +3258,18 @@
             },
             {
                 "topic": [
+                    "The Panama Canal",
+                    "Panama Canal"
+                ],
+                "entries": [
+                    "Strategic Global Trade Route",
+                    "Connecting Oceans",
+                    "Engineering Marvel",
+                    "Miraflores Locks"
+                ]
+            },
+            {
+                "topic": [
                     "Amsterdam",
                     "Dutch capital"
                 ],
@@ -3761,6 +3314,461 @@
                     "Kremlin",
                     "St. Basil's Cathedral",
                     "Bolshoi Theatre"
+                ]
+            },
+            {
+                "topic": [
+                    "Olympics",
+                    "The Olympics",
+                    "The Olympic Games",
+                    "Olympic Games"
+                ],
+                "entries": [
+                    "Five Rings",
+                    "Summer and Winter",
+                    "Torch Relay",
+                    "Medal Ceremony"
+                ]
+            },
+            {
+                "topic": [
+                    "World War I",
+                    "World War One",
+                    "WWI",
+                    "WW1",
+                    "First World War",
+                    "The First World War",
+                    "Great War",
+                    "The Great War"
+                ],
+                "entries": [
+                    "Trench Warfare",
+                    "Archduke Assassination",
+                    "Battle of the Somme",
+                    "Treaty of Versailles"
+                ]
+            },
+            {
+                "topic": [
+                    "Christmas",
+                    "Xmas",
+                    "Yuletide"
+                ],
+                "entries": [
+                    "Santa Claus",
+                    "Advent Calendar",
+                    "Gift Giving",
+                    "Birth of Jesus"
+                ]
+            },
+            {
+                "topic": [
+                    "Easter",
+                    "Paschal Festival",
+                    "Resurrection Sunday"
+                ],
+                "entries": [
+                    "Egg Hunt",
+                    "Bunny",
+                    "Good Friday",
+                    "Resurrection"
+                ]
+            },
+            {
+                "topic": [
+                    "Thanksgiving",
+                    "Turkey Day",
+                    "Harvest Festival"
+                ],
+                "entries": [
+                    "Pumpkin Pie",
+                    "Turkey Feast",
+                    "Family Gatherings",
+                    "Thankfulness"
+                ]
+            },
+            {
+                "topic": [
+                    "New Year's Eve",
+                    "NYE",
+                    "December 31st"
+                ],
+                "entries": [
+                    "Countdown",
+                    "Fireworks",
+                    "Ball Drop",
+                    "Midnight Toast"
+                ]
+            },
+            {
+                "topic": [
+                    "Valentine's Day",
+                    "V-Day",
+                    "Saint Valentine's Day",
+                    "Valentine's"
+                ],
+                "entries": [
+                    "Roses",
+                    "Love Letters",
+                    "Cupid",
+                    "February"
+                ]
+            },
+            {
+                "topic": [
+                    "Halloween",
+                    "All Hallows' Eve",
+                    "Samhain"
+                ],
+                "entries": [
+                    "Costumes",
+                    "Trick-or-Treat",
+                    "Pumpkin Carving",
+                    "Spooky Decorations"
+                ]
+            },
+            {
+                "topic": [
+                    "The Civil War",
+                    "Civil War",
+                    "American Civil War",
+                    "The American Civil War",
+                    "War Between the States"
+                ],
+                "entries": [
+                    "Gettysburg",
+                    "Abraham Lincoln",
+                    "Union vs Confederacy",
+                    "Slavery"
+                ]
+            },
+            {
+                "topic": [
+                    "The Cold War",
+                    "Cold War",
+                    "Cold War Era"
+                ],
+                "entries": [
+                    "Nuclear Arms",
+                    "Iron Curtain",
+                    "US-Soviet Tensions",
+                    "Cuban Missile Crisis"
+                ]
+            },
+            {
+                "topic": [
+                    "The Vietnam War",
+                    "Vietnam War",
+                    "Vietnam Conflict",
+                    "Second Indochina War"
+                ],
+                "entries": [
+                    "Ho Chi Minh",
+                    "Viet Cong",
+                    "Agent Orange",
+                    "Tet Offensive"
+                ]
+            },
+            {
+                "topic": [
+                    "The Gulf War",
+                    "Gulf War",
+                    "Operation Desert Storm",
+                    "First Iraq War"
+                ],
+                "entries": [
+                    "Kuwait Invasion",
+                    "Scud Missiles",
+                    "Coalition Forces",
+                    "Saddam Hussein"
+                ]
+            },
+            {
+                "topic": [
+                    "The French Revolution",
+                    "French Revolution",
+                    "French Political Upheaval",
+                    "Revolution of 1789"
+                ],
+                "entries": [
+                    "Bastille",
+                    "Guillotine",
+                    "Reign of Terror",
+                    "Napoleon"
+                ]
+            },
+            {
+                "topic": [
+                    "The American Revolution",
+                    "American Revolution",
+                    "War of Independence",
+                    "US War of Independence",
+                    "Revolutionary War"
+                ],
+                "entries": [
+                    "George Washington",
+                    "Boston Tea Party",
+                    "Lexington and Concord",
+                    "Declaration of Independence"
+                ]
+            },
+            {
+                "topic": [
+                    "Ancient Egypt",
+                    "Egypt",
+                    "Egyptian Civilization",
+                    "Pharaoh Times",
+                    "Pharaohs",
+                    "The Pharaohs"
+                ],
+                "entries": [
+                    "Pyramids",
+                    "Hieroglyphics",
+                    "Nile River",
+                    "Mummification"
+                ]
+            },
+            {
+                "topic": [
+                    "The Roman Empire",
+                    "The Romans",
+                    "Roman Empire",
+                    "Roman Imperium",
+                    "Empire of Rome"
+                ],
+                "entries": [
+                    "Julius Caesar",
+                    "Senate",
+                    "Colosseum",
+                    "Legions"
+                ]
+            },
+            {
+                "topic": [
+                    "World Cup",
+                    "The World Cup",
+                    "FIFA World Cup",
+                    "Soccer Tournament"
+                ],
+                "entries": [
+                    "Golden Boot",
+                    "Penalty Shootouts",
+                    "FIFA",
+                    "Trophy Lift"
+                ]
+            },
+            {
+                "topic": [
+                    "Wimbledon",
+                    "Wimbledon Championships",
+                    "The Championships"
+                ],
+                "entries": [
+                    "Grass Courts",
+                    "All England Club",
+                    "Strawberries and Cream",
+                    "Tennis Whites"
+                ]
+            },
+            {
+                "topic": [
+                    "Tour de France",
+                    "The Tour de France",
+                    "Le Grand Tour",
+                    "French Cycling Race"
+                ],
+                "entries": [
+                    "Yellow Jersey",
+                    "Climbs",
+                    "Cycling",
+                    "Alpe d'Huez"
+                ]
+            },
+            {
+                "topic": [
+                    "The Nobel Prizes",
+                    "Nobel Prize",
+                    "Nobel Prizes",
+                    "Nobel Awards",
+                    "International Laurels"
+                ],
+                "entries": [
+                    "Peace Prize",
+                    "Committees",
+                    "Inventor",
+                    "Ceremony in Stockholm"
+                ]
+            },
+            {
+                "topic": [
+                    "The Oscars",
+                    "Oscars",
+                    "Academy Awards",
+                    "Hollywood's Night"
+                ],
+                "entries": [
+                    "Red Carpet",
+                    "Golden Statuette",
+                    "Best Picture",
+                    "Acceptance Speech"
+                ]
+            },
+            {
+                "topic": [
+                    "Marathon",
+                    "The Marathon"
+                ],
+                "entries": [
+                    "Mount Olympus",
+                    "Messenger",
+                    "42.195 Kilometers",
+                    "Endurance"
+                ]
+            },
+            {
+                "topic": [
+                    "Boxing Day",
+                    "Day of Goodwill",
+                    "St. Stephen's Day"
+                ],
+                "entries": [
+                    "Post-Christmas",
+                    "Gifts",
+                    "Shopping Sales",
+                    "Charity Events"
+                ]
+            },
+            {
+                "topic": [
+                    "Mardi Gras",
+                    "Fat Tuesday",
+                    "Shrove Tuesday"
+                ],
+                "entries": [
+                    "Parades",
+                    "Beads",
+                    "New Orleans",
+                    "Carnival"
+                ]
+            },
+            {
+                "topic": [
+                    "Day of the Dead",
+                    "Dia de los Muertos",
+                    "All Saints Day"
+                ],
+                "entries": [
+                    "Sugar Skulls",
+                    "Altars",
+                    "Mexico",
+                    "Marigolds"
+                ]
+            },
+            {
+                "topic": [
+                    "Oktoberfest",
+                    "Bavarian Beer Festival",
+                    "Wiesn"
+                ],
+                "entries": [
+                    "Munich",
+                    "Lederhosen",
+                    "Beer",
+                    "Pretzels"
+                ]
+            },
+            {
+                "topic": [
+                    "Festival of Colors",
+                    "Holi",
+                    "Holi Festival",
+                    "Phagwah"
+                ],
+                "entries": [
+                    "Colored Powder",
+                    "Spring",
+                    "Bonfires",
+                    "Water Balloons"
+                ]
+            },
+            {
+                "topic": [
+                    "Diwali",
+                    "Deepavali",
+                    "Festival of Lights"
+                ],
+                "entries": [
+                    "Oil Lamps",
+                    "Firecrackers",
+                    "New Clothes",
+                    "Goddess Lakshmi"
+                ]
+            },
+            {
+                "topic": [
+                    "St. Patrick's Day",
+                    "St. Patrick's",
+                    "St Patrick's Day",
+                    "St Patrick's",
+                    "Saint Patrick's Day",
+                    "Saint Patrick's",
+                    "Irish Day",
+                    "L\u00e1 Fh\u00e9ile P\u00e1draig"
+                ],
+                "entries": [
+                    "Green Attire",
+                    "Shamrock",
+                    "Parades",
+                    "Leprechauns"
+                ]
+            },
+            {
+                "topic": [
+                    "Pearl Harbor",
+                    "Pearl Harbour"
+                ],
+                "entries": [
+                    "World War II",
+                    "Attack",
+                    "Hawaii",
+                    "Naval Base"
+                ]
+            },
+            {
+                "topic": [
+                    "Battle of Waterloo",
+                    "Waterloo"
+                ],
+                "entries": [
+                    "Napoleon",
+                    "Defeat",
+                    "Battle",
+                    "Belgium"
+                ]
+            },
+            {
+                "topic": [
+                    "JFK Assassination",
+                    "JFK Killing",
+                    "JFK"
+                ],
+                "entries": [
+                    "Lee Harvey Oswald",
+                    "Dallas",
+                    "President",
+                    "Motorcade"
+                ]
+            },
+            {
+                "topic": [
+                    "The Moon Landing",
+                    "Moon Landing"
+                ],
+                "entries": [
+                    "One Small Step",
+                    "Neil Armstrong",
+                    "1969",
+                    "Apollo 11"
                 ]
             }
         ]
