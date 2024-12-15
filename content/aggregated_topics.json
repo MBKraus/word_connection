@@ -5,7 +5,8 @@
                 "topic": [
                     "Olympics",
                     "The Olympics",
-                    "The Olympic Games"
+                    "The Olympic Games",
+                    "Olympic Games"
                 ],
                 "entries": [
                     "Five Rings",
@@ -17,6 +18,7 @@
             {
                 "topic": [
                     "World War I",
+                    "World War One",
                     "WWI",
                     "WW1",
                     "First World War",
@@ -87,7 +89,8 @@
                 "topic": [
                     "Valentine's Day",
                     "V-Day",
-                    "Saint Valentine's Day"
+                    "Saint Valentine's Day",
+                    "Valentine's"
                 ],
                 "entries": [
                     "Roses",
@@ -183,6 +186,7 @@
                 "topic": [
                     "The American Revolution",
                     "American Revolution",
+                    "War of Independence",
                     "US War of Independence",
                     "Revolutionary War"
                 ],
@@ -269,6 +273,7 @@
                 "topic": [
                     "The Nobel Prizes",
                     "Nobel Prize",
+                    "Nobel Prizes",
                     "Nobel Awards",
                     "International Laurels"
                 ],
@@ -400,6 +405,55 @@
                     "Shamrock",
                     "Parades",
                     "Leprechauns"
+                ]
+            },
+            {
+                "topic": [
+                    "Pearl Harbor",
+                    "Pearl Harbour"
+                ],
+                "entries": [
+                    "World War II",
+                    "Attack",
+                    "Hawaii",
+                    "Naval Base"
+                ]
+            },
+            {
+                "topic": [
+                    "Battle of Waterloo",
+                    "Waterloo"
+                ],
+                "entries": [
+                    "Napoleon",
+                    "Defeat",
+                    "Battle",
+                    "Belgium"
+                ]
+            },
+            {
+                "topic": [
+                    "JFK Assassination",
+                    "JFK Killing",
+                    "JFK"
+                ],
+                "entries": [
+                    "Lee Harvey Oswald",
+                    "Dallas",
+                    "President",
+                    "Motorcade"
+                ]
+            },
+            {
+                "topic": [
+                    "The Moon Landing",
+                    "Moon Landing"
+                ],
+                "entries": [
+                    "One Small Step",
+                    "Neil Armstrong",
+                    "1969",
+                    "Apollo 11"
                 ]
             }
         ]
@@ -5150,6 +5204,17 @@
                     "Toy",
                     "Danish origins",
                     "Minifigures"
+                ]
+            },
+            {
+                "topic": [
+                    "Candle"
+                ],
+                "entries": [
+                    "Light",
+                    "Wax",
+                    "Flame",
+                    "Ambiance"
                 ]
             }
         ]
