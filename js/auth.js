@@ -256,12 +256,36 @@ async function handleSignUp(e) {
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value.trim();
+
     try {
         await createUserWithEmailAndPassword(window.auth, email, password);
         isAuthSuccess = true;
         await hideAuthModal();
     } catch (error) {
-        alert("Sign Up Error: " + error.message);
+        let errorMessage;
+
+        switch (error.code) {
+            case 'auth/email-already-exists':
+                errorMessage = "The email address is already in use by another account.";
+                break;
+            case 'auth/invalid-email':
+                errorMessage = "The email address is not valid. Please enter a valid email.";
+                break;
+            case 'auth/password-does-not-meet-requirements':
+                    errorMessage = "Password must meet the following requirements:\n" +
+                        "- At least one uppercase letter\n" +
+                        "- At least one numeric character\n" +
+                        "- At least one non-alphanumeric character (e.g., !@#$%^&*)";
+                    break;
+            case 'auth/operation-not-allowed':
+                errorMessage = "Sign-up is currently disabled. Please contact support.";
+                break;
+            default:
+                errorMessage = "An unexpected error occurred. Please try again later.";
+        }
+        console.log(error);
+        console.log(error.code);
+        alert("Sign Up Error: " + errorMessage);
     }
 }
 
