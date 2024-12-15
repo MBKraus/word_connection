@@ -43,7 +43,6 @@ overlay.style.cssText = `
 `;
 document.body.appendChild(overlay);
 
-
 // Global listener for auth events
 // Fetches stats and checks if user has played today
 export async function handleAuthStateChange(user) {
@@ -55,13 +54,112 @@ export async function handleAuthStateChange(user) {
         if (hasPlayedPerDB) {
             console.log("has played per either DB or local check");
             if (!window.scene.dailyLimitControls)
-                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, user);;
+                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, user);
+            window.scene.dailyLimitStatsButton.buttonText.setText('Statistics');
+            window.scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!",)
             window.scene.dailyLimitControls.show();
         }
     }
 
     return hasPlayedPerDB;
 }
+
+
+// Auth handler functions
+
+async function handleSignIn(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+    try {
+        await signInWithEmailAndPassword(window.auth, email, password);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        let errorMessage;
+        console.log(error.code)
+        switch (error.code) {
+            case 'auth/invalid-credential':
+                errorMessage = 'Invalid credentials. Please try again.';
+                break
+            case 'auth/user-not-found':
+                errorMessage = 'No account found with this email. Please sign up or check your email address.';
+                break;
+            case 'auth/wrong-password':
+                errorMessage = 'Incorrect password. Please try again or reset your password.';
+                break;
+            case 'auth/invalid-email':
+                errorMessage = 'The email address is not valid. Please enter a valid email address.';
+                break;
+            case 'auth/too-many-requests':
+                errorMessage = 'Too many unsuccessful login attempts. Please try again later or reset your password.';
+                break;
+            default:
+                errorMessage = 'Sign-In Error: ' + error.message;
+        }
+        alert(errorMessage);
+    }
+}
+
+async function handleSignUp(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    try {
+        await createUserWithEmailAndPassword(window.auth, email, password);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        let errorMessage;
+
+        switch (error.code) {
+            case 'auth/email-already-exists':
+                errorMessage = "The email address is already in use by another account.";
+                break;
+            case 'auth/invalid-email':
+                errorMessage = "The email address is not valid. Please enter a valid email.";
+                break;
+            case 'auth/password-does-not-meet-requirements':
+                    errorMessage = "Password must meet the following requirements:\n" +
+                        "- At least one uppercase letter\n" +
+                        "- At least one numeric character\n" +
+                        "- At least one non-alphanumeric character (e.g., !@#$%^&*)";
+                    break;
+            case 'auth/operation-not-allowed':
+                errorMessage = "Sign-up is currently disabled. Please contact support.";
+                break;
+            default:
+                errorMessage = "An unexpected error occurred. Please try again later.";
+        }
+        console.log(error);
+        console.log(error.code);
+        alert("Sign Up Error: " + errorMessage);
+    }
+}
+
+async function handleGoogleSignIn() {
+    try {
+        await signInWithPopup(window.auth, googleProvider);
+        isAuthSuccess = true;
+        await hideAuthModal();
+    } catch (error) {
+        alert("Google Sign-In Error: " + error.message);
+    }
+}
+
+function handlePasswordReset(e) {
+    e.preventDefault();
+    const email = document.getElementById('resetEmail').value.trim();
+    sendPasswordResetEmail(window.auth, email)
+        .then(() => {
+            alert("Password reset email sent!");
+            hideAuthModal();
+        })
+        .catch((error) => alert("Error: " + error.message));
+}
+
+// Auth modal functions
 
 function showAuthModal(mode = 'signin') {
     isAuthModalOpen = true;
@@ -164,7 +262,33 @@ function showAuthModal(mode = 'signin') {
     document.getElementById('closeModal').onclick = hideAuthModal;
 }
 
-// Modified password reset modal to be fullscreen as well
+async function hideAuthModal() {
+
+    modalContainer.style.display = 'none';
+    overlay.style.display = 'none';
+    isAuthModalOpen = false;
+
+    // Comment below out to turn off daily limit screen
+
+    if (isAuthSuccess && window.auth.currentUser) {
+        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
+
+        if (hasPlayed) {
+            if (!window.scene.dailyLimitControls)
+                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, window.auth.currentUser);
+            window.scene.dailyLimitStatsButton.buttonText.setText('Statistics');
+            window.scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!",)
+            window.scene.dailyLimitControls.show();
+        } else {
+
+            try { hideWelcomeScreen(window.scene); } catch (error) {}
+            try { window.scene.dailyLimitControls.hide(); } catch (error) {}
+            window.startGame(window.scene);
+        }
+    }
+}
+
+
 function showForgotPasswordModal() {
     modalContainer.innerHTML = `
         <div style="
@@ -217,140 +341,5 @@ function showForgotPasswordModal() {
     document.getElementById('closeResetModal').onclick = hideAuthModal;
 }
 
-// Rest of the functions remain the same
-async function handleSignIn(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    try {
-        await signInWithEmailAndPassword(window.auth, email, password);
-        isAuthSuccess = true;
-        await hideAuthModal();
-    } catch (error) {
-        let errorMessage;
-        console.log(error.code)
-        switch (error.code) {
-            case 'auth/invalid-credential':
-                errorMessage = 'Invalid credentials. Please try again.';
-                break
-            case 'auth/user-not-found':
-                errorMessage = 'No account found with this email. Please sign up or check your email address.';
-                break;
-            case 'auth/wrong-password':
-                errorMessage = 'Incorrect password. Please try again or reset your password.';
-                break;
-            case 'auth/invalid-email':
-                errorMessage = 'The email address is not valid. Please enter a valid email address.';
-                break;
-            case 'auth/too-many-requests':
-                errorMessage = 'Too many unsuccessful login attempts. Please try again later or reset your password.';
-                break;
-            default:
-                errorMessage = 'Sign-In Error: ' + error.message;
-        }
-        alert(errorMessage);
-    }
-}
-
-async function handleSignUp(e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-
-    try {
-        await createUserWithEmailAndPassword(window.auth, email, password);
-        isAuthSuccess = true;
-        await hideAuthModal();
-    } catch (error) {
-        let errorMessage;
-
-        switch (error.code) {
-            case 'auth/email-already-exists':
-                errorMessage = "The email address is already in use by another account.";
-                break;
-            case 'auth/invalid-email':
-                errorMessage = "The email address is not valid. Please enter a valid email.";
-                break;
-            case 'auth/password-does-not-meet-requirements':
-                    errorMessage = "Password must meet the following requirements:\n" +
-                        "- At least one uppercase letter\n" +
-                        "- At least one numeric character\n" +
-                        "- At least one non-alphanumeric character (e.g., !@#$%^&*)";
-                    break;
-            case 'auth/operation-not-allowed':
-                errorMessage = "Sign-up is currently disabled. Please contact support.";
-                break;
-            default:
-                errorMessage = "An unexpected error occurred. Please try again later.";
-        }
-        console.log(error);
-        console.log(error.code);
-        alert("Sign Up Error: " + errorMessage);
-    }
-}
-
-async function handleGoogleSignIn() {
-    try {
-        await signInWithPopup(window.auth, googleProvider);
-        isAuthSuccess = true;
-        await hideAuthModal();
-    } catch (error) {
-        alert("Google Sign-In Error: " + error.message);
-    }
-}
-
-function handlePasswordReset(e) {
-    e.preventDefault();
-    const email = document.getElementById('resetEmail').value.trim();
-    sendPasswordResetEmail(window.auth, email)
-        .then(() => {
-            alert("Password reset email sent!");
-            hideAuthModal();
-        })
-        .catch((error) => alert("Error: " + error.message));
-}
-
-async function hideAuthModal() {
-
-    // Comment below out to turn off daily limit screen
-
-    if (isAuthSuccess && window.auth.currentUser) {
-        const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
-        
-        if (hasPlayed) {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-            const dailyLimitScreen = createDailyLimitScreen(window.gameScene, window.auth.currentUser);
-            dailyLimitScreen.show();
-        } else if (window.gameScene) {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-            hideWelcomeScreen(window.gameScene);
-            window.startGame(window.gameScene);
-        }} else {
-            modalContainer.style.display = 'none';
-            overlay.style.display = 'none';
-            isAuthModalOpen = false;
-        }
-
-    // Comment above out to turn off daily limit screen
-
-    if (isAuthSuccess && window.auth.currentUser) {
-        const hasPlayed = await GameStorage.hasPlayedTodayDB(window.auth.currentUser.uid);
-            
-        modalContainer.style.display = 'none';
-        overlay.style.display = 'none';
-        isAuthModalOpen = false;
-        
-        hideWelcomeScreen(window.gameScene);
-        window.startGame(window.gameScene);
-    } else {
-        modalContainer.style.display = 'none';
-        overlay.style.display = 'none';
-        isAuthModalOpen = false;
-        }
-}
 
 export { showAuthModal, hideAuthModal };

@@ -63,7 +63,7 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     drawButton(graphics, bgColor, borderColor);
 
     const buttonText = scene.add.text(0, 0, text, {
-        fontSize: scene.scale.width * 0.04 + 'px',
+        fontSize: scene.scale.width * 0.0325 + 'px',
         fontFamily: 'Poppins',
         color: textColor
     }).setOrigin(0.5);

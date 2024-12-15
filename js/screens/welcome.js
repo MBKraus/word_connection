@@ -4,9 +4,7 @@ import { createLogo } from '../uiComponents.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 
 export function createWelcomeScreen(scene) {
-    // Store scene reference for auth callbacks
-    window.gameScene = scene;
-    
+
     scene.welcomeScreen = createScreen(scene, 'welcomeScreen', true);
 
     const logoWidth = scene.scale.width * 0.4;

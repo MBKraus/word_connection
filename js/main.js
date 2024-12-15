@@ -112,20 +112,21 @@ async function create() {
         });
     });
 
+    this.dailyLimitControls = createDailyLimitScreen(this, user);
 
-    if (GameStorage.hasPlayedTodayCookie() || hasPlayedPerDB) {
-    // if (GameStorage.hasPlayedTodayCookie()) {
-        if (!this.dailyLimitControls) {
-        this.dailyLimitControls = createDailyLimitScreen(this, user);
-        }
+    if (GameStorage.hasPlayedTodayCookie()) {
+        scene.dailyLimitStatsButton.buttonText.setText('Create a free account')
+        scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!\n\nWant to start tracking your stats?",)
         this.dailyLimitControls.show();
 
+        loadingSpinner.style.display = 'none';
+    } else if (hasPlayedPerDB) {
+        scene.dailyLimitStatsButton.buttonText.setText('Statistics')
+        this.dailyLimitControls.show();
         loadingSpinner.style.display = 'none';
     } else {
         createWelcomeScreen(this);
         showWelcomeScreen(this, 'welcomeScreen');
-
-        document.querySelector('.text-container').classList.add('loaded');
         loadingSpinner.style.display = 'none';
     }
 
@@ -139,6 +140,8 @@ async function create() {
     createCompleteScreen(this);
     createFailureEndScreen(this);
     createCountdown(this);
+
+    document.querySelector('.text-container').classList.add('loaded');
 }
 
 function createGameElements(scene) {
