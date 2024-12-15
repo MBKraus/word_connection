@@ -2,6 +2,7 @@ import { createScreen, STYLES, createButton } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
 import { createNextGameTimer, getNextPlayTime } from '../utils.js';
 import { showStatsPopup } from './statsPopUp.js';
+import { showAuthModal } from '../auth.js';
 
 export function createDailyLimitScreen(scene, user) {
 
@@ -33,7 +34,7 @@ export function createDailyLimitScreen(scene, user) {
 
         scene.dailyLimitSubTitle = scene.add.text(
             scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.30,
+            scene.game.scale.height * 0.33,
             "Great job on today's puzzle!\nCome back tomorrow for a new challenge!",
             {
                 fontFamily: 'Poppins Light',
@@ -51,7 +52,11 @@ export function createDailyLimitScreen(scene, user) {
             scene.game.scale.height * 0.43,  // Position at bottom
             'Statistics',
             () => {
+                if (user) {
                     showStatsPopup(scene);
+                } else {
+                    showAuthModal('signup');
+                }
                 },
             STYLES.colors.playButtonBg,
             STYLES.colors.playButtonText,
@@ -59,12 +64,6 @@ export function createDailyLimitScreen(scene, user) {
         );
 
         scene.dailyLimitScreen.add(scene.dailyLimitStatsButton);
-
-        if (user) {
-            scene.dailyLimitStatsButton.setVisible(true);
-        } else {
-        scene.dailyLimitStatsButton.setVisible(false)
-        }
         
     return {
         show: async () => {
