@@ -175,44 +175,122 @@ function createSignupButton(scene) {
 export function createMetricsContainer(scene, stats, popupWidth, halfHeight, type, alignTo) {
     const isTop = type === 'top';
     const metrics = isTop ? [
-        { label: 'Played', value: stats.totalGamesPlayed },
-        { label: 'Average Score', value: stats.averageScore },
-        { label: 'Avg Topics Guessed', value: stats.averageTopicsGuessed },
+        { label: 'Played', value: stats.totalGamesPlayed, tooltip: 'Number of games\nyou have played' },
+        { label: 'Average Score', value: stats.averageScore, tooltip: 'Your average score\nper day' },
+        { label: '\nAverage # Topics\nGuessed', value: stats.averageTopicsGuessed, tooltip: 'Average number of topics\nguessed per day' },
     ] : [
-        { label: 'Current Streak', value: stats.currentStreak },
-        { label: 'Longest Streak', value: stats.longestStreak },
+        { label: 'Current Streak', value: stats.currentStreak, tooltip: "Your current streak of consecutive days\n you've guessed all topics correctly\n in every round." },
+        { label: 'Longest Streak', value: stats.longestStreak, tooltip: "Your record for the longest streak\n of consecutive days where you guessed\n all topics correctly in every round." },
     ];
 
-    // Create the container for the metrics
     const container = scene.add.container(0, isTop ? -halfHeight * 0.35 : -halfHeight * 0.10);
     const segmentWidth = popupWidth / metrics.length;
 
     metrics.forEach((metric, index) => {
-        // Calculate position to center metrics
         const metricX = alignTo
-            ? alignTo.list[index].x // Use the horizontal alignment from the top metrics
+            ? alignTo.list[index].x
             : (index - (metrics.length - 1) / 2) * segmentWidth;
 
         const metricContainer = scene.add.container(metricX, 0);
 
-        const valueText = scene.add.text(0, -25, metric.value, { // Slightly smaller offset
-            fontSize: scene.scale.width * 0.07 + 'px',
+        // Metric value
+        const valueText = scene.add.text(0, -25, metric.value, {
+            fontSize: scene.scale.width * 0.075 + 'px',
             fontFamily: 'Poppins',
             color: '#000000',
         }).setOrigin(0.5);
-        
-        const labelText = scene.add.text(0, 45, metric.label, { // Slightly smaller offset
+
+        // Metric label
+        const labelText = scene.add.text(0, 45, metric.label, {
             fontSize: scene.scale.width * 0.03 + 'px',
             fontFamily: 'Poppins Light',
             color: '#555555',
+            align: 'center',
         }).setOrigin(0.5);
+
+        // Question mark with circle
+        const questionMarkContainer = scene.add.container(130, -90);
         
-        metricContainer.add([valueText, labelText]);
+        // Create hit area first
+        const hitArea = new Phaser.GameObjects.Zone(
+            scene,
+            0,    // x position
+            0,    // y position
+            60,   // width
+            60    // height
+        ).setOrigin(0.5) 
+         .setInteractive(
+        );
+
+        // Create circle and question mark
+        const circle = scene.add.graphics();
+        circle.lineStyle(4, 0x000000, 1);
+        circle.fillStyle(0xffffff, 1);
+        circle.fillCircle(0, 0, 20);
+        circle.strokeCircle(0, 0, 20);
+
+        const questionMarkText = scene.add.text(0, 0, '?', {
+            fontSize: '20px',
+            fontFamily: 'Poppins',
+            color: '#000000',
+        }).setOrigin(0.5);
+
+        // Tooltip
+        const tooltipWidth = popupWidth * 0.75;
+        const tooltip = scene.add.text(0, -120, metric.tooltip, {
+            fontSize: scene.scale.width * 0.03 + 'px',
+            fontFamily: 'Poppins Light',
+            color: '#ffffff',
+            backgroundColor: '#333333',
+            padding: { x: 12, y: 8 },
+            align: 'center',
+            wordWrap: { width: tooltipWidth },
+        }).setOrigin(0.5).setVisible(false).setDepth(11000);
+
+        // Center tooltip above the metric value
+        tooltip.setX(0);
+
+        // Add hover events
+        hitArea.on('pointerover', () => {
+            tooltip.setVisible(true);
+
+            // Adjust tooltip position to prevent overflow
+            const bounds = tooltip.getBounds();
+            const screenWidth = scene.scale.width;
+
+            if (bounds.left < 0) {
+                tooltip.setX(tooltip.x + Math.abs(bounds.left));
+            } else if (bounds.right > screenWidth) {
+                tooltip.setX(tooltip.x - (bounds.right - screenWidth));
+            }
+
+            // Optional: show hover state
+            circle.clear();
+            circle.lineStyle(4, 0x000000, 1);
+            circle.fillStyle(0xdddddd, 1);
+            circle.fillCircle(0, 0, 20);
+            circle.strokeCircle(0, 0, 20);
+        });
+
+        hitArea.on('pointerout', () => {
+            tooltip.setVisible(false);
+            // Optional: restore normal state
+            circle.clear();
+            circle.lineStyle(4, 0x000000, 1);
+            circle.fillStyle(0xffffff, 1);
+            circle.fillCircle(0, 0, 20);
+            circle.strokeCircle(0, 0, 20);
+        });
+
+        // Add all elements to containers
+        questionMarkContainer.add([hitArea, circle, questionMarkText]);
+        metricContainer.add([valueText, labelText, questionMarkContainer, tooltip]);
         container.add(metricContainer);
     });
 
     return container;
 }
+
 
 export function createLastPlayedText(scene, stats, halfHeight) {
     const lastPlayedFormatted = stats.lastPlayed
