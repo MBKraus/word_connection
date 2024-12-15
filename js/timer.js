@@ -170,7 +170,7 @@ function updateTimer(scene) {
     if (!scene.isTimerPaused && scene.isGameActive && 
         scene.remainingTime <= 3.05 && scene.remainingTime > 2.95 && 
         !scene.countdownAudioInRoundPlayed) {
-        // scene.sound.play('countdownSound');
+        scene.sound.play('countdownSound');
         scene.countdownAudioInRoundPlayed = true;
     }
 
