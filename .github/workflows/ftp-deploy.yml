@@ -27,6 +27,7 @@ jobs:
           cp style.css filtered-deploy/
           cp auth.txt filtered-deploy/
           cp robots.txt filtered-deploy/
+          cp ads.txt filtered-deploy/
           cp favicon/favicon.ico filtered-deploy/favicon.ico
           cp favicon/site.webmanifest filtered-deploy/site.webmanifest
           cp favicon/android-chrome-192x192.png filtered-deploy/android-chrome-192x192.png
