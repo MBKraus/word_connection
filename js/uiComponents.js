@@ -158,8 +158,8 @@ export function createGiveUpButton(scene) {
     const buttonY = getStartY(scene);
 
     const cornerRadius = 15;
-    const defaultColor = 0xE2E8F1;
-    const hoverColor = 0xD8DEE7;
+    const defaultColor = 0xCAD2DE;
+    const hoverColor = 0xE2E8F1;
 
     // Create a container for the button
     scene.giveUpButton = scene.add.container(buttonX, buttonY);

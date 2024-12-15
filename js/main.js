@@ -114,6 +114,7 @@ async function create() {
 
 
     if (GameStorage.hasPlayedTodayCookie() || hasPlayedPerDB) {
+    // if (GameStorage.hasPlayedTodayCookie()) {
         if (!this.dailyLimitControls) {
         this.dailyLimitControls = createDailyLimitScreen(this, user);
         }
