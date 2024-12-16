@@ -72,6 +72,11 @@ input, textarea, select {
     box-sizing: border-box; /* Include padding in the width calculation */
 }
 
+/* Apply Poppins font to headers inside the text-container */
+.text-container h1, .text-container h2, .text-container h3, .text-container h4, .text-container h5, .text-container h6 {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font to all header tags */
+}
+
 .text-container.loaded {
     opacity: 1;
 }
@@ -255,4 +260,87 @@ height: auto;
 input:focus {
     border-color: #9bcf53 !important;
     outline: none; /* Removes the default blue outline */
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust the space between circle and h3 */
+}
+
+.circle {
+    width: 40px; /* Size of the circle */
+    height: 40px; /* Size of the circle */
+    border-radius: 50%; /* Makes it round */
+    background-color: #9bcf53; /* Green background */
+    color: white; /* White text color */
+    font-size: 20px; /* Size of the number */
+    font-weight: bold; /* Make the number bold */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the logo image */
+.logo {
+    display: block; /* Makes the image behave like a block element */
+    margin: 0 auto 20px; /* Center the image and add space below it */
+    max-width: 18%; /* Reduce the width of the logo to 50% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.screenshots {
+    display: block; /* Makes the image behave like a block element */
+    margin: 0 auto 20px; /* Center the image and add space below it */
+    max-width: 50%; /* Reduce the width of the logo to 50% of the container's width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* FAQ Panel Styles */
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between panels */
+    margin: 20px auto;
+    max-width: 80%;
+}
+
+.faq-panel {
+    background-color: #f9f9f9; /* Light background for each panel */
+    border: 1px solid #ddd; /* Subtle border around each panel */
+    border-radius: 8px; /* Rounded corners for each panel */
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-panel:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.faq-panel h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333; /* Dark color for headings */
+}
+
+.faq-panel p {
+    font-family: 'Poppins Light', sans-serif;
+    font-size: 16px;
+    color: #555; /* Lighter color for the text */
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 728px) {
+    .faq-container {
+        max-width: 95%; /* Adjust for smaller screens */
+    }
+
+    .faq-panel {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
 }
