@@ -78,9 +78,9 @@ export function calculateRoundPoints(timeRemaining, topicsGuessed) {
         timeBonus: 0
     };
 
-    if (timeRemaining > 30) {
+    if (timeRemaining >= 30) {
         points.timeBonus = 30;
-    } else if (timeRemaining > 10) {
+    } else if (timeRemaining >= 10 && timeRemaining < 30) {
         points.timeBonus = 10;
     }
 
