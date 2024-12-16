@@ -57,18 +57,19 @@ input, textarea, select {
 }
 
 .text-container {
-    width: 378px; /* Set the width of the text container */
+    max-width: 60%; /* Restrict width to 90% of the screen, allowing space on sides */
     margin: 20px auto 0; /* Center horizontally and add space above */
     background-color: white; /* Set a lighter gray background */
-    padding: 10px; /* Optional: Add padding for better spacing */
+    padding: 10px; /* Add padding inside the container for better spacing */
     overflow-wrap: break-word; /* Ensure long words break to the next line */
     z-index: 2; /* Ensure it stays on top of the game container */
     position: relative; /* Position relative to keep stacking context */
-    color: black; /* Set the heading text color to red */
-    font-family: Arial, sans-serif; /* Set the font to Arial */
+    color: black; /* Set the heading text color to black */
+    font-family: 'Poppins Light', sans-serif;
     text-align: center; /* Center the text */
     opacity: 0; /* Start hidden */
     transition: opacity 0.3s ease; /* Smooth fade in */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 .text-container.loaded {
@@ -107,6 +108,11 @@ height: auto;
     #game-container {
         margin-top: 50px; /* Adjust the margin-top for smaller screens */
     }
+
+    .text-container {
+        max-width: 90%; /* Adjust the width for smaller screens */
+    }
+
 }
 
 @font-face {
