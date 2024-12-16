@@ -35,7 +35,11 @@ jobs:
         run: |
           mkdir -p filtered-deploy/js  # Ensure the destination folder exists
           for file in js/*.js; do
-            terser $file -o filtered-deploy/js/$(basename $file .js).min.js  # Minify each JS file
+            if terser $file -o filtered-deploy/js/$(basename $file .js).min.js; then
+              echo "Successfully minified: $file"
+            else
+              echo "Failed to minify: $file"
+            fi
           done
 
        # Filter and prepare other files to deploy
