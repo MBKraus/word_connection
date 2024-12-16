@@ -31,31 +31,31 @@ jobs:
           npm install terser -g  # Install Terser globally
 
       # Minify JavaScript files
-      - name: Minify JavaScript
-        run: |
-          mkdir -p filtered-deploy/js/screens  # Ensure the destination folder exists for screens
-          mkdir -p filtered-deploy/js  # Ensure the destination folder exists for other JS files
-          for file in js/*.js js/screens/*.js; do
-            if [ -f "$file" ]; then  # Check if the file exists
-              if [[ $file == js/screens/* ]]; then
-                # Minify and place the file back in js/screens
-                if terser $file -o filtered-deploy/js/screens/$(basename $file .js).min.js; then
-                  echo "Successfully minified (screens): $file"
+        - name: Minify JavaScript
+          run: |
+            mkdir -p filtered-deploy/js/screens  # Ensure the destination folder exists for screens
+            mkdir -p filtered-deploy/js  # Ensure the destination folder exists for other JS files
+            for file in js/*.js js/screens/*.js; do
+              if [ -f "$file" ]; then  # Check if the file exists
+                if [[ $file == js/screens/* ]]; then
+                  # Minify and place the file back in js/screens
+                  if terser $file -o filtered-deploy/js/screens/$(basename $file .js).min.js; then
+                    echo "Successfully minified (screens): $file"
+                  else
+                    echo "Failed to minify (screens): $file"
+                  fi
                 else
-                  echo "Failed to minify (screens): $file"
-                fi
-              else
-                # Minify and place the file in js
-                if terser $file -o filtered-deploy/js/$(basename $file .js).min.js; then
-                  echo "Successfully minified: $file"
-                else
-                  echo "Failed to minify: $file"
+                  # Minify and place the file in js
+                  if terser $file -o filtered-deploy/js/$(basename $file .js).min.js; then
+                    echo "Successfully minified: $file"
+                  else
+                    echo "Failed to minify: $file"
+                  fi
                 fi
               fi
-            fi
-          done
+            done
 
-       # Filter and prepare other files to deploy
+      # Filter and prepare files to deploy
       - name: Filter files
         run: |
           mkdir -p filtered-deploy
@@ -71,10 +71,15 @@ jobs:
           cp favicon/apple-touch-icon.png filtered-deploy/apple-touch-icon.png
           cp favicon/favicon-16x16.png filtered-deploy/favicon-16x16.png
           cp favicon/favicon-32x32.png filtered-deploy/favicon-32x32.png
-          mkdir -p filtered-deploy/js && cp -r js/* filtered-deploy/js/
+          
+          # Copy only the minified JS files (skip non-minified)
+          mkdir -p filtered-deploy/js
+          cp js/screens/*.min.js filtered-deploy/js/screens/
+          cp js/*.min.js filtered-deploy/js/
+          
+          # Copy assets and other files
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
-
 
       # # Filter and prepare files to deploy
       # - name: Filter files
