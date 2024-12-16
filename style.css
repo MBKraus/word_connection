@@ -26,7 +26,7 @@ input, textarea, select {
     left: 50%; /* Start positioning from the center of the screen */
     transform: translateX(-50%); /* Adjust for the width to center horizontally */
     z-index: 1000; /* Ensure it's above other elements */
-    background-color: black; /* Background color for visibility */
+    background-color: white; /* Background color for visibility */
     width: 300px; /* Default width for smaller screens */
     height: 50px; /* Default height for smaller screens */
     margin: 0 auto; /* Automatically center horizontally */
