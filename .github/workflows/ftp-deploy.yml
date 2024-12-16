@@ -19,6 +19,66 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Create necessary directories
+      - name: Create directories
+        run: |
+          mkdir -p filtered-deploy/js/screens
+
+      # Install Rollup and plugins
+      - name: Install Dependencies
+        run: |
+          npm init -y
+          npm install --save-dev rollup@4.9.5 @rollup/plugin-node-resolve@16.0.0 @rollup/plugin-terser@0.4.4
+
+      # Create Rollup config
+      - name: Create Rollup Config
+        run: |
+          echo 'import { nodeResolve } from "@rollup/plugin-node-resolve";
+          import terser from "@rollup/plugin-terser";
+          import fs from "fs";
+          import path from "path";
+
+          // Function to get all JS files from a directory
+          function getJsFiles(dir) {
+            return fs.readdirSync(dir)
+              .filter(file => file.endsWith(".js"))
+              .map(file => path.join(dir, file));
+          }
+
+          // Get all JS files from root js directory and screens subdirectory
+          const rootJsFiles = getJsFiles("js");
+          const screenFiles = getJsFiles("js/screens");
+
+          // Create config for each file
+          function createConfig(input) {
+            return {
+              input,
+              output: {
+                file: `filtered-deploy/${input.replace(".js", ".min.js")}`,
+                format: "es",
+                sourcemap: true
+              },
+              plugins: [
+                nodeResolve(),
+                terser()
+              ]
+            };
+          }
+
+          // Create configs for all files
+          const allConfigs = [...rootJsFiles, ...screenFiles].map(createConfig);
+
+          export default allConfigs;' > rollup.config.mjs
+
+      # Bundle and minify JavaScript
+      - name: Bundle and Minify JavaScript
+        run: npx rollup -c rollup.config.mjs
+
       # Filter and prepare files to deploy
       - name: Filter files
         run: |
@@ -35,10 +95,15 @@ jobs:
           cp favicon/apple-touch-icon.png filtered-deploy/apple-touch-icon.png
           cp favicon/favicon-16x16.png filtered-deploy/favicon-16x16.png
           cp favicon/favicon-32x32.png filtered-deploy/favicon-32x32.png
-          mkdir -p filtered-deploy/js && cp -r js/* filtered-deploy/js/
+          
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
 
+          # Remove any source map files before deployment
+          find filtered-deploy -name "*.map" -type f -delete
+
+          ls -al filtered-deploy/js/
+    
       # Deploy to FTP server
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -48,4 +113,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./filtered-deploy/
           server-dir: /httpdocs/
-          # dry-run: ${{ github.ref != 'refs/heads/main' }}  # Only actually deploy on main branch
