@@ -19,50 +19,61 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Set up Node.js to use Terser for minification
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-
-      # Install Terser to minify JS files
-      - name: Install Terser
+        # Install Rollup and plugins
+      - name: Install Dependencies
         run: |
-          npm install terser -g  # Install Terser globally
+          npm init -y
+          npm install --save-dev rollup @rollup/plugin-node-resolve @rollup/plugin-terser
 
-      # Minify JavaScript files
-      - name: Minify JavaScript
+      # Create Rollup config
+      - name: Create Rollup Config
         run: |
-          mkdir -p filtered-deploy/js/screens  # Ensure the destination folder exists for screens
-          mkdir -p filtered-deploy/js  # Ensure the destination folder exists for other JS files
-          
-          # Minify JS files
-          for file in js/*.js js/screens/*.js; do
-            if [ -f "$file" ]; then  # Check if the file exists
-              if [[ $file == js/screens/* ]]; then
-                # Minify and place the file back in js/screens
-                if terser $file -o filtered-deploy/js/screens/$(basename $file .js).min.js; then
-                  echo "Successfully minified (screens): $file"
-                else
-                  echo "Failed to minify (screens): $file"
-                fi
-              else
-                # Minify and place the file in js
-                if terser $file -o filtered-deploy/js/$(basename $file .js).min.js; then
-                  echo "Successfully minified: $file"
-                else
-                  echo "Failed to minify: $file"
-                fi
-              fi
-            fi
-          done
-          
-          # List the files in the output directories
-          echo "Listing files in filtered-deploy/js/screens/"
-          ls -al filtered-deploy/js/screens/
+          cat > rollup.config.mjs << 'EOL'
+          import { nodeResolve } from '@rollup/plugin-node-resolve';
+          import terser from '@rollup/plugin-terser';
 
-          echo "Listing files in filtered-deploy/js/"
-          ls -al filtered-deploy/js/
+          // Configuration for main bundle
+          const mainConfig = {
+            input: 'js/main.js',
+            output: {
+              file: 'filtered-deploy/js/main.min.js',
+              format: 'es',
+              sourcemap: true
+            },
+            plugins: [
+              nodeResolve(),
+              terser()
+            ]
+          };
+
+          // Configuration for screen modules
+          const screenFiles = [
+            'js/screens/game.js',
+            'js/screens/menu.js',
+            // Add other screen files here
+          ];
+
+          const screenConfigs = screenFiles.map(input => ({
+            input,
+            output: {
+              file: `filtered-deploy/${input.replace('.js', '.min.js')}`,
+              format: 'es',
+              sourcemap: true
+            },
+            plugins: [
+              nodeResolve(),
+              terser()
+            ]
+          }));
+
+          export default [mainConfig, ...screenConfigs];
+          EOL
+
+      # Bundle and minify JavaScript
+      - name: Bundle and Minify JavaScript
+        run: |
+          mkdir -p filtered-deploy/js/screens
+          npx rollup -c rollup.config.mjs
 
       # Filter and prepare files to deploy
       - name: Filter files
