@@ -98,6 +98,10 @@ jobs:
           
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
+
+          # Remove any source map files before deployment
+          find filtered-deploy -name "*.map" -type f -delete
+
           ls -al filtered-deploy/js/
     
       # # Filter and prepare files to deploy
