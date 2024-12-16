@@ -142,18 +142,20 @@
 
         <div class="faq-panel">
         <h3>Is there a time limit?</h3>
-        <p>Yes, the puzzles are timed to add an extra layer of excitement. Make sure to solve all six connections within the given time. Each round you have 40 seconds.</p>
+        <p>Yes, the puzzles are timed to add an extra layer of excitement. Make sure to solve all six connections within the given time. Each round you have 60 seconds.</p>
         </div>
 
         <div class="faq-panel">
         <h3>What is the scoring mechanism?</h3>
         <p>The scoring system rewards accuracy and speed:</p>
+        <div class="bullet-container">
         <ul>
         <li>You earn <strong>30 points</strong> for each correctly guessed topic.</li>
         <li>Completing all topics in a round grants you a <strong>50-point round bonus</strong>.</li>
         <li>If you finish a round with <strong>30 seconds or more remainig  </strong>, you receive an additional <strong>30-point time bonus</strong>.</li>
         <li>If you finish with <strong> 10 seconds or more remaining</strong> (but less than 30 seconds), you earn a <strong>10-point time bonus</strong>.</li>
         </ul>
+        </div>
         <p>Maximize your score by solving quickly and accurately!</p>
         </div>
 
@@ -175,11 +177,13 @@
         <div class="faq-panel">
         <h3>How do I create an account, and what are the benefits?</h3>
         <p>Creating an account allows you to track your progress and achievements. With an account, you can:</p>
+        <div class="bullet-container">
         <ul>
             <li>Store Your Streak: Keep a record of the number of consecutive days you've played and successfully guessed all connections.</li>
             <li>Track Your Scores: Monitor your performance over time and aim to beat your personal best.</li>
             <li>Access Detailed Statistics: View comprehensive stats like total games played, average score, longest streak, and more.</li>
         </ul>
+        </div>
         <p>To create an account, simply click on the "Sign Up" button on the game's homepage. Follow the prompts to enter your details, and you'll be all set to enjoy these exclusive features!</p>
         </div>
 
@@ -189,8 +193,26 @@
         </div>
     </div>
     </div>
-    <!-- <script type="module" src="js/main.js"></script> -->
-    <script type="module" src="js/main.min.js"></script>
+    <script type="module">
+        // Function to dynamically load a script
+        function loadScript(src) {
+          return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.type = 'module';
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+          });
+        }
+      
+        // Try to load main.min.js, fallback to main.js
+        loadScript('js/main.min.js')
+          .catch(() => {
+            console.warn('main.min.js not found, loading main.js instead.');
+            return loadScript('js/main.js');
+          });
+      </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const cookiewall = document.getElementById('cookiewall');
