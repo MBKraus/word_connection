@@ -40,43 +40,40 @@ jobs:
         run: |
           echo 'import { nodeResolve } from "@rollup/plugin-node-resolve";
           import terser from "@rollup/plugin-terser";
+          import fs from "fs";
+          import path from "path";
 
-          const mainConfig = {
-            input: "js/main.js",
-            output: {
-              file: "filtered-deploy/js/main.min.js",
-              format: "es",
-              sourcemap: true
-            },
-            plugins: [
-              nodeResolve(),
-              terser()
-            ]
-          };
+          // Function to get all JS files from a directory
+          function getJsFiles(dir) {
+            return fs.readdirSync(dir)
+              .filter(file => file.endsWith(".js"))
+              .map(file => path.join(dir, file));
+          }
 
-          const screenFiles = [
-          'js/screens/complete.js',
-            js/screens/dailyLimit.js',
-            js/screens/failureEnd.js',
-            js/screens/helpers.js',
-            js/screens/statsPopUp.js',
-            js/screens/welcome.js',
-          ];
+          // Get all JS files from root js directory and screens subdirectory
+          const rootJsFiles = getJsFiles("js");
+          const screenFiles = getJsFiles("js/screens");
 
-          const screenConfigs = screenFiles.map(input => ({
-            input,
-            output: {
-              file: `filtered-deploy/${input.replace(".js", ".min.js")}`,
-              format: "es",
-              sourcemap: true
-            },
-            plugins: [
-              nodeResolve(),
-              terser()
-            ]
-          }));
+          // Create config for each file
+          function createConfig(input) {
+            return {
+              input,
+              output: {
+                file: `filtered-deploy/${input.replace(".js", ".min.js")}`,
+                format: "es",
+                sourcemap: true
+              },
+              plugins: [
+                nodeResolve(),
+                terser()
+              ]
+            };
+          }
 
-          export default [mainConfig, ...screenConfigs];' > rollup.config.mjs
+          // Create configs for all files
+          const allConfigs = [...rootJsFiles, ...screenFiles].map(createConfig);
+
+          export default allConfigs;' > rollup.config.mjs
 
       # Bundle and minify JavaScript
       - name: Bundle and Minify JavaScript
