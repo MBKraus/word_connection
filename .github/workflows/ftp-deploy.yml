@@ -81,14 +81,9 @@ jobs:
           cp favicon/favicon-16x16.png filtered-deploy/favicon-16x16.png
           cp favicon/favicon-32x32.png filtered-deploy/favicon-32x32.png
           
-          # Copy only the minified JS files (skip non-minified)
-          mkdir -p filtered-deploy/js
-          cp js/screens/*.min.js filtered-deploy/js/screens/
-          cp js/*.min.js filtered-deploy/js/
-          
-          # Copy assets and other files
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
+          ls -al filtered-deploy/js/
 
       # # Filter and prepare files to deploy
       # - name: Filter files
