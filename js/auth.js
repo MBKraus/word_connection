@@ -47,16 +47,11 @@ document.body.appendChild(overlay);
 // Fetches stats and checks if user has played today
 export async function handleAuthStateChange(user) {
     await updateUserAndInitializeStats(user); // Ensure this is awaited
-    let hasPlayedPerDB = false;
-
+    let hasPlayedPerDB = null;
     if (user && !isAuthModalOpen) {
         hasPlayedPerDB = await GameStorage.hasPlayedTodayDB(user.uid);
         if (hasPlayedPerDB) {
-            console.log("has played per either DB or local check");
-            if (!window.scene.dailyLimitControls)
-                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, user);
-            window.scene.dailyLimitStatsButton.buttonText.setText('Statistics');
-            window.scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!",)
+            window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, user);
             window.scene.dailyLimitControls.show();
         }
     }
@@ -264,26 +259,28 @@ function showAuthModal(mode = 'signin') {
 
 async function hideAuthModal() {
 
-    modalContainer.style.display = 'none';
-    overlay.style.display = 'none';
-    isAuthModalOpen = false;
-
     // Comment below out to turn off daily limit screen
 
     if (isAuthSuccess && window.auth.currentUser) {
         const hasPlayed = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
 
         if (hasPlayed) {
-            if (!window.scene.dailyLimitControls)
-                window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, window.auth.currentUser);
-            window.scene.dailyLimitStatsButton.buttonText.setText('Statistics');
-            window.scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!",)
+            window.scene.dailyLimitControls = createDailyLimitScreen(window.scene, window.auth.currentUser);
             window.scene.dailyLimitControls.show();
-        } else {
 
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+
+        } else {
             try { hideWelcomeScreen(window.scene); } catch (error) {}
             try { window.scene.dailyLimitControls.hide(); } catch (error) {}
             window.startGame(window.scene);
+
+            modalContainer.style.display = 'none';
+            overlay.style.display = 'none';
+            isAuthModalOpen = false;
+
         }
     }
 }

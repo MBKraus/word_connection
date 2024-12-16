@@ -148,7 +148,6 @@ height: auto;
     z-index: 1; /* Ensure the overlay is below the popup content */
 }
 
-/* Popup content (covering 30% of the screen) */
 .cookiewall-content {
     position: relative;
     background-color: white;
@@ -159,12 +158,24 @@ height: auto;
     text-align: center;
     padding: 20px 50px 20px 50px;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+
+    /* Flexbox for centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 767px) {
     .cookiewall-content {
         height: 42vh;
         padding: 20px 30px 20px 30px;
+
+        /* Ensure flexbox still applies */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
 
