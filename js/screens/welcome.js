@@ -105,19 +105,6 @@ export function createWelcomeScreen(scene) {
     ).setOrigin(0.5);
     scene.welcomeScreen.add(dateText);
 
-    const gameNumber = scene.add.text(
-        scene.scale.width * 0.5,
-        scene.scale.height * 0.78,
-        "# 1",
-        {
-            fontSize: scene.scale.width * 0.04 + 'px',
-            fontFamily: 'Poppins Light',
-            color: STYLES.colors.text,
-            align: 'center'
-        }
-    ).setOrigin(0.5);
-    scene.welcomeScreen.add(gameNumber);
-
     return {
         show: () => showScreen(scene, 'welcomeScreen'),
         hide: () => hideScreen(scene, 'welcomeScreen')

@@ -368,8 +368,6 @@ function createHamburgerMenu(scene, x, y, scale) {
     logoutButton.on('pointerdown', async () => {
         try {
             await signOut(window.auth);  // Firebase sign out
-            console.log('Logout successful');
-            
             // Show the welcome screen after logging out
             showWelcomeScreen(scene);  
         } catch (error) {
