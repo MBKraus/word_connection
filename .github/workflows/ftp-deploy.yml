@@ -19,7 +19,26 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Filter and prepare files to deploy
+      # Set up Node.js to use Terser for minification
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      # Install Terser to minify JS files
+      - name: Install Terser
+        run: |
+          npm install terser -g  # Install Terser globally
+
+      # Minify JavaScript files
+      - name: Minify JavaScript
+        run: |
+          mkdir -p filtered-deploy/js  # Ensure the destination folder exists
+          for file in js/*.js; do
+            terser $file -o filtered-deploy/js/$(basename $file .js).min.js  # Minify each JS file
+          done
+
+       # Filter and prepare other files to deploy
       - name: Filter files
         run: |
           mkdir -p filtered-deploy
@@ -35,9 +54,29 @@ jobs:
           cp favicon/apple-touch-icon.png filtered-deploy/apple-touch-icon.png
           cp favicon/favicon-16x16.png filtered-deploy/favicon-16x16.png
           cp favicon/favicon-32x32.png filtered-deploy/favicon-32x32.png
-          mkdir -p filtered-deploy/js && cp -r js/* filtered-deploy/js/
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
+
+
+      # # Filter and prepare files to deploy
+      # - name: Filter files
+      #   run: |
+      #     mkdir -p filtered-deploy
+      #     cp index.html filtered-deploy/
+      #     cp style.css filtered-deploy/
+      #     cp auth.txt filtered-deploy/
+      #     cp robots.txt filtered-deploy/
+      #     cp ads.txt filtered-deploy/
+      #     cp favicon/favicon.ico filtered-deploy/favicon.ico
+      #     cp favicon/site.webmanifest filtered-deploy/site.webmanifest
+      #     cp favicon/android-chrome-192x192.png filtered-deploy/android-chrome-192x192.png
+      #     cp favicon/android-chrome-512x512.png filtered-deploy/android-chrome-512x512.png
+      #     cp favicon/apple-touch-icon.png filtered-deploy/apple-touch-icon.png
+      #     cp favicon/favicon-16x16.png filtered-deploy/favicon-16x16.png
+      #     cp favicon/favicon-32x32.png filtered-deploy/favicon-32x32.png
+      #     mkdir -p filtered-deploy/js && cp -r js/* filtered-deploy/js/
+      #     mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
+      #     mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
 
       # Deploy to FTP server
       - name: Deploy to FTP Server
