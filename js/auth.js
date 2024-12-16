@@ -282,7 +282,12 @@ async function hideAuthModal() {
             isAuthModalOpen = false;
 
         }
-    }
+    } else {
+        //just hide modal
+        modalContainer.style.display = 'none';
+        overlay.style.display = 'none';
+        isAuthModalOpen = false;
+        }
 }
 
 
