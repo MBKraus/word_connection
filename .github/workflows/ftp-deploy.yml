@@ -5,14 +5,6 @@ name: FTP Deployment
 #     branches:
 #       - main
 
-
-        'js/screens/complete.js',
-            js/screens/dailyLimit.js',
-            js/screens/failureEnd.js',
-            js/screens/helpers.js',
-            js/screens/statsPopUp.js',
-            js/screens/welcome.js',
-
 on:
   push:
     branches:
@@ -63,8 +55,12 @@ jobs:
           };
 
           const screenFiles = [
-            "js/screens/game.js",
-            "js/screens/menu.js"
+          'js/screens/complete.js',
+            js/screens/dailyLimit.js',
+            js/screens/failureEnd.js',
+            js/screens/helpers.js',
+            js/screens/statsPopUp.js',
+            js/screens/welcome.js',
           ];
 
           const screenConfigs = screenFiles.map(input => ({
