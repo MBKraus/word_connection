@@ -332,18 +332,26 @@ input:focus {
     }
 }
 
-.faq-panel ul {
-    list-style-type: disc; /* Keep the bullet points */
-    padding-left: 30px; /* Shift the bullets further to the right */
-    margin: 0; /* Remove default margin */
-    padding-top: 10px; /* Add space between heading and list */
+
+
+.bullet-container {
+    background-color: #f9f9f9; /* Optional: Add a subtle background color */
+    padding-left: 20px; /* Add padding to the left */
+    text-align: left; /* Ensure text aligns to the left */
 }
 
-.faq-panel li {
-    font-family: 'Poppins Light', sans-serif; /* Match the font family of <p> */
-    font-size: 16px; /* Match the font size of <p> */
-    color: #555; /* Match the color of <p> */
-    line-height: 1.4; /* Reduce line height for less vertical spacing */
-    margin-bottom: 4px; /* Reduce the spacing between list items */
-    padding-left: 30px; /* Add padding to the left to move text further right */
+.bullet-container ul {
+    list-style-type: disc; /* Keep the bullet points */
+    list-style-position: outside; /* Ensure bullets are aligned to the left edge */
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Add a bit of padding for bullet text alignment */
+}
+
+.bullet-container li {
+    font-family: 'Poppins Light', sans-serif; /* Match the font family */
+    font-size: 16px; /* Set font size */
+    color: #555; /* Set text color */
+    line-height: 1.4; /* Adjust line height */
+    margin-bottom: 4px; /* Reduce spacing between list items */
+    text-align: left; /* Explicitly align text to the left */
 }
