@@ -5,6 +5,14 @@ name: FTP Deployment
 #     branches:
 #       - main
 
+
+        'js/screens/complete.js',
+            js/screens/dailyLimit.js',
+            js/screens/failureEnd.js',
+            js/screens/helpers.js',
+            js/screens/statsPopUp.js',
+            js/screens/welcome.js',
+
 on:
   push:
     branches:
@@ -19,7 +27,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-        # Install Rollup and plugins
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+
+      # Create necessary directories
+      - name: Create directories
+        run: |
+          mkdir -p filtered-deploy/js/screens
+
+      # Install Rollup and plugins
       - name: Install Dependencies
         run: |
           npm init -y
@@ -28,16 +46,14 @@ jobs:
       # Create Rollup config
       - name: Create Rollup Config
         run: |
-          cat > rollup.config.mjs << 'EOL'
-          import { nodeResolve } from '@rollup/plugin-node-resolve';
-          import terser from '@rollup/plugin-terser';
+          echo 'import { nodeResolve } from "@rollup/plugin-node-resolve";
+          import terser from "@rollup/plugin-terser";
 
-          // Configuration for main bundle
           const mainConfig = {
-            input: 'js/main.js',
+            input: "js/main.js",
             output: {
-              file: 'filtered-deploy/js/main.min.js',
-              format: 'es',
+              file: "filtered-deploy/js/main.min.js",
+              format: "es",
               sourcemap: true
             },
             plugins: [
@@ -46,21 +62,16 @@ jobs:
             ]
           };
 
-          // Configuration for screen modules
           const screenFiles = [
-            'js/screens/complete.js',
-            js/screens/dailyLimit.js',
-            js/screens/failureEnd.js',
-            js/screens/helpers.js',
-            js/screens/statsPopUp.js',
-            js/screens/welcome.js',
+            "js/screens/game.js",
+            "js/screens/menu.js"
           ];
 
           const screenConfigs = screenFiles.map(input => ({
             input,
             output: {
-              file: `filtered-deploy/${input.replace('.js', '.min.js')}`,
-              format: 'es',
+              file: `filtered-deploy/${input.replace(".js", ".min.js")}`,
+              format: "es",
               sourcemap: true
             },
             plugins: [
@@ -69,14 +80,11 @@ jobs:
             ]
           }));
 
-          export default [mainConfig, ...screenConfigs];
-          EOL
+          export default [mainConfig, ...screenConfigs];' > rollup.config.mjs
 
       # Bundle and minify JavaScript
       - name: Bundle and Minify JavaScript
-        run: |
-          mkdir -p filtered-deploy/js/screens
-          npx rollup -c rollup.config.mjs
+        run: npx rollup -c rollup.config.mjs
 
       # Filter and prepare files to deploy
       - name: Filter files
@@ -98,7 +106,7 @@ jobs:
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
           ls -al filtered-deploy/js/
-
+    
       # # Filter and prepare files to deploy
       # - name: Filter files
       #   run: |
