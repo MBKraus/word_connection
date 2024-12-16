@@ -16,7 +16,7 @@ input, textarea, select {
     font-size: 16px; /* Ensure font size is 16px or larger */
 }
 
-/* styles.css */
+/* banner styling  */
 .responsive_ad {
     display: flex; /* Center content within the container */
     justify-content: center;
@@ -46,6 +46,8 @@ input, textarea, select {
     }
 }
 
+/* Game container styling  */
+
 #game-container {
     width: 100%;
     max-width: 1080px;
@@ -54,57 +56,6 @@ input, textarea, select {
     position: relative; /* Ensure it doesn't create a stacking context */
     background: white;
     z-index: 0; /* Explicitly set below the ad-container */
-}
-
-.text-container {
-    max-width: 60%; /* Restrict width to 90% of the screen, allowing space on sides */
-    margin: 20px auto 0; /* Center horizontally and add space above */
-    background-color: white; /* Set a lighter gray background */
-    padding: 10px; /* Add padding inside the container for better spacing */
-    overflow-wrap: break-word; /* Ensure long words break to the next line */
-    z-index: 2; /* Ensure it stays on top of the game container */
-    position: relative; /* Position relative to keep stacking context */
-    color: black; /* Set the heading text color to black */
-    font-family: 'Poppins Light', sans-serif;
-    text-align: center; /* Center the text */
-    opacity: 0; /* Start hidden */
-    transition: opacity 0.3s ease; /* Smooth fade in */
-    box-sizing: border-box; /* Include padding in the width calculation */
-}
-
-/* Apply Poppins font to headers inside the text-container */
-.text-container h1, .text-container h2, .text-container h3, .text-container h4, .text-container h5, .text-container h6 {
-    font-family: 'Poppins', sans-serif; /* Apply Poppins font to all header tags */
-}
-
-.text-container.loaded {
-    opacity: 1;
-}
-
-.text-container p {
-    color: #333333; /* Set the regular paragraph text color to dark gray */
-}
-
-/* Style the header */
-.header {
-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-weight: bold;
-font-size: 24px;
-margin-bottom: 15px;
-}
-
-/* Style the description */
-.description {
-font-family: 'Poppins Light', sans-serif;
-font-size: 16px;
-color: black;  /* Adjust color if needed */
-margin-bottom: 20px;
-}
-
-/* Style the image */
-img {
-max-width: 100%;
-height: auto;
 }
 
 /* Override for mobile */
@@ -133,6 +84,21 @@ height: auto;
     font-weight: 300; /* Light weight */
     font-style: normal;
   }
+
+/* Form fields focus green */
+input:focus {
+    border-color: #9bcf53 !important;
+    outline: none; /* Removes the default blue outline */
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Adjust the space between circle and h3 */
+}
+
+/* Cookiewall styling  */
 
 #cookiewall {
     position: fixed;
@@ -231,7 +197,8 @@ height: auto;
     pointer-events: none; /* Disable interaction after hiding */
 }
 
-/* Loading Circle */
+/* Loading spinner styling  */
+
 #loading-spinner {
     border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
     border-top: 8px solid #9bcf53; 
@@ -256,17 +223,35 @@ height: auto;
     }
 }
 
-/* Form fields focus green */
-input:focus {
-    border-color: #9bcf53 !important;
-    outline: none; /* Removes the default blue outline */
+/* Content-related styling*/
+
+.text-container {
+    max-width: 60%; /* Restrict width to 90% of the screen, allowing space on sides */
+    margin: 20px auto 0; /* Center horizontally and add space above */
+    background-color: white; /* Set a lighter gray background */
+    padding: 10px; /* Add padding inside the container for better spacing */
+    overflow-wrap: break-word; /* Ensure long words break to the next line */
+    z-index: 2; /* Ensure it stays on top of the game container */
+    position: relative; /* Position relative to keep stacking context */
+    color: black; /* Set the heading text color to black */
+    font-family: 'Poppins Light', sans-serif;
+    text-align: center; /* Center the text */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth fade in */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
-.circle-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px; /* Adjust the space between circle and h3 */
+/* Apply Poppins font to headers inside the text-container */
+.text-container h1, .text-container h2, .text-container h3, .text-container h4, .text-container h5, .text-container h6 {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font to all header tags */
+}
+
+.text-container.loaded {
+    opacity: 1;
+}
+
+.text-container p {
+    color: #333333; /* Set the regular paragraph text color to dark gray */
 }
 
 .circle {
@@ -313,6 +298,8 @@ input:focus {
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Ensure padding is included in the height */
+    min-height: 200px; /* Adjust to fit content without scrolling */
 }
 
 .faq-panel:hover {
@@ -343,4 +330,20 @@ input:focus {
     .faq-panel {
         padding: 15px; /* Adjust padding for smaller screens */
     }
+}
+
+.faq-panel ul {
+    list-style-type: disc; /* Keep the bullet points */
+    padding-left: 30px; /* Shift the bullets further to the right */
+    margin: 0; /* Remove default margin */
+    padding-top: 10px; /* Add space between heading and list */
+}
+
+.faq-panel li {
+    font-family: 'Poppins Light', sans-serif; /* Match the font family of <p> */
+    font-size: 16px; /* Match the font size of <p> */
+    color: #555; /* Match the color of <p> */
+    line-height: 1.4; /* Reduce line height for less vertical spacing */
+    margin-bottom: 4px; /* Reduce the spacing between list items */
+    padding-left: 30px; /* Add padding to the left to move text further right */
 }
