@@ -30,11 +30,13 @@ jobs:
         run: |
           npm install terser -g  # Install Terser globally
 
-    # Minify JavaScript files
+      # Minify JavaScript files
       - name: Minify JavaScript
         run: |
           mkdir -p filtered-deploy/js/screens  # Ensure the destination folder exists for screens
           mkdir -p filtered-deploy/js  # Ensure the destination folder exists for other JS files
+          
+          # Minify JS files
           for file in js/*.js js/screens/*.js; do
             if [ -f "$file" ]; then  # Check if the file exists
               if [[ $file == js/screens/* ]]; then
@@ -54,6 +56,13 @@ jobs:
               fi
             fi
           done
+          
+          # List the files in the output directories
+          echo "Listing files in filtered-deploy/js/screens/"
+          ls -al filtered-deploy/js/screens/
+
+          echo "Listing files in filtered-deploy/js/"
+          ls -al filtered-deploy/js/
 
       # Filter and prepare files to deploy
       - name: Filter files
