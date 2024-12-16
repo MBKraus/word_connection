@@ -48,9 +48,12 @@ jobs:
 
           // Configuration for screen modules
           const screenFiles = [
-            'js/screens/game.js',
-            'js/screens/menu.js',
-            // Add other screen files here
+            'js/screens/complete.js',
+            js/screens/dailyLimit.js',
+            js/screens/failureEnd.js',
+            js/screens/helpers.js',
+            js/screens/statsPopUp.js',
+            js/screens/welcome.js',
           ];
 
           const screenConfigs = screenFiles.map(input => ({
