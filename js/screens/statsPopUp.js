@@ -105,7 +105,7 @@ function createSignupButton(scene) {
     const halfHeight = scene.scale.height / 2;
     const textWidth = popupWidth * 0.5;
     const textHeight = scene.scale.height * 0.07;
-    const yPos = halfHeight * 0.1;
+    const yPos = halfHeight * -0.1;
 
     // Create an interactive container
     scene.signupButton = scene.add.container(0, yPos).setInteractive(
@@ -330,7 +330,6 @@ export async function showStatsPopup(scene) {
         scene.statsSubTitleText.setVisible(false);
 
         const stats = await getCachedOrFetchGameStats();
-        console.log("stats", stats);
         if (stats) {
             const topMetricsContainer = createMetricsContainer(scene, stats, popupWidth, halfHeight, 'top');
             topMetricsContainer.name = 'topMetricsContainer';

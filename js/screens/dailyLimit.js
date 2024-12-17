@@ -49,7 +49,7 @@ export function createDailyLimitScreen(scene, user) {
         scene.dailyLimitStatsButton = createButton(
             scene,
             scene.game.scale.width * 0.5,
-            scene.game.scale.height * 0.43,  // Position at bottom
+            scene.game.scale.height * 0.44,  // Position at bottom
             'Statistics',
             () => {
                 if (user) {
