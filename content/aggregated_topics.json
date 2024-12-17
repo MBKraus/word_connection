@@ -28,6 +28,121 @@
             },
             {
                 "topic": [
+                    "The Shawshank Redemption",
+                    "Shawshank Redemption"
+                ],
+                "entries": [
+                    "Stephen King",
+                    "Prison Break",
+                    "Morgan Freeman",
+                    "Andy Dufresne"
+                ]
+            },
+            {
+                "topic": [
+                    "The Big Bang Theory",
+                    "Big Bang Theory"
+                ],
+                "entries": [
+                    "Penny",
+                    "Geek Culture",
+                    "Sheldon Cooper",
+                    "Sitcom"
+                ]
+            },
+            {
+                "topic": [
+                    "American Beauty"
+                ],
+                "entries": [
+                    "1999 Drama Film",
+                    "Lester Burnham",
+                    "Midlife Crisis",
+                    "Kevin Spacey"
+                ]
+            },
+            {
+                "topic": [
+                    "The Boys"
+                ],
+                "entries": [
+                    "Superhero Satire",
+                    "Homelander",
+                    "Amazon Prime Series",
+                    "The Seven"
+                ]
+            },
+            {
+                "topic": [
+                    "The Wolf of Wall Street",
+                    "Wolf of Wall Street"
+                ],
+                "entries": [
+                    "Jordan Belfort",
+                    "Greed and Power",
+                    "Sell me this pen",
+                    "Leonardo DiCaprio"
+                ]
+            },
+            {
+                "topic": [
+                    "Peaky Blinders"
+                ],
+                "entries": [
+                    "Gangs and Organized Crime",
+                    "1920s England",
+                    "Tommy Shelby",
+                    "Flat Caps"
+                ]
+            },
+            {
+                "topic": [
+                    "Shrek"
+                ],
+                "entries": [
+                    "Green Ogre",
+                    "Donkey",
+                    "Lord Farquaad",
+                    "Princess Fiona"
+                ]
+            },
+            {
+                "topic": [
+                    "The Gladiator",
+                    "Gladiator"
+                ],
+                "entries": [
+                    "Russell Crowe",
+                    "Ancient Rome",
+                    "Are you not entertained?",
+                    "Commodus"
+                ]
+            },
+            {
+                "topic": [
+                    "The Hunger Games",
+                    "Hunger Games"
+                ],
+                "entries": [
+                    "Katniss Everdeen",
+                    "Dystopian Fiction",
+                    "Mockingjay Symbol",
+                    "Film Franchise"
+                ]
+            },
+            {
+                "topic": [
+                    "Forrest Gump"
+                ],
+                "entries": [
+                    "Tom Hanks",
+                    "Jenny",
+                    "Running",
+                    "Life is Like a Box of Chocolates"
+                ]
+            },
+            {
+                "topic": [
                     "Schindler's List"
                 ],
                 "entries": [
@@ -1978,6 +2093,88 @@
     },
     "persons_and_organizations": {
         "topics": [
+            {
+                "topic": [
+                    "Donald Trump",
+                    "Trump"
+                ],
+                "entries": [
+                    "Make America Great Again",
+                    "President of the U.S.",
+                    "Tax Cuts",
+                    "Mar-a-Lago Estate"
+                ]
+            },
+            {
+                "topic": [
+                    "Richard Nixon",
+                    "Nixon"
+                ],
+                "entries": [
+                    "Watergate Scandal",
+                    "Vietnam War",
+                    "Oil Crisis of 1973",
+                    "President of the U.S."
+                ]
+            },
+            {
+                "topic": [
+                    "Ronald Reagan",
+                    "Reagan"
+                ],
+                "entries": [
+                    "Cold War Victory",
+                    "B-Movie Star",
+                    "Nancy",
+                    "President of the U.S."
+                ]
+            },
+            {
+                "topic": [
+                    "Bill Clinton",
+                    "Clinton"
+                ],
+                "entries": [
+                    "Monica Lewinsky Scandal",
+                    "Economic Boom",
+                    "Hillary",
+                    "President of the U.S."
+                ]
+            },
+            {
+                "topic": [
+                    "George H. W. Bush",
+                    "George H. W. Bush Senior",
+                    "George Bush",
+                    "George Bush Senior",
+                    "Bush Sr.",
+                    "Bush Senior",
+                    "Bush"
+                ],
+                "entries": [
+                    "Gulf War",
+                    "Read My Lips",
+                    "1988 Election Winner",
+                    "President of the U.S."
+                ]
+            },
+            {
+                "topic": [
+                    "George W. Bush",
+                    "George W. Bush Jr.",
+                    "George W. Bush Junior",
+                    "George Bush Junior",
+                    "Bush Junior",
+                    "Bush Jr.",
+                    "Bush,"
+                ],
+                "entries": [
+                    "9/11",
+                    "War on Terror",
+                    "Financial Crisis",
+                    "President of the U.S."
+                ]
+            },
             {
                 "topic": [
                     "Albert Einstein",

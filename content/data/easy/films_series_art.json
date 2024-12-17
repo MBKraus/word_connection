@@ -27,6 +27,121 @@
         },
         {
             "topic": [
+                "The Shawshank Redemption",
+                "Shawshank Redemption"
+            ],
+            "entries": [
+                "Stephen King",
+                "Prison Break",
+                "Morgan Freeman",
+                "Andy Dufresne"
+            ]
+        },
+        {
+            "topic": [
+                "The Big Bang Theory",
+                "Big Bang Theory"
+            ],
+            "entries": [
+                "Penny",
+                "Geek Culture",
+                "Sheldon Cooper",
+                "Sitcom"
+            ]
+        },
+        {
+            "topic": [
+                "American Beauty"
+            ],
+            "entries": [
+                "1999 Drama Film",
+                "Lester Burnham",
+                "Midlife Crisis",
+                "Kevin Spacey"
+            ]
+        },
+        {
+            "topic": [
+                "The Boys"
+            ],
+            "entries": [
+                "Superhero Satire",
+                "Homelander",
+                "Amazon Prime Series",
+                "The Seven"
+            ]
+        },
+        {
+            "topic": [
+                "The Wolf of Wall Street",
+                "Wolf of Wall Street"
+            ],
+            "entries": [
+                "Jordan Belfort",
+                "Greed and Power",
+                "Sell me this pen",
+                "Leonardo DiCaprio"
+            ]
+        },
+        {
+            "topic": [
+                "Peaky Blinders"
+            ],
+            "entries": [
+                "Gangs and Organized Crime",
+                "1920s England",
+                "Tommy Shelby",
+                "Flat Caps"
+            ]
+        },
+        {
+            "topic": [
+                "Shrek"
+            ],
+            "entries": [
+                "Green Ogre",
+                "Donkey",
+                "Lord Farquaad",
+                "Princess Fiona"
+            ]
+        },
+        {
+            "topic": [
+                "The Gladiator",
+                "Gladiator"
+            ],
+            "entries": [
+                "Russell Crowe",
+                "Ancient Rome",
+                "Are you not entertained?",
+                "Commodus"
+            ]
+        },
+        {
+            "topic": [
+                "The Hunger Games",
+                "Hunger Games"
+            ],
+            "entries": [
+                "Katniss Everdeen",
+                "Dystopian Fiction",
+                "Mockingjay Symbol",
+                "Film Franchise"
+            ]
+        },
+        {
+            "topic": [
+                "Forrest Gump"
+            ],
+            "entries": [
+                "Tom Hanks",
+                "Jenny",
+                "Running",
+                "Life is Like a Box of Chocolates"
+            ]
+        },
+        {
+            "topic": [
                 "Schindler's List"
             ],
             "entries": [
