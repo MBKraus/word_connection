@@ -1,6 +1,88 @@
 {
     "topics": [
-        {
+        { 
+            "topic": [
+                "Donald Trump",
+                "Trump"
+            ],
+            "entries": [
+                "Make America Great Again",
+                "President of the U.S.",
+                "Tax Cuts",
+                "Mar-a-Lago Estate"
+            ]
+        },
+        { 
+            "topic": [
+                "Richard Nixon",
+                "Nixon"
+            ],
+            "entries": [
+                "Watergate Scandal",
+                "Vietnam War",
+                "Oil Crisis of 1973",
+                "President of the U.S."
+            ]
+        },
+        { 
+            "topic": [
+                "Ronald Reagan",
+                "Reagan"
+            ],
+            "entries": [
+                "Cold War Victory",
+                "B-Movie Star",
+                "Nancy",
+                "President of the U.S."
+            ]
+        },
+        { 
+            "topic": [
+                "Bill Clinton",
+                "Clinton"
+            ],
+            "entries": [
+                "Monica Lewinsky Scandal",
+                "Economic Boom",
+                "Hillary",
+                "President of the U.S."
+            ]
+        },
+        { 
+            "topic": [
+                "George H. W. Bush",
+                "George H. W. Bush Senior",
+                "George Bush",
+                "George Bush Senior",
+                "Bush Sr.",
+                "Bush Senior",
+                "Bush"
+            ],
+            "entries": [
+                "Gulf War",
+                "Read My Lips",
+                "1988 Election Winner",
+                "President of the U.S."
+            ]
+        },
+        { 
+        "topic": [
+            "George W. Bush",
+            "George W. Bush Jr.",
+            "George W. Bush Junior",
+            "George Bush Junior",
+            "Bush Junior",
+            "Bush Jr.",
+            "Bush,"
+        ],
+        "entries": [
+            "9/11",
+            "War on Terror",
+            "Financial Crisis",
+            "President of the U.S."
+        ]
+        },
+        {   
             "topic": [
                 "Albert Einstein",
                 "Einstein"
