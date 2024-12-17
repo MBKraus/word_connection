@@ -92,8 +92,6 @@ export class GameStorage {
     }
 }
 
-
-
 export async function writeGameStats(score, totalTopicsGuessed) {
     if (!window.auth.currentUser) {
         console.log('User not logged in - stats not saved');
@@ -196,45 +194,72 @@ export async function fetchGameStats(userId) {
     }
 }
 
+async function checkGuessedAllYesterday(userId, formattedYesterday) {
+    let guessedAllYesterday = false;
+
+    try {
+        const yesterdayStatsRef = doc(db, 'gameStats', userId, 'dailyStats', formattedYesterday);
+        const yesterdaySnap = await getDoc(yesterdayStatsRef);
+
+        if (yesterdaySnap.exists()) {
+            const yesterdayData = yesterdaySnap.data();
+            guessedAllYesterday = yesterdayData.totalTopicsGuessed === 6;
+            console.log('Guessed all yesterday:', guessedAllYesterday);
+        }
+    } catch (error) {
+        console.error('Error fetching yesterday\'s stats:', error);
+    }
+
+    return guessedAllYesterday;
+}
+
 async function updateStreak(userId, todayDate, totalTopicsGuessed) {
+    await initializeDb();
+
     const userRef = doc(db, 'users', userId);
     const userSnap = await getDoc(userRef);
 
-    let currentStreak = 1;
-    let longestStreak = 1;
+    let currentStreak = null;
+    let longestStreak = null;
     let lastPlayedDate = null;
 
     if (userSnap.exists()) {
         const userData = userSnap.data();
         currentStreak = userData.currentStreak || 0;
         longestStreak = userData.longestStreak || 0;
-        lastPlayedDate = userData.lastPlayed ? userData.lastPlayed.toDate().toISOString().split('T')[0] : null;
+        lastPlayedDate = userData.lastPlayed
+            ? userData.lastPlayed.toDate().toISOString().split('T')[0]
+            : null;
     }
 
-    // Check if played yesterday
+    // Calculate yesterday's date
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const formattedYesterday = yesterday.toISOString().split('T')[0];
 
-    // Update streak only if totalTopicsGuessed is 6
+    // Check if the user guessed all 6 topics yesterday
+    const guessedAllYesterday = await checkGuessedAllYesterday(userId, formattedYesterday);
+
+    // Update streak logic: only increment if guessed all 6 today and yesterday
     if (totalTopicsGuessed === 6) {
-        // if (lastPlayedDate === formattedYesterday) {
-        if (lastPlayedDate === todayDate) {
+        if (guessedAllYesterday) {
             currentStreak += 1;
-        } else  {
-            currentStreak = 1; 
+        } else {
+            currentStreak = 1; // Reset streak since yesterday wasn't perfect
         }
     } else {
-        currentStreak = 0; 
+        currentStreak = 0; // Reset streak if today wasn't perfect
     }
 
+    // Update longest streak
     longestStreak = Math.max(longestStreak, currentStreak);
 
-    // Update user profile with streak information
+    // Save updated streak information back to Firestore
     try {
         await setDoc(userRef, {
             currentStreak: currentStreak,
             longestStreak: longestStreak,
+            lastPlayed: serverTimestamp(),
         }, { merge: true });
     } catch (error) {
         console.error('Error updating streak:', error);
