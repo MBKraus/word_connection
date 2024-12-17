@@ -114,6 +114,8 @@ async function create() {
 
     this.dailyLimitControls = createDailyLimitScreen(this, user);
 
+  
+
     if (hasPlayedPerDB) {
         this.dailyLimitControls.show();
         loadingSpinner.style.display = 'none';

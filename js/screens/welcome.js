@@ -18,7 +18,7 @@ export function createWelcomeScreen(scene) {
         scene,
         scene.scale.width * 0.5,
         scene.scale.height * 0.30,
-        'Connections Game'
+        'Word Connections Game'
     );
     scene.welcomeScreen.add(titleText);
 

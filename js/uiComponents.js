@@ -71,9 +71,9 @@ export function createHeader(scene) {
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
 
     scene.headerText = scene.add.text(
-        scene.game.scale.width * 0.56, 
+        scene.game.scale.width * 0.60, 
         scene.game.scale.height * 0.035, 
-        'Connections\nGame', 
+        'Word Connections\nGame', 
         {
             fontSize: scene.game.scale.width * 0.03 + 'px',
             color: '#000000',
