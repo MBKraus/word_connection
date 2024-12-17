@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm init -y
-          npm install --save-dev rollup@4.9.5 @rollup/plugin-node-resolve@16.0.0 @rollup/plugin-terser@0.4.4
+          npm install --save-dev rollup@4.9.5 @rollup/plugin-node-resolve@16.0.0 @rollup/plugin-terser@0.4.4 xml2js@0.6.2
 
       # Create Rollup config
       - name: Create Rollup Config
