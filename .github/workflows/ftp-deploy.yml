@@ -33,7 +33,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm init -y
-          npm install --save-dev rollup@4.9.5 @rollup/plugin-node-resolve@16.0.0 @rollup/plugin-terser@0.4.4
+          npm install --save-dev rollup@4.9.5 @rollup/plugin-node-resolve@16.0.0 @rollup/plugin-terser@0.4.4 xml2js@0.6.2
 
       # Create Rollup config
       - name: Create Rollup Config
@@ -79,6 +79,46 @@ jobs:
       - name: Bundle and Minify JavaScript
         run: npx rollup -c rollup.config.mjs
 
+      # Update lastmod in sitemap.xml
+      - name: Update lastmod in sitemap.xml
+        run: |
+          node -e "
+            const fs = require('fs');
+            const xml2js = require('xml2js');
+            const parser = new xml2js.Parser();
+            const builder = new xml2js.Builder();
+
+            // Read sitemap.xml
+            fs.readFile('sitemap.xml', 'utf8', (err, data) => {
+              if (err) {
+                console.error('Error reading sitemap.xml:', err);
+                process.exit(1);
+              }
+
+              // Parse the XML
+              parser.parseString(data, (err, result) => {
+                if (err) {
+                  console.error('Error parsing XML:', err);
+                  process.exit(1);
+                }
+
+                // Update lastmod for each URL
+                const lastmodDate = new Date().toISOString();
+                const urls = result.urlset.url;
+                urls.forEach(url => {
+                  url.lastmod = [lastmodDate];  // Update lastmod to current date
+                });
+
+                // Build the updated XML
+                const updatedXml = builder.buildObject(result);
+
+                // Write the updated sitemap back to file
+                fs.writeFileSync('sitemap.xml', updatedXml, 'utf8');
+                console.log('sitemap.xml lastmod updated!');
+              });
+            });
+          "
+
       # Filter and prepare files to deploy
       - name: Filter files
         run: |
@@ -88,6 +128,7 @@ jobs:
           cp auth.txt filtered-deploy/
           cp robots.txt filtered-deploy/
           cp ads.txt filtered-deploy/
+          cp sitemap.xml filtered-deploy/
           cp favicon/favicon.ico filtered-deploy/favicon.ico
           cp favicon/site.webmanifest filtered-deploy/site.webmanifest
           cp favicon/android-chrome-192x192.png filtered-deploy/android-chrome-192x192.png
