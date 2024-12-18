@@ -392,14 +392,13 @@
         {
             "topic": [
                 "Diving",
-                "Springboard",
-                "Platform Diving"
+                "Scuba Diving"
             ],
             "entries": [
-                "Pike Position",
-                "Splash",
-                "Twist Dive",
-                "Reverse Dive"
+                "Wetsuit and Gear",
+                "Underwater Exploration",
+                "Decompression Stops",
+                "Certification Levels"
             ]
         },
         {
@@ -530,6 +529,17 @@
                 "Brake",
                 "Skate Park",
                 "Grind"
+            ]
+        },
+        {
+            "topic": [
+                "Triathlon"
+            ],
+            "entries": [
+                "Swimming",
+                "Cycling",
+                "Running",
+                "Ironman"
             ]
         },
         {
@@ -857,6 +867,19 @@
         },
         {
             "topic": [
+                "Beer brewing",
+                "Brewing",
+                "Brewing Beer"
+            ],
+            "entries": [
+                "Kettle",
+                "Fermentation Process",
+                "Malt and Hops",
+                "Yeast Activation"
+            ]
+        },
+        {
+            "topic": [
                 "Jogging",
                 "Running"
             ],
@@ -937,6 +960,39 @@
                 "Pose",
                 "Downward-Facing Dog",
                 "Breathing"
+            ]
+        },
+        {
+            "topic": [
+                "Beekeeping"
+            ],
+            "entries": [
+                "Protective Gear",
+                "Smoker Tool",
+                "Honey Production",
+                "Apiary"
+            ]
+        },
+        {
+            "topic": [
+                "Scones"
+            ],
+            "entries": [
+                "British Tea Tradition",
+                "Clotted Cream",
+                "Baked Pastry",
+                "Light and Airy"
+            ]
+        },
+        {
+            "topic": [
+                "Risotto"
+            ],
+            "entries": [
+                "Italian Dish",
+                "Slow Cooking",
+                "Arborio Rice",
+                "Creamy Texture"
             ]
         },
         {
@@ -1039,6 +1095,29 @@
                 "Teahouse",
                 "Dumplings",
                 "Chicken Feet"
+            ]
+        },
+        {
+            "topic": [
+                "Tea"
+            ],
+            "entries": [
+                "Ancient beverage",
+                "Earl Grey",
+                "Herbal Infusion",
+                "Loose Leaf vs. Bags"
+            ]
+        },
+        {
+            "topic": [
+                "Burrito",
+                "Burritos"
+            ],
+            "entries": [
+                "Wrapped Tortilla",
+                "Rice and Beans",
+                "Salsa and Guacamole",
+                "Mexican Cuisine"
             ]
         },
         {
@@ -1689,6 +1768,28 @@
                 "Sour Cream",
                 "Cabbage",
                 "Ukrainian Soup"
+            ]
+        },
+        {
+            "topic": ["Hot Dog"],
+            "entries": [
+                "Frankfurter",
+                "Bun",
+                "Mustard",
+                "Ketchup"]
+        },
+        {
+            "topic": [
+                "Tiramisu",
+                "Italian Dessert",
+                "Coffee Cake",
+                "Tiramisu Cake"
+            ],
+            "entries": [
+                "Mascarpone",
+                "Espresso",
+                "Ladyfingers",
+                "Italian"
             ]
         },
         {
