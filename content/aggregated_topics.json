@@ -4129,6 +4129,17 @@
             },
             {
                 "topic": [
+                    "Triathlon"
+                ],
+                "entries": [
+                    "Swimming",
+                    "Cycling",
+                    "Running",
+                    "Ironman"
+                ]
+            },
+            {
+                "topic": [
                     "Bowling",
                     "Tenpin Bowling",
                     "Bowling Alley"
@@ -4203,6 +4214,18 @@
                     "Ippon",
                     "Grapple",
                     "Tatami"
+                ]
+            },
+            {
+                "topic": [
+                    "Diving",
+                    "Scuba Diving"
+                ],
+                "entries": [
+                    "Wetsuit and Gear",
+                    "Underwater Exploration",
+                    "Decompression Stops",
+                    "Certification Levels"
                 ]
             },
             {
@@ -4282,6 +4305,17 @@
             },
             {
                 "topic": [
+                    "Beekeeping"
+                ],
+                "entries": [
+                    "Protective Gear",
+                    "Smoker Tool",
+                    "Honey Production",
+                    "Apiary"
+                ]
+            },
+            {
+                "topic": [
                     "Doodling",
                     "Drawing"
                 ],
@@ -4342,6 +4376,19 @@
             },
             {
                 "topic": [
+                    "Beer brewing",
+                    "Brewing",
+                    "Brewing Beer"
+                ],
+                "entries": [
+                    "Kettle",
+                    "Fermentation Process",
+                    "Malt and Hops",
+                    "Yeast Activation"
+                ]
+            },
+            {
+                "topic": [
                     "Pizza",
                     "Pizzerias",
                     "Italian Pie",
@@ -4384,6 +4431,17 @@
             },
             {
                 "topic": [
+                    "Tea"
+                ],
+                "entries": [
+                    "Ancient beverage",
+                    "Earl Grey",
+                    "Herbal Infusion",
+                    "Loose Leaf vs. Bags"
+                ]
+            },
+            {
+                "topic": [
                     "Hamburger",
                     "Burger",
                     "Beef Patty",
@@ -4394,6 +4452,18 @@
                     "Sesame Bun",
                     "Pickles",
                     "Grilled"
+                ]
+            },
+            {
+                "topic": [
+                    "Burrito",
+                    "Burritos"
+                ],
+                "entries": [
+                    "Wrapped Tortilla",
+                    "Rice and Beans",
+                    "Salsa and Guacamole",
+                    "Mexican Cuisine"
                 ]
             },
             {
@@ -4422,6 +4492,28 @@
                     "Soy Sauce",
                     "Seaweed Wrap",
                     "Wasabi"
+                ]
+            },
+            {
+                "topic": [
+                    "Scones"
+                ],
+                "entries": [
+                    "British Tea Tradition",
+                    "Clotted Cream",
+                    "Baked Pastry",
+                    "Light and Airy"
+                ]
+            },
+            {
+                "topic": [
+                    "Risotto"
+                ],
+                "entries": [
+                    "Italian Dish",
+                    "Slow Cooking",
+                    "Arborio Rice",
+                    "Creamy Texture"
                 ]
             },
             {
@@ -4504,6 +4596,45 @@
                     "Pork Broth",
                     "Miso",
                     "Egg"
+                ]
+            },
+            {
+                "topic": [
+                    "Pancakes",
+                    "Flapjacks",
+                    "Hotcakes",
+                    "Pancake Stack"
+                ],
+                "entries": [
+                    "Maple Syrup",
+                    "Buttermilk",
+                    "Breakfast",
+                    "Griddle"
+                ]
+            },
+            {
+                "topic": [
+                    "Hot Dog"
+                ],
+                "entries": [
+                    "Frankfurter",
+                    "Bun",
+                    "Mustard",
+                    "Ketchup"
+                ]
+            },
+            {
+                "topic": [
+                    "Tiramisu",
+                    "Italian Dessert",
+                    "Coffee Cake",
+                    "Tiramisu Cake"
+                ],
+                "entries": [
+                    "Mascarpone",
+                    "Espresso",
+                    "Ladyfingers",
+                    "Italian"
                 ]
             },
             {
