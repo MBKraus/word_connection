@@ -14,15 +14,8 @@
     <meta property="og:image" content="https://wordconnectionsgame.io//assets/logo_clean.png">
     <meta property="og:url" content="https://wordconnectionsgame.io">
     <meta property="og:type" content="website">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLBY4JREBD"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-VLBY4JREBD');
-    </script>
+    <!-- Google Ads -->
+    <script src="js/ads.js" defer></script>
     <!-- Phaser -->
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
     <!-- Favicon -->
@@ -253,6 +246,7 @@
                 localStorage.removeItem('cookiesRejected');
                 document.body.classList.remove('locked');
                 window.dispatchEvent(new Event('cookiesAccepted'));
+                consentGrantedAdStorage();  // Grant consent for ads
             });
 
             // Add click event listener to reject button
@@ -262,6 +256,7 @@
                 localStorage.removeItem('cookiesAccepted');
                 document.body.classList.remove('locked');
                 window.dispatchEvent(new Event('cookiesRejected'));
+                consentDeniedAdStorage();  // Deny consent for ads
             });
         });
     </script>
