@@ -248,10 +248,9 @@ export function createRoundDisplay(scene) {
 
 export function createScoreDisplay(scene) {
     function updateScorePosition() {
-        const isMobile = window.innerWidth < 728; // Check actual window width
+        const isMobile = window.innerWidth < 728;
         const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
 
-        // Update timerText position and font size
         if (scene.scoreText) {
             scene.scoreText.setPosition(scene.game.scale.width * 0.85, yPos);
             scene.scoreText.setFontSize(scene.game.scale.width * 0.035);
@@ -264,8 +263,10 @@ export function createScoreDisplay(scene) {
         fontFamily: 'Poppins Light',
     }).setOrigin(0.5);
 
-    updateScorePosition();
+    // Initialize display score
+    scene.displayScore = 0;
 
+    updateScorePosition();
     window.addEventListener('resize', updateScorePosition);
 }
 
@@ -582,4 +583,32 @@ export function initializeCorrectGuessPlaceholders(scene) {
 
 export function updateScoreDisplay(scene) {
     scene.scoreText.setText(`Score: ${scene.score}`);
+}
+
+// Function to animate score changes
+export function animateScore(scene, newScore) {
+    // Store the start value
+    const startScore = scene.displayScore || 0;
+    
+    // Store the actual score separately from the displayed score
+    scene.score = newScore;
+    
+    // If there's an existing tween, stop it
+    if (scene.scoreTween) {
+        scene.scoreTween.stop();
+    }
+    
+    // Create the tween
+    scene.scoreTween = scene.tweens.addCounter({
+        from: startScore,
+        to: newScore,
+        duration: 1000,
+        ease: 'Cubic.easeOut',
+        onUpdate: (tween) => {
+            // Update the displayed score with the current tween value
+            const currentValue = Math.round(tween.getValue());
+            scene.displayScore = currentValue;
+            scene.scoreText.setText(`Score: ${currentValue}`);
+        }
+    });
 }

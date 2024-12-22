@@ -1,6 +1,6 @@
 import { generateGameRounds} from './topics.js';
 import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark, createRevealTopicsButton,
-    createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
+    createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders, animateScore} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createCompleteScreen, showCompleteScreen, hideCompleteScreen } from './screens/complete.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
@@ -190,8 +190,9 @@ function startGame(scene) {
     scene.isGameActive = true;
     scene.currentRound = 0;
     scene.score = 0;
+    scene.displayScore = 0; 
     scene.guessedTopicsOrder = [];
-    updateScoreDisplay(scene);
+    animateScore(scene, 0);
 
     if (scene.hamburgerMenu) {
         if (window.auth && window.auth.currentUser) {
@@ -313,8 +314,7 @@ function checkGuess(scene, guess) {
         scene.sound.play('correctSound');
         
         // Update score
-        scene.score += 30;
-        updateScoreDisplay(scene);
+        animateScore(scene, scene.score + 30);
 
         // End round if all topics have been guessed
         if (scene.correctGuessTexts.filter(entry => entry.text !== null).length === 3) {
