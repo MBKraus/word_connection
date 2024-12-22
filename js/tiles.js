@@ -109,26 +109,49 @@ export function highlightTiles(scene, words, topicIndex) {
     const colors = [0xbf53cf, 0x6d92e6, 0x9bcf53];  // purple, blue, green
     
     // We need to assign the correct color based on the order of guesses
-    const fillColor = colors[scene.guessedTopicsOrder.length % colors.length]; // Cycle through colors based on the order
+    const fillColor = colors[scene.guessedTopicsOrder.length % colors.length];
     
     scene.tiles.forEach(tile => {
         if (words.includes(tile.word)) {
             // Clear the previous graphics
             tile.tile.clear();
             
-            // Draw with the assigned color
+            // Draw the main tile with the new color
             tile.tile.fillStyle(fillColor, 1);
             drawRoundedRect(
-                tile.tile, 
+                tile.tile,
                 tile.x,
                 tile.y,
                 tile.width,
                 tile.height,
-                15  // cornerRadius
+                15
             );
 
             // Change the text color to white
             tile.text.setColor('#FFFFFF');
+            
+            // Create flash overlay exactly matching the tile
+            const flashGraphics = scene.add.graphics();
+            flashGraphics.fillStyle(0xFFFFFF, 1); // White flash
+            drawRoundedRect(
+                flashGraphics,
+                tile.x,
+                tile.y,
+                tile.width,
+                tile.height,
+                15
+            );
+            
+            // Animate the flash to fade out
+            scene.tweens.add({
+                targets: flashGraphics,
+                alpha: { from: 0.8, to: 0 },
+                duration: 300,
+                ease: 'Linear',
+                onComplete: () => {
+                    flashGraphics.destroy();
+                }
+            });
         }
     });
 }
