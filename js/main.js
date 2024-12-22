@@ -1,5 +1,5 @@
 import { generateGameRounds} from './topics.js';
-import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark, createGiveUpButton,
+import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark, createRevealTopicsButton,
     createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders} from './uiComponents.js';
 import { isMobile } from './utils.js';
 import { createCompleteScreen, showCompleteScreen, hideCompleteScreen } from './screens/complete.js';
@@ -153,7 +153,7 @@ function createGameElements(scene) {
     createTimerDisplay(scene);
     createHeaderIcons(scene);
     createCorrectGuessContainer(scene);
-    createGiveUpButton(scene);
+    createRevealTopicsButton(scene);
     createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.90 * 0.4), scene.inputDisplay.y);
     createCrossIcon(scene);
 

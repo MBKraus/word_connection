@@ -743,6 +743,78 @@
                 "Baking",
                 "Crust"
             ]
+        },
+        {
+            "topic": [
+                "Cucumber",
+                "Cucumber Salad",
+                "Fresh Cucumber",
+                "Cucumber Slices",
+                "Cucumber Dish"
+            ],
+            "entries": [
+                "Vegetable",
+                "Green",
+                "Hydrating Snack",
+                "Salad Ingredient"
+            ]
+        },
+        {
+            "topic": [
+                "Banana",
+                "Ripe Banana",
+                "Banana Fruit",
+                "Yellow Banana",
+                "Banana Snack"
+            ],
+            "entries": [
+                "Fruit",
+                "Yellow Peel",
+                "Grows towards the sun",
+                "Smooth Texture"
+            ]
+        },
+        {
+            "topic": [
+                "Kiwi",
+                "Kiwifruit",
+                "Green Kiwi",
+                "Fuzzy Kiwi",
+                "Kiwi Fruit"
+            ],
+            "entries": [
+                "Originated in New Zealand",
+                "Fruit",
+                "Brown Fuzzy Skin",
+                "Rich in Fiber"
+            ]
+        },
+        {
+            "topic": [
+                "Potato",
+                "Russet Potato",
+                "Yukon Gold",
+                "Sweet Potato",
+                "Potato Varieties"
+            ],
+            "entries": [
+                "Starchy Root Vegetable",
+                "Versatile in Cooking",
+                "High in Carbohydrates",
+                "Rich in Potassium"
+            ]
+        },
+        {
+            "topic": [
+                "Olive Oil",
+                "Extra Virgin Olive Oil"
+            ],
+            "entries": [
+                "Originated in the Mediterranean",
+                "Used in Cooking and Dressings",
+                "High in Antioxidants",
+                "Has a Fruity, Peppery Flavor"
+            ]
         }
     ]
 }

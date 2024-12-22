@@ -133,9 +133,9 @@ export function clearTimerEvent(scene) {
 export function startTimer(scene) {
     clearTimerEvent(scene);
 
-    // Make stats button and giveup active
+    // Make stats button and RevealTopics active
     scene.chartIcon.setInteractive(true);
-    scene.giveUpButton.setInteractive(true);
+    scene.revealTopicsButton.setInteractive(true);
 
     // Reset game state
     scene.isGameActive = true;

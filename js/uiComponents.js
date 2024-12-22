@@ -151,22 +151,22 @@ export function createInputDisplay(scene) {
     scene.timeBar.fillStyle(0xB8B8B8, 1).setDepth(1);
 }
 
-export function createGiveUpButton(scene) {
+export function createRevealTopicsButton(scene) {
     const buttonWidth = scene.game.scale.width * 0.10;
     const buttonHeight = scene.game.scale.height * 0.055;
     const buttonX = scene.game.scale.width * 0.05;
     const buttonY = getStartY(scene);
 
     const cornerRadius = 15;
-    const defaultColor = 0xCAD2DE;
-    const hoverColor = 0xE2E8F1;
+    const defaultColor = 0xCFCFCF;
+    const hoverColor = 0xE0E0E0;
 
     // Create a container for the button
-    scene.giveUpButton = scene.add.container(buttonX, buttonY);
+    scene.revealTopicsButton = scene.add.container(buttonX, buttonY);
 
     // Create the button graphics
     const buttonGraphics = scene.add.graphics();
-    scene.giveUpButton.add(buttonGraphics);
+    scene.revealTopicsButton.add(buttonGraphics);
 
     // Initial button state
     buttonGraphics.fillStyle(defaultColor, 1);
@@ -179,20 +179,20 @@ export function createGiveUpButton(scene) {
     );
 
     // Add text
-    const buttonText = scene.add.text(0, 0, 'Give\nUp', {
+    const buttonText = scene.add.text(0, 0, 'Reveal\nTopics', {
         fontFamily: 'Poppins',
-        fontSize: scene.scale.width * 0.0275 + 'px',
+        fontSize: scene.scale.width * 0.025 + 'px',
         color: '#000000',
         align: 'center'
     }).setOrigin(0.5);
-    scene.giveUpButton.add(buttonText);
+    scene.revealTopicsButton.add(buttonText);
 
     // Make the container interactive
-    scene.giveUpButton.setSize(buttonWidth, buttonHeight);
-    scene.giveUpButton.setInteractive();
+    scene.revealTopicsButton.setSize(buttonWidth, buttonHeight);
+    scene.revealTopicsButton.setInteractive();
 
     // Add hover effects
-    scene.giveUpButton.on('pointerover', () => {
+    scene.revealTopicsButton.on('pointerover', () => {
         buttonGraphics.clear();
         buttonGraphics.fillStyle(hoverColor, 1);
         buttonGraphics.fillRoundedRect(
@@ -204,7 +204,7 @@ export function createGiveUpButton(scene) {
         );
     });
 
-    scene.giveUpButton.on('pointerout', () => {
+    scene.revealTopicsButton.on('pointerout', () => {
         buttonGraphics.clear();
         buttonGraphics.fillStyle(defaultColor, 1);
         buttonGraphics.fillRoundedRect(
@@ -216,7 +216,7 @@ export function createGiveUpButton(scene) {
         );
     });
 
-    scene.giveUpButton.on('pointerdown', () => {
+    scene.revealTopicsButton.on('pointerdown', () => {
         window.handleRoundEndNotAllTopicsGuessed(scene);
     });
 }
