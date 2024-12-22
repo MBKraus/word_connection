@@ -5,7 +5,7 @@ import os
 # Optional: art, fashion, mythology, nature
 areas = [
     'films_series_art', 
-    'music_and_instruments', 'nature_and_space', 
+    'nature_space_music_instruments',
     'persons_and_organizations', 'places_events', 'sports_games_hobbies_cuisine', 'things_and_inventions'
 ]
 
