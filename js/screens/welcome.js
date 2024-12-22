@@ -12,19 +12,25 @@ export function createWelcomeScreen(scene) {
     const logoYPosition = scene.scale.height * 0.05;
     const logoXPosition = 0.5;
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
-    scene.welcomeScreen.add(logo);
+    scene.welcomeScreen.add(logo)
 
-    const titleText = createText(
-        scene,
+    scene.titleText = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.30,
-        'Word Connections Game'
-    );
-    scene.welcomeScreen.add(titleText);
+        scene.scale.height * 0.30, 
+        'Word Connections\nGame', 
+        {
+        fontSize: scene.scale.width * 0.09 + 'px',
+        color: '#000000',
+        fontFamily: 'Helvetica Neue, Arial, sans-serif',
+        fontWeight: 'bold',
+        align: 'center'
+    }).setOrigin(0.5);
+
+    scene.welcomeScreen.add(scene.titleText);
 
     const explainerText = scene.add.text(
         scene.scale.width * 0.5,
-        scene.scale.height * 0.35,
+        scene.scale.height * 0.38,
         'Can you crack the 3 secret themes?',
         {
             fontSize: scene.scale.width * 0.035 + 'px',

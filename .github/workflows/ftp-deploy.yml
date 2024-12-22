@@ -126,6 +126,7 @@ jobs:
           cp index.html filtered-deploy/
           cp style.css filtered-deploy/
           cp auth.txt filtered-deploy/
+          cp .htaccess filtered-deploy/
           cp robots.txt filtered-deploy/
           cp ads.txt filtered-deploy/
           cp sitemap.xml filtered-deploy/
