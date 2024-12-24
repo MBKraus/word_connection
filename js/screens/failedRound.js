@@ -1,16 +1,17 @@
-import {showScreen, hideScreen, createText, createScreen, createButton, STYLES} from './helpers.js';
+import {showScreen, hideScreen, createScreen, createButton, STYLES} from './helpers.js';
 import {createLogo} from '../uiComponents.js';
+import {showCountdown} from '../countdown.js';
 import { showStatsPopup } from './statsPopUp.js';
 
-export function createFailureEndScreen(scene) {
-    scene.failureEndScreen = createScreen(scene, 'failureEndScreen');
+export function createFailedRoundScreen(scene) {
+    scene.failedRoundScreen = createScreen(scene, 'failedRoundScreen');
 
     const logoWidth = scene.scale.width * 0.3;
     const logoHeight = logoWidth;
     const logoYPosition = scene.scale.height*0.05;
     const logoXPosition = 0.5
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
-    scene.failureEndScreen.add(logo);
+    scene.failedRoundScreen.add(logo);
 
     scene.failureTitle = scene.add.text(
         scene.scale.width * 0.5,
@@ -21,7 +22,7 @@ export function createFailureEndScreen(scene) {
             fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
     }).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.failureTitle);
+    scene.failedRoundScreen.add(scene.failureTitle);
 
 
     // Add score at the bottom
@@ -36,7 +37,7 @@ export function createFailureEndScreen(scene) {
         align: 'center',
     }
     ).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.scoreLabel);
+    scene.failedRoundScreen.add(scene.scoreLabel);
 
     scene.scoreValue = scene.add.text(
         scene.game.scale.width * 0.5,
@@ -50,7 +51,7 @@ export function createFailureEndScreen(scene) {
             align: 'center',
         }
     ).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.scoreValue);
+    scene.failedRoundScreen.add(scene.scoreValue);
 
     scene.nextGameLabel = scene.add.text(
         scene.scale.width * 0.75,
@@ -63,7 +64,7 @@ export function createFailureEndScreen(scene) {
         align: 'center',
     }
     ).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.nextGameLabel);
+    scene.failedRoundScreen.add(scene.nextGameLabel);
     scene.nextGameLabel.setVisible(false)
 
     scene.nextGameTime = scene.add.text(
@@ -78,7 +79,7 @@ export function createFailureEndScreen(scene) {
             align: 'center',
         }
     ).setOrigin(0.5);
-    scene.failureEndScreen.add(scene.nextGameTime);
+    scene.failedRoundScreen.add(scene.nextGameTime);
     scene.nextGameTime.setVisible(false);
 
     // Add Next Round button at the bottom
@@ -91,23 +92,25 @@ export function createFailureEndScreen(scene) {
             if (scene.currentRound >= scene.allRounds.length - 1) {
                 showStatsPopup(scene);
             } else {
-                hideFailureEndScreen(scene);
-                startNextRound(scene);
+                hideFailedRoundScreen(scene);
+                scene.isGameActive = true;
+                scene.currentRound++;
+                showCountdown(scene);
             }
         },
         STYLES.colors.playButtonBg,
         STYLES.colors.playButtonText,
         STYLES.colors.playButtonBorder
     );
-    scene.failureEndScreen.add(scene.nextRoundButton);
+    scene.failedRoundScreen.add(scene.nextRoundButton);
 }
 
-export const showFailureEndScreen = (scene) => {
+export const showFailedRoundScreen = (scene) => {
     const fontSize = Math.min(scene.scale.height * 0.08, 40);
     const entryFontSize = fontSize * 0.7; // Smaller font size for entries
 
     // Clear any existing topic texts from previous games
-    scene.failureEndScreen.getAll().forEach(child => {
+    scene.failedRoundScreen.getAll().forEach(child => {
         if (child.topicText || child.descText) {
             child.destroy();
         }
@@ -138,7 +141,7 @@ export const showFailureEndScreen = (scene) => {
             }
         ).setOrigin(0.5);
         headerText.descText = true; // Mark for cleanup
-        scene.failureEndScreen.add(headerText);
+        scene.failedRoundScreen.add(headerText);
 
         const colors = [0xbf53cf, 0x9bcf53, 0x6d92e6]; // Colors for backgrounds
         const padding = 20; // Padding around rectangles
@@ -202,10 +205,10 @@ export const showFailureEndScreen = (scene) => {
             // Update yOffset for the next rectangle
             yOffset += totalHeight + spacing;
 
-            // Add everything to the failureEndScreen group for cleanup
-            scene.failureEndScreen.add(graphics);
-            scene.failureEndScreen.add(topicText);
-            scene.failureEndScreen.add(entriesText);
+            // Add everything to the failedRoundScreen group for cleanup
+            scene.failedRoundScreen.add(graphics);
+            scene.failedRoundScreen.add(topicText);
+            scene.failedRoundScreen.add(entriesText);
         });
         
     }
@@ -215,20 +218,20 @@ export const showFailureEndScreen = (scene) => {
     });
 
     // Show the failure end screen
-    showScreen(scene, 'failureEndScreen');
+    showScreen(scene, 'failedRoundScreen');
 };
 
 
-export const hideFailureEndScreen = (scene) => {
-    const failureEndScreen = scene.failureEndScreen;
+export const hideFailedRoundScreen = (scene) => {
+    const failedRoundScreen = scene.failedRoundScreen;
 
     // Destroy all dynamically added children marked as descText
-    failureEndScreen.getAll().forEach(child => {
+    failedRoundScreen.getAll().forEach(child => {
         if (child.descText) {
             child.destroy(); // Destroy the child from the scene
         }
     });
 
     // Hide the screen
-    hideScreen(scene, 'failureEndScreen');
+    hideScreen(scene, 'failedRoundScreen');
 };

@@ -1,7 +1,31 @@
 import { createStatsPopup, showStatsPopup} from './screens/statsPopUp.js';
 import { signOut } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { showWelcomeScreen } from './screens/welcome.js'; 
+import { createNextGameTimer, getNextPlayTime } from './utils.js';
 
+export function createUIComponents(scene) {
+
+    createHeader(scene);
+    createInputDisplay(scene);
+    createRoundDisplay(scene);
+    createScoreDisplay(scene);
+    createTimerDisplay(scene);
+    createHeaderIcons(scene);
+    createCorrectGuessContainer(scene);
+    createRevealTopicsButton(scene);
+    createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.90 * 0.4), scene.inputDisplay.y);
+    createCrossIcon(scene);
+
+    // Create and start the time-until-next-game Timer globally
+    if (!scene.nextGameTimer) {
+        scene.nextGameTimer = createNextGameTimer(
+            getNextPlayTime,
+            (text) => {
+            }
+        );
+        scene.nextGameTimer.start();
+    }
+}
 
 export function createLogo(scene, width, height, yPosition, xPosition) {
     const logo = scene.add.graphics();
@@ -61,7 +85,7 @@ export function createLogo(scene, width, height, yPosition, xPosition) {
     return logo;
 }
 
-export function createHeader(scene) {
+function createHeader(scene) {
 
     // Create the logo
     const logoWidth = scene.scale.width * 0.08;
@@ -91,7 +115,7 @@ export function getStartY(scene) {
         : scene.game.scale.height * 0.605;
 }
 
-export function createInputDisplay(scene) {
+function createInputDisplay(scene) {
     const inputBgWidth = scene.game.scale.width * 0.88;
     const inputBgHeight = scene.game.scale.height * 0.055;
     const startY = getStartY(scene);
@@ -151,7 +175,7 @@ export function createInputDisplay(scene) {
     scene.timeBar.fillStyle(0xB8B8B8, 1).setDepth(1);
 }
 
-export function createRevealTopicsButton(scene) {
+function createRevealTopicsButton(scene) {
     const buttonWidth = scene.game.scale.width * 0.10;
     const buttonHeight = scene.game.scale.height * 0.055;
     const buttonX = scene.game.scale.width * 0.05;
@@ -222,7 +246,7 @@ export function createRevealTopicsButton(scene) {
 }
 
 
-export function createRoundDisplay(scene) {
+function createRoundDisplay(scene) {
 
     function updateRoundPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
@@ -246,7 +270,7 @@ export function createRoundDisplay(scene) {
     window.addEventListener('resize', updateRoundPosition);
 }
 
-export function createScoreDisplay(scene) {
+function createScoreDisplay(scene) {
     function updateScorePosition() {
         const isMobile = window.innerWidth < 728;
         const yPos = isMobile ? scene.game.scale.height * 0.10 : scene.game.scale.height * 0.10;
@@ -271,7 +295,7 @@ export function createScoreDisplay(scene) {
 }
 
 
-export function createTimerDisplay(scene) {
+function createTimerDisplay(scene) {
     // Define a function to update the timer's position based on actual screen width
     function updateTimerPosition() {
         const isMobile = window.innerWidth < 728; // Check actual window width
@@ -443,7 +467,7 @@ function createChartIcon(scene) {
     });
 }
 
-export function createHeaderIcons(scene) {
+function createHeaderIcons(scene) {
 
     // Hamburger Menu
     const menuScale = scene.scale.width * 0.02;
@@ -500,7 +524,7 @@ export function createHeaderIcons(scene) {
 
 
 
-export function createCrossIcon(scene) {
+function createCrossIcon(scene) {
     const inputBgWidth = scene.game.scale.width * 0.98;
 
     scene.cross = scene.add.sprite(0, 0, 'cross')
@@ -511,7 +535,7 @@ export function createCrossIcon(scene) {
         .setPosition(scene.inputDisplay.x + inputBgWidth * 0.33, scene.inputDisplay.y);
 }
 
-export function createCheckmark(scene, x, y) {
+function createCheckmark(scene, x, y) {
     const checkmarkRadius = scene.game.scale.width * 0.03;
 
     // Create the circle
@@ -542,7 +566,7 @@ export function createCheckmark(scene, x, y) {
     scene.checkmarkGroup = checkmarkGroup;
 }
 
-export function createCorrectGuessContainer(scene) {
+function createCorrectGuessContainer(scene) {
     const startY = window.innerWidth < 728  
     ? scene.game.scale.height * 0.445 
     : scene.game.scale.height * 0.45;
@@ -612,3 +636,19 @@ export function animateScore(scene, newScore) {
         }
     });
 }
+
+// Visibility management helper
+function setUIComponentsVisibility(scene, isVisible) {
+    const elements = [
+        ...scene.tiles.map(tileObj => [tileObj.tile, tileObj.text]).flat(),
+        scene.scoreText,
+        scene.timerText,
+        scene.roundText,
+        scene.correctGuessContainer
+    ].filter(Boolean);
+
+    elements.forEach(element => element.setVisible(isVisible));
+}
+
+export const hideUIComponents = (scene) => setUIComponentsVisibility(scene, false);
+export const showUIComponents = (scene) => setUIComponentsVisibility(scene, true);

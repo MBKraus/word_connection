@@ -1,4 +1,4 @@
-import { createLogo } from "../uiComponents.js";
+import { showUIComponents, hideUIComponents } from "../uiComponents.js";
 
 export const STYLES = {
     fonts: {
@@ -89,17 +89,6 @@ export function createButton(scene, x, y, text, onClick, bgColor = '#4a4a4a', te
     return container;
 }
 
-
-export function createText(scene, x, y, initialText = '') {
-    return scene.add.text(x, y, initialText, {
-        fontSize: scene.scale.width * 0.09 + 'px',
-        color: STYLES.colors.text,
-        // fontFamily: 'Poppins',
-        fontFamily: 'Helvetica Neue, Arial, sans-serif',
-        fontWeight: 'bold',
-    }).setOrigin(0.5);
-}
-
 export function createScreen(scene, name, visibility = false) {
     const screen = scene.add.container(0, 0);
     screen.setDepth(1000);
@@ -115,7 +104,7 @@ export function createScreen(scene, name, visibility = false) {
 
 export function showScreen(scene, screenName) {
     scene[screenName].setVisible(true);
-    window.hideGameElements(scene);
+    hideUIComponents(scene);
 
     if (scene.authDOMElement) {
         scene.authDOMElement.setVisible(false);
@@ -124,7 +113,7 @@ export function showScreen(scene, screenName) {
 
 export function hideScreen(scene, screenName) {
     scene[screenName].setVisible(false);
-    window.showGameElements(scene);
+    showUIComponents(scene);
 
     if (scene.authDOMElement) {
         scene.authDOMElement.setVisible(true);

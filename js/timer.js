@@ -1,5 +1,3 @@
-import { getStartY } from './uiComponents.js';
-
 export function pauseTimer(scene) {
     if (!scene.timerEvent) {
         console.warn('Cannot pause timer: scene.timerEvent is undefined homie');

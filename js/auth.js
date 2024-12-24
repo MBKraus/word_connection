@@ -274,7 +274,7 @@ async function hideAuthModal() {
 
         } else {
             try { hideWelcomeScreen(window.scene); } catch (error) {}
-            try { window.scene.dailyLimitControls.hide(); } catch (error) {}
+            try { window.scene.dailyLimitScreen.hide(); } catch (error) {}
             window.startGame(window.scene);
 
             modalContainer.style.display = 'none';
