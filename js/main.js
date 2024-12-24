@@ -1,16 +1,15 @@
 import { generateGameRounds} from './topics.js';
-import { createHeader, createInputDisplay, createRoundDisplay, createCheckmark, createRevealTopicsButton,
-    createScoreDisplay, createTimerDisplay, createHeaderIcons, createCrossIcon, createCorrectGuessContainer, updateScoreDisplay, initializeCorrectGuessPlaceholders, animateScore} from './uiComponents.js';
+import { createUIComponents, showUIComponents, initializeCorrectGuessPlaceholders, animateScore} from './uiComponents.js';
 import { isMobile } from './utils.js';
-import { createCompleteScreen, showCompleteScreen, hideCompleteScreen } from './screens/complete.js';
+import { createCompleteScreen, showCompleteScreen } from './screens/complete.js';
 import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
-import { setupKeyboardInput, createKeyboard } from './keyboard.js';
+import { setupKeyboardInput, createMobileKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
-import { isFuzzyMatchSimple, calculateRoundPoints, createNextGameTimer, getNextPlayTime } from './utils.js';
+import { isFuzzyMatchSimple, calculateRoundPoints} from './utils.js';
 import { GameStorage } from './gameStorage.js';
 import { writeGameStats, updateUserProfile } from './gameStorage.js';
 import {handleAuthStateChange} from './auth.js';
@@ -22,8 +21,8 @@ import {
 } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 
 Promise.all([
-    document.fonts.load('16px "Poppins"'),        // Default Poppins (Regular)
-    document.fonts.load('16px "Poppins Light"', '300'), // Poppins Light (Weight 300)
+    document.fonts.load('16px "Poppins"'),        
+    document.fonts.load('16px "Poppins Light"', '300'), 
 ]).then(function() {
 const config = {
     type: Phaser.AUTO,
@@ -34,14 +33,12 @@ const config = {
     dom: {
         createContainer: true
     },
-    // backgroundColor: '#FFFFFF',
     transparent: true,
     parent: 'game-container',
     scale: {
         mode: Phaser.Scale.FIT,  
         width: 1080,
         height: 1920,
-        // parent: 'game-container',
         autoCenter: Phaser.Scale.CENTER_BOTH
     }
 };
@@ -68,19 +65,18 @@ function preload() {
 
 window.startGame = startGame;
 window.checkGuess = checkGuess;
-window.hideGameElements = (scene) => setElementsVisibility(scene, false);
-window.showGameElements = (scene) => setElementsVisibility(scene, true);
 window.startRound = startRound;
-window.startNextRound = startNextRound;
+window.resetRoundState = resetRoundState;
 window.endGame = endGame;
 window.handleRoundEndNotAllTopicsGuessed = handleRoundEndNotAllTopicsGuessed;
 
 
 async function create() {
 
+    // Show loading spinner
     const loadingSpinner = document.getElementById('loading-spinner');
     loadingSpinner.style.display = 'block';
-    document.body.style.backgroundColor = '#ffffff'; // Set background to white
+    document.body.style.backgroundColor = '#ffffff'; 
 
     this.currentRound = 0;
     this.tiles = [];
@@ -93,8 +89,8 @@ async function create() {
     this.gameStartTime = null;
     this.isGameActive = true;
     this.countdownAudioInRoundPlayed = false;
-    const NUMBER_OF_ROUNDS = 2;
-    const TOPICS_PER_ROUND = 3;
+  
+    // Initiate Firebase Auth
 
     const app = await getFirebaseApp();
     const auth = getAuth(app);
@@ -104,7 +100,9 @@ async function create() {
     window.googleProvider = googleProvider;
     window.scene = this;
 
-    // Wait for AuthStateChange and fetch user and hasPlayedPerDB
+    // Wait for AuthStateChange (to handle situation when someone is 
+    // already logged in on boot)
+
     const { user, hasPlayedPerDB } = await new Promise((resolve) => {
         onAuthStateChanged(window.auth, async (user) => {
             const hasPlayedPerDB = await handleAuthStateChange(user);
@@ -114,97 +112,53 @@ async function create() {
 
     this.dailyLimitControls = createDailyLimitScreen(this, user);
 
-  
-
     if (hasPlayedPerDB) {
         this.dailyLimitControls.show();
-        loadingSpinner.style.display = 'none';
     } else if (GameStorage.hasPlayedTodayCookie()) {
         scene.dailyLimitStatsButton.buttonText.setText('Create a free account')
         scene.dailyLimitSubTitle.setText("Great job on today's puzzle!\nCome back tomorrow for a new challenge!\n\nWant to start tracking your stats?",)
         this.dailyLimitControls.show();
-        loadingSpinner.style.display = 'none';
     } else {
         createWelcomeScreen(this);
         showWelcomeScreen(this, 'welcomeScreen');
-        loadingSpinner.style.display = 'none';
     }
 
+    loadingSpinner.style.display = 'none';
+
+    // Get topic data
     const encodedData = this.cache.text.get('data');
     const decodedString = atob(encodedData)
     const jsonData = JSON.parse(decodedString);
     this.allRounds = generateGameRounds(jsonData);
 
-    createGameElements(this);
+    createUIComponents(this);
+
+    if (isMobile()) {
+        createMobileKeyboard(scene, game);
+    }
     setupKeyboardInput(this);
+
     createCompleteScreen(this);
     createFailureEndScreen(this);
+
     createCountdown(this);
 
     document.querySelector('.text-container').classList.add('loaded');
 }
 
-function createGameElements(scene) {
-
-    createHeader(scene);
-    createInputDisplay(scene);
-    createRoundDisplay(scene);
-    createScoreDisplay(scene);
-    createTimerDisplay(scene);
-    createHeaderIcons(scene);
-    createCorrectGuessContainer(scene);
-    createRevealTopicsButton(scene);
-    createCheckmark(scene, scene.inputDisplay.x + (scene.game.scale.width * 0.90 * 0.4), scene.inputDisplay.y);
-    createCrossIcon(scene);
-
-    if (isMobile()) {
-        createKeyboard(scene, game);
-    }
-
-    if (!scene.nextGameTimer) {
-        // Create and start the timer globally
-        scene.nextGameTimer = createNextGameTimer(
-            getNextPlayTime,
-            (text) => {
-            }
-        );
-        scene.nextGameTimer.start();
-    }
-}
-
-// Visibility management helper
-function setElementsVisibility(scene, isVisible) {
-    const elements = [
-        ...scene.tiles.map(tileObj => [tileObj.tile, tileObj.text]).flat(),
-        scene.scoreText,
-        scene.timerText,
-        scene.roundText,
-        scene.correctGuessContainer
-    ].filter(Boolean);
-
-    elements.forEach(element => element.setVisible(isVisible));
-}
-
 function startGame(scene) {
-    // Start game from the first round
     scene.isGameActive = true;
     scene.currentRound = 0;
     scene.score = 0;
     scene.displayScore = 0; 
-    scene.guessedTopicsOrder = [];
     animateScore(scene, 0);
 
-    if (scene.hamburgerMenu) {
-        if (window.auth && window.auth.currentUser) {
-            scene.hamburgerMenu.setVisible(true);
-        } else {
-            scene.hamburgerMenu.setVisible(false);
-        }
+    scene.hamburgerMenu.setVisible(false);
+    if (window.auth && window.auth.currentUser) {
+        scene.hamburgerMenu.setVisible(true);
     }
 
-    if (scene.correctGuessContainer) {
-        scene.correctGuessContainer.removeAll(true);
-    }
+    scene.correctGuessContainer.removeAll(true);
     scene.correctGuessTexts = [];
 
     hideTiles(scene);
@@ -238,7 +192,6 @@ function checkGuess(scene, guess) {
         );
         
         if (!alreadyGuessed) {
-            // Use isFuzzyMatchSimple for each word in the topic
             const fuzzyMatched = topicObj.topic.some(value => 
                 isFuzzyMatchSimple(normalizedGuess, value.toLowerCase())
             );
@@ -269,9 +222,9 @@ function checkGuess(scene, guess) {
             // Add the topic text to appear next to the circle
             const circleRadius = scene.game.scale.width * 0.0125;
             matchedEntry.text = scene.add.text(
-                circleRadius * 3, // Space after circle
+                circleRadius * 3, 
                 0,
-                matchedTopic.topic[0], // Display the main topic name (first in array)
+                matchedTopic.topic[0],
                 {
                     fontSize: scene.game.scale.width * 0.04 + 'px',
                     color: '#000000',
@@ -280,14 +233,11 @@ function checkGuess(scene, guess) {
                 }
             ).setOrigin(0, 0.5);
             
-            // Use the specific container for this entry
             matchedEntry.guessContainer.add(matchedEntry.text);
             
-            // Apply the appropriate color to the circle based on the order
             const colors = [0x6d92e6, 0x9bcf53, 0xbf53cf]; // Blue, Green, Purple
-            const color = colors[scene.guessedTopicsOrder.length - 1]; // Get the color based on the order of guesses
+            const color = colors[scene.guessedTopicsOrder.length - 1]; 
 
-            // Animate the existing circle fill to the correct color
             scene.tweens.add({
                 targets: circle,
                 alpha: 0,
@@ -303,7 +253,6 @@ function checkGuess(scene, guess) {
             });
         }
         
-        // Show checkmark feedback
         scene.checkmarkCircle.setVisible(true);
         scene.checkmarkText.setVisible(true);
         scene.time.delayedCall(1000, () => {
@@ -333,33 +282,8 @@ function checkGuess(scene, guess) {
     }
 }
 
-
-function startNextRound(scene) {
-    // Start the next round
-    scene.isGameActive = true;
-    scene.currentRound++;
-    hideCompleteScreen(scene);
-    hideTiles(scene);
-    clearTimerEvent(scene);
-    updateScoreDisplay(scene);
-
-    if (scene.correctGuessContainer) {
-        scene.correctGuessContainer.removeAll(true);
-    }
-    scene.correctGuessTexts = [];
-
-    if (scene.checkmark) {
-        scene.checkmark.setVisible(false);
-    }
-    showCountdown(scene);
-}
-
-
 function startRound(scene) {
-
-    // Start a new round
-    resetRoundState(scene);
-    
+   
     scene.roundText.setText(`Round: ${scene.currentRound + 1}`);
     scene.remainingTime = scene.timerDuration;
     scene.timerText.setText(`Time: ${scene.remainingTime}`);
@@ -369,7 +293,7 @@ function startRound(scene) {
     createTiles(scene, tileConfig);
     
     initializeCorrectGuessPlaceholders(scene);
-    window.showGameElements(scene);
+    showUIComponents(scene);
 }
 
 function resetRoundState(scene) {

@@ -1,4 +1,4 @@
-import { isMobile, isTablet, isPhone, isDesktop } from './utils.js';
+import { isMobile, isTablet} from './utils.js';
 
 function isAuthModalVisible() {
     const modalContainer = document.querySelector('div[style*="position: fixed"]');
@@ -34,7 +34,7 @@ export function setupKeyboardInput(scene) {
     scene.inputDisplay.setText(scene.currentInputText);
 }
 
-export function createKeyboard(scene, game) {
+export function createMobileKeyboard(scene, game) {
     const keys = [
         ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ''],

@@ -1,5 +1,6 @@
 import { resetTimerAndBar} from './timer.js';
 import { hideTiles} from './tiles.js';
+import { updateScoreDisplay } from './uiComponents.js';
 
 export function createCountdown(scene) {
     // Create countdown circle and text and assign them to the scene
@@ -21,6 +22,10 @@ export function showCountdown(scene) {
     // Disable stats and revealTopics button during countdown
     scene.chartIcon.disableInteractive();
     scene.revealTopicsButton.disableInteractive();
+
+    window.resetRoundState(scene);
+
+    updateScoreDisplay(scene);
 
     scene.guessedTopicsOrder = [];
 

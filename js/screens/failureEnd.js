@@ -1,5 +1,6 @@
-import {showScreen, hideScreen, createText, createScreen, createButton, STYLES} from './helpers.js';
+import {showScreen, hideScreen, createScreen, createButton, STYLES} from './helpers.js';
 import {createLogo} from '../uiComponents.js';
+import {showCountdown} from '../countdown.js';
 import { showStatsPopup } from './statsPopUp.js';
 
 export function createFailureEndScreen(scene) {
@@ -92,7 +93,9 @@ export function createFailureEndScreen(scene) {
                 showStatsPopup(scene);
             } else {
                 hideFailureEndScreen(scene);
-                startNextRound(scene);
+                scene.isGameActive = true;
+                scene.currentRound++;
+                showCountdown(scene);
             }
         },
         STYLES.colors.playButtonBg,

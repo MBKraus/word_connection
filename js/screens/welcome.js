@@ -1,4 +1,4 @@
-import { createScreen, showScreen, hideScreen, createButton, createText, STYLES } from './helpers.js';
+import { createScreen, showScreen, hideScreen, createButton, STYLES } from './helpers.js';
 import { showAuthModal} from '../auth.js';
 import { createLogo } from '../uiComponents.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';

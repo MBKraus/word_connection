@@ -1,6 +1,8 @@
-import { createScreen, createText, createButton, hideScreen, showScreen, STYLES } from './helpers.js';
+import { createScreen, createButton, hideScreen, showScreen, STYLES } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
 import { showStatsPopup } from './statsPopUp.js';
+import {showCountdown} from '../countdown.js';
+
 
 // Main screen creation functions
 export function createCompleteScreen(scene) {
@@ -133,7 +135,9 @@ export function createCompleteScreen(scene) {
                 showStatsPopup(scene);
             } else {
                 hideCompleteScreen(scene);
-                window.startNextRound(scene);
+                scene.isGameActive = true;
+                scene.currentRound++;
+                showCountdown(scene);
             }
         },
         STYLES.colors.playButtonBg,

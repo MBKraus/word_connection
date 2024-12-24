@@ -1,9 +1,5 @@
 // Screen utility functions
 
-export function isDesktop() {
-    return !isMobile();
-}
-
 export function isMobile() {
     return isPhone() || isTablet();
 }
