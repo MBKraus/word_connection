@@ -5,8 +5,8 @@ import {showCountdown} from '../countdown.js';
 
 
 // Main screen creation functions
-export function createCompleteScreen(scene) {
-    scene.completeScreen = createScreen(scene, 'completeScreen');
+export function createCompletedRoundScreen(scene) {
+    scene.completedRoundScreen = createScreen(scene, 'completedRoundScreen');
     const fontSize = Math.min(scene.scale.height * 0.08, 40);
 
     const logoWidth = scene.scale.width * 0.3;
@@ -14,7 +14,7 @@ export function createCompleteScreen(scene) {
     const logoYPosition = scene.scale.height*0.05;
     const logoXPosition = 0.5
     const logo = createLogo(scene, logoWidth, logoHeight, logoYPosition, logoXPosition);
-    scene.completeScreen.add(logo);
+    scene.completedRoundScreen.add(logo);
 
     scene.completeTitle = scene.add.text(
         scene.scale.width * 0.5,
@@ -25,7 +25,7 @@ export function createCompleteScreen(scene) {
             fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
     }).setOrigin(0.5);
-    scene.completeScreen.add( scene.completeTitle);
+    scene.completedRoundScreen.add( scene.completeTitle);
 
     scene.completeSubTitle = scene.add.text(
         scene.game.scale.width * 0.5,
@@ -39,7 +39,7 @@ export function createCompleteScreen(scene) {
         }
     ).setOrigin(0.5);
     scene.completeSubTitle.descText = true; // Mark for cleanup
-    scene.completeScreen.add(scene.completeSubTitle);
+    scene.completedRoundScreen.add(scene.completeSubTitle);
 
     scene.completeSubScoreText = scene.add.text(
         scene.game.scale.width * 0.5,
@@ -52,7 +52,7 @@ export function createCompleteScreen(scene) {
             align: 'center',
         }
     ).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeSubScoreText);
+    scene.completedRoundScreen.add(scene.completeSubScoreText);
 
     scene.completeInterRoundScore = scene.add.text(
         scene.scale.width * 0.5,
@@ -63,7 +63,7 @@ export function createCompleteScreen(scene) {
             fontFamily: 'Helvetica Neue, Arial, sans-serif',
             fontWeight: 'bold',
     }).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeInterRoundScore);
+    scene.completedRoundScreen.add(scene.completeInterRoundScore);
     scene.completeInterRoundScore.setVisible(false);
 
     // Add end of game score / time at
@@ -78,7 +78,7 @@ export function createCompleteScreen(scene) {
         align: 'center',
     }
     ).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeFinalScoreLabel);
+    scene.completedRoundScreen.add(scene.completeFinalScoreLabel);
     scene.completeFinalScoreLabel.setVisible(false)
 
     scene.completeFinalScoreValue = scene.add.text(
@@ -93,7 +93,7 @@ export function createCompleteScreen(scene) {
             align: 'center',
         }
     ).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeFinalScoreValue);
+    scene.completedRoundScreen.add(scene.completeFinalScoreValue);
     scene.completeFinalScoreValue.setVisible(false)
 
     scene.completeNextGameLabel = scene.add.text(
@@ -107,7 +107,7 @@ export function createCompleteScreen(scene) {
         align: 'center',
     }
     ).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeNextGameLabel);
+    scene.completedRoundScreen.add(scene.completeNextGameLabel);
     scene.completeNextGameLabel.setVisible(false)
 
     scene.completeNextGameTime = scene.add.text(
@@ -122,7 +122,7 @@ export function createCompleteScreen(scene) {
             align: 'center',
         }
     ).setOrigin(0.5);
-    scene.completeScreen.add(scene.completeNextGameTime);
+    scene.completedRoundScreen.add(scene.completeNextGameTime);
     scene.completeNextGameTime.setVisible(false);
 
     scene.okButton = createButton(
@@ -134,7 +134,7 @@ export function createCompleteScreen(scene) {
             if (scene.currentRound >= scene.allRounds.length - 1) {
                 showStatsPopup(scene);
             } else {
-                hideCompleteScreen(scene);
+                hideCompletedRoundScreen(scene);
                 scene.isGameActive = true;
                 scene.currentRound++;
                 showCountdown(scene);
@@ -144,7 +144,7 @@ export function createCompleteScreen(scene) {
         STYLES.colors.playButtonText,
         STYLES.colors.playButtonBorder
     );
-    scene.completeScreen.add(scene.okButton);
+    scene.completedRoundScreen.add(scene.okButton);
 
     scene.nextGameTimer.setOnUpdate((text) => {
         scene.completeNextGameTime.setText(text);
@@ -152,5 +152,5 @@ export function createCompleteScreen(scene) {
 }
 
 // Export show/hide functions
-export const showCompleteScreen = (scene) => showScreen(scene, 'completeScreen');
-export const hideCompleteScreen = (scene) => hideScreen(scene, 'completeScreen');
+export const showCompletedRoundScreen = (scene) => showScreen(scene, 'completedRoundScreen');
+export const hideCompletedRoundScreen = (scene) => hideScreen(scene, 'completedRoundScreen');

@@ -1,17 +1,15 @@
 import { generateGameRounds} from './topics.js';
 import { createUIComponents, showUIComponents, initializeCorrectGuessPlaceholders, animateScore} from './uiComponents.js';
-import { isMobile } from './utils.js';
-import { createCompleteScreen, showCompleteScreen } from './screens/complete.js';
-import {createFailureEndScreen, showFailureEndScreen } from './screens/failureEnd.js';
+import { isMobile,isFuzzyMatchSimple, calculateRoundPoints } from './utils.js';
+import { createCompletedRoundScreen, showCompletedRoundScreen } from './screens/completedRound.js';
+import {createFailedRoundScreen, showFailedRoundScreen } from './screens/failedRound.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createMobileKeyboard } from './keyboard.js';
 import { createCountdown, showCountdown} from './countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';
-import { isFuzzyMatchSimple, calculateRoundPoints} from './utils.js';
-import { GameStorage } from './gameStorage.js';
-import { writeGameStats, updateUserProfile } from './gameStorage.js';
+import { writeGameStats, updateUserProfile, GameStorage } from './gameStorage.js';
 import {handleAuthStateChange} from './auth.js';
 import { getFirebaseApp } from './firebaseInit.js';
 import { 
@@ -138,8 +136,8 @@ async function create() {
     }
     setupKeyboardInput(this);
 
-    createCompleteScreen(this);
-    createFailureEndScreen(this);
+    createCompletedRoundScreen(this);
+    createFailedRoundScreen(this);
 
     createCountdown(this);
 
@@ -376,7 +374,7 @@ function handleRoundEndAllTopicsGuessed(scene) {
         scene.okButton.setVisible(true);
     }
 
-    showCompleteScreen(scene);
+    showCompletedRoundScreen(scene);
 }
 
 
@@ -414,7 +412,7 @@ function handleRoundEndNotAllTopicsGuessed(scene) {
         scene.nextGameTime.setVisible(false);
     }
 
-    showFailureEndScreen(scene);
+    showFailedRoundScreen(scene);
 }
 
 

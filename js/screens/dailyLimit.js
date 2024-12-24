@@ -1,6 +1,5 @@
 import { createScreen, STYLES, createButton } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
-import { createNextGameTimer, getNextPlayTime } from '../utils.js';
 import { showStatsPopup } from './statsPopUp.js';
 import { showAuthModal } from '../auth.js';
 
