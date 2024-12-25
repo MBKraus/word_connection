@@ -1,6 +1,6 @@
-import { resetTimerAndBar} from './timer.js';
-import { hideTiles} from './tiles.js';
-import { updateScoreDisplay } from './uiComponents.js';
+import { resetTimerAndBar} from '../timer.js';
+import { hideTiles} from '../tiles.js';
+import { updateScoreDisplay } from '../uiComponents.js';
 
 export function createCountdown(scene) {
     // Create countdown circle and text and assign them to the scene
