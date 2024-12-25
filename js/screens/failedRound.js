@@ -1,6 +1,6 @@
 import {showScreen, hideScreen, createScreen, createButton, STYLES} from './helpers.js';
 import {createLogo} from '../uiComponents.js';
-import {showCountdown} from '../countdown.js';
+import {showCountdown} from './countdown.js';
 import { showStatsPopup } from './statsPopUp.js';
 
 export function createFailedRoundScreen(scene) {

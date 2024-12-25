@@ -5,7 +5,7 @@ import { createCompletedRoundScreen, showCompletedRoundScreen } from './screens/
 import {createFailedRoundScreen, showFailedRoundScreen } from './screens/failedRound.js';
 import { createWelcomeScreen, showWelcomeScreen } from './screens/welcome.js';
 import { setupKeyboardInput, createMobileKeyboard } from './keyboard.js';
-import { createCountdown, showCountdown} from './countdown.js';
+import { createCountdown, showCountdown} from './screens/countdown.js';
 import { resetTimerAndBar, clearTimerEvent, startTimer} from './timer.js';
 import { highlightTiles, hideTiles, getTileConfig, createTiles} from './tiles.js';
 import {createDailyLimitScreen} from './screens/dailyLimit.js';

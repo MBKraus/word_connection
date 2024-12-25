@@ -1,7 +1,7 @@
 import { createScreen, createButton, hideScreen, showScreen, STYLES } from './helpers.js';
 import { createLogo } from '../uiComponents.js';
 import { showStatsPopup } from './statsPopUp.js';
-import {showCountdown} from '../countdown.js';
+import {showCountdown} from './countdown.js';
 
 
 // Main screen creation functions
