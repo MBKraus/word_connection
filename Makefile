@@ -9,3 +9,6 @@ encode:
 
 print:
 	python content/print.py
+
+lighthouse:
+	lighthouse http://localhost:8000 --view

@@ -1,6 +1,7 @@
 # System Files
 .DS_Store
 .env
+~/.config/configstore/lighthouse.json
 
 # Data
 data.json
