@@ -278,8 +278,7 @@
             </div>
         </div>
 
-        <!-- Load Phaser first -->
-        <script src="https://cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
 
         <!-- Load main.js as a module -->
         <script type="module">
@@ -297,7 +296,6 @@
 
             // Try to load main.min.js, fallback to main.js
             loadScript("js/main.min.js").catch(() => {
-                console.warn("main.min.js not found, loading main.js instead.");
                 return loadScript("js/main.js");
             });
         </script>
