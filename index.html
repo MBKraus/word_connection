@@ -1,280 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- <link rel="canonical" href="https://wordconnectionsgame.io"> -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Connections Game | Connect Words, Solve Puzzles, and Test Your Skills Daily</title>
-    <meta name="description" content="Play Word Connections Game – a brain-teasing word puzzle with a creative twist! Find connections, sharpen your vocabulary, and enjoy fresh daily challenges. Perfect for word enthusiasts of all skill levels.">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Word Connections Game | Connect Words, Solve Puzzles, and Test Your Skills Daily">
-    <meta property="og:description" content="Play Word Connections Game – a brain-teasing word puzzle where you connect words based on meaning or categories! Sharpen your vocabulary and enjoy fresh daily challenges.">
-    <meta property="og:image" content="https://wordconnectionsgame.io//assets/logo_clean.png">
-    <meta property="og:url" content="https://wordconnectionsgame.io">
-    <meta property="og:type" content="website">
-    <!-- Google Ads -->
-    <script src="js/ads.js" defer></script>
-    <!-- Phaser -->
-    <script src="https://cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-</head>
+    <head>
+        <!-- Critical CSS inline -->
+        <style>
+            /* Critical CSS inline */
 
-<body>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6630596411552747" crossorigin="anonymous"></script>
-        <ins class="adsbygoogle responsive_ad"
-             style="display:block"
-             data-ad-client="ca-pub-6630596411552747"
-             data-ad-slot="8052755610"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-    <div id="game-container"></div>
-    <div id="loading-spinner"></div>
-    <div id="cookiewall" class="cookiewall">
-        <div class="overlay"></div>
-        <div class="cookiewall-content">
-            <h3>Manage privacy preferences</h3>
-            <p class="description">We use cookies and similar methods to recognize visitors and remember their preferences, for analytics, to measure our marketing effectiveness and to target and measure the effectiveness of ads, among other things. To learn more about these methods, view our Cookie Policy and Privacy Policy. By clicking ‘Accept all,’ you consent to the processing of your data by us using the above methods. If you do not wish to accept, you can choose "Reject All" and continue with essential cookies only.</p>
-            <div class="cookie-buttons">
-                <button id="accept-cookies">Accept All</button>
-                <button id="reject-cookies">Reject All</button>
-            </div>
-        </div>
-    </div>
-    <div class="text-container" id="targetDiv">
-        
-        <!-- How to play -->
-
-        <img src="/assets/logo_clean.png" alt="Word Connections Logo" class="logo">
-          
-        <h1>Word Connections Game - A Connections game with a twist!</h1>
-        <p>Word Connections Game is a brain-teasing puzzle that challenges players to write down their answer to link four displayed words based on meaning, category, or clever associations. Unlike the well-known NYT Connections game, this unique twist keeps the focus on your own creativity and knowledge. Perfect for vocabulary enthusiasts, Word Connections Game sharpens your thinking skills while having fun. Test your word knowledge in our daily challenges, and become a master of connections!</p>
-      
-        <br><br>
-        <h2>How to play Word Connections Game: A step-by-step guide</h2>
-
-        <div class="circle-container">
-            <div class="circle">1</div>
-        </div>
-      
-        <h3>Read the words displayed</h3>
-        <p>Each round begins with a set of twelve words. Carefully observe them to determine how they are related. Think about categories, meanings, or associations that might link sets of 4 words together.</p>
-        <img src="/assets/screenshots/read_the_words.png" alt="Read the words" class="screenshots">
-          
-
-        <div class="circle-container">
-            <div class="circle">2</div>
-        </div>
-
-        <h3>Identify the Connection</h3>
-        <p>Analyze the words and find common things that connects 3 sets of 4 words. This could be things like "types of fruit," "movie genres," or "famous landmarks."</p>
-        <img src="/assets/screenshots/identify_the_connection.png" alt="Identify the connection" class="screenshots">
-          
-
-        <div class="circle-container">
-            <div class="circle">3</div>
-        </div>
-
-        <h3>Type down your answer</h3>
-        <p>Once you've figured out a connection, type your answer in the provided text box. Be specific and clear, as the game rewards accurate and precise responses.</p>
-        <img src="/assets/screenshots/type_your_answer.png" alt="Type your answer" class="screenshots">
-          
-
-        <div class="circle-container">
-            <div class="circle">4</div>
-        </div>
-        <h3>Submit your answer</h3>
-        <p>After entering your guess, hit ENTER to check if you’re correct. The game will instantly let you know if your connection is right or if you need to try again.</p>
-        <br>
-        <img src="/assets/screenshots/submit_your_answer.png" alt="Submit your answer" class="screenshots">
-        <h3>Find all six connections in two rounds</h3>
-        <p>Each game/day consists of six unique connections that you must solve in two rounds. Use your reasoning skills to uncover every grouping before the timer runs out.</p>
-      
-        <h3>Come back tomorrow for your daily word connections game</h3>
-        <p>Every day, two new rounds of the Word Connections Game are available to challenge you. If you can’t wait for the next rounds, explore other fun games like Block Blast, Crossword, or Mahjong Dimensions to keep your brain engaged.</p>
-        
-        <!-- Why play -->
-        <br><br>
-        <h2>Why play Word Connections Game?</h2>
-        <p>This game is not just fun but also helps improve your vocabulary and logical thinking. Unlike the NYT Connections game, Word Connections lets you create answers entirely on your own, making it a more personalized and interactive experience.</p>
-        <p>Whether you’re a word puzzle enthusiast or just looking for a fresh mental challenge, Word Connections Game is the perfect way to sharpen your skills and have fun!</p>
-        
-         <!-- FAQ -->
-        <br><br>
-        <h2>Frequently asked questions</h2>
-
-        <div class="faq-container">
-        
-        <div class="faq-panel">
-        <h3>What is the Word Connections Game?</h3>
-        <p>Word Connections Game is a fun and challenging puzzle game where you identify unique combinations. It's designed to test and improve your vocabulary, logical thinking, and creative problem-solving skills.</p>
-        </div>
-        
-        <div class="faq-panel">
-        <h3>How do I play the game?</h3>
-        <p>You’ll see twelve words and must figure out what connects four words each. Write down your answers, and try to find all three connections, each round. Each day brings two new rounds to play and enjoy.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>How is this game different from the NYT Connections game?</h3>
-        <p>Unlike the NYT Connections game, Word Connections requires you to write your own answers instead of choosing from preset options, making the experience more personalized and interactive. Word Connections Game is not affiliated with “Connections” from NYTimes in any way.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Are there new puzzles every day?</h3>
-        <p>Yes! Two new rounds are available daily to keep the challenge fresh.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>What happens if I finish the daily rounds and want to keep playing?</h3>
-        <p>If you can’t wait for new puzzles, you can try other engaging games like Block Blast, Crossword, or Mahjong Dimensions for more brain-teasing fun.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Can I skip a round if I get stuck?</h3>
-        <p>If you're stuck, you have the option to skip a round by clicking the "Reveal Topics" button. However, skipping will prevent you from earning the maximum points for that round. To achieve the highest possible score, aim to solve all connections without skipping any rounds. While skipping is a helpful option when you're stuck, it will impact your total score!</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Is there a time limit?</h3>
-        <p>Yes, the puzzles are timed to add an extra layer of excitement. Make sure to solve all six connections within the given time. Each round you have 60 seconds.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>How many attempts do I have to guess a topic?</h3>
-        <p>You can make as many guesses as you like for each topic within the time limit. There’s no penalty for incorrect guesses, so feel free to experiment and think creatively! The timer adds a layer of excitement, so try to make your guesses efficiently to maximize your chances of solving all connections before time runs out.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>What is the scoring mechanism?</h3>
-        <p>The scoring system rewards accuracy and speed:</p>
-        <div class="bullet-container">
-        <ul>
-        <li>You earn <strong>30 points</strong> for each correctly guessed topic.</li>
-        <li>Completing all topics in a round grants you a <strong>50-point round bonus</strong>.</li>
-        <li>If you finish a round with <strong>30 seconds or more remainig  </strong>, you receive an additional <strong>30-point time bonus</strong>.</li>
-        <li>If you finish with <strong> 10 seconds or more remaining</strong> (but less than 30 seconds), you earn a <strong>10-point time bonus</strong>.</li>
-        </ul>
-        </div>
-        <p>Maximize your score by solving quickly and accurately!</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Do I need to be an expert at word games to play?</h3>
-        <p>Not at all! The game is designed for players of all skill levels. Whether you're a seasoned word game enthusiast or a casual player, Word Connections Game offers an enjoyable challenge for everyone.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Can I play this game on my phone or tablet?</h3>
-        <p>Absolutely! Word Connections is mobile-friendly, so you can enjoy playing it on your smartphone, tablet, or desktop.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>How do I improve at Word Connections?</h3>
-        <p>Practice is key! The more you play, the better you'll get at identifying patterns and connections. Also, expanding your vocabulary and general knowledge will give you an edge.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>How do I create an account, and what are the benefits?</h3>
-        <p>Creating an account allows you to track your progress and achievements. With an account, you can:</p>
-        <div class="bullet-container">
-        <ul>
-            <li>Store Your Streak: Keep a record of the number of consecutive days you've played and successfully guessed all connections.</li>
-            <li>Track Your Scores: Monitor your performance over time and aim to beat your personal best.</li>
-            <li>Access Detailed Statistics: View comprehensive stats like total games played, average score, longest streak, and more.</li>
-        </ul>
-        </div>
-        <p>To create an account, simply click on the "Sign Up" button on the game's homepage. Follow the prompts to enter your details, and you'll be all set to enjoy these exclusive features!</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Is Word Connections Game free to play?</h3>
-        <p>Yes, Word Connections Game is completely free to play! You can enjoy daily puzzles, track your progress, and challenge yourself without any cost. Optional features, like creating an account to store your stats and streaks, are also free.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Can I play previous Word Connections Game puzzles?</h3>
-        <p>Currently, you cannot play past puzzles in Word Connections Game. However, we understand the appeal of revisiting previous challenges, and we’re actively working on adding this feature in the future. Stay tuned for updates as we aim to enhance your gaming experience with access to archived puzzles!.</p>
-        </div>
-
-        <div class="faq-panel">
-        <h3>Are hints available in the Word Connections Game?</h3>
-        <p>Hints are not currently available in the Word Connections Game. However, if you find yourself stuck and unable to uncover the connections, you can use the "Reveal Topics" button. This option will display all the correct answers for the puzzle, allowing you to learn and improve for future challenges. While it might end your streak for the day, it’s a helpful tool for understanding tricky connections!.</p>
-        </div>
-
-    </div>
-    </div>
-    <script type="module">
-        // Function to dynamically load a script
-        function loadScript(src) {
-          return new Promise((resolve, reject) => {
-            const script = document.createElement('script');
-            script.type = 'module';
-            script.src = src;
-            script.onload = resolve;
-            script.onerror = reject;
-            document.head.appendChild(script);
-          });
-        }
-      
-        // Try to load main.min.js, fallback to main.js
-        loadScript('js/main.min.js')
-          .catch(() => {
-            console.warn('main.min.js not found, loading main.js instead.');
-            return loadScript('js/main.js');
-          });
-      </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const cookiewall = document.getElementById('cookiewall');
-            const acceptButton = document.getElementById('accept-cookies');
-            const rejectButton = document.getElementById('reject-cookies');
-
-            // Check if cookies have been accepted or rejected previously
-            if (localStorage.getItem('cookiesAccepted') === 'true') {
-                cookiewall.style.display = 'none';
-                document.body.classList.remove('locked');
-                window.dispatchEvent(new Event('cookiesAccepted'));
-            } else if (localStorage.getItem('cookiesRejected') === 'true') {
-                cookiewall.style.display = 'none';
-                document.body.classList.remove('locked');
-                window.dispatchEvent(new Event('cookiesRejected'));
-            } else {
-                // Lock the page and show the cookiewall
-                document.body.classList.add('locked');
-                window.dispatchEvent(new Event('cookiesBlocking'));
-                
-                setTimeout(() => {
-                    cookiewall.classList.add('show');
-                }, 1000);
+            #loading-spinner {
+                border: 8px solid rgba(0, 0, 0, 0.1); /* Light border */
+                border-top: 8px solid #9bcf53;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                animation: spin 1s linear infinite;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
             }
 
-            // Add click event listener to accept button
-            acceptButton.addEventListener('click', function() {
-                cookiewall.style.display = 'none';
-                localStorage.setItem('cookiesAccepted', 'true');
-                localStorage.removeItem('cookiesRejected');
-                document.body.classList.remove('locked');
-                window.dispatchEvent(new Event('cookiesAccepted'));
-                consentGrantedAdStorage();  // Grant consent for ads
-            });
+            /* Spin animation */
+            @keyframes spin {
+                0% {
+                    transform: translate(-50%, -50%) rotate(0deg);
+                }
+                100% {
+                    transform: translate(-50%, -50%) rotate(360deg);
+                }
+            }
 
-            // Add click event listener to reject button
-            rejectButton.addEventListener('click', function() {
-                cookiewall.style.display = 'none';
-                localStorage.setItem('cookiesRejected', 'true');
-                localStorage.removeItem('cookiesAccepted');
-                document.body.classList.remove('locked');
-                window.dispatchEvent(new Event('cookiesRejected'));
-                consentDeniedAdStorage();  // Deny consent for ads
+            .loading-text {
+                font-size: 18px;
+                color: white;
+                margin: 0;
+            }
+        </style>
+
+        <!-- Defer non-critical CSS -->
+        <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+        <noscript><link rel="stylesheet" href="style.css" /></noscript>
+
+        <!-- Preconnect to external domains -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Word Connections Game | Connect Words, Solve Puzzles, and Test Your Skills Daily</title>
+        <meta
+            name="description"
+            content="Play Word Connections Game – a brain-teasing word puzzle with a creative twist! Find connections, sharpen your vocabulary, and enjoy fresh daily challenges. Perfect for word enthusiasts of all skill levels."
+        />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Word Connections Game | Connect Words, Solve Puzzles, and Test Your Skills Daily" />
+        <meta property="og:description" content="Play Word Connections Game – a brain-teasing word puzzle where you connect words based on meaning or categories! Sharpen your vocabulary and enjoy fresh daily challenges." />
+        <meta property="og:image" content="https://wordconnectionsgame.io//assets/logo_clean.png" />
+        <meta property="og:url" content="https://wordconnectionsgame.io" />
+        <meta property="og:type" content="website" />
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+    </head>
+
+    <body>
+        <!-- Game container first for faster LCP -->
+        <div id="game-container"></div>
+        <div id="loading-spinner">
+            <p class="loading-text">Loading...</p>
+        </div>
+
+        <div id="cookiewall" class="cookiewall">
+            <div class="overlay"></div>
+            <div class="cookiewall-content">
+                <h3>Manage privacy preferences</h3>
+                <p class="description">
+                    We use cookies and similar methods to recognize visitors and remember their preferences, for analytics, to measure our marketing effectiveness and to target and measure the effectiveness of ads, among other things. To
+                    learn more about these methods, view our Cookie Policy and Privacy Policy. By clicking ‘Accept all,’ you consent to the processing of your data by us using the above methods. If you do not wish to accept, you can choose
+                    "Reject All" and continue with essential cookies only.
+                </p>
+                <div class="cookie-buttons">
+                    <button id="accept-cookies">Accept All</button>
+                    <button id="reject-cookies">Reject All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-container" id="targetDiv">
+            <!-- How to play -->
+
+            <img src="/assets/logo_clean.webp" alt="Word Connections Logo" class="logo" loading="lazy" />
+
+            <h1>Word Connections Game - A Connections game with a twist!</h1>
+            <p>
+                Word Connections Game is a brain-teasing puzzle that challenges players to write down their answer to link four displayed words based on meaning, category, or clever associations. Unlike the well-known NYT Connections game,
+                this unique twist keeps the focus on your own creativity and knowledge. Perfect for vocabulary enthusiasts, Word Connections Game sharpens your thinking skills while having fun. Test your word knowledge in our daily
+                challenges, and become a master of connections!
+            </p>
+
+            <br />
+            <br />
+            <h2>How to play Word Connections Game: A step-by-step guide</h2>
+
+            <div class="circle-container">
+                <div class="circle">1</div>
+            </div>
+
+            <h3>Read the words displayed</h3>
+            <p>Each round begins with a set of twelve words. Carefully observe them to determine how they are related. Think about categories, meanings, or associations that might link sets of 4 words together.</p>
+            <img src="/assets/screenshots/read_the_words.webp" alt="Read the words" class="screenshots" loading="lazy" />>
+
+            <div class="circle-container">
+                <div class="circle">2</div>
+            </div>
+
+            <h3>Identify the Connection</h3>
+            <p>Analyze the words and find common things that connects 3 sets of 4 words. This could be things like "types of fruit," "movie genres," or "famous landmarks."</p>
+            <img src="/assets/screenshots/identify_the_connection.webp" alt="Identify the connection" class="screenshots" loading="lazy" />>
+
+            <div class="circle-container">
+                <div class="circle">3</div>
+            </div>
+
+            <h3>Type down your answer</h3>
+            <p>Once you've figured out a connection, type your answer in the provided text box. Be specific and clear, as the game rewards accurate and precise responses.</p>
+            <img src="/assets/screenshots/type_your_answer.webp" alt="Type your answer" class="screenshots" loading="lazy" />>
+
+            <div class="circle-container">
+                <div class="circle">4</div>
+            </div>
+            <h3>Submit your answer</h3>
+            <p>After entering your guess, hit ENTER to check if you’re correct. The game will instantly let you know if your connection is right or if you need to try again.</p>
+            <br />
+            <img src="/assets/screenshots/submit_your_answer.webp" alt="Submit your answer" class="screenshots" loading="lazy" />>
+            <h3>Find all six connections in two rounds</h3>
+            <p>Each game/day consists of six unique connections that you must solve in two rounds. Use your reasoning skills to uncover every grouping before the timer runs out.</p>
+
+            <h3>Come back tomorrow for your daily word connections game</h3>
+            <p>
+                Every day, two new rounds of the Word Connections Game are available to challenge you. If you can’t wait for the next rounds, explore other fun games like Block Blast, Crossword, or Mahjong Dimensions to keep your brain
+                engaged.
+            </p>
+
+            <!-- Why play -->
+            <br />
+            <br />
+            <h2>Why play Word Connections Game?</h2>
+            <p>
+                This game is not just fun but also helps improve your vocabulary and logical thinking. Unlike the NYT Connections game, Word Connections lets you create answers entirely on your own, making it a more personalized and
+                interactive experience.
+            </p>
+            <p>Whether you’re a word puzzle enthusiast or just looking for a fresh mental challenge, Word Connections Game is the perfect way to sharpen your skills and have fun!</p>
+
+            <!-- FAQ -->
+            <br />
+            <br />
+            <h2>Frequently asked questions</h2>
+
+            <div class="faq-container">
+                <div class="faq-panel">
+                    <h3>What is the Word Connections Game?</h3>
+                    <p>Word Connections Game is a fun and challenging puzzle game where you identify unique combinations. It's designed to test and improve your vocabulary, logical thinking, and creative problem-solving skills.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>How do I play the game?</h3>
+                    <p>You’ll see twelve words and must figure out what connects four words each. Write down your answers, and try to find all three connections, each round. Each day brings two new rounds to play and enjoy.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>How is this game different from the NYT Connections game?</h3>
+                    <p>
+                        Unlike the NYT Connections game, Word Connections requires you to write your own answers instead of choosing from preset options, making the experience more personalized and interactive. Word Connections Game is not
+                        affiliated with “Connections” from NYTimes in any way.
+                    </p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Are there new puzzles every day?</h3>
+                    <p>Yes! Two new rounds are available daily to keep the challenge fresh.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>What happens if I finish the daily rounds and want to keep playing?</h3>
+                    <p>If you can’t wait for new puzzles, you can try other engaging games like Block Blast, Crossword, or Mahjong Dimensions for more brain-teasing fun.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Can I skip a round if I get stuck?</h3>
+                    <p>
+                        If you're stuck, you have the option to skip a round by clicking the "Reveal Topics" button. However, skipping will prevent you from earning the maximum points for that round. To achieve the highest possible score,
+                        aim to solve all connections without skipping any rounds. While skipping is a helpful option when you're stuck, it will impact your total score!
+                    </p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Is there a time limit?</h3>
+                    <p>Yes, the puzzles are timed to add an extra layer of excitement. Make sure to solve all six connections within the given time. Each round you have 60 seconds.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>How many attempts do I have to guess a topic?</h3>
+                    <p>
+                        You can make as many guesses as you like for each topic within the time limit. There’s no penalty for incorrect guesses, so feel free to experiment and think creatively! The timer adds a layer of excitement, so try
+                        to make your guesses efficiently to maximize your chances of solving all connections before time runs out.
+                    </p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>What is the scoring mechanism?</h3>
+                    <p>The scoring system rewards accuracy and speed:</p>
+                    <div class="bullet-container">
+                        <ul>
+                            <li>You earn <strong>30 points</strong> for each correctly guessed topic.</li>
+                            <li>Completing all topics in a round grants you a <strong>50-point round bonus</strong>.</li>
+                            <li>If you finish a round with <strong>30 seconds or more remainig </strong>, you receive an additional <strong>30-point time bonus</strong>.</li>
+                            <li>If you finish with <strong> 10 seconds or more remaining</strong> (but less than 30 seconds), you earn a <strong>10-point time bonus</strong>.</li>
+                        </ul>
+                    </div>
+                    <p>Maximize your score by solving quickly and accurately!</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Do I need to be an expert at word games to play?</h3>
+                    <p>Not at all! The game is designed for players of all skill levels. Whether you're a seasoned word game enthusiast or a casual player, Word Connections Game offers an enjoyable challenge for everyone.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Can I play this game on my phone or tablet?</h3>
+                    <p>Absolutely! Word Connections is mobile-friendly, so you can enjoy playing it on your smartphone, tablet, or desktop.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>How do I improve at Word Connections?</h3>
+                    <p>Practice is key! The more you play, the better you'll get at identifying patterns and connections. Also, expanding your vocabulary and general knowledge will give you an edge.</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>How do I create an account, and what are the benefits?</h3>
+                    <p>Creating an account allows you to track your progress and achievements. With an account, you can:</p>
+                    <div class="bullet-container">
+                        <ul>
+                            <li>Store Your Streak: Keep a record of the number of consecutive days you've played and successfully guessed all connections.</li>
+                            <li>Track Your Scores: Monitor your performance over time and aim to beat your personal best.</li>
+                            <li>Access Detailed Statistics: View comprehensive stats like total games played, average score, longest streak, and more.</li>
+                        </ul>
+                    </div>
+                    <p>To create an account, simply click on the "Sign Up" button on the game's homepage. Follow the prompts to enter your details, and you'll be all set to enjoy these exclusive features!</p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Is Word Connections Game free to play?</h3>
+                    <p>
+                        Yes, Word Connections Game is completely free to play! You can enjoy daily puzzles, track your progress, and challenge yourself without any cost. Optional features, like creating an account to store your stats and
+                        streaks, are also free.
+                    </p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Can I play previous Word Connections Game puzzles?</h3>
+                    <p>
+                        Currently, you cannot play past puzzles in Word Connections Game. However, we understand the appeal of revisiting previous challenges, and we’re actively working on adding this feature in the future. Stay tuned for
+                        updates as we aim to enhance your gaming experience with access to archived puzzles!.
+                    </p>
+                </div>
+
+                <div class="faq-panel">
+                    <h3>Are hints available in the Word Connections Game?</h3>
+                    <p>
+                        Hints are not currently available in the Word Connections Game. However, if you find yourself stuck and unable to uncover the connections, you can use the "Reveal Topics" button. This option will display all the
+                        correct answers for the puzzle, allowing you to learn and improve for future challenges. While it might end your streak for the day, it’s a helpful tool for understanding tricky connections!.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Load Phaser first -->
+        <script src="https://cdn.jsdelivr.net/npm/phaser@3.87.0/dist/phaser.min.js"></script>
+
+        <!-- Load main.js as a module -->
+        <script type="module">
+            // Function to dynamically load a script
+            function loadScript(src) {
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement("script");
+                    script.type = "module";
+                    script.src = src;
+                    script.onload = resolve;
+                    script.onerror = reject;
+                    document.head.appendChild(script);
+                });
+            }
+
+            // Try to load main.min.js, fallback to main.js
+            loadScript("js/main.min.js").catch(() => {
+                console.warn("main.min.js not found, loading main.js instead.");
+                return loadScript("js/main.js");
             });
-        });
-    </script>
-</body>
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const cookiewall = document.getElementById("cookiewall");
+                const acceptButton = document.getElementById("accept-cookies");
+                const rejectButton = document.getElementById("reject-cookies");
+
+                // Check if cookies have been accepted or rejected previously
+                if (localStorage.getItem("cookiesAccepted") === "true") {
+                    cookiewall.style.display = "none";
+                    document.body.classList.remove("locked");
+                    window.dispatchEvent(new Event("cookiesAccepted"));
+                } else if (localStorage.getItem("cookiesRejected") === "true") {
+                    cookiewall.style.display = "none";
+                    document.body.classList.remove("locked");
+                    window.dispatchEvent(new Event("cookiesRejected"));
+                } else {
+                    // Lock the page and show the cookiewall
+                    document.body.classList.add("locked");
+                    window.dispatchEvent(new Event("cookiesBlocking"));
+
+                    setTimeout(() => {
+                        cookiewall.classList.add("show");
+                    }, 1000);
+                }
+
+                // Add click event listener to accept button
+                acceptButton.addEventListener("click", function () {
+                    cookiewall.style.display = "none";
+                    localStorage.setItem("cookiesAccepted", "true");
+                    localStorage.removeItem("cookiesRejected");
+                    document.body.classList.remove("locked");
+                    window.dispatchEvent(new Event("cookiesAccepted"));
+                    consentGrantedAdStorage(); // Grant consent for ads
+                });
+
+                // Add click event listener to reject button
+                rejectButton.addEventListener("click", function () {
+                    cookiewall.style.display = "none";
+                    localStorage.setItem("cookiesRejected", "true");
+                    localStorage.removeItem("cookiesAccepted");
+                    document.body.classList.remove("locked");
+                    window.dispatchEvent(new Event("cookiesRejected"));
+                    consentDeniedAdStorage(); // Deny consent for ads
+                });
+            });
+        </script>
+
+        <!-- Defer non-critical scripts -->
+        <script src="js/ads.js" defer></script>
+
+        <!-- Lazy load ads -->
+        <script>
+            window.addEventListener("load", function () {
+                const adsScript = document.createElement("script");
+                adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6630596411552747";
+                adsScript.async = true;
+                adsScript.crossOrigin = "anonymous";
+                document.body.appendChild(adsScript);
+            });
+        </script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6630596411552747" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle responsive_ad" style="display: block;" data-ad-client="ca-pub-6630596411552747" data-ad-slot="8052755610"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </body>
 </html>
