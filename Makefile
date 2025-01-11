@@ -12,3 +12,6 @@ print:
 
 lighthouse:
 	lighthouse http://localhost:8000 --view
+
+lighthouse-url:
+	lighthouse https://wordconnectionsgame.io --view
