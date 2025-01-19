@@ -190,6 +190,9 @@ async function showAuthModal(mode = 'signin') {
 }
 
 async function hideAuthModal() {
+
+    // Comment below out to turn off daily limit screen
+
     if (isAuthSuccess && window.auth.currentUser) {
         const hasPlayedPerDB = await GameStorage.hasPlayedTodayDB(auth.currentUser.uid);
 
