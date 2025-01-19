@@ -1,3 +1,5 @@
+import { gameConfig } from './config.js';
+
 export function loadTopics(scene) {
     const data = scene.cache.text.get('data');     // Retrieve cached text
     const jsonString = atob(data);                 // Decode from base64
@@ -26,11 +28,11 @@ export function generateGameRounds(aggregatedTopics) {
     const usedTopics = new Set();
     const rounds = [];
 
-    for (let round = 0; round < 2; round++) {
+    for (let round = 0; round < gameConfig.rounds; round++) {
         const selectedAreas = [];
         const roundTopics = [];
 
-        while (selectedAreas.length < 3) {
+        while (selectedAreas.length < gameConfig.topicsPerRound) {
             // Pick a random area that hasn't been used this round
             const remainingAreas = areas.filter(area => !selectedAreas.includes(area));
             const randomArea = remainingAreas[Math.floor(Math.random() * remainingAreas.length)];

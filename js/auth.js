@@ -1,15 +1,21 @@
 
+import { gameConfig } from './config.js';
 import { GameStorage, updateUserAndInitializeStats } from './gameStorage.js';
 import { createDailyLimitScreen } from './screens/dailyLimit.js';
 import { recenterScreen } from './utils.js';
 import { showStatsPopup } from './screens/statsPopUp.js';
-import { 
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signInWithPopup,
-    sendPasswordResetEmail
-} from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
 import { hideWelcomeScreen } from './screens/welcome.js';
+
+const firebaseAuth = await import(
+    `https://www.gstatic.com/firebasejs/${gameConfig.firebaseVersion}/firebase-auth.js`
+);
+
+const { 
+    signInWithEmailAndPassword, 
+    createUserWithEmailAndPassword, 
+    signInWithPopup, 
+    sendPasswordResetEmail 
+} = firebaseAuth;
 
 let isAuthSuccess = false;
 let isAuthModalOpen = false;

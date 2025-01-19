@@ -1,5 +1,7 @@
 // firebaseInit.js
 
+import { gameConfig } from './config.js';
+
 let firebaseAppPromise = null;
 
 export async function initializeFirebase() {
@@ -12,7 +14,7 @@ export async function initializeFirebase() {
                 const jsonString = atob(encodedData);
                 const firebaseConfig = JSON.parse(jsonString);
                 
-                const { initializeApp } = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js');
+                const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${gameConfig.firebaseVersion}/firebase-app.js`);
                 const app = initializeApp(firebaseConfig);
                 return app;
             } catch (error) {
