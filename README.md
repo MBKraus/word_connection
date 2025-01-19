@@ -1,9 +1,17 @@
-# word_connection
+# Word Connection Game
 
+## Run game on localhost
 
-npm install --save firebase 
+`make run` 
+ 
+
+## Local Cookie manipulation
+
+To remove the locally stored last played cookie:
 
 localStorage.removeItem('wordconnect_last_played');
+
+To remove the locally stored cookiesAccepted and cookiesRejected:
 
 localStorage.removeItem('cookiesAccepted');
 localStorage.removeItem('cookiesRejected');

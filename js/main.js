@@ -1,4 +1,5 @@
-import { generateGameRounds} from './topics.js';
+import { gameConfig} from './config.js';
+import { loadTopics, generateGameRounds} from './topics.js';
 import { createUIComponents, showUIComponents, initializeCorrectGuessPlaceholders, animateScore} from './uiComponents.js';
 import { isMobile,isFuzzyMatchSimple, calculateRoundPoints } from './utils.js';
 import { createCompletedRoundScreen, showCompletedRoundScreen } from './screens/completedRound.js';
@@ -12,36 +13,35 @@ import {createDailyLimitScreen} from './screens/dailyLimit.js';
 import { writeGameStats, updateUserProfile, GameStorage } from './gameStorage.js';
 import {handleAuthStateChange} from './auth.js';
 import { getFirebaseApp } from './firebaseInit.js';
-import { 
-    getAuth, 
-    onAuthStateChanged,
-    GoogleAuthProvider,
-} from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js';
+const { getAuth, onAuthStateChanged, GoogleAuthProvider } = await import(
+    `https://www.gstatic.com/firebasejs/${gameConfig.firebaseVersion}/firebase-auth.js`
+);
 
 Promise.all([
     document.fonts.load('16px "Poppins"'),        
     document.fonts.load('16px "Poppins Light"', '300'), 
 ]).then(function() {
-const config = {
-    type: Phaser.AUTO,
-    scene: {
-        preload: preload,
-        create: create,
-    },
-    dom: {
-        createContainer: true
-    },
-    transparent: true,
-    parent: 'game-container',
-    scale: {
-        mode: Phaser.Scale.FIT,  
-        width: 1080,
-        height: 1920,
-        autoCenter: Phaser.Scale.CENTER_BOTH
-    }
-};
+  
+const phaserConfig = {
+        type: Phaser.AUTO,
+        scene: {
+            preload: preload,
+            create: create,
+        },
+        dom: {
+            createContainer: true
+        },
+        transparent: true,
+        parent: 'game-container',
+        scale: {
+            mode: Phaser.Scale.FIT,  
+            width: 1080,
+            height: 1920,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        }
+    };
 
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(phaserConfig);
 
 function preload() {
 
@@ -79,7 +79,7 @@ async function create() {
     this.currentRound = 0;
     this.tiles = [];
     this.score = 0;
-    this.timerDuration = 60;
+    this.timerDuration = gameConfig.timerDuration;
     this.timerText = null;
     this.timerEvent = null;
     this.currentInputText = ''; 
@@ -124,9 +124,7 @@ async function create() {
     loadingSpinner.style.display = 'none';
 
     // Get topic data
-    const encodedData = this.cache.text.get('data');
-    const decodedString = atob(encodedData)
-    const jsonData = JSON.parse(decodedString);
+    const jsonData = loadTopics(this); 
     this.allRounds = generateGameRounds(jsonData);
 
     createUIComponents(this);
