@@ -140,6 +140,7 @@ jobs:
           
           mkdir -p filtered-deploy/assets && cp -r assets/* filtered-deploy/assets/
           mkdir -p filtered-deploy/content && cp content/data.txt filtered-deploy/content/
+          mkdir -p filtered-deploy/templates && cp -r templates/* filtered-deploy/templates/
 
           # Remove any source map files before deployment
           find filtered-deploy -name "*.map" -type f -delete
