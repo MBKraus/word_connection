@@ -377,3 +377,81 @@ input:focus {
     margin-bottom: 4px; /* Reduce spacing between list items */
     text-align: left; /* Explicitly align text to the left */
 }
+
+
+/* Auth modals */
+
+.auth-modal, .reset-modal {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.auth-title {
+    margin: 0 0 20px 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.text-center {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#forgotPassword, #altModeLink {
+    color: #4A90E2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#googleSignIn {
+    width: 100%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+#closeModal, #closeResetModal {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #666;
+}

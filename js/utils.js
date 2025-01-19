@@ -1,4 +1,6 @@
+// --------------
 // Screen utility functions
+// --------------
 
 export function isMobile() {
     return isPhone() || isTablet();
@@ -33,7 +35,9 @@ export function recenterScreen() {
     }
 }
 
+// --------------
 // Game logic helpers
+// --------------
 
 export function isFuzzyMatchSimple(input, word) {
     // Character-by-Character Comparison with Early Exit
@@ -83,7 +87,9 @@ export function calculateRoundPoints(timeRemaining, topicsGuessed) {
     return points;
 }
 
+// --------------
 // Timer helpers
+// --------------
 
 export function createNextGameTimer(getNextPlayTime, defaultOnUpdate) {
     let interval;
@@ -129,4 +135,45 @@ export function getNextPlayTime() {
     tomorrow.setDate(tomorrow.getDate() + 1);
     tomorrow.setHours(0, 0, 0, 0);
     return tomorrow;
+}
+
+// --------------
+// Auth template loader
+// --------------
+
+export class TemplateLoader {
+    static async loadTemplate(templatePath) {
+        try {
+            const response = await fetch(templatePath);
+            if (!response.ok) {
+                throw new Error(`Failed to load template: ${templatePath}`);
+            }
+            return await response.text();
+        } catch (error) {
+            console.error('Template loading error:', error);
+            throw error;
+        }
+    }
+
+    static compile(template, data) {
+        let compiledTemplate = template;
+        
+        // Handle conditionals
+        compiledTemplate = compiledTemplate.replace(
+            /\{\{#if\s+([^}]+)\}\}([\s\S]*?)\{\{\/if\}\}/g,
+            (match, condition, content) => {
+                return data[condition] ? content : '';
+            }
+        );
+
+        // Handle variables
+        compiledTemplate = compiledTemplate.replace(
+            /\{\{([^}]+)\}\}/g,
+            (match, key) => {
+                return data[key.trim()] || '';
+            }
+        );
+
+        return compiledTemplate;
+    }
 }
