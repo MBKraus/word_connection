@@ -2,6 +2,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Redirect to add trailing slash if missing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+# Redirect index.html to directory
+RewriteRule ^(.*)/index\.html$ /$1/ [L,R=301]
+
 # Enable GZIP compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
