@@ -1,8 +1,14 @@
 RewriteEngine On
+
+# Force HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect to add trailing slash if missing
+# Force www (if you choose www as your preferred version)
+RewriteCond %{HTTP_HOST} ^wordconnectionsgame\.io [NC]
+RewriteRule ^ https://www.wordconnectionsgame.io%{REQUEST_URI} [L,R=301]
+
+# Redirect to add trailing slash if missing (only for directories, not files)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.*)$ /$1/ [L,R=301]
